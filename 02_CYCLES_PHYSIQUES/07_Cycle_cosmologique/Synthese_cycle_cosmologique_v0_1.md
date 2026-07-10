@@ -28,6 +28,14 @@ L'objectif de cette synthese est double :
 2. fixer les limites methodologiques qui empechent de transformer la cosmologie en famille.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+la synthese reste valide,
+mais elle doit etre relue comme synthese d'une macro-architecture
+composee de sous-reseaux internes.
+```
+
 ### 2. Resultat general
 
 Le cycle confirme :
@@ -52,6 +60,13 @@ Decision principale :
 L'architecture cosmologique est une architecture de fonctions architecturales, de regimes d'acces et de dependances de modele.
 ```
 
+Decision relue apres stress test :
+
+```text
+L'architecture cosmologique est une macro-architecture inferentielle / reconstructive,
+composee de sous-reseaux fonctionnels et de tensions transversales.
+```
+
 Formule courte :
 
 > La cosmologie stabilise moins des constantes isolees qu'un reseau de parametres, de relations, de conditions initiales, d'observables reconstruites et de tensions d'acces.
@@ -60,18 +75,20 @@ Formule courte :
 
 Le cycle stabilise six niveaux distincts.
 
-| Grandeur | Statut stabilise | Fonction architecturale | Risque controle |
-|---|---|---|---|
-| Lambda | Terme de fond | Fond | Reintroduire Fond comme famille |
-| H_0 | Parametre d'etat actuel | Parametre d'etat | Traiter H_0 comme constante fondamentale |
-| Omega_i | Relation normalisee | Densite normalisee | Confondre fraction normalisee et densite absolue |
-| w | Relation d'etat | Relation d'etat | Confondre parametrisation et explication physique |
-| A_s / n_s | Conditions initiales perturbatives | Condition initiale | Ranger les parametres primordiaux dans Fond |
-| sigma_8 / S_8 | Amplitudes reconstruites de structure | Observable reconstruite | Transformer une tension d'acces en verdict physique |
+| Grandeur | Statut stabilise | Fonction architecturale | Sous-reseau actuel | Risque controle |
+|---|---|---|---|---|
+| Lambda | Terme de fond | Fond | Fond / expansion | Reintroduire Fond comme famille |
+| H_0 | Parametre d'etat actuel | Parametre d'etat | Fond / expansion + tension transversale | Traiter H_0 comme constante fondamentale |
+| Omega_i | Relation normalisee | Densite normalisee | Budget normalise | Confondre fraction normalisee et densite absolue |
+| w | Relation d'etat | Relation d'etat | Etat de composante | Confondre parametrisation et explication physique |
+| A_s / n_s | Conditions initiales perturbatives | Condition initiale | Primordial | Ranger les parametres primordiaux dans Fond |
+| sigma_8 / S_8 | Amplitudes reconstruites de structure | Observable reconstruite | Croissance / reconstruction | Transformer une tension d'acces en verdict physique |
 
 Ce tableau est le resultat central du cycle.
 
 Il montre que l'architecture cosmologique ne tient que si les rangs restent separes.
+
+Apres stress test, il montre aussi que ces rangs doivent etre regroupes par sous-reseaux internes.
 
 ### 4. Lambda : terme de fond
 
@@ -363,6 +380,19 @@ Fond
 + Tensions de donnees
 ```
 
+Lecture apres stress test :
+
+```text
+Architecture cosmologique =
+macro-architecture inferentielle / reconstructive
++ sous-reseau fond / expansion
++ sous-reseau budget normalise
++ sous-reseau etat de composante
++ sous-reseau primordial
++ sous-reseau croissance / reconstruction
++ tensions transversales d'acces et de modele
+```
+
 Sous forme de corpus :
 
 ```text
@@ -379,6 +409,12 @@ Sous forme methodologique :
 
 ```text
 {regime physique, regime d'acces, modele, stabilisation, limite}
+```
+
+Sous forme de sous-reseaux :
+
+```text
+{fond-expansion, budget, etat, primordial, croissance-reconstruction, tensions transversales}
 ```
 
 La formule importante est :
@@ -406,7 +442,13 @@ Observable reconstruite
 
 Cette fonction etait seulement anticipee dans la note methodologique v1.1. La fiche sigma_8 / S_8 la confirme.
 
-La prochaine carte consolidee devra donc l'integrer explicitement.
+Les cartes actives doivent donc l'integrer explicitement.
+
+Precision apres stress test :
+
+```text
+Observable reconstruite appartient au sous-reseau croissance / reconstruction.
+```
 
 ### 12. Regime physique et regime d'acces
 
@@ -464,6 +506,13 @@ Regle :
 
 ```text
 ne jamais transformer une tension de donnees en famille taxonomique.
+```
+
+Precision apres stress test :
+
+```text
+une tension peut traverser plusieurs sous-reseaux
+sans devenir un sous-reseau autonome.
 ```
 
 ### 14. Stabilisation empirique et modele
@@ -545,10 +594,12 @@ Il donne un cadre de classement robuste pour ces questions.
 |---|---|---|---|---|---|---|
 | Type logique | Terme dimensionne | Taux actuel | Rapport normalise | Relation pression / densite | Spectre primordial | Amplitude tardive reconstruite |
 | Famille principale | Aucune simple | Aucune simple | Relation | Relation | Aucune simple | Aucune simple |
+| Sous-reseau | Fond / expansion | Fond / expansion + tension transversale | Budget normalise | Etat de composante | Primordial | Croissance / reconstruction |
 | Sous-type | Terme de fond | Parametre d'etat actuel | Relation normalisee | Relation d'etat | Condition initiale perturbative | Observable reconstruite |
 | Fonction architecturale | Fond | Parametre d'etat | Densite normalisee | Relation d'etat | Condition initiale | Observable reconstruite |
 | Regime physique | Dynamique globale | Expansion actuelle | Budget normalise | Composante fluide | Perturbations primordiales | Croissance des structures |
 | Regime d'acces | CMB, BAO, SNe, croissance | Distance ladder, CMB, BAO | CMB, BAO, SNe, BBN | BAO, CMB, SNe | CMB, polarisation, lensing | Lensing, CMB, amas, 3x2pt |
+| Test de retrait | Modifie le modele de fond | Detruit la normalisation actuelle | Rend le budget incomparable | Retire le test d'etat | Retire les conditions primordiales | Retire la reconstruction tardive |
 | Stabilisation | Forte mais ouverte | Forte mais discordante | Forte mais modele-dependante | Reference forte, dynamique ouverte | Forte dans LambdaCDM | Forte par route, pluralite d'acces |
 | Risque principal | Fond comme famille | Constante fondamentale | Fraction primitive | Parametrisation = explication | Fond primordial | Verdict physique unique |
 
@@ -561,6 +612,10 @@ Formule longue :
 Formule courte :
 
 > En cosmologie, stabiliser une grandeur, c'est stabiliser son role dans un modele et son acces, non isoler une constante absolue.
+
+Formule apres stress test :
+
+> En cosmologie, stabiliser une grandeur, c'est aussi dire dans quel sous-reseau elle prend fonction et quelle tension d'acces elle peut porter.
 
 ### 19. Suites produites et reprise ouverte
 
@@ -641,3 +696,7 @@ La cosmologie n'est pas une famille.
 Formule finale :
 
 > L'architecture cosmologique ne transforme pas les grandeurs cosmologiques en constantes primitives ; elle rend visible la maniere dont des fonctions differentes deviennent solidaires dans un modele d'univers et dans des regimes d'acces multiples.
+
+Formule de reprise :
+
+> La synthese du cycle doit maintenant etre lue comme la consolidation historique d'une macro-architecture a sous-reseaux, non comme un tableau plat de fonctions cosmologiques.

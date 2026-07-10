@@ -36,6 +36,14 @@ La question initiale du cycle est donc :
 
 > Comment classer des grandeurs cosmologiques sans confondre constantes, parametres de modele, observables reconstruites et tensions de donnees ?
 
+Lecture actuelle apres stress test :
+
+```text
+comment classer des grandeurs cosmologiques
+dans une macro-architecture inferentielle / reconstructive
+composee de sous-reseaux internes ?
+```
+
 ### 2. Pourquoi un cadrage avant les fiches
 
 Dans les cycles precedents, plusieurs categories fragiles ont ete retrogradees apres test.
@@ -122,6 +130,23 @@ Fond
 
 comme famille superieure.
 
+Lecture actuelle apres v1.3 et stress test :
+
+```text
+la carte v0.9 donne l'etat d'ouverture historique ;
+la carte active v1.2 et le stress test cosmologique corrigent maintenant
+la lecture par macro-architecture et sous-reseaux.
+```
+
+Precision :
+
+```text
+Cosmologique = macro-architecture ;
+Fond / expansion, budget normalise, etat de composante,
+primordial, croissance / reconstruction = sous-reseaux ;
+tensions = proprietes transversales d'acces et de modele.
+```
+
 ### 4. Corpus provisoire du cycle
 
 Le corpus initial doit rester limite.
@@ -139,16 +164,23 @@ sigma_8, S_8
 
 Ces objets ne sont pas de meme type.
 
-| Objet | Statut provisoire | Risque principal |
-|---|---|---|
-| Lambda | Terme de fond cosmologique / parametre de modele | Le traiter comme famille Fond |
-| H_0 | Parametre d'etat actuel | Le traiter comme constante fondamentale |
-| Omega_m, Omega_Lambda | Densites normalisees | Les traiter comme constantes primitives |
-| w | Relation d'etat | Confondre parametre phenomenologique et explication physique |
-| A_s, n_s | Conditions initiales perturbatives | Les ranger dans Fond |
-| sigma_8, S_8 | Observables / amplitudes reconstruites de structure | Confondre observable reconstruite et constante |
+| Objet | Statut provisoire | Sous-reseau actuel | Risque principal |
+|---|---|---|---|
+| Lambda | Terme de fond cosmologique / parametre de modele | Fond / expansion | Le traiter comme famille Fond |
+| H_0 | Parametre d'etat actuel | Fond / expansion + tension transversale | Le traiter comme constante fondamentale |
+| Omega_m, Omega_Lambda | Densites normalisees | Budget normalise | Les traiter comme constantes primitives |
+| w | Relation d'etat | Etat de composante | Confondre parametre phenomenologique et explication physique |
+| A_s, n_s | Conditions initiales perturbatives | Primordial | Les ranger dans Fond |
+| sigma_8, S_8 | Observables / amplitudes reconstruites de structure | Croissance / reconstruction | Confondre observable reconstruite et constante |
 
 La table est provisoire. Elle sert a eviter une ouverture trop large.
+
+Lecture de reprise :
+
+```text
+les objets restent les memes,
+mais leur lecture active passe par les sous-reseaux.
+```
 
 ### 5. Donnees recentes : prudence de statut
 
@@ -391,6 +423,10 @@ Regle :
 Tension = propriete d'un reseau d'acces et d'inference, non famille de constante.
 ```
 
+Apres stress test, les tensions sont lues comme transversales.
+
+Elles peuvent traverser plusieurs sous-reseaux sans devenir elles-memes un sous-reseau autonome.
+
 ### 9. Ordre recommande des fiches
 
 Le cycle ne doit pas commencer par la constante cosmologique isolee.
@@ -450,6 +486,19 @@ Regle 6 :
 ne pas utiliser les resultats DESI comme abandon de LambdaCDM ; les traiter comme une contrainte forte et actuelle qui motive un test prudent.
 ```
 
+Regle 7 :
+
+```text
+ne pas ouvrir prediction, philosophie ou cosmologie speculative dans ce cycle.
+```
+
+Regle 8 :
+
+```text
+si une formulation ancienne contredit le stress test,
+la reprendre dans la fiche active plutot que produire un addendum permanent.
+```
+
 ### 11. Matrice cosmologique minimale
 
 Chaque fiche cosmologique devra contenir au minimum :
@@ -458,12 +507,14 @@ Chaque fiche cosmologique devra contenir au minimum :
 |---|---|
 | Grandeur | De quoi parle-t-on exactement ? |
 | Type logique | Terme, parametre, densite normalisee, relation d'etat, condition initiale, observable reconstruite ? |
+| Sous-reseau | Fond / expansion, budget normalise, etat de composante, primordial, croissance / reconstruction, ou tension transversale ? |
 | Dimension | Dimensionnee ou sans dimension ? |
 | Famille principale | Couplage, Echelle, Relation, Raccordement, Orientation, Convention, ou aucune famille principale simple ? |
-| Fonction architecturale | Fond, parametre d'etat, densite normalisee, relation d'etat, condition initiale ? |
+| Fonction architecturale | Fond, parametre d'etat, densite normalisee, relation d'etat, condition initiale, observable reconstruite ? |
 | Regime physique | Dans quel modele ou domaine cosmologique la grandeur joue-t-elle un role ? |
 | Regime d'acces | CMB, BAO, supernovae, lentille faible, distance ladder, ajustement combine ? |
 | Dependances de modele | LambdaCDM, wCDM, w0waCDM, courbure, neutrinos, systematiques ? |
+| Test de retrait | Que perd-on si la grandeur est retiree du reseau ? |
 | Stabilisation empirique | Forte, modele-dependante, en tension, ouverte ? |
 | Limite | Ce que la grandeur ne dit pas |
 
@@ -479,6 +530,8 @@ relation d'etat
 condition initiale
 observable reconstruite
 tension de donnees
+sous-reseau interne
+tension transversale
 ```
 
 Il echouera s'il transforme :
@@ -497,9 +550,9 @@ Fond
 
 comme famille superieure.
 
-### 13. Prochaine fiche
+### 13. Suite produite et reprise ouverte
 
-La prochaine fiche logique est :
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_2_Lambda.md
@@ -513,6 +566,25 @@ Objectif :
 
 ```text
 classer Lambda comme terme de fond dans l'architecture cosmologique, sans reintroduire Fond comme famille superieure.
+```
+
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+le cadrage reste valide comme ouverture prudente,
+mais il doit etre lu a travers le plan de reprise v0.1.
 ```
 
 ### 14. Sources de controle
@@ -532,6 +604,11 @@ Sources a utiliser pour les fiches du cycle :
 Documents internes :
 
 ```text
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
 Test de la famille Fond.docx
