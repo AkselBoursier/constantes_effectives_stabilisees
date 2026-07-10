@@ -485,12 +485,37 @@ classement par parametre de modele seul,
 classement par acces seul.
 ```
 
-### 17. Documents integres
+### 17. Plan de reprise produit ensuite
+
+Le stress test ne doit pas rester une couche externe au cycle.
+
+Document de reprise :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Role :
+
+```text
+preparer la clarification interne des fiches cosmologiques,
+sans creer d'addendum permanent.
+```
+
+Decision :
+
+```text
+reprendre le cycle par sous-reseaux
+plutot que multiplier les notes superposees.
+```
+
+### 18. Documents integres
 
 Documents cosmologiques :
 
 ```text
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
 ```
 
@@ -516,7 +541,7 @@ Fiches sources du cycle :
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
 ```
 
-### 18. Formule de cloture
+### 19. Formule de cloture
 
 Le stress test ne fragilise pas l'architecture cosmologique.
 

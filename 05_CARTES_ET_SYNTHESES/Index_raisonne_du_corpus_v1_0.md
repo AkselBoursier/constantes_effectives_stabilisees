@@ -232,12 +232,15 @@ Documents actifs :
 | 7 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md` | Preuve locale | sigma_8 et S_8 |
 | 8 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md` | Consolidation | Synthese du cycle |
 | 9 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
+| 10 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
+| 11 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Plan de reprise | Reprise controlee du cycle |
 
 Decision :
 
 ```text
-pour une lecture rapide, lire la synthese du cycle et la note d'architecture.
+pour une lecture rapide, lire la synthese du cycle, la note d'architecture et le stress test.
 pour verifier une decision locale, revenir a la fiche correspondante.
+pour reprendre le cycle, partir du plan de reprise v0.1.
 ```
 
 ### 10. Cycle metrologique SI
@@ -369,6 +372,7 @@ Architecture_saveur_Higgs_notes.md
 Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_2_refonte.md
 Architecture_cosmologique_stress_test_v0_1.md
+Plan_reprise_cycle_cosmologique_v0_1.md
 ```
 
 ### 13. Dependances principales
@@ -394,13 +398,14 @@ PROJECT_BRIEF.docx
   -> Carte_dependances_architectures_v0_1.md
   -> Carte_consolidee_v1_2_refonte.md
   -> Architecture_cosmologique_stress_test_v0_1.md
+  -> Plan_reprise_cycle_cosmologique_v0_1.md
   -> Index_raisonne_du_corpus_v1_0.md
 ```
 
 Lecture fonctionnelle :
 
 ```text
-methode -> criblage -> architecture -> dependances -> carte consolidee -> stress test
+methode -> criblage -> architecture -> dependances -> carte consolidee -> stress test -> plan de reprise
 ```
 
 ### 14. Lacunes documentaires identifiees
@@ -596,6 +601,7 @@ Architectures actives :
 Cycles actifs :
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/
 ```
 

@@ -562,30 +562,33 @@ Formule courte :
 
 > En cosmologie, stabiliser une grandeur, c'est stabiliser son role dans un modele et son acces, non isoler une constante absolue.
 
-### 19. Suite recommandee
+### 19. Suites produites et reprise ouverte
 
-La prochaine etape la plus prudente est une note d'integration architecturale :
+La suite recommandee par cette synthese a ete produite.
+
+Documents produits ensuite :
 
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-```
-
-Objectif :
-
-```text
-extraire de cette synthese la decision de rang : Architecture cosmologique = architecture inter-familles confirmee, mais non famille.
-```
-
-Ensuite seulement, produire :
-
-```text
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_0.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 ```
 
-Objectif :
+Decision actuelle :
 
 ```text
-integrer la note methodologique v1.1, l'architecture effective basse energie et l'architecture cosmologique dans une carte de reference.
+la synthese reste valide comme consolidation historique du cycle,
+mais elle doit etre relue a travers le stress test cosmologique.
+```
+
+Suite ouverte :
+
+```text
+reprise controlee du cycle cosmologique,
+non par addendum permanent,
+mais par clarification interne des fiches actives.
 ```
 
 ### 20. Documents sources internes
@@ -601,6 +604,7 @@ Documents internes utilises :
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_5_w.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
 PROJECT_BRIEF.docx
 ```

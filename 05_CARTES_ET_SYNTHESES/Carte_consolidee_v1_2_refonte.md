@@ -455,6 +455,7 @@ Elle ouvre des chantiers plus nets.
 | Chantier | Document | Statut |
 |---|---|---|
 | Stress test cosmologique | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Produit |
+| Plan de reprise du cycle cosmologique | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Produit |
 | Application de la matrice aux fiches sensibles | Addenda ou revisions locales | Prochaine suite possible |
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Possible |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
@@ -471,7 +472,7 @@ Elle peut etre :
 ```text
 soit l'application de la matrice v1.2 a quelques fiches sensibles,
 soit une matrice temporelle autonome,
-soit un addendum cosmologique par sous-reseaux.
+soit une reprise controlee du cycle cosmologique sur branche dediee.
 ```
 
 ### 19. Documents integres
@@ -505,6 +506,13 @@ Architectures :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+```
+
+Cycle cosmologique :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 ```
 
 ### 20. Formule de cloture
