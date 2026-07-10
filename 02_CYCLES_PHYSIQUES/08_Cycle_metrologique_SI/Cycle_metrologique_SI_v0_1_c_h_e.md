@@ -75,7 +75,7 @@ Formule :
 ```text
 Architecture metrologique SI =
 Convention
-+ Relation
++ Composition exacte sous controle v1.3
 + Echelle
 + Realisation pratique
 + Role physique conserve
@@ -93,7 +93,14 @@ et non :
 famille metrologique superieure
 ```
 
-Les constantes definissantes appartiennent localement a la famille Convention, mais leur role physique peut mobiliser Relation, Echelle ou Couplage selon le cas.
+Les constantes definissantes appartiennent localement a la famille Convention, mais leur role physique peut mobiliser composition, echelle, couplage ou relation qualifiee selon le cas.
+
+Mise a jour v1.3 :
+
+```text
+une relation exacte d'ecriture ne suffit pas a classer une grandeur dans Relation ;
+il faut d'abord identifier la forme logique, le regime SI, l'acces et l'architecture.
+```
 
 ### 4. Corpus traite
 
@@ -104,6 +111,29 @@ Les constantes definissantes appartiennent localement a la famille Convention, m
 | e | Constante definissante primaire | Quantum de charge / entree du couplage electromagnetique | Confondre charge dimensionnee et couplage sans dimension |
 
 Ce tableau montre que les trois constantes ont le meme statut metrologique, mais pas le meme role physique.
+
+### 4bis. Rang 0 et composition exacte
+
+Le rang pre-familial permet de distinguer :
+
+```text
+valeur definissante
+composition exacte
+relation physique structurante
+couplage sans dimension
+realisation pratique
+```
+
+Dans l'architecture SI, `K_J`, `R_K` et `R` sont d'abord des compositions exactes heritees du systeme de definition.
+
+Elles ne doivent pas etre classees dans Relation par defaut.
+
+Decision :
+
+```text
+composition exacte = forme logique de stabilisation ;
+Relation eventuelle = seulement si la liaison joue une fonction irreductible au-dela de cette composition.
+```
 
 ### 5. c : constante definissante et structure espace-temps
 
@@ -309,8 +339,8 @@ Comme h et e sont exacts dans le SI, ces relations donnent des constantes exacte
 Classement :
 
 ```text
-K_J : Relation exacte par composition dans l'architecture SI
-R_K : Relation exacte par composition dans l'architecture SI
+K_J : composition exacte dans l'architecture SI
+R_K : composition exacte dans l'architecture SI
 ```
 
 Decision :
@@ -374,8 +404,8 @@ Mais leurs roles physiques secondaires divergent.
 
 | Grandeur | Famille SI | Fonction physique associee | Familles ou fonctions mobilisees |
 |---|---|---|---|
-| c | Convention | Relation espace-temps / echelle causale | Relation, Echelle |
-| h | Convention | Quantum d'action / relation energie-frequence | Echelle, Relation |
+| c | Convention | Relation espace-temps / echelle causale | Relation qualifiee, Echelle |
+| h | Convention | Quantum d'action / relation energie-frequence | Echelle, relation quantique |
 | e | Convention | Quantum de charge / entree de alpha | Echelle, Couplage sous reformulation |
 
 Decision :
@@ -389,6 +419,7 @@ Cette decision renforce la methode generale :
 ```text
 famille principale = fonction locale dominante dans le contexte choisi
 architecture = articulation de fonctions dans un regime
+rang 0 = forme logique de stabilisation avant la famille
 ```
 
 ### 11. Regime physique et regime d'acces
@@ -421,6 +452,7 @@ Il le rend operatoire dans un systeme de mesure.
 | Regime d'acces | Definition metre-seconde | Definition kilogramme via h | Definition ampere-coulomb via e |
 | Stabilisation empirique | Historique, puis absorbee par definition SI | Historique, puis absorbee par definition SI | Historique, puis absorbee par definition SI |
 | Stabilisation conventionnelle | Definissante, exacte | Definissante, exacte | Definissante, exacte |
+| Trajectoire | Mesure historique puis definition du metre | Mesure historique puis definition du kilogramme | Mesure historique puis definition de l'ampere |
 | Architecture | Metrologique SI | Metrologique SI | Metrologique SI |
 | Limite | Ne dit pas toute la physique de la propagation | Ne donne pas une interpretation de la quantification | Ne remplace pas alpha |
 
@@ -435,6 +467,7 @@ La fiche confirme six decisions.
 4. Exactitude SI n'est pas precision empirique.
 5. Les constantes exactes par composition prolongent les constantes definissantes primaires.
 6. e ne doit pas etre confondu avec le couplage electromagnetique sans dimension alpha.
+7. La composition exacte releve d'abord du rang 0, non de Relation par defaut.
 ```
 
 ### 14. Ce que la fiche ne confirme pas
@@ -469,21 +502,29 @@ Formule courte :
 
 > Une constante definissante peut etre exacte dans le SI sans etre seulement conventionnelle en physique.
 
-### 16. Suite recommandee
+### 16. Statut apres integration
 
-La suite la plus prudente est une note d'integration architecturale :
+La suite historique a ete la note d'integration architecturale :
 
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 ```
 
-Objectif :
+Objectif realise :
 
 ```text
 integrer k_B, N_A, R, c, h et e dans une architecture metrologique SI consolidee.
 ```
 
-Ensuite seulement, la carte consolidee pourra etre mise a jour si necessaire.
+Cette note a ensuite alimente les cartes consolidees.
+
+Statut actuel :
+
+```text
+cycle repris dans la documentation active ;
+architecture SI confirmee ;
+point v1.3 a maintenir : composition exacte avant Relation.
+```
 
 ### 17. Documents sources internes
 
@@ -492,8 +533,10 @@ Documents internes utilises :
 ```text
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_0.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 ```
 
 ### 18. Sources de controle externes
@@ -514,6 +557,7 @@ h est exact dans le SI, mais reste quantum d'action.
 e est exact dans le SI, mais alpha reste le couplage sans dimension.
 K_J et R_K sont exacts par composition.
 L'architecture SI n'est pas une famille.
+La composition exacte n'est pas Relation par defaut.
 ```
 
 Formule finale :

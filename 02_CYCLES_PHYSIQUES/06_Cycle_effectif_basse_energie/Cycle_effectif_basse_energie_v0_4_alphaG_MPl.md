@@ -567,7 +567,7 @@ n'est pas exacte par convention.
 Stabilisation conventionnelle :
 
 ```text
-non concernée
+non concernee
 ```
 
 ou, plus precisement :
@@ -591,7 +591,7 @@ derivee de constantes dont certaines sont exactes, mais limitee par G_N mesure
 | Regime d'acces epistemique | Construction a partir de G_N et de l'echelle choisie | Grandeur derivee de G_N, hbar et c |
 | Dependance d'echelle | Essentielle : alpha_G(E) ~ (E/M_Pl)^2 | Non couplage courant ; echelle de reference |
 | Stabilisation empirique | Forte suppression pour E << M_Pl ; depend de G_N pour sa normalisation | Derivee, incertitude dominee par G_N |
-| Stabilisation conventionnelle | Non concernée | Non exacte par convention, car G_N est mesure |
+| Stabilisation conventionnelle | Non concernee | Non exacte par convention, car G_N est mesure |
 | Architecture | Effective basse energie / gravitation | Effective basse energie / gravitation |
 | Limite | N'est pas un couplage courant QCD ; ne se mesure pas comme alpha | N'est pas une frontiere nette ni une theorie de gravitation quantique |
 
@@ -715,28 +715,34 @@ le raccordement peut etre porte par une constante unique, comme G_F,
 ou etre seulement architectural, comme dans le cas QCD et dans le cas gravitationnel.
 ```
 
-### 18. Prochaine suite logique
+### 18. Statut apres synthese
 
-La prochaine etape ne devrait pas introduire immediatement une nouvelle grandeur.
-
-La suite la plus propre serait de produire une synthese du cycle :
+La suite logique a ete produite :
 
 ```text
 Synthese_cycle_effectif_basse_energie_v0_1.md
 ```
 
-Objectif :
+Objectif realise :
 
 ```text
 stabiliser la forme finale de l'architecture effective basse energie apres les quatre cas GF, MW, alpha_s/Lambda_QCD et alpha_G/M_Pl.
 ```
 
-Cette synthese devra trancher trois points :
+Cette synthese a tranche trois points :
 
 ```text
-1. l'architecture effective basse energie est-elle maintenant suffisamment robuste ?
-2. faut-il distinguer plusieurs sous-types internes d'effectivite ?
-3. comment eviter que "effectif" devienne une famille trop large ?
+1. l'architecture effective basse energie est robuste comme architecture inter-familles ;
+2. plusieurs sous-types internes d'effectivite doivent etre distingues ;
+3. "effectif" ne doit pas devenir une famille superieure.
+```
+
+Lecture v1.3 :
+
+```text
+alpha_G(E) / M_Pl confirme une trajectoire de stabilisation par suppression d'echelle,
+avec Validite et Hierarchie comme roles contextuels,
+sans creer une famille gravitationnelle effective autonome.
 ```
 
 ### 19. Sources de controle

@@ -59,6 +59,14 @@ Seuil
 Hierarchie
 ```
 
+Mise a jour v1.3 :
+
+```text
+le cycle doit maintenant etre lu avec le rang pre-familial,
+Relation comme famille faible sous audit,
+et la trajectoire de stabilisation des regimes effectifs.
+```
+
 La formule provisoirement stabilisee devient :
 
 > Une architecture effective basse energie stabilise les grandeurs qui rendent un regime descriptible sans resoudre explicitement tout ce qui appartient a un niveau, une echelle ou une dynamique plus profonde.
@@ -320,7 +328,7 @@ Formulation consolidee :
 
 ### 5. Familles impliquees
 
-L'architecture effective basse energie ne remplace pas les familles de la carte v0.8.
+L'architecture effective basse energie ne remplace pas les familles de la methode v1.3.
 
 Elle les articule.
 
@@ -333,7 +341,9 @@ Elle les articule.
 | alpha_G(E) | Couplage | Couplage gravitationnel effectif de regime | Validite, hierarchie |
 | M_Pl | Echelle | Echelle gravitationnelle de validite attendue | Validite, hierarchie, seuil faible |
 
-La famille Relation reste utile, mais elle ne doit pas absorber le cycle.
+Relation reste une famille faible sous audit.
+
+Elle peut intervenir lorsque des liaisons de regime sont explicites, mais elle ne doit pas absorber le cycle.
 
 Elle intervient lorsque l'on explicite les liaisons :
 
@@ -343,7 +353,7 @@ M_W avec g, v, theta_W
 alpha_G(E) avec E / M_Pl
 ```
 
-Mais ces relations ne suffisent pas a classer les grandeurs. La priorite reste la fonction principale :
+Mais ces relations ne suffisent pas a classer les grandeurs. La priorite reste la forme logique, la fonction principale, le regime et la trajectoire :
 
 ```text
 G_F raccorde
@@ -381,6 +391,16 @@ Dans le cas faible, cela simplifie.
 Dans le cas QCD, cela rend la description perturbative insuffisante.
 
 Dans le cas gravitationnel, cela rend la gravitation quantique fortement supprimee.
+
+La trajectoire du cycle est donc :
+
+```text
+description complete ou plus profonde
+-> regime limite
+-> non-resolution explicite de certains degres de liberte
+-> stabilisation locale d'un coefficient, d'un couplage ou d'une echelle
+-> domaine de validite explicite
+```
 
 ### 7. Statut du raccordement
 
@@ -715,14 +735,14 @@ Mais ces extensions ne doivent pas etre ajoutees avant consolidation.
 
 ### 17. Effet sur la carte generale
 
-La carte v0.8 doit integrer le resultat suivant :
+Les cartes consolidees actives integrent le resultat suivant :
 
 ```text
 Architecture effective basse energie =
 architecture inter-familles confirmee par le cycle GF / MW / alpha_s / Lambda_QCD / alpha_G / M_Pl.
 ```
 
-Elle doit aussi preciser :
+Elles doivent maintenir les precisions suivantes :
 
 ```text
 1. Raccordement peut etre local ou architectural.
@@ -732,7 +752,7 @@ Elle doit aussi preciser :
 5. "Effectif" ne doit pas devenir une famille superieure.
 ```
 
-Cette integration renforcera la distinction :
+Cette integration renforce la distinction :
 
 ```text
 famille = fonction principale d'une grandeur
@@ -749,31 +769,29 @@ Formule plus courte :
 
 > L'effectivite stabilise moins une valeur qu'une validite de description.
 
-### 19. Prochaine etape
+### 19. Statut apres integration
 
-La prochaine etape logique n'est pas une nouvelle fiche physique isolee.
-
-Elle devrait etre une note d'integration :
+La prochaine etape historique a ete la note d'integration :
 
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/
 `-- Architecture_effective_basse_energie_notes.md
 ```
 
-Objectif :
+Objectif realise :
 
 ```text
 integrer la synthese du cycle dans le dossier des architectures inter-familles.
 ```
 
-Cette note pourrait ensuite alimenter une nouvelle carte consolidee.
+La note a ensuite alimente les cartes consolidees et la comparaison des architectures.
 
-Une autre suite possible, plus ambitieuse, serait de passer a l'architecture cosmologique. Mais cette option est plus risquee, car elle melange constantes, parametres de modele, observables reconstruites, conditions initiales et tensions de donnees.
-
-Recommandation :
+Statut actuel :
 
 ```text
-consolider l'architecture effective basse energie avant d'ouvrir un nouveau cycle cosmologique.
+cycle repris dans la documentation active ;
+architecture effective basse energie confirmee ;
+prochaine tache non locale : audit de resynchronisation avec les autres cycles physiques.
 ```
 
 ### 20. Documents de base
@@ -786,6 +804,8 @@ Cycle effectif basse energie v0.2 - M_W
 Cycle effectif basse energie v0.3 - alpha_s(Q^2) / Lambda_QCD
 Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 Carte consolidee v0.8
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
 PROJECT_BRIEF.docx
 ```
 
