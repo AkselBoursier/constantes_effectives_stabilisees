@@ -1,22 +1,32 @@
 # Reecriture positive du vocabulaire actif v0.1
 
-## Dissolution des anciens idiomes de classement
+## Trace genealogique du probleme de classement
 
 ### 1. Fonction du document
 
 Ce document repond a un risque devenu visible dans le corpus actif.
 
-Les deux anciens idiomes vises sont nommes ici une seule fois en clair :
+Les deux anciens termes vises sont explicites ici en section genealogique :
 
 ```text
 "famille" et "relation".
 ```
 
+Note genealogique :
+
+```text
+le chantier a d'abord ete intitule
+Dissolution_idiomes_famille_relation_v0_1.
+
+Cet intitule reste la trace historique du probleme repere ;
+le fichier actif porte maintenant un titre positif.
+```
+
 Dans la suite du document, ils sont designes par :
 
 ```text
-ancien idiome A ;
-ancien idiome B.
+ancien terme A ;
+ancien terme B.
 ```
 
 Le probleme n'est pas seulement lexical.
@@ -32,7 +42,7 @@ Objectif :
 ```text
 sortir de la negation,
 reformuler positivement les enonces,
-et reserver les anciens idiomes a une archive historique explicite.
+et reserver les anciens termes a une archive historique explicite.
 ```
 
 ### 2. Diagnostic de proliferation
@@ -73,7 +83,7 @@ Decision :
 le vocabulaire actif doit devenir positif.
 ```
 
-Les anciens idiomes ne doivent subsister que dans trois cas :
+Les anciens termes ne doivent subsister que dans trois cas :
 
 ```text
 1. titre ou nom historique d'un document source ;
@@ -120,7 +130,7 @@ dire d'abord ce qu'il est.
 Ancien style :
 
 ```text
-X n'appartient pas a l'ancien idiome A.
+X n'appartient pas a l'ancien terme A.
 ```
 
 Style positif :
@@ -134,7 +144,7 @@ X est une architecture de solidarite entre fonctions stabilisees dans un regime.
 Ancien style :
 
 ```text
-X ne doit pas etre range dans l'ancien idiome B.
+X ne doit pas etre range dans l'ancien terme B.
 ```
 
 Style positif :
@@ -149,7 +159,7 @@ ou une equation d'etat selon le cas.
 Ancien style :
 
 ```text
-Seuil n'appartient pas a l'ancien idiome A.
+Seuil n'appartient pas a l'ancien terme A.
 ```
 
 Style positif :
@@ -190,14 +200,14 @@ avec un role thermodynamique macroscopique.
 
 ### 6. Regle de reecriture
 
-Pour toute phrase contenant les anciens idiomes, appliquer l'ordre suivant.
+Pour toute phrase contenant les anciens termes, appliquer l'ordre suivant.
 
 ```text
 1. Identifier si l'occurrence est historique ou active.
 2. Si elle est historique, la conserver seulement dans une section genealogique.
 3. Si elle est active, chercher la formulation positive.
 4. Remplacer la negation par la fonction, le role, l'acces, l'architecture ou la trajectoire.
-5. Verifier que la phrase ne recree pas l'ancien idiome en commentaire defensif.
+5. Verifier que la phrase ne recree pas l'ancien terme en commentaire defensif.
 ```
 
 Test de validation :

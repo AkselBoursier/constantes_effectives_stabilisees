@@ -10,7 +10,7 @@ Il sert a rendre le corpus navigable apres :
 
 ```text
 la carte consolidee v1.1
-la synthese des architectures inter-familles v1.0
+la synthese des architectures inter-fonctions v1.0
 la note methodologique v1.2
 la revision temporelle et le criblage critique
 la note methodologique v1.3
@@ -75,7 +75,7 @@ Ces documents forment le noyau actif du corpus.
 
 | Document | Statut | Role |
 |---|---|---|
-| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : rang pre-familial, roles contextuels, temporalite |
+| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : rang de forme logique, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
@@ -100,9 +100,9 @@ Index_raisonne_du_corpus_v1_0.md
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
-| `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens idiomes de classement |
+| `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens termes de classement |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Regle de commit, push et branches apres stabilisation documentaire |
-| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang pre-familial et temporalite explicite |
+| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang de forme logique et temporalite explicite |
 | `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md` | Revision active | Extraction et recoupement des huit critiques constructives |
 | `01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md` | Revision active | Reorganisation de fond autour de la temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md` | Consolidation historique | Socle methodologique precedent |
@@ -127,7 +127,7 @@ La v1.1 reste utile pour comprendre la transition vers :
 
 ```text
 regime d'acces
-architecture inter-familles
+architecture inter-fonctions
 extension SI
 ```
 
@@ -138,7 +138,7 @@ extension SI
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres methode v1.3 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md` | Consolidation historique | Carte avant rang pre-familial et refonte de Relation |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md` | Consolidation historique | Carte avant rang de forme logique et requalification des liaisons |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_0.md` | Archive de consolidation | Etape avant extension SI |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md` | Archive de consolidation | Etape avant cosmologie et SI consolidees |
 
@@ -150,7 +150,7 @@ Carte_consolidee_v1_2_refonte.md remplace la v1.1 comme carte de reference activ
 
 Les cartes anterieures restent utiles pour retracer les decisions.
 
-### 7. Architectures inter-familles
+### 7. Architectures inter-fonctions
 
 Le corpus stabilise quatre architectures.
 
@@ -164,7 +164,8 @@ Le corpus stabilise quatre architectures.
 Regle de rang :
 
 ```text
-une architecture inter-familles n'est pas une famille superieure.
+une architecture inter-fonctions est une solidarite de fonctions,
+pas un niveau de classement superieur.
 ```
 
 Point documentaire :
@@ -332,7 +333,7 @@ Groupes principaux :
 |---|---|
 | Brief initial | Point de depart du projet |
 | Methodes et addenda initiaux | Genese de la methode |
-| Tests de familles | Exploration des familles fragiles |
+| Tests de fonctions directrices | Exploration des fonctions fragiles |
 | Fiches physiques initiales | Preuves locales anciennes |
 | Syntheses de cycles initiales | Consolidations historiques |
 | Cartes consolidees v0.1 a v0.8 | Evolution de la carte avant l'arborescence Markdown |
@@ -458,8 +459,8 @@ Depuis la revision de fond sur la temporalite et le criblage des critiques, la p
 La version methodologique active integrant explicitement les apports de la revision temporelle et du criblage critique est produite.
 
 ```text
-le rang pre-familial de forme logique,
-la refonte de Relation,
+le rang de forme logique,
+la requalification des liaisons stabilisees,
 les roles contextuels,
 les axes physique / acces,
 la trajectoire de stabilisation,
@@ -482,7 +483,7 @@ Raison :
 
 ```text
 les critiques montrent que la methode doit changer l'ordre des questions :
-forme logique avant famille,
+forme logique avant fonction directrice,
 fonction avant role,
 acces et modele comme axes orthogonaux,
 temporalite comme trajectoire.
@@ -580,7 +581,7 @@ Avant d'ouvrir un nouveau cycle physique :
 3. Appliquer la matrice de criblage si le classement est litigieux.
 4. Lire la carte v1.1.
 5. Identifier le cycle ou la fiche de preuve la plus proche.
-6. Ne creer une nouvelle famille que si le test de resistance et le test d'architecture echouent.
+6. Ne creer une nouvelle fonction directrice que si le test de resistance et le test d'architecture echouent.
 ```
 
 Avant de produire une nouvelle synthese :

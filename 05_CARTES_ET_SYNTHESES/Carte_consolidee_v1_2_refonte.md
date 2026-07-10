@@ -20,8 +20,8 @@ Elle ne supprime pas la v1.1.
 La v1.1 reste utile comme carte historique :
 
 ```text
-avant rang pre-familial,
-avant refonte de Relation,
+avant rang de forme logique,
+avant requalification des liaisons stabilisees,
 avant roles contextuels,
 avant representation des architectures comme reseaux.
 ```
@@ -29,7 +29,7 @@ avant representation des architectures comme reseaux.
 La modification principale est :
 
 ```text
-la carte n'est plus d'abord un tableau de familles ;
+la carte n'est plus d'abord un tableau de classes fonctionnelles ;
 elle devient une grammaire de stabilisation par rangs, roles, acces,
 architectures et trajectoires.
 ```
@@ -38,7 +38,7 @@ architectures et trajectoires.
 
 Definition de reference :
 
-> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une relation, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une liaison qualifiee, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
 
 Formule courte :
 
@@ -56,7 +56,7 @@ forme stabilisee
 Consequence :
 
 ```text
-avant de classer une grandeur dans une famille,
+avant d'attribuer une fonction directrice a une grandeur,
 il faut identifier sa forme logique,
 son regime,
 son acces,
@@ -69,11 +69,11 @@ et sa trajectoire de stabilisation.
 
 | Point | v1.1 | v1.2 refonte |
 |---|---|---|
-| Point de depart | Familles superieures | Rang pre-familial puis familles |
-| Relation | Famille ordinaire mais surveillee | Famille faible sous audit |
+| Point de depart | Classes fonctionnelles englobantes | Rang de forme logique puis fonctions directrices |
+| Liaison non qualifiee | Classe ordinaire mais surveillee | Fonction faible sous audit |
 | Fonctions transversales | Niveau secondaire | Roles contextuels avec portee |
 | Fonctions architecturales | Niveau distinct | Roles contextuels architecturaux |
-| Architecture | Niveau inter-familles reconnu | Reseau de dependances soumis a stress test |
+| Architecture | Niveau inter-fonctions reconnu | Reseau de dependances soumis a stress test |
 | Temporalite | Peu explicite | Axe transversal de trajectoire |
 | Acces | Regime obligatoire | Couplage modele-acces et robustesse de l'acces |
 | Carte | Tableau consolide | Carte de rangs et de dependances |
@@ -90,7 +90,7 @@ mais change l'ordre des questions.
 | Rang | Niveau | Question directrice |
 |---|---|---|
 | 0 | Forme logique de stabilisation | Quelle forme est stabilisee avant tout classement fonctionnel ? |
-| 1 | Famille fonctionnelle | Que fait principalement la grandeur ? |
+| 1 | Fonction directrice | Que fait principalement la grandeur ? |
 | 2 | Role contextuel | Quel role prend-elle dans un regime, un acces ou une architecture ? |
 | 3 | Axes physique / acces | Ou opere-t-elle et comment est-elle connue ? |
 | 4 | Architecture / reseau | Quelles fonctions deviennent solidaires ? |
@@ -99,12 +99,12 @@ mais change l'ordre des questions.
 Ordre obligatoire :
 
 ```text
-forme -> famille -> role -> acces -> architecture -> trajectoire.
+forme -> fonction -> role -> acces -> architecture -> trajectoire.
 ```
 
 ### 5. Rang 0 : formes logiques
 
-Le rang 0 evite de transformer trop vite une forme d'ecriture en famille.
+Le rang 0 evite de transformer trop vite une forme d'ecriture en fonction directrice.
 
 | Forme logique | Question | Exemples |
 |---|---|---|
@@ -112,7 +112,7 @@ Le rang 0 evite de transformer trop vite une forme d'ecriture en famille.
 | Rapport | Un quotient est-il stabilise ? | m_p / m_e, Omega_i |
 | Ecart | Un ecart spectral ou de regime est-il stabilise ? | Delta m^2 |
 | Composition | Une grandeur est-elle composee d'autres grandeurs ? | R, K_J, R_K |
-| Relation d'etat | Une loi entre variables d'etat est-elle stabilisee ? | w |
+| Equation d'etat | Une loi entre variables d'etat est-elle stabilisee ? | w |
 | Fonction d'echelle | Une dependance en echelle est-elle stabilisee ? | alpha_s(Q^2), alpha_G(E) |
 | Matrice | Une structure matricielle est-elle stabilisee ? | CKM, PMNS, Yukawa |
 | Phase | Une orientation complexe est-elle stabilisee ? | delta_CP, phases CKM |
@@ -124,26 +124,26 @@ Le rang 0 evite de transformer trop vite une forme d'ecriture en famille.
 Regle :
 
 ```text
-une relation d'ecriture n'impose pas la famille Relation.
+une liaison d'ecriture n'impose pas une fonction directrice de liaison.
 ```
 
-### 6. Rang 1 : familles fonctionnelles
+### 6. Rang 1 : fonctions directrices
 
-La v1.2 conserve cinq familles fortes et une famille faible sous audit.
+La v1.2 conserve cinq fonctions fortes et une fonction de liaison sous audit.
 
-| Famille | Statut v1.2 | Fonction principale | Exemples |
+| Fonction | Statut v1.2 | Fonction principale | Exemples |
 |---|---|---|---|
 | Couplage | Forte | Parametrer une intensite d'interaction ou de liaison | alpha, alpha_s(Q^2), alpha_G(E), Y_f |
 | Echelle | Forte | Fixer ou reveler un ordre de grandeur structurant | v, M_W, Lambda_QCD, M_Pl |
 | Raccordement | Forte | Relier deux descriptions, niveaux ou regimes | G_F |
 | Orientation | Forte | Stabiliser un desalignement entre bases, champs ou secteurs | theta_W, CKM, PMNS, delta_CP |
 | Convention | Forte | Recevoir une valeur exacte dans un systeme de definition | k_B, N_A, c, h, e |
-| Relation | Faible sous audit | Stabiliser une liaison irreductible entre grandeurs | Cas a justifier un par un |
+| Liaison stabilisee | Faible sous audit | Stabiliser une liaison irreductible entre grandeurs | Cas a justifier un par un |
 
 Decision :
 
 ```text
-Relation n'est plus une famille par defaut.
+La liaison stabilisee n'est plus une fonction par defaut.
 ```
 
 Elle ne peut etre conservee que si la liaison est vraiment la fonction principale et ne se reduit pas a :
@@ -156,22 +156,22 @@ une composition,
 ou une architecture.
 ```
 
-### 7. Re-traitement de Relation
+### 7. Re-traitement des liaisons stabilisees
 
 | Cas | Ancienne tentation | Lecture v1.2 |
 |---|---|---|
-| `m_f = y_f v / sqrt(2)` | Relation constitutive | Architecture Saveur-Higgs |
-| `R = N_A k_B` | Relation exacte | Architecture SI + composition exacte |
-| `K_J = 2 e / h` | Relation exacte | Architecture SI + realisation electrique |
-| `R_K = h / e^2` | Relation exacte | Architecture SI + realisation electrique |
-| `Omega_i = rho_i / rho_crit` | Rapport relationnel | Densite normalisee cosmologique |
-| `w = p / rho` | Relation | Role contextuel d'etat |
-| `Delta m^2` | Relation spectrale | Ecart spectral + dephasage oscillatoire |
+| `m_f = y_f v / sqrt(2)` | Liaison constitutive | Architecture Saveur-Higgs |
+| `R = N_A k_B` | Composition exacte | Architecture SI + composition exacte |
+| `K_J = 2 e / h` | Composition exacte | Architecture SI + realisation electrique |
+| `R_K = h / e^2` | Composition exacte | Architecture SI + realisation electrique |
+| `Omega_i = rho_i / rho_crit` | Rapport normalise | Densite normalisee cosmologique |
+| `w = p / rho` | Equation d'etat | Role contextuel d'etat |
+| `Delta m^2` | Liaison spectrale | Ecart spectral + dephasage oscillatoire |
 
 Formule :
 
 ```text
-Relation cesse d'etre une case ;
+La liaison stabilisee cesse d'etre une case ;
 elle devient une question a tester.
 ```
 
@@ -198,14 +198,14 @@ documentaire.
 | Fond | Structure-t-il l'etat global d'un modele ? | Architecturale |
 | Parametre d'etat | Decrit-il un etat dans un modele ou a une epoque ? | Architecturale |
 | Densite normalisee | Normalise-t-il une composante dans un budget global ? | Architecturale |
-| Relation d'etat | Decrit-il le comportement d'une composante ? | Architecturale |
+| Equation d'etat | Decrit-il le comportement d'une composante ? | Architecturale |
 | Condition initiale | Fixe-t-il un etat ou spectre initial ? | Architecturale |
 | Observable reconstruite | Est-il infere par un reseau modele-donnees ? | Architecturale |
 
 Regle :
 
 ```text
-un role peut etre indispensable sans devenir une famille.
+un role peut etre indispensable sans devenir une fonction directrice.
 ```
 
 ### 9. Rang 3 : regime physique et regime d'acces
@@ -254,7 +254,7 @@ Quatre architectures sont actives.
 Regle de rang :
 
 ```text
-une architecture inter-familles n'est pas une famille superieure.
+une architecture inter-fonctions n'est pas un niveau de classement superieur.
 ```
 
 Definition :
@@ -282,7 +282,7 @@ modifie le reseau de fonctions.
 
 ### 12. Rang 5 : temporalite et trajectoires
 
-La temporalite n'est pas une famille.
+La temporalite n'est pas une fonction directrice.
 
 Elle n'est pas une architecture.
 
@@ -310,7 +310,7 @@ pas une nouvelle categorie taxonomique.
 La v1.2 conserve la prudence suivante :
 
 ```text
-une tension de donnees n'est pas une famille.
+une tension de donnees n'est pas une fonction directrice.
 ```
 
 Elle peut toutefois devenir un signal actif pour tester :
@@ -338,8 +338,8 @@ Toute nouvelle fiche devrait contenir au minimum :
 |---|---|
 | Grandeur | De quoi parle-t-on exactement ? |
 | Forme logique | Quelle forme est stabilisee ? |
-| Famille candidate | Quelle fonction principale semble dominante ? |
-| Test de famille | La famille resiste-t-elle au criblage ? |
+| Fonction directrice candidate | Quelle fonction principale semble dominante ? |
+| Test de fonction | La fonction resiste-t-elle au criblage ? |
 | Role contextuel | Quel role local, transversal ou architectural prend-elle ? |
 | Portee du role | Ou ce role vaut-il ? |
 | Regime physique | Dans quel domaine opere-t-elle ? |
@@ -362,10 +362,10 @@ Ordre de travail :
 2. Identifier la forme logique.
 3. Identifier le regime physique.
 4. Identifier le regime d'acces.
-5. Proposer une famille candidate.
-6. Tester si la famille est irreductible au rang 0.
-7. Tester si la famille est irreductible a un role contextuel.
-8. Tester si Relation est vraiment necessaire.
+5. Proposer une fonction directrice candidate.
+6. Tester si la fonction est irreductible au rang 0.
+7. Tester si la fonction est irreductible a un role contextuel.
+8. Tester si une liaison stabilisee est vraiment necessaire.
 9. Identifier les roles contextuels.
 10. Verifier les dependances de modele et d'acces.
 11. Tester l'existence d'une architecture.
@@ -392,13 +392,13 @@ dossier a produire avant decision.
 La v1.2 stabilise les decisions suivantes.
 
 ```text
-1. Les cinq familles Couplage, Echelle, Raccordement, Orientation et Convention sont fortes.
-2. Relation est conservee seulement comme famille faible sous audit.
-3. Seuil, Borne, Validite, Dephasage et Hierarchie sont des roles contextuels, non des familles.
-4. Fond, Parametre d'etat, Densite normalisee, Relation d'etat, Condition initiale et Observable reconstruite sont des roles architecturaux.
-5. Saveur-Higgs, SI, effective basse energie et cosmologie sont des architectures, non des familles.
+1. Les cinq fonctions Couplage, Echelle, Raccordement, Orientation et Convention sont fortes.
+2. La liaison stabilisee est conservee seulement comme fonction faible sous audit.
+3. Seuil, Borne, Validite, Dephasage et Hierarchie sont des roles contextuels, non des fonctions directrices.
+4. Fond, Parametre d'etat, Densite normalisee, Equation d'etat, Condition initiale et Observable reconstruite sont des roles architecturaux.
+5. Saveur-Higgs, SI, effective basse energie et cosmologie sont des architectures, non des fonctions directrices.
 6. Une architecture doit etre decrite comme reseau de dependances.
-7. La temporalite est une trajectoire de stabilisation, non une famille.
+7. La temporalite est une trajectoire de stabilisation, non une fonction directrice.
 8. Une tension de donnees appartient d'abord au regime d'acces.
 9. Toute nouvelle fiche doit appliquer le criblage avant consolidation.
 ```
@@ -471,7 +471,7 @@ Elle ouvre des chantiers plus nets.
 | Fiche prudente masse absolue neutrino | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Produit |
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
-| Dissolution idiomatique des anciens termes | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole produit ; reecriture du cercle 1 a ouvrir |
+| Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole produit ; reecriture du cercle 1 a ouvrir |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Audit de dependances et table de correspondance | Plus tard |
 

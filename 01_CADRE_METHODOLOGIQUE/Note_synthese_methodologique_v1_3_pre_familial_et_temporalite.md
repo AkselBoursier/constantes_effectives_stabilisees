@@ -1,6 +1,6 @@
 # Note de synthese methodologique v1.3
 
-## Rang pre-familial, roles contextuels et temporalite
+## Rang de forme logique, roles contextuels et temporalite
 
 ### 1. Fonction de la v1.3
 
@@ -27,7 +27,7 @@ Elle corrige l'ordre des questions.
 Formule de la correction :
 
 ```text
-avant de demander a quelle famille appartient une grandeur,
+avant d'attribuer une fonction directrice a une grandeur,
 il faut demander quelle forme de stabilisation elle prend,
 dans quel regime elle opere,
 par quel acces elle est connue,
@@ -38,7 +38,7 @@ et quelle trajectoire de stabilisation elle suit.
 
 Definition v1.3 :
 
-> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une relation, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une liaison qualifiee, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
 
 Formule courte conservee :
 
@@ -63,8 +63,8 @@ forme stabilisee
 
 | Point | v1.2 | v1.3 |
 |---|---|---|
-| Premiere question | Quelle famille ? | Quelle forme logique de stabilisation ? |
-| Relation | Famille superieure conservee mais surveillee | Famille faible sous audit, jamais reponse par defaut |
+| Premiere question | Quelle fonction directrice ? | Quelle forme logique de stabilisation ? |
+| Liaison non qualifiee | Classe englobante conservee mais surveillee | Fonction faible sous audit, jamais reponse par defaut |
 | Fonctions transversales / architecturales | Deux niveaux distincts | Roles contextuels avec portee locale, transversale ou architecturale |
 | Regime physique / acces | Deux champs obligatoires | Deux axes orthogonaux, avec couplage modele-acces |
 | Architecture | Niveau reconnu par matrice | Reseau de solidarite soumis a stress test |
@@ -86,7 +86,7 @@ La methode distingue maintenant six rangs.
 | Rang | Nom | Question |
 |---|---|---|
 | 0 | Forme logique de stabilisation | Qu'est-ce qui est stabilise formellement ? |
-| 1 | Famille fonctionnelle | Que fait principalement la grandeur dans ce regime ? |
+| 1 | Fonction directrice | Que fait principalement la grandeur dans ce regime ? |
 | 2 | Role contextuel | Quel role local, transversal ou architectural joue-t-elle ? |
 | 3 | Axes physique / acces | Dans quel regime opere-t-elle et par quel acces est-elle connue ? |
 | 4 | Architecture / reseau | Quelles dependances solidaires produit-elle ? |
@@ -101,7 +101,7 @@ il interdit seulement de poser trop tot la mauvaise question.
 
 ### 5. Rang 0 : forme logique de stabilisation
 
-Le rang 0 est ajoute avant les familles.
+Le rang 0 est ajoute avant les fonctions directrices.
 
 Question :
 
@@ -119,7 +119,7 @@ Il identifie la forme logique du stable.
 | Rapport | Un rapport est-il stabilise ? | m_p / m_e, Omega_i |
 | Ecart | Un ecart spectral est-il stabilise ? | Delta m^2 |
 | Composition | Une composition exacte ou derivee est-elle stabilisee ? | R = N_A k_B, K_J = 2e/h |
-| Equation ou relation d'etat | Une relation fonctionnelle de comportement est-elle stabilisee ? | w |
+| Equation d'etat ou loi de comportement | Une loi fonctionnelle de comportement est-elle stabilisee ? | w |
 | Fonction d'echelle | Une dependance a Q, E ou a un schema est-elle stabilisee ? | alpha_s(Q^2), alpha_G(E) |
 | Matrice | Une structure matricielle est-elle stabilisee ? | CKM, PMNS, Yukawa |
 | Phase | Une phase ou orientation complexe est-elle stabilisee ou contrainte ? | delta_CP, phases de Majorana |
@@ -148,17 +148,17 @@ k_B et h sont des valeurs exactes dans le SI,
 mais leur role physique n'est pas epuise par cette exactitude.
 ```
 
-### 6. Rang 1 : familles fonctionnelles
+### 6. Rang 1 : fonctions directrices
 
-Les familles repondent a une autre question.
+Les fonctions directrices repondent a une autre question.
 
 ```text
 que fait principalement la grandeur dans le regime considere ?
 ```
 
-Le noyau v1.3 distingue cinq familles fortes et une famille sous audit.
+Le noyau v1.3 distingue cinq fonctions fortes et une fonction de liaison sous audit.
 
-Familles fortes :
+Fonctions fortes :
 
 ```text
 Couplage
@@ -168,34 +168,34 @@ Orientation
 Convention
 ```
 
-Famille sous audit :
+Fonction de liaison sous audit :
 
 ```text
-Relation
+liaison stabilisee
 ```
 
-Cette decision ne supprime pas encore Relation.
+Cette decision ne supprime pas encore la possibilite d'une liaison stabilisee.
 
 Elle empeche son usage comme reponse par defaut.
 
-### 7. Statut de Relation en v1.3
+### 7. Statut des liaisons stabilisees en v1.3
 
 La critique principale est acceptee :
 
 ```text
-toute constante est relationnelle d'une certaine maniere.
+toute constante engage des dependances d'une certaine maniere.
 ```
 
 Donc :
 
 ```text
-Relation ne peut pas etre une famille ordinaire si elle signifie seulement "mettre en rapport".
+une simple mise en rapport ne peut pas suffire a definir une fonction directrice.
 ```
 
 Decision v1.3 :
 
 ```text
-Relation devient une famille faible sous audit.
+la liaison stabilisee devient une fonction faible sous audit.
 ```
 
 Elle ne peut etre utilisee que si trois conditions sont remplies.
@@ -209,7 +209,7 @@ Elle ne peut etre utilisee que si trois conditions sont remplies.
 Interdit :
 
 ```text
-classer une grandeur dans Relation seulement parce qu'elle est un rapport,
+classer une grandeur par liaison seulement parce qu'elle est un rapport,
 un ecart,
 une composition,
 une equation,
@@ -220,17 +220,17 @@ Exemples a re-tester :
 
 | Cas | Rang 0 | Decision v1.3 |
 |---|---|---|
-| R = N_A k_B | Composition exacte | Convention SI + composition, pas Relation par defaut |
+| R = N_A k_B | Composition exacte | Convention SI + composition exacte |
 | Delta m^2 | Ecart spectral | Dynamique de phase / dephasage oscillatoire a tester |
 | Omega_i | Rapport normalise | Densite normalisee dans architecture cosmologique |
-| w | Equation ou relation d'etat | Role contextuel d'etat cosmologique |
-| m_f = y_f v / sqrt(2) | Relation constitutive | Architecture Saveur-Higgs, masse stabilisee de regime |
-| m_p / m_e | Rapport stratifie | Hierarchie d'echelles ou relation stratifiee a tester |
+| w | Equation d'etat | Role contextuel d'etat cosmologique |
+| m_f = y_f v / sqrt(2) | Composition constitutive | Architecture Saveur-Higgs, masse stabilisee de regime |
+| m_p / m_e | Rapport stratifie | Hierarchie d'echelles ou liaison stratifiee a tester |
 
 Formule :
 
 ```text
-Relation cesse d'etre une case ;
+La liaison stabilisee cesse d'etre une case ;
 elle devient une question de decomposition.
 ```
 
@@ -267,7 +267,7 @@ Exemples :
 | Fond | Terme ou condition globale de dynamique | Architecturale |
 | Parametre d'etat | Etat d'un systeme dans un modele | Architecturale |
 | Densite normalisee | Repartition relative dans un modele | Architecturale |
-| Relation d'etat | Comportement d'une composante | Architecturale |
+| Equation d'etat | Comportement d'une composante | Architecturale |
 | Condition initiale | Donnee d'entree d'une evolution | Architecturale |
 | Observable reconstruite | Grandeur inferee par modele et acces | Architecturale |
 | Realisation pratique | Mise en oeuvre d'une definition | Architecturale locale SI |
@@ -275,7 +275,7 @@ Exemples :
 Regle :
 
 ```text
-le role contextuel ne remplace pas la famille ;
+le role contextuel ne remplace pas la fonction directrice ;
 il dit comment la fonction principale opere dans un contexte.
 ```
 
@@ -349,8 +349,8 @@ La v1.3 les soumet a un stress test.
 Definition conservee :
 
 ```text
-une architecture inter-familles est une solidarite de fonctions dans un regime,
-non une nouvelle famille.
+une architecture inter-fonctions est une solidarite de fonctions dans un regime,
+non un niveau de classement superieur.
 ```
 
 Precision v1.3 :
@@ -396,7 +396,7 @@ simple regroupement documentaire
 
 La temporalite reste un axe transversal.
 
-Elle ne devient pas une famille.
+Elle ne devient pas une fonction directrice.
 
 Elle ne devient pas une architecture.
 
@@ -514,7 +514,7 @@ S_8 : observable reconstruite manifeste dans les donnees de structure.
 Ce champ evite une confusion :
 
 ```text
-deux grandeurs peuvent avoir une famille proche,
+deux grandeurs peuvent avoir une fonction directrice proche,
 mais des manifestations phenomenologiques differentes.
 ```
 
@@ -528,8 +528,8 @@ Pour toute nouvelle fiche, appliquer l'ordre suivant.
 3. Identifier le regime physique pertinent.
 4. Identifier le regime d'acces.
 5. Identifier le couplage modele-acces.
-6. Determiner la famille fonctionnelle principale.
-7. Verifier si Relation est vraiment necessaire ou seulement apparente.
+6. Determiner la fonction directrice principale.
+7. Verifier si une liaison stabilisee est vraiment necessaire ou seulement apparente.
 8. Ajouter les roles contextuels avec leur portee.
 9. Decrire la manifestation phenomenologique.
 10. Decrire le mode et la trajectoire de stabilisation.
@@ -542,8 +542,8 @@ Pour toute nouvelle fiche, appliquer l'ordre suivant.
 Regle de priorite :
 
 ```text
-la forme logique vient avant la famille,
-mais la forme logique ne remplace pas la famille.
+la forme logique vient avant la fonction directrice,
+mais la forme logique ne remplace pas la fonction.
 ```
 
 ### 15. Matrice canonique v1.3
@@ -557,8 +557,8 @@ mais la forme logique ne remplace pas la famille.
 | Regime d'acces | Comment est-elle connue ? |
 | Couplage modele-acces | Quel modele, schema ou convention conditionne l'acces ? |
 | Robustesse de l'acces | Directe, reconstruite, combinee, fragile, conventionnelle, en tension ? |
-| Famille fonctionnelle | Que fait principalement la grandeur ? |
-| Statut de Relation | Relation est-elle evitee, qualifiee ou vraiment necessaire ? |
+| Fonction directrice | Que fait principalement la grandeur ? |
+| Liaison stabilisee | Est-elle evitee, qualifiee ou vraiment necessaire ? |
 | Role contextuel | Role local, transversal, architectural ou documentaire ? |
 | Portee du role | Locale, transversale, architecturale, documentaire ? |
 | Manifestation phenomenologique | Comment la grandeur se manifeste-t-elle ? |
@@ -570,9 +570,9 @@ mais la forme logique ne remplace pas la famille.
 | Limites | Ce que la grandeur ne dit pas |
 | Erreur evitee | Quelle confusion de rang, d'acces ou de temps est evitee ? |
 
-### 16. Test de resistance des familles
+### 16. Test de resistance des fonctions directrices
 
-Avant de creer ou maintenir une famille, poser huit questions.
+Avant de creer ou maintenir une fonction directrice, poser huit questions.
 
 ```text
 1. La categorie nomme-t-elle une fonction principale ?
@@ -588,23 +588,23 @@ Avant de creer ou maintenir une famille, poser huit questions.
 Sorties possibles :
 
 ```text
-famille conservee
-famille renommee
-famille sous audit
+fonction conservee
+fonction renommee
+fonction sous audit
 role contextuel
 forme logique
 architecture
 archive taxonomique
 ```
 
-### 17. Consequences pour les familles existantes
+### 17. Consequences pour les fonctions directrices existantes
 
 #### 17.1 Couplage
 
 Statut :
 
 ```text
-famille forte conservee.
+fonction forte conservee.
 ```
 
 Question :
@@ -626,7 +626,7 @@ preciser la trajectoire de stabilisation.
 Statut :
 
 ```text
-famille forte conservee.
+fonction forte conservee.
 ```
 
 Question :
@@ -646,7 +646,7 @@ distinguer echelle physique, seuil, validite et hierarchie.
 Statut :
 
 ```text
-famille forte conservee.
+fonction forte conservee.
 ```
 
 Question :
@@ -666,7 +666,7 @@ specifier la limite de validite et le test de retrait.
 Statut :
 
 ```text
-famille forte conservee.
+fonction forte conservee.
 ```
 
 Question :
@@ -687,7 +687,7 @@ transitionnelle, oscillatoire, CP, geometrique, spectrale.
 Statut :
 
 ```text
-famille forte conservee.
+fonction forte conservee.
 ```
 
 Question :
@@ -705,12 +705,12 @@ role physique conserve,
 et stabilisation absorbee par convention.
 ```
 
-#### 17.6 Relation
+#### 17.6 Liaison stabilisee
 
 Statut :
 
 ```text
-famille faible sous audit.
+fonction faible sous audit.
 ```
 
 Question :
@@ -723,7 +723,7 @@ ou seulement la forme logique du cas ?
 Ajout v1.3 :
 
 ```text
-toute occurrence de Relation doit etre accompagnee d'un test de non-reduction.
+toute fonction de liaison doit etre accompagnee d'un test de non-reduction.
 ```
 
 ### 18. Consequences pour les architectures
@@ -771,8 +771,8 @@ Document produit :
 Role :
 
 ```text
-formaliser le test de resistance des familles,
-le statut de Relation,
+formaliser le test de resistance des fonctions directrices,
+le statut des liaisons stabilisees,
 et le stress test d'architecture.
 ```
 
@@ -903,7 +903,7 @@ Role :
 ```text
 appliquer la methode v1.3 aux quatre cycles physiques actifs,
 puis verifier la coherence theorique entre les architectures,
-et cribler les fiches sensibles sans creer de nouvelle famille.
+et cribler les fiches sensibles sans creer de nouvelle fonction directrice.
 ```
 
 Statut :
@@ -989,7 +989,7 @@ couche de controle transversale ;
 les addenda locaux ne sont requis que si une reprise de fiche revele un conflit.
 ```
 
-#### 19.11 Dissolution idiomatique
+#### 19.11 Reecriture positive du vocabulaire
 
 Document produit :
 
@@ -1071,7 +1071,8 @@ Critiques source :
 La v1.3 peut etre resumee par quatre deplacements.
 
 ```text
-de la famille vers la forme logique ;
+du classement nominal vers la fonction directrice ;
+de la fonction attribuee trop tot vers la forme logique ;
 de la fonction isolee vers le role contextuel ;
 du tableau vers le reseau de dependance ;
 du statut fixe vers la trajectoire de stabilisation.
