@@ -16,6 +16,7 @@ la revision temporelle et le criblage critique
 la note methodologique v1.3
 la carte des dependances architecturales v0.1
 la carte consolidee v1.2 de refonte
+la carte consolidee v1.3 post-cercle 2
 le workflow GitHub provisoire
 ```
 
@@ -80,7 +81,8 @@ Ces documents forment le noyau actif du corpus.
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` | Protocole actif | Seuil de remontee ciblee avant cercle 2 |
@@ -97,7 +99,7 @@ Matrice_criblage_taxonomique_v0_1.md
 Workflow_GitHub_v0_1.md
 Synthese_architectures_inter_familles_v1_0.md
 Carte_dependances_architectures_v0_1.md
-Carte_consolidee_v1_2_refonte.md
+Carte_consolidee_v1_3_post_cercle2.md
 Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -150,7 +152,8 @@ extension SI
 
 | Document | Statut | Role |
 |---|---|---|
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres methode v1.3 |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives situees apres cercle 2 |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md` | Consolidation historique | Carte avant rang de forme logique et requalification des liaisons |
@@ -160,7 +163,7 @@ extension SI
 Decision :
 
 ```text
-Carte_consolidee_v1_2_refonte.md remplace la v1.1 comme carte de reference active.
+Carte_consolidee_v1_3_post_cercle2.md remplace la v1.2 comme carte de reference active.
 ```
 
 Les cartes anterieures restent utiles pour retracer les decisions.
@@ -171,7 +174,7 @@ Le corpus stabilise quatre architectures.
 
 | Architecture | Forme | Document principal | Statut |
 |---|---|---|---|
-| Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Ouverture active |
+| Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Sequence cloturee |
 | Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
 | Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
 | Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
@@ -406,7 +409,7 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 
@@ -461,6 +464,8 @@ Matrice_criblage_taxonomique_v0_1.md
 Architecture_saveur_Higgs_notes.md
 Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_2_refonte.md
+Cercle2_architectures_actives_v0_1.md
+Carte_consolidee_v1_3_post_cercle2.md
 Architecture_cosmologique_stress_test_v0_1.md
 Plan_reprise_cycle_cosmologique_v0_1.md
 ```
@@ -487,6 +492,8 @@ PROJECT_BRIEF.docx
   -> Architecture_saveur_Higgs_notes.md
   -> Carte_dependances_architectures_v0_1.md
   -> Carte_consolidee_v1_2_refonte.md
+  -> Cercle2_architectures_actives_v0_1.md
+  -> Carte_consolidee_v1_3_post_cercle2.md
   -> Architecture_cosmologique_stress_test_v0_1.md
   -> Plan_reprise_cycle_cosmologique_v0_1.md
   -> Index_raisonne_du_corpus_v1_0.md
@@ -546,6 +553,7 @@ Documents d'application produits ensuite :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
@@ -673,9 +681,10 @@ Protocole actif :
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 
 Carte active :
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 
 Carte historique recente :
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
 
 Carte de dependances active :
