@@ -1,0 +1,264 @@
+# Plan de remontee des sources DOCX en Markdown v0.1
+
+## Sources primaires historiques, extraction et integration
+
+### 1. Fonction du document
+
+Ce document corrige une ambiguite de vocabulaire documentaire.
+
+Les fichiers `.docx` de la racine ne doivent pas etre traites comme des
+archives au sens faible.
+
+Ils sont :
+
+```text
+des sources primaires historiques du corpus,
+porteuses de la matiere conceptuelle et theorique initiale.
+```
+
+Ils ne deviendront des archives qu'apres :
+
+```text
+1. extraction lisible ;
+2. remontee en Markdown ;
+3. table de correspondance ;
+4. integration explicite dans les cycles, notes ou cartes actifs ;
+5. verification que rien d'important n'est perdu.
+```
+
+### 2. Constat actuel
+
+Inventaire indicatif :
+
+```text
+47 fichiers DOCX a la racine ;
+8 fichiers DOCX de critiques constructives dans le dossier 90_Critiques ;
+1 fichier Ecriture.txt lie a la fiche Lambda.
+```
+
+Un audit existe deja :
+
+```text
+05_CARTES_ET_SYNTHESES/Audit_dependances_et_reorganisation_v0_1.md
+```
+
+Cet audit a correctement pose que les Word racine ne sont pas des archives.
+
+Mais il preparait surtout une reorganisation physique.
+
+La tache presente ajoute un autre objectif :
+
+```text
+remonter la matiere source en Markdown exploitable,
+sans deplacer ni supprimer les fichiers d'origine.
+```
+
+### 3. Decision de priorite
+
+Decision :
+
+```text
+avant d'ouvrir le cercle 2 des architectures actives,
+ouvrir un traitement de fond des sources DOCX primaires.
+```
+
+Raison :
+
+```text
+les architectures actives ne doivent pas etre seulement nettoyees
+depuis les consolidations Markdown recentes ;
+elles doivent pouvoir etre relues a partir de leur matiere source.
+```
+
+Le cercle 2 n'est pas annule.
+
+Il est reconditionne :
+
+```text
+cercle 2 = reecriture positive des architectures
+apres identification des sources DOCX utiles a chaque architecture.
+```
+
+### 4. Statuts documentaires corriges
+
+| Statut | Sens | Action |
+|---|---|---|
+| Source primaire historique | DOCX porteur de matiere initiale | Extraire et remonter |
+| Source de preuve locale | Fiche physique DOCX | Convertir vers le cycle concerne |
+| Source de synthese initiale | Synthese DOCX de cycle ou carte ancienne | Comparer avec la synthese Markdown active |
+| Source methodologique fondatrice | Brief, methode, regime, addendum, note critique | Remonter dans le cadre methodologique |
+| Source d'architecture | Note ou cycle DOCX utile a une architecture | Lire avant reecriture du cercle 2 |
+| Archive future | Original conserve apres extraction et integration | Classer seulement apres verification |
+
+Regle :
+
+```text
+un fichier source ne devient archive qu'apres remontee controlee.
+```
+
+### 5. Methode de remontee
+
+Chaque fichier ou lot de fichiers doit suivre le meme protocole.
+
+```text
+1. Identifier le fichier source et son statut.
+2. Extraire le texte en Markdown de travail.
+3. Conserver le nom du fichier source dans l'en-tete.
+4. Distinguer extraction, synthese et integration.
+5. Signaler les formulations depassees sans les effacer.
+6. Rattacher le Markdown produit au cycle, a l'architecture ou a la note active.
+7. Produire une ligne de correspondance source -> Markdown -> document actif.
+```
+
+Format recommande pour les fichiers Markdown de remontee :
+
+```text
+Source_docx_<nom_ascii>_v0_1.md
+```
+
+Le fichier source d'origine reste inchange.
+
+### 6. Lots de traitement
+
+#### Lot 0 : socle methodologique
+
+Documents :
+
+```text
+PROJECT_BRIEF.docx
+Methode v0.1.docx
+Regimes de constance.docx
+Note de synthese methodologique.docx
+Addendum methodologique v0.2.docx
+Note critique de compression v0.1.docx
+```
+
+Objectif :
+
+```text
+remonter la genealogie methodologique,
+les definitions initiales,
+les tensions deja apercues,
+et les formulations qui restent fecondes.
+```
+
+#### Lot 1 : fiches physiques sources
+
+Documents :
+
+```text
+fiches alpha, masses, rapports, QCD, electroweak, neutrinos,
+metrologie, CKM, syntheses de cycles initiales.
+```
+
+Objectif :
+
+```text
+reconstituer la matiere locale des cycles
+avant de juger qu'une fiche Markdown recente suffit.
+```
+
+#### Lot 2 : tests taxonomiques
+
+Documents :
+
+```text
+Test des familles fragiles.docx
+Test de la famille Seuil.docx
+Test de la famille Fond.docx
+Test de la famille Relation v0.1.docx
+```
+
+Objectif :
+
+```text
+retrouver les problemes conceptuels initiaux,
+en les relisant avec le double niveau fonction directrice /
+famille fonctionnelle controlee.
+```
+
+#### Lot 3 : sources d'architecture
+
+Documents :
+
+```text
+Note de consolidation saveur-Higgs v0.1.docx
+Cycle effectif basse energie v0.1.docx
+Cycle effectif basse energie v0.2.docx
+Cycle effectif basse energie v0.3.docx
+```
+
+Objectif :
+
+```text
+preparer le cercle 2 des architectures actives
+sur une base source, pas seulement sur les consolidations recentes.
+```
+
+#### Lot 4 : genealogie des cartes
+
+Documents :
+
+```text
+Carte consolidee v0.1 a v0.5, v0.7, v0.8.
+```
+
+Objectif :
+
+```text
+documenter l'evolution des positions,
+sans confondre ancienne carte et carte active.
+```
+
+#### Lot 5 : critiques constructives
+
+Documents :
+
+```text
+90_Critiques_ constantes_effectives_stabilisees/*.docx
+```
+
+Objectif :
+
+```text
+maintenir le lien entre les critiques source et les choix deja integres.
+```
+
+### 7. Garde-fous
+
+Ne pas faire :
+
+```text
+supprimer les DOCX ;
+deplacer les DOCX avant table de correspondance ;
+renommer les DOCX ;
+traiter les DOCX comme secondaires ;
+convertir en Markdown puis effacer les formulations initiales ;
+ouvrir le cercle 2 sans relire les sources d'architecture utiles.
+```
+
+Faire :
+
+```text
+extraire,
+relire,
+annoter,
+integrer,
+et seulement ensuite archiver au sens strict.
+```
+
+### 8. Prochaine tache concrete
+
+La prochaine tache logique devient :
+
+```text
+produire une table de remontee des sources DOCX,
+lot par lot,
+avec destination Markdown cible et document actif concerne.
+```
+
+Cette table devra preceder toute conversion massive.
+
+### 9. Formule de cloture
+
+> Les DOCX ne sont pas des dechets de l'ancienne structure ; ils sont la matiere premiere que la structure actuelle doit apprendre a rendre lisible.

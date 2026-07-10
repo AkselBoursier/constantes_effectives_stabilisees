@@ -328,8 +328,8 @@ apres fonction directrice et test de resistance.
 Tache 5 - prochaine tache ouverte :
 
 ```text
-traiter les architectures actives par lots,
-sans toucher aux archives sauf signalement.
+ouvrir la remontee des sources DOCX primaires,
+avant de traiter les architectures actives par lots.
 ```
 
 Condition :
@@ -337,6 +337,8 @@ Condition :
 ```text
 ne pas ouvrir le cercle 2 sans distinguer les noms historiques de dossiers
 et le vocabulaire theorique actif des architectures.
+ne pas appeler archive stricte un DOCX qui n'a pas encore ete remonte
+en Markdown et rattache a un document actif.
 ```
 
 ### 9. Garde-fous

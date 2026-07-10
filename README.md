@@ -33,6 +33,7 @@ Cartes et syntheses :
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
+05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```

@@ -26,7 +26,8 @@ distinguer les documents actifs,
 les documents de consolidation,
 les cycles de preuve,
 les notes d'architecture,
-et les archives historiques.
+les sources primaires historiques,
+et les archives futures.
 ```
 
 L'index evite une confusion simple :
@@ -46,7 +47,8 @@ Le corpus doit etre lu par couches.
 4. Syntheses transversales.
 5. Notes d'architecture.
 6. Cycles physiques.
-7. Archives historiques.
+7. Sources primaires historiques DOCX.
+8. Archives strictes, seulement apres remontee.
 ```
 
 Regle :
@@ -66,7 +68,8 @@ L'index utilise six statuts.
 | Protocole actif | Document d'application reutilisable | Matrices de criblage, tests de resistance |
 | Consolidation | Document qui stabilise un cycle ou une architecture | Notes d'architecture, syntheses de cycles |
 | Preuve locale | Fiche ou cycle qui justifie une decision | Fiches physiques detaillees |
-| Archive historique | Document utile pour comprendre l'evolution | Anciennes cartes, anciens tests, fichiers Word racine |
+| Source primaire historique | Document source anterieur encore porteur de matiere | Fichiers Word racine, fiches initiales, tests, cartes anciennes |
+| Archive future | Original conserve apres extraction et integration | DOCX apres remontee Markdown controlee |
 | A produire | Document utile mais non encore cree | Lacunes identifiees |
 
 ### 4. Documents de reference active
@@ -78,6 +81,7 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
+| `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Reseaux de dependance entre architectures |
 | `05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md` | Reference active | Navigation et statut des documents |
@@ -311,21 +315,22 @@ la reference actuelle pour le SI est la note d'architecture metrologique,
 avec le cycle c / h / e comme preuve locale recente.
 ```
 
-### 12. Archives Word racine
+### 12. Sources DOCX primaires
 
 Le dossier racine contient de nombreux fichiers Word anterieurs.
 
-Ils doivent etre conserves comme :
+Ils doivent etre traites comme :
 
 ```text
-provenance historique
-archives de cycles
-fiches initiales
-tests taxonomiques
-anciennes cartes
+sources primaires historiques
+fiches initiales de preuve
+tests taxonomiques sources
+syntheses initiales
+cartes genealogiques
 ```
 
-Ils ne doivent pas etre traites comme la couche active de la methode.
+Ils ne sont pas la couche active de la methode,
+mais ils ne sont pas secondaires.
 
 Groupes principaux :
 
@@ -338,6 +343,13 @@ Groupes principaux :
 | Syntheses de cycles initiales | Consolidations historiques |
 | Cartes consolidees v0.1 a v0.8 | Evolution de la carte avant l'arborescence Markdown |
 
+Document de pilotage :
+
+```text
+05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_dependances_et_reorganisation_v0_1.md
+```
+
 Regle de conservation :
 
 ```text
@@ -347,8 +359,8 @@ ne pas renommer ni deplacer les fichiers Word racine tant que les dependances in
 Regle d'usage :
 
 ```text
-si un document Markdown recent contredit ou precise un document Word ancien,
-le document Markdown recent prime pour le travail actuel.
+les Markdown recents guident le travail courant ;
+les DOCX restent les sources primaires a remonter avant archivage strict.
 ```
 
 ### 13. Ordre de lecture selon l'objectif
@@ -527,7 +539,7 @@ integree dans la carte consolidee v1.2.
 Raison :
 
 ```text
-Saveur-Higgs etait deja traite dans les archives Word, la carte v1.1 et la synthese transverse.
+Saveur-Higgs etait deja traite dans les sources Word racine, la carte v1.1 et la synthese transverse.
 La note Markdown et la synthese de cycle levent l'asymetrie documentaire entre les quatre architectures actives.
 ```
 

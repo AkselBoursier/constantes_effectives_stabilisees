@@ -294,7 +294,7 @@ L'audit ne ferme pas les dossiers suivants.
 | M_Pl et cosmologie primordiale | Interface effective / cosmologique, a ne pas ouvrir trop vite |
 | Matrice temporelle autonome | Produite comme protocole actif du rang 5 |
 | Reecriture positive du vocabulaire actif | Cercle 1 produit puis corrige ; cercle 2 a ouvrir |
-| Normalisation des archives Word | A differer tant que les references internes ne sont pas auditees |
+| Remontee des sources DOCX primaires | A ouvrir avant normalisation physique des archives |
 
 Premier criblage transversal produit ensuite :
 

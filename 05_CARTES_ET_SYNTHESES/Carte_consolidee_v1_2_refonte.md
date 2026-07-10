@@ -479,8 +479,9 @@ Elle ouvre des chantiers plus nets.
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
 | Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Cercle 1 produit puis corrige ; cercle 2 a ouvrir |
+| Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | A ouvrir avant le cercle 2 |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
-| Normalisation physique des archives | Audit de dependances et table de correspondance | Plus tard |
+| Normalisation physique des archives | Seulement apres remontee Markdown et table de correspondance | Plus tard |
 
 Decision :
 
@@ -492,10 +493,11 @@ et sur les roles stabilises.
 Elle peut etre :
 
 ```text
-soit la reecriture positive du cercle 2 des architectures actives,
+soit la table de remontee des sources DOCX primaires,
+soit la reecriture positive du cercle 2 des architectures actives apres lecture des sources utiles,
 soit des addenda locaux si l'application de la matrice revele un conflit dans une fiche source,
 soit une carte consolidee superieure si les nouvelles couches doivent etre stabilisees ensemble,
-soit la normalisation physique des archives si le travail documentaire devient prioritaire.
+soit la normalisation physique des archives apres remontee et verification.
 ```
 
 ### 19. Documents integres
