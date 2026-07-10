@@ -524,9 +524,9 @@ Saveur-Higgs etait deja traite dans les archives Word, la carte v1.1 et la synth
 La note Markdown et la synthese de cycle levent l'asymetrie documentaire entre les quatre architectures actives.
 ```
 
-#### 15.3 README de dossier
+#### 15.3 README de dossier produit
 
-Il pourrait etre utile d'ajouter un README minimal au dossier racine.
+Un README minimal existe maintenant au dossier racine.
 
 Forme possible :
 
@@ -545,7 +545,8 @@ et la carte consolidee v1.2 de refonte.
 Statut :
 
 ```text
-utile si le corpus doit etre partage ou relu hors de cette conversation.
+produit ;
+utile pour entrer rapidement dans le corpus hors de cette conversation.
 ```
 
 #### 15.4 Normalisation future des archives
