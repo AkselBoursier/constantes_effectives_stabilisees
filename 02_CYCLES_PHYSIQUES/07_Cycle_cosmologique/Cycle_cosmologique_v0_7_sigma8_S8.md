@@ -21,6 +21,14 @@ Objectif :
 classer sigma_8 et S_8 comme observables ou amplitudes reconstruites dans l'architecture cosmologique.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+sigma_8 et S_8 appartiennent au sous-reseau croissance / reconstruction.
+```
+
+Ce sous-reseau est sous tension, mais il ne devient pas une architecture autonome a ce stade.
+
 La fiche doit eviter quatre erreurs.
 
 Premiere erreur :
@@ -104,6 +112,8 @@ Statut de rang :
 ```text
 fonction architecturale principale : Observable reconstruite
 architecture : Cosmologique
+sous-reseau : Croissance / reconstruction
+tension transversale : S_8
 famille superieure : aucune famille simple ne doit etre forcee
 ```
 
@@ -225,6 +235,13 @@ Regle :
 
 ```text
 S_8 appartient d'abord au regime d'acces et de reconstruction des structures.
+```
+
+Precision apres stress test :
+
+```text
+S_8 porte une tension transversale d'acces et de modele,
+mais cette tension ne suffit pas a creer une famille ou une sous-architecture autonome.
 ```
 
 ### 6. Lien avec A_s et n_s
@@ -405,6 +422,14 @@ Regle :
 Tension S_8 = propriete du reseau d'acces et de reconstruction, non famille taxonomique.
 ```
 
+Lecture apres stress test :
+
+```text
+la tension S_8 traverse le sous-reseau croissance / reconstruction
+et le relie au sous-reseau primordial par A_s et n_s,
+mais elle reste une propriete transversale du reseau d'acces.
+```
+
 ### 11. Stabilisation conventionnelle
 
 sigma_8 et S_8 ne sont pas des constantes definissantes du SI.
@@ -441,12 +466,14 @@ dans S_8 est une normalisation de comparaison, non une constante fondamentale.
 | Type logique | Amplitudes reconstruites de structure ; observables synthetiques |
 | Dimension | Sans dimension |
 | Famille principale | Aucune famille superieure simple ne doit etre forcee |
+| Sous-reseau | Croissance / reconstruction |
 | Sous-type local | Amplitude tardive ; combinaison de degenerescence |
 | Fonction architecturale principale | Observable reconstruite |
 | Fonction transversale | Tension d'acces, dependance de modele, normalisation, validite de reconstruction |
 | Regime de definition physique | Croissance des structures et champ de densite de matiere |
 | Regime d'acces epistemique | CMB + LambdaCDM, lensing faible, amas, 3x2pt, CMB lensing, combinaisons |
 | Dependances de modele | LambdaCDM, neutrinos, baryons, w, gravitation modifiee, systematiques de shear et redshift |
+| Test de retrait | Retirer sigma_8 / S_8 ne retire pas le primordial, mais retire la reconstruction tardive comparable de la croissance |
 | Stabilisation empirique | Forte dans chaque route, mais pluralite de valeurs et de systematiques |
 | Stabilisation conventionnelle | Non concernee ; echelle 8 h^-1 Mpc et normalisation 0.3 sont des choix de definition |
 | Architecture | Cosmologique |
@@ -519,6 +546,7 @@ Statut :
 ```text
 fonction architecturale : Observable reconstruite
 architecture : Cosmologique
+sous-reseau : Croissance / reconstruction
 famille superieure : aucune famille simple ne doit etre forcee
 stabilisation empirique : forte par route, mais sensible aux modeles et aux systematiques
 stabilisation conventionnelle : non concernee
@@ -548,11 +576,19 @@ Le cycle a donc atteint son objectif principal :
 ne pas confondre constantes, parametres de modele, conditions initiales, observables reconstruites et tensions de donnees.
 ```
 
-### 17. Prochaine etape
+Lecture apres stress test :
 
-La prochaine etape logique n'est pas une nouvelle grandeur cosmologique isolee.
+```text
+sigma_8 / S_8 ferment le cycle localement,
+mais ouvrent la necessite de lire l'ensemble par sous-reseaux :
+fond-expansion, budget, etat, primordial, croissance-reconstruction.
+```
 
-Elle est :
+### 17. Suite produite et reprise ouverte
+
+La prochaine etape logique n'etait pas une nouvelle grandeur cosmologique isolee.
+
+Elle etait :
 
 ```text
 Synthese_cycle_cosmologique_v0_1.md
@@ -571,6 +607,23 @@ Observable reconstruite
 ```
 
 comme fonction architecturale explicite.
+
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle devient la fiche pilote du sous-reseau croissance / reconstruction.
+```
 
 ### 18. Effet sur la carte et la methode
 
@@ -594,10 +647,16 @@ Troisieme regle :
 une amplitude tardive n'est pas une condition initiale.
 ```
 
-Elle ajoute une decision pour la prochaine mise a jour methodologique :
+Elle a ajoute une decision reprise ensuite par la methode :
 
 ```text
 Observable reconstruite doit etre ajoutee a la liste stabilisee des fonctions architecturales cosmologiques.
+```
+
+Cette decision est maintenant precisee par la lecture par sous-reseaux :
+
+```text
+Observable reconstruite = fonction locale du sous-reseau croissance / reconstruction.
 ```
 
 ### 19. Sources de controle
@@ -614,13 +673,16 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_4_Omega_i.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_5_w.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 PROJECT_BRIEF.docx
 ```
