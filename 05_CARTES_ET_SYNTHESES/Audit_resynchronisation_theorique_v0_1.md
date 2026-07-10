@@ -295,6 +295,19 @@ L'audit ne ferme pas les dossiers suivants.
 | Matrice temporelle autonome | Possible plus tard, si la trajectoire devient un outil de travail regulier |
 | Normalisation des archives Word | A differer tant que les references internes ne sont pas auditees |
 
+Premier criblage transversal produit ensuite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
+```
+
+Statut apres criblage :
+
+```text
+Relation, masse absolue des neutrinos, M_Pl et cosmologie primordiale restent sous prudence,
+mais disposent maintenant d'une premiere application de la matrice.
+```
+
 ### 13. Regle operative pour les prochaines reprises
 
 Toute reprise de fiche active doit appliquer l'ordre suivant :

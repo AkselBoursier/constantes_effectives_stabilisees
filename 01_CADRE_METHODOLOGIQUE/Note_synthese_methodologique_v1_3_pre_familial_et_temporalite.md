@@ -756,7 +756,8 @@ note d'architecture Saveur-Higgs,
 carte des dependances architecturales,
 stress test cosmologique,
 reprise des cycles physiques,
-audit de resynchronisation theorique.
+audit de resynchronisation theorique,
+application de la matrice aux fiches sensibles.
 ```
 
 #### 19.1 Matrice de criblage taxonomique
@@ -894,13 +895,15 @@ Documents produits :
 ```text
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 ```
 
 Role :
 
 ```text
 appliquer la methode v1.3 aux quatre cycles physiques actifs,
-puis verifier la coherence theorique entre les architectures.
+puis verifier la coherence theorique entre les architectures,
+et cribler les fiches sensibles sans creer de nouvelle famille.
 ```
 
 Statut :
@@ -908,6 +911,32 @@ Statut :
 ```text
 synchronisation documentaire active ;
 les choix conceptuels nouveaux restent soumis a validation.
+```
+
+#### 19.8 Application de la matrice aux fiches sensibles
+
+Document produit :
+
+```text
+01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
+```
+
+Cas traites :
+
+```text
+m_f,
+k_B / R,
+alpha_s(Q^2) / Lambda_QCD,
+H_0,
+masse absolue des neutrinos,
+M_Pl et interface cosmologie primordiale.
+```
+
+Statut :
+
+```text
+criblage transversal produit ;
+les fiches locales ne sont a reprendre que si un conflit reapparait.
 ```
 
 ### 20. Documents integres
@@ -920,6 +949,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 ```
 
 Documents de reference :

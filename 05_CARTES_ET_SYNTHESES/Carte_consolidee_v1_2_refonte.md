@@ -467,7 +467,7 @@ Elle ouvre des chantiers plus nets.
 | Plan de reprise du cycle cosmologique | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Produit |
 | Reprise des cycles physiques | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/` + cycles 06, 07, 08 | Produite sur branche |
 | Audit de resynchronisation theorique | `05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md` | Produit |
-| Application de la matrice aux fiches sensibles | Addenda ou revisions locales | Prochaine suite possible |
+| Application de la matrice aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md` | Produit |
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Possible |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Audit de dependances et table de correspondance | Plus tard |
@@ -481,9 +481,8 @@ la prochaine etape logique n'est pas une nouvelle famille.
 Elle peut etre :
 
 ```text
-soit l'application de la matrice v1.2 a quelques fiches sensibles,
-soit une matrice temporelle autonome,
-soit l'application de l'audit de resynchronisation aux fiches sensibles restantes,
+soit des addenda locaux si l'application de la matrice revele un conflit dans une fiche source,
+soit une fiche prudente sur la masse absolue des neutrinos,
 soit une matrice temporelle autonome si la trajectoire devient un outil regulier.
 ```
 
