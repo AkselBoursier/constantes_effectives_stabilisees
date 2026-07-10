@@ -171,6 +171,7 @@ Le corpus stabilise quatre architectures.
 
 | Architecture | Forme | Document principal | Statut |
 |---|---|---|---|
+| Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Ouverture active |
 | Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
 | Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
 | Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
@@ -182,6 +183,13 @@ Regle de rang :
 ```text
 une architecture inter-fonctions est une solidarite de fonctions,
 pas un niveau de classement superieur.
+```
+
+Statut du cercle 2 :
+
+```text
+ouvert comme reprise positive des architectures actives,
+avec controle d'occurrences et progression par lots.
 ```
 
 Point documentaire :

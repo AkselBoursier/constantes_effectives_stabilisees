@@ -37,6 +37,7 @@ Tests taxonomiques :
 Architectures :
 
 ```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md

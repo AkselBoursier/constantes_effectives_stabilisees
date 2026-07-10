@@ -325,20 +325,37 @@ la famille fonctionnelle est restauree comme sortie taxonomique controlee,
 apres fonction directrice et test de resistance.
 ```
 
-Tache 5 - prochaine tache ouverte :
+Tache 5 - produite :
 
 ```text
 ouvrir la remontee des sources DOCX primaires,
 avant de traiter les architectures actives par lots.
 ```
 
-Condition :
+Condition levee par :
 
 ```text
-ne pas ouvrir le cercle 2 sans distinguer les noms historiques de dossiers
-et le vocabulaire theorique actif des architectures.
-ne pas appeler archive stricte un DOCX qui n'a pas encore ete remonte
-en Markdown et rattache a un document actif.
+05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md
+05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md
+```
+
+Tache 6 - ouverte :
+
+```text
+ouvrir le cercle 2 des architectures actives.
+```
+
+Document d'ouverture :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
+```
+
+Condition active :
+
+```text
+ne pas reprendre les architectures par remplacement automatique ;
+les reformuler par regime, solidarite, acces, trajectoire et limite.
 ```
 
 ### 9. Garde-fous
