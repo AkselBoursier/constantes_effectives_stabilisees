@@ -82,6 +82,7 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
+| `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Reseaux de dependance entre architectures |
 | `05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md` | Reference active | Navigation et statut des documents |
@@ -347,6 +348,7 @@ Document de pilotage :
 
 ```text
 05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
+05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_dependances_et_reorganisation_v0_1.md
 ```
 

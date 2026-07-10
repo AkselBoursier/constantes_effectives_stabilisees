@@ -257,7 +257,13 @@ lot par lot,
 avec destination Markdown cible et document actif concerne.
 ```
 
-Cette table devra preceder toute conversion massive.
+Table produite :
+
+```text
+05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md
+```
+
+Cette table precede toute conversion massive.
 
 ### 9. Formule de cloture
 

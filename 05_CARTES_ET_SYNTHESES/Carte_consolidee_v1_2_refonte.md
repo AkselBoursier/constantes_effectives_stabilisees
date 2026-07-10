@@ -479,7 +479,7 @@ Elle ouvre des chantiers plus nets.
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
 | Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Cercle 1 produit puis corrige ; cercle 2 a ouvrir |
-| Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | A ouvrir avant le cercle 2 |
+| Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` + `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table produite avant conversion |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Seulement apres remontee Markdown et table de correspondance | Plus tard |
 
