@@ -135,8 +135,8 @@ Le cercle 2 doit avancer par lots courts.
 2B. Reprise metrologique SI. Produit : Cercle2_lot2B_Metrologique_SI_v0_1.md
 2C. Reprise effective basse energie. Produit : Cercle2_lot2C_Effective_basse_energie_v0_1.md
 2D. Reprise cosmologique prudente. Produit : Cercle2_lot2D_Cosmologique_v0_1.md
-2E. Reprise de la synthese transverse des architectures.
-2F. Controle d'occurrences et mise a jour des cartes.
+2E. Reprise de la synthese transverse des architectures. Produit : Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+2F. Controle d'occurrences et mise a jour des cartes. Produit : Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
 Chaque lot doit produire au minimum :
@@ -194,7 +194,7 @@ Cette note ouvre le cercle 2.
 La prochaine action logique est :
 
 ```text
-lot 2E : reprise de la synthese transverse des architectures.
+Carte consolidee v1.3 post-cercle 2.
 ```
 
 Formule de cloture :
