@@ -22,6 +22,16 @@ Objectif :
 classer w comme relation d'etat dans l'architecture cosmologique, en distinguant w = -1, w constant et w(a) dynamique.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+w appartient au sous-reseau etat de composante.
+```
+
+Ce sous-reseau est phenomenologique.
+
+Il teste le comportement d'une composante, sans identifier sa microphysique.
+
 La fiche doit eviter quatre erreurs.
 
 Premiere erreur :
@@ -99,6 +109,7 @@ famille principale : Relation
 sous-type : relation d'etat
 fonction architecturale : Relation d'etat
 architecture : Cosmologique
+sous-reseau : Etat de composante
 ```
 
 ### 3. Pourquoi w n'est pas Lambda
@@ -511,12 +522,14 @@ w est sans dimension, mais cela ne le rend pas conventionnellement exact.
 | Type logique | Relation d'etat ; parametrisation phenomenologique |
 | Dimension | Sans dimension |
 | Famille principale | Relation |
+| Sous-reseau | Etat de composante |
 | Sous-type local | Relation d'etat |
 | Fonction architecturale principale | Relation d'etat |
 | Fonction transversale | Validite de modele, dependance de parametrisation, tension d'acces |
 | Regime de definition physique | Description fluide d'une composante cosmologique |
 | Regime d'acces epistemique | BAO, CMB, SNe, lentille, croissance, ajustements combines |
 | Dependances de modele | Tres forte : LambdaCDM, wCDM, w0waCDM, parametrisations non parametriques, courbure, neutrinos, systematiques |
+| Test de retrait | Retirer w retire le test d'etat d'une composante, mais ne retire ni Lambda comme terme de fond ni Omega_Lambda comme budget normalise |
 | Stabilisation empirique | Forte pour w = -1 comme reference ; ouverte et sous pression pour w(a) |
 | Stabilisation conventionnelle | Non concernee |
 | Architecture | Cosmologique |
@@ -596,6 +609,7 @@ famille principale : Relation
 sous-type : relation d'etat
 fonction architecturale : Relation d'etat
 architecture : Cosmologique
+sous-reseau : Etat de composante
 stabilisation empirique : forte pour la reference w = -1, sous pression dans les tests dynamiques recents
 stabilisation conventionnelle : non concernee
 ```
@@ -626,9 +640,17 @@ H_0 et les distances contraignent indirectement w
 
 Mais ces niveaux ne doivent pas etre fusionnes.
 
-### 18. Prochaine fiche
+Lecture apres stress test :
 
-La prochaine fiche logique est :
+```text
+w ouvre le sous-reseau etat de composante ;
+il n'explique pas Lambda,
+mais teste si une composante peut s'ecarter de la reference w = -1.
+```
+
+### 18. Suite produite et reprise ouverte
+
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_6_As_ns.md
@@ -642,6 +664,24 @@ Objectif :
 
 ```text
 classer A_s et n_s comme conditions initiales perturbatives dans l'architecture cosmologique.
+```
+
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle doit etre lue comme fiche du sous-reseau etat de composante.
 ```
 
 ### 19. Effet sur la carte et la methode
@@ -672,6 +712,14 @@ La fiche ajoute aussi une precaution pour la suite :
 les conditions initiales perturbatives ne devront pas etre classees comme Fond par simple appartenance cosmologique.
 ```
 
+Formule actuelle :
+
+```text
+w = relation d'etat du sous-reseau etat de composante ;
+w(a) = parametrisation phenomenologique,
+non explication physique autonome de l'energie noire.
+```
+
 ### 20. Sources de controle
 
 Sources utilisees pour cette fiche :
@@ -687,11 +735,15 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_4_Omega_i.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 PROJECT_BRIEF.docx
 ```
