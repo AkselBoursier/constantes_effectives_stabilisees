@@ -20,6 +20,17 @@ nouvelle famille superieure
 
 La note sert de reference courte pour les cartes consolidees ulterieures.
 
+Complement de reprise positive :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+```
+
+La presente note reste la consolidation locale.
+
+Le lot 2B fixe la formulation positive a privilegier pour les reprises
+ulterieures.
+
 ### 2. Decision centrale
 
 L'architecture metrologique SI est confirmee comme architecture robuste.
