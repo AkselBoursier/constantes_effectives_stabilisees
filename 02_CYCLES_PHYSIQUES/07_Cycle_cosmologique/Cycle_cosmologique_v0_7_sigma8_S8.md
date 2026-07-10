@@ -600,7 +600,7 @@ Objectif :
 consolider l'architecture cosmologique apres Lambda, H_0, Omega_i, w, A_s / n_s et sigma_8 / S_8.
 ```
 
-La synthese devra notamment integrer :
+La synthese produite ensuite integre :
 
 ```text
 Observable reconstruite
@@ -650,7 +650,7 @@ une amplitude tardive n'est pas une condition initiale.
 Elle a ajoute une decision reprise ensuite par la methode :
 
 ```text
-Observable reconstruite doit etre ajoutee a la liste stabilisee des fonctions architecturales cosmologiques.
+Observable reconstruite est maintenant stabilisee comme fonction architecturale cosmologique.
 ```
 
 Cette decision est maintenant precisee par la lecture par sous-reseaux :

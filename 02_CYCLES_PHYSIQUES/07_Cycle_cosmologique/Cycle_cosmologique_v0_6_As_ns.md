@@ -619,10 +619,10 @@ Troisieme regle :
 contrainte inflationnaire n'est pas explication microphysique unique.
 ```
 
-Elle ajoute aussi une transition importante :
+Elle ajoute aussi une transition maintenant reprise par la fiche suivante :
 
 ```text
-la fiche suivante devra distinguer amplitude initiale et amplitude tardive reconstruite.
+la fiche sigma_8 / S_8 distingue amplitude initiale et amplitude tardive reconstruite.
 ```
 
 Formule actuelle :

@@ -343,7 +343,7 @@ Le cycle stabilise ici une nouvelle fonction architecturale :
 Observable reconstruite
 ```
 
-Cette fonction doit etre ajoutee a la liste stabilisee des fonctions architecturales cosmologiques.
+Cette fonction est maintenant stabilisee dans la liste des fonctions architecturales cosmologiques.
 
 Regle :
 
