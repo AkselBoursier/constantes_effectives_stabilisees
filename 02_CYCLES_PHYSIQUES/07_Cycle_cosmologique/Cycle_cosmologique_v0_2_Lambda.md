@@ -30,6 +30,22 @@ Objectif :
 classer Lambda comme terme de fond dans l'architecture cosmologique, sans transformer la cosmologie en famille et sans assimiler Lambda, Omega_Lambda et w.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+Lambda appartient au sous-reseau fond / expansion.
+```
+
+Elle y joue le role de terme de fond.
+
+Elle ne doit pas etre confondue avec :
+
+```text
+H_0 comme parametre d'etat actuel,
+Omega_Lambda comme densite normalisee,
+w comme relation d'etat.
+```
+
 ### 2. Identification
 
 Grandeur :
@@ -63,6 +79,7 @@ Statut de rang :
 ```text
 fonction architecturale principale : Fond
 architecture : Cosmologique
+sous-reseau : Fond / expansion
 famille superieure : aucune famille simple ne doit etre forcee
 ```
 
@@ -370,12 +387,14 @@ Lambda peut etre exprimee dans des unites differentes, mais son statut physique 
 | Type logique | Terme cosmologique dimensionne ; parametre du modele LambdaCDM |
 | Dimension | L^-2 |
 | Famille principale | Aucune famille superieure simple ne doit etre forcee |
+| Sous-reseau | Fond / expansion |
 | Fonction architecturale principale | Fond |
 | Sous-type local | Terme de fond cosmologique |
 | Fonction transversale | Validite de modele, eventuellement hierarchie avec echelle cosmologique |
 | Regime de definition physique | Dynamique globale de l'espace-temps dans une cosmologie relativiste |
 | Regime d'acces epistemique | Inference cosmologique combinee : CMB, BAO, SNe, lentille, croissance des structures |
 | Dependances de modele | Forte : LambdaCDM, wCDM, w0waCDM, courbure, neutrinos, systematiques |
+| Test de retrait | Retirer Lambda ne retire pas H_0, mais modifie fortement le modele de fond et l'acceleration tardive |
 | Stabilisation empirique | Forte dans LambdaCDM, mais sous pression par certaines combinaisons recentes de donnees |
 | Stabilisation conventionnelle | Non concernee |
 | Architecture | Cosmologique |
@@ -454,6 +473,7 @@ Statut :
 ```text
 fonction architecturale : Fond
 architecture : Cosmologique
+sous-reseau : Fond / expansion
 stabilisation empirique : forte dans LambdaCDM, mais actuellement testee par DESI DR2 et autres combinaisons de donnees
 stabilisation conventionnelle : non concernee
 ```
@@ -486,9 +506,17 @@ Troisieme regle :
 traiter les tensions comme proprietes du regime d'acces, non comme categories taxonomiques.
 ```
 
-### 16. Prochaine fiche
+Lecture apres stress test :
 
-La prochaine fiche logique est :
+```text
+Lambda et H_0 forment le noyau fond / expansion ;
+Lambda stabilise le terme de fond,
+H_0 stabilise l'etat actuel de l'expansion.
+```
+
+### 16. Suite produite et reprise ouverte
+
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_3_H0.md
@@ -502,6 +530,24 @@ Objectif :
 
 ```text
 classer H_0 comme parametre d'etat actuel dans l'architecture cosmologique, sans le traiter comme constante fondamentale.
+```
+
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle doit etre lue comme fiche du sous-reseau fond / expansion.
 ```
 
 ### 17. Sources de controle
@@ -519,8 +565,13 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 Test de la famille Fond.docx
 PROJECT_BRIEF.docx
 ```
