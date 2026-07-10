@@ -124,8 +124,8 @@ sans dimension
 Statut de rang :
 
 ```text
-famille principale : Relation
-sous-type : relation normalisee
+famille principale : aucune famille simple forcee
+rang 0 : rapport normalise
 fonction architecturale : Densite normalisee
 architecture : Cosmologique
 sous-reseau : Budget normalise
@@ -475,7 +475,7 @@ Omega_i est sans dimension, mais il reste inferentiel et modele-dependant.
 | Dimension | Sans dimension |
 | Famille principale | Relation |
 | Sous-reseau | Budget normalise |
-| Sous-type local | Relation normalisee |
+| Sous-type local | Rapport normalise |
 | Fonction architecturale principale | Densite normalisee |
 | Fonction transversale | Normalisation, fermeture, dependance de modele |
 | Regime de definition physique | Dynamique de Friedmann-Lemaitre et decomposition du contenu cosmologique |
@@ -502,7 +502,7 @@ Omega_i = Relation
 Elle est :
 
 ```text
-Omega_i = Relation normalisee
+Omega_i = rapport normalise
 ```
 
 avec fonction architecturale :
@@ -556,8 +556,8 @@ Omega_i = relation normalisee dans l'architecture cosmologique.
 Statut :
 
 ```text
-famille principale : Relation
-sous-type : relation normalisee
+famille principale : aucune famille simple forcee
+rang 0 : rapport normalise
 fonction architecturale : Densite normalisee
 architecture : Cosmologique
 sous-reseau : Budget normalise

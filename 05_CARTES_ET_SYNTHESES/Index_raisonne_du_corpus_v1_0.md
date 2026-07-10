@@ -169,7 +169,7 @@ Point documentaire :
 
 ```text
 l'architecture Saveur-Higgs dispose maintenant d'une note Markdown active,
-au meme rang documentaire que les autres architectures inter-familles.
+et d'une synthese de cycle active dans 02_CYCLES_PHYSIQUES.
 ```
 
 Archive historique source :
@@ -178,9 +178,45 @@ Archive historique source :
 Note de consolidation saveur-Higgs v0.1.docx
 ```
 
-La note Markdown doit etre lue en priorite ; le Word racine sert a retracer la genealogie.
+La note Markdown et la synthese de cycle doivent etre lues en priorite ; le Word racine sert a retracer la genealogie.
 
-### 8. Cycle effectif basse energie
+### 8. Cycle Saveur-Higgs
+
+Dossier :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/
+```
+
+Documents actifs :
+
+| Document | Statut | Role |
+|---|---|---|
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
+| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
+
+Documents racine historiques associes :
+
+```text
+Note de consolidation saveur-Higgs v0.1.docx
+Fiche (v) v0.1.docx
+Fiche Yukawa v0.1.docx
+Fiche CKM v0.1.docx
+Fiche Wolfenstein v0.1.docx
+Fiche Delta m^2.docx
+Fiche Angles de Melange Leptoniques.docx
+Fiche masse absolue des neutrinos.docx
+```
+
+Decision :
+
+```text
+pour comprendre l'architecture Saveur-Higgs,
+lire d'abord la synthese de cycle,
+puis la note d'architecture.
+```
+
+### 9. Cycle effectif basse energie
 
 Dossier :
 
@@ -211,7 +247,7 @@ lire d'abord la synthese de cycle,
 puis la note d'architecture.
 ```
 
-### 9. Cycle cosmologique
+### 10. Cycle cosmologique
 
 Dossier :
 
@@ -240,10 +276,10 @@ Decision :
 ```text
 pour une lecture rapide, lire la synthese du cycle, la note d'architecture et le stress test.
 pour verifier une decision locale, revenir a la fiche correspondante.
-pour reprendre le cycle, partir du plan de reprise v0.1.
+pour comprendre la reprise, partir du plan de reprise v0.1 puis lire les fiches reprises.
 ```
 
-### 10. Cycle metrologique SI
+### 11. Cycle metrologique SI
 
 Dossier :
 
@@ -271,7 +307,7 @@ la reference actuelle pour le SI est la note d'architecture metrologique,
 avec le cycle c / h / e comme preuve locale recente.
 ```
 
-### 11. Archives Word racine
+### 12. Archives Word racine
 
 Le dossier racine contient de nombreux fichiers Word anterieurs.
 
@@ -311,9 +347,9 @@ si un document Markdown recent contredit ou precise un document Word ancien,
 le document Markdown recent prime pour le travail actuel.
 ```
 
-### 12. Ordre de lecture selon l'objectif
+### 13. Ordre de lecture selon l'objectif
 
-#### 12.1 Comprendre la methode actuelle
+#### 13.1 Comprendre la methode actuelle
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
@@ -323,7 +359,7 @@ le document Markdown recent prime pour le travail actuel.
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 
-#### 12.2 Comprendre les architectures
+#### 13.2 Comprendre les architectures
 
 ```text
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
@@ -339,7 +375,7 @@ Pour retracer la genealogie Saveur-Higgs :
 consulter ensuite la note Word racine de consolidation Saveur-Higgs.
 ```
 
-#### 12.3 Verifier une decision physique locale
+#### 13.3 Verifier une decision physique locale
 
 ```text
 chercher d'abord la synthese du cycle concerne,
@@ -354,7 +390,7 @@ c / h / e -> Architecture_metrologique_SI_notes.md puis Cycle_metrologique_SI_v0
 alpha_G / M_Pl -> Synthese_cycle_effectif_basse_energie_v0_1.md puis Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 ```
 
-#### 12.4 Retracer l'histoire du projet
+#### 13.4 Retracer l'histoire du projet
 
 ```text
 PROJECT_BRIEF.docx
@@ -375,7 +411,7 @@ Architecture_cosmologique_stress_test_v0_1.md
 Plan_reprise_cycle_cosmologique_v0_1.md
 ```
 
-### 13. Dependances principales
+### 14. Dependances principales
 
 Les dependances peuvent etre lues ainsi.
 
@@ -408,13 +444,13 @@ Lecture fonctionnelle :
 methode -> criblage -> architecture -> dependances -> carte consolidee -> stress test -> plan de reprise
 ```
 
-### 14. Lacunes documentaires identifiees
+### 15. Lacunes documentaires identifiees
 
 Cet index fait apparaitre plusieurs lacunes possibles.
 
 Depuis la revision de fond sur la temporalite et le criblage des critiques, la premiere lacune methodologique devient prioritaire.
 
-#### 14.1 Methode v1.3 produite
+#### 15.1 Methode v1.3 produite
 
 La version methodologique active integrant explicitement les apports de la revision temporelle et du criblage critique est produite.
 
@@ -456,6 +492,7 @@ Documents d'application produits ensuite :
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 ```
 
 Stress test cosmologique produit :
@@ -464,12 +501,13 @@ Stress test cosmologique produit :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
-#### 14.2 Note Markdown Saveur-Higgs produite
+#### 15.2 Note Markdown et cycle Saveur-Higgs produits
 
 La note Markdown dediee est produite :
 
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 ```
 
 Statut :
@@ -483,10 +521,10 @@ Raison :
 
 ```text
 Saveur-Higgs etait deja traite dans les archives Word, la carte v1.1 et la synthese transverse.
-La note Markdown leve l'asymetrie documentaire entre les quatre architectures actives.
+La note Markdown et la synthese de cycle levent l'asymetrie documentaire entre les quatre architectures actives.
 ```
 
-#### 14.3 README de dossier
+#### 15.3 README de dossier
 
 Il pourrait etre utile d'ajouter un README minimal au dossier racine.
 
@@ -501,7 +539,7 @@ Role :
 ```text
 renvoyer vers l'index raisonne,
 la note methodologique v1.3,
-et la carte consolidee v1.1.
+et la carte consolidee v1.2 de refonte.
 ```
 
 Statut :
@@ -510,7 +548,7 @@ Statut :
 utile si le corpus doit etre partage ou relu hors de cette conversation.
 ```
 
-#### 14.4 Normalisation future des archives
+#### 15.4 Normalisation future des archives
 
 Une normalisation des noms de fichiers Word pourrait etre envisagee plus tard.
 
@@ -526,7 +564,7 @@ Raison :
 les dependances internes et citations croisees ne sont pas encore auditees.
 ```
 
-### 15. Regles pour les prochaines etapes
+### 16. Regles pour les prochaines etapes
 
 Avant d'ouvrir un nouveau cycle physique :
 
@@ -557,7 +595,7 @@ Avant de deplacer ou renommer un fichier :
 4. Ne rien deplacer sans raison documentaire explicite.
 ```
 
-### 16. Carte active du corpus
+### 17. Carte active du corpus
 
 La carte active du corpus peut etre resumee ainsi.
 
@@ -599,13 +637,17 @@ Architectures actives :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 
 Cycles actifs :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/
+
+Audit transversal :
+05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
 
-### 17. Formule de cloture
+### 18. Formule de cloture
 
 L'index peut etre resume par trois regles.
 

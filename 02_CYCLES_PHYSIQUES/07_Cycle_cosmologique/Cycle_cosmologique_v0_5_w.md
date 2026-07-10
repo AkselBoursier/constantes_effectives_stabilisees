@@ -105,8 +105,8 @@ sans dimension
 Statut de rang :
 
 ```text
-famille principale : Relation
-sous-type : relation d'etat
+famille principale : aucune famille simple forcee
+rang 0 : relation d'etat
 fonction architecturale : Relation d'etat
 architecture : Cosmologique
 sous-reseau : Etat de composante
@@ -605,8 +605,8 @@ w = relation d'etat dans l'architecture cosmologique.
 Statut :
 
 ```text
-famille principale : Relation
-sous-type : relation d'etat
+famille principale : aucune famille simple forcee
+rang 0 : relation d'etat
 fonction architecturale : Relation d'etat
 architecture : Cosmologique
 sous-reseau : Etat de composante

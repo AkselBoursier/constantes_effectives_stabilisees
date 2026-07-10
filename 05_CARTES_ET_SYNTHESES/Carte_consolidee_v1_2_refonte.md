@@ -446,6 +446,15 @@ Architectures actives :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
+Cycles physiques actifs :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
+```
+
 ### 18. Points ouverts apres v1.2
 
 La v1.2 ne ferme pas le projet.
@@ -456,6 +465,8 @@ Elle ouvre des chantiers plus nets.
 |---|---|---|
 | Stress test cosmologique | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Produit |
 | Plan de reprise du cycle cosmologique | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Produit |
+| Reprise des cycles physiques | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/` + cycles 06, 07, 08 | Produite sur branche |
+| Audit de resynchronisation theorique | `05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md` | Produit |
 | Application de la matrice aux fiches sensibles | Addenda ou revisions locales | Prochaine suite possible |
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Possible |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
@@ -472,7 +483,8 @@ Elle peut etre :
 ```text
 soit l'application de la matrice v1.2 a quelques fiches sensibles,
 soit une matrice temporelle autonome,
-soit une reprise controlee du cycle cosmologique sur branche dediee.
+soit l'application de l'audit de resynchronisation aux fiches sensibles restantes,
+soit une matrice temporelle autonome si la trajectoire devient un outil regulier.
 ```
 
 ### 19. Documents integres
@@ -513,6 +525,14 @@ Cycle cosmologique :
 ```text
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Cycles physiques synchronises :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
 ```
 
 ### 20. Formule de cloture

@@ -79,7 +79,7 @@ Le cycle stabilise six niveaux distincts.
 |---|---|---|---|---|
 | Lambda | Terme de fond | Fond | Fond / expansion | Reintroduire Fond comme famille |
 | H_0 | Parametre d'etat actuel | Parametre d'etat | Fond / expansion + tension transversale | Traiter H_0 comme constante fondamentale |
-| Omega_i | Relation normalisee | Densite normalisee | Budget normalise | Confondre fraction normalisee et densite absolue |
+| Omega_i | Rapport normalise | Densite normalisee | Budget normalise | Confondre fraction normalisee et densite absolue |
 | w | Relation d'etat | Relation d'etat | Etat de composante | Confondre parametrisation et explication physique |
 | A_s / n_s | Conditions initiales perturbatives | Condition initiale | Primordial | Ranger les parametres primordiaux dans Fond |
 | sigma_8 / S_8 | Amplitudes reconstruites de structure | Observable reconstruite | Croissance / reconstruction | Transformer une tension d'acces en verdict physique |
@@ -176,7 +176,7 @@ tension H_0 = propriete du regime d'acces, non famille taxonomique.
 Omega_i a ete classe comme :
 
 ```text
-Relation normalisee
+Rapport normalise
 ```
 
 avec fonction architecturale :
@@ -224,8 +224,8 @@ Relation d'etat
 Statut :
 
 ```text
-famille principale : Relation
-sous-type : relation d'etat
+famille principale : aucune famille simple forcee
+rang 0 : relation d'etat
 fonction architecturale : Relation d'etat
 architecture : Cosmologique
 ```
@@ -595,7 +595,7 @@ Il donne un cadre de classement robuste pour ces questions.
 | Type logique | Terme dimensionne | Taux actuel | Rapport normalise | Relation pression / densite | Spectre primordial | Amplitude tardive reconstruite |
 | Famille principale | Aucune simple | Aucune simple | Relation | Relation | Aucune simple | Aucune simple |
 | Sous-reseau | Fond / expansion | Fond / expansion + tension transversale | Budget normalise | Etat de composante | Primordial | Croissance / reconstruction |
-| Sous-type | Terme de fond | Parametre d'etat actuel | Relation normalisee | Relation d'etat | Condition initiale perturbative | Observable reconstruite |
+| Sous-type | Terme de fond | Parametre d'etat actuel | Rapport normalise | Relation d'etat | Condition initiale perturbative | Observable reconstruite |
 | Fonction architecturale | Fond | Parametre d'etat | Densite normalisee | Relation d'etat | Condition initiale | Observable reconstruite |
 | Regime physique | Dynamique globale | Expansion actuelle | Budget normalise | Composante fluide | Perturbations primordiales | Croissance des structures |
 | Regime d'acces | CMB, BAO, SNe, croissance | Distance ladder, CMB, BAO | CMB, BAO, SNe, BBN | BAO, CMB, SNe | CMB, polarisation, lensing | Lensing, CMB, amas, 3x2pt |

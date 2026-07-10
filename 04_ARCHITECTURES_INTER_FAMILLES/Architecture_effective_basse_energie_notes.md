@@ -30,7 +30,7 @@ Elle articule principalement :
 Raccordement
 Echelle
 Couplage
-Relation, lorsque des liaisons de regime doivent etre explicitees
+Relation sous audit, lorsque des liaisons de regime doivent etre explicitees
 ```
 
 Elle mobilise aussi des fonctions transversales :
@@ -69,6 +69,13 @@ Cette definition repose sur quatre elements.
 ```
 
 Le point important est le quatrieme. Une description effective n'est pas seulement une description simplifiee. C'est une description dont le domaine de validite doit etre explicite.
+
+Lecture v1.3 :
+
+```text
+l'architecture effective basse energie doit etre lue comme une trajectoire de stabilisation de validite,
+non comme une famille et non comme une simple liste de constantes dependantes d'echelle.
+```
 
 ### 4. Corpus stabilise
 
@@ -437,17 +444,20 @@ Formule courte :
 
 > L'effectivite stabilise moins une valeur qu'une validite de description.
 
-### 16. Suite recommandee
+### 16. Statut apres resynchronisation
 
-Suite produite ensuite :
+Suites produites ensuite :
 
 ```text
 1. integration dans les cartes consolidees ;
 2. ouverture prudente du cycle cosmologique ;
 3. refonte v1.2 par rangs, roles et dependances.
+4. reprise des cycles physiques selon la methode v1.3.
 ```
 
-La cosmologie doit attendre parce qu'elle melange :
+La prudence cosmologique reste methodologique, mais elle n'est plus une attente documentaire : le cycle cosmologique et son stress test ont ete produits puis repris.
+
+Le point conserve est que la cosmologie melange :
 
 ```text
 constantes
@@ -457,7 +467,7 @@ conditions initiales
 tensions de donnees
 ```
 
-Le travail ulterieur devait d'abord consolider les architectures deja confirmees :
+Le travail ulterieur a aussi consolide les architectures deja confirmees :
 
 ```text
 saveur-Higgs
@@ -469,6 +479,12 @@ Document de refonte produit ensuite :
 
 ```text
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
+```
+
+Audit transversal produit ensuite :
+
+```text
+05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
 
 ### 17. Documents sources internes
@@ -483,4 +499,5 @@ Cycle effectif basse energie v0.2.docx
 Cycle effectif basse energie v0.3.docx
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 ```

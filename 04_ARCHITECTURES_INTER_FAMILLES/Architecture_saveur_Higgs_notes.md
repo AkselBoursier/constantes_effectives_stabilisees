@@ -552,6 +552,7 @@ Documents Markdown actifs :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
@@ -560,7 +561,7 @@ Documents Markdown actifs :
 
 ### 15. Statut apres integration
 
-La dette documentaire Saveur-Higgs est levee au niveau Markdown.
+La dette documentaire Saveur-Higgs est levee au niveau Markdown et dispose maintenant d'une piece de cycle active.
 
 Statut :
 

@@ -58,10 +58,10 @@ Architecture : comment plusieurs fonctions deviennent-elles solidaires ?
 
 | Architecture | Forme dominante | Familles mobilisees | Corpus de reference |
 |---|---|---|---|
-| Saveur-Higgs | Constitutive | Echelle, Couplage, Relation, Orientation | v, Y_f, m_f, CKM, PMNS, Delta m^2 |
-| Metrologique SI | Definitionnelle | Convention, Relation, Echelle | k_B, N_A, R, c, h, e, K_J, R_K |
-| Effective basse energie | Effective / validite | Raccordement, Echelle, Couplage, Relation | G_F, M_W, alpha_s(Q^2), Lambda_QCD, alpha_G(E), M_Pl |
-| Cosmologique | Inferentielle / reconstructive | Relation + fonctions architecturales | Lambda, H_0, Omega_i, w, A_s, n_s, sigma_8, S_8 |
+| Saveur-Higgs | Constitutive | Echelle, Couplage, Orientation, roles spectraux, Relation sous audit | v, Y_f, m_f, CKM, PMNS, Delta m^2 |
+| Metrologique SI | Definitionnelle | Convention, composition exacte, Echelle, relation qualifiee | k_B, N_A, R, c, h, e, K_J, R_K |
+| Effective basse energie | Effective / validite | Raccordement, Echelle, Couplage, Validite, Relation sous audit | G_F, M_W, alpha_s(Q^2), Lambda_QCD, alpha_G(E), M_Pl |
+| Cosmologique | Inferentielle / reconstructive | Fonctions architecturales, roles relationnels, acces | Lambda, H_0, Omega_i, w, A_s, n_s, sigma_8, S_8 |
 
 Chaque architecture est robuste parce qu'elle organise plusieurs fonctions.
 
@@ -80,7 +80,7 @@ Elle articule :
 ```text
 Echelle
 + Couplage
-+ Relation
++ Relation constitutive sous audit
 + Orientation
 ```
 
@@ -132,7 +132,7 @@ Elle articule :
 
 ```text
 Convention
-+ Relation compositionnelle exacte
++ Composition exacte
 + Echelle physique conservee
 + Realisation pratique
 + Systeme coherent d'unites
@@ -142,7 +142,7 @@ Structure :
 
 ```text
 k_B, N_A, c, h, e : constantes definissantes primaires
-R, K_J, R_K       : relations exactes par composition
+R, K_J, R_K       : compositions exactes
 ```
 
 Invariance methodologique :
@@ -365,7 +365,7 @@ Types de stabilisation :
 ```text
 empirique
 conventionnelle
-exacte par composition
+composition exacte
 reconstruite
 modele-dependante
 bornee
@@ -408,7 +408,7 @@ Les architectures different par leur mode de cohesion.
 | Architecture | Mode de cohesion | Stabilisation dominante | Risque principal |
 |---|---|---|---|
 | Saveur-Higgs | Constitution d'un secteur | Empirique et relationnelle | Sur-fragmentation ou famille artificielle |
-| Metrologique SI | Definition d'un systeme d'unites | Conventionnelle et exacte par composition | Confondre exactitude et physique complete |
+| Metrologique SI | Definition d'un systeme d'unites | Conventionnelle et par composition exacte | Confondre exactitude et physique complete |
 | Effective basse energie | Validite d'une description limitee | Empirique, theorique et de regime | Oublier la limite de validite |
 | Cosmologique | Reseau d'inference et reconstruction | Modele-dependante et pluralite d'acces | Confondre tension et verdict physique |
 
@@ -451,7 +451,7 @@ Le cas SI montre une autre forme de fonction architecturale :
 
 ```text
 constante definissante dans un systeme d'unites
-relation exacte par composition
+composition exacte
 realisation pratique
 ```
 
@@ -469,7 +469,7 @@ Il ne faut pas transformer toute fonction architecturale locale en famille gener
 |---|---|---|---|---|
 | Forme | Constitutive | Definitionnelle | Validite | Inferentielle / reconstructive |
 | Corpus | v, Y_f, m_f, CKM, PMNS, Delta m^2 | k_B, N_A, R, c, h, e, K_J, R_K | G_F, M_W, alpha_s, Lambda_QCD, alpha_G, M_Pl | Lambda, H_0, Omega_i, w, A_s, n_s, sigma_8, S_8 |
-| Familles dominantes | Echelle, Couplage, Relation, Orientation | Convention, Relation, Echelle | Raccordement, Echelle, Couplage | Relation + fonctions architecturales |
+| Familles et roles dominants | Echelle, Couplage, Orientation, roles spectraux | Convention, composition exacte, Echelle | Raccordement, Echelle, Couplage, Validite | Fonctions architecturales et roles relationnels |
 | Fonction critique | Orientation / relation constitutive | Exactitude definissante | Validite | Acces / reconstruction |
 | Mode de stabilisation | Empirique et structurelle | Conventionnelle et compositionnelle | Regime limite | Modele-dependante et reconstruite |
 | Erreur evitee | Famille Saveur-Higgs | Famille Metrologie | Famille Effectif | Famille Cosmologie |
@@ -513,7 +513,7 @@ Quelle est la fonction principale de la grandeur ?
 Reponse attendue :
 
 ```text
-Couplage, Echelle, Relation, Raccordement, Orientation ou Convention.
+Couplage, Echelle, Raccordement, Orientation, Convention, ou Relation seulement apres test de non-reduction.
 ```
 
 #### 15.2 Test de fonction transversale ou architecturale
@@ -625,6 +625,7 @@ Documents internes utilises :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md

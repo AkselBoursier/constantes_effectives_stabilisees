@@ -20,19 +20,22 @@ et eventuelle relecture par branche ou pull request.
 
 ### 2. Principe central
 
-Le workflow repose sur une regle simple.
+Le workflow repose maintenant sur deux niveaux.
 
 ```text
-aucun commit ni push n'est effectue sans validation explicite.
+niveau conceptuel : validation explicite requise ;
+niveau documentaire et technique : delegation operative apres stabilisation controlee.
 ```
 
-Quand une etape est suffisamment stabilisee, l'assistant signale :
+Quand une etape engage une decision theorique, taxonomique ou methodologique nouvelle, l'assistant signale :
 
 ```text
-point de commit possible
+point de decision conceptuelle
 ```
 
-La validation de l'utilisateur declenche seulement alors la preparation du commit.
+et attend validation.
+
+Quand une etape consiste seulement a synchroniser, nettoyer, indexer, committer ou pousser un etat documentaire deja stabilise, l'assistant peut agir directement et donner ensuite le resume exact.
 
 ### 3. Cycle normal de travail
 
@@ -43,11 +46,11 @@ Le cycle ordinaire est le suivant.
 2. Controler la coherence documentaire.
 3. Verifier les references croisees utiles.
 4. Verifier l'etat Git local.
-5. Signaler un point de commit possible.
-6. Attendre confirmation.
+5. Identifier si le palier est conceptuel ou seulement documentaire.
+6. Demander validation seulement si le palier est conceptuel.
 7. Stager seulement les fichiers concernes.
 8. Creer un commit avec message explicite.
-9. Pousser vers origin/main, sauf decision de branche.
+9. Pousser vers la branche active ou vers origin/main selon le chantier.
 10. Donner le resume exact du commit.
 ```
 
@@ -132,7 +135,7 @@ Regles :
 ne pas reecrire l'historique sans raison explicite ;
 ne pas melanger plusieurs chantiers independants dans un commit ;
 ne pas deplacer les archives sans table de correspondance ;
-ne pas pousser une modification que l'utilisateur n'a pas validee.
+ne pas pousser une decision conceptuelle que l'utilisateur n'a pas validee.
 ```
 
 ### 9. Formule operative
@@ -140,10 +143,9 @@ ne pas pousser une modification que l'utilisateur n'a pas validee.
 ```text
 travailler localement,
 stabiliser documentairement,
-proposer un point de commit,
-valider,
-committer,
+qualifier le palier,
+valider si conceptuel,
+committer si documentairement stable,
 pousser,
 resumer.
 ```
-

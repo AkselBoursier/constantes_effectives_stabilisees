@@ -18,7 +18,7 @@ et non :
 nouvelle famille superieure
 ```
 
-La note doit donc servir de reference courte pour les prochaines cartes consolidees.
+La note sert de reference courte pour les cartes consolidees actives.
 
 ### 2. Decision centrale
 
@@ -76,8 +76,8 @@ Le cycle a stabilise huit grandeurs ou groupes de grandeurs principaux.
 |---|---|---|---|
 | Lambda | Aucune famille simple forcee | Fond | Terme de fond dans LambdaCDM |
 | H_0 | Aucune famille simple forcee | Parametre d'etat | Valeur actuelle du taux d'expansion |
-| Omega_i | Relation | Densite normalisee | Rapport a une densite critique |
-| w | Relation | Relation d'etat | Lien pression / densite |
+| Omega_i | Aucune famille simple forcee | Densite normalisee | Rapport a une densite critique |
+| w | Aucune famille simple forcee | Relation d'etat | Lien pression / densite |
 | A_s | Aucune famille simple forcee | Condition initiale | Amplitude primordiale scalaire |
 | n_s | Aucune famille simple forcee | Condition initiale | Inclinaison spectrale primordiale |
 | sigma_8 | Aucune famille simple forcee | Observable reconstruite | Amplitude tardive de structure |
@@ -163,10 +163,10 @@ rho_crit = 3 H^2 / (8 pi G)
 Decision :
 
 ```text
-Omega_i = Relation normalisee + fonction architecturale Densite normalisee.
+Omega_i = rapport normalise + fonction architecturale Densite normalisee.
 ```
 
-Omega_i n'est pas une constante primitive de composition de l'univers. C'est une relation normalisee dans une decomposition globale contrainte.
+Omega_i n'est pas une constante primitive de composition de l'univers. C'est un rapport normalise dans une decomposition globale contrainte.
 
 #### 5.4 Relation d'etat
 
@@ -191,7 +191,7 @@ w = p / (rho c^2)
 Decision :
 
 ```text
-w = Relation d'etat, non identification directe a Lambda.
+w = relation d'etat comme role architectural, non identification directe a Lambda.
 ```
 
 Pour une composante Lambda stricte :
@@ -344,8 +344,8 @@ Une architecture decrit l'articulation de plusieurs familles et fonctions dans u
 Ainsi :
 
 ```text
-Omega_i appartient a la famille Relation, sous-type relation normalisee.
-w appartient a la famille Relation, sous-type relation d'etat.
+Omega_i et w ont une forme relationnelle au rang 0.
+Leur statut stabilise dans ce cycle est architectural : Densite normalisee et Relation d'etat.
 Lambda, H_0, A_s, n_s, sigma_8 et S_8 ne doivent pas etre forces dans une famille simple lorsque leur role architectural est plus informatif que leur forme locale.
 ```
 
@@ -511,8 +511,10 @@ Documents internes a relier a cette note :
 ```text
 PROJECT_BRIEF.docx
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
@@ -521,6 +523,7 @@ PROJECT_BRIEF.docx
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 

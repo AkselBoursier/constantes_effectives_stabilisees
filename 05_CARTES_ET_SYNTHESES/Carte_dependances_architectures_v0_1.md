@@ -11,6 +11,7 @@ Elle prolonge :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
@@ -141,7 +142,7 @@ Reseau minimal :
 ```text
 constantes definissantes
 -> definitions d'unites
--> relations exactes par composition
+-> compositions exactes
 -> realisations pratiques
 -> systeme coherent de mesure
 -> roles physiques conserves
@@ -152,9 +153,9 @@ Table de dependances :
 | Noeud | Depend de | Rend possible | Retrait |
 |---|---|---|---|
 | `k_B`, `N_A`, `c`, `h`, `e` | Decision definitionnelle SI | Unites exactes associees | Perte du socle definitionnel |
-| `R` | `N_A k_B` | Relation thermodynamique exacte par composition | Perte d'une composition exacte, pas du role physique de k_B |
-| `K_J` | `2 e / h` | Metrologie electrique quantique | Perte d'une relation pratique exacte |
-| `R_K` | `h / e^2` | Resistance Hall quantique exacte | Perte d'une relation pratique exacte |
+| `R` | `N_A k_B` | Composition thermodynamique exacte | Perte d'une composition exacte, pas du role physique de k_B |
+| `K_J` | `2 e / h` | Metrologie electrique quantique | Perte d'une composition pratique exacte |
+| `R_K` | `h / e^2` | Resistance Hall quantique exacte | Perte d'une composition pratique exacte |
 | Realisations pratiques | Procedures experimentales | Mise en oeuvre des definitions | Exactitude formelle sans acces operationnel |
 | Roles physiques conserves | Regimes physiques propres | Non-reduction des constantes a la convention | Appauvrissement conceptuel |
 
@@ -371,7 +372,7 @@ Mais ces occurrences ne sont pas equivalentes.
 | Cas | Type de relation | Bon rang |
 |---|---|---|
 | `m_f = y_f v / sqrt(2)` | Constitutive locale | Architecture Saveur-Higgs |
-| `R = N_A k_B` | Composition exacte | Architecture SI + Relation compositionnelle |
+| `R = N_A k_B` | Composition exacte | Architecture SI + composition exacte |
 | `K_J`, `R_K` | Composition metrologique exacte | Architecture SI + realisation pratique |
 | `Omega_i` | Normalisation cosmologique | Role de densite normalisee |
 | `w` | Relation d'etat | Role contextuel d'etat |

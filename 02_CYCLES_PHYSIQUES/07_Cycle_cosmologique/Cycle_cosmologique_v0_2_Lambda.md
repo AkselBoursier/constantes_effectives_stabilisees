@@ -252,7 +252,7 @@ Omega_Lambda
 releve plutot d'une :
 
 ```text
-Relation normalisee
+rapport normalise
 ```
 
 et d'une fonction architecturale :

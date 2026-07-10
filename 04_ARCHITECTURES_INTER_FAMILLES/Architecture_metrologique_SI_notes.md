@@ -28,7 +28,8 @@ Elle articule principalement :
 
 ```text
 Convention
-Relation
+Composition exacte
+Relation qualifiee lorsque le role physique l'exige
 Echelle
 Realisation pratique
 Role physique conserve
@@ -50,13 +51,13 @@ Cette decision evite de creer une famille trop large qui absorberait toutes les 
 
 ### 3. Definition locale proposee
 
-Une architecture metrologique SI est une configuration inter-familles dans laquelle des constantes definissantes et des relations exactes par composition rendent operatoire un systeme coherent d'unites, sans epuiser le role physique des grandeurs qui y sont fixees.
+Une architecture metrologique SI est une configuration inter-familles dans laquelle des constantes definissantes et des compositions exactes rendent operatoire un systeme coherent d'unites, sans epuiser le role physique des grandeurs qui y sont fixees.
 
 Cette definition repose sur cinq elements.
 
 ```text
 1. Constantes definissantes primaires
-2. Relations exactes par composition
+2. Compositions exactes
 3. Definitions d'unites
 4. Realisations pratiques
 5. Roles physiques conserves
@@ -82,9 +83,9 @@ Second niveau : constantes exactes par composition.
 
 | Grandeur | Structure | Statut |
 |---|---|---|
-| R | N_A k_B | Relation compositionnelle exacte |
-| K_J | 2 e / h | Relation exacte par composition |
-| R_K | h / e^2 | Relation exacte par composition |
+| R | N_A k_B | Composition exacte |
+| K_J | 2 e / h | Composition exacte |
+| R_K | h / e^2 | Composition exacte |
 
 Ces grandeurs ne sont pas toutes du meme type. C'est precisement pourquoi le niveau architectural est necessaire.
 
@@ -126,7 +127,7 @@ Decision :
 Convention est la famille principale dans l'architecture SI, mais elle ne suffit pas a decrire tout le role physique.
 ```
 
-#### 5.2 Relations exactes par composition
+#### 5.2 Compositions exactes
 
 Cas :
 
@@ -141,14 +142,14 @@ Structure :
 ```text
 constantes definissantes exactes
 -> composition mathematique
--> relation exacte dans le SI
+-> grandeur exacte par composition dans le SI
 ```
 
 Lecture taxonomique :
 
 ```text
-famille principale : Relation
-sous-type : relation compositionnelle exacte
+rang 0 : composition exacte
+famille principale : non forcee par defaut dans Relation
 architecture : Metrologique SI
 ```
 
@@ -219,7 +220,7 @@ R = N_A k_B
 Classement :
 
 ```text
-Relation compositionnelle exacte
+Composition exacte dans l'architecture SI
 ```
 
 R n'est pas une constante definissante primaire. Son exactitude vient de la composition de deux constantes definissantes.
@@ -242,7 +243,7 @@ Classement :
 
 ```text
 Convention dans l'architecture SI
-Relation / Echelle dans son role physique relativiste
+Relation qualifiee / Echelle dans son role physique relativiste
 ```
 
 Decision :
@@ -270,7 +271,7 @@ Classement :
 
 ```text
 Convention dans l'architecture SI
-Echelle d'action + Relation dans son role quantique
+Echelle d'action + relation quantique qualifiee dans son role physique
 ```
 
 Decision :
@@ -385,9 +386,9 @@ N_A appartient a Convention dans l'architecture SI.
 c appartient a Convention dans l'architecture SI.
 h appartient a Convention dans l'architecture SI.
 e appartient a Convention dans l'architecture SI.
-R appartient a Relation, sous-type relation compositionnelle exacte.
-K_J appartient a Relation, sous-type relation compositionnelle exacte.
-R_K appartient a Relation, sous-type relation compositionnelle exacte.
+R releve d'abord du rang 0 comme composition exacte.
+K_J releve d'abord du rang 0 comme composition exacte.
+R_K releve d'abord du rang 0 comme composition exacte.
 ```
 
 Mais ensemble, ces grandeurs appartiennent a :
@@ -413,7 +414,7 @@ Formule courte :
 ```text
 Architecture metrologique SI =
 Convention
-+ Relation compositionnelle exacte
++ Composition exacte
 + Echelle physique conservee
 + Realisation pratique
 + Systeme coherent d'unites
@@ -425,7 +426,7 @@ Forme developpee :
 Architecture metrologique SI =
 {k_B, N_A, c, h, e}
 + {R, K_J, R_K}
-+ {Convention, Relation, Echelle}
++ {Convention, Composition exacte, Echelle, relation qualifiee}
 + {definitions d'unites, realisations pratiques}
 + {roles physiques conserves}
 ```
@@ -477,7 +478,7 @@ Les cartes consolidees ulterieures doivent conserver six decisions.
 1. Architecture metrologique SI est confirmee et etendue.
 2. Metrologique SI ne doit pas devenir une famille superieure.
 3. Convention reste la famille principale des constantes definissantes.
-4. Les constantes exactes par composition appartiennent a Relation.
+4. Les constantes exactes par composition relevent d'abord du rang 0 ; Relation n'est pas la case par defaut.
 5. Exactitude SI n'est pas precision empirique.
 6. Une constante definissante peut garder un role physique fort.
 ```

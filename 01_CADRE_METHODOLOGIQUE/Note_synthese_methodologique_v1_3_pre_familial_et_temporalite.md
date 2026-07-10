@@ -746,14 +746,17 @@ mais toute architecture peut etre re-testee.
 
 ### 19. Chantiers ouverts apres v1.3
 
-La v1.3 ouvre quatre chantiers prioritaires.
+La v1.3 ouvre plusieurs chantiers prioritaires.
 
-Les trois premiers chantiers sont maintenant produits :
+Les premiers chantiers sont maintenant produits :
 
 ```text
 matrice de criblage taxonomique,
 note d'architecture Saveur-Higgs,
-carte des dependances architecturales.
+carte des dependances architecturales,
+stress test cosmologique,
+reprise des cycles physiques,
+audit de resynchronisation theorique.
 ```
 
 #### 19.1 Matrice de criblage taxonomique
@@ -878,10 +881,33 @@ encadrer le versionnement du corpus sans remplacer la methode theorique.
 Regle :
 
 ```text
-quand une etape est stabilisee,
-signaler un point de commit possible,
-attendre validation,
-puis seulement committer et pousser.
+quand une etape conceptuelle est stabilisee,
+signaler un point de decision et attendre validation ;
+quand une etape documentaire ou technique est stabilisee,
+committer et pousser peuvent etre delegues avec resume exact.
+```
+
+#### 19.7 Reprise des cycles physiques et audit transversal
+
+Documents produits :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
+```
+
+Role :
+
+```text
+appliquer la methode v1.3 aux quatre cycles physiques actifs,
+puis verifier la coherence theorique entre les architectures.
+```
+
+Statut :
+
+```text
+synchronisation documentaire active ;
+les choix conceptuels nouveaux restent soumis a validation.
 ```
 
 ### 20. Documents integres
