@@ -151,7 +151,7 @@ Les formulations suivantes sont compatibles avec la prudence actuelle.
 ```text
 Une grandeur peut etre dite constante lorsque son mode de stabilisation est explicite.
 Les constantes gagnent a etre lues comme des stabilisations effectives situees.
-Le statut de constance depend d'un regime, d'un acces et d'une trajectoire.
+Le statut de constance depend d'un regime, d'une fonction situee, d'un acces et d'une trajectoire.
 Une architecture active rend lisibles des solidarites de fonctionnement.
 Une borne ou une tension peut stabiliser un statut sans produire une mesure positive.
 Les limites conservees font partie de la qualification prudente de la constance.
@@ -187,8 +187,8 @@ Le noyau de these admissible peut donc etre formule ainsi :
 
 ```text
 les constantes peuvent etre etudiees comme des grandeurs dont le statut de
-constance se stabilise par forme, regime, acces, trajectoire,
-architecture eventuelle et limite conservee.
+constance se stabilise par forme, regime, fonction situee, acces,
+trajectoire, architecture eventuelle et limite conservee.
 ```
 
 Cette formule est methodologiquement controlee.
@@ -214,18 +214,16 @@ philosophiques ou predictives.
 
 ### 10. Suite logique
 
-La prochaine etape logique est :
+Le premier degagement de these est maintenant :
 
 ```text
-Premier degagement de these v0.1.
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 ```
 
-Fonction attendue :
+La prochaine etape logique devient :
 
 ```text
-transformer les acquis, limites et non-theses
-en un enonce sur la qualification des constantes,
-methodologiquement defendable.
+mise a l'epreuve du degagement de these par exemples porteurs v0.1.
 ```
 
 ### 11. Formule de cloture

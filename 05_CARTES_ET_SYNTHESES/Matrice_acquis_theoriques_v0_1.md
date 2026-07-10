@@ -264,10 +264,10 @@ La fiche devra notamment traiter :
 6. la difference entre methode de lecture et theorie physique nouvelle.
 ```
 
-Apres cette fiche, la prochaine etape logique devient :
+Le premier degagement issu de cette matrice est maintenant :
 
 ```text
-Premier degagement de these v0.1.
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 ```
 
 ### 10. Formule de cloture
@@ -278,14 +278,15 @@ Formule matricielle :
 Le corpus autorise deja une these sur la qualification des constantes,
 methodologiquement prudente :
 les constantes gagnent a etre lues comme stabilisations effectives situees,
-dont le statut depend d'une forme, d'un regime, d'un acces,
-d'une trajectoire, d'une architecture eventuelle et d'une limite conservee.
+dont le statut depend d'une forme, d'un regime, d'une fonction situee,
+d'un acces, d'une trajectoire, d'une architecture eventuelle
+et d'une limite conservee.
 ```
 
 Cette formule n'est pas encore le degagement final.
 
-Elle est le noyau a reprendre dans le premier degagement de these, sous le
-controle de la fiche des limites.
+Elle est reprise dans le premier degagement de these, sous le controle de la
+fiche des limites.
 
 Point de vigilance :
 

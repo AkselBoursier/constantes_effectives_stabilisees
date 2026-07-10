@@ -14,6 +14,7 @@ Lire d'abord :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
 
@@ -64,6 +65,7 @@ Cartes et syntheses :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md

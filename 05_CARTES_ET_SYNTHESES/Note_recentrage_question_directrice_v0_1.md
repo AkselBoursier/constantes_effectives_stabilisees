@@ -81,8 +81,14 @@ elle ne doit pas remplacer cette question.
 
 ### 6. Suite
 
-Le premier degagement de these devra donc commencer par les constantes, non par
-la methode.
+Le premier degagement de these est maintenant :
+
+```text
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
+```
+
+Il doit etre lu comme un degagement centre sur les constantes, non sur la
+methode.
 
 Il pourra ensuite montrer pourquoi la methode etait necessaire pour rendre la
 qualification rigoureuse.

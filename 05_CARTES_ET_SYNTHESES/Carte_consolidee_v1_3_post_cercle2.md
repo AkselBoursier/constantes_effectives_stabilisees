@@ -203,6 +203,7 @@ Matrice, recentrage et limites actives :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 ```
 
 Methode active :
@@ -236,13 +237,14 @@ le projet dispose maintenant d'une methode de lecture des constantes
 comme stabilisations effectives situees.
 ```
 
-La matrice des acquis, la note de recentrage et la fiche des limites ouvrent
-maintenant le seuil vers un premier degagement de these.
+La matrice des acquis, la note de recentrage et la fiche des limites ont ouvert
+le seuil vers un premier degagement de these, maintenant formule.
 
 ```text
 1. matrice des acquis theoriques ;
 2. note de recentrage sur la question directrice ;
-3. fiche des limites et non-theses.
+3. fiche des limites et non-theses ;
+4. premier degagement de these v0.1.
 ```
 
 La note de recentrage rappelle que le sujet reste la qualification des
@@ -251,23 +253,22 @@ le cadre permet d'affirmer de ce qu'il ne doit pas transformer en these.
 
 La carte decrit l'etat du corpus.
 
-La these devra dire ce que cet etat autorise a affirmer, en conservant les
-limites comme parties de l'argument.
+Le premier degagement dit ce que cet etat autorise a affirmer, en conservant
+les limites comme parties de l'argument.
 
 ### 12. Prochaine etape
 
 Prochaine etape logique :
 
 ```text
-Premier degagement de these v0.1.
+Mise a l'epreuve du degagement de these par exemples porteurs v0.1.
 ```
 
 Fonction :
 
 ```text
-transformer la carte, la matrice, la note de recentrage et la fiche des limites
-en un enonce sur le statut des constantes,
-methodologiquement defendable.
+tester la formule de these sur quelques cas porteurs,
+sans produire une these finale prematuree.
 ```
 
 ### 13. Formule de cloture
@@ -276,6 +277,7 @@ Formule v1.3 :
 
 ```text
 Une constante effective stabilisee n'est pas seulement un nombre classe ;
-c'est une stabilisation situee, rendue robuste par un regime, un acces,
-une trajectoire, une eventuelle architecture et des limites explicites.
+c'est une stabilisation situee, rendue robuste par un regime, une fonction
+situee, un acces, une trajectoire, une eventuelle architecture et des limites
+explicites.
 ```
