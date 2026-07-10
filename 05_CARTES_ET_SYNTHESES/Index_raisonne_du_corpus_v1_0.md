@@ -83,6 +83,8 @@ Ces documents forment le noyau actif du corpus.
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
+| `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` | Protocole actif | Seuil de remontee ciblee avant cercle 2 |
+| `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Consolidation active | Cloture du traitement cible avant cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Reseaux de dependance entre architectures |
 | `05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md` | Reference active | Navigation et statut des documents |
@@ -210,6 +212,7 @@ Documents actifs :
 | Document | Statut | Role |
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md` | Consolidation source | Recuperation cible v, Yukawa, CKM, Wolfenstein avant cercle 2 |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Fiche prudente | Ancrage spectral neutrino et interface cosmologique |
 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
 
@@ -248,6 +251,7 @@ Documents actifs :
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md` | Preuve locale | Cas gravitationnel effectif |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md` | Consolidation | Synthese du cycle |
+| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md` | Consolidation source | Comparaison du doublon alpha_G / M_Pl |
 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
@@ -310,6 +314,7 @@ Documents actifs :
 | Document | Statut | Role |
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md` | Preuve locale | Extension SI a c, h, e, K_J, R_K |
+| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md` | Consolidation source | Recuperation k_B, N_A, R et quatrieme cycle avant cercle 2 |
 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active | Architecture SI etendue |
 
 Documents racine historiques associes :
@@ -358,6 +363,8 @@ Document de pilotage :
 ```text
 05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
 05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md
+05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md
+05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_dependances_et_reorganisation_v0_1.md
 ```
 
@@ -415,6 +422,9 @@ Exemples :
 H_0 -> Synthese_cycle_cosmologique_v0_1.md puis Cycle_cosmologique_v0_3_H0.md
 c / h / e -> Architecture_metrologique_SI_notes.md puis Cycle_metrologique_SI_v0_1_c_h_e.md
 alpha_G / M_Pl -> Synthese_cycle_effectif_basse_energie_v0_1.md puis Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
+alpha_G / M_Pl source -> Synthese_comparaison_alphaG_MPl_sources_v0_1.md
+SI source -> Synthese_recuperation_thermo_metrologique_SI_v0_1.md
+Saveur-Higgs source -> Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
 ```
 
 #### 13.4 Retracer l'histoire du projet

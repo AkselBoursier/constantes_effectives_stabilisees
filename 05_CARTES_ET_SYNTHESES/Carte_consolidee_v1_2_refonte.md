@@ -456,8 +456,11 @@ Architectures actives :
 Cycles physiques actifs :
 
 ```text
+02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
 ```
@@ -479,7 +482,8 @@ Elle ouvre des chantiers plus nets.
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
 | Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Cercle 1 produit puis corrige ; cercle 2 a ouvrir |
-| Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` + `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table produite avant conversion |
+| Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` + `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Lots 0, 2, 3 produits ; seuil cible pre-Cercle 2 atteint |
+| Seuil pre-Cercle 2 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` + `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Produit |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Seulement apres remontee Markdown et table de correspondance | Plus tard |
 
@@ -493,8 +497,7 @@ et sur les roles stabilises.
 Elle peut etre :
 
 ```text
-soit la table de remontee des sources DOCX primaires,
-soit la reecriture positive du cercle 2 des architectures actives apres lecture des sources utiles,
+soit la reecriture positive du cercle 2 des architectures actives,
 soit des addenda locaux si l'application de la matrice revele un conflit dans une fiche source,
 soit une carte consolidee superieure si les nouvelles couches doivent etre stabilisees ensemble,
 soit la normalisation physique des archives apres remontee et verification.
@@ -524,6 +527,8 @@ Cartes et syntheses :
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
+05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md
+05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md
 ```
 
 Architectures :
@@ -546,8 +551,11 @@ Cycle cosmologique :
 Cycles physiques synchronises :
 
 ```text
+02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
 ```
 

@@ -123,12 +123,12 @@ Saveur-Higgs actif.
 
 | Source primaire | Sortie Markdown cible | Document actif concerne | Priorite | Controle |
 |---|---|---|---|---|
-| Fiche v v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_v_v0_1.md` | Cycle Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison |
-| Fiche Yukawa v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_Yukawa_v0_1.md` | Cycle Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison |
+| Fiche v v0.1.docx | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_v_v0_1.md` | Cycle Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison cible pre-Cercle 2 |
+| Fiche Yukawa v0.1.docx | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_Yukawa_v0_1.md` | Cycle Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison cible pre-Cercle 2 |
 | Fiche G_F v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_G_F_v0_1.md` | Saveur-Higgs, effective basse energie | P1 | Rattachement double |
 | Fiche theta_W v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_theta_W_v0_1.md` | Saveur-Higgs, electroweak | P1 | Extraction |
-| Fiche alpha_G - M_Pl.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_alpha_G_M_Pl_A_v0_1.md` | Cycle effectif basse energie, interface cosmologie primordiale | P1 | Dedoublonnage |
-| Fiche alpha_G - M_Pl (1).docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_alpha_G_M_Pl_B_v0_1.md` | Cycle effectif basse energie, interface cosmologie primordiale | P1 | Dedoublonnage |
+| Fiche alpha_G - M_Pl.docx | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Fiche_alpha_G_M_Pl_A_v0_1.md` | Cycle effectif basse energie, interface cosmologie primordiale | P1 | Dedoublonnage cible pre-Cercle 2 |
+| Fiche alpha_G - M_Pl (1).docx | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Fiche_alpha_G_M_Pl_B_v0_1.md` | Cycle effectif basse energie, interface cosmologie primordiale | P1 | Dedoublonnage cible pre-Cercle 2 |
 | Fiche Lambda v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Fiche_Lambda_v0_1.md` | Cycle cosmologique, fiche Lambda active | P1 | Rattachement genetique / cosmologique |
 | Ecriture.txt | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_txt_Ecriture_Lambda_v0_1.md` | Cycle cosmologique, fiche Lambda active | P1 | Source auxiliaire a clarifier |
 | Synthese du second cycle v0.1.docx | `02_CYCLES_PHYSIQUES/02_Cycle_structurant_electrofaible/Source_docx_Synthese_second_cycle_v0_1.md` | Saveur-Higgs, effective, cosmologie | P1 | Genealogie + comparaison |
@@ -138,6 +138,14 @@ Point de vigilance :
 ```text
 Lambda est genetiquement present dans le second cycle,
 mais son usage actif releve maintenant du cycle cosmologique.
+```
+
+Etat cible pre-Cercle 2 :
+
+```text
+Fiche v, Fiche Yukawa et le doublon alpha_G / M_Pl ont ete remontees
+dans les cycles actifs qu'elles conditionnent directement.
+Le reste du lot 1B demeure a traiter dans la remontee physique complete.
 ```
 
 ### 7. Lot 1C : neutrinos
@@ -178,6 +186,14 @@ metrologique SI actif.
 | Fiche R v0.1.docx | `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Fiche_R_v0_1.md` | Cycle metrologique SI, relation R = N_A k_B | P1 | Extraction + controle positif |
 | Synthese du quatrieme cycle.docx | `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Synthese_quatrieme_cycle_v0_1.md` | Architecture metrologique SI | P1 | Genealogie + comparaison |
 
+Etat cible pre-Cercle 2 :
+
+```text
+extractions produites ;
+synthese de recuperation produite :
+02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
+```
+
 ### 9. Lot 1E : CKM et saveur
 
 Destination de principe :
@@ -191,6 +207,14 @@ Destination de principe :
 | Fiche CKM v0.1.docx | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_CKM_v0_1.md` | Synthese Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison |
 | Fiche Wolfenstein v0.1.docx | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_Wolfenstein_v0_1.md` | Synthese Saveur-Higgs, architecture Saveur-Higgs | P1 | Extraction + comparaison |
 | Synthese du cycle CKM v0.1.docx | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Synthese_cycle_CKM_v0_1.md` | Synthese Saveur-Higgs | P1 | Genealogie + comparaison |
+
+Etat cible pre-Cercle 2 :
+
+```text
+extractions produites ;
+synthese de recuperation produite :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
+```
 
 ### 10. Lot 2 : tests taxonomiques
 
@@ -319,7 +343,7 @@ les cartes et critiques servent ensuite a verifier la coherence globale.
 
 | Anomalie | Source | Traitement |
 |---|---|---|
-| Duplicat alpha_G / M_Pl | Deux fichiers DOCX distincts | Comparer avant d'elire une version de reference |
+| Duplicat alpha_G / M_Pl | Deux fichiers DOCX distincts | Compare dans `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md` ; conserver A et B comme genealogie |
 | Ecriture.txt | Source auxiliaire liee a Lambda | Rattacher a Lambda sans l'effacer |
 | Carte v0.6 absente | Serie v0.1 a v0.8 incomplete | Documenter la lacune dans la genealogie |
 | Rattachement de Lambda | Source genetique electrofaible, usage cosmologique actif | Maintenir le double statut |

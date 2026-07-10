@@ -289,6 +289,23 @@ Troisieme lot ouvert :
 04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
 ```
 
+Traitement cible pre-Cercle 2 ouvert :
+
+```text
+05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md
+02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md
+05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md
+```
+
+Statut :
+
+```text
+seuil de suffisance atteint pour ouvrir ensuite le cercle 2 ;
+remontee physique complete reportee, non annulee.
+```
+
 ### 9. Formule de cloture
 
 > Les DOCX ne sont pas des dechets de l'ancienne structure ; ils sont la matiere premiere que la structure actuelle doit apprendre a rendre lisible.
