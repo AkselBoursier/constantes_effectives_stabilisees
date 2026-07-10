@@ -275,7 +275,8 @@ Premier degagement de these v0.1.
 Formule matricielle :
 
 ```text
-Le corpus autorise deja une these methodologique prudente :
+Le corpus autorise deja une these sur la qualification des constantes,
+methodologiquement prudente :
 les constantes gagnent a etre lues comme stabilisations effectives situees,
 dont le statut depend d'une forme, d'un regime, d'un acces,
 d'une trajectoire, d'une architecture eventuelle et d'une limite conservee.

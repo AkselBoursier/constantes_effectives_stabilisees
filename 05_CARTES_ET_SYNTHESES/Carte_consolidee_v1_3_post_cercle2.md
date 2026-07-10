@@ -266,7 +266,8 @@ Fonction :
 
 ```text
 transformer la carte, la matrice, la note de recentrage et la fiche des limites
-en un enonce methodologique defendable.
+en un enonce sur le statut des constantes,
+methodologiquement defendable.
 ```
 
 ### 13. Formule de cloture
