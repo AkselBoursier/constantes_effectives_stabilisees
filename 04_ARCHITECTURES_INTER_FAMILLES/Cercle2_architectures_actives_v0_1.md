@@ -131,7 +131,7 @@ mais le coeur de chaque note doit etre affirmatif.
 Le cercle 2 doit avancer par lots courts.
 
 ```text
-2A. Reprise Saveur-Higgs.
+2A. Reprise Saveur-Higgs. Produit : Cercle2_lot2A_Saveur_Higgs_v0_1.md
 2B. Reprise metrologique SI.
 2C. Reprise effective basse energie.
 2D. Reprise cosmologique prudente.
@@ -194,7 +194,7 @@ Cette note ouvre le cercle 2.
 La prochaine action logique est :
 
 ```text
-lot 2A : reprise positive de l'architecture Saveur-Higgs.
+lot 2B : reprise positive de l'architecture metrologique SI.
 ```
 
 Formule de cloture :

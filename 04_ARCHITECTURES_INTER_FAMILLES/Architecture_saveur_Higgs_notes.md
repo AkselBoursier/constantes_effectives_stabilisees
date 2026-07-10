@@ -19,6 +19,17 @@ Elle integre aussi les corrections introduites par :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 ```
 
+Complement de reprise positive :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
+```
+
+La presente note reste la consolidation locale.
+
+Le lot 2A fixe la formulation positive a privilegier pour les reprises
+ulterieures.
+
 La note ne remplace pas les fiches locales sur `v`, les Yukawa, CKM, PMNS ou les neutrinos.
 
 Elle en extrait la consequence taxonomique principale :

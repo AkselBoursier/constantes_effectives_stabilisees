@@ -172,6 +172,7 @@ Le corpus stabilise quatre architectures.
 | Architecture | Forme | Document principal | Statut |
 |---|---|---|---|
 | Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Ouverture active |
+| Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
 | Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
 | Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
 | Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
@@ -189,7 +190,8 @@ Statut du cercle 2 :
 
 ```text
 ouvert comme reprise positive des architectures actives,
-avec controle d'occurrences et progression par lots.
+avec controle d'occurrences et progression par lots ;
+lot 2A Saveur-Higgs produit.
 ```
 
 Point documentaire :
