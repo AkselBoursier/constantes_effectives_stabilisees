@@ -173,6 +173,7 @@ Le corpus stabilise quatre architectures.
 | Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
 | Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
 | Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` + stress test v0.1 | Consolidation active avec sous-reseaux |
+| Sources d'architecture lot 3 | Recuperation source | `04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md` | Consolidation active avant cercle 2 |
 
 Regle de rang :
 

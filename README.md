@@ -34,6 +34,16 @@ Tests taxonomiques :
 03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
 ```
 
+Architectures :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+```
+
 Cartes et syntheses :
 
 ```text

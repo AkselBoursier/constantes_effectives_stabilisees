@@ -228,6 +228,15 @@ pas restaurer les anciennes familles comme premier niveau de classement.
 
 ### 11. Lot 3 : sources d'architecture
 
+Etat :
+
+```text
+ouvert ;
+extractions Markdown produites ;
+synthese de recuperation produite :
+04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
+```
+
 | Source primaire | Sortie Markdown cible | Document actif concerne | Priorite | Controle |
 |---|---|---|---|---|
 | Note de consolidation saveur-Higgs v0.1.docx | `04_ARCHITECTURES_INTER_FAMILLES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | Architecture Saveur-Higgs, synthese Saveur-Higgs | P0 | Extraction avant cercle 2 |
