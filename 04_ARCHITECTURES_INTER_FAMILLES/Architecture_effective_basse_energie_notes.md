@@ -20,6 +20,17 @@ nouvelle famille superieure
 
 La note doit donc servir de reference courte pour les prochaines cartes consolidees.
 
+Complement de reprise positive :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
+```
+
+La presente note reste la consolidation locale.
+
+Le lot 2C fixe la formulation positive a privilegier pour les reprises
+ulterieures.
+
 ### 2. Decision centrale
 
 L'architecture effective basse energie est confirmee comme architecture robuste.

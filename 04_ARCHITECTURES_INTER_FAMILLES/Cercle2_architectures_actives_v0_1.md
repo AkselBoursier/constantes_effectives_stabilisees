@@ -133,7 +133,7 @@ Le cercle 2 doit avancer par lots courts.
 ```text
 2A. Reprise Saveur-Higgs. Produit : Cercle2_lot2A_Saveur_Higgs_v0_1.md
 2B. Reprise metrologique SI. Produit : Cercle2_lot2B_Metrologique_SI_v0_1.md
-2C. Reprise effective basse energie.
+2C. Reprise effective basse energie. Produit : Cercle2_lot2C_Effective_basse_energie_v0_1.md
 2D. Reprise cosmologique prudente.
 2E. Reprise de la synthese transverse des architectures.
 2F. Controle d'occurrences et mise a jour des cartes.
@@ -194,7 +194,7 @@ Cette note ouvre le cercle 2.
 La prochaine action logique est :
 
 ```text
-lot 2C : reprise positive de l'architecture effective basse energie.
+lot 2D : reprise positive prudente de l'architecture cosmologique.
 ```
 
 Formule de cloture :

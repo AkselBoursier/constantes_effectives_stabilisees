@@ -482,9 +482,10 @@ Elle ouvre des chantiers plus nets.
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
 | Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Cercle 1 produit puis corrige ; cercle 2 ouvert |
-| Cercle 2 des architectures actives | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Ouverture produite ; lots 2A et 2B produits |
+| Cercle 2 des architectures actives | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Ouverture produite ; lots 2A, 2B et 2C produits |
 | Lot 2A Saveur-Higgs | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
 | Lot 2B Metrologique SI | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
+| Lot 2C Effective basse energie | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
 | Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` + `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Lots 0, 2, 3 produits ; seuil cible pre-Cercle 2 atteint |
 | Seuil pre-Cercle 2 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` + `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Produit |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
@@ -500,7 +501,7 @@ et sur les roles stabilises.
 Elle peut etre :
 
 ```text
-soit le lot 2C de reprise positive effective basse energie,
+soit le lot 2D de reprise positive cosmologique prudente,
 soit des addenda locaux si l'application de la matrice revele un conflit dans une fiche source,
 soit une carte consolidee superieure si les nouvelles couches doivent etre stabilisees ensemble,
 soit la normalisation physique des archives apres remontee et verification.
