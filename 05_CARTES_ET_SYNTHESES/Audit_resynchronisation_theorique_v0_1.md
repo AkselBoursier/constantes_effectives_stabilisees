@@ -289,10 +289,11 @@ L'audit ne ferme pas les dossiers suivants.
 
 | Point ouvert | Statut |
 |---|---|
-| Relation comme famille residuelle | A maintenir sous audit, cas par cas |
+| Liaisons residuelles mal qualifiees | A reprendre par formulations positives, cas par cas |
 | Masse absolue des neutrinos | Fiche prudente produite, interface Saveur-Higgs / cosmologie sous audit |
 | M_Pl et cosmologie primordiale | Interface effective / cosmologique, a ne pas ouvrir trop vite |
 | Matrice temporelle autonome | Produite comme protocole actif du rang 5 |
+| Dissolution idiomatique des anciens termes | Protocole produit ; reecriture du cercle 1 a ouvrir |
 | Normalisation des archives Word | A differer tant que les references internes ne sont pas auditees |
 
 Premier criblage transversal produit ensuite :
@@ -304,7 +305,8 @@ Premier criblage transversal produit ensuite :
 Statut apres criblage :
 
 ```text
-Relation, masse absolue des neutrinos, M_Pl et cosmologie primordiale restent sous prudence,
+Les liaisons residuelles mal qualifiees, la masse absolue des neutrinos,
+M_Pl et la cosmologie primordiale restent sous prudence,
 mais disposent maintenant d'une premiere application de la matrice.
 ```
 
@@ -324,6 +326,12 @@ Application temporelle aux fiches sensibles produite ensuite :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+```
+
+Protocole de dissolution idiomatique produit ensuite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
 
 ### 13. Regle operative pour les prochaines reprises

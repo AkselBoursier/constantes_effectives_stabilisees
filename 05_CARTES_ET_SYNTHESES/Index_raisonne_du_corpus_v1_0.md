@@ -100,6 +100,7 @@ Index_raisonne_du_corpus_v1_0.md
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
+| `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens idiomes de classement |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Regle de commit, push et branches apres stabilisation documentaire |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang pre-familial et temporalite explicite |
 | `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md` | Revision active | Extraction et recoupement des huit critiques constructives |
@@ -119,6 +120,7 @@ Pour comprendre la refonte de la methode, lire aussi :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
 
 La v1.1 reste utile pour comprendre la transition vers :
@@ -615,6 +617,7 @@ Protocole actif :
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 
 Carte active :

@@ -989,6 +989,28 @@ couche de controle transversale ;
 les addenda locaux ne sont requis que si une reprise de fiche revele un conflit.
 ```
 
+#### 19.11 Dissolution idiomatique
+
+Document produit :
+
+```text
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
+```
+
+Role :
+
+```text
+remplacer les formulations defensives par des formulations positives :
+fonction, role, acces, architecture, trajectoire ou forme stabilisee.
+```
+
+Statut :
+
+```text
+protocole actif ;
+la reecriture du cercle 1 devient la prochaine hygiene methodologique.
+```
+
 ### 20. Documents integres
 
 Documents methodologiques :
@@ -1002,6 +1024,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
 
 Documents de reference :
@@ -1025,6 +1048,7 @@ Documents produits en application de la v1.3 :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
 
 Architectures :
