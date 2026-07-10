@@ -23,7 +23,7 @@ Son but est de distinguer :
 ```text
 1. ce que le corpus autorise deja a affirmer ;
 2. ce qui doit rester une formulation prudente ;
-3. ce qui prepare une these mais demande encore une fiche de limites.
+3. ce qui prepare une these et doit passer par une fiche de limites.
 ```
 
 ### 2. Definition d'un acquis theorique
@@ -60,9 +60,9 @@ une correction du contenu empirique consensuel.
 | A9 | Validite effective | Une grandeur effective vaut par domaine de validite, non par universalite hors regime | Cycle effectif, lot 2C | Effective basse energie | Ne fournit pas la completion du regime | Robuste local |
 | A10 | Reconstruction cosmologique | Une grandeur cosmologique doit etre lue avec modele, acces, reconstruction et tension eventuelle | Cycle cosmologique, lot 2D | Cosmologie | Ne resout pas les tensions `H_0` ou `S_8` | Robuste local |
 | A11 | Constitution Saveur-Higgs | Le secteur Saveur-Higgs stabilise une constitution : echelle, textures, diagonalisation, spectres et orientations | Cycle Saveur-Higgs, lot 2A | Architecture constitutive | Ne donne pas l'origine des textures de Yukawa | Robuste local |
-| A12 | Limite comme composante de robustesse | Une stabilisation robuste doit conserver ce qu'elle ne resout pas | Carte v1.3, note courte | Tous les niveaux | Exige une fiche de limites avant la these | Robuste |
+| A12 | Limite comme composante de robustesse | Une stabilisation robuste doit conserver ce qu'elle ne resout pas | Carte v1.3, note courte | Tous les niveaux | Pris en charge par la fiche de limites | Robuste |
 | A13 | Modes de stabilisation | Le corpus fait apparaitre des modes : valeur, composition, convention, orientation, validite, inference, borne | Carte v1.3 | Typologie transversale | Modes non exclusifs, a ne pas durcir en classes | Structurant prudent |
-| A14 | Methode transformable en argument | La procedure courte peut devenir argument theorique si ses acquis et ses limites sont separes | Note courte, presente matrice | Preparation de these | Demande encore non-theses et limites | Preparatoire |
+| A14 | Methode transformable en argument | La procedure courte peut devenir argument theorique si ses acquis et ses limites sont separes | Note courte, presente matrice | Preparation de these | Controle par les non-theses et limites | Preparatoire |
 
 ### 4. Trois niveaux de statut
 
@@ -102,14 +102,14 @@ Ils ne doivent pas etre generalises sans mediation.
 
 #### 4.3 Acquis preparatoires
 
-Ces acquis orientent la these, mais demandent encore une formulation prudente.
+Ces acquis orientent la these, mais demandent une formulation prudente.
 
 ```text
 A13 Modes de stabilisation
 A14 Methode transformable en argument
 ```
 
-Ils doivent etre repris dans la fiche des limites et non-theses.
+Ils sont repris et controles dans la fiche des limites et non-theses.
 
 ### 5. Axes d'argumentation disponibles
 
@@ -156,7 +156,7 @@ La matrice interdit de passer trop vite a certains enonces.
 6. Toutes les constantes seraient equivalentes comme stabilisations.
 ```
 
-Ces enonces doivent etre traites dans la fiche des limites et non-theses.
+Ces enonces sont traites dans la fiche des limites et non-theses.
 
 ### 8. Exemples porteurs pour la future these
 
@@ -171,15 +171,15 @@ Ces enonces doivent etre traites dans la fiche des limites et non-theses.
 
 Ces exemples devront etre choisis avec parcimonie dans le premier degagement.
 
-### 9. Passage vers la fiche des limites
+### 9. Passage par la fiche des limites
 
-La prochaine etape logique est :
+La fiche de controle est maintenant :
 
 ```text
-Fiche des limites et non-theses v0.1.
+05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
 ```
 
-Fonction attendue :
+Sa fonction est de :
 
 ```text
 separer ce que le cadre permet d'affirmer
@@ -197,6 +197,12 @@ La fiche devra notamment traiter :
 6. la difference entre methode de lecture et theorie physique nouvelle.
 ```
 
+Apres cette fiche, la prochaine etape logique devient :
+
+```text
+Premier degagement de these v0.1.
+```
+
 ### 10. Formule de cloture
 
 Formule matricielle :
@@ -210,4 +216,5 @@ d'une trajectoire, d'une architecture eventuelle et d'une limite conservee.
 
 Cette formule n'est pas encore le degagement final.
 
-Elle est le noyau a tester dans la fiche des limites.
+Elle est le noyau a reprendre dans le premier degagement de these, sous le
+controle de la fiche des limites.

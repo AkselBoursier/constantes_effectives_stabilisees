@@ -197,6 +197,13 @@ Carte active :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 ```
 
+Matrice et limites actives :
+
+```text
+05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
+05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+```
+
 Methode active :
 
 ```text
@@ -228,32 +235,35 @@ le projet dispose maintenant d'une methode de lecture des constantes
 comme stabilisations effectives situees.
 ```
 
-Mais le degagement de these doit encore attendre une fiche de limites apres
-la matrice des acquis theoriques.
+La matrice des acquis et la fiche des limites ouvrent maintenant le seuil
+vers un premier degagement de these.
 
 ```text
-1. une fiche des limites et non-theses.
+1. matrice des acquis theoriques ;
+2. fiche des limites et non-theses.
 ```
 
-Cette fiche devra transformer la carte et la matrice en argument prudent.
+La fiche des limites separe ce que le cadre permet d'affirmer de ce qu'il ne
+doit pas transformer en these.
 
 La carte decrit l'etat du corpus.
 
-La these devra dire ce que cet etat autorise a affirmer.
+La these devra dire ce que cet etat autorise a affirmer, en conservant les
+limites comme parties de l'argument.
 
 ### 12. Prochaine etape
 
 Prochaine etape logique :
 
 ```text
-Fiche des limites et non-theses v0.1.
+Premier degagement de these v0.1.
 ```
 
 Fonction :
 
 ```text
-separer ce que le cadre permet d'affirmer
-de ce qu'il ne doit pas encore affirmer.
+transformer la carte, la matrice et la fiche des limites
+en un enonce methodologique defendable.
 ```
 
 ### 13. Formule de cloture
