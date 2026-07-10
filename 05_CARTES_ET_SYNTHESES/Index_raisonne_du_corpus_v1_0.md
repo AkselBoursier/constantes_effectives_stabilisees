@@ -16,6 +16,7 @@ la revision temporelle et le criblage critique
 la note methodologique v1.3
 la carte des dependances architecturales v0.1
 la carte consolidee v1.2 de refonte
+le workflow GitHub provisoire
 ```
 
 Objectif :
@@ -75,6 +76,7 @@ Ces documents forment le noyau actif du corpus.
 | Document | Statut | Role |
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : rang pre-familial, roles contextuels, temporalite |
+| `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Reseaux de dependance entre architectures |
@@ -85,6 +87,7 @@ Ordre recommande :
 ```text
 Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 Matrice_criblage_taxonomique_v0_1.md
+Workflow_GitHub_v0_1.md
 Synthese_architectures_inter_familles_v1_0.md
 Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_2_refonte.md
@@ -97,6 +100,7 @@ Index_raisonne_du_corpus_v1_0.md
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
+| `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Regle de commit, push et branches apres stabilisation documentaire |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang pre-familial et temporalite explicite |
 | `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md` | Revision active | Extraction et recoupement des huit critiques constructives |
 | `01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md` | Revision active | Reorganisation de fond autour de la temporalite |
@@ -561,6 +565,7 @@ Methode historique recente :
 
 Protocole actif :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 
 Carte active :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md

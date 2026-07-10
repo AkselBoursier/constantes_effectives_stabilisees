@@ -861,6 +861,29 @@ fond-expansion, budget, etat, primordial, croissance-reconstruction,
 et tensions transversales.
 ```
 
+#### 19.6 Workflow GitHub provisoire
+
+Document produit :
+
+```text
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+```
+
+Role :
+
+```text
+encadrer le versionnement du corpus sans remplacer la methode theorique.
+```
+
+Regle :
+
+```text
+quand une etape est stabilisee,
+signaler un point de commit possible,
+attendre validation,
+puis seulement committer et pousser.
+```
+
 ### 20. Documents integres
 
 Documents methodologiques :
@@ -870,6 +893,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 
 Documents de reference :
@@ -889,6 +913,7 @@ Documents produits en application de la v1.3 :
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 
 Architectures :

@@ -415,6 +415,7 @@ Protocole actif :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 
 Carte de reference active :
@@ -456,7 +457,7 @@ Elle ouvre des chantiers plus nets.
 | Stress test cosmologique | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Produit |
 | Application de la matrice aux fiches sensibles | Addenda ou revisions locales | Prochaine suite possible |
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Possible |
-| README racine | `README.md` | Utile si partage externe |
+| Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Audit de dependances et table de correspondance | Plus tard |
 
 Decision :
@@ -484,6 +485,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 
 Cartes et syntheses :
