@@ -175,6 +175,7 @@ Le corpus stabilise quatre architectures.
 | Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
 | Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
 | Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
+| Cercle 2D Cosmologique | Reprise positive inferentielle et reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
 | Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
 | Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
 | Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
@@ -193,7 +194,8 @@ Statut du cercle 2 :
 ```text
 ouvert comme reprise positive des architectures actives,
 avec controle d'occurrences et progression par lots ;
-lots 2A Saveur-Higgs, 2B Metrologique SI et 2C Effective basse energie produits.
+lots 2A Saveur-Higgs, 2B Metrologique SI, 2C Effective basse energie
+et 2D Cosmologique produits.
 ```
 
 Point documentaire :
@@ -304,6 +306,7 @@ Documents actifs :
 | 9 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
 | 10 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
 | 11 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Plan de reprise | Reprise controlee du cycle |
+| 12 | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Reprise positive | Architecture inferentielle et reconstructive prudente |
 
 Decision :
 

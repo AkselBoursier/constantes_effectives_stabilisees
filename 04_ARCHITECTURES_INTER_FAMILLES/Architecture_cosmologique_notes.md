@@ -20,6 +20,19 @@ nouvelle famille superieure
 
 La note sert de reference courte pour les cartes consolidees actives.
 
+Complement de reprise positive :
+
+```text
+04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
+```
+
+La presente note reste la consolidation locale.
+
+Le lot 2D fixe la formulation positive prudente de l'architecture
+cosmologique : macro-architecture inferentielle et reconstructive, organisee
+par sous-reseaux fonctionnels, regimes d'acces, dependances de modele,
+tensions transversales et limites conservees.
+
 ### 2. Decision centrale
 
 L'architecture cosmologique est confirmee comme architecture robuste, mais delicate.
