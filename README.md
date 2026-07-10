@@ -11,6 +11,7 @@ Lire d'abord :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
 
@@ -58,6 +59,7 @@ Cartes et syntheses :
 ```text
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md

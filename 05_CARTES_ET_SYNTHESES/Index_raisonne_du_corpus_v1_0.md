@@ -83,6 +83,7 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
+| `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant limites et non-theses |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
@@ -102,6 +103,7 @@ Workflow_GitHub_v0_1.md
 Synthese_architectures_inter_familles_v1_0.md
 Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_3_post_cercle2.md
+Matrice_acquis_theoriques_v0_1.md
 Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -156,6 +158,7 @@ extension SI
 | Document | Statut | Role |
 |---|---|---|
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives situees apres cercle 2 |
+| `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Passage des stabilisations effectives aux acquis argumentables |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
@@ -414,6 +417,7 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 
@@ -471,6 +475,7 @@ Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_2_refonte.md
 Cercle2_architectures_actives_v0_1.md
 Carte_consolidee_v1_3_post_cercle2.md
+Matrice_acquis_theoriques_v0_1.md
 Architecture_cosmologique_stress_test_v0_1.md
 Plan_reprise_cycle_cosmologique_v0_1.md
 ```
@@ -500,6 +505,7 @@ PROJECT_BRIEF.docx
   -> Carte_consolidee_v1_2_refonte.md
   -> Cercle2_architectures_actives_v0_1.md
   -> Carte_consolidee_v1_3_post_cercle2.md
+  -> Matrice_acquis_theoriques_v0_1.md
   -> Architecture_cosmologique_stress_test_v0_1.md
   -> Plan_reprise_cycle_cosmologique_v0_1.md
   -> Index_raisonne_du_corpus_v1_0.md
@@ -508,7 +514,7 @@ PROJECT_BRIEF.docx
 Lecture fonctionnelle :
 
 ```text
-methode -> criblage -> architecture -> dependances -> carte consolidee -> stress test -> plan de reprise
+methode -> criblage -> architecture -> dependances -> carte consolidee -> acquis -> limites
 ```
 
 ### 15. Lacunes documentaires identifiees
@@ -690,6 +696,9 @@ Protocole actif :
 
 Carte active :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+
+Matrice des acquis active :
+05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 
 Carte historique recente :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md

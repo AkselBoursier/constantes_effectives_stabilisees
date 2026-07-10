@@ -228,15 +228,14 @@ le projet dispose maintenant d'une methode de lecture des constantes
 comme stabilisations effectives situees.
 ```
 
-Mais le degagement de these doit encore attendre deux documents apres la note
-methodologique courte.
+Mais le degagement de these doit encore attendre une fiche de limites apres
+la matrice des acquis theoriques.
 
 ```text
-1. une matrice des acquis theoriques ;
-2. une fiche des limites et non-theses.
+1. une fiche des limites et non-theses.
 ```
 
-Ces documents doivent transformer la carte en argument.
+Cette fiche devra transformer la carte et la matrice en argument prudent.
 
 La carte decrit l'etat du corpus.
 
@@ -247,14 +246,14 @@ La these devra dire ce que cet etat autorise a affirmer.
 Prochaine etape logique :
 
 ```text
-Matrice des acquis theoriques.
+Fiche des limites et non-theses v0.1.
 ```
 
 Fonction :
 
 ```text
-transformer la carte et la procedure courte en liste d'acquis argumentables,
-avant la fiche des limites et non-theses.
+separer ce que le cadre permet d'affirmer
+de ce qu'il ne doit pas encore affirmer.
 ```
 
 ### 13. Formule de cloture
