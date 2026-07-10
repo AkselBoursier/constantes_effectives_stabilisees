@@ -293,7 +293,7 @@ L'audit ne ferme pas les dossiers suivants.
 | Masse absolue des neutrinos | Fiche prudente produite, interface Saveur-Higgs / cosmologie sous audit |
 | M_Pl et cosmologie primordiale | Interface effective / cosmologique, a ne pas ouvrir trop vite |
 | Matrice temporelle autonome | Produite comme protocole actif du rang 5 |
-| Reecriture positive du vocabulaire actif | Protocole produit ; reecriture du cercle 1 a ouvrir |
+| Reecriture positive du vocabulaire actif | Cercle 1 produit puis corrige ; cercle 2 a ouvrir |
 | Normalisation des archives Word | A differer tant que les references internes ne sont pas auditees |
 
 Premier criblage transversal produit ensuite :

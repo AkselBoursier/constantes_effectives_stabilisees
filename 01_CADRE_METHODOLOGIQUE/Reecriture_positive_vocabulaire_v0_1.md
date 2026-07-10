@@ -290,38 +290,53 @@ Objectif :
 ne pas effacer la genealogie du corpus.
 ```
 
-### 8. Liste de taches immediate
+### 8. Liste de taches
 
-Tache 1 :
+Tache 1 - produite :
 
 ```text
 produire cette note de reecriture positive.
 ```
 
-Tache 2 :
+Tache 2 - produite :
 
 ```text
 ajouter la note aux documents de protocole actifs.
 ```
 
-Tache 3 :
+Tache 3 - produite :
 
 ```text
 ouvrir un cycle de reecriture positive du cercle 1.
 ```
 
-Tache 4 :
+Tache 4 - produite :
 
 ```text
 apres reecriture du cercle 1,
 mesurer a nouveau les occurrences dans les documents actifs.
 ```
 
-Tache 5 :
+Statut du cercle 1 :
+
+```text
+produit puis corrige :
+la famille fonctionnelle est restauree comme sortie taxonomique controlee,
+apres fonction directrice et test de resistance.
+```
+
+Tache 5 - prochaine tache ouverte :
 
 ```text
 traiter les architectures actives par lots,
 sans toucher aux archives sauf signalement.
+```
+
+Condition :
+
+```text
+ne pas ouvrir le cercle 2 sans distinguer les noms historiques de dossiers
+et le vocabulaire theorique actif des architectures.
 ```
 
 ### 9. Garde-fous

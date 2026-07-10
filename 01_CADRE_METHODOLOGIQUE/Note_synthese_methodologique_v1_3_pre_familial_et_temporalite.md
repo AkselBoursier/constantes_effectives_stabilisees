@@ -1022,7 +1022,8 @@ Statut :
 
 ```text
 protocole actif ;
-la reecriture du cercle 1 devient la prochaine hygiene methodologique.
+le cercle 1 est produit puis corrige ;
+la prochaine hygiene methodologique possible est le cercle 2 des architectures actives.
 ```
 
 ### 20. Documents integres
