@@ -29,6 +29,21 @@ Objectif :
 classer Omega_m, Omega_Lambda, Omega_b et Omega_c comme relations normalisees dans l'architecture cosmologique.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+Omega_i appartient au sous-reseau budget normalise.
+```
+
+Ce sous-reseau depend de :
+
+```text
+rho_i,
+rho_crit,
+H,
+modele de decomposition globale.
+```
+
 La fiche doit eviter quatre erreurs.
 
 Premiere erreur :
@@ -113,6 +128,7 @@ famille principale : Relation
 sous-type : relation normalisee
 fonction architecturale : Densite normalisee
 architecture : Cosmologique
+sous-reseau : Budget normalise
 ```
 
 ### 3. Pourquoi Omega_i n'est pas une constante primitive
@@ -458,12 +474,14 @@ Omega_i est sans dimension, mais il reste inferentiel et modele-dependant.
 | Type logique | Densite normalisee ; rapport rho_i / rho_crit |
 | Dimension | Sans dimension |
 | Famille principale | Relation |
+| Sous-reseau | Budget normalise |
 | Sous-type local | Relation normalisee |
 | Fonction architecturale principale | Densite normalisee |
 | Fonction transversale | Normalisation, fermeture, dependance de modele |
 | Regime de definition physique | Dynamique de Friedmann-Lemaitre et decomposition du contenu cosmologique |
 | Regime d'acces epistemique | CMB, BAO, SNe, BBN, lentille, croissance, ajustements combines |
 | Dependances de modele | Forte : LambdaCDM, courbure, neutrinos, wCDM, w0waCDM, systematiques |
+| Test de retrait | Retirer rho_crit ou H detruit la comparabilite des Omega_i ; retirer le modele de decomposition rend le budget ambigu |
 | Stabilisation empirique | Forte dans LambdaCDM, mais modele-dependante |
 | Stabilisation conventionnelle | Non concernee |
 | Architecture | Cosmologique |
@@ -542,6 +560,7 @@ famille principale : Relation
 sous-type : relation normalisee
 fonction architecturale : Densite normalisee
 architecture : Cosmologique
+sous-reseau : Budget normalise
 stabilisation empirique : forte dans LambdaCDM, mais modele-dependante
 stabilisation conventionnelle : non concernee
 ```
@@ -571,6 +590,14 @@ Lambda peut etre exprime par Omega_Lambda
 Omega_i contribue a l'equation d'expansion
 ```
 
+Lecture apres stress test :
+
+```text
+Omega_i ne prolonge pas le sous-reseau fond / expansion ;
+il constitue le sous-reseau budget normalise,
+solidaire de H_0 par rho_crit mais distinct de Lambda et de w.
+```
+
 Le cycle peut maintenant passer a :
 
 ```text
@@ -583,9 +610,9 @@ car w testera un autre niveau :
 relation d'etat
 ```
 
-### 17. Prochaine fiche
+### 17. Suite produite et reprise ouverte
 
-La prochaine fiche logique est :
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_5_w.md
@@ -601,9 +628,27 @@ Objectif :
 classer w comme relation d'etat dans l'architecture cosmologique, en distinguant w = -1, w constant et w(a) dynamique.
 ```
 
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_5_w.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle doit etre lue comme fiche du sous-reseau budget normalise.
+```
+
 ### 18. Effet sur la carte et la methode
 
-La fiche Omega_i renforce deux points de la note methodologique v1.1.
+La fiche Omega_i a renforce deux points repris par la methode active.
 
 Premier point :
 
@@ -631,6 +676,13 @@ rho_Lambda    : densite associee
 Omega_Lambda  : densite normalisee
 ```
 
+Formule actuelle :
+
+```text
+Omega_i = relation normalisee du sous-reseau budget normalise ;
+son interpretation depend de rho_crit, H et du modele de decomposition globale.
+```
+
 ### 19. Sources de controle
 
 Sources utilisees pour cette fiche :
@@ -645,10 +697,14 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_5_w.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 PROJECT_BRIEF.docx
 ```
