@@ -116,11 +116,13 @@ Elle ne transforme pas encore le corpus en these finale.
 
 ### 8. Consequence pour la suite
 
-La prochaine etape ne devrait pas seulement tester T0.
+La mise a l'epreuve est maintenant :
 
-Elle devrait tester quels degagements resistent le mieux sur exemples porteurs.
+```text
+05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+```
 
-La mise a l'epreuve doit donc verifier :
+Cette mise a l'epreuve verifie :
 
 ```text
 1. si T0 tient sur les exemples ;
@@ -128,6 +130,12 @@ La mise a l'epreuve doit donc verifier :
 3. lesquels restent locaux ;
 4. lesquels deviennent transversaux ;
 5. lesquels doivent etre differes.
+```
+
+La prochaine etape logique devient :
+
+```text
+Plan de livrable theorique v0.1.
 ```
 
 ### 9. Formule de controle

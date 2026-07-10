@@ -205,6 +205,7 @@ Matrice, recentrage et limites actives :
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
+05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
 ```
 
 Methode active :
@@ -246,7 +247,8 @@ le seuil vers un premier degagement de these, maintenant formule.
 2. note de recentrage sur la question directrice ;
 3. fiche des limites et non-theses ;
 4. premier degagement de these v0.1 ;
-5. matrice des degagements theoriques v0.1.
+5. matrice des degagements theoriques v0.1 ;
+6. mise a l'epreuve par exemples porteurs v0.1.
 ```
 
 La note de recentrage rappelle que le sujet reste la qualification des
@@ -257,21 +259,22 @@ La carte decrit l'etat du corpus.
 
 Le premier degagement dit ce que cet etat autorise a affirmer comme
 these-noyau. La matrice des degagements montre que ce noyau n'epuise pas les
-articulations theoriques rendues visibles par le corpus.
+articulations theoriques rendues visibles par le corpus. La mise a l'epreuve
+indique quels degagements resistent sur exemples porteurs.
 
 ### 12. Prochaine etape
 
 Prochaine etape logique :
 
 ```text
-Mise a l'epreuve des degagements theoriques par exemples porteurs v0.1.
+Plan de livrable theorique v0.1.
 ```
 
 Fonction :
 
 ```text
-tester la these-noyau et les autres degagements disponibles sur quelques cas porteurs,
-sans produire une these finale prematuree.
+transformer la these-noyau et les degagements testes
+en une architecture de presentation courte, prudente et defendable.
 ```
 
 ### 13. Formule de cloture
