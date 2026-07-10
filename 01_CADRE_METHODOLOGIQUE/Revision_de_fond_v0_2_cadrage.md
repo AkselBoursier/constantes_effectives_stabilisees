@@ -283,8 +283,14 @@ v2.0 = classement synchronique conserve + grammaire temporelle + chronologie.
 | 5 | Architecture_saveur_Higgs_notes.md | mise au format des trois autres architectures, profil temporel inclus | 2 |
 | 6 | Profils temporels des 3 notes d'architecture existantes | addenda, pas de reecriture | 2, 4 |
 | 7 | Carte_consolidee_v2_0.md | carte de positions + renvoi systematique a la chronologie | 2, 4 |
-| 8 | Addenda temporels des fiches | matrice temporelle appliquee aux fiches actives, en commencant par les cas les plus sensibles (alpha_s, m_f, H_0, k_B) | 3 |
+| 8 | Application temporelle aux fiches sensibles | premiere application transversale produite ; addenda locaux seulement si une reprise revele un conflit | 3 |
 | 9 | Index_raisonne_du_corpus_v2_0.md | navigation mise a jour, statut socle fondateur corrige, nouvelle arborescence | 7, audit |
+
+Application transversale produite ensuite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+```
 
 #### 7.3 Criteres de validation de chaque livrable
 

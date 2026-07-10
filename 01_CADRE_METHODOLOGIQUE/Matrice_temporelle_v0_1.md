@@ -507,6 +507,12 @@ Ordre de travail :
 4. Reporter seulement la decision utile dans la fiche locale.
 ```
 
+Application transversale produite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+```
+
 La matrice temporelle devient necessaire quand :
 
 ```text

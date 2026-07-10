@@ -966,6 +966,29 @@ Statut :
 protocole actif pour les cas ou la trajectoire devient structurante.
 ```
 
+#### 19.10 Application temporelle aux fiches sensibles
+
+Document produit :
+
+```text
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
+```
+
+Role :
+
+```text
+appliquer le rang 5 aux fiches sensibles deja identifiees,
+en distinguant constitution, convention, composition, flot, validite,
+acces, seuil spectral et interface prudente.
+```
+
+Statut :
+
+```text
+couche de controle transversale ;
+les addenda locaux ne sont requis que si une reprise de fiche revele un conflit.
+```
+
 ### 20. Documents integres
 
 Documents methodologiques :
@@ -978,6 +1001,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
 ```
 
 Documents de reference :
@@ -1000,6 +1024,7 @@ Documents produits en application de la v1.3 :
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
 ```
 
 Architectures :

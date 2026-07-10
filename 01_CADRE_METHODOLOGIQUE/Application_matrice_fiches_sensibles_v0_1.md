@@ -469,6 +469,7 @@ Elle indique ensuite la suite methodologique produite :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
 ```
 
 Les addenda locaux restent possibles seulement si un conflit reapparait dans une fiche source.
