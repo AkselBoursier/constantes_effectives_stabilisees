@@ -8,7 +8,7 @@ Cette table execute le plan de remontee des sources DOCX.
 
 Elle ne deplace aucun fichier.
 
-Elle ne convertit encore aucun fichier.
+Elle pilote les extractions, ouvertes ensuite lot par lot.
 
 Elle fixe :
 
@@ -64,6 +64,15 @@ Destination de principe :
 
 ```text
 01_CADRE_METHODOLOGIQUE/00_Sources_docx/
+```
+
+Etat :
+
+```text
+ouvert ;
+extractions Markdown produites ;
+synthese de recuperation produite :
+01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md
 ```
 
 | Source primaire | Sortie Markdown cible | Document actif concerne | Priorite | Controle |

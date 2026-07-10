@@ -265,6 +265,13 @@ Table produite :
 
 Cette table precede toute conversion massive.
 
+Premier lot ouvert :
+
+```text
+01_CADRE_METHODOLOGIQUE/00_Sources_docx/
+01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md
+```
+
 ### 9. Formule de cloture
 
 > Les DOCX ne sont pas des dechets de l'ancienne structure ; ils sont la matiere premiere que la structure actuelle doit apprendre a rendre lisible.

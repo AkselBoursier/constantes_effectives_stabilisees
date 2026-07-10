@@ -106,6 +106,7 @@ Index_raisonne_du_corpus_v1_0.md
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
 | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens termes de classement |
+| `01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md` | Consolidation active | Recuperation du socle DOCX methodologique avant tests taxonomiques |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Regle de commit, push et branches apres stabilisation documentaire |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang de forme logique et temporalite explicite |
 | `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md` | Revision active | Extraction et recoupement des huit critiques constructives |
