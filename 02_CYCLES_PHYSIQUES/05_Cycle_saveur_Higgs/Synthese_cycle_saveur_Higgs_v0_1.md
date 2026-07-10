@@ -126,7 +126,7 @@ mais le classement robuste passe par l'architecture Saveur-Higgs.
 | Parametres de Wolfenstein | Coordonnees hierarchiques | Role contextuel | Parametrisation locale de CKM |
 | `PMNS` | Matrice d'orientation | Orientation | Desalignement oscillatoire du secteur neutrino massif |
 | `Delta m^2` | Ecart spectral | Dephasage oscillatoire | Grandeur accessible par oscillations |
-| Masse absolue neutrino | Borne / projection | Dossier ouvert | Ancrage partiel du spectre neutrino |
+| Masse absolue neutrino | Borne / projection | Ancrage spectral sous audit | Fiche prudente produite, interface Saveur-Higgs / cosmologie |
 
 ### 7. Regime physique et regimes d'acces
 
@@ -146,7 +146,7 @@ Les regimes d'acces sont heterogenes :
 | CKM | Desintegrations faibles, mesons, fits globaux | Forte avec tensions locales possibles |
 | PMNS | Oscillations neutrino | Forte pour angles principaux, incomplete pour phases |
 | `Delta m^2` | Oscillations neutrino | Acces aux ecarts, non a l'ancrage absolu |
-| Masse absolue neutrino | Beta decay, cosmologie, double beta sans neutrino selon hypotheses | Bornee et modele-dependante |
+| Masse absolue neutrino | Beta decay, cosmologie, double beta sans neutrino selon hypotheses | Bornee, modele-dependante, fiche prudente dediee |
 
 Regle :
 
@@ -260,6 +260,7 @@ Documents Markdown actifs :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md

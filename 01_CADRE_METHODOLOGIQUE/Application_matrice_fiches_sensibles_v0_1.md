@@ -456,7 +456,7 @@ Formule :
 | `k_B` / `R = N_A k_B` | Convention + composition exacte | Ne pas rebasculer R dans Relation par defaut |
 | `alpha_s(Q^2)` / `Lambda_QCD` | Couplage + echelle avec validite | Ne pas confondre running et temporalite historique |
 | `H_0` | Role architectural d'etat | Maintenir la tension comme propriete d'acces |
-| Masse absolue neutrino | Dossier sous audit | Ne pas stabiliser sans fiche dediee |
+| Masse absolue neutrino | Fiche prudente produite | Ne pas stabiliser comme famille |
 | `M_Pl` / cosmologie primordiale | Interface prudente | Ne pas ouvrir trop vite un cycle primordial |
 
 ### 11. Effet sur la suite du travail
@@ -465,12 +465,11 @@ Cette application ferme le besoin d'un premier criblage transversal.
 
 Elle n'impose pas encore de reecrire toutes les fiches sources.
 
-Elle indique plutot trois suites possibles :
+Elle indique plutot deux suites possibles :
 
 ```text
 1. produire des addenda courts dans les fiches locales si un conflit reapparait ;
-2. ouvrir une fiche prudente sur la masse absolue des neutrinos ;
-3. produire une matrice temporelle autonome si l'axe temporel devient recurrent.
+2. produire une matrice temporelle autonome si l'axe temporel devient recurrent.
 ```
 
 ### 12. Formule de cloture

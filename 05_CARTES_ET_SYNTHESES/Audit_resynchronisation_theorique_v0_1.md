@@ -290,7 +290,7 @@ L'audit ne ferme pas les dossiers suivants.
 | Point ouvert | Statut |
 |---|---|
 | Relation comme famille residuelle | A maintenir sous audit, cas par cas |
-| Masse absolue des neutrinos | Interface Saveur-Higgs / cosmologie, dossier encore prudent |
+| Masse absolue des neutrinos | Fiche prudente produite, interface Saveur-Higgs / cosmologie sous audit |
 | M_Pl et cosmologie primordiale | Interface effective / cosmologique, a ne pas ouvrir trop vite |
 | Matrice temporelle autonome | Possible plus tard, si la trajectoire devient un outil de travail regulier |
 | Normalisation des archives Word | A differer tant que les references internes ne sont pas auditees |
@@ -306,6 +306,12 @@ Statut apres criblage :
 ```text
 Relation, masse absolue des neutrinos, M_Pl et cosmologie primordiale restent sous prudence,
 mais disposent maintenant d'une premiere application de la matrice.
+```
+
+Fiche locale produite ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
 
 ### 13. Regle operative pour les prochaines reprises

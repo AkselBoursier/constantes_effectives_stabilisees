@@ -193,6 +193,7 @@ Documents actifs :
 | Document | Statut | Role |
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Fiche prudente | Ancrage spectral neutrino et interface cosmologique |
 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
@@ -493,6 +494,7 @@ Documents d'application produits ensuite :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
 
 Stress test cosmologique produit :
@@ -508,6 +510,7 @@ La note Markdown dediee est produite :
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
 
 Statut :
@@ -640,6 +643,7 @@ Architectures actives :
 
 Cycles actifs :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md

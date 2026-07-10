@@ -111,6 +111,7 @@ Table de dependances :
 | CKM | Desalignement des secteurs quark | Transitions faibles, melanges de mesons, CP | Perte de l'orientation transitionnelle |
 | PMNS | Secteur neutrino massif | Oscillations de saveur | Perte de l'orientation oscillatoire |
 | `Delta m^2` | Spectre neutrino massif | Dephasages oscillatoires | Oscillations sans echelle spectrale stabilisee |
+| Masse absolue neutrino | Spectre neutrino massif + voies d'acces | Ancrage spectral borne et interface cosmologique | Perte de la distinction entre ecarts, projections et somme cosmologique |
 
 Lecture v1.3 :
 
@@ -333,7 +334,7 @@ Les architectures ne sont pas isolees.
 | `v` / `M_W` / `G_F` | Saveur-Higgs et effective basse energie | Le regime electrofaible brise nourrit aussi le raccordement faible basse energie |
 | `h`, `c`, `e` / `alpha` | SI et couplages physiques | La convention SI fixe des valeurs dimensionnees sans epuiser les couplages sans dimension |
 | `M_Pl` / cosmologie | Effective et cosmologique | Echelle gravitationnelle, regimes primordiaux et limites d'inference |
-| Neutrinos / cosmologie | Saveur-Higgs et cosmologique | Masse absolue, oscillations, contraintes cosmologiques |
+| Neutrinos / cosmologie | Saveur-Higgs et cosmologique | Masse absolue, oscillations, contraintes cosmologiques ; fiche prudente active |
 | Tensions d'acces | Cosmologie et autres architectures | La cosmologie rend explicite un probleme general de regime d'acces |
 
 Regle :

@@ -939,6 +939,12 @@ criblage transversal produit ;
 les fiches locales ne sont a reprendre que si un conflit reapparait.
 ```
 
+Sortie locale produite ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
+```
+
 ### 20. Documents integres
 
 Documents methodologiques :
@@ -970,6 +976,7 @@ Documents produits en application de la v1.3 :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
 
 Architectures :
