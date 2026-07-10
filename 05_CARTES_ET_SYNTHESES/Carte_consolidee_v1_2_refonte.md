@@ -90,7 +90,7 @@ mais change l'ordre des questions.
 | Rang | Niveau | Question directrice |
 |---|---|---|
 | 0 | Forme logique de stabilisation | Quelle forme est stabilisee avant tout classement fonctionnel ? |
-| 1 | Fonction directrice | Que fait principalement la grandeur ? |
+| 1 | Fonction directrice puis famille fonctionnelle controlee | Que fait principalement la grandeur ? |
 | 2 | Role contextuel | Quel role prend-elle dans un regime, un acces ou une architecture ? |
 | 3 | Axes physique / acces | Ou opere-t-elle et comment est-elle connue ? |
 | 4 | Architecture / reseau | Quelles fonctions deviennent solidaires ? |
@@ -127,11 +127,16 @@ Regle :
 une liaison d'ecriture n'impose pas une fonction directrice de liaison.
 ```
 
-### 6. Rang 1 : fonctions directrices
+### 6. Rang 1 : fonction directrice et familles fonctionnelles
 
-La v1.2 conserve cinq fonctions fortes et une fonction de liaison sous audit.
+La v1.2 conserve cinq familles fonctionnelles fortes.
 
-| Fonction | Statut v1.2 | Fonction principale | Exemples |
+La fonction directrice est la question operative.
+
+La famille fonctionnelle est la sortie taxonomique,
+si le test de resistance est passe.
+
+| Famille fonctionnelle | Statut v1.2 | Fonction principale | Exemples |
 |---|---|---|---|
 | Couplage | Forte | Parametrer une intensite d'interaction ou de liaison | alpha, alpha_s(Q^2), alpha_G(E), Y_f |
 | Echelle | Forte | Fixer ou reveler un ordre de grandeur structurant | v, M_W, Lambda_QCD, M_Pl |
@@ -143,7 +148,7 @@ La v1.2 conserve cinq fonctions fortes et une fonction de liaison sous audit.
 Decision :
 
 ```text
-La liaison stabilisee n'est plus une fonction par defaut.
+La liaison stabilisee n'est plus une famille fonctionnelle par defaut.
 ```
 
 Elle ne peut etre conservee que si la liaison est vraiment la fonction principale et ne se reduit pas a :
@@ -205,7 +210,7 @@ documentaire.
 Regle :
 
 ```text
-un role peut etre indispensable sans devenir une fonction directrice.
+un role peut etre indispensable sans devenir une famille fonctionnelle.
 ```
 
 ### 9. Rang 3 : regime physique et regime d'acces
@@ -282,7 +287,7 @@ modifie le reseau de fonctions.
 
 ### 12. Rang 5 : temporalite et trajectoires
 
-La temporalite n'est pas une fonction directrice.
+La temporalite n'est pas une famille fonctionnelle.
 
 Elle n'est pas une architecture.
 
@@ -310,7 +315,7 @@ pas une nouvelle categorie taxonomique.
 La v1.2 conserve la prudence suivante :
 
 ```text
-une tension de donnees n'est pas une fonction directrice.
+une tension de donnees n'est pas une famille fonctionnelle.
 ```
 
 Elle peut toutefois devenir un signal actif pour tester :
@@ -339,7 +344,8 @@ Toute nouvelle fiche devrait contenir au minimum :
 | Grandeur | De quoi parle-t-on exactement ? |
 | Forme logique | Quelle forme est stabilisee ? |
 | Fonction directrice candidate | Quelle fonction principale semble dominante ? |
-| Test de fonction | La fonction resiste-t-elle au criblage ? |
+| Famille fonctionnelle obtenue | La fonction resiste-t-elle comme sortie taxonomique ? |
+| Test de resistance | La fonction resiste-t-elle au criblage ? |
 | Role contextuel | Quel role local, transversal ou architectural prend-elle ? |
 | Portee du role | Ou ce role vaut-il ? |
 | Regime physique | Dans quel domaine opere-t-elle ? |
@@ -363,15 +369,16 @@ Ordre de travail :
 3. Identifier le regime physique.
 4. Identifier le regime d'acces.
 5. Proposer une fonction directrice candidate.
-6. Tester si la fonction est irreductible au rang 0.
-7. Tester si la fonction est irreductible a un role contextuel.
-8. Tester si une liaison stabilisee est vraiment necessaire.
-9. Identifier les roles contextuels.
-10. Verifier les dependances de modele et d'acces.
-11. Tester l'existence d'une architecture.
-12. Appliquer le test de retrait.
-13. Decrire la trajectoire de stabilisation.
-14. Nommer les limites.
+6. Tester si cette fonction devient famille fonctionnelle.
+7. Tester si la fonction est irreductible au rang 0.
+8. Tester si la fonction est irreductible a un role contextuel.
+9. Tester si une liaison stabilisee est vraiment necessaire.
+10. Identifier les roles contextuels.
+11. Verifier les dependances de modele et d'acces.
+12. Tester l'existence d'une architecture.
+13. Appliquer le test de retrait.
+14. Decrire la trajectoire de stabilisation.
+15. Nommer les limites.
 ```
 
 Sorties possibles :
@@ -392,13 +399,13 @@ dossier a produire avant decision.
 La v1.2 stabilise les decisions suivantes.
 
 ```text
-1. Les cinq fonctions Couplage, Echelle, Raccordement, Orientation et Convention sont fortes.
-2. La liaison stabilisee est conservee seulement comme fonction faible sous audit.
-3. Seuil, Borne, Validite, Dephasage et Hierarchie sont des roles contextuels, non des fonctions directrices.
+1. Les cinq familles fonctionnelles Couplage, Echelle, Raccordement, Orientation et Convention sont fortes.
+2. La liaison stabilisee est conservee seulement comme famille fonctionnelle faible sous audit.
+3. Seuil, Borne, Validite, Dephasage et Hierarchie sont des roles contextuels, non des familles fonctionnelles.
 4. Fond, Parametre d'etat, Densite normalisee, Equation d'etat, Condition initiale et Observable reconstruite sont des roles architecturaux.
-5. Saveur-Higgs, SI, effective basse energie et cosmologie sont des architectures, non des fonctions directrices.
+5. Saveur-Higgs, SI, effective basse energie et cosmologie sont des architectures, non des familles fonctionnelles.
 6. Une architecture doit etre decrite comme reseau de dependances.
-7. La temporalite est une trajectoire de stabilisation, non une fonction directrice.
+7. La temporalite est une trajectoire de stabilisation, non une famille fonctionnelle.
 8. Une tension de donnees appartient d'abord au regime d'acces.
 9. Toute nouvelle fiche doit appliquer le criblage avant consolidation.
 ```

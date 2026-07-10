@@ -83,12 +83,14 @@ Decision :
 le vocabulaire actif doit devenir positif.
 ```
 
-Les anciens termes ne doivent subsister que dans trois cas :
+Les anciens termes ne doivent subsister que dans quatre cas :
 
 ```text
 1. titre ou nom historique d'un document source ;
 2. section de genealogie methodologique ;
 3. citation ou rappel explicite d'une formulation archivee.
+4. expression technique controlee : famille fonctionnelle,
+   seulement comme sortie taxonomique apres test de resistance.
 ```
 
 Partout ailleurs, l'enonce doit dire directement :
@@ -106,8 +108,9 @@ et quelle architecture ou trajectoire elle engage.
 
 | Ancien usage actif | Formulation positive privilegiee |
 |---|---|
-| substantif de classement global | fonction principale |
-| classement candidat | fonction a tester |
+| substantif de classement global | fonction directrice a tester |
+| classement candidat | fonction directrice candidate |
+| famille fonctionnelle | sortie taxonomique apres test de resistance |
 | classement englobant | architecture ou niveau de solidarite |
 | classement faible | fonction non prioritaire, a reformuler |
 | liaison entre classements | inter-fonctions ou inter-architectures selon contexte |

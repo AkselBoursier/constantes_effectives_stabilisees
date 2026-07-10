@@ -284,7 +284,7 @@ v2.0 = classement synchronique conserve + grammaire temporelle + chronologie.
 | 6 | Profils temporels des 3 notes d'architecture existantes | addenda, pas de reecriture | 2, 4 |
 | 7 | Carte_consolidee_v2_0.md | carte de positions + renvoi systematique a la chronologie | 2, 4 |
 | 8 | Application temporelle aux fiches sensibles | premiere application transversale produite ; addenda locaux seulement si une reprise revele un conflit | 3 |
-| 9 | Reecriture positive du vocabulaire actif | protocole produit ; reecriture positive du cercle 1 avant v2.0 | 2, audit |
+| 9 | Reecriture positive du vocabulaire actif | protocole produit ; correction du double niveau fonction directrice / famille fonctionnelle avant v2.0 | 2, audit |
 | 10 | Index_raisonne_du_corpus_v2_0.md | navigation mise a jour, statut socle fondateur corrige, nouvelle arborescence | 7, 9, audit |
 
 Application transversale produite ensuite :

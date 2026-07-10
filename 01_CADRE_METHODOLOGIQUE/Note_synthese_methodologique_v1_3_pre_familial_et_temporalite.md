@@ -63,8 +63,8 @@ forme stabilisee
 
 | Point | v1.2 | v1.3 |
 |---|---|---|
-| Premiere question | Quelle fonction directrice ? | Quelle forme logique de stabilisation ? |
-| Liaison non qualifiee | Classe englobante conservee mais surveillee | Fonction faible sous audit, jamais reponse par defaut |
+| Premiere question | Quelle famille fonctionnelle ? | Quelle forme logique de stabilisation ? |
+| Liaison non qualifiee | Classe englobante conservee mais surveillee | Famille fonctionnelle faible sous audit, jamais reponse par defaut |
 | Fonctions transversales / architecturales | Deux niveaux distincts | Roles contextuels avec portee locale, transversale ou architecturale |
 | Regime physique / acces | Deux champs obligatoires | Deux axes orthogonaux, avec couplage modele-acces |
 | Architecture | Niveau reconnu par matrice | Reseau de solidarite soumis a stress test |
@@ -86,7 +86,7 @@ La methode distingue maintenant six rangs.
 | Rang | Nom | Question |
 |---|---|---|
 | 0 | Forme logique de stabilisation | Qu'est-ce qui est stabilise formellement ? |
-| 1 | Fonction directrice | Que fait principalement la grandeur dans ce regime ? |
+| 1 | Fonction directrice puis famille fonctionnelle controlee | Que fait principalement la grandeur dans ce regime ? |
 | 2 | Role contextuel | Quel role local, transversal ou architectural joue-t-elle ? |
 | 3 | Axes physique / acces | Dans quel regime opere-t-elle et par quel acces est-elle connue ? |
 | 4 | Architecture / reseau | Quelles dependances solidaires produit-elle ? |
@@ -148,17 +148,26 @@ k_B et h sont des valeurs exactes dans le SI,
 mais leur role physique n'est pas epuise par cette exactitude.
 ```
 
-### 6. Rang 1 : fonctions directrices
+### 6. Rang 1 : fonction directrice et famille fonctionnelle
 
-Les fonctions directrices repondent a une autre question.
+La fonction directrice repond a une autre question.
 
 ```text
 que fait principalement la grandeur dans le regime considere ?
 ```
 
-Le noyau v1.3 distingue cinq fonctions fortes et une fonction de liaison sous audit.
+La famille fonctionnelle n'est pas la premiere chose a chercher.
 
-Fonctions fortes :
+Elle est une sortie taxonomique possible :
+
+```text
+fonction directrice testee -> famille fonctionnelle si le test de resistance est passe.
+```
+
+Le noyau v1.3 conserve cinq familles fonctionnelles fortes,
+nommees par leur fonction directrice.
+
+Familles fonctionnelles fortes :
 
 ```text
 Couplage
@@ -168,7 +177,7 @@ Orientation
 Convention
 ```
 
-Fonction de liaison sous audit :
+Sortie faible sous audit :
 
 ```text
 liaison stabilisee
@@ -176,7 +185,7 @@ liaison stabilisee
 
 Cette decision ne supprime pas encore la possibilite d'une liaison stabilisee.
 
-Elle empeche son usage comme reponse par defaut.
+Elle empeche son usage comme famille fonctionnelle par defaut.
 
 ### 7. Statut des liaisons stabilisees en v1.3
 
@@ -195,7 +204,8 @@ une simple mise en rapport ne peut pas suffire a definir une fonction directrice
 Decision v1.3 :
 
 ```text
-la liaison stabilisee devient une fonction faible sous audit.
+la liaison stabilisee ne devient famille fonctionnelle faible
+que si le test de non-reduction est passe.
 ```
 
 Elle ne peut etre utilisee que si trois conditions sont remplies.
@@ -275,7 +285,7 @@ Exemples :
 Regle :
 
 ```text
-le role contextuel ne remplace pas la fonction directrice ;
+le role contextuel ne remplace pas la famille fonctionnelle ;
 il dit comment la fonction principale opere dans un contexte.
 ```
 
@@ -396,7 +406,7 @@ simple regroupement documentaire
 
 La temporalite reste un axe transversal.
 
-Elle ne devient pas une fonction directrice.
+Elle ne devient pas une famille fonctionnelle.
 
 Elle ne devient pas une architecture.
 
@@ -514,7 +524,7 @@ S_8 : observable reconstruite manifeste dans les donnees de structure.
 Ce champ evite une confusion :
 
 ```text
-deux grandeurs peuvent avoir une fonction directrice proche,
+deux grandeurs peuvent avoir une famille fonctionnelle proche,
 mais des manifestations phenomenologiques differentes.
 ```
 
@@ -529,21 +539,23 @@ Pour toute nouvelle fiche, appliquer l'ordre suivant.
 4. Identifier le regime d'acces.
 5. Identifier le couplage modele-acces.
 6. Determiner la fonction directrice principale.
-7. Verifier si une liaison stabilisee est vraiment necessaire ou seulement apparente.
-8. Ajouter les roles contextuels avec leur portee.
-9. Decrire la manifestation phenomenologique.
-10. Decrire le mode et la trajectoire de stabilisation.
-11. Tester l'existence d'une architecture ou d'un reseau de dependance.
-12. Appliquer le stress test d'architecture si necessaire.
-13. Identifier les tensions et leur niveau d'activation.
-14. Nommer les limites et les erreurs evitees.
+7. Tester si cette fonction peut etre stabilisee comme famille fonctionnelle.
+8. Verifier si une liaison stabilisee est vraiment necessaire ou seulement apparente.
+9. Ajouter les roles contextuels avec leur portee.
+10. Decrire la manifestation phenomenologique.
+11. Decrire le mode et la trajectoire de stabilisation.
+12. Tester l'existence d'une architecture ou d'un reseau de dependance.
+13. Appliquer le stress test d'architecture si necessaire.
+14. Identifier les tensions et leur niveau d'activation.
+15. Nommer les limites et les erreurs evitees.
 ```
 
 Regle de priorite :
 
 ```text
 la forme logique vient avant la fonction directrice,
-mais la forme logique ne remplace pas la fonction.
+la fonction directrice vient avant la famille fonctionnelle,
+mais la fonction directrice ne supprime pas la sortie taxonomique.
 ```
 
 ### 15. Matrice canonique v1.3
@@ -558,6 +570,7 @@ mais la forme logique ne remplace pas la fonction.
 | Couplage modele-acces | Quel modele, schema ou convention conditionne l'acces ? |
 | Robustesse de l'acces | Directe, reconstruite, combinee, fragile, conventionnelle, en tension ? |
 | Fonction directrice | Que fait principalement la grandeur ? |
+| Famille fonctionnelle obtenue | La fonction resiste-t-elle comme sortie taxonomique ? |
 | Liaison stabilisee | Est-elle evitee, qualifiee ou vraiment necessaire ? |
 | Role contextuel | Role local, transversal, architectural ou documentaire ? |
 | Portee du role | Locale, transversale, architecturale, documentaire ? |
@@ -570,9 +583,10 @@ mais la forme logique ne remplace pas la fonction.
 | Limites | Ce que la grandeur ne dit pas |
 | Erreur evitee | Quelle confusion de rang, d'acces ou de temps est evitee ? |
 
-### 16. Test de resistance des fonctions directrices
+### 16. Test de passage vers une famille fonctionnelle
 
-Avant de creer ou maintenir une fonction directrice, poser huit questions.
+Avant de transformer une fonction directrice en famille fonctionnelle,
+poser huit questions.
 
 ```text
 1. La categorie nomme-t-elle une fonction principale ?
@@ -588,23 +602,23 @@ Avant de creer ou maintenir une fonction directrice, poser huit questions.
 Sorties possibles :
 
 ```text
-fonction conservee
-fonction renommee
-fonction sous audit
+famille fonctionnelle conservee
+famille fonctionnelle renommee
+famille fonctionnelle sous audit
 role contextuel
 forme logique
 architecture
 archive taxonomique
 ```
 
-### 17. Consequences pour les fonctions directrices existantes
+### 17. Consequences pour les familles fonctionnelles existantes
 
 #### 17.1 Couplage
 
 Statut :
 
 ```text
-fonction forte conservee.
+famille fonctionnelle forte conservee.
 ```
 
 Question :
@@ -626,7 +640,7 @@ preciser la trajectoire de stabilisation.
 Statut :
 
 ```text
-fonction forte conservee.
+famille fonctionnelle forte conservee.
 ```
 
 Question :
@@ -646,7 +660,7 @@ distinguer echelle physique, seuil, validite et hierarchie.
 Statut :
 
 ```text
-fonction forte conservee.
+famille fonctionnelle forte conservee.
 ```
 
 Question :
@@ -666,7 +680,7 @@ specifier la limite de validite et le test de retrait.
 Statut :
 
 ```text
-fonction forte conservee.
+famille fonctionnelle forte conservee.
 ```
 
 Question :
@@ -687,7 +701,7 @@ transitionnelle, oscillatoire, CP, geometrique, spectrale.
 Statut :
 
 ```text
-fonction forte conservee.
+famille fonctionnelle forte conservee.
 ```
 
 Question :
@@ -710,7 +724,7 @@ et stabilisation absorbee par convention.
 Statut :
 
 ```text
-fonction faible sous audit.
+famille fonctionnelle faible sous audit.
 ```
 
 Question :
@@ -771,7 +785,7 @@ Document produit :
 Role :
 
 ```text
-formaliser le test de resistance des fonctions directrices,
+formaliser le test de passage vers une famille fonctionnelle,
 le statut des liaisons stabilisees,
 et le stress test d'architecture.
 ```
@@ -903,7 +917,7 @@ Role :
 ```text
 appliquer la methode v1.3 aux quatre cycles physiques actifs,
 puis verifier la coherence theorique entre les architectures,
-et cribler les fiches sensibles sans creer de nouvelle fonction directrice.
+et cribler les fiches sensibles sans creer de nouvelle famille fonctionnelle.
 ```
 
 Statut :
@@ -1072,6 +1086,7 @@ La v1.3 peut etre resumee par quatre deplacements.
 
 ```text
 du classement nominal vers la fonction directrice ;
+de la fonction directrice vers la famille fonctionnelle controlee ;
 de la fonction attribuee trop tot vers la forme logique ;
 de la fonction isolee vers le role contextuel ;
 du tableau vers le reseau de dependance ;

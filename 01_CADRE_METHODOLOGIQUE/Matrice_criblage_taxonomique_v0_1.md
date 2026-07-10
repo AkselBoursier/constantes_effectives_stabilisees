@@ -37,13 +37,13 @@ et quelle trajectoire elle suit.
 
 ### 2. Probleme vise
 
-La methode anterieure risquait parfois de transformer des categories commodes en fonctions directrices trop vite.
+La methode anterieure risquait parfois de transformer des categories commodes en familles fonctionnelles trop vite.
 
 Trois risques sont particulierement vises :
 
 ```text
 liaison non qualifiee prise pour tiroir fourre-tout,
-fonction contextuelle prise pour fonction directrice,
+fonction contextuelle prise pour famille fonctionnelle,
 architecture prise pour niveau de solidarite englobant.
 ```
 
@@ -54,7 +54,7 @@ La matrice v0.1 impose donc un criblage par rangs.
 | Rang | Niveau | Question |
 |---|---|---|
 | 0 | Forme logique de stabilisation | Quelle forme est stabilisee avant tout classement fonctionnel ? |
-| 1 | Fonction directrice | Que fait principalement la grandeur ? |
+| 1 | Fonction directrice puis famille fonctionnelle controlee | Que fait principalement la grandeur ? |
 | 2 | Role contextuel | Quel role prend-elle dans ce regime ou cette architecture ? |
 | 3 | Axes physique / acces | Ou opere-t-elle et comment est-elle connue ? |
 | 4 | Architecture / reseau | Entre-t-elle dans une solidarite de fonctions ? |
@@ -73,7 +73,8 @@ forme -> fonction -> role -> acces -> architecture -> trajectoire.
 | Grandeur | De quoi parle-t-on exactement ? | Nom, symbole, domaine |
 | Forme logique | Quelle forme est stabilisee ? | Valeur, rapport, ecart, matrice, phase, loi d'etat, borne, observable |
 | Fonction directrice candidate | Quelle fonction principale semble dominante ? | Couplage, Echelle, Raccordement, Orientation, Convention, liaison qualifiee sous audit |
-| Test de fonction directrice | La fonction est-elle irreductible au rang 0 ou au role ? | Confirmee, qualifiee, deplacee, refusee |
+| Famille fonctionnelle obtenue | Le test autorise-t-il une sortie taxonomique ? | Forte, qualifiee, faible sous audit, refusee |
+| Test de resistance | La fonction est-elle irreductible au rang 0 ou au role ? | Confirmee, qualifiee, deplacee, refusee |
 | Role contextuel | Quel role local ou architectural prend la grandeur ? | Seuil, borne, fond, etat, validite, hierarchie, observable, condition initiale |
 | Portee du role | Ou ce role vaut-il ? | Locale, transversale, architecturale, documentaire |
 | Regime physique | Dans quel domaine la grandeur opere-t-elle ? | Electromagnetique, QCD, electrofaible, gravitationnel, cosmologique, SI |
@@ -87,24 +88,25 @@ forme -> fonction -> role -> acces -> architecture -> trajectoire.
 | Test de retrait | Que perd-on si la grandeur est retiree ? | Role isole, articulation, domaine, architecture |
 | Limite | Ce que le classement ne dit pas | Limite physique, epistemique ou documentaire |
 
-### 5. Test de resistance d'une fonction directrice
+### 5. Test de passage vers une famille fonctionnelle
 
-Une fonction directrice candidate ne doit etre conservee que si elle resiste aux questions suivantes.
+Une fonction directrice candidate ne devient famille fonctionnelle
+que si elle resiste aux questions suivantes.
 
 | Question | Si oui | Si non |
 |---|---|---|
-| La grandeur a-t-elle une fonction principale claire ? | Continuer le test | Ne pas consolider le classement fonctionnel |
+| La grandeur a-t-elle une fonction principale claire ? | Continuer le test | Ne pas produire de famille fonctionnelle |
 | Cette fonction est-elle plus qu'une forme logique ? | Fonction candidate possible | Revenir au rang 0 |
 | Cette fonction est-elle plus qu'un role contextuel ? | Fonction candidate possible | Deplacer en role |
-| Cette fonction reste-t-elle lisible hors d'une architecture particuliere ? | Fonction robuste possible | Role architectural ou architecture |
-| Le retrait de cette fonction casse-t-il l'analyse locale ? | Fonction confirmee ou qualifiee | Etiquette faible ou refusee |
+| Cette fonction reste-t-elle lisible hors d'une architecture particuliere ? | Famille fonctionnelle possible | Role architectural ou architecture |
+| Le retrait de cette fonction casse-t-il l'analyse locale ? | Famille confirmee ou qualifiee | Etiquette faible ou refusee |
 
 Sorties possibles :
 
 ```text
-fonction robuste
-fonction conservee mais qualifiee
-fonction faible sous audit
+famille fonctionnelle robuste
+famille fonctionnelle conservee mais qualifiee
+famille fonctionnelle faible sous audit
 role contextuel
 forme logique seulement
 architecture ou sous-architecture
@@ -113,7 +115,8 @@ classement refuse
 
 ### 6. Test special des liaisons stabilisees
 
-La liaison stabilisee est une fonction faible sous audit.
+La liaison stabilisee ne peut devenir famille fonctionnelle faible
+qu'apres test de non-reduction.
 
 Elle ne doit pas etre utilisee par defaut.
 
@@ -125,7 +128,7 @@ Questions obligatoires :
 | La grandeur peut-elle etre mieux decrite comme Couplage, Echelle, Raccordement, Orientation ou Convention ? | Si oui, reclasser |
 | La liaison est-elle un role d'etat, une normalisation, une composition ou une observable reconstruite ? | Si oui, passer en role contextuel |
 | Le cas exige-t-il une architecture pour etre compris ? | Si oui, traiter l'architecture avant la fonction directrice |
-| Que perd-on si l'etiquette de liaison disparait ? | Si presque rien, la fonction de liaison est refusee |
+| Que perd-on si l'etiquette de liaison disparait ? | Si presque rien, la famille fonctionnelle de liaison est refusee |
 
 Decisions possibles :
 
@@ -140,13 +143,13 @@ Decisions possibles :
 Formule :
 
 ```text
-La fonction de liaison ne devient acceptable que si elle explique la fonction,
+La famille fonctionnelle de liaison ne devient acceptable que si elle explique la fonction,
 pas seulement la forme de l'ecriture.
 ```
 
 ### 7. Test de role contextuel
 
-Un role contextuel n'est pas une fonction directrice.
+Un role contextuel ne suffit pas a produire une famille fonctionnelle.
 
 Il decrit la fonction prise par une grandeur dans une situation donnee.
 
@@ -165,7 +168,7 @@ Il decrit la fonction prise par une grandeur dans une situation donnee.
 Regle :
 
 ```text
-le role peut etre indispensable sans devenir une fonction directrice.
+le role peut etre indispensable sans devenir une famille fonctionnelle.
 ```
 
 ### 8. Test d'architecture
@@ -221,7 +224,7 @@ ou par leur couplage ?
 
 ### 10. Trajectoires de stabilisation
 
-La temporalite n'est pas une fonction directrice.
+La temporalite n'est pas une famille fonctionnelle.
 
 Elle decrit la trajectoire du statut.
 
@@ -273,7 +276,8 @@ Regime d'acces :
 
 Rang 0 - forme logique :
 Rang 1 - fonction directrice candidate :
-Test de resistance de fonction :
+Sortie taxonomique - famille fonctionnelle :
+Test de resistance :
 Rang 2 - role contextuel :
 Portee du role :
 Rang 3 - couplage modele-acces :
@@ -322,7 +326,7 @@ dossier a produire avant decision
 Cette matrice doit etre utilisee avant :
 
 ```text
-une nouvelle fonction directrice,
+une nouvelle famille fonctionnelle,
 une requalification des liaisons stabilisees,
 une nouvelle carte consolidee,
 un stress test cosmologique,

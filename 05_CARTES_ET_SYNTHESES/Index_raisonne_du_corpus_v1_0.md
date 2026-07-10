@@ -75,7 +75,7 @@ Ces documents forment le noyau actif du corpus.
 
 | Document | Statut | Role |
 |---|---|---|
-| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : rang de forme logique, roles contextuels, temporalite |
+| `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Reference active | Carte generale actuelle apres refonte v1.3 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
@@ -333,7 +333,7 @@ Groupes principaux :
 |---|---|
 | Brief initial | Point de depart du projet |
 | Methodes et addenda initiaux | Genese de la methode |
-| Tests de fonctions directrices | Exploration des fonctions fragiles |
+| Tests de familles fonctionnelles | Exploration des sorties taxonomiques fragiles |
 | Fiches physiques initiales | Preuves locales anciennes |
 | Syntheses de cycles initiales | Consolidations historiques |
 | Cartes consolidees v0.1 a v0.8 | Evolution de la carte avant l'arborescence Markdown |
@@ -484,6 +484,7 @@ Raison :
 ```text
 les critiques montrent que la methode doit changer l'ordre des questions :
 forme logique avant fonction directrice,
+famille fonctionnelle seulement apres test,
 fonction avant role,
 acces et modele comme axes orthogonaux,
 temporalite comme trajectoire.
@@ -581,7 +582,7 @@ Avant d'ouvrir un nouveau cycle physique :
 3. Appliquer la matrice de criblage si le classement est litigieux.
 4. Lire la carte v1.1.
 5. Identifier le cycle ou la fiche de preuve la plus proche.
-6. Ne creer une nouvelle fonction directrice que si le test de resistance et le test d'architecture echouent.
+6. Ne creer une nouvelle famille fonctionnelle que si le test de resistance et le test d'architecture echouent.
 ```
 
 Avant de produire une nouvelle synthese :
