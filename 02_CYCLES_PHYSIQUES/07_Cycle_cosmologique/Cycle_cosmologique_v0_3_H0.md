@@ -22,6 +22,16 @@ Objectif :
 classer H_0 comme parametre d'etat actuel dans l'architecture cosmologique, sans le traiter comme constante fondamentale.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+H_0 appartient au sous-reseau fond / expansion.
+```
+
+La tension H_0 est transversale.
+
+Elle porte sur les regimes d'acces et d'inference, non sur une famille autonome.
+
 La fiche doit eviter trois erreurs.
 
 Premiere erreur :
@@ -98,6 +108,8 @@ Statut de rang :
 ```text
 fonction architecturale principale : Parametre d'etat
 architecture : Cosmologique
+sous-reseau : Fond / expansion
+tension transversale : H_0
 famille superieure : aucune famille simple ne doit etre forcee
 ```
 
@@ -299,6 +311,14 @@ Regle :
 La tension H_0 appartient au regime d'acces, non a la famille principale de H_0.
 ```
 
+Lecture apres stress test :
+
+```text
+la tension H_0 traverse le sous-reseau fond / expansion,
+mais elle ne suffit pas a creer une famille Tension
+ni une sous-architecture autonome.
+```
+
 ### 7. H_0, Lambda et Omega_i
 
 H_0 est fortement lie a Lambda et aux densites normalisees, mais il ne se confond pas avec eux.
@@ -408,12 +428,14 @@ est une normalisation commode, non une definition conventionnelle d'unite.
 | Type logique | Parametre d'etat actuel ; valeur actuelle du taux d'expansion |
 | Dimension | Temps^-1, souvent km s^-1 Mpc^-1 |
 | Famille principale | Aucune famille superieure simple ne doit etre forcee |
+| Sous-reseau | Fond / expansion |
 | Fonction architecturale principale | Parametre d'etat |
 | Sous-type local | Taux d'expansion actuel |
 | Fonction transversale | Tension d'acces, normalisation, relation a rho_crit |
 | Regime de definition physique | Dynamique actuelle de l'expansion cosmologique |
 | Regime d'acces epistemique | Distance ladder, CMB + modele, BAO + calibration, sondes combinees |
 | Dependances de modele | Forte pour CMB + LambdaCDM ; variable selon route locale et calibration |
+| Test de retrait | Retirer H_0 ne retire pas Lambda, mais detruit la normalisation actuelle de l'expansion et des rho_crit / Omega_i |
 | Stabilisation empirique | Forte localement par route, mais discordante entre routes |
 | Stabilisation conventionnelle | Non concernee |
 | Architecture | Cosmologique |
@@ -476,6 +498,7 @@ Statut :
 ```text
 fonction architecturale : Parametre d'etat
 architecture : Cosmologique
+sous-reseau : Fond / expansion
 stabilisation empirique : forte mais discordante entre regimes d'acces
 stabilisation conventionnelle : non concernee
 tension H_0 : propriete du regime d'acces, non famille
@@ -510,9 +533,17 @@ quel est l'etat actuel de l'expansion et comment y accede-t-on ?
 
 Le cycle peut maintenant passer aux densites normalisees.
 
-### 16. Prochaine fiche
+Lecture apres stress test :
 
-La prochaine fiche logique est :
+```text
+Lambda et H_0 forment le noyau fond / expansion,
+mais H_0 porte une tension transversale d'acces
+que Lambda ne porte pas de la meme maniere.
+```
+
+### 16. Suite produite et reprise ouverte
+
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_4_Omega_i.md
@@ -528,9 +559,27 @@ Objectif :
 classer Omega_m, Omega_Lambda, Omega_b et Omega_c comme relations normalisees dans l'architecture cosmologique.
 ```
 
-### 17. Effet sur la mise a jour methodologique
+Cette suite est maintenant produite.
 
-La fiche H_0 confirme que la methode generale doit etre mise a jour.
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_4_Omega_i.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle doit etre lue comme fiche du sous-reseau fond / expansion.
+```
+
+### 17. Effet sur la methode
+
+La fiche H_0 a confirme que la methode generale devait etre mise a jour.
 
 Deux corrections deviennent prioritaires :
 
@@ -539,16 +588,18 @@ Deux corrections deviennent prioritaires :
 2. donner un statut methodologique aux tensions de donnees comme proprietes du regime d'acces.
 ```
 
-La note preparatoire :
+Cette decision est maintenant reprise par :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Mise_a_jour_methodologie_v1_1_notes.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
-peut maintenant servir de base a une vraie :
+Formule actuelle :
 
 ```text
-Note_synthese_methodologique_v1_1.md
+H_0 = parametre d'etat du sous-reseau fond / expansion ;
+tension H_0 = tension transversale d'acces et de modele.
 ```
 
 ### 18. Sources de controle
@@ -567,9 +618,13 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
-01_CADRE_METHODOLOGIQUE/Mise_a_jour_methodologie_v1_1_notes.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_4_Omega_i.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 PROJECT_BRIEF.docx
 ```
