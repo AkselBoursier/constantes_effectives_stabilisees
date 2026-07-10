@@ -23,6 +23,16 @@ Objectif :
 classer A_s et n_s comme conditions initiales perturbatives dans l'architecture cosmologique.
 ```
 
+Lecture actuelle apres stress test :
+
+```text
+A_s et n_s appartiennent au sous-reseau primordial.
+```
+
+Ce sous-reseau porte sur les conditions initiales perturbatives.
+
+Il ne doit pas etre absorbe dans le sous-reseau fond / expansion.
+
 La fiche doit eviter quatre erreurs.
 
 Premiere erreur :
@@ -101,6 +111,7 @@ Statut de rang :
 ```text
 fonction architecturale principale : Condition initiale
 architecture : Cosmologique
+sous-reseau : Primordial
 famille superieure : aucune famille simple ne doit etre forcee pour le couple A_s / n_s
 ```
 
@@ -423,12 +434,14 @@ Le fait qu'ils soient sans dimension ne les rend pas conventionnellement exacts.
 | Type logique | Parametres du spectre primordial scalaire |
 | Dimension | Sans dimension |
 | Famille principale | Aucune famille superieure simple ne doit etre forcee pour le couple |
+| Sous-reseau | Primordial |
 | Sous-type local | Amplitude primordiale ; inclinaison spectrale |
 | Fonction architecturale principale | Condition initiale |
 | Fonction transversale | Validite de modele, dependance au pivot, dependance a tau, lien avec croissance |
 | Regime de definition physique | Perturbations scalaires primordiales |
 | Regime d'acces epistemique | CMB temperature, polarisation, lensing, grandes structures, ajustements combines |
 | Dependances de modele | LambdaCDM, inflation, running, tenseurs, isocourbure, neutrinos, reionisation |
+| Test de retrait | Retirer A_s / n_s retire la parametrisation du spectre primordial scalaire et affaiblit le lien vers sigma_8 / S_8 |
 | Stabilisation empirique | Forte dans LambdaCDM, mais interpretation primitive ouverte |
 | Stabilisation conventionnelle | Non concernee |
 | Architecture | Cosmologique |
@@ -505,6 +518,7 @@ Statut :
 ```text
 fonction architecturale : Condition initiale
 architecture : Cosmologique
+sous-reseau : Primordial
 famille superieure : aucune famille simple ne doit etre forcee pour le couple
 stabilisation empirique : forte dans LambdaCDM, interpretation primitive ouverte
 stabilisation conventionnelle : non concernee
@@ -538,11 +552,18 @@ w modifie l'expansion tardive.
 sigma_8 / S_8 condenseront l'amplitude tardive reconstruite.
 ```
 
+Lecture apres stress test :
+
+```text
+A_s / n_s ouvrent le sous-reseau primordial ;
+sigma_8 / S_8 reliront ce sous-reseau au sous-reseau croissance / reconstruction.
+```
+
 Le cycle peut maintenant passer aux amplitudes de structure.
 
-### 16. Prochaine fiche
+### 16. Suite produite et reprise ouverte
 
-La prochaine fiche logique est :
+La prochaine fiche logique etait :
 
 ```text
 Cycle_cosmologique_v0_7_sigma8_S8.md
@@ -556,6 +577,24 @@ Objectif :
 
 ```text
 classer sigma_8 et S_8 comme observables ou amplitudes reconstruites dans l'architecture cosmologique.
+```
+
+Cette suite est maintenant produite.
+
+Documents produits ensuite :
+
+```text
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+```
+
+Decision actuelle :
+
+```text
+la fiche reste valide comme preuve locale,
+mais elle doit etre lue comme fiche du sous-reseau primordial.
 ```
 
 ### 17. Effet sur la carte et la methode
@@ -586,6 +625,13 @@ Elle ajoute aussi une transition importante :
 la fiche suivante devra distinguer amplitude initiale et amplitude tardive reconstruite.
 ```
 
+Formule actuelle :
+
+```text
+A_s / n_s = conditions initiales du sous-reseau primordial ;
+sigma_8 / S_8 = reconstruction tardive liee mais non identique.
+```
+
 ### 18. Sources de controle
 
 Sources utilisees pour cette fiche :
@@ -599,12 +645,16 @@ Sources utilisees pour cette fiche :
 Documents internes :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_4_Omega_i.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_5_w.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
+02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
+04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 PROJECT_BRIEF.docx
 ```
