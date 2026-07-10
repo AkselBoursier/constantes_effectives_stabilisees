@@ -945,6 +945,27 @@ Sortie locale produite ensuite :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
 
+#### 19.9 Matrice temporelle autonome
+
+Document produit :
+
+```text
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+```
+
+Role :
+
+```text
+detaille le rang 5 de la methode v1.3
+et distingue constitution, variation, validite, acces et maturation.
+```
+
+Statut :
+
+```text
+protocole actif pour les cas ou la trajectoire devient structurante.
+```
+
 ### 20. Documents integres
 
 Documents methodologiques :
@@ -956,6 +977,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 ```
 
 Documents de reference :
@@ -977,6 +999,7 @@ Documents produits en application de la v1.3 :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 ```
 
 Architectures :

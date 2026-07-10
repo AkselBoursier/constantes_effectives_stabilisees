@@ -469,7 +469,7 @@ Elle ouvre des chantiers plus nets.
 | Audit de resynchronisation theorique | `05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md` | Produit |
 | Application de la matrice aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md` | Produit |
 | Fiche prudente masse absolue neutrino | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Produit |
-| Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Possible |
+| Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
 | Normalisation physique des archives | Audit de dependances et table de correspondance | Plus tard |
 
@@ -483,7 +483,7 @@ Elle peut etre :
 
 ```text
 soit des addenda locaux si l'application de la matrice revele un conflit dans une fiche source,
-soit une matrice temporelle autonome si la trajectoire devient un outil regulier.
+soit la normalisation physique des archives si le travail documentaire devient prioritaire.
 ```
 
 ### 19. Documents integres
@@ -497,6 +497,7 @@ Documents methodologiques :
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 

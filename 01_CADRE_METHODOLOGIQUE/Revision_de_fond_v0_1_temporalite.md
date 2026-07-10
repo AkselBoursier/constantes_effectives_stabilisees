@@ -744,7 +744,7 @@ Structure cible possible :
 00_README/
 01_CADRE_METHODOLOGIQUE/
 02_CYCLES_PHYSIQUES/
-03_MATRICES_ET_PROTOCOLS/
+un dossier de matrices et protocoles eventuel
 04_ARCHITECTURES_INTER_FAMILLES/
 05_CARTES_ET_SYNTHESES/
 06_GENEALOGIE_ET_ARCHIVES/
@@ -979,15 +979,9 @@ Stress test cosmologique produit ensuite :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
-#### 19.2 Produire une matrice temporelle autonome
+#### 19.2 Matrice temporelle autonome produite
 
-Document possible :
-
-```text
-03_MATRICES_ET_PROTOCOLS/Matrice_temporelle_v0_1.md
-```
-
-ou, si l'on evite encore un nouveau dossier :
+Document produit :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
@@ -997,6 +991,13 @@ Role :
 
 ```text
 donner une grille reutilisable pour toutes les fiches.
+```
+
+Decision documentaire :
+
+```text
+conserver la matrice dans 01_CADRE_METHODOLOGIQUE,
+sans creer de nouveau dossier de protocoles.
 ```
 
 #### 19.3 Carte consolidee de refonte produite

@@ -465,11 +465,16 @@ Cette application ferme le besoin d'un premier criblage transversal.
 
 Elle n'impose pas encore de reecrire toutes les fiches sources.
 
-Elle indique plutot deux suites possibles :
+Elle indique ensuite la suite methodologique produite :
 
 ```text
-1. produire des addenda courts dans les fiches locales si un conflit reapparait ;
-2. produire une matrice temporelle autonome si l'axe temporel devient recurrent.
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+```
+
+Les addenda locaux restent possibles seulement si un conflit reapparait dans une fiche source.
+
+```text
+produire des addenda courts dans les fiches locales si un conflit reapparait.
 ```
 
 ### 12. Formule de cloture
