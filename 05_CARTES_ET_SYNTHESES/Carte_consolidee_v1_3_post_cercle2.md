@@ -201,6 +201,7 @@ Methode active :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
 
@@ -227,15 +228,15 @@ le projet dispose maintenant d'une methode de lecture des constantes
 comme stabilisations effectives situees.
 ```
 
-Mais le degagement de these doit encore attendre trois documents.
+Mais le degagement de these doit encore attendre deux documents apres la note
+methodologique courte.
 
 ```text
-1. une note methodologique courte ;
-2. une matrice des acquis theoriques ;
-3. une fiche des limites et non-theses.
+1. une matrice des acquis theoriques ;
+2. une fiche des limites et non-theses.
 ```
 
-Ces trois documents doivent transformer la carte en argument.
+Ces documents doivent transformer la carte en argument.
 
 La carte decrit l'etat du corpus.
 
@@ -246,15 +247,14 @@ La these devra dire ce que cet etat autorise a affirmer.
 Prochaine etape logique :
 
 ```text
-Note methodologique courte post-v1.3.
+Matrice des acquis theoriques.
 ```
 
 Fonction :
 
 ```text
-resserrer la methode en une procedure utilisable :
-forme, regime, fonction, acces, trajectoire, architecture, limite,
-controle de rang.
+transformer la carte et la procedure courte en liste d'acquis argumentables,
+avant la fiche des limites et non-theses.
 ```
 
 ### 13. Formule de cloture

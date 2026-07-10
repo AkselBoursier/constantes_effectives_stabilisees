@@ -9,6 +9,7 @@ Lire d'abord :
 ```text
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
@@ -19,6 +20,7 @@ Methode et protocole :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md

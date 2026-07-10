@@ -80,6 +80,7 @@ Ces documents forment le noyau actif du corpus.
 | Document | Statut | Role |
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
+| `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
@@ -95,6 +96,7 @@ Ordre recommande :
 
 ```text
 Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+Note_methodologique_courte_post_v1_3.md
 Matrice_criblage_taxonomique_v0_1.md
 Workflow_GitHub_v0_1.md
 Synthese_architectures_inter_familles_v1_0.md
@@ -108,6 +110,7 @@ Index_raisonne_du_corpus_v1_0.md
 | Document | Statut | Role |
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
+| `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte de premiere passe apres carte v1.3 |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
 | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens termes de classement |
 | `01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md` | Consolidation active | Recuperation du socle DOCX methodologique avant tests taxonomiques |
@@ -407,6 +410,7 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
@@ -460,6 +464,7 @@ Note_synthese_methodologique_v1_2.md
 Revision_de_fond_v0_1_temporalite.md
 Fiche_criblage_critiques_v0_1.md
 Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+Note_methodologique_courte_post_v1_3.md
 Matrice_criblage_taxonomique_v0_1.md
 Architecture_saveur_Higgs_notes.md
 Carte_dependances_architectures_v0_1.md
@@ -488,6 +493,7 @@ PROJECT_BRIEF.docx
   -> Revision_de_fond_v0_1_temporalite.md
   -> Fiche_criblage_critiques_v0_1.md
   -> Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+  -> Note_methodologique_courte_post_v1_3.md
   -> Matrice_criblage_taxonomique_v0_1.md
   -> Architecture_saveur_Higgs_notes.md
   -> Carte_dependances_architectures_v0_1.md
@@ -550,6 +556,7 @@ temporalite comme trajectoire.
 Documents d'application produits ensuite :
 
 ```text
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
@@ -668,6 +675,7 @@ La carte active du corpus peut etre resumee ainsi.
 ```text
 Methode active :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 
 Methode historique recente :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
