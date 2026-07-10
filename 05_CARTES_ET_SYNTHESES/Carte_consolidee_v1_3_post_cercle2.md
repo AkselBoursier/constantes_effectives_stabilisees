@@ -197,10 +197,11 @@ Carte active :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 ```
 
-Matrice et limites actives :
+Matrice, recentrage et limites actives :
 
 ```text
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
+05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
 ```
 
@@ -235,16 +236,18 @@ le projet dispose maintenant d'une methode de lecture des constantes
 comme stabilisations effectives situees.
 ```
 
-La matrice des acquis et la fiche des limites ouvrent maintenant le seuil
-vers un premier degagement de these.
+La matrice des acquis, la note de recentrage et la fiche des limites ouvrent
+maintenant le seuil vers un premier degagement de these.
 
 ```text
 1. matrice des acquis theoriques ;
-2. fiche des limites et non-theses.
+2. note de recentrage sur la question directrice ;
+3. fiche des limites et non-theses.
 ```
 
-La fiche des limites separe ce que le cadre permet d'affirmer de ce qu'il ne
-doit pas transformer en these.
+La note de recentrage rappelle que le sujet reste la qualification des
+constantes, non la methode interne. La fiche des limites separe ensuite ce que
+le cadre permet d'affirmer de ce qu'il ne doit pas transformer en these.
 
 La carte decrit l'etat du corpus.
 
@@ -262,7 +265,7 @@ Premier degagement de these v0.1.
 Fonction :
 
 ```text
-transformer la carte, la matrice et la fiche des limites
+transformer la carte, la matrice, la note de recentrage et la fiche des limites
 en un enonce methodologique defendable.
 ```
 

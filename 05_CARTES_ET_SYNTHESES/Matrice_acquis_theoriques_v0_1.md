@@ -26,6 +26,37 @@ Son but est de distinguer :
 3. ce qui prepare une these et doit passer par une fiche de limites.
 ```
 
+### 1.1 Question directrice de tri
+
+La matrice doit rester subordonnee a la question directrice du projet :
+
+```text
+dans quelle mesure une grandeur peut-elle etre qualifiee de constante ?
+```
+
+Cela impose un tri.
+
+Un acquis est central lorsqu'il eclaire directement le statut de constance
+d'une grandeur : stabilite, regime, acces, trajectoire, architecture, domaine
+ou limite.
+
+Un acquis seulement methodologique reste utile, mais il ne devient pas le
+contenu principal de la future these. Il sert a justifier la reponse, non a la
+remplacer.
+
+Le risque a eviter est donc :
+
+```text
+faire de l'appareil interne de classement le sujet principal,
+alors que le sujet reste la qualification des constantes.
+```
+
+Ce point est explicite dans :
+
+```text
+05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
+```
+
 ### 2. Definition d'un acquis theorique
 
 Un acquis theorique est ici :
@@ -43,6 +74,13 @@ une prediction physique nouvelle ;
 une these philosophique finale ;
 une conclusion ontologique sur la nature ultime des constantes ;
 une correction du contenu empirique consensuel.
+```
+
+Dans cette matrice, les acquis doivent donc etre lus selon deux registres :
+
+```text
+registre principal : ce que cela dit du statut des constantes ;
+registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 ```
 
 ### 3. Matrice principale
@@ -64,28 +102,36 @@ une correction du contenu empirique consensuel.
 | A13 | Modes de stabilisation | Le corpus fait apparaitre des modes : valeur, composition, convention, orientation, validite, inference, borne | Carte v1.3 | Typologie transversale | Modes non exclusifs, a ne pas durcir en classes | Structurant prudent |
 | A14 | Methode transformable en argument | La procedure courte peut devenir argument theorique si ses acquis et ses limites sont separes | Note courte, presente matrice | Preparation de these | Controle par les non-theses et limites | Preparatoire |
 
-### 4. Trois niveaux de statut
+### 4. Trois registres de lecture
 
-#### 4.1 Acquis robustes
+La table precedente extrait bien les acquis, mais elle peut devenir trop
+mecanique si tous les acquis sont places au meme niveau.
 
-Ces acquis peuvent deja servir de base au degagement de these.
+Il faut donc distinguer les acquis sur les constantes des acquis sur l'outil de
+travail.
+
+#### 4.1 Registre principal : qualification des constantes
+
+Ces acquis repondent le plus directement a la question :
+
+```text
+qu'est-ce qui autorise a qualifier une grandeur de constante ?
+```
 
 ```text
 A1 Stabilisation situee
-A2 Forme avant classement
 A3 Fonction situee
 A4 Acces constitutif du statut
 A5 Temporalite de stabilisation
-A6 Architecture comme solidarisation
-A7 Taxonomie subordonnee
 A12 Limite comme composante de robustesse
+A13 Modes de stabilisation
 ```
 
-Ils ne pretendent pas produire une physique nouvelle.
+Ils forment le noyau theorique transversal.
 
-Ils stabilisent l'appareil methodologique.
+Ils disent quelque chose du statut de constance lui-meme.
 
-#### 4.2 Acquis locaux robustes
+#### 4.2 Registre local : cas physiques porteurs
 
 Ces acquis sont solides dans leur architecture propre.
 
@@ -96,24 +142,45 @@ A10 Reconstruction cosmologique
 A11 Constitution Saveur-Higgs
 ```
 
-Ils peuvent servir d'exemples porteurs.
+Ils donnent des exemples forts de qualification differenciee.
 
 Ils ne doivent pas etre generalises sans mediation.
 
-#### 4.3 Acquis preparatoires
-
-Ces acquis orientent la these, mais demandent une formulation prudente.
+#### 4.3 Registre d'articulation : architecture
 
 ```text
-A13 Modes de stabilisation
+A6 Architecture comme solidarisation
+```
+
+Cet acquis relie les cas sans les convertir en classe superieure.
+
+Il est central lorsqu'il montre pourquoi une grandeur ne se stabilise pas
+seule.
+
+#### 4.4 Registre auxiliaire : outillage methodologique
+
+Ces acquis restent necessaires, mais ils ne doivent pas prendre la place de la
+question sur les constantes.
+
+```text
+A2 Forme avant classement
+A7 Taxonomie subordonnee
 A14 Methode transformable en argument
 ```
 
-Ils sont repris et controles dans la fiche des limites et non-theses.
+Ils servent a tenir le cadre, a eviter les confusions et a construire
+l'argument.
+
+Ils ne sont pas le centre de la these.
 
 ### 5. Axes d'argumentation disponibles
 
 La matrice fait apparaitre quatre axes d'argumentation.
+
+L'axe methodologique est un axe de controle.
+
+Les axes physique, architectural et epistemique portent plus directement la
+reponse a la question de la qualification des constantes.
 
 | Axe | Enonce disponible | Appui | Prudence |
 |---|---|---|---|
@@ -131,12 +198,12 @@ Ils ne sont pas encore le plan final de la these.
 Les enonces suivants sont defendables dans l'etat actuel du corpus.
 
 ```text
-1. Le statut d'une constante depend de sa stabilisation situee.
-2. La forme logique doit preceder la sortie taxonomique.
-3. Le regime d'acces fait partie du statut methodologique.
-4. La temporalite de stabilisation evite l'effet de tableau plat.
-5. Les architectures actives decrivent des solidarites, non des classes superieures.
-6. Les limites conservees font partie de la robustesse methodologique.
+1. Une grandeur peut etre qualifiee de constante lorsque son mode de stabilisation est explicite.
+2. Cette qualification depend d'un regime, d'un acces et d'une trajectoire.
+3. La constance peut etre definissante, effective, reconstruite, bornee, constitutive ou compositionnelle.
+4. Stable ne signifie pas toujours ultime, universel hors regime ou independant de tout acces.
+5. Une architecture active peut etre necessaire pour comprendre pourquoi la grandeur tient comme constante.
+6. Les limites conservees font partie de la qualification prudente de la constance.
 ```
 
 Ils peuvent etre utilises dans le premier degagement de these.
@@ -218,3 +285,11 @@ Cette formule n'est pas encore le degagement final.
 
 Elle est le noyau a reprendre dans le premier degagement de these, sous le
 controle de la fiche des limites.
+
+Point de vigilance :
+
+```text
+la methode n'est pas la these ;
+elle est l'appareil qui permet de repondre prudemment
+a la question de la qualification des constantes.
+```

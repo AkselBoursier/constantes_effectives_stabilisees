@@ -84,6 +84,7 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant controle des limites |
+| `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Recentrage sur la question : dans quelle mesure une grandeur peut-elle etre dite constante |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Garde-fou des limites et non-theses avant premier degagement |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
@@ -105,6 +106,7 @@ Synthese_architectures_inter_familles_v1_0.md
 Carte_dependances_architectures_v0_1.md
 Carte_consolidee_v1_3_post_cercle2.md
 Matrice_acquis_theoriques_v0_1.md
+Note_recentrage_question_directrice_v0_1.md
 Fiche_limites_non_theses_v0_1.md
 Index_raisonne_du_corpus_v1_0.md
 ```
@@ -161,6 +163,7 @@ extension SI
 |---|---|---|
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives situees apres cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Passage des stabilisations effectives aux acquis argumentables |
+| `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Subordination de la methode a la question directrice des constantes |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Limites, non-theses et seuil vers le premier degagement |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
@@ -421,6 +424,7 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
+05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
@@ -480,6 +484,7 @@ Carte_consolidee_v1_2_refonte.md
 Cercle2_architectures_actives_v0_1.md
 Carte_consolidee_v1_3_post_cercle2.md
 Matrice_acquis_theoriques_v0_1.md
+Note_recentrage_question_directrice_v0_1.md
 Fiche_limites_non_theses_v0_1.md
 Architecture_cosmologique_stress_test_v0_1.md
 Plan_reprise_cycle_cosmologique_v0_1.md
@@ -511,6 +516,7 @@ PROJECT_BRIEF.docx
   -> Cercle2_architectures_actives_v0_1.md
   -> Carte_consolidee_v1_3_post_cercle2.md
   -> Matrice_acquis_theoriques_v0_1.md
+  -> Note_recentrage_question_directrice_v0_1.md
   -> Fiche_limites_non_theses_v0_1.md
   -> Architecture_cosmologique_stress_test_v0_1.md
   -> Plan_reprise_cycle_cosmologique_v0_1.md
@@ -705,6 +711,9 @@ Carte active :
 
 Matrice des acquis active :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
+
+Note de recentrage active :
+05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 
 Fiche des limites active :
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
