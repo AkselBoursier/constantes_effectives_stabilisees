@@ -21,6 +21,11 @@ Il fixe une proposition theorique prudente, directement liee a la question :
 dans quelle mesure une grandeur peut-elle etre qualifiee de constante ?
 ```
 
+Cette question est le point d'entree du projet.
+
+Elle ne doit pas etre confondue avec l'ensemble des degagements theoriques que
+le corpus permet maintenant d'ouvrir.
+
 ### 2. Enonce de these v0.1
 
 Formulation principale :
@@ -218,26 +223,34 @@ La these v0.1 est defendable comme these de qualification.
 
 Elle est encore incomplete comme these finale.
 
+Elle doit aussi etre lue comme une these-noyau :
+
+```text
+elle donne un seuil de formulation,
+mais elle n'epuise pas les theses ou articulations theoriques
+issues du travail deja accompli.
+```
+
 Elle demande :
 
 ```text
 1. une mise a l'epreuve par exemples porteurs ;
 2. une verification de sa stabilite sur les cycles physiques ;
 3. une separation maintenue entre physique consensuelle, appareil de lecture et prolongements philosophiques ;
-4. une formulation ulterieure plus argumentative si le cadre resiste aux tests.
+4. une cartographie des autres degagements theoriques possibles ;
+5. une formulation ulterieure plus argumentative si le cadre resiste aux tests.
 ```
 
 ### 12. Suite logique
 
-La prochaine etape logique est :
+La matrice d'ouverture des degagements est :
 
 ```text
-mise a l'epreuve du degagement de these par exemples porteurs v0.1.
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 ```
 
-Fonction attendue :
+La prochaine etape logique devient :
 
 ```text
-tester la formule de these sur un petit nombre de cas,
-sans rouvrir toute la taxonomie ni produire une these finale prematuree.
+mise a l'epreuve des degagements theoriques par exemples porteurs v0.1.
 ```

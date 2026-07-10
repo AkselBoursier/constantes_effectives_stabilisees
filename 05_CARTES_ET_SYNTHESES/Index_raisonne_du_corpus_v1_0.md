@@ -87,6 +87,7 @@ Ces documents forment le noyau actif du corpus.
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Recentrage sur la question : dans quelle mesure une grandeur peut-elle etre dite constante |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Garde-fou des limites et non-theses avant premier degagement |
 | `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective situee |
+| `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Ouverture des autres theses et articulations theoriques possibles |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
@@ -110,6 +111,7 @@ Matrice_acquis_theoriques_v0_1.md
 Note_recentrage_question_directrice_v0_1.md
 Fiche_limites_non_theses_v0_1.md
 Premier_degagement_these_v0_1.md
+Matrice_degagements_theoriques_v0_1.md
 Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -168,6 +170,7 @@ extension SI
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Subordination de la methode a la question directrice des constantes |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Limites, non-theses et seuil vers le premier degagement |
 | `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Degagement de these v0.1 sur la qualification des constantes |
+| `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Cartographie des degagements theoriques au-dela de la these-noyau |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
@@ -430,6 +433,7 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 
@@ -491,6 +495,7 @@ Matrice_acquis_theoriques_v0_1.md
 Note_recentrage_question_directrice_v0_1.md
 Fiche_limites_non_theses_v0_1.md
 Premier_degagement_these_v0_1.md
+Matrice_degagements_theoriques_v0_1.md
 Architecture_cosmologique_stress_test_v0_1.md
 Plan_reprise_cycle_cosmologique_v0_1.md
 ```
@@ -524,6 +529,7 @@ PROJECT_BRIEF.docx
   -> Note_recentrage_question_directrice_v0_1.md
   -> Fiche_limites_non_theses_v0_1.md
   -> Premier_degagement_these_v0_1.md
+  -> Matrice_degagements_theoriques_v0_1.md
   -> Architecture_cosmologique_stress_test_v0_1.md
   -> Plan_reprise_cycle_cosmologique_v0_1.md
   -> Index_raisonne_du_corpus_v1_0.md
@@ -726,6 +732,9 @@ Fiche des limites active :
 
 Premier degagement de these actif :
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
+
+Matrice des degagements active :
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 
 Carte historique recente :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md

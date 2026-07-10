@@ -218,12 +218,13 @@ Le premier degagement de these est maintenant :
 
 ```text
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 ```
 
 La prochaine etape logique devient :
 
 ```text
-mise a l'epreuve du degagement de these par exemples porteurs v0.1.
+mise a l'epreuve des degagements theoriques par exemples porteurs v0.1.
 ```
 
 ### 11. Formule de cloture

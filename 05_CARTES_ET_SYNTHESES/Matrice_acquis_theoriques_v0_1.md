@@ -264,10 +264,11 @@ La fiche devra notamment traiter :
 6. la difference entre methode de lecture et theorie physique nouvelle.
 ```
 
-Le premier degagement issu de cette matrice est maintenant :
+Les documents issus de cette matrice sont maintenant :
 
 ```text
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 ```
 
 ### 10. Formule de cloture
