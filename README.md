@@ -28,6 +28,12 @@ Methode et protocole :
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 ```
 
+Tests taxonomiques :
+
+```text
+03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
+```
+
 Cartes et syntheses :
 
 ```text

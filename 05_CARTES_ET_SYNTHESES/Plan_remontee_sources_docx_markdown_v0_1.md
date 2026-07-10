@@ -272,6 +272,13 @@ Premier lot ouvert :
 01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md
 ```
 
+Deuxieme lot ouvert :
+
+```text
+03_TESTS_TAXONOMIQUES/
+03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
+```
+
 ### 9. Formule de cloture
 
 > Les DOCX ne sont pas des dechets de l'ancienne structure ; ils sont la matiere premiere que la structure actuelle doit apprendre a rendre lisible.

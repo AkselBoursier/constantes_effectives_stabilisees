@@ -114,6 +114,13 @@ Index_raisonne_du_corpus_v1_0.md
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md` | Consolidation historique | Socle methodologique precedent |
 | `01_CADRE_METHODOLOGIQUE/Mise_a_jour_methodologie_v1_1_notes.md` | Archive de consolidation | Notes preparatoires de la v1.1 |
 
+Tests taxonomiques remontes :
+
+| Document | Statut | Role |
+|---|---|---|
+| `03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md` | Consolidation active | Recuperation positive de Seuil, Fond, liaison stabilisee et familles fragiles |
+| `03_TESTS_TAXONOMIQUES/README.md` | Index local | Sources DOCX extraites du lot 2 |
+
 Decision :
 
 ```text

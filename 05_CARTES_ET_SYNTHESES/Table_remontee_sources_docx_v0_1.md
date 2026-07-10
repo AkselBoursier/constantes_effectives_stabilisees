@@ -203,6 +203,15 @@ Destination de principe :
 Ce dossier est a produire si les tests doivent etre separes des notes
 methodologiques actives.
 
+Etat :
+
+```text
+ouvert ;
+extractions Markdown produites ;
+synthese de recuperation produite :
+03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
+```
+
 | Source primaire | Sortie Markdown cible | Document actif concerne | Priorite | Controle |
 |---|---|---|---|---|
 | Test des familles fragiles.docx | `03_TESTS_TAXONOMIQUES/Source_docx_Test_familles_fragiles_v0_1.md` | Methode v1.3, reecriture positive | P0 | Extraction + controle des termes evacues |
