@@ -169,6 +169,10 @@ apport terminologique : le cas est le meilleur argument d'usage
 releve a ce jour pour la regle des deux registres - "la constante
 solaire est une constante sans constance" n'est formulable que
 si les deux mots sont distingues.
+
+note d'horodatage : predictions et resultats commites ensemble ;
+anteriorite etablie par l'ordre de conversation seulement, valeur
+probante reduite d'autant (protocole d'horodatage v0.1).
 ```
 
 ### 6. Sources du test
@@ -188,9 +192,4 @@ Penza, V., et al. (2022). Total solar irradiance during the last
   five centuries. The Astrophysical Journal. (verifiee)
 Mamajek, E. E., et al. (2015-2016). IAU 2015 Resolution B3 on
   recommended nominal conversion constants ; et Nominal values for
-  selected solar and planetary quantities. arXiv:1510.07674 ;
-  arXiv:1605.09788 ; AJ 152, 41. (verifiee ; clause "conversion
-  factors only")
-Resolution IAU 2012 B2 (unite astronomique exacte). (de memoire,
-  a verifier)
-```
+  selected solar and planetary quanti
