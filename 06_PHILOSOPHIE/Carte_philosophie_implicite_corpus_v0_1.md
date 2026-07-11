@@ -46,7 +46,7 @@ trois choses :
 | Element du corpus | Position implicite | Tradition la plus proche | Force |
 |---|---|---|---|
 | Stabilisation effective situee (T0) | Le statut d'une grandeur est relatif a un regime et un point de vue instrumente, sans cesser d'etre objectif | Realisme perspectiviste (Giere ; Massimi) | Instruit par Voisinage_01 : recouvrement partiel du socle, deux divergences precises (tether nomologique ; regime physique non perspectival), trois imports possibles |
-| Acces constitutif du statut (T3, N6) | L'acces participe au statut sans etre l'essence de la chose : anti-essentialisme de l'acces | Philosophie de la mesure (Tal, van Fraassen) ; lecon negative de Bergson-Einstein (Situation 01) | Implicite fort |
+| Acces constitutif du statut (T3, N6) | L'acces participe au statut sans etre l'essence de la chose : anti-essentialisme de l'acces | Philosophie de la mesure (Tal, van Fraassen) ; lecon negative de Bergson-Einstein (Situation 01) | Instruit par Voisinage_02 : recouvrement le plus serre (coordination), objet inverse et face physique comme differenciations |
 | Trajectoire de stabilisation (T4) | Les objets de science ont une histoire ; leur stabilite est un accomplissement, pas un donne | Epistemologie historique (Bachelard : rectification ; Daston : biographies d'objets ; Rheinberger : systemes experimentaux) ; iteration epistemique (Chang) | Implicite fort |
 | Convergence multi-acces (modes de formation epistemique) | La robustesse vient de la concordance de determinations independantes | Wimsatt (robustesse) ; Coko et Castellani sur Perrin | Implicite fort, deja adosse a des verifies |
 | Architecture comme solidarisation (T5) | La confirmation et le statut sont holistes : une grandeur tient par le reseau | Holisme de la confirmation (Duhem, Quine), mais discipline par le test de retrait, qui est anti-holiste local | Implicite moyen, tension interne feconde |
@@ -145,7 +145,4 @@ Castellani, de Courtenay, Williams, Cao et Schweber.
 
 ### 7. Formule de cloture
 
-```text
-Un corpus qui cartographie sa philosophie implicite peut la discuter ;
-celui qui l'ignore la subit.
-La ca
+```
