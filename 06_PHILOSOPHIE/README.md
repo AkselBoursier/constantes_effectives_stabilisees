@@ -59,8 +59,10 @@ Methode d'une fiche de situation :
 
 | Type | Prefixe | Fonction |
 |---|---|---|
-| Fiche de situation | `Situation_NN_` | Capture d'une situation philosophique exploree |
+| Fiche de situation | `Situation_NN_` | Capture d'une situation philosophique exploree (oeuvres closes, chronologie) |
+| Fiche de voisinage | `Voisinage_NN_` | Face-a-face avec une position contemporaine vivante (methode : Releve_paysage_contemporain_v0_1.md, section 3) |
 | Carte | `Carte_` | Cartographie transversale (ex : philosophie implicite du corpus) |
+| Releve | `Releve_` | Etat date d'un paysage, a refaire avant chaque soumission |
 | Note de conversation | `Conversation_` | Trace d'un echange non encore structure en situation |
 
 ### 4. Rang documentaire
@@ -86,6 +88,15 @@ une decision de statut soumise a validation.
 06_PHILOSOPHIE/Situation_05_Duhem_Quine_architectures_v0_1.md
 06_PHILOSOPHIE/Situation_06_Bachelard_rectification_CODATA_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
+06_PHILOSOPHIE/Releve_paysage_contemporain_v0_1.md
+```
+
+Voisinages en priorite (methode et ordre : releve, sections 3 et 4) :
+
+```text
+V1 Massimi (realisme perspectiviste) - avant le papier A
+V2 probleme de la coordination (Tal, Papale) - avant le papier B
+V3 Chang - V4 Lange - V5 Daston/Rheinberger - V6 Wimsatt
 ```
 
 ### 6. Situations candidates pour la suite
@@ -95,15 +106,4 @@ une decision de statut soumise a validation.
    realisme des constantes ; k_B et h au coeur d'une querelle
    d'acces oubliee.
 2. Covariance CODATA et architectures : les blocs de correlation
-   recouvrent-ils les solidarites du corpus ? (chantier propose par
-   la situation 06, a valider ; releverait d'une fiche de mesure
-   plutot que d'une situation.)
-```
-
-Situations traitees : 01 (processus, expansion, acces), 02 (Dirac
-contre Eddington), 03 (SI 2019, convention vecue), 04 (regime gris
-electrique 1990-2019, intercalee depuis la question ouverte 4 de la
-situation 03), 05 (Duhem, Quine et les architectures ; instruit la
-tension 1 de la carte de la philosophie implicite), 06 (Bachelard et
-la rectification ; instruit le tiers bachelardien de la ligne
-trajectoire de la carte implicite).
+   recouvrent-ils les so
