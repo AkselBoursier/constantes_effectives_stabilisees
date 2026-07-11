@@ -45,7 +45,7 @@ trois choses :
 
 | Element du corpus | Position implicite | Tradition la plus proche | Force |
 |---|---|---|---|
-| Stabilisation effective situee (T0) | Le statut d'une grandeur est relatif a un regime et un point de vue instrumente, sans cesser d'etre objectif | Realisme perspectiviste (Giere ; Massimi) | Implicite fort, a instruire en priorite |
+| Stabilisation effective situee (T0) | Le statut d'une grandeur est relatif a un regime et un point de vue instrumente, sans cesser d'etre objectif | Realisme perspectiviste (Giere ; Massimi) | Instruit par Voisinage_01 : recouvrement partiel du socle, deux divergences precises (tether nomologique ; regime physique non perspectival), trois imports possibles |
 | Acces constitutif du statut (T3, N6) | L'acces participe au statut sans etre l'essence de la chose : anti-essentialisme de l'acces | Philosophie de la mesure (Tal, van Fraassen) ; lecon negative de Bergson-Einstein (Situation 01) | Implicite fort |
 | Trajectoire de stabilisation (T4) | Les objets de science ont une histoire ; leur stabilite est un accomplissement, pas un donne | Epistemologie historique (Bachelard : rectification ; Daston : biographies d'objets ; Rheinberger : systemes experimentaux) ; iteration epistemique (Chang) | Implicite fort |
 | Convergence multi-acces (modes de formation epistemique) | La robustesse vient de la concordance de determinations independantes | Wimsatt (robustesse) ; Coko et Castellani sur Perrin | Implicite fort, deja adosse a des verifies |
@@ -148,6 +148,4 @@ Castellani, de Courtenay, Williams, Cao et Schweber.
 ```text
 Un corpus qui cartographie sa philosophie implicite peut la discuter ;
 celui qui l'ignore la subit.
-La carte dit ce que le corpus assume deja, pour qu'il choisisse en
-connaissance ; la doctrine reste a la charge des arguments.
-```
+La ca
