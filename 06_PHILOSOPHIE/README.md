@@ -158,5 +158,6 @@ Ordre de la suite (decide en juillet 2026) :
    fiche d'essai de la jonction C6 ;
 8. releve de paysage brisure electrofaible : produit comme
    preparation de CP-1 / jonction C6, sans ouverture du chantier et
-   sans extraction de fil.
+   sans extraction de fil ; sas de cadrage correspondant :
+   05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md.
 ```

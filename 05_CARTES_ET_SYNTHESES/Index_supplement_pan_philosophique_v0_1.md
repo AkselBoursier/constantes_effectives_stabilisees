@@ -93,6 +93,9 @@ huit hypotheses implicites (HI-1 a HI-8), chantiers CP-1 a CP-4.
 Audit_integration_branche_philosophique_v0_1.md - sas de
 raccordement : apports integrables, reserves, micro-corrections et
 point de jonction Brout-Englert-Higgs reconnu sans ouverture.
+Note_cadrage_BEH_zone_jonction_v0_1.md - sas technique de jonction :
+prepare CP-1 / C6 en distinguant mecanisme physique, architecture
+Saveur-Higgs, debat jauge-invariant et question Q2.
 ```
 
 ### 4. Documents nouveaux dans 01_CADRE_METHODOLOGIQUE
@@ -134,6 +137,9 @@ bilan transversal (nouveau) : Mise_a_jour_intellectuelle
 (hypotheses implicites, chantiers).
 sas d'integration (nouveau) : Audit_integration_branche_philosophique
 (tri de rang, corrections, reserve des horizons).
+zone de jonction BEH (nouveau) :
+Note_cadrage_BEH_zone_jonction_v0_1
+(preparation de CP-1 / C6 sans ouverture du cycle).
 protocole (nouveau) : reecriture v0.3, horodatage, synchronisation.
 protocole operatoire (nouveau) :
 Protocole_travail_redaction_post_philosophie_v0_1
@@ -149,6 +155,8 @@ CP-3 reprise cosmologique, CP-4 microfondation (differe).
 releve preparatoire : Releve_paysage_brisure_electrofaible_v0_1.md
 cartographie le debat philosophique sur le mecanisme BEH, sans
 extraire de fil ni formuler de prediction.
+note de cadrage : Note_cadrage_BEH_zone_jonction_v0_1.md fixe le
+seuil de travail avant ouverture physique de CP-1.
 philosophiques : V-dim (Levy-Leblond, Duff), durcissement
 protocolaire (HI-2, HI-5, HI-6, HI-7).
 tous programmes, non ouverts ; regle des cinq cycles et des trois
