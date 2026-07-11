@@ -284,4 +284,7 @@ Documents internes mobilises (verifies par lecture directe) :
 Duhem savait que rien n'affronte l'epreuve seul, et confiait au bon
 sens la localisation du blame ; Quine etendait le reseau au savoir
 entier, sans procedure. Le corpus repond par une mesure : declarer
-le type de solidar
+le type de solidarite, tester le retrait, compter les couts de
+maintien. Le holisme cesse d'etre un camp ; il devient une grandeur,
+et le bon sens, discipline, garde sa place : a la validation.
+```
