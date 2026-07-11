@@ -31,6 +31,7 @@ documents actifs :
 06_PHILOSOPHIE/README.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
 06_PHILOSOPHIE/Releve_paysage_contemporain_v0_1.md
+06_PHILOSOPHIE/Releve_paysage_brisure_electrofaible_v0_1.md
 06_PHILOSOPHIE/Situation_01_processus_expansion_acces_v0_1.md
 06_PHILOSOPHIE/Situation_02_Dirac_Eddington_grands_nombres_v0_1.md
 06_PHILOSOPHIE/Situation_03_SI_2019_convention_vecue_v0_1.md
@@ -67,6 +68,9 @@ documents actifs :
 6. Audit_solidite puis les tests puis Synthese_phase_de_test
    (insights I1-I8) ;
 7. les programmes de cycles (deuxieme, troisieme, C4-C5-C6).
+8. Releve_paysage_brisure_electrofaible_v0_1.md seulement comme
+   preparation de CP-1 / jonction C6 ; ne pas le lire comme
+   ouverture du chantier.
 ```
 
 ### 3. Documents nouveaux dans 05_CARTES_ET_SYNTHESES
@@ -142,6 +146,9 @@ Protocole_travail_redaction_post_philosophie_v0_1
 physiques (Mise_a_jour_intellectuelle, section 5) : CP-1 brisure
 electrofaible (converge avec la jonction C6), CP-2 champ de Higgs,
 CP-3 reprise cosmologique, CP-4 microfondation (differe).
+releve preparatoire : Releve_paysage_brisure_electrofaible_v0_1.md
+cartographie le debat philosophique sur le mecanisme BEH, sans
+extraire de fil ni formuler de prediction.
 philosophiques : V-dim (Levy-Leblond, Duff), durcissement
 protocolaire (HI-2, HI-5, HI-6, HI-7).
 tous programmes, non ouverts ; regle des cinq cycles et des trois

@@ -93,6 +93,7 @@ le sas de raccordement actuel est :
 06_PHILOSOPHIE/Situation_07_Mach_Planck_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
 06_PHILOSOPHIE/Releve_paysage_contemporain_v0_1.md
+06_PHILOSOPHIE/Releve_paysage_brisure_electrofaible_v0_1.md
 ```
 
 Voisinages en priorite (methode et ordre : releve, sections 3 et 4) :
@@ -154,5 +155,8 @@ Ordre de la suite (decide en juillet 2026) :
    disciplinaire" (programme C3, section 7), regle des deux
    registres constance / constante
    (01_CADRE_METHODOLOGIQUE/Note_terminologique_constance_v0_1.md),
-   fiche d'essai de la jonction C6.
+   fiche d'essai de la jonction C6 ;
+8. releve de paysage brisure electrofaible : produit comme
+   preparation de CP-1 / jonction C6, sans ouverture du chantier et
+   sans extraction de fil.
 ```

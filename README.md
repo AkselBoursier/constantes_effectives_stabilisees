@@ -29,6 +29,7 @@ Couche recente, navigable depuis le supplement d'index :
 
 ```text
 06_PHILOSOPHIE/README.md
+06_PHILOSOPHIE/Releve_paysage_brisure_electrofaible_v0_1.md
 05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_1.md
@@ -134,6 +135,13 @@ Document de reference :
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md
 01_CADRE_METHODOLOGIQUE/Protocole_synchronisation_v0_1.md
 01_CADRE_METHODOLOGIQUE/Protocole_travail_redaction_post_philosophie_v0_1.md
+```
+
+Notes de passage :
+
+```text
+NOTE_POUR_CODEX_resume_session_v0_1.md
+NOTE_POUR_CODEX_git_v0_1.md
 ```
 
 Depot distant :
