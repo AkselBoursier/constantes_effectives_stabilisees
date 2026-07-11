@@ -104,4 +104,13 @@ git merge main
 git push origin travail <theme>
 ```
 
-Regle de lecture : ver
+Regle de lecture : verifier la sortie de chaque ligne avant de
+lancer la suivante ; PowerShell enchaine sans controler les echecs.
+
+### 6. Formule de cloture
+
+```text
+main dit ce qui est valide, les branches disent ce qui est en
+chantier, travail dit ou en est le dossier. Trois reponses, trois
+lieux, et la validation reste un acte explicite.
+```
