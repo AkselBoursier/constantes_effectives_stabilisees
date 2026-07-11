@@ -107,6 +107,10 @@ predictions (OpenTimestamps / OSF).
 Workflow_GitHub_v0_2.md - modele de branches.
 Protocole_synchronisation_v0_1.md - conventions de commit et
 discipline de mise a jour.
+Protocole_travail_redaction_post_philosophie_v0_1.md - protocole
+operatoire pour les prochains documents : reecriture positive v0.3,
+deux registres, statuts probatoires, branches, horodatage et
+positionnement Q1/Q2.
 ```
 
 ### 5. Rang des nouveaux documents dans la carte active
@@ -127,6 +131,9 @@ bilan transversal (nouveau) : Mise_a_jour_intellectuelle
 sas d'integration (nouveau) : Audit_integration_branche_philosophique
 (tri de rang, corrections, reserve des horizons).
 protocole (nouveau) : reecriture v0.3, horodatage, synchronisation.
+protocole operatoire (nouveau) :
+Protocole_travail_redaction_post_philosophie_v0_1
+(regles actives pour les prochains documents).
 ```
 
 ### 6. Chantiers ouverts, references depuis l'index

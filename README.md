@@ -9,6 +9,7 @@ Lire d'abord :
 ```text
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Protocole_travail_redaction_post_philosophie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
@@ -46,8 +47,16 @@ Methode et protocole :
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_3.md
+01_CADRE_METHODOLOGIQUE/Test_reecriture_structurelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_terminologique_constance_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_correction_modale_convention_v0_1.md
+01_CADRE_METHODOLOGIQUE/Protocole_travail_redaction_post_philosophie_v0_1.md
+01_CADRE_METHODOLOGIQUE/Protocole_horodatage_tests_v0_1.md
+01_CADRE_METHODOLOGIQUE/Protocole_synchronisation_v0_1.md
 01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md
 ```
 
 Tests taxonomiques :
@@ -122,7 +131,9 @@ les synchronisations documentaires, controles, commits et pushs peuvent etre del
 Document de reference :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md
+01_CADRE_METHODOLOGIQUE/Protocole_synchronisation_v0_1.md
+01_CADRE_METHODOLOGIQUE/Protocole_travail_redaction_post_philosophie_v0_1.md
 ```
 
 Depot distant :
