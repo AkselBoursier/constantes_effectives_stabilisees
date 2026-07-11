@@ -157,20 +157,24 @@ coordination resolu par un point fixe exterieur merite - la
 methode du corpus appliquee a la methode du corpus.
 ```
 
-### 10. Ce que la phase ne dit pas
+### 10. Perimetre etabli par la phase
+
+Chaque insight vaut dans une borne precise ; la phase etablit,
+exactement :
 
 ```text
-1. le test de covariance ne prouve pas la grammaire (tautologie
-   retenue) ; il controle sa fidelite a la metrologie publique.
-2. quatre cas C5 favorables n'etablissent pas une exportabilite
-   universelle ; ils etablissent une exportabilite bornee et
-   discriminante, sur quatre terrains.
-3. les insights I1-I8 sont des consolidations de branche ; leur
-   passage vers la methode ou les cartes du pan physique n'est pas
-   engage - le pan physique reste a son etat, par decision de
-   l'auteur.
-4. les stations et typologies candidates (I3, I6) attendent la
-   reouverture eventuelle du pan physique.
+1. le test de covariance etablit la fidelite de la grammaire a la
+   metrologie publique (controle de fidelite) ; la preuve de la
+   grammaire elle-meme releve des tests hors echantillon.
+2. les quatre cas C5 etablissent une exportabilite bornee et
+   discriminante, sur quatre terrains ; l'exportabilite universelle
+   reste hors de portee de quatre cas.
+3. les insights I1-I8 tiennent rang de consolidation de branche ;
+   leur passage vers la methode ou les cartes du pan physique suit
+   le circuit de validation, ouvert quand l'auteur rouvrira le pan
+   physique - stable a ce stade par decision de l'auteur.
+4. les stations et typologies candidates (I3, I6) restent en
+   reserve, disponibles a la reouverture du pan physique.
 ```
 
 ### 11. Jalon et suite
@@ -191,8 +195,4 @@ le pan physique n'est pas rouvert a ce stade.
 
 ```text
 On a demande a la grammaire de qualifier des constances loin de chez
-elle ; elle l'a fait en comparant, non en absorbant. On lui a demande
-son objet le plus etranger ; elle a su dire non. Une grille qui
-discrimine et qui date ses paris n'est plus une intuition : c'est un
-instrument, borne, et qui connait sa borne.
-```
+elle ; elle l'a fait en comparant, non en 
