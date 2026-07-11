@@ -80,7 +80,7 @@ La lignee, telle que l'entree la documente :
 | Rectification | S06 : la constante comme objet rectifie | La de-idealisation accroit l'exactitude (Tal 2011) ; incertitude sans valeurs vraies | Complement : importer le lien de-idealisation / rectification, qui relie Tal a Bachelard |
 | Posture | Non-theses N2, N11 ; pas de primitif nomologique | Exactitude epistemique "metaphysiquement neutre" | Recouvrement de posture : le voisin le plus proche est aussi le plus sobre |
 | L'objet constantes | La constance des constantes comme objet | Les constantes apparaissent comme : cibles de mesure derivee (Ellis), sources d'incertitude dans les corrections, et definisseurs d'unites post-2019 | Divergence 1, l'objet inverse : voir section 3 |
-| La face physique | Q2 : formation epistemique couplee a la formation physique (H1) | La coordination est une affaire entierement epistemique ; aucune contrepartie de la face physique | Divergence 2 : la differenciation du papier B |
+| La face physique | Q2 : formation epistemique couplee a la formation physique (H1) | Le physique y est traite cote instrument (realisations des definitions) ; la face monde - la formation des regimes qui rendent la constance possible - reste impensee | Divergence 2, affinee par l'audit de solidite : la differenciation du papier B |
 | Stations non convergentes | D3 : blocage (G), retour en rectification (mu_0), saut (2019), retard de droit (1990-2019) | L'idiome de l'iteration est oriente convergence ; les episodes non convergents n'ont pas de typologie | Divergence 3, mineure : export potentiel du corpus vers le voisin |
 
 ### 3. La divergence centrale : l'objet inverse
@@ -102,10 +102,17 @@ coordinatrice ?
 
 formule de differenciation pour le papier B :
 la coordination explique comment les unites tiennent aux constantes;
-le corpus explique comment les constantes tiennent tout court.
-Et la face physique (Q2, H1) n'a aucune contrepartie dans cette
-litterature : la formation du milieu qui rend l'acces possible
-reste son impense.
+le corpus propose d'expliquer comment les constantes tiennent tout
+court.
+Et si la litterature traite le physique cote instrument (les
+realisations), la face monde - la formation des regimes et des
+milieux qui rendent l'acces possible - reste son impense.
+
+statut probatoire (audit de solidite, 2.2) : la premiere moitie de
+la formule est etablie sur primaire ; la seconde est un enonce de
+programme, adosse a T0 (teste en interne) et a H1 (hypothese non
+testee). En manuscrit, la formule s'enonce comme programme tant que
+ces appuis n'ont pas leur rang plein.
 ```
 
 ### 4. Le bonus genealogique : la question 3 de la Situation 07 instruite
@@ -240,12 +247,4 @@ Papale, F. (2024). From the philosophy of measurement to the
 Le voisin le plus proche travaille depuis un siecle sur le cercle
 que le corpus appelle acces, et il vient de rencontrer les
 constantes au seuil de 2019 - comme definisseuses, jamais comme
-objet. La porte du papier B s'ouvre exactement la : la coordination
-explique comment les unites tiennent aux constantes ; le corpus
-explique comment les constantes tiennent tout court - dans le
-savoir par leurs trajectoires, dans le monde par leurs milieux.
-Et au fond de la genealogie, Mach, encore : l'homme qui a nomme la
-coordination avait aussi ouvert la querelle du statut. Les deux
-lignees se referment l'une sur l'autre, un siecle plus tard, dans
-la question du corpus.
-```
+objet. La porte du papier B s
