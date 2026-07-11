@@ -1,4 +1,4 @@
-# Synthese CP-1 - seuil electrofaible v0.1
+# Synthese du seuil electrofaible (CP-1) v0.1
 
 ## Constance de seuil, noyau `v` et entree Saveur-Higgs
 
@@ -6,14 +6,15 @@
 
 ```text
 statut : synthese de cycle ;
-cycle concerne : CP-1, seuil electrofaible ;
+cycle concerne : seuil electrofaible ;
+code documentaire : CP-1 ;
 fonction : resserrer le cycle ouvert en decision de rang ;
 registre : froid, positif, preparatoire au raccord de carte ;
 statut probatoire : P2/P3 pour le socle physique, P5 pour la
 qualification propre du corpus.
 ```
 
-Cette synthese consolide le cycle CP-1 ouvert par :
+Cette synthese consolide le cycle du seuil electrofaible ouvert par :
 
 ```text
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
@@ -22,13 +23,13 @@ Cette synthese consolide le cycle CP-1 ouvert par :
 Elle extrait son resultat central :
 
 ```text
-CP-1 stabilise une constance de seuil.
+le cycle du seuil electrofaible stabilise une constance de seuil.
 ```
 
-### 1. Fonction de CP-1
+### 1. Fonction du cycle
 
-CP-1 prend en charge le point que le cycle Saveur-Higgs laissait en
-amont :
+Le cycle prend en charge le point que le cycle Saveur-Higgs laissait
+en amont :
 
 ```text
 comment le regime electrofaible brise devient-il disponible pour
@@ -55,7 +56,7 @@ le seuil electroweak comme architecture d'entree.
 Decision de rang :
 
 ```text
-CP-1 = cycle de constance de seuil.
+cycle du seuil electrofaible = cycle de constance de seuil.
 ```
 
 La constance de seuil se definit ici comme :
@@ -66,7 +67,7 @@ regime physiquement lisible, coordonne des effets mesurables et
 ouvre une architecture ulterieure.
 ```
 
-Dans CP-1 :
+Dans ce cycle :
 
 ```text
 `v` = noyau d'echelle ;
@@ -78,9 +79,9 @@ brisure = nom operatoire du seuil.
 
 ### 3. Matrice synthetique
 
-| Objet | Rang dans CP-1 | Fonction de stabilisation | Raccord |
+| Objet | Rang dans le cycle | Fonction de stabilisation | Raccord |
 |---|---|---|---|
-| seuil BEH | objet de cycle | ouverture du regime electrofaible brise | CP-1 |
+| seuil BEH | objet de cycle | ouverture du regime electrofaible brise | cycle de seuil |
 | `v` | noyau d'echelle | rend les masses faibles et fermioniques lisibles | Saveur-Higgs |
 | `G_F` | route d'acces | reconstruit `v` par phenomenologie basse energie | basse energie |
 | `M_W`, `M_Z` | temoins phenomenologiques | controlent la distribution de `v` par les couplages de jauge | electroweak |
@@ -93,7 +94,7 @@ brisure = nom operatoire du seuil.
 
 ### 4. Trajectoire stabilisee
 
-La trajectoire CP-1 se resserre en sept stations :
+La trajectoire du seuil electrofaible se resserre en sept stations :
 
 ```text
 1. potentiel scalaire ;
@@ -105,7 +106,7 @@ La trajectoire CP-1 se resserre en sept stations :
 7. entree dans Saveur-Higgs.
 ```
 
-Cette trajectoire donne a CP-1 sa temporalite conceptuelle :
+Cette trajectoire donne au cycle sa temporalite conceptuelle :
 
 ```text
 seuil -> echelle -> temoins -> acces -> architecture.
@@ -113,7 +114,7 @@ seuil -> echelle -> temoins -> acces -> architecture.
 
 ### 5. Regimes de lecture
 
-CP-1 confirme l'utilite de la distinction :
+Le cycle confirme l'utilite de la distinction :
 
 ```text
 regime physique ;
@@ -122,7 +123,7 @@ regime de description ;
 regime architectural.
 ```
 
-| Regime | Lecture CP-1 | Fonction |
+| Regime | Lecture du seuil | Fonction |
 |---|---|---|
 | Physique | regime electroweak brise | lieu de qualification |
 | Acces | `G_F`, masses faibles, Higgs, fits | stabilisation empirique |
@@ -141,7 +142,7 @@ fonction theorique + acces phenomenologique + effet architectural.
 Le raccord central est :
 
 ```text
-CP-1 -> `v` -> Saveur-Higgs.
+seuil electrofaible -> `v` -> Saveur-Higgs.
 ```
 
 Saveur-Higgs lit :
@@ -155,7 +156,7 @@ Saveur-Higgs lit :
 -> orientations.
 ```
 
-CP-1 fournit :
+Le cycle du seuil fournit :
 
 ```text
 seuil BEH
@@ -168,13 +169,13 @@ seuil BEH
 Le rang de `v` devient double :
 
 ```text
-noyau de seuil dans CP-1 ;
+noyau de seuil dans ce cycle ;
 echelle constitutive dans Saveur-Higgs.
 ```
 
 ### 7. Relation avec CP-2 et C6
 
-CP-1 garde son centre sur le seuil.
+Le cycle garde son centre sur le seuil.
 
 CP-2 recevra le developpement scalaire :
 
@@ -195,12 +196,12 @@ plasma primordial ;
 historicite du regime.
 ```
 
-La synthese CP-1 fixe donc la repartition suivante :
+La synthese du seuil electrofaible fixe donc la repartition suivante :
 
 ```text
-CP-1 = seuil ;
-CP-2 = secteur scalaire ;
-C6 = historicite cosmique.
+cycle du seuil electrofaible = seuil ;
+chantier scalaire associe = secteur scalaire ;
+chantier cosmologique associe = historicite cosmique.
 ```
 
 ### 8. Test de retrait resserre
@@ -209,17 +210,17 @@ Le test de retrait donne le coeur du cycle :
 
 | Retrait | Effet | Conclusion |
 |---|---|---|
-| `v` | le noyau d'echelle disparait | CP-1 perd son centre |
+| `v` | le noyau d'echelle disparait | le cycle perd son centre |
 | `G_F` | la route d'acces basse energie s'affaiblit | `v` perd une coordination empirique majeure |
 | `M_W`, `M_Z` | les temoins faibles disparaissent | le controle phenomenologique devient pauvre |
 | Yukawa | le relais Saveur-Higgs se coupe | le seuil reste faible, mais perd son prolongement fermionique |
 | prudence de jauge | la brisure absorbe la qualification | le nom de seuil prend le rang de l'objet |
-| CP-2 | le secteur scalaire reste en reserve | CP-1 conserve son objet de seuil |
+| Chantier scalaire associe | le secteur scalaire reste en reserve | le cycle conserve son objet de seuil |
 
 Resultat :
 
 ```text
-CP-1 tient par solidarite de seuil :
+Le cycle du seuil tient par solidarite de seuil :
 `v` + masses faibles + `G_F` + relais Saveur-Higgs.
 ```
 
@@ -250,12 +251,12 @@ Formule longue :
 
 Formule courte :
 
-> CP-1 qualifie un seuil : `v` en est le noyau, les masses faibles
+> Le cycle du seuil qualifie un seuil : `v` en est le noyau, les masses faibles
 > en sont le controle.
 
 Formule de raccord :
 
-> Saveur-Higgs commence avec `v` ; CP-1 qualifie le seuil qui rend
+> Saveur-Higgs commence avec `v` ; le cycle du seuil qualifie le seuil qui rend
 > `v` disponible comme echelle de regime.
 
 ### 11. Effet sur les cartes
@@ -277,7 +278,7 @@ architecture constitutive.
 Effet minimal sur la carte :
 
 ```text
-CP-1 -> seuil electroweak -> `v` -> Saveur-Higgs.
+seuil BEH -> `v` -> Saveur-Higgs.
 ```
 
 Effet methodologique :
@@ -294,16 +295,25 @@ Raccord produit :
 
 ### 12. Suite logique
 
-La prochaine etape utile est :
+Le raccord a la carte des dependances architecturales est produit :
 
 ```text
-raccord eventuel de la carte des dependances architecturales.
+05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 ```
 
-Fonction attendue :
+Fonction obtenue :
 
 ```text
-montrer CP-1 comme arete d'entree vers Saveur-Higgs ;
+montrer le seuil electrofaible comme entree vers Saveur-Higgs ;
 situer `v` comme noeud partage ;
-maintenir CP-2 et C6 comme reserves clairement nommees.
+maintenir les chantiers scalaire et cosmologique associes comme
+reserves clairement nommees.
+```
+
+Suite utile :
+
+```text
+relecture terminologique legere du chantier seuil electrofaible,
+pour garder CP-1 comme code documentaire plutot que comme vocabulaire
+principal.
 ```

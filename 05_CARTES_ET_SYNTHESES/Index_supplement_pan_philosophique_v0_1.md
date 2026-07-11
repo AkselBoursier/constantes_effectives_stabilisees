@@ -168,10 +168,11 @@ cycle ouvert :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
 qualifie le seuil electroweak comme constance de regime, avec `v`
 comme noyau d'echelle et les masses faibles comme controle.
-synthese CP-1 :
+synthese du seuil electrofaible :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
 stabilise la constance de seuil ; raccord produit dans
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md.
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md et
+05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md.
 philosophiques : V-dim (Levy-Leblond, Duff), durcissement
 protocolaire (HI-2, HI-5, HI-6, HI-7).
 les autres programmes restent au rang de candidats ; regle des cinq

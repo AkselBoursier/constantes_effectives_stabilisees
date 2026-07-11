@@ -111,7 +111,7 @@ Le corpus stabilise au moins neuf modes.
 | Validite limitee | Une description vaut-elle dans un domaine determine ? | `G_F`, Fermi, gravitation effective |
 | Inference reconstruite | Une grandeur est-elle stabilisee par modele et donnees ? | `sigma_8`, `S_8`, `H_0` selon acces |
 | Borne ou contrainte | Une limite remplace-t-elle une mesure positive directe ? | masse absolue neutrino, tensions cosmologiques |
-| Constance de seuil | Une echelle rend-elle un regime physiquement lisible et architecturalement disponible ? | CP-1, seuil BEH, `v`, masses faibles |
+| Constance de seuil | Une echelle rend-elle un regime physiquement lisible et architecturalement disponible ? | seuil BEH, `v`, masses faibles |
 
 Ces modes peuvent se croiser.
 
@@ -133,10 +133,10 @@ une architecture active explicite un mode de solidarisation ;
 elle organise des grandeurs selon un regime de stabilisation.
 ```
 
-Raccord local CP-1 :
+Raccord local du seuil electrofaible :
 
 ```text
-CP-1 garde le rang d'un raccord de seuil.
+Le cycle du seuil electrofaible garde le rang d'un raccord de seuil.
 Il qualifie le seuil par lequel l'architecture Saveur-Higgs recoit
 son noyau d'echelle `v`.
 ```
@@ -148,7 +148,7 @@ La temporalite devient un axe general, mais elle prend des formes locales.
 | Forme temporelle | Fonction | Exemples |
 |---|---|---|
 | Constitution | Un regime rend certaines grandeurs solidaires | Saveur-Higgs apres brisure electroweak |
-| Seuil de qualification | Un seuil rend un regime disponible pour une architecture | CP-1, seuil BEH, `v` comme noyau d'echelle |
+| Seuil de qualification | Un seuil rend un regime disponible pour une architecture | seuil BEH, `v` comme noyau d'echelle |
 | Absorption definitionnelle | Une valeur historiquement stabilisee devient definissante | SI revise |
 | Validite locale | Une description vaut dans un domaine d'energie ou d'echelle | theorie de Fermi, QCD effective |
 | Reconstruction | Une grandeur tardive est inferee par modele et donnees | cosmologie |
@@ -238,7 +238,7 @@ Cercle 2 architectural :
 04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
-Raccord CP-1 :
+Sources du raccord de seuil :
 
 ```text
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
@@ -280,9 +280,9 @@ these-noyau. La matrice des degagements montre que ce noyau n'epuise pas les
 articulations theoriques rendues visibles par le corpus. La mise a l'epreuve
 indique quels degagements resistent sur exemples porteurs.
 
-### 12. Raccord local CP-1
+### 12. Raccord local du seuil electrofaible
 
-La synthese CP-1 ajoute un acquis local a la carte :
+La synthese du seuil electrofaible ajoute un acquis local a la carte :
 
 ```text
 constance de seuil.
@@ -298,8 +298,7 @@ architecture constitutive.
 Forme minimale du raccord :
 
 ```text
-CP-1
--> seuil BEH
+seuil BEH
 -> `v`
 -> architecture Saveur-Higgs.
 ```
@@ -308,7 +307,7 @@ Lecture :
 
 ```text
 `v` a maintenant un double rang :
-noyau de seuil dans CP-1 ;
+noyau de seuil dans le cycle du seuil electrofaible ;
 echelle constitutive dans Saveur-Higgs.
 ```
 
@@ -317,22 +316,29 @@ Effet sur la carte :
 ```text
 la temporalite porte un seuil de qualification ;
 la trajectoire Saveur-Higgs recoit un amont explicite ;
-CP-2 et C6 restent des reserves nommees.
+les chantiers scalaire et cosmologique associes restent des reserves nommees.
 ```
 
-### 13. Prochaine etape
+### 13. Carte de dependances
 
-Prochaine etape logique :
+Raccord produit :
 
 ```text
-raccord eventuel de la carte des dependances architecturales.
+05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 ```
 
 Fonction :
 
 ```text
-montrer le seuil CP-1 comme arete d'entree vers Saveur-Higgs,
+montrer le seuil electrofaible comme entree vers Saveur-Higgs,
 avec `v` comme noeud partage.
+```
+
+Suite logique :
+
+```text
+relecture terminologique legere du chantier seuil electrofaible,
+pour reserver les codes internes au reperage documentaire.
 ```
 
 ### 14. Formule de cloture

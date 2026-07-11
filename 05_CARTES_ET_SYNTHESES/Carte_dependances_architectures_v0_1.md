@@ -12,6 +12,9 @@ Elle prolonge :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
@@ -36,11 +39,18 @@ une architecture est un reseau de dependances fonctionnelles,
 non une ligne supplementaire dans une taxonomie.
 ```
 
+Note de lecture :
+
+```text
+dans cette carte, le terme principal est seuil electrofaible ;
+le code CP-1 sert de repere documentaire pour retrouver le cycle source.
+```
+
 ### 2. Les quatre reseaux actifs
 
 | Architecture | Forme dominante | Type de dependance | Noeud critique | Risque evite |
 |---|---|---|---|---|
-| Saveur-Higgs | Constitutive | Constitution d'un secteur apres brisure et diagonalisation | `v + Y_f + diagonalisation` | Famille Saveur-Higgs ou fragmentation locale |
+| Saveur-Higgs | Constitutive | Constitution d'un secteur apres seuil, brisure et diagonalisation | Seuil BEH + `v + Y_f + diagonalisation` | Famille Saveur-Higgs ou fragmentation locale |
 | Metrologique SI | Definitionnelle / operationnelle | Definitions d'unites, compositions exactes et realisations | Constantes definissantes | Famille metrologique ou reduction conventionnelle |
 | Effective basse energie | Validite | Domaine de description, echelles, seuils et raccordements | Echelle de validite | Famille Effectif ou approximation vague |
 | Cosmologique | Inferentielle / reconstructive | Modele global, acces multiples, tensions et reconstruction | Couplage modele-acces | Famille Cosmologie ou tableau de parametres |
@@ -52,9 +62,17 @@ les quatre architectures restent actives,
 mais elles ne dependent pas du meme type de solidarite.
 ```
 
+Raccord ajoute :
+
+```text
+le seuil electrofaible agit comme entree locale vers Saveur-Higgs ;
+son rang est celui d'un raccord de seuil.
+```
+
 ### 3. Grammaire commune des dependances
 
-Une architecture active doit pouvoir etre lue selon sept dependances.
+Une architecture active doit pouvoir etre lue selon sept dependances,
+avec une dependance de seuil lorsque le dossier l'exige.
 
 | Dependence | Question | Effet methodologique |
 |---|---|---|
@@ -63,6 +81,7 @@ Une architecture active doit pouvoir etre lue selon sept dependances.
 | Dependence d'acces | Comment les grandeurs sont-elles connues ? | Evite les nombres nus |
 | Dependence de modele | Quel cadre conditionne l'inference ou l'usage ? | Evite la naturalisation prematuree |
 | Dependence temporelle | Comment le statut s'installe ou se transforme ? | Evite le tableau statique |
+| Dependence de seuil | Quel seuil rend le regime disponible ? | Situe l'entree d'une architecture comme raccord local |
 | Dependence de retrait | Que perd-on si un noeud est retire ? | Teste la robustesse architecturale |
 | Dependence de limite | Ce que l'architecture ne resout pas | Evite l'inflation theorique |
 
@@ -75,6 +94,7 @@ regime
 + acces
 + modele ou definition
 + trajectoire
++ seuil local lorsque le dossier l'exige
 + test de retrait
 + limites explicites.
 ```
@@ -88,6 +108,26 @@ architecture constitutive.
 ```
 
 Reseau minimal :
+
+```text
+seuil electrofaible
+-> regime electrofaible brise
+-> v
+-> Y_f
+-> matrices de masse
+-> diagonalisation
+-> m_f
+-> CKM / PMNS
+-> manifestations transitionnelles ou oscillatoires
+```
+
+Code documentaire associe :
+
+```text
+CP-1 = cycle du seuil electrofaible.
+```
+
+Reseau Saveur-Higgs interne :
 
 ```text
 regime electrofaible brise
@@ -104,7 +144,8 @@ Table de dependances :
 
 | Noeud | Depend de | Rend possible | Retrait |
 |---|---|---|---|
-| `v` | Brisure electrofaible | Echelle commune des masses faibles et fermioniques | Plus d'echelle commune |
+| Seuil BEH | Mecanisme BEH | Regime electrofaible brise et disponibilite de `v` | Entree de regime moins explicite |
+| `v` | Seuil BEH + brisure electrofaible | Echelle commune des masses faibles et fermioniques | Plus d'echelle commune |
 | `Y_f` | Couplages au Higgs | Distribution de l'echelle entre fermions | Plus de texture de masse |
 | Diagonalisation | Matrices de masse | Spectres physiques et orientations | Plus de masses physiques ni de desalignements lisibles |
 | `m_f` | `v`, `Y_f`, diagonalisation | Spectres fermioniques stabilises | Perte des valeurs de masse du regime brise |
@@ -116,8 +157,10 @@ Table de dependances :
 Lecture v1.3 :
 
 ```text
-la relation m_f = y_f v / sqrt(2) est un signe local,
-mais la dependance robuste est architecturale.
+le seuil electrofaible donne l'entree du reseau ;
+`v` devient le noyau d'echelle partage ;
+la relation m_f = y_f v / sqrt(2) reste un signe local ;
+la dependance robuste est architecturale.
 ```
 
 Limites conservees :
@@ -273,7 +316,7 @@ validite ultime de LambdaCDM.
 
 | Architecture | Noeud generateur | Noeud d'acces | Noeud temporel | Noeud fragile |
 |---|---|---|---|---|
-| Saveur-Higgs | Brisure + `v` + `Y_f` | Masses, transitions, oscillations, fits | Constitution apres brisure | Origine des Yukawa et secteur neutrino |
+| Saveur-Higgs | Seuil electrofaible + `v` + `Y_f` | Masses, transitions, oscillations, fits | Seuil puis constitution apres brisure | Origine des Yukawa et secteur neutrino |
 | Metrologique SI | Definitions d'unites | Realisations pratiques | Absorption conventionnelle | Confusion exactitude / realisation |
 | Effective basse energie | Regime limite + echelle | Experiences dans un domaine de validite | Transition, flot, validite | Completion ou seuil profond ouvert |
 | Cosmologique | Modele global | Reseaux d'inference | Acces, reconstruction, evolution cosmique | Sous-reseaux, tensions et dependances de modele |
@@ -296,6 +339,7 @@ Les dependances ne sont pas toutes du meme type.
 | Operationnelle | Une procedure rend une definition praticable | Realisations SI |
 | Effective | Une grandeur condense une structure non resolue | `G_F` |
 | De validite | Une echelle borne un domaine | `M_W`, `Lambda_QCD`, `M_Pl` |
+| De seuil | Un seuil rend un regime disponible pour une architecture | seuil BEH -> `v` -> Saveur-Higgs |
 | Inferentielle | Une valeur est extraite par modele et donnees | `H_0`, `sigma_8`, `S_8` |
 | De tension | Une discordance appartient au reseau d'acces | Tension `H_0`, tension `S_8` |
 | Temporelle | Un statut apparait par constitution, flot, convention ou inference | Brisure, flot QCD, SI, cosmologie |
@@ -315,6 +359,7 @@ pas seulement relier deux grandeurs.
 | Retirer l'acces | Les valeurs deviennent des nombres sans statut epistemique | Pas de robustesse sans acces |
 | Retirer le modele | Les grandeurs reconstruites perdent leur cadre | Critique surtout en cosmologie |
 | Retirer la temporalite | La carte redevient un tableau statique | La stabilisation n'est plus decrite |
+| Retirer le seuil local | L'entree du reseau devient moins lisible | Teste l'amont de l'architecture |
 | Retirer le test de limite | L'architecture devient inflationniste | Risque de famille deguisee |
 | Retirer un noeud central | Le reseau se deforme ou s'effondre | Test local de robustesse |
 
@@ -331,6 +376,7 @@ Les architectures ne sont pas isolees.
 
 | Contact | Architectures concernees | Sens |
 |---|---|---|
+| Seuil BEH / `v` | Seuil electrofaible et Saveur-Higgs | Le seuil donne l'entree du reseau ; `v` devient le noeud partage |
 | `v` / `M_W` / `G_F` | Saveur-Higgs et effective basse energie | Le regime electrofaible brise nourrit aussi le raccordement faible basse energie |
 | `h`, `c`, `e` / `alpha` | SI et couplages physiques | La convention SI fixe des valeurs dimensionnees sans epuiser les couplages sans dimension |
 | `M_Pl` / cosmologie | Effective et cosmologique | Echelle gravitationnelle, regimes primordiaux et limites d'inference |
@@ -391,7 +437,7 @@ La carte confirme que la temporalite est un axe transversal.
 
 | Architecture | Profil temporel | Forme de stabilisation |
 |---|---|---|
-| Saveur-Higgs | Constitution | Les masses et orientations deviennent lisibles apres brisure et diagonalisation |
+| Saveur-Higgs | Seuil puis constitution | Le seuil electrofaible rend le regime disponible ; les masses et orientations deviennent lisibles apres brisure et diagonalisation |
 | SI | Absorption conventionnelle | Certaines valeurs deviennent definissantes sans perdre leur role physique |
 | Effective basse energie | Validite, transition, flot | Les grandeurs valent dans un domaine ou selon une echelle |
 | Cosmologique | Acces, inference, evolution | Les valeurs sont stabilisees par histoire cosmique et routes d'inference |
@@ -459,6 +505,9 @@ Architectures actives :
 Syntheses et cartes :
 
 ```text
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
@@ -478,13 +527,15 @@ Cette carte est une consolidation transversale.
 Statut :
 
 ```text
-consolidation transversale integree dans la carte consolidee v1.2.
+consolidation transversale integree dans la carte consolidee v1.2,
+puis raccordee a la carte consolidee v1.3 par le seuil electrofaible.
 ```
 
 Elle autorise :
 
 ```text
 l'application du test de retrait aux architectures,
+le raccord du seuil electrofaible a Saveur-Higgs,
 et la lecture de Relation par reseau de dependance.
 ```
 
@@ -501,6 +552,13 @@ ou une resolution des tensions physiques ouvertes.
 Une architecture n'est pas seulement un groupe de constantes.
 
 C'est une forme de dependance stabilisee.
+
+Ajout du raccord de seuil :
+
+```text
+le seuil electrofaible montre l'entree d'un reseau ;
+Saveur-Higgs deploie ensuite les dependances internes du regime brise.
+```
 
 Formule finale :
 

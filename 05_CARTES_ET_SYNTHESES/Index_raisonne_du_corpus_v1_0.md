@@ -252,7 +252,7 @@ Documents actifs :
 | Document | Statut | Role |
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md` | Cycle ouvert | Seuil electrofaible et constance de seuil |
-| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md` | Consolidation | Synthese CP-1 et raccord a la carte consolidee |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md` | Consolidation | Synthese du seuil electrofaible et raccord aux cartes |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md` | Note physique preparatoire | Mecanisme BEH, grandeurs et regimes d'acces |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md` | Consolidation source | Recuperation cible v, Yukawa, CKM, Wolfenstein avant cercle 2 |
@@ -276,7 +276,7 @@ Decision :
 
 ```text
 pour comprendre l'architecture Saveur-Higgs,
-lire d'abord CP-1 pour le seuil,
+lire d'abord le cycle du seuil electrofaible,
 puis la synthese Saveur-Higgs pour la constitution interne,
 puis la note d'architecture.
 ```
