@@ -102,6 +102,39 @@ semantique entre theorie et monde, intersubjectif entre agents -
 excede le vocabulaire de la convention.
 ```
 
+### 3.1 Clarification modale (auteur, juillet 2026) : le reel resiste
+
+La section 3 disait la convention meritee ; il faut dire plus fort :
+
+```text
+distinguer la liberte de la forme et la necessite du contenu.
+
+la forme etait libre : fixer ou non, quelles constantes fixer,
+quelle formulation (les debats explicit-unit / explicit-constant
+en temoignent). La, convention veritable - des boites noires
+systemiques choisies pour la commodite.
+
+le contenu etait dicte : la continuite des unites exigeait de voter
+les valeurs ajustees a l'interieur de leurs intervalles
+d'incertitude, sous peine de changer la taille des unites et de
+rompre toute la metrologie anterieure. Formule exacte : necessite
+du contenu a l'intervalle pres, liberte de la forme, insignifiance
+de la latitude residuelle (les dernieres decimales).
+
+critere degage, par contraste avec la cosmologie : on ne peut
+conventionner que ce qui n'a plus de latitude. H_0 ne sera pas
+vote : ses routes d'acces divergent, la latitude y est vivante,
+l'absorption est impossible. Le vote de 2018 est le certificat
+institutionnel que l'arbitraire avait disparu - la convention
+marque la fin de la latitude, non son irruption.
+
+raccords : cette necessite du contenu est un cas de la necessite
+conditionnelle de regime (fiche d'horizon ; plan d'arene, axe 4),
+ici conditionnee par le milieu epistemique ; le critere de latitude
+outille H1 et le papier B (l'absorbabilite comme detecteur de
+convergence achevee).
+```
+
 ### 4. Les inversions que la situation rend visibles
 
 ```text
@@ -209,39 +242,4 @@ Verifiees par recherche documentaire :
 Stock, M., Davis, R., de Mirandes, E., & Milton, M. J. T. (2019).
   The revision of the SI - the result of three decades of progress
   in metrology. Metrologia, 56, 022001.
-de Courtenay, N. (2021). On the philosophical significance of the
-  reform of the International System of Units (SI): a
-  double-adjustment account of scientific enquiry. Perspectives on
-  Science, 29(6).
-Wood, B. (2017). SI redefinition and the role of the CODATA Task
-  Group on Fundamental Constants. NCSLI Workshop Proceedings.
-Liebisch, T., Stenger, J., & Ullrich, J. (2019). Understanding the
-  revised SI: background, consequences, and perspectives. Annalen
-  der Physik.
-```
-
-A verifier avant usage publie (citees de memoire) :
-
-```text
-Poincare, H. (1902). La Science et l'Hypothese. Flammarion.
-Mills, I. M., Mohr, P. J., Quinn, T. J., Taylor, B. N., &
-  Williams, E. R. (2005). Redefinition of the kilogram: a decision
-  whose time has come. Metrologia, 42, 71.
-Quinn, T. (2011). From Artefacts to Atoms: The BIPM and the Search
-  for Ultimate Measurement Standards. Oxford UP.
-Resolutions de la 17e CGPM (1983, metre), de la 24e CGPM (2011,
-  intention) et de la 26e CGPM (2018, revision) ; recommandations
-  CIPM 1988 sur K_J-90 et R_K-90.
-```
-
-### 9. Formule de cloture
-
-```text
-Poincare disait : la convention est libre et guidee par l'experience.
-Le SI 2019 precise la mesure de cette liberte : une communaute peut
-choisir ses definitions, apres que la convergence des acces a rendu
-le choix sur ; et le prix de l'exactitude decretee est une
-incertitude qui migre vers la realisation.
-La convention n'est ni une decouverte ni un decret : c'est une
-absorption meritee, datee, et payee au juste prix.
-```
+de Courtenay, N. (2021). On the philosophical sign
