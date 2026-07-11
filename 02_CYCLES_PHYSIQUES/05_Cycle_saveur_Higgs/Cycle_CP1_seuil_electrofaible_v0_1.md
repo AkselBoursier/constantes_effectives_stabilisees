@@ -299,16 +299,16 @@ Formule courte :
 
 ### 12. Suite logique
 
-La prochaine piece utile est :
+La synthese issue du cycle est :
 
 ```text
-Synthese_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
 ```
 
-Fonction attendue :
+Fonction tenue :
 
 ```text
 resserrer CP-1 en une synthese courte ;
 preparer le raccord avec la carte consolidee ;
-decider si CP-2 s'ouvre immediatement ou reste en reserve.
+maintenir CP-2 et C6 comme reserves clairement nommees.
 ```

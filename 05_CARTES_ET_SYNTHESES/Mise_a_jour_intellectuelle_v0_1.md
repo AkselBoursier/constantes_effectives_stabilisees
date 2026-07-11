@@ -187,6 +187,9 @@ sont le meme chantier vu des deux cotes.
 raccord posterieur : CP-1 est ouvert dans
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
 comme cycle sur le seuil electroweak et la constance de regime.
+synthese produite :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
+stabilise la constance de seuil et prepare le raccord de carte.
 
 CP-2 - le champ de Higgs proprement dit : masse du Higgs, potentiel,
 auto-couplage lambda, stabilite du vide. Absent du corpus stabilise ;
