@@ -520,7 +520,7 @@ Formule longue :
 
 Formule courte :
 
-> Une constante definissante peut etre exacte dans le SI sans etre seulement conventionnelle en physique.
+> Une constante definissante peut etre exacte dans le SI sans etre seulement conventionnelle en physique. La convention y est libre en sa forme et dictee en son contenu : on ne conventionne que ce qui n'a plus de latitude (note de correction modale v0.1).
 
 ### 14. Suite recommandee
 
@@ -557,8 +557,4 @@ PROJECT_BRIEF.docx
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 ```
 
-Les sources de controle externes restent repertoriees dans :
-
-```text
-02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
-```
+Les source

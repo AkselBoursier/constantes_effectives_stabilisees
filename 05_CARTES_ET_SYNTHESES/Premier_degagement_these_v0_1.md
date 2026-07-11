@@ -103,7 +103,7 @@ constance.
 
 | Mode | Formulation prudente | Exemple porteur |
 |---|---|---|
-| Definissant | Une valeur peut etre stabilisee par convention definissante et realisation controlee | Grandeurs du SI, liaisons exactes |
+| Definissant | Une valeur peut etre stabilisee par convention definissante et realisation controlee - convention libre en sa forme, dictee en son contenu (latitude nulle a l'intervalle pres ; note de correction modale v0.1) | Grandeurs du SI, liaisons exactes |
 | Effectif | Une grandeur peut etre constante dans un domaine de validite determine | `G_F`, couplages effectifs |
 | Reconstruit | Une grandeur peut etre stabilisee par modele, donnees et acces observationnels | `H_0`, `sigma_8`, `S_8` |
 | Borne | Une limite peut stabiliser un statut sans fournir une valeur positive | Masse absolue des neutrinos |
@@ -252,11 +252,4 @@ La matrice d'ouverture des degagements est :
 La prochaine etape logique devient :
 
 ```text
-05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
-```
-
-La suite ouverte apres cette mise a l'epreuve est :
-
-```text
-Plan de livrable theorique v0.1.
-```
+05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemp
