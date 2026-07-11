@@ -83,17 +83,16 @@ une decision de statut soumise a validation.
 06_PHILOSOPHIE/Situation_02_Dirac_Eddington_grands_nombres_v0_1.md
 06_PHILOSOPHIE/Situation_03_SI_2019_convention_vecue_v0_1.md
 06_PHILOSOPHIE/Situation_04_Regime_gris_electrique_1990_2019_v0_1.md
+06_PHILOSOPHIE/Situation_05_Duhem_Quine_architectures_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
 ```
 
 ### 6. Situations candidates pour la suite
 
 ```text
-1. Duhem, Quine et l'architecture : le holisme de la confirmation
-   confronte aux architectures de solidarisation du corpus.
-2. Bachelard et la rectification : les ajustements CODATA comme
+1. Bachelard et la rectification : les ajustements CODATA comme
    phenomenotechnique ; la constante comme objet rectifie.
-3. Mach contre Planck (1908-1912) : economie de pensee contre
+2. Mach contre Planck (1908-1912) : economie de pensee contre
    realisme des constantes ; k_B et h au coeur d'une querelle
    d'acces oubliee.
 ```
@@ -101,4 +100,5 @@ une decision de statut soumise a validation.
 Situations traitees : 01 (processus, expansion, acces), 02 (Dirac
 contre Eddington), 03 (SI 2019, convention vecue), 04 (regime gris
 electrique 1990-2019, intercalee depuis la question ouverte 4 de la
-situation 03).
+situation 03), 05 (Duhem, Quine et les architectures ; instruit la
+tension 1 de
