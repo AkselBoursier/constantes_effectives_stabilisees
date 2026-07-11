@@ -5,12 +5,18 @@
 ### 0. Statut documentaire
 
 ```text
-statut : plan de livrable (05_CARTES_ET_SYNTHESES), soumis a
-validation ; document de structure, non de redaction - il decide
-quelles theses entrent, dans quel ordre, avec quels exemples et
-quelles limites conservees.
-fonction d'elagage : il tient en reserve ce qui appartient au papier
-B et au-dela, sans le perdre.
+statut : plan de la GRANDE VOILURE (neuf theses, six exemples,
+double positionnement) - repositionne apres discussion de voilure
+en juillet 2026 : ce format convient a une monographie ou a un
+article de cadre ulterieur, non a un premier texte d'auteur non
+affilie.
+squelette de reference : le present plan reste le squelette complet
+du cadre ; les deux premiers articles en sont des extraits
+autonomes :
+- petite voilure : Plan_livrable_A1_critere_latitude_v0_1.md ;
+- moyenne voilure : Plan_livrable_A2_qualification_coordination_v0_1.md.
+document de structure, non de redaction ; tient en reserve ce qui
+appartient au papier B et au-dela, sans le perdre.
 appuis :
 Premier_degagement_these_v0_1 (T0)
 Matrice_degagements_theoriques_v0_1 (T0-T10)
@@ -206,12 +212,4 @@ argumentee), soit le retour a un autre point du README.
 le papier B a son propre plan, ouvert apres le papier A.
 ```
 
-### 12. Formule de cloture
-
-```text
-Le papier A dit une chose et la borne : une grandeur se qualifie
-comme constante dans la mesure ou sa constance se stabilise, de
-facon situee, avec ses limites. La formation de cette constance
-attend le papier B ; l'origine, plus loin encore. Un livrable qui
-sait ce qu'il garde pour plus tard est deja a moitie ecrit.
-```
+### 12. Formule de 
