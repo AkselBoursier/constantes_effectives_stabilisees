@@ -162,6 +162,10 @@ comparative - elle nomme des structures que les vocabulaires
 indigenes portent sans les relier (rectification, absorption,
 grading, transport entre regimes). Enonce a tenir prudemment
 jusqu'au troisieme cas ou a la cloture du cycle.
+
+note d'horodatage : predictions et resultats commites ensemble ;
+anteriorite etablie par l'ordre de conversation seulement, valeur
+probante reduite d'autant (protocole d'horodatage v0.1).
 ```
 
 ### 6. Sources du test
@@ -181,8 +185,4 @@ Arnaud-Neu, F., et al. (2003). Critical evaluation... crown ethers
 Smith, R. M., & Martell, A. E. (2004). NIST Critically Selected
   Stability Constants of Metal Complexes Database (SRD 46).
   (verifiee)
-Beck, M. (1977). Critical evaluation of equilibrium constants in
-  solution. Pure and Applied Chemistry. (verifiee)
-Purgel, M., et al. (2023). First principle determination of
-  stability constants... Int. J. Quantum Chemistry. (verifiee)
-```
+Beck, M. (1977). Critical evaluation of equilibrium co
