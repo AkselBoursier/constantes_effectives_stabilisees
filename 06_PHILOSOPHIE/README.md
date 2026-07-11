@@ -87,6 +87,7 @@ une decision de statut soumise a validation.
 06_PHILOSOPHIE/Situation_04_Regime_gris_electrique_1990_2019_v0_1.md
 06_PHILOSOPHIE/Situation_05_Duhem_Quine_architectures_v0_1.md
 06_PHILOSOPHIE/Situation_06_Bachelard_rectification_CODATA_v0_1.md
+06_PHILOSOPHIE/Situation_07_Mach_Planck_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
 06_PHILOSOPHIE/Releve_paysage_contemporain_v0_1.md
 ```
@@ -99,11 +100,10 @@ V2 probleme de la coordination (Tal, Papale) - avant le papier B
 V3 Chang - V4 Lange - V5 Daston/Rheinberger - V6 Wimsatt
 ```
 
-### 6. Situations candidates pour la suite
+### 6. Etat du premier cycle et suite
+
+Le premier cycle des situations est clos avec la situation 07.
 
 ```text
-1. Mach contre Planck (1908-1912) : economie de pensee contre
-   realisme des constantes ; k_B et h au coeur d'une querelle
-   d'acces oubliee.
-2. Covariance CODATA et architectures : les blocs de correlation
-   recouvrent-ils les so
+Situations traitees : 01 (processus, expansion, acces), 02 (Dirac
+contre Eddington), 03 (SI 2019, convention vecue), 04 (regim
