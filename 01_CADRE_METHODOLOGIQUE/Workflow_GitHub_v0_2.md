@@ -69,18 +69,39 @@ cloturer lors de la reprise du cycle cosmologique.
 
 ### 5. Commandes de reference
 
-```text
-ouvrir un chantier : git checkout main && git checkout -b <theme>
-integrer au quotidien : git checkout travail && git merge <theme>
-valider un chantier : git checkout main && git merge <theme>
-                      git branch -d <theme> && git push origin main
-resynchroniser : git checkout travail && git merge main
-```
+Le shell local est Windows PowerShell : une commande par ligne
+(le separateur && appartient a d'autres shells).
 
-### 6. Formule de cloture
+Ouvrir un chantier :
 
 ```text
-main dit ce qui est valide, les branches disent ce qui est en
-chantier, travail dit ou en est le dossier. Trois reponses, trois
-lieux, et la validation reste un acte explicite.
+git checkout main
+git checkout -b <theme>
 ```
+
+Integrer au quotidien :
+
+```text
+git checkout travail
+git merge <theme>
+```
+
+Valider un chantier :
+
+```text
+git checkout main
+git merge <theme>
+git push
+git branch -d <theme>
+git checkout travail
+```
+
+Resynchroniser et publier les chantiers en cours :
+
+```text
+git checkout travail
+git merge main
+git push origin travail <theme>
+```
+
+Regle de lecture : ver
