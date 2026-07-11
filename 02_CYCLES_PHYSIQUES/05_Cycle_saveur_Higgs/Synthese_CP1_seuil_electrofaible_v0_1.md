@@ -260,7 +260,8 @@ Formule de raccord :
 
 ### 11. Effet sur les cartes
 
-La carte consolidee devra enregistrer un nouvel objet transversal :
+La carte consolidee active enregistre maintenant un nouvel objet
+transversal :
 
 ```text
 constance de seuil.
@@ -285,18 +286,24 @@ Effet methodologique :
 la trajectoire devient aussi porteuse d'un seuil de qualification.
 ```
 
+Raccord produit :
+
+```text
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+```
+
 ### 12. Suite logique
 
 La prochaine etape utile est :
 
 ```text
-raccord a la carte consolidee.
+raccord eventuel de la carte des dependances architecturales.
 ```
 
 Fonction attendue :
 
 ```text
-integrer CP-1 par raccord local a la carte ;
-ajouter la constance de seuil comme acquis local ;
+montrer CP-1 comme arete d'entree vers Saveur-Higgs ;
+situer `v` comme noeud partage ;
 maintenir CP-2 et C6 comme reserves clairement nommees.
 ```
