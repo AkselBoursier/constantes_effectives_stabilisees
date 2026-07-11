@@ -86,6 +86,9 @@ Programme_publication_v0_1.md - deploiement en cercles, regle des
 trois ebauches.
 Mise_a_jour_intellectuelle_v0_1.md - envergure du projet entier,
 huit hypotheses implicites (HI-1 a HI-8), chantiers CP-1 a CP-4.
+Audit_integration_branche_philosophique_v0_1.md - sas de
+raccordement : apports integrables, reserves, micro-corrections et
+point de jonction Brout-Englert-Higgs reconnu sans ouverture.
 ```
 
 ### 4. Documents nouveaux dans 01_CADRE_METHODOLOGIQUE
@@ -121,6 +124,8 @@ Synthese_phase_de_test.
 livrables (nouveau) : plans A1/A2, Programme_publication.
 bilan transversal (nouveau) : Mise_a_jour_intellectuelle
 (hypotheses implicites, chantiers).
+sas d'integration (nouveau) : Audit_integration_branche_philosophique
+(tri de rang, corrections, reserve des horizons).
 protocole (nouveau) : reecriture v0.3, horodatage, synchronisation.
 ```
 

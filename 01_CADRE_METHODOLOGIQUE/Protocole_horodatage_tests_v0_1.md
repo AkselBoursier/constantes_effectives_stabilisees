@@ -30,3 +30,24 @@ l'empreinte voyage.
      predictions (preregistration academique standard, lisible par
      les rapporteurs) ;
    le push GitHub reste utile comme synchronisation, non comme
+   preuve ;
+4. confirmation de l'ancrage par l'auteur ; alors seulement,
+   acquisition, application, verdict ;
+5. commit des resultats, push.
+
+regle : aucune acquisition avant confirmation de l'ancrage.
+```
+
+### 3. Etat des tests anterieurs
+
+```text
+covariance CODATA : predictions commitees avant toute donnee
+(sequence de commits, non opposable au sens du present protocole) ;
+C5-1 (solaire) et C5-2 (stabilite) : predictions et resultats dans
+le meme commit - anteriorite etablie par l'ordre de conversation
+seulement. Notes d'horodatage ajoutees aux deux fiches.
+Aucun test anterieur ne satisfait le critere d'ancrage externe ;
+rien de retroactif ne peut y remedier, et leurs statuts le disent.
+Le present protocole s'applique a tous les tests suivants,
+re-executions comprises.
+```

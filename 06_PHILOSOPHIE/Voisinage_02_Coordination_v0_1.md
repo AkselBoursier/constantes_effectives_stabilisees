@@ -247,4 +247,14 @@ Papale, F. (2024). From the philosophy of measurement to the
 Le voisin le plus proche travaille depuis un siecle sur le cercle
 que le corpus appelle acces, et il vient de rencontrer les
 constantes au seuil de 2019 - comme definisseuses, jamais comme
-objet. La porte du papier B s
+objet. La porte du papier B s'ouvre exactement la : la coordination
+explique comment les unites tiennent aux constantes ; le corpus
+propose d'expliquer comment les constantes tiennent comme constantes
+- dans le savoir par leurs trajectoires, dans le monde par leurs
+milieux. Cette seconde moitie reste un programme tant que H1 n'est
+pas testee.
+Et au fond de la genealogie, Mach, encore : l'homme qui a nomme la
+coordination avait aussi ouvert la querelle du statut. Les deux
+lignees se referment l'une sur l'autre, un siecle plus tard, dans
+la question du corpus.
+```

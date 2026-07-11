@@ -252,4 +252,11 @@ La matrice d'ouverture des degagements est :
 La prochaine etape logique devient :
 
 ```text
-05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemp
+05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+```
+
+La suite ouverte apres cette mise a l'epreuve est :
+
+```text
+Plan de livrable theorique v0.1.
+```

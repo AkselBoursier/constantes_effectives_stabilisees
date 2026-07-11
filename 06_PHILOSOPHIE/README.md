@@ -75,6 +75,9 @@ elle ne les remplace pas.
 
 l'integration de cette branche a l'index raisonne du corpus est
 une decision de statut soumise a validation.
+
+le sas de raccordement actuel est :
+05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 ```
 
 ### 5. Documents actuels
@@ -106,4 +109,50 @@ Le premier cycle des situations est clos avec la situation 07.
 
 ```text
 Situations traitees : 01 (processus, expansion, acces), 02 (Dirac
-contre Eddington), 03 (SI 2019, convention vecue), 04 (regim
+contre Eddington), 03 (SI 2019, convention vecue), 04 (regime gris
+electrique 1990-2019, intercalee), 05 (Duhem, Quine et les
+architectures), 06 (Bachelard et la rectification), 07 (Mach contre
+Planck, premiere querelle d'acces sur les constantes).
+```
+
+Ordre de la suite (decide en juillet 2026) :
+
+```text
+1. synthese du premier cycle : produite
+   (Synthese_premier_cycle_situations_v0_1.md, degagements D1-D8) ;
+2. voisinages V1 et V2 produits (Voisinage_01_Massimi_v0_1.md ;
+   Voisinage_02_Coordination_v0_1.md) : les portes des papiers A et
+   B sont ouvertes, sous reserves de lectures integrales listees
+   dans chaque fiche (Massimi 2022 ; Tal 2018 ; volume Routledge
+   2019 ; Papale 2024 ; Wolff 2020) ;
+   la suite se decide au guichet : plan de livrable du papier A,
+   ou deuxieme cycle (V1-V2 ont amorce son axe), ou voisinages
+   V3-V6 restants ;
+3. deuxieme cycle programme : conditions d'acces et constitution
+   (Programme_deuxieme_cycle_v0_1.md : Bitbol, Husserl, reperage
+   esprit, Nagarjuna differe) ;
+4. troisieme cycle programme : existence disciplinaire de la
+   question des constantes (Programme_troisieme_cycle_v0_1.md :
+   mecanismes M1-M5, coupe disciplinaire) ;
+5. cycles C4 (vie materielle et institutionnelle) et C5
+   (exportabilite hors physique) instruits, et jonction C6
+   (historicite cosmique, hors serie, avec fiche d'essai) :
+   Programme_cycles_C4_C5_et_jonction_C6_v0_1.md ; la regle d'arret
+   tient : cinq cycles philosophiques au plus, C6 vivrait cote
+   physique ;
+6. phase de test : close. Cinq tests, synthese produite
+   (Synthese_phase_de_test_v0_1.md, insights I1-I8) :
+   covariance (controle de fidelite, objection de tautologie
+   retenue) ; C5-1 solaire, C5-2 stabilite chimique, C5-3 Michaelis,
+   C5-4 pi (cas de durcissement) ; deux tests opposables par ancrage
+   OpenTimestamps ; non-trivialite de la grammaire etablie (pi
+   discrimine) ; cycle C5 clos, verdict d'exportabilite borne ;
+7. points de decision en attente : typologie des erreurs de rang
+   (D2), matrice temporelle v0.2 (D3), extension du chantier
+   covariance en carte complete des blocs (D5), ligne "constitution"
+   de la carte implicite (programme C2, section 4), genre "coupe
+   disciplinaire" (programme C3, section 7), regle des deux
+   registres constance / constante
+   (01_CADRE_METHODOLOGIQUE/Note_terminologique_constance_v0_1.md),
+   fiche d'essai de la jonction C6.
+```

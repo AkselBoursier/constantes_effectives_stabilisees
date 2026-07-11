@@ -195,4 +195,8 @@ le pan physique n'est pas rouvert a ce stade.
 
 ```text
 On a demande a la grammaire de qualifier des constances loin de chez
-elle ; elle l'a fait en comparant, non en 
+elle ; elle l'a fait en comparant, non en absorbant. On lui a demande
+son objet le plus etranger ; elle a su dire non. Une grille qui
+discrimine et qui date ses paris n'est plus une intuition : c'est un
+instrument, borne, et qui connait sa borne.
+```

@@ -185,4 +185,8 @@ Arnaud-Neu, F., et al. (2003). Critical evaluation... crown ethers
 Smith, R. M., & Martell, A. E. (2004). NIST Critically Selected
   Stability Constants of Metal Complexes Database (SRD 46).
   (verifiee)
-Beck, M. (1977). Critical evaluation of equilibrium co
+Beck, M. (1977). Critical evaluation of equilibrium constants in
+  solution. Pure and Applied Chemistry. (verifiee)
+Purgel, M., et al. (2023). First principle determination of
+  stability constants... Int. J. Quantum Chemistry. (verifiee)
+```

@@ -192,4 +192,9 @@ Penza, V., et al. (2022). Total solar irradiance during the last
   five centuries. The Astrophysical Journal. (verifiee)
 Mamajek, E. E., et al. (2015-2016). IAU 2015 Resolution B3 on
   recommended nominal conversion constants ; et Nominal values for
-  selected solar and planetary quanti
+  selected solar and planetary quantities. arXiv:1510.07674 ;
+  arXiv:1605.09788 ; AJ 152, 41. (verifiee ; clause "conversion
+  factors only")
+Resolution IAU 2012 B2 (unite astronomique exacte). (de memoire,
+  a verifier)
+```

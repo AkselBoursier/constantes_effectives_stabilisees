@@ -242,4 +242,39 @@ Verifiees par recherche documentaire :
 Stock, M., Davis, R., de Mirandes, E., & Milton, M. J. T. (2019).
   The revision of the SI - the result of three decades of progress
   in metrology. Metrologia, 56, 022001.
-de Courtenay, N. (2021). On the philosophical sign
+de Courtenay, N. (2021). On the philosophical significance of the
+  reform of the International System of Units (SI): a
+  double-adjustment account of scientific enquiry. Perspectives on
+  Science, 29(6).
+Wood, B. (2017). SI redefinition and the role of the CODATA Task
+  Group on Fundamental Constants. NCSLI Workshop Proceedings.
+Liebisch, T., Stenger, J., & Ullrich, J. (2019). Understanding the
+  revised SI: background, consequences, and perspectives. Annalen
+  der Physik.
+```
+
+A verifier avant usage publie (citees de memoire) :
+
+```text
+Poincare, H. (1902). La Science et l'Hypothese. Flammarion.
+Mills, I. M., Mohr, P. J., Quinn, T. J., Taylor, B. N., &
+  Williams, E. R. (2005). Redefinition of the kilogram: a decision
+  whose time has come. Metrologia, 42, 71.
+Quinn, T. (2011). From Artefacts to Atoms: The BIPM and the Search
+  for Ultimate Measurement Standards. Oxford UP.
+Resolutions de la 17e CGPM (1983, metre), de la 24e CGPM (2011,
+  intention) et de la 26e CGPM (2018, revision) ; recommandations
+  CIPM 1988 sur K_J-90 et R_K-90.
+```
+
+### 9. Formule de cloture
+
+```text
+Poincare disait : la convention est libre et guidee par l'experience.
+Le SI 2019 precise la mesure de cette liberte : une communaute peut
+choisir ses definitions, apres que la convergence des acces a rendu
+le choix sur ; et le prix de l'exactitude decretee est une
+incertitude qui migre vers la realisation.
+La convention n'est ni une decouverte ni un decret : c'est une
+absorption meritee, datee, et payee au juste prix.
+```

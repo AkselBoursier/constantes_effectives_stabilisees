@@ -145,4 +145,9 @@ Castellani, de Courtenay, Williams, Cao et Schweber.
 
 ### 7. Formule de cloture
 
+```text
+Un corpus qui cartographie sa philosophie implicite peut la discuter ;
+celui qui l'ignore la subit.
+La carte dit ce que le corpus assume deja, pour qu'il choisisse en
+connaissance ; la doctrine reste a la charge des arguments.
 ```

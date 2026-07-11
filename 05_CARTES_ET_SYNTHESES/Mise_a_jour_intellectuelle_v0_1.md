@@ -73,7 +73,8 @@ reste methodologiquement incomplete." Pose comme evidence, jamais
 situe face au realisme.
 STATUT : deja instruit. C'est T3 ; le voisinage V2 (coordination)
 et V1 (Massimi) l'ont situe ; N6 le borne (l'acces n'est pas
-converti en essence). Hypothese devenue these controlee.
+converti en essence). Hypothese devenue engagement controle du
+corpus, sans promotion doctrinale.
 
 HI-2 - le test de retrait est un critere holiste de type
 Duhem-Quine, et il n'examine pas ses faux positifs : presque tout
@@ -103,8 +104,10 @@ est l'etat-limite vers lequel "tend" une constante bien stabilisee.
 STATUT : eclaire et explique. Le critere de latitude (papier A1)
 en donne la raison : le SI est terminal parce que sa latitude est
 epuisee ; H_0 reste ouvert parce que sa latitude est vivante. La
-teleologie n'est pas un biais a corriger, c'est une orientation
-reelle que le critere de latitude formalise. Integration directe.
+teleologie n'est pas un biais a corriger mecaniquement ; c'est une
+orientation methodologique a expliciter. Le critere de latitude en
+donne une formalisation prudente. Integration possible apres
+controle de rang.
 
 HI-5 - la "borne" agrege des objets heterogenes : la masse absolue
 du neutrino (non-detection, ignorance) et les tensions cosmologiques

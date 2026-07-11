@@ -141,7 +141,92 @@ etablie par l'historique Git du present document.
 ### 6. Verdict
 
 ```text
-resultat : cinq relevés, cinq predictions confirmees ; aucune des
+resultat : cinq releves, cinq predictions confirmees ; aucune des
 conditions d'echec E1-E3 declenchee.
 
-lecture, dans les limites declarees en sect
+lecture, dans les limites declarees en section 1 : le test etait
+une condition necessaire, non suffisante ; il est passe. Le gain se
+dit exactement ainsi : la carte architecturale du corpus, dessinee
+par analyse fonctionnelle et de statut, recouvre les joints
+statistiques du reseau CODATA sur les cinq sondages -
+le bloc porteur alpha existe (P1 : -0,99999 ; P3 : +0,99845),
+la frontiere interne est nette (P4 : 0,00125, deux ordres de
+grandeur sous le seuil), et l'ilot gravitationnel est exact
+(P2 : 0,00000 deux fois). La quasi-autonomie des secteurs, these
+philosophique chez Cao et Schweber, recoit ici des chiffres.
+
+nuance instructive de P3 : r(m_e, m_p) = 0,99845 la ou
+r(alpha, m_e) = -0,99999. L'ecart entre les deux est la trace de
+la mesure independante du rapport de masses (pieges de Penning) :
+la composition a son joint propre, faiblement visible. La grammaire
+du corpus predit qualitativement cette hierarchie (le rapport est
+une entree independante, la masse en kg est un aval pur d'alpha) ;
+la difference des deux coefficients en est la signature chiffree.
+
+statut probatoire initial (requalifie en section 7) : donnees
+publiques, predictions anterieures tracables, echec possible et non
+advenu.
+```
+
+### 7. Objection de tautologie : instruite et retenue
+
+Objection posee par l'auteur apres le verdict :
+
+```text
+le corpus est bati sur les chiffres reels (CODATA, PDG, Planck) ;
+les architectures ont ete dessinees en connaissant les chaines de
+determination ; predire les correlations depuis les architectures,
+c'est retrouver la source commune. Le test serait tautologique.
+```
+
+Instruction :
+
+```text
+l'objection est fondee en substance, et la piece a conviction est
+dans le present protocole : la section 1 enonce comme "relation
+structurante connue" l'equation d'observation meme dont l'ajustement
+tire la correlation mesuree. Le cercle n'est pas dans la
+statistique ; il est dans la construction : predictions et donnees
+partagent leur source (la structure publique de l'ajustement).
+
+nuances conservees : le test n'etait pas rigoureusement
+tautologique - l'echec restait possible par erreur de comprehension
+(P4 exigeait la connaissance des budgets d'incertitude ; l'attente
+naive, alpha et R_inf cohabitant dans la theorie de l'hydrogene,
+etait une correlation notable) - mais son poids evidentiel pour la
+grammaire est faible.
+```
+
+Requalification du verdict :
+
+```text
+ce qui est etabli : un controle de fidelite (la compression du
+corpus ne contient pas de contresens sur la structure post-2019 -
+non acquis d'avance pour un corpus hors institution) ; une
+repetition generale du pipeline de test (predictions verrouillees,
+acquisition humaine independante, corrections croisees dans les
+deux sens) ; des chiffres a provenance etablie, utilisables en
+illustration dans les papiers.
+
+ce qui est retire : la phrase "l'exigence de l'audit est satisfaite".
+Elle ne l'est pas : ce test se gagnait par competence sur des faits
+publics, non par la valeur ajoutee de la grammaire. Le test que le
+corpus ne peut gagner ni par elegance ni par competence de
+construction reste a executer.
+
+candidats non tautologiques, par ordre de purete :
+1. C5, l'exportabilite : appliquer la grammaire a des cas jamais
+   utilises dans sa construction (equilibres chimiques, cinetique
+   biologique, constante solaire) - test hors echantillon au sens
+   strict ;
+2. H1 durci : classifier les modes epistemiques de cas nouveaux en
+   aveugle avant de verifier leur mode physique, plutot que de
+   relire les fiches qui contiennent deja les deux ;
+3. l'extension covariance ne comptera que si elle predit un trait
+   non lisible dans les equations d'observation (par exemple un
+   chevauchement d'architectures que la carte interdit).
+
+sequence corrigee de la phase de test : C5 ou H1 durci d'abord ;
+la presente fiche garde rang de controle de fidelite et de
+repetition generale.
+```

@@ -18,6 +18,7 @@ Lire d'abord :
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
 ```
 
@@ -28,6 +29,7 @@ Couche recente, navigable depuis le supplement d'index :
 ```text
 06_PHILOSOPHIE/README.md
 05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_1.md
 05_CARTES_ET_SYNTHESES/Programme_publication_v0_1.md
 ```
@@ -82,6 +84,7 @@ Cartes et syntheses :
 05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
 05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
@@ -107,4 +110,23 @@ Cycles physiques actifs :
 
 ## Workflow GitHub
 
-Le depot GitHub sert de journal de ve
+Le depot GitHub sert de journal de versions du corpus.
+
+Regle actuelle :
+
+```text
+les decisions conceptuelles restent soumises a validation explicite ;
+les synchronisations documentaires, controles, commits et pushs peuvent etre delegues apres stabilisation.
+```
+
+Document de reference :
+
+```text
+01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
+```
+
+Depot distant :
+
+```text
+https://github.com/AkselBoursier/constantes_effectives_stabilisees
+```

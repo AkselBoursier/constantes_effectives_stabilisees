@@ -212,4 +212,12 @@ argumentee), soit le retour a un autre point du README.
 le papier B a son propre plan, ouvert apres le papier A.
 ```
 
-### 12. Formule de 
+### 12. Formule de cloture
+
+```text
+Le papier A dit une chose et la borne : une grandeur se qualifie
+comme constante dans la mesure ou sa constance se stabilise, de
+facon situee, avec ses limites. La formation de cette constance
+attend le papier B ; l'origine, plus loin encore. Un livrable qui
+sait ce qu'il garde pour plus tard est deja a moitie ecrit.
+```
