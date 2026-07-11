@@ -68,9 +68,9 @@ documents actifs :
 6. Audit_solidite puis les tests puis Synthese_phase_de_test
    (insights I1-I8) ;
 7. les programmes de cycles (deuxieme, troisieme, C4-C5-C6).
-8. Releve_paysage_brisure_electrofaible_v0_1.md seulement comme
-   preparation de CP-1 / jonction C6 ; ne pas le lire comme
-   ouverture du chantier.
+8. Releve_paysage_brisure_electrofaible_v0_1.md comme preparation
+   de CP-1 / jonction C6 ; poursuivre ensuite par le cycle CP-1
+   ouvert dans 02_CYCLES_PHYSIQUES.
 ```
 
 ### 3. Documents nouveaux dans 05_CARTES_ET_SYNTHESES
@@ -89,10 +89,12 @@ moyenne voilure.
 Programme_publication_v0_1.md - deploiement en cercles, regle des
 trois ebauches.
 Mise_a_jour_intellectuelle_v0_1.md - envergure du projet entier,
-huit hypotheses implicites (HI-1 a HI-8), chantiers CP-1 a CP-4.
+huit hypotheses implicites (HI-1 a HI-8), chantiers CP-1 a CP-4,
+avec CP-1 desormais ouvert.
 Audit_integration_branche_philosophique_v0_1.md - sas de
 raccordement : apports integrables, reserves, micro-corrections et
-point de jonction Brout-Englert-Higgs reconnu sans ouverture.
+point de jonction Brout-Englert-Higgs reconnu, puis prolonge par
+l'ouverture physique de CP-1.
 Note_cadrage_BEH_zone_jonction_v0_1.md - sas technique de jonction :
 prepare CP-1 / C6 en distinguant mecanisme physique, architecture
 Saveur-Higgs, debat jauge-invariant et question Q2.
@@ -139,7 +141,8 @@ sas d'integration (nouveau) : Audit_integration_branche_philosophique
 (tri de rang, corrections, reserve des horizons).
 zone de jonction BEH (nouveau) :
 Note_cadrage_BEH_zone_jonction_v0_1
-(preparation de CP-1 / C6 sans ouverture du cycle).
+(preparation de CP-1 / C6, puis ouverture du cycle CP-1 dans
+02_CYCLES_PHYSIQUES).
 protocole (nouveau) : reecriture v0.3, horodatage, synchronisation.
 protocole operatoire (nouveau) :
 Protocole_travail_redaction_post_philosophie_v0_1
@@ -156,15 +159,19 @@ releve preparatoire : Releve_paysage_brisure_electrofaible_v0_1.md
 cartographie le debat philosophique sur le mecanisme BEH, sans
 extraire de fil ni formuler de prediction.
 note de cadrage : Note_cadrage_BEH_zone_jonction_v0_1.md fixe le
-seuil de travail avant ouverture physique de CP-1.
+seuil de travail qui prepare l'ouverture physique de CP-1.
 piece physique preparatoire :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 decrit le mecanisme BEH, ses grandeurs et ses acces avant le cycle
 CP-1.
+cycle ouvert :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
+qualifie le seuil electroweak comme constance de regime, avec `v`
+comme noyau d'echelle et les masses faibles comme controle.
 philosophiques : V-dim (Levy-Leblond, Duff), durcissement
 protocolaire (HI-2, HI-5, HI-6, HI-7).
-tous programmes, non ouverts ; regle des cinq cycles et des trois
-ebauches en vigueur.
+les autres programmes restent au rang de candidats ; regle des cinq
+cycles et des trois ebauches en vigueur.
 ```
 
 ### 7. Formule de cloture

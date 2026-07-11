@@ -184,6 +184,9 @@ non analyse comme une stabilisation avec son propre acces.
 convergence : c'est exactement la fiche d'essai de la jonction C6
 (historicite cosmique) deja programmee cote philosophie. CP-1 et C6
 sont le meme chantier vu des deux cotes.
+raccord posterieur : CP-1 est ouvert dans
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
+comme cycle sur le seuil electroweak et la constance de regime.
 
 CP-2 - le champ de Higgs proprement dit : masse du Higgs, potentiel,
 auto-couplage lambda, stabilite du vide. Absent du corpus stabilise ;
@@ -230,9 +233,10 @@ etendue) sans les remplacer.
    lectures jusque-la.
 2. les hypotheses HI-2, HI-5, HI-6, HI-7 sont diagnostiquees, non
    corrigees ; leur correction toucherait le coeur physique.
-3. les cycles CP-1 a CP-4 et V-dim sont programmes comme candidats,
-   non ouverts ; la regle des cinq cycles philosophiques et la
-   limite des trois ebauches restent en vigueur.
+3. CP-1 est ouvert comme cycle sur le seuil electroweak ; CP-2 a
+   CP-4 et V-dim restent programmes comme candidats ; la regle des
+   cinq cycles philosophiques et la limite des trois ebauches
+   restent en vigueur.
 ```
 
 ### 8. Formule de cloture

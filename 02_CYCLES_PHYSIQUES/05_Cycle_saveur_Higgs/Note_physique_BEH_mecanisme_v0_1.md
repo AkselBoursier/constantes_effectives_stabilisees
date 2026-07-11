@@ -29,7 +29,7 @@ electrofaibles.
 
 Elle garde le rang d'une note de mecanisme.
 
-Le cycle CP-1 pourra s'ouvrir ensuite avec un objet plus precis :
+Le cycle CP-1 s'ouvre ensuite avec un objet plus precis :
 
 ```text
 `v`, regime d'echelle, masses faibles, potentiel de Higgs,
@@ -335,9 +335,9 @@ les masses faibles et fermioniques en sont les effets lisibles ;
 le potentiel et le Higgs ouvrent le dossier CP-2.
 ```
 
-### 10. Conditions d'ouverture de CP-1
+### 10. Conditions de qualification de CP-1
 
-La note physique BEH rend possible une ouverture de CP-1 avec trois
+La note physique BEH rend possible CP-1 avec trois
 options structurantes.
 
 | Option | Objet de CP-1 | Gain | Dette |
@@ -408,10 +408,8 @@ des masses fermioniques et un Higgs observable forment un reseau
 stabilise.
 ```
 
-La prochaine etape logique peut donc ouvrir CP-1 comme :
+CP-1 est ouvert par :
 
 ```text
-cycle sur le seuil electroweak et la constance de regime,
-avec `v` comme noyau d'echelle et les masses faibles comme controle
-phenomenologique.
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
 ```
