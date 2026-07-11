@@ -7,16 +7,20 @@
 ```text
 statut : note de cadrage ;
 objet : mecanisme Brout-Englert-Higgs comme zone de jonction ;
-fonction : preparer l'ouverture prudente de CP-1 sans l'engager ;
-registre : positif, conditionnel, non conclusif.
+fonction : poser le sas d'ouverture prudente de CP-1 ;
+registre : positif, conditionnel, preparatoire.
 ```
 
-Cette note ne produit pas un cycle BEH.
+Cette note remplit une fonction de sas documentaire.
 
-Elle ne formule pas une these physique sur le mecanisme BEH.
+Elle prepare un cycle BEH ulterieur en fixant les objets candidats,
+les niveaux de lecture et les conditions d'entree.
+
+Elle situe les operations plus fortes - cycle complet, these physique
+et extraction de resultat - comme etapes posterieures du travail.
 
 Elle fixe le seuil de travail a partir duquel le corpus pourra instruire
-la brisure electrofaible sans confondre :
+la brisure electrofaible en distinguant :
 
 ```text
 1. le mecanisme physique a documenter ;
@@ -53,7 +57,7 @@ regime electrofaible brise
 + orientations observables.
 ```
 
-Mais cette architecture commence au regime deja brise.
+Son point de depart est le regime deja brise.
 
 Elle utilise `v` comme echelle constitutive et lit les masses, les
 textures et les orientations a partir de cette echelle.
@@ -65,9 +69,7 @@ BEH = seuil ou le regime devient lisible comme architecture
 Saveur-Higgs.
 ```
 
-La dette n'est donc pas locale.
-
-Elle touche le point d'entree du cycle :
+La dette porte donc sur le point d'entree du cycle :
 
 ```text
 qu'est-ce qui devient assez stabilise pour que le regime
@@ -76,13 +78,10 @@ Saveur-Higgs puisse commencer ?
 
 ### 2. Question positive de cadrage
 
-La question a instruire n'est pas :
+Le debat sur la realite de la brisure de jauge fournit un contexte
+de prudence.
 
-```text
-la brisure est-elle reelle ?
-```
-
-La question de travail est :
+Le cadrage retient une question de qualification :
 
 ```text
 dans le passage BEH, quel objet acquiert un statut de constance
@@ -93,23 +92,22 @@ description de brisure ?
 
 Cette formulation maintient le projet dans son axe propre.
 
-Elle ne demande pas seulement si une symetrie est brisee.
-
-Elle demande quelle stabilisation devient disponible pour le corpus
-des constantes effectives stabilisees.
+Elle transforme le debat sur la symetrie en probleme de
+stabilisation disponible pour le corpus des constantes effectives
+stabilisees.
 
 ### 3. Quatre plans a tenir separes
 
 | Plan | Objet | Fonction dans le corpus | Prudence |
 |---|---|---|---|
 | Mecanisme physique | champ de Higgs, potentiel, etat fondamental, `v`, masses faibles | instruire le seuil CP-1 | a documenter avant conclusion |
-| Architecture Saveur-Higgs | `v`, Yukawa, matrices de masse, diagonalisation, CKM, PMNS | regime deja brise | ne pas confondre effet et seuil |
-| Debat jauge / invariant | brisure, redondance de jauge, formulation gauge-invariant, FMS | clarifier le statut de la description | ne pas convertir le debat en these interne |
+| Architecture Saveur-Higgs | `v`, Yukawa, matrices de masse, diagonalisation, CKM, PMNS | regime deja brise | maintenir le seuil distinct des effets lisibles |
+| Debat jauge / invariant | brisure, redondance de jauge, formulation gauge-invariant, FMS | clarifier le statut de la description | convertir le debat en controle de formulation |
 | Q2 formation | apparition d'une constance de regime | preparer la question genetique | reste secondaire par rapport a Q1 |
 
 Le cadrage BEH existe parce que ces quatre plans se recoupent.
 
-Il devient fragile des que l'un des plans absorbe les autres.
+Sa robustesse vient de l'equilibre entre leurs fonctions respectives.
 
 ### 4. Objets candidats a stabilisation
 
@@ -122,13 +120,13 @@ Le prochain travail physique devra distinguer plusieurs candidats.
 | Masses faibles | masses de `W` et `Z` associees au regime brise | articulation avec `v` et couplages de jauge |
 | Masses fermioniques | spectres issus de `v`, Yukawa et diagonalisation | deja traitees dans Saveur-Higgs, mais apres le seuil |
 | Potentiel de Higgs | structure parametrique ouvrant la question CP-2 | masse du Higgs, auto-couplage, stabilite du vide |
-| Brisure | description de transition ou de regime | ne pas la traiter d'emblee comme objet stabilise |
+| Brisure | description de transition ou de regime | tenir comme nom de seuil avant qualification d'objet |
 
 Decision provisoire :
 
 ```text
-la brisure n'est pas prise comme objet premier ;
-elle sert de nom de seuil.
+la brisure sert ici de nom de seuil ;
+son eventuel statut d'objet stabilise reste a instruire.
 ```
 
 Le candidat principal pour le corpus reste a instruire.
@@ -161,11 +159,12 @@ Pour BEH, la separation est decisive.
 | Regime d'acces | ajustements electroweak, `G_F`, masses faibles, phenomenologie Higgs, mesures de collision |
 | Regime de description | jauge fixee, formulation perturbative, formulations gauge-invariant |
 
-Le releve philosophique signale que la brisure peut etre
-descriptionnellement delicate.
+Le releve philosophique signale que la brisure porte une dette
+descriptionnelle.
 
-La note physique devra donc ecrire les enonces de maniere a ne pas
-faire porter a la jauge fixee plus que ce qu'elle porte.
+La note physique devra donc attribuer a chaque formulation sa portee
+propre : jauge fixee comme regime de description, formulation
+gauge-invariant comme controle de statut.
 
 ### 6. Effet sur Saveur-Higgs
 
@@ -185,9 +184,7 @@ seuil BEH -> disponibilite de `v` comme echelle de regime
 -> architecture Saveur-Higgs.
 ```
 
-Le point a controler n'est pas la solidite de Saveur-Higgs.
-
-Le point a controler est le statut du premier terme :
+Le controle porte sur le statut du premier terme :
 
 ```text
 que signifie exactement "disponibilite de `v`" ?
@@ -209,10 +206,10 @@ C6 = horizon philosophique et temporel du meme seuil ;
 la note presente = sas de jonction avant ouverture.
 ```
 
-Le vocabulaire de jonction ne cree pas un nouvel axe autonome.
+Le vocabulaire de jonction joue ici un role de sas.
 
-Il empeche seulement de lancer CP-1 sans savoir quel type d'objet
-le corpus cherche a qualifier.
+Il donne a CP-1 son objet d'ouverture : le type d'objet que le
+corpus cherche a qualifier.
 
 ### 8. Conditions d'entree avant ouverture de CP-1
 
@@ -229,10 +226,11 @@ Avant d'ouvrir le cycle CP-1, le corpus doit produire ou reunir :
    `v`, regime d'echelle, masses, potentiel, ou seuil descriptif.
 ```
 
-La condition 3 ne demande pas de resoudre le debat philosophique.
+La condition 3 a une fonction circonscrite.
 
-Elle demande seulement d'eviter une formulation que le debat rendrait
-immediatement instable.
+Elle donne au debat philosophique une fonction de controle de
+formulation et reserve aux sources physiques la fonction d'arbitrage
+du mecanisme.
 
 ### 9. Formules de travail autorisees
 
@@ -247,25 +245,23 @@ sur le regime d'echelle, sur les masses produites, ou sur la
 stabilisation de l'etat a partir duquel ces grandeurs deviennent
 lisibles.
 
-La brisure est traitee comme nom de seuil tant que son statut
-physique exact n'a pas ete instruit.
+La brisure est traitee comme nom de seuil jusqu'a l'instruction de
+son statut physique exact.
 ```
 
-Formules a eviter pour l'instant :
+Formules reservees a une instruction ulterieure :
 
-```text
-BEH prouve la realite d'une brisure de jauge ;
-la brisure est une constante ;
-`v` est deja la reponse a CP-1 ;
-le debat philosophique tranche le statut physique du mecanisme ;
-Saveur-Higgs explique l'origine du regime brise.
-```
+| Formulation forte | Condition d'assertion |
+|---|---|
+| realite physique de la brisure de jauge | controle du debat jauge / invariant et formulation physique precise |
+| statut constantiel de la brisure | distinction etablie entre brisure, `v`, etat fondamental et masses |
+| `v` comme reponse a CP-1 | comparaison accomplie entre `v`, regime d'echelle, masses et potentiel |
+| arbitrage philosophique du mecanisme | transformation en controle de formulation, puis retour aux sources physiques |
+| origine du regime brise par Saveur-Higgs | cycle physique BEH / Higgs instruit en amont de l'architecture |
 
 ### 10. Suite logique
 
-La prochaine piece utile n'est pas encore le cycle CP-1 complet.
-
-La piece utile est :
+La prochaine piece utile est :
 
 ```text
 Note_physique_BEH_mecanisme_v0_1.md
@@ -292,8 +288,8 @@ cycle de jonction entre seuil physique et architecture Saveur-Higgs.
 ### 11. Formule de cloture
 
 ```text
-BEH n'est pas ajoute comme couche decorative au corpus.
-Il nomme le seuil ou l'architecture Saveur-Higgs recoit son echelle
+BEH prend ici le rang de seuil.
+Il nomme le point ou l'architecture Saveur-Higgs recoit son echelle
 d'entree. La prochaine tache consiste a instruire ce seuil assez
 froidement pour savoir quelle constance le corpus peut vraiment y
 qualifier.
