@@ -8,6 +8,7 @@ Lire d'abord :
 
 ```text
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
+05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
@@ -18,6 +19,17 @@ Lire d'abord :
 05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
 05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
+```
+
+## Pan philosophique et livrables (juillet 2026)
+
+Couche recente, navigable depuis le supplement d'index :
+
+```text
+06_PHILOSOPHIE/README.md
+05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
+05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_1.md
+05_CARTES_ET_SYNTHESES/Programme_publication_v0_1.md
 ```
 
 ## Documents actifs
@@ -95,23 +107,4 @@ Cycles physiques actifs :
 
 ## Workflow GitHub
 
-Le depot GitHub sert de journal de versions du corpus.
-
-Regle actuelle :
-
-```text
-les decisions conceptuelles restent soumises a validation explicite ;
-les synchronisations documentaires, controles, commits et pushs peuvent etre delegues apres stabilisation.
-```
-
-Document de reference :
-
-```text
-01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
-```
-
-Depot distant :
-
-```text
-https://github.com/AkselBoursier/constantes_effectives_stabilisees
-```
+Le depot GitHub sert de journal de ve
