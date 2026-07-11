@@ -84,21 +84,26 @@ une decision de statut soumise a validation.
 06_PHILOSOPHIE/Situation_03_SI_2019_convention_vecue_v0_1.md
 06_PHILOSOPHIE/Situation_04_Regime_gris_electrique_1990_2019_v0_1.md
 06_PHILOSOPHIE/Situation_05_Duhem_Quine_architectures_v0_1.md
+06_PHILOSOPHIE/Situation_06_Bachelard_rectification_CODATA_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md
 ```
 
 ### 6. Situations candidates pour la suite
 
 ```text
-1. Bachelard et la rectification : les ajustements CODATA comme
-   phenomenotechnique ; la constante comme objet rectifie.
-2. Mach contre Planck (1908-1912) : economie de pensee contre
+1. Mach contre Planck (1908-1912) : economie de pensee contre
    realisme des constantes ; k_B et h au coeur d'une querelle
    d'acces oubliee.
+2. Covariance CODATA et architectures : les blocs de correlation
+   recouvrent-ils les solidarites du corpus ? (chantier propose par
+   la situation 06, a valider ; releverait d'une fiche de mesure
+   plutot que d'une situation.)
 ```
 
 Situations traitees : 01 (processus, expansion, acces), 02 (Dirac
 contre Eddington), 03 (SI 2019, convention vecue), 04 (regime gris
 electrique 1990-2019, intercalee depuis la question ouverte 4 de la
 situation 03), 05 (Duhem, Quine et les architectures ; instruit la
-tension 1 de
+tension 1 de la carte de la philosophie implicite), 06 (Bachelard et
+la rectification ; instruit le tiers bachelardien de la ligne
+trajectoire de la carte implicite).
