@@ -261,13 +261,13 @@ Formules reservees a une instruction ulterieure :
 
 ### 10. Suite logique
 
-La prochaine piece utile est :
+La piece physique ouverte depuis ce cadrage est :
 
 ```text
-Note_physique_BEH_mecanisme_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 ```
 
-Fonction attendue :
+Fonction tenue :
 
 ```text
 decrire le mecanisme BEH, ses grandeurs pertinentes, ses acces
@@ -275,7 +275,7 @@ experimentaux et ses formulations prudentes, avant toute extraction
 de these.
 ```
 
-Cette note pourra ensuite decider si CP-1 s'ouvre comme :
+Elle fournit ensuite les criteres pour decider si CP-1 s'ouvre comme :
 
 ```text
 cycle sur `v` ;

@@ -157,6 +157,10 @@ cartographie le debat philosophique sur le mecanisme BEH, sans
 extraire de fil ni formuler de prediction.
 note de cadrage : Note_cadrage_BEH_zone_jonction_v0_1.md fixe le
 seuil de travail avant ouverture physique de CP-1.
+piece physique preparatoire :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
+decrit le mecanisme BEH, ses grandeurs et ses acces avant le cycle
+CP-1.
 philosophiques : V-dim (Levy-Leblond, Duff), durcissement
 protocolaire (HI-2, HI-5, HI-6, HI-7).
 tous programmes, non ouverts ; regle des cinq cycles et des trois
