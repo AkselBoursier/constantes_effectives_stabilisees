@@ -28,18 +28,56 @@ theoretical matrix on constants", "docs: open architecture circle
 two".
 ```
 
-### 2. Le protocole de commit (a adopter)
+### 2. Le protocole de commit et de push (a adopter)
 
 ```text
 1. format : docs: <imperatif anglais, une ligne> ;
-2. granularite : un changement logique par commit ;
+2. granularite : un cycle de travail coherent par commit, sauf besoin de
+   sauvegarde ;
 3. contenu : le message dit ce que le commit fait, non comment ;
 4. les commits de contenu et les commits de synchronisation suivent
    le meme format.
+5. push distant seulement aux jalons substantiels ou sur demande explicite.
 note de session : les commits de juillet 2026 ont employe des
 prefixes francais (philo:, methodo:, plan:) - ecart assume et
 non retroactif ; l'alignement sur "docs:" vaut a partir de la
 presente fiche.
+```
+
+Distinction active :
+
+```text
+commit local = sauvegarde fine et lisibilite du travail ;
+push GitHub = publication d'un jalon, d'une branche partagee ou d'un etat a
+securiser avant pause.
+```
+
+La granularite fine reste possible dans les commits locaux, mais elle n'est
+plus automatique.
+
+La granularite des pushs devient plus large.
+
+Regle de rythme :
+
+```text
+1. ne pas ajouter une section Git a chaque reponse ;
+2. attendre la fin d'un lot coherent lorsque plusieurs documents doivent etre
+   modifies ensemble ;
+3. mentionner Git seulement si une action Git a ete faite, si une decision de
+   versionnage est requise, ou si l'etat du depot affecte la suite ;
+4. preferer amender un commit local non pousse lorsque la correction appartient
+   au meme changement logique.
+```
+
+Regle de regroupement economique :
+
+```text
+si le geste de commit est deja necessaire, regarder les autres modifications
+pretes avant de le faire ;
+committer ensemble ce qui appartient au meme cycle coherent ;
+ne pas laisser en attente un changement pret seulement pour creer un commit
+ulterieur ;
+ne jamais inclure un changement non relu, ambigu, externe ou non lie au cycle.
 ```
 
 ### 3. Le modele de branches (rappel v0.2)
@@ -87,11 +125,34 @@ Index_supplement_pan_philosophique_v0_1.md complete
 Index_raisonne_du_corpus_v1_0.md sans le reecrire.
 ```
 
-### 6. Formule de cloture
+### 6. Controle proportionne
+
+Les controles suivent maintenant une regle de proportion.
+
+```text
+1. controle courant : git status, revue du diff, git diff --check ;
+2. controle cible : rg sur les termes sensibles lorsqu'ils sont en jeu ;
+3. controle lourd : avant jalon, publication, fusion de branche, ou demande
+   explicite.
+```
+
+Le balayage ASCII general n'est pas une exigence courante du corpus.
+
+Il reste utile seulement pour :
+
+```text
+code ;
+export technique ;
+document deja strictement ASCII ;
+preparation de publication ;
+controle demande explicitement.
+```
+
+### 7. Formule de cloture
 
 ```text
 Le protocole existait dans les gestes ; il manquait a l'ecrit. Un
-depot se lit aussi dans son histoire : commits courts, un changement
-a la fois, l'arborescence mise a jour par couches, jamais reecrite
+depot se lit aussi dans son histoire : commits sobres, cycles coherents,
+pushs aux jalons, arborescence mise a jour par couches, jamais reecrite
 d'un bloc.
 ```

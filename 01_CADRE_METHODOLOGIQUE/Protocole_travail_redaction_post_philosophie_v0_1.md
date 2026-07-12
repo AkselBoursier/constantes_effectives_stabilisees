@@ -173,10 +173,47 @@ Regle de commit :
 
 ```text
 1. message : docs: <imperatif anglais, une ligne> ;
-2. un changement logique par commit ;
-3. push apres verification ;
-4. les documents partages se modifient par couche additive quand
+2. un cycle de travail coherent par commit, sauf sauvegarde necessaire ;
+3. commit local apres verification proportionnee ;
+4. push seulement aux jalons substantiels ou sur demande explicite ;
+5. les documents partages se modifient par couche additive quand
    c'est possible.
+```
+
+Regle de frequence :
+
+```text
+les commits locaux gardent une memoire utile du travail sans couper chaque
+reponse ;
+les pushs GitHub deviennent moins frequents et marquent les jalons :
+audit clos, synthese stabilisee, cycle termine, changement de protocole,
+pause longue, partage necessaire ou demande explicite.
+```
+
+Regle d'attente :
+
+```text
+si une partie du travail doit modifier plusieurs documents, attendre la fin du
+cycle de mise a jour avant de committer, sauf risque de perte, interruption
+longue ou demande explicite.
+```
+
+Regle de regroupement :
+
+```text
+si un commit est declenche pour une raison valable, verifier les changements
+prets du meme cycle et les inclure dans le meme geste local ;
+ne pas multiplier les commits par habitude ;
+separer seulement ce qui releve d'un autre cycle, d'un autre risque ou d'un
+etat non verifie.
+```
+
+Regle de controle :
+
+```text
+le controle ASCII systematique n'est plus une obligation courante ;
+les controles lourds sont reserves aux jalons, aux fichiers techniques,
+aux exports de publication ou aux demandes explicites.
 ```
 
 Regle d'arborescence :
@@ -235,7 +272,7 @@ Usage :
 9. Le SI ou la convention portent-ils la clause modale ?
 10. Le document exige-t-il un protocole d'horodatage ?
 11. Le raccord README / index est-il additif ?
-12. Le commit correspond-il a un seul changement logique ?
+12. Le commit correspond-il a un cycle de travail coherent ?
 ```
 
 ### 10. Formule de cloture
