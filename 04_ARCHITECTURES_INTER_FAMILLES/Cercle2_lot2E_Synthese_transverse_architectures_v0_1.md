@@ -69,7 +69,7 @@ Elle donne une grammaire commune pour les lire ensemble.
 |---|---|---|---|
 | Saveur-Higgs | Constitution | Comment une echelle, des textures, des spectres et des orientations constituent-ils un secteur ? | Brisure -> textures -> diagonalisation -> spectres -> orientations |
 | Metrologique SI | Definition et realisation | Comment des valeurs definissantes rendent-elles un systeme d'unites operatoire ? | Stabilisation empirique -> absorption definitionnelle -> realisation pratique |
-| Effective basse energie | Validite situee | Comment une description limitee reste-t-elle operatoire dans un domaine ? | Description complete ou attendue -> regime limite -> coefficient, couplage ou echelle |
+| Effective basse energie | Validite de description | Comment une description limitee reste-t-elle operatoire dans un domaine ? | Description complete ou attendue -> regime limite -> coefficient, couplage ou echelle |
 | Cosmologique | Inference et reconstruction | Comment un modele global stabilise-t-il des grandeurs par acces multiples ? | Modele -> inference -> reconstruction -> comparaison des acces |
 
 Ces modes ne sont pas des etiquettes englobantes.
@@ -123,6 +123,15 @@ L'acces n'est pas une annexe empirique.
 
 Il participe a la qualification du statut, sans remplacer le regime
 d'effectuation.
+
+Regle de proportion :
+
+```text
+le regime d'effectuation vient d'abord ;
+l'acces qualifie ensuite le statut de constance ;
+dans les cas definitionnels ou reconstructifs, l'acces peut devenir central,
+mais seulement comme trait local de l'architecture concernee.
+```
 
 #### 5.4 Trajectoire
 

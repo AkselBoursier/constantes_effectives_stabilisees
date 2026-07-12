@@ -1,10 +1,15 @@
 # Carte des dependances architecturales v0.1
 
-## Reseaux inter-familles apres la methode v1.3
+## Reseaux d'architectures actives apres la methode v1.3
 
 ### 1. Fonction de la carte
 
-Cette carte represente les architectures inter-familles comme des reseaux de dependance.
+Cette carte represente les architectures actives comme des reseaux de dependance.
+
+Le terme `inter-familles` conserve un statut genealogique dans le dossier.
+
+La lecture active porte sur les solidarites de regime, de fonction, d'acces,
+de trajectoire et de limite.
 
 Elle prolonge :
 
@@ -46,14 +51,32 @@ dans cette carte, le terme principal est seuil electrofaible ;
 le code CP-1 sert de repere documentaire pour retrouver le cycle source.
 ```
 
+Precision apres audit cycles et architectures :
+
+```text
+la carte ne doit pas seulement relier des noeuds ;
+elle doit conserver le centre de gravite propre de chaque cycle.
+```
+
+Matrice de proportion :
+
+| Ensemble | Centre a conserver | Risque de deplacement |
+|---|---|---|
+| Saveur-Higgs | Constitution du regime brise | Reduire le cycle a une relation de masse |
+| Seuil electrofaible | Entree de regime et noyau `v` | En faire une architecture concurrente |
+| SI | Definition et realisation locales | Generaliser l'acces definitionnel |
+| Effective basse energie | Validite de description | Elargir "effectif" en etiquette vague |
+| Cosmologie | Inference et reconstruction | Transformer les tensions en verdicts |
+| Neutrinos | Bornes et acces heterogenes | Les absorber dans Saveur-Higgs ou la cosmologie |
+
 ### 2. Les quatre reseaux actifs
 
-| Architecture | Forme dominante | Type de dependance | Noeud critique | Risque evite |
+| Architecture | Forme dominante | Type de dependance | Noeud critique | Controle de rang |
 |---|---|---|---|---|
-| Saveur-Higgs | Constitutive | Constitution d'un secteur apres seuil, brisure et diagonalisation | Seuil BEH + `v + Y_f + diagonalisation` | Famille Saveur-Higgs ou fragmentation locale |
-| Metrologique SI | Definitionnelle / operationnelle | Definitions d'unites, compositions exactes et realisations | Constantes definissantes | Famille metrologique ou reduction conventionnelle |
-| Effective basse energie | Validite | Domaine de description, echelles, seuils et raccordements | Echelle de validite | Famille Effectif ou approximation vague |
-| Cosmologique | Inferentielle / reconstructive | Modele global, acces multiples, tensions et reconstruction | Couplage modele-acces | Famille Cosmologie ou tableau de parametres |
+| Saveur-Higgs | Constitutive | Constitution d'un secteur apres seuil, brisure et diagonalisation | Seuil BEH + `v + Y_f + diagonalisation` | Eviter l'hypostase du nom ou la fragmentation locale |
+| Metrologique SI | Definitionnelle / operationnelle | Definitions d'unites, compositions exactes et realisations | Constantes definissantes | Eviter la reduction conventionnelle ou la generalisation du SI |
+| Effective basse energie | Validite | Domaine de description, echelles, seuils et raccordements | Echelle de validite | Eviter l'etiquette vague "effectif" |
+| Cosmologique | Inferentielle / reconstructive | Modele global, acces multiples, tensions et reconstruction | Couplage modele-acces | Eviter le tableau de parametres ou la classe globale indifferenciee |
 
 Decision :
 
@@ -74,16 +97,16 @@ son rang est celui d'un raccord de seuil.
 Une architecture active doit pouvoir etre lue selon sept dependances,
 avec une dependance de seuil lorsque le dossier l'exige.
 
-| Dependence | Question | Effet methodologique |
+| Dependance | Question | Effet methodologique |
 |---|---|---|
-| Dependence de regime | Dans quel regime les grandeurs prennent-elles sens ? | Evite le classement hors contexte |
-| Dependence fonctionnelle | Quelles fonctions deviennent solidaires ? | Evite la simple juxtaposition |
-| Dependence d'acces | Comment les grandeurs sont-elles connues ? | Evite les nombres nus |
-| Dependence de modele | Quel cadre conditionne l'inference ou l'usage ? | Evite la naturalisation prematuree |
-| Dependence temporelle | Comment le statut s'installe ou se transforme ? | Evite le tableau statique |
-| Dependence de seuil | Quel seuil rend le regime disponible ? | Situe l'entree d'une architecture comme raccord local |
-| Dependence de retrait | Que perd-on si un noeud est retire ? | Teste la robustesse architecturale |
-| Dependence de limite | Ce que l'architecture ne resout pas | Evite l'inflation theorique |
+| Dependance de regime | Dans quel regime les grandeurs prennent-elles sens ? | Evite le classement hors contexte |
+| Dependance fonctionnelle | Quelles fonctions deviennent solidaires ? | Evite la simple juxtaposition |
+| Dependance d'acces | Comment les grandeurs sont-elles connues ? | Evite les nombres nus |
+| Dependance de modele | Quel cadre conditionne l'inference ou l'usage ? | Evite la naturalisation prematuree |
+| Dependance temporelle | Comment le statut s'installe ou se transforme ? | Evite le tableau statique |
+| Dependance de seuil | Quel seuil rend le regime disponible ? | Situe l'entree d'une architecture comme raccord local |
+| Dependance de retrait | Que perd-on si un noeud est retire ? | Teste la robustesse architecturale |
+| Dependance de limite | Ce que l'architecture ne resout pas | Evite l'inflation theorique |
 
 Formule :
 

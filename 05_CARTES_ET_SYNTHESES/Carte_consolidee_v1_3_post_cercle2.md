@@ -53,6 +53,14 @@ l'acces qualifie le statut de constance ;
 il ne produit pas l'objet physique ou operationnel auquel la fiche se rapporte.
 ```
 
+Regle de proportion :
+
+```text
+le SI est un cas local dense de definition et de realisation ;
+la cosmologie est un cas local dense d'inference et de reconstruction ;
+ces deux densites ne doivent pas deplacer la definition generale.
+```
+
 Precision sur `situee` :
 
 ```text

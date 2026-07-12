@@ -42,7 +42,7 @@ Il indique quels degagements peuvent entrer dans un futur livrable theorique.
 | T3 | Acces dans la qualification du statut |
 | T4 | Temporalite de stabilisation |
 | T5 | Architecture comme solidarisation |
-| T6 | Limite comme robustesse |
+| T6 | Limite qualifiee comme robustesse |
 | T7 | Exactitude et realisation |
 | T8 | Reconstruction cosmologique |
 | T9 | Constitution de secteur |
@@ -320,7 +320,7 @@ Trois degagements apparaissent transversaux.
 ```text
 T3 Acces dans la qualification du statut
 T4 Temporalite de stabilisation
-T6 Limite comme robustesse
+T6 Limite qualifiee comme robustesse
 ```
 
 Trois degagements apparaissent locaux forts.
