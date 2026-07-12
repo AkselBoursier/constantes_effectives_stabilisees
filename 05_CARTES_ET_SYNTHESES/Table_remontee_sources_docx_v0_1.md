@@ -318,6 +318,20 @@ choix deja integres.
 | Les constantes fantomes des neutrinos - Summary.docx | `90_Critiques_ constantes_effectives_stabilisees/00_Sources_markdown/Source_docx_Critique_neutrinos_fantomes_v0_1.md` | Fiche masse absolue neutrinos | P3 | Comparaison |
 | Fiabiliser la hierarchie des constantes physiques - Summary.docx | `90_Critiques_ constantes_effectives_stabilisees/00_Sources_markdown/Source_docx_Critique_fiabiliser_hierarchie_v0_1.md` | Methode v1.3, carte v1.2 | P3 | Comparaison |
 
+Sous-lot 5b : critiques constructives supplementaires, criblees dans :
+
+```text
+01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md
+```
+
+| Source primaire | Document actif concerne | Priorite | Controle |
+|---|---|---|---|
+| Architecture fonctionnelle des constantes physiques - Summary.docx | Fonctions transversales, tensions, observables reconstruites, temporalite | P2 | Criblage lot 2 |
+| Le statut ontologique des constantes physiques - Summary.docx | Couplage regime-acces, tensions, test de retrait | P2 | Criblage lot 2 |
+| Mathematiser la classification des constantes physiques - Summary.docx | Formalisation prudente, graphes, seuils, decision | P2 | Criblage lot 2 |
+| Restructurer la matrice des constantes physiques - Summary.docx | Ordre des rangs, escalade, matrices temporelles | P2 | Criblage lot 2 |
+| Transformer les tensions en anomalies cosmologiques - Summary.docx | Passerelle tensions, substitution, degenerescences cosmologiques | P2 | Criblage lot 2 |
+
 ### 14. Ordre d'execution recommande
 
 Ordre concret :
