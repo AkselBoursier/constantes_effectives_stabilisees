@@ -1,13 +1,14 @@
 # Note de cadrage BEH - zone de jonction v0.1
 
-## Brout-Englert-Higgs, Saveur-Higgs, CP-1 et jonction C6
+## Brout-Englert-Higgs, Saveur-Higgs, seuil electrofaible et historicite cosmique
 
 ### 0. Statut documentaire
 
 ```text
 statut : note de cadrage ;
 objet : mecanisme Brout-Englert-Higgs comme zone de jonction ;
-fonction : poser le sas d'ouverture prudente de CP-1 ;
+fonction : poser le sas d'ouverture prudente du cycle du seuil
+electrofaible ;
 registre : positif, conditionnel, preparatoire.
 ```
 
@@ -100,7 +101,7 @@ stabilisees.
 
 | Plan | Objet | Fonction dans le corpus | Prudence |
 |---|---|---|---|
-| Mecanisme physique | champ de Higgs, potentiel, etat fondamental, `v`, masses faibles | instruire le seuil CP-1 | a documenter avant conclusion |
+| Mecanisme physique | champ de Higgs, potentiel, etat fondamental, `v`, masses faibles | instruire le seuil electrofaible | a documenter avant conclusion |
 | Architecture Saveur-Higgs | `v`, Yukawa, matrices de masse, diagonalisation, CKM, PMNS | regime deja brise | maintenir le seuil distinct des effets lisibles |
 | Debat jauge / invariant | brisure, redondance de jauge, formulation gauge-invariant, FMS | clarifier le statut de la description | convertir le debat en controle de formulation |
 | Q2 formation | apparition d'une constance de regime | preparer la question genetique | reste secondaire par rapport a Q1 |
@@ -119,7 +120,7 @@ Le prochain travail physique devra distinguer plusieurs candidats.
 | Etat fondamental | configuration a partir de laquelle les masses deviennent lisibles | formulation gauge-invariant a controler |
 | Masses faibles | masses de `W` et `Z` associees au regime brise | articulation avec `v` et couplages de jauge |
 | Masses fermioniques | spectres issus de `v`, Yukawa et diagonalisation | deja traitees dans Saveur-Higgs, mais apres le seuil |
-| Potentiel de Higgs | structure parametrique ouvrant la question CP-2 | masse du Higgs, auto-couplage, stabilite du vide |
+| Potentiel de Higgs | structure parametrique ouvrant le chantier scalaire | masse du Higgs, auto-couplage, stabilite du vide |
 | Brisure | description de transition ou de regime | tenir comme nom de seuil avant qualification d'objet |
 
 Decision provisoire :
@@ -190,30 +191,33 @@ Le controle porte sur le statut du premier terme :
 que signifie exactement "disponibilite de `v`" ?
 ```
 
-### 7. Effet sur CP-1 et C6
+### 7. Effet sur le seuil electrofaible et l'historicite cosmique
 
-Dans `Mise_a_jour_intellectuelle_v0_1.md`, CP-1 est identifie
-comme le point aveugle de la brisure electrofaible.
+Dans `Mise_a_jour_intellectuelle_v0_1.md`, le cycle du seuil
+electrofaible est identifie comme le point aveugle de la brisure
+electrofaible.
 
-Dans la branche philosophique, C6 designe la jonction avec
-l'historicite cosmique.
+Dans la branche philosophique, la jonction d'historicite cosmique
+designe le raccord avec l'histoire thermique des regimes.
 
 Le cadrage present les articule ainsi :
 
 ```text
-CP-1 = instruction physique du seuil BEH ;
-C6 = horizon philosophique et temporel du meme seuil ;
+cycle du seuil electrofaible = instruction physique du seuil BEH ;
+jonction d'historicite cosmique = horizon philosophique et temporel
+du meme seuil ;
 la note presente = sas de jonction avant ouverture.
 ```
 
 Le vocabulaire de jonction joue ici un role de sas.
 
-Il donne a CP-1 son objet d'ouverture : le type d'objet que le
-corpus cherche a qualifier.
+Il donne au cycle du seuil son objet d'ouverture : le type d'objet
+que le corpus cherche a qualifier.
 
-### 8. Conditions d'entree avant ouverture de CP-1
+### 8. Conditions d'entree avant ouverture du cycle du seuil
 
-Avant d'ouvrir le cycle CP-1, le corpus doit produire ou reunir :
+Avant d'ouvrir le cycle du seuil electrofaible, le corpus doit
+produire ou reunir :
 
 ```text
 1. une note physique froide sur le mecanisme BEH ;
@@ -255,7 +259,7 @@ Formules reservees a une instruction ulterieure :
 |---|---|
 | realite physique de la brisure de jauge | controle du debat jauge / invariant et formulation physique precise |
 | statut constantiel de la brisure | distinction etablie entre brisure, `v`, etat fondamental et masses |
-| `v` comme reponse a CP-1 | comparaison accomplie entre `v`, regime d'echelle, masses et potentiel |
+| `v` comme reponse au cycle du seuil | comparaison accomplie entre `v`, regime d'echelle, masses et potentiel |
 | arbitrage philosophique du mecanisme | transformation en controle de formulation, puis retour aux sources physiques |
 | origine du regime brise par Saveur-Higgs | cycle physique BEH / Higgs instruit en amont de l'architecture |
 
@@ -275,7 +279,8 @@ experimentaux et ses formulations prudentes, avant toute extraction
 de these.
 ```
 
-Elle fournit ensuite les criteres pour decider si CP-1 s'ouvre comme :
+Elle fournit ensuite les criteres pour decider si le cycle du seuil
+s'ouvre comme :
 
 ```text
 cycle sur `v` ;

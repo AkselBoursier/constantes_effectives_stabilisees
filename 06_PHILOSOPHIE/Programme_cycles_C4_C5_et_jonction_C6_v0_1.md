@@ -1,4 +1,4 @@
-# Programme des cycles C4 et C5, et de la jonction C6 v0.1
+# Programme des cycles C4 et C5, et de la jonction d'historicite cosmique (C6) v0.1
 
 ## Vie materielle, exportabilite, historicite cosmique
 
@@ -103,7 +103,7 @@ physique - dans les trois cas, le perimetre de validite du cadre
 devient un resultat au lieu d'un impense.
 ```
 
-### 3. C6 - L'historicite cosmique : une jonction, non un sixieme cycle
+### 3. Historicite cosmique (C6) : une jonction, non un sixieme cycle
 
 #### 3.1 La proposition
 
@@ -125,9 +125,10 @@ point ou la branche philosophie rend la main au versant physique du
 corpus. Le territoire est celui du plan de preparation de l'arene
 (carte du conditionne, portee de retroaction) et de la reprise du
 cycle cosmologique.
-C6 est donc une jonction, hors serie philosophique :
-la regle d'arret des cinq cycles reste intacte, et C6 vivra cote
-physique s'il vit.
+L'historicite cosmique est donc une jonction, hors serie
+philosophique :
+la regle d'arret des cinq cycles reste intacte, et cette jonction
+vivra cote physique si elle vit.
 ```
 
 #### 3.3 Test de faisabilite avant toute decision
@@ -140,7 +141,7 @@ ce qu'elle installe (v, masses, textures), ce qu'elle presuppose,
 sa portee de retroaction, et ce que le recit gagne ou perd a etre
 ecrit dans la grammaire du corpus plutot qu'en histoire thermique
 standard.
-si la fiche d'essai tient, C6 s'ouvre comme chantier physique ;
+si la fiche d'essai tient, la jonction s'ouvre comme chantier physique ;
 si elle n'apporte rien que l'histoire thermique standard ne dise
 deja, le constat clot la proposition.
 ```
@@ -149,7 +150,7 @@ deja, le constat clot la proposition.
 
 ```text
 1. valider les programmes C4 et C5 tels qu'instruits ;
-2. valider le statut de jonction de C6 et sa fiche d'essai ;
+2. valider le statut de la jonction d'historicite cosmique et sa fiche d'essai ;
 3. la note terminologique constance / constante suit son propre
    circuit (01_CADRE_METHODOLOGIQUE).
 ```
@@ -158,8 +159,9 @@ deja, le constat clot la proposition.
 
 ```text
 C4 suivra les constantes dans leurs supports, C5 les suivra hors de
-chez elles, et C6 - si l'essai tient - remontera le fil jusqu'aux
-evenements qui ont installe leurs milieux. La branche philosophie
-garde ses cinq cycles ; au-dela commence le retour a la physique,
-qui etait la destination depuis le debut.
+chez elles, et la jonction d'historicite cosmique - si l'essai tient
+- remontera le fil jusqu'aux evenements qui ont installe leurs
+milieux. La branche philosophie garde ses cinq cycles ; au-dela
+commence le retour a la physique, qui etait la destination depuis le
+debut.
 ```

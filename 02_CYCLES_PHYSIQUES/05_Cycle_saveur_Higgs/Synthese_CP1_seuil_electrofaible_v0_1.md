@@ -89,7 +89,7 @@ brisure = nom operatoire du seuil.
 | `g`, `g'` | couplages de jauge | distribuent l'echelle vers les bosons faibles | electroweak |
 | `Y_f`, `y_f` | relais constitutif | distribuent `v` vers les masses fermioniques | Saveur-Higgs |
 | `m_f`, `M_f` | effets spectraux | stabilisent les masses dans le regime lisible | spectres |
-| `h`, `m_h`, `lambda` | porte CP-2 | ouvrent le dossier scalaire proprement dit | CP-2 |
+| `h`, `m_h`, `lambda` | porte le chantier scalaire | ouvrent le dossier scalaire proprement dit | chantier du secteur scalaire |
 | brisure | nom de seuil | oriente la qualification du passage | controle de formulation |
 
 ### 4. Trajectoire stabilisee
@@ -129,7 +129,7 @@ regime architectural.
 | Acces | `G_F`, masses faibles, Higgs, fits | stabilisation empirique |
 | Description | jauges perturbatives, formulations gauge-invariant | controle de portee |
 | Architectural | entree Saveur-Higgs | passage vers masses et orientations |
-| Cosmologique | changement thermique electroweak | reserve C6 |
+| Cosmologique | changement thermique electroweak | reserve pour la jonction d'historicite cosmique |
 
 Le cycle confirme que la robustesse de `v` tient a la conjonction :
 
@@ -173,11 +173,12 @@ noyau de seuil dans ce cycle ;
 echelle constitutive dans Saveur-Higgs.
 ```
 
-### 7. Relation avec CP-2 et C6
+### 7. Relation avec les chantiers associes
 
 Le cycle garde son centre sur le seuil.
 
-CP-2 recevra le developpement scalaire :
+Le chantier du secteur scalaire de Higgs recevra le developpement
+scalaire :
 
 ```text
 potentiel de Higgs ;
@@ -187,7 +188,8 @@ stabilite du vide ;
 hierarchie ou naturalite.
 ```
 
-C6 recevra le developpement temporel et cosmologique :
+La jonction d'historicite cosmique recevra le developpement temporel
+et cosmologique :
 
 ```text
 crossover electroweak ;
@@ -233,8 +235,8 @@ La synthese conserve les dettes d'instruction du cycle.
 | verification primaire des formules BEH | socle physique |
 | controle PDG des valeurs et relations | valeurs et acces |
 | controle jauge / invariant | portee de la brisure |
-| raccord CP-2 | secteur scalaire |
-| raccord C6 | historicite cosmique |
+| raccord au chantier scalaire | secteur scalaire |
+| raccord a la jonction d'historicite cosmique | historicite cosmique |
 
 Ces dettes cadrent le cycle.
 

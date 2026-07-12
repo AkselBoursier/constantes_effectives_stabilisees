@@ -69,8 +69,9 @@ documents actifs :
    (insights I1-I8) ;
 7. les programmes de cycles (deuxieme, troisieme, C4-C5-C6).
 8. Releve_paysage_brisure_electrofaible_v0_1.md comme preparation
-   de CP-1 / jonction C6 ; poursuivre ensuite par le cycle CP-1
-   ouvert dans 02_CYCLES_PHYSIQUES.
+   du seuil electrofaible et de la jonction d'historicite cosmique ;
+   poursuivre ensuite par le cycle du seuil ouvert dans
+   02_CYCLES_PHYSIQUES.
 ```
 
 ### 3. Documents nouveaux dans 05_CARTES_ET_SYNTHESES
@@ -89,15 +90,16 @@ moyenne voilure.
 Programme_publication_v0_1.md - deploiement en cercles, regle des
 trois ebauches.
 Mise_a_jour_intellectuelle_v0_1.md - envergure du projet entier,
-huit hypotheses implicites (HI-1 a HI-8), chantiers CP-1 a CP-4,
-avec CP-1 desormais ouvert.
+huit hypotheses implicites (HI-1 a HI-8), chantiers physiques codes
+CP-1 a CP-4, avec le cycle du seuil electrofaible desormais ouvert.
 Audit_integration_branche_philosophique_v0_1.md - sas de
 raccordement : apports integrables, reserves, micro-corrections et
 point de jonction Brout-Englert-Higgs reconnu, puis prolonge par
-l'ouverture physique de CP-1.
+l'ouverture physique du cycle du seuil electrofaible.
 Note_cadrage_BEH_zone_jonction_v0_1.md - sas technique de jonction :
-prepare CP-1 / C6 en distinguant mecanisme physique, architecture
-Saveur-Higgs, debat jauge-invariant et question Q2.
+prepare le seuil electrofaible et l'historicite cosmique en
+distinguant mecanisme physique, architecture Saveur-Higgs, debat
+jauge-invariant et question Q2.
 ```
 
 ### 4. Documents nouveaux dans 01_CADRE_METHODOLOGIQUE
@@ -109,6 +111,9 @@ Test_reecriture_structurelle_v0_1.md (+ dossier de copies) - test
 de la regle sur trois genres.
 Note_terminologique_constance_v0_1.md - regle des deux registres
 (constance / constante), en epreuve d'usage.
+Note_terminologie_chantiers_v0_1.md - regle legere : les codes de
+chantier servent au reperage documentaire, les intitules descriptifs
+portent le sens.
 Note_correction_modale_convention_v0_1.md - necessite du contenu,
 liberte de la forme, critere de latitude.
 Protocole_horodatage_tests_v0_1.md - ancrage externe des
@@ -141,8 +146,8 @@ sas d'integration (nouveau) : Audit_integration_branche_philosophique
 (tri de rang, corrections, reserve des horizons).
 zone de jonction BEH (nouveau) :
 Note_cadrage_BEH_zone_jonction_v0_1
-(preparation de CP-1 / C6, puis ouverture du cycle CP-1 dans
-02_CYCLES_PHYSIQUES).
+(preparation du seuil electrofaible et de la jonction d'historicite
+cosmique, puis ouverture du cycle du seuil dans 02_CYCLES_PHYSIQUES).
 protocole (nouveau) : reecriture v0.3, horodatage, synchronisation.
 protocole operatoire (nouveau) :
 Protocole_travail_redaction_post_philosophie_v0_1
@@ -152,18 +157,19 @@ Protocole_travail_redaction_post_philosophie_v0_1
 ### 6. Chantiers ouverts, references depuis l'index
 
 ```text
-physiques (Mise_a_jour_intellectuelle, section 5) : CP-1 brisure
-electrofaible (converge avec la jonction C6), CP-2 champ de Higgs,
-CP-3 reprise cosmologique, CP-4 microfondation (differe).
+physiques (Mise_a_jour_intellectuelle, section 5) : cycle du seuil
+electrofaible (CP-1), chantier du secteur scalaire de Higgs (CP-2),
+reprise cosmologique par sous-reseaux (CP-3), microfondation
+cosmologique differee (CP-4).
 releve preparatoire : Releve_paysage_brisure_electrofaible_v0_1.md
 cartographie le debat philosophique sur le mecanisme BEH, sans
 extraire de fil ni formuler de prediction.
 note de cadrage : Note_cadrage_BEH_zone_jonction_v0_1.md fixe le
-seuil de travail qui prepare l'ouverture physique de CP-1.
+seuil de travail qui prepare l'ouverture physique du cycle du seuil.
 piece physique preparatoire :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 decrit le mecanisme BEH, ses grandeurs et ses acces avant le cycle
-CP-1.
+du seuil electrofaible.
 cycle ouvert :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
 qualifie le seuil electroweak comme constance de regime, avec `v`

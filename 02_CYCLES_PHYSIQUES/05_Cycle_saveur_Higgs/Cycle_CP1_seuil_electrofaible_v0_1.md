@@ -1,4 +1,4 @@
-# Cycle CP-1 - seuil electrofaible v0.1
+# Cycle du seuil electrofaible (CP-1) v0.1
 
 ## Brout-Englert-Higgs, `v` et constance de regime
 
@@ -20,7 +20,8 @@ intellectuelle :
 
 ```text
 le cycle Saveur-Higgs commence dans le regime deja brise ;
-CP-1 qualifie le seuil par lequel ce regime devient disponible.
+le cycle du seuil electrofaible qualifie le seuil par lequel ce
+regime devient disponible.
 ```
 
 Sources internes immediates :
@@ -36,7 +37,7 @@ Sources internes immediates :
 
 ### 1. Question directrice
 
-La question de CP-1 est :
+La question du cycle est :
 
 ```text
 quel type de constance devient disponible au seuil electrofaible,
@@ -47,7 +48,7 @@ d'acces y prennent chacun leur rang ?
 La reponse visee par cette v0.1 est une reponse de structure :
 
 ```text
-CP-1 qualifie une constance de seuil.
+le cycle qualifie une constance de seuil.
 ```
 
 Cette constance de seuil articule :
@@ -78,7 +79,7 @@ noyau d'echelle ;
 effets lisibles.
 ```
 
-Elle donne a CP-1 son objet :
+Elle donne au cycle son objet :
 
 ```text
 le seuil electroweak comme architecture d'entree du regime
@@ -87,7 +88,7 @@ Saveur-Higgs.
 
 ### 3. Trajectoire de seuil
 
-La trajectoire de CP-1 se lit ainsi :
+La trajectoire du seuil electrofaible se lit ainsi :
 
 ```text
 potentiel scalaire
@@ -107,15 +108,15 @@ Elle indique l'ordre de constitution du regime dans le corpus.
 Elle prepare aussi deux dossiers ulterieurs :
 
 ```text
-CP-2 : potentiel de Higgs, masse du Higgs, auto-couplage, stabilite
-du vide ;
-C6 : historicite cosmique et regime thermique du changement
+chantier du secteur scalaire de Higgs : potentiel de Higgs, masse
+du Higgs, auto-couplage, stabilite du vide ;
+jonction d'historicite cosmique : regime thermique du changement
 electroweak.
 ```
 
 ### 4. Objets et rangs
 
-| Objet | Rang dans CP-1 | Fonction |
+| Objet | Rang dans le cycle | Fonction |
 |---|---|---|
 | seuil BEH | objet de cycle | ouverture du regime electrofaible brise |
 | `v` | noyau d'echelle | rend les masses faibles et fermioniques lisibles |
@@ -125,13 +126,13 @@ electroweak.
 | `g`, `g'` | couplages de jauge | distribuent l'echelle vers `W` et `Z` |
 | `Y_f`, `y_f` | relais Saveur-Higgs | differencient les masses fermioniques |
 | `m_f`, `M_f` | effets spectraux | appartiennent au regime deja lisible |
-| `h`, `m_h`, `lambda` | porte CP-2 | instruisent le secteur scalaire proprement dit |
+| `h`, `m_h`, `lambda` | porte le chantier scalaire | instruisent le secteur scalaire proprement dit |
 | brisure | nom de seuil | oriente le dossier comme seuil de qualification |
 
 Decision de rang :
 
 ```text
-CP-1 porte sur le seuil electroweak ;
+le cycle porte sur le seuil electroweak ;
 `v` en donne le noyau d'echelle ;
 les masses faibles en donnent le controle phenomenologique ;
 la brisure en donne le nom operatoire.
@@ -139,15 +140,15 @@ la brisure en donne le nom operatoire.
 
 ### 5. Regime physique, acces, description
 
-CP-1 conserve la separation methodologique active.
+Le cycle conserve la separation methodologique active.
 
-| Plan | Lecture CP-1 | Fonction |
+| Plan | Lecture du seuil | Fonction |
 |---|---|---|
 | Regime physique | regime electroweak brise a basse energie | lieu de qualification |
 | Regime d'acces | `G_F`, `M_W`, `M_Z`, Higgs, fits electroweak | route de stabilisation empirique |
 | Regime de description | jauges perturbatives et formulations gauge-invariant | controle de portee |
 | Regime architectural | entree vers Saveur-Higgs | passage vers masses et orientations |
-| Regime cosmologique | changement thermique electroweak | reserve C6 |
+| Regime cosmologique | changement thermique electroweak | reserve pour la jonction d'historicite cosmique |
 
 Le point fort du cycle est la conjonction :
 
@@ -159,23 +160,23 @@ structure theorique + acces phenomenologique + effet architectural.
 
 | Retrait | Effet sur le cycle | Lecture |
 |---|---|---|
-| retirer `v` | perte du noyau d'echelle | CP-1 perd son objet central |
+| retirer `v` | perte du noyau d'echelle | le cycle perd son objet central |
 | retirer `G_F` | perte d'une route d'acces robuste | `v` devient moins bien coordonne au regime d'acces |
 | retirer `M_W` et `M_Z` | perte des temoins faibles | le controle phenomenologique s'appauvrit |
-| retirer les Yukawa | perte du relais vers Saveur-Higgs | CP-1 reste seuil faible, mais cesse de conduire aux masses fermioniques |
+| retirer les Yukawa | perte du relais vers Saveur-Higgs | le seuil reste faible, mais cesse de conduire aux masses fermioniques |
 | retirer la prudence de jauge | inflation descriptive de la brisure | le nom de seuil absorbe la qualification |
-| retirer CP-2 | perte du developpement scalaire | CP-1 garde son seuil, mais reserve Higgs/potentiel |
+| retirer le chantier scalaire | perte du developpement scalaire | le cycle garde son seuil, mais reserve Higgs/potentiel |
 
 Conclusion du test :
 
 ```text
-CP-1 tient comme cycle parce que `v`, les masses faibles, `G_F` et
-le relais Saveur-Higgs forment une solidarite de seuil.
+Le cycle tient parce que `v`, les masses faibles, `G_F` et le
+relais Saveur-Higgs forment une solidarite de seuil.
 ```
 
 ### 7. Qualification de la constance
 
-CP-1 propose le type suivant :
+Le cycle propose le type suivant :
 
 ```text
 constance de seuil.
@@ -189,7 +190,7 @@ grandeur d'echelle rend un regime physiquement lisible, coordonne
 des effets mesurables et ouvre une architecture ulterieure.
 ```
 
-Dans CP-1 :
+Dans le cycle :
 
 ```text
 `v` porte le noyau d'echelle ;
@@ -221,7 +222,7 @@ Saveur-Higgs stabilise la constitution interne du regime deja brise :
 -> orientations.
 ```
 
-CP-1 stabilise l'entree de ce regime :
+Le cycle du seuil electrofaible stabilise l'entree de ce regime :
 
 ```text
 seuil BEH
@@ -236,13 +237,13 @@ Les deux cycles se raccordent par `v`.
 Le rang de `v` devient donc double :
 
 ```text
-noyau de CP-1 ;
+noyau du seuil electrofaible ;
 echelle constitutive de Saveur-Higgs.
 ```
 
-### 9. Articulation avec CP-2 et C6
+### 9. Articulation avec les chantiers associes
 
-CP-2 recevra les objets du secteur scalaire :
+Le chantier du secteur scalaire de Higgs recevra les objets suivants :
 
 ```text
 potentiel de Higgs ;
@@ -252,7 +253,8 @@ stabilite du vide ;
 questions de hierarchie ou de naturalite.
 ```
 
-C6 recevra l'horizon temporel et cosmologique :
+La jonction d'historicite cosmique recevra l'horizon temporel et
+cosmologique :
 
 ```text
 crossover electroweak ;
@@ -261,7 +263,7 @@ plasma primordial ;
 historicite du regime.
 ```
 
-CP-1 conserve donc son centre :
+Le cycle du seuil conserve donc son centre :
 
 ```text
 qualification du seuil electroweak comme constance de regime.
@@ -269,19 +271,19 @@ qualification du seuil electroweak comme constance de regime.
 
 ### 10. Dettes d'instruction
 
-Les dettes de CP-1 sont explicites.
+Les dettes du cycle sont explicites.
 
 | Dette | Fonction |
 |---|---|
 | verification primaire des formules BEH | consolider le socle physique |
 | controle PDG des valeurs et relations | securiser les grandeurs numeriques |
 | controle jauge / invariant | borner le vocabulaire de brisure |
-| raccord CP-2 | traiter le Higgs et le potentiel comme dossier propre |
-| raccord C6 | reserver le passage cosmologique |
+| raccord au chantier scalaire | traiter le Higgs et le potentiel comme dossier propre |
+| raccord a la jonction d'historicite cosmique | reserver le passage cosmologique |
 
 Ces dettes cadrent le cycle.
 
-Elles fixent les conditions d'une synthese CP-1 ulterieure.
+Elles fixent les conditions d'une synthese ulterieure.
 
 ### 11. Formules issues du cycle
 
@@ -294,7 +296,7 @@ Formule longue :
 
 Formule courte :
 
-> CP-1 qualifie un seuil : `v` en est le noyau, les masses faibles
+> Le cycle du seuil qualifie un seuil : `v` en est le noyau, les masses faibles
 > en sont le controle.
 
 ### 12. Suite logique
@@ -308,7 +310,8 @@ La synthese issue du cycle est :
 Fonction tenue :
 
 ```text
-resserrer CP-1 en une synthese courte ;
+resserrer le cycle en une synthese courte ;
 preparer le raccord avec la carte consolidee ;
-maintenir CP-2 et C6 comme reserves clairement nommees.
+maintenir le chantier scalaire et la jonction d'historicite
+cosmique comme reserves clairement nommees.
 ```

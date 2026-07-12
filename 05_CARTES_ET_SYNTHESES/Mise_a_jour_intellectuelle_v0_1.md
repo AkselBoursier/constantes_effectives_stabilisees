@@ -175,36 +175,42 @@ physique, non engagee ici.
 Les points aveugles reperes deviennent des cycles candidats.
 
 ```text
-CP-1 - la brisure electrofaible comme stabilisation (le point aveugle
-le plus net). "Brisure" est nomme comme tete de trajectoire
+regle de lecture : les codes CP-1 a CP-4 servent au reperage ;
+les intitules descriptifs portent le sens.
+
+cycle du seuil electrofaible (CP-1) - la brisure electrofaible
+comme stabilisation (le point aveugle le plus net). "Brisure" est
+nomme comme tete de trajectoire
 Saveur-Higgs, mais l'evenement dynamique lui-meme est boite-noirise :
 la note part du regime deja brise, prend v comme donnee. Le seul
 moment physique-dynamique du corpus est traite comme precondition,
 non analyse comme une stabilisation avec son propre acces.
-convergence : c'est exactement la fiche d'essai de la jonction C6
-(historicite cosmique) deja programmee cote philosophie. CP-1 et C6
-sont le meme chantier vu des deux cotes.
-raccord posterieur : CP-1 est ouvert dans
+convergence : c'est exactement la fiche d'essai de la jonction
+d'historicite cosmique (C6) deja programmee cote philosophie. Le
+seuil electrofaible et cette jonction sont le meme chantier vu des
+deux cotes.
+raccord posterieur : le cycle du seuil electrofaible est ouvert dans
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
 comme cycle sur le seuil electroweak et la constance de regime.
 synthese produite :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
 stabilise la constance de seuil et prepare le raccord de carte.
 
-CP-2 - le champ de Higgs proprement dit : masse du Higgs, potentiel,
-auto-couplage lambda, stabilite du vide. Absent du corpus stabilise ;
+chantier du secteur scalaire de Higgs (CP-2) - masse du Higgs,
+potentiel, auto-couplage lambda, stabilite du vide. Absent du corpus stabilise ;
 l'architecture "Saveur-Higgs" est en fait une architecture de saveur,
 le Higgs n'y figure que comme fournisseur d'echelle v. Un cycle
 Higgs comblerait le trou nominal du secteur.
 
-CP-3 - reprise du cycle cosmologique : deja flaggee (branche
+reprise cosmologique par sous-reseaux (CP-3) : deja flaggee (branche
 agent/reprise-cycle-cosmologique, plan de reprise v0.1) ; front
 DESI actif sur l'energie noire dynamique. A reprendre par
 sous-reseaux, non par addendums.
 
-CP-4 - microfondation cosmologique (differe) : origine de Lambda,
+microfondation cosmologique differee (CP-4) : origine de Lambda,
 microphysique inflationnaire. Trou structurel assume ; a n'ouvrir
-qu'apres CP-3 et avec prudence maximale (proche de l'arene).
+qu'apres la reprise cosmologique par sous-reseaux et avec prudence
+maximale (proche de l'arene).
 ```
 
 ### 6. Chantiers philosophiques a programmer
@@ -236,10 +242,11 @@ etendue) sans les remplacer.
    lectures jusque-la.
 2. les hypotheses HI-2, HI-5, HI-6, HI-7 sont diagnostiquees, non
    corrigees ; leur correction toucherait le coeur physique.
-3. CP-1 est ouvert comme cycle sur le seuil electroweak ; CP-2 a
-   CP-4 et V-dim restent programmes comme candidats ; la regle des
-   cinq cycles philosophiques et la limite des trois ebauches
-   restent en vigueur.
+3. le cycle du seuil electrofaible (CP-1) est ouvert ; le chantier
+   scalaire, la reprise cosmologique par sous-reseaux, la
+   microfondation cosmologique differee et V-dim restent programmes
+   comme candidats ; la regle des cinq cycles philosophiques et la
+   limite des trois ebauches restent en vigueur.
 ```
 
 ### 8. Formule de cloture

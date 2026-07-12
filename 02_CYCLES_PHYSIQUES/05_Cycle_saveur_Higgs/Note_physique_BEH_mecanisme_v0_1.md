@@ -6,7 +6,8 @@
 
 ```text
 statut : note physique preparatoire ;
-position : amont du cycle Saveur-Higgs, preparation de CP-1 ;
+position : amont du cycle Saveur-Higgs, preparation du cycle du
+seuil electrofaible ;
 fonction : decrire le mecanisme BEH, ses grandeurs et ses acces ;
 registre : froid, descriptif, verifiable sur sources ;
 statut probatoire : P2/P3 interne, a controler sur primaires avant publication.
@@ -29,7 +30,8 @@ electrofaibles.
 
 Elle garde le rang d'une note de mecanisme.
 
-Le cycle CP-1 s'ouvre ensuite avec un objet plus precis :
+Le cycle du seuil electrofaible s'ouvre ensuite avec un objet plus
+precis :
 
 ```text
 `v`, regime d'echelle, masses faibles, potentiel de Higgs,
@@ -283,7 +285,8 @@ La note physique la precise ainsi :
 
 Le regime cosmologique reste ici en reserve.
 
-Il deviendra pertinent si CP-1 rejoint C6 par l'historicite cosmique.
+Il deviendra pertinent si le cycle du seuil rejoint la jonction
+d'historicite cosmique.
 
 ### 8. Prudence de jauge
 
@@ -317,14 +320,14 @@ seuil.
 |---|---|---|---|
 | `v` | echelle du regime electroweak brise | `G_F`, masses faibles, fits | candidat principal de constance de regime |
 | `mu^2` | parametre quadratique du potentiel | reconstruit dans le cadre du modele | condition du profil scalaire |
-| `lambda` | auto-couplage scalaire | masse du Higgs, auto-couplage, fits | lien avec CP-2 et stabilite du vide |
+| `lambda` | auto-couplage scalaire | masse du Higgs, auto-couplage, fits | lien avec le chantier scalaire et stabilite du vide |
 | `m_h` | masse du boson de Higgs | collisions, canaux Higgs | acces au secteur scalaire |
 | `g`, `g'` | couplages de jauge | electroweak precision, fits | distribution de `v` vers `W`, `Z`, photon |
 | `M_W`, `M_Z` | masses faibles | mesures directes et fits | valeurs de regime issues de `v` |
 | `y_f`, `Y_f` | couplages de Yukawa | masses, couplages Higgs | differenciation fermionique |
 | `m_f`, `M_f` | masses fermioniques | mesures, reconstructions, schemas | spectres apres BEH et diagonalisation |
 
-Cette carte donne a CP-1 plusieurs objets possibles.
+Cette carte donne au cycle du seuil plusieurs objets possibles.
 
 Elle favorise provisoirement la lecture suivante :
 
@@ -332,33 +335,35 @@ Elle favorise provisoirement la lecture suivante :
 BEH stabilise un seuil de regime ;
 `v` en est le noeud d'echelle ;
 les masses faibles et fermioniques en sont les effets lisibles ;
-le potentiel et le Higgs ouvrent le dossier CP-2.
+le potentiel et le Higgs ouvrent le chantier du secteur scalaire.
 ```
 
-### 10. Conditions de qualification de CP-1
+### 10. Conditions de qualification du cycle du seuil
 
-La note physique BEH rend possible CP-1 avec trois
+La note physique BEH rend possible le cycle du seuil avec trois
 options structurantes.
 
-| Option | Objet de CP-1 | Gain | Dette |
+| Option | Objet du cycle | Gain | Dette |
 |---|---|---|---|
-| CP-1a | `v` comme constance de regime | continuite avec Saveur-Higgs | controle jauge / invariant requis |
-| CP-1b | seuil electroweak comme architecture d'entree | relie mecanisme, acces et temporalite | objet plus large, a tenir froidement |
-| CP-1c | masses faibles comme effets stabilises | acces experimental direct | discipline d'ordre entre effet et seuil |
+| A | `v` comme constance de regime | continuite avec Saveur-Higgs | controle jauge / invariant requis |
+| B | seuil electroweak comme architecture d'entree | relie mecanisme, acces et temporalite | objet plus large, a tenir froidement |
+| C | masses faibles comme effets stabilises | acces experimental direct | discipline d'ordre entre effet et seuil |
 
 Decision de travail :
 
 ```text
-CP-1b est l'option la plus englobante pour la prochaine ouverture ;
-CP-1a fournit le noyau de qualification ;
-CP-1c reste un controle phenomenologique.
+seuil electroweak comme architecture d'entree est l'option la plus
+englobante pour la prochaine ouverture ;
+`v` comme constance de regime fournit le noyau de qualification ;
+masses faibles comme effets stabilises reste un controle
+phenomenologique.
 ```
 
-### 11. Relation avec CP-2
+### 11. Relation avec le chantier scalaire
 
 La note distingue le seuil BEH du dossier Higgs proprement dit.
 
-CP-2 pourra porter sur :
+Le chantier du secteur scalaire de Higgs pourra porter sur :
 
 ```text
 masse du Higgs ;
@@ -368,9 +373,9 @@ stabilite du vide ;
 hierarchie ou naturalite, si le corpus decide d'ouvrir ce niveau.
 ```
 
-Le dossier CP-2 enrichit le secteur scalaire.
+Le chantier scalaire enrichit le secteur scalaire.
 
-Le dossier CP-1 qualifie d'abord le seuil par lequel le regime
+Le cycle du seuil qualifie d'abord le seuil par lequel le regime
 electrofaible brise devient disponible pour Saveur-Higgs.
 
 ### 12. Formules prudentes
@@ -408,7 +413,7 @@ des masses fermioniques et un Higgs observable forment un reseau
 stabilise.
 ```
 
-CP-1 est ouvert par :
+Le cycle du seuil electrofaible est ouvert par :
 
 ```text
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md

@@ -136,11 +136,11 @@ Ordre de la suite (decide en juillet 2026) :
    question des constantes (Programme_troisieme_cycle_v0_1.md :
    mecanismes M1-M5, coupe disciplinaire) ;
 5. cycles C4 (vie materielle et institutionnelle) et C5
-   (exportabilite hors physique) instruits, et jonction C6
-   (historicite cosmique, hors serie, avec fiche d'essai) :
+   (exportabilite hors physique) instruits, et jonction
+   d'historicite cosmique (C6, hors serie, avec fiche d'essai) :
    Programme_cycles_C4_C5_et_jonction_C6_v0_1.md ; la regle d'arret
-   tient : cinq cycles philosophiques au plus, C6 vivrait cote
-   physique ;
+   tient : cinq cycles philosophiques au plus, cette jonction vivrait
+   cote physique ;
 6. phase de test : close. Cinq tests, synthese produite
    (Synthese_phase_de_test_v0_1.md, insights I1-I8) :
    covariance (controle de fidelite, objection de tautologie
@@ -155,9 +155,10 @@ Ordre de la suite (decide en juillet 2026) :
    disciplinaire" (programme C3, section 7), regle des deux
    registres constance / constante
    (01_CADRE_METHODOLOGIQUE/Note_terminologique_constance_v0_1.md),
-   fiche d'essai de la jonction C6 ;
+   fiche d'essai de la jonction d'historicite cosmique ;
 8. releve de paysage brisure electrofaible : produit comme
-   preparation de CP-1 / jonction C6, sans ouverture du chantier et
-   sans extraction de fil ; sas de cadrage correspondant :
+   preparation du seuil electrofaible et de la jonction
+   d'historicite cosmique, sans ouverture du chantier et sans
+   extraction de fil ; sas de cadrage correspondant :
    05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md.
 ```

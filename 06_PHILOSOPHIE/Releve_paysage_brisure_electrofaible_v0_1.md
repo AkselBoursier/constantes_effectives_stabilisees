@@ -1,14 +1,15 @@
 # Releve de paysage : la brisure electrofaible v0.1
 
-## Recherche de preparation du chantier CP-1 / jonction C6
+## Recherche de preparation du seuil electrofaible et de l'historicite cosmique
 
 ### 0. Statut documentaire
 
 ```text
 statut : releve de paysage (branche 06_PHILOSOPHIE), genre releve ;
-il prepare le chantier de la brisure electrofaible (CP-1 cote
-physique, jonction C6 cote philosophie), sans extraire de fil ni
-formuler de prediction - trop tot, par decision de l'auteur.
+il prepare le chantier de la brisure electrofaible, cote cycle du
+seuil electrofaible (CP-1) et cote jonction d'historicite cosmique
+(C6), sans extraire de fil ni formuler de prediction - trop tot,
+par decision de l'auteur.
 methode : recherche croisee (skill Episteme Lab) hierarchisee -
 Consensus pour le panorama, Scite pour les plein-textes et DOI,
 WebSearch pour PhilPapers, PhilSci-Archive et arXiv.
