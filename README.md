@@ -1,117 +1,71 @@
-# constantes_effectives_stabilisees
+# Constantes physiques — refondation du domaine
 
-Corpus de travail sur les constantes effectives stabilisees.
+Ce dépôt est un corpus de recherche consacré à une question directrice :
 
-## Entree rapide
+> **Qu’est-ce qu’une constante physique ?**
 
-Lire d'abord :
+La question sert ici d’instruction d’enquête. Le projet distingue les formes de fixité, les objets qui les portent, les relations qu’elles maintiennent, leurs régimes de validité, leurs voies d’accès et les limites de leur pouvoir explicatif.
 
-```text
-05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
-01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
-05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
-05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
-05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
-05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
-05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
-05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
-```
+## Lire d’abord
 
-## Documents actifs
+1. [Cadre canonique de la refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
+2. [Synthèse transversale des cycles](05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md)
+3. [Test des cinq cas sentinelles](01_CADRE_METHODOLOGIQUE/test-cas-sentinelles.md)
 
-Methode et protocole :
+## Dossiers actifs de la refondation
 
-```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
-01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
-01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
-01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
-01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
-01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
-01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md
-01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
-```
+### Higgs–Yukawa
 
-Tests taxonomiques :
+- [Architecture relationnelle](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/architecture-relationnelle-higgs-yukawa.md)
+- [Vérification physique](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/verification-physique-higgs-yukawa.md)
+- [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/evaluation-gain-explicatif-higgs-yukawa.md)
 
-```text
-03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
-```
+### Basse énergie
 
-Architectures :
+- [Architecture relationnelle](02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md)
+- [Vérification physique](02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md)
+- [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md)
 
-```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-```
+### Métrologie SI
 
-Cartes et syntheses :
+- [Architecture relationnelle](02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md)
+- [Vérification métrologique](02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/verification-metrologique-si.md)
+- [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/evaluation-gain-explicatif-metrologique-si.md)
 
-```text
-05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
-05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
-05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
-05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md
-05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
-05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
-05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
-05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md
-05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md
-05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md
-05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md
-05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
-05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md
-```
+### Cosmologie
 
-Cycles physiques actifs :
+- [Architecture relationnelle](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md)
+- [Vérification physique](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/verification-physique-cosmologique.md)
+- [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md)
+
+## Résultat provisoire
+
+Les cycles ne révèlent pas une espèce naturelle unique appelée « constante physique ». Ils distinguent au moins :
+
+- une fixité physique ou structurelle ;
+- une fixité effective relative à un domaine de validité ;
+- une fixité métrologique issue d’une définition ;
+- une robustesse inférentielle, qui porte sur l’accès et non sur la constance de l’objet.
+
+Le terme `stabilisée` n’est plus utilisé comme explication générale. Il désigne éventuellement le résultat d’un test explicitant le régime, les transformations pertinentes et la tolérance admise.
+
+## Statut de l’ancien corpus
+
+Les anciens fichiers versionnés restent disponibles comme archive de recherche et matériau de provenance. Leurs relations physiques, sources, distinctions de régime et limites explicatives sont réutilisables après contrôle. Leurs taxonomies et conclusions d’architecture ne sont plus considérées comme acquises.
+
+Les nouveaux documents actifs portent des noms canoniques sans numéro de version. Leur évolution est enregistrée par l’historique Git.
+
+## Workflow Git
+
+Les travaux sont menés sur des branches thématiques, avec des commits séparant autant que possible :
+
+- extraction et reprise du corpus ;
+- vérification physique ou métrologique ;
+- évaluation conceptuelle ;
+- migration documentaire.
+
+La branche actuelle de refondation est :
 
 ```text
-02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
-02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
-02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
-02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
-02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
-02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md
-02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
-02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
-```
-
-## Workflow GitHub
-
-Le depot GitHub sert de journal de versions du corpus.
-
-Regle actuelle :
-
-```text
-les decisions conceptuelles restent soumises a validation explicite ;
-les synchronisations documentaires, controles, commits et pushs peuvent etre delegues apres stabilisation.
-```
-
-Document de reference :
-
-```text
-01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
-```
-
-Depot distant :
-
-```text
-https://github.com/AkselBoursier/constantes_effectives_stabilisees
+agent/refondation-domaine
 ```
