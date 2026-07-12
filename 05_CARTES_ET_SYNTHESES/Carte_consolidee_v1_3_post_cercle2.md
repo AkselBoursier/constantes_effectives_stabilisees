@@ -1,6 +1,6 @@
 # Carte consolidee v1.3 - post-cercle 2
 
-## Carte des stabilisations effectives situees
+## Carte des stabilisations effectives qualifiees
 
 ### 1. Fonction de la v1.3
 
@@ -37,7 +37,7 @@ La v1.3 integre le resultat du cercle 2 :
 
 ```text
 le corpus ne stabilise pas seulement des classes de constantes ;
-il stabilise des modes effectifs situes.
+il stabilise des modes de constance qualifies par regime, acces et limites.
 ```
 
 ### 2. Definition consolidee v1.3
@@ -70,7 +70,7 @@ Formule courte :
 constante effective stabilisee =
 ancrage physique ou operationnel
 + forme stabilisee
-+ fonction situee
++ fonction exercee dans un regime
 + regime
 + acces
 + trajectoire
@@ -93,10 +93,10 @@ par quel acces, selon quelle trajectoire, et avec quelles limites ?
 
 | Point | v1.2 | v1.3 |
 |---|---|---|
-| Centre | Grammaire de rangs et dependances | Stabilisations effectives situees |
+| Centre | Grammaire de rangs et dependances | Stabilisations effectives qualifiees |
 | Architecture | Reseau de dependances soumis a stress test | Mode de solidarisation positive |
 | Temporalite | Axe transversal explicite | Trajectoire constitutive de la stabilisation |
-| Acces | Regime obligatoire | Part du statut de la grandeur |
+| Acces | Regime obligatoire | Operateur de qualification du statut |
 | Vocabulaire historique | Surveille | Relegue en controle de rang |
 | Sortie taxonomique | Toujours disponible | Subordonnee a l'analyse regime / acces / trajectoire |
 | Decision | Formule de prudence | Sortie explicite apres diagnostic, verrou et test eventuel |
@@ -115,7 +115,7 @@ Toute fiche ou synthese active doit suivre l'ordre suivant :
 ```text
 1. forme stabilisee ;
 2. regime physique ou definitionnel ;
-3. fonction situee ;
+3. fonction exercee dans le regime ;
 4. acces ou realisation ;
 5. trajectoire de stabilisation ;
 6. solidarite architecturale eventuelle ;
@@ -141,7 +141,7 @@ Le corpus stabilise au moins dix modes.
 | Mode | Question | Exemples |
 |---|---|---|
 | Valeur mesuree ou ajustee | Une valeur robuste est-elle etablie dans un regime ? | masses, `M_W`, `Lambda_QCD` |
-| Couplage courant ou situe | Une intensite depend-elle d'une echelle ou d'un schema ? | `alpha_s(Q^2)`, `alpha_G(E)`, Yukawa |
+| Couplage courant ou indexe | Une intensite depend-elle d'une echelle ou d'un schema ? | `alpha_s(Q^2)`, `alpha_G(E)`, Yukawa |
 | Composition exacte | Une grandeur derivee herite-t-elle d'une exactitude definitionnelle ? | `R`, `K_J`, `R_K` |
 | Convention definissante | Une valeur fixe-t-elle une unite ? | `k_B`, `N_A`, `c`, `h`, `e` |
 | Orientation | Une relation entre bases ou secteurs est-elle stabilisee ? | CKM, PMNS |
@@ -161,7 +161,7 @@ Ils ne doivent pas etre forces en classes exclusives.
 |---|---|---|---|
 | Saveur-Higgs | Constitution | Echelle, textures, diagonalisation, spectres, orientations | Origine des Yukawa, hierarchies, nature neutrino |
 | Metrologique SI | Definition et realisation | Valeurs definissantes, compositions exactes, realisations, roles physiques | Origine physique et interpretation des grandeurs ; ne pas generaliser le poids SI de l'acces |
-| Effective basse energie | Validite situee | Domaine, non-resolution, couplage ou echelle, seuils de description | Completion ou changement de description |
+| Effective basse energie | Validite de description | Domaine, non-resolution, couplage ou echelle, seuils de description | Completion ou changement de description |
 | Cosmologique | Inference et reconstruction | Modele, sous-reseaux, acces, observables reconstruites, tensions | Energie noire, tensions `H_0` et `S_8`, microphysique primordiale |
 
 Formule :
@@ -197,7 +197,7 @@ Regle :
 
 ```text
 la temporalite n'est pas un decor ;
-elle fait partie du statut de stabilisation.
+elle participe a la qualification du statut de stabilisation.
 ```
 
 ### 8. Acces consolide
@@ -233,9 +233,9 @@ Les termes historiques restent disponibles, mais avec statut controle.
 
 | Terme | Statut v1.3 | Usage recommande |
 |---|---|---|
-| `famille` | Sortie taxonomique controlee | Apres test de forme, regime, acces et role |
-| `relation` | Terme a qualifier | Remplacer par composition, rapport, orientation, equation d'etat, spectre, acces ou reconstruction |
-| `inter-familles` | Terme genealogique | Employer seulement pour rappeler l'histoire du corpus |
+| `famille` | Sortie taxonomique controlee | Apres test de forme, regime, fonction, acces et limite |
+| `relation` | Terme a decomposer | Employer composition, rapport, orientation, equation d'etat, spectre, acces ou reconstruction selon le cas |
+| `inter-familles` | Terme genealogique et nom de dossier | Employer seulement pour rappeler l'histoire du corpus ; preferer architecture active ou solidarisation dans les formulations nouvelles |
 | `architecture` | Terme directeur | Toujours accompagne de regime, acces, trajectoire et limite |
 | `fondamental` | Terme a eviter hors contexte strict | Preferer regime, stabilisation, exactitude, validite ou reconstruction |
 
@@ -305,7 +305,7 @@ Acquis stabilise :
 
 ```text
 le projet dispose maintenant d'une methode de lecture des constantes
-comme stabilisations effectives situees.
+comme stabilisations effectives qualifiees.
 ```
 
 La matrice des acquis, la note de recentrage et la fiche des limites ont ouvert
@@ -342,7 +342,7 @@ constance de seuil.
 Rang :
 
 ```text
-mode de stabilisation situe entre trajectoire physique et
+mode de stabilisation articule entre trajectoire physique et
 architecture constitutive.
 ```
 
@@ -447,6 +447,6 @@ Formule v1.3 :
 ```text
 Une constante effective stabilisee n'est pas seulement un nombre classe ;
 c'est la qualification stabilisee d'une grandeur ou structure ancree,
-rendue robuste par un regime, une fonction situee, des acces, une trajectoire,
-une eventuelle architecture et des limites explicites.
+rendue robuste dans un regime, par une fonction exercee, des acces,
+une trajectoire, une eventuelle architecture et des limites explicites.
 ```

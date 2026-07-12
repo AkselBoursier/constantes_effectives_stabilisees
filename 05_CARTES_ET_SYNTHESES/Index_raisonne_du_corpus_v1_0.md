@@ -83,12 +83,13 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
 | `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Ancrage physique ou operationnel des grandeurs contre une lecture derealisante |
 | `01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md` | Correction active | Definition controlee de `situe` et reequilibrage du poids SI |
+| `01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md` | Correction active | Formulations actives apres v0.2 : situe, acces, regime, famille, relation, architecture, borne, tension, seuil, validite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 et raccord critique cible |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant controle des limites |
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Recentrage sur la question : dans quelle mesure une grandeur peut-elle etre dite constante |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Garde-fou des limites et non-theses avant premier degagement |
-| `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective situee |
+| `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective qualifiee |
 | `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Ouverture des autres theses et articulations theoriques possibles |
 | `05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md` | Reference active | Test des degagements theoriques sur exemples porteurs |
 | `05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md` | Audit actif | Mise a plat apres critiques, reequilibrage SI et definition de `situe` |
@@ -109,6 +110,7 @@ Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 Note_methodologique_courte_post_v1_3.md
 Note_ancrage_realiste_medie_v0_1.md
 Note_situation_effective_et_equilibrage_SI_v0_1.md
+Audit_terminologique_actif_v0_1.md
 Matrice_criblage_taxonomique_v0_1.md
 Addendum_matrice_criblage_lot2_v0_1.md
 Matrice_temporelle_v0_2.md
@@ -136,6 +138,7 @@ Index_raisonne_du_corpus_v1_0.md
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte de premiere passe apres carte v1.3 |
 | `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Correction realiste medie de la definition v1.3 |
 | `01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md` | Correction active | Usage de `situe` comme precision de regime, acces et qualification ; SI borne comme cas local |
+| `01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md` | Correction active | Vocabulaire positif et rang des termes sensibles apres la mise a jour v0.2 |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
 | `01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md` | Addendum actif | Couche decisionnelle issue des cinq critiques supplementaires |
 | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md` | Protocole actif | Scission constitution physique / acces epistemique pour cas litigieux |
@@ -171,6 +174,7 @@ Pour comprendre la refonte de la methode, lire aussi :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
+01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md
 01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
@@ -192,7 +196,7 @@ extension SI
 
 | Document | Statut | Role |
 |---|---|---|
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives situees apres cercle 2 |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives qualifiees apres cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Passage des stabilisations effectives aux acquis argumentables |
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Subordination de la methode a la question directrice des constantes |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Limites, non-theses et seuil vers le premier degagement |
@@ -750,6 +754,7 @@ Methode historique recente :
 Correction active :
 01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
+01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md
 
 Protocole actif :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md

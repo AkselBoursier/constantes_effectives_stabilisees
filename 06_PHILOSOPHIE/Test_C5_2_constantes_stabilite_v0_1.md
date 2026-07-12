@@ -100,7 +100,7 @@ disciplines. Au plus un raffinement, aucune categorie inventee.
 |---|---|
 | Forme (rang 0) | Quotient d'equilibre : rapport d'etat indexe (milieu, etat standard, echelle concentration/activite) |
 | Regime | Declare par la discipline : temperature, force ionique, solvant ; domaine de validite des corrections SIT explicite (jusqu'a 5 molal) |
-| Fonction situee | Prediction de speciation ; applications biomedicales et environnementales ; la constante est un instrument de calcul d'etats |
+| Fonction en regime | Prediction de speciation ; applications biomedicales et environnementales ; la constante est un instrument de calcul d'etats |
 | Acces | Pluriel (titrations, electrophorese, ab initio) ; rigueur declinante documentee ; evaluation critique par rangs (R, P, R1, rejete) |
 | Trajectoire | Compilation (1957-) ; saturation de collecte et bascule vers l'evaluation (station nouvelle, documentee par la discipline elle-meme) ; rectification par reevaluation critique ; transposition de milieu par SIT |
 | Architecture | Aucune au sens du corpus ; dependances de reseau simples : etats standards, echelles d'activite. La grille n'invente rien |
@@ -112,7 +112,7 @@ Qualification produite :
 constances effectives de milieu, a indexation declaree : le mode
 effectif s'applique sans forcage, et la discipline enonce d'elle-
 meme ce que le corpus a du etablir pour la physique fondamentale -
-le regime fait partie du statut.
+le regime participe a la qualification du statut.
 
 fait remarquable, intelligible par le critere de latitude (note de
 correction modale) : ces constantes ne sont jamais absorbees par

@@ -349,7 +349,7 @@ dimensionnelle. Son cadre est toujours cite comme reference active
 
 Position a tenir : le projet generalise Levy-Leblond dans deux directions
 qu'il ne pouvait pas prendre en 1977 :
-la maturite des theories effectives (decouplage, flot, validite situee)
+la maturite des theories effectives (decouplage, flot, validite de description)
 et la metrologie post-2019 (absorption conventionnelle effective) ;
 et il ajoute la face epistemique systematique (acces, trajectoire,
 architecture, limite) que sa classification ne contenait pas.
@@ -373,7 +373,7 @@ Proposition soumise a validation :
 ```text
 Q1 (acquise, seuil) :
 dans quelle mesure une grandeur peut-elle etre qualifiee de constante ?
-Reponse du corpus : T0, la stabilisation effective situee.
+Reponse du corpus : T0, la stabilisation effective qualifiee.
 
 Q2 (ouverte, centrale apres le pivot) :
 dans quelles conditions le statut de constance se forme-t-il,
@@ -390,7 +390,7 @@ Trois remarques.
 2. Q2 ajoute "se defait" : la methode v1.3 contient deja la
    destabilisation (tensions candidates a rupture, section 12).
    Une theorie de la formation qui ne dit rien de la defaisance serait
-   invérifiable ; les tensions cosmologiques deviennent ainsi le
+   inverifiable ; les tensions cosmologiques deviennent ainsi le
    laboratoire naturel de Q2, sans pretendre les resoudre (N7).
 
 3. Champ nouveau possible dans la matrice canonique (a valider) :

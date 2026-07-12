@@ -88,9 +88,9 @@ registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 
 | Code | Acquis theorique | Formulation affirmable | Appuis principaux | Portee | Limite conservee | Statut |
 |---|---|---|---|---|---|---|
-| A1 | Stabilisation situee | Une constante effective stabilisee doit etre lue comme la stabilisation situee d'une grandeur ancree, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
+| A1 | Stabilisation effective qualifiee | Une constante effective stabilisee doit etre lue comme la stabilisation d'une grandeur ancree, qualifiee par regime, acces et limites, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
 | A2 | Forme avant classement | La forme stabilisee doit etre identifiee avant toute sortie taxonomique | Methode v1.3, matrice de criblage | Protocole de lecture | Ne suffit pas a determiner la fonction physique | Robuste |
-| A3 | Fonction situee | La fonction d'une grandeur depend du regime ou elle opere | Carte v1.2, note courte | Analyse des fiches | Une meme grandeur peut garder plusieurs roles selon contexte | Robuste |
+| A3 | Fonction en regime | La fonction d'une grandeur depend du regime ou elle opere | Carte v1.2, note courte | Analyse des fiches | Une meme grandeur peut garder plusieurs roles selon contexte | Robuste |
 | A4 | Acces dans la qualification du statut | Le mode d'acces participe a la qualification du statut de constance sans remplacer l'ancrage physique ou operationnel | Cosmologie, SI, note courte | Tous les cas reconstruits, definis ou bornes | N'identifie pas toujours le contenu physique sous-jacent | Robuste |
 | A5 | Temporalite de stabilisation | Le statut d'une grandeur s'installe selon une trajectoire : constitution, validite, definition, reconstruction ou tension | Matrice temporelle, carte v1.3 | Methode transversale | Ne transforme pas la temporalite en nouvelle classe | Robuste |
 | A6 | Architecture comme solidarisation | Une architecture active rend solidaires fonctions, acces, operations et limites dans un regime | Cercle 2A-2F | Niveau architectural | Ne cree pas une architecture pour toute collection de grandeurs | Robuste |
@@ -134,8 +134,8 @@ qu'est-ce qui autorise a qualifier une grandeur de constante ?
 ```
 
 ```text
-A1 Stabilisation situee
-A3 Fonction situee
+A1 Stabilisation effective qualifiee
+A3 Fonction en regime
 A4 Acces dans la qualification du statut
 A5 Temporalite de stabilisation
 A12 Limite comme composante de robustesse
@@ -293,10 +293,10 @@ Formule matricielle :
 ```text
 Le corpus autorise deja une these sur la qualification des constantes,
 methodologiquement prudente :
-les constantes gagnent a etre lues comme stabilisations effectives situees,
-dont le statut depend d'une forme, d'un regime, d'une fonction situee,
-d'un acces, d'une trajectoire, d'une architecture eventuelle
-et d'une limite conservee.
+les constantes gagnent a etre lues comme stabilisations effectives de
+grandeurs ancrees, dont le statut depend d'une forme, d'un regime,
+d'une fonction exercee, d'un acces, d'une trajectoire, d'une architecture
+eventuelle et d'une limite conservee.
 ```
 
 Cette formule n'est pas encore le degagement final.

@@ -1,6 +1,6 @@
 # Premier degagement de these v0.1
 
-## Le statut de constance comme stabilisation effective situee
+## Le statut de constance comme stabilisation effective qualifiee
 
 ### 1. Fonction
 
@@ -34,16 +34,16 @@ Formulation principale :
 ```text
 Une grandeur physiquement ou operationnellement ancree peut etre qualifiee de
 constante dans la mesure ou son statut de constance devient stabilise dans un
-regime determine, selon une fonction situee, par des acces specifies, selon une
-trajectoire identifiable, eventuellement dans une architecture de dependances,
-avec ses limites conservees.
+regime determine, par une fonction exercee dans ce regime, par des acces
+specifies, selon une trajectoire identifiable, eventuellement dans une
+architecture de dependances, avec ses limites conservees.
 ```
 
 Formulation courte :
 
 ```text
 la constance n'est pas seulement la possession d'une valeur stable ;
-c'est un statut de stabilisation effective situee.
+c'est un statut de stabilisation effective qualifiee par regime, acces et limites.
 ```
 
 Precision :
@@ -103,7 +103,7 @@ Le corpus autorise une premiere decomposition prudente.
 |---|---|---|
 | Forme stabilisee | Qu'est-ce qui est stabilise ? | Valeur, rapport, coefficient, borne, liaison, orientation, reconstruction |
 | Regime | Ou et sous quelles conditions cela vaut-il ? | Domaine physique, cadre de validite, niveau d'effectivite |
-| Fonction situee | Quel role la grandeur remplit-elle dans ce regime ? | Couplage, conversion, definition, orientation, reconstruction, coefficient |
+| Fonction en regime | Quel role la grandeur remplit-elle dans ce regime ? | Couplage, conversion, definition, orientation, reconstruction, coefficient |
 | Acces | Comment la grandeur est-elle etablie ? | Mesure, definition, reconstruction, inference, ajustement, borne |
 | Trajectoire | Comment le statut devient-il robuste ? | Constitution, definition, validite effective, reconstruction, tension, limite |
 | Architecture | De quoi la grandeur depend-elle pour tenir comme constante ? | Solidarites entre fonctions, operations, acces et limites |
@@ -145,7 +145,7 @@ decrit.
 Pour qualifier la constance, il faut aussi preciser son regime, sa fonction,
 son acces, sa trajectoire, ses dependances eventuelles et ses limites.
 
-#### 6.2 La constance est un statut situe
+#### 6.2 La constance est un statut qualifie
 
 Dire qu'une grandeur est constante ne signifie pas toujours :
 
@@ -202,7 +202,8 @@ Il dit seulement :
 
 ```text
 le statut de constance gagne a etre analyse comme une stabilisation effective
-situee, dont les conditions doivent etre explicitees.
+qualifiee, dont les conditions de regime, d'acces et de limites doivent etre
+explicitees.
 ```
 
 ### 9. Statut de la methode
@@ -228,9 +229,9 @@ Formule condensee :
 ```text
 Une constante effective stabilisee est une grandeur physiquement ou
 operationnellement ancree dont le statut de constance devient robuste dans un
-regime donne, selon une fonction situee, par des acces determines, selon une
-trajectoire de stabilisation identifiable, au sein d'une architecture
-eventuelle, avec ses limites conservees.
+regime donne, par une fonction exercee dans ce regime, par des acces
+determines, selon une trajectoire de stabilisation identifiable, au sein d'une
+architecture eventuelle, avec ses limites conservees.
 ```
 
 Cette formule ne remplace pas les fiches physiques.

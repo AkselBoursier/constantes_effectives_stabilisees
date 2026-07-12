@@ -4,19 +4,15 @@
 
 ### 1. Fonction de la note
 
-Cette note integre le resultat de l'extension metrologique SI dans le niveau des architectures inter-familles.
+Cette note integre le resultat de l'extension metrologique SI dans le niveau des architectures actives.
 
 Elle ne remplace pas la fiche c / h / e. Elle en extrait la consequence taxonomique principale :
 
 ```text
-Architecture metrologique SI = architecture inter-familles confirmee et etendue
+Architecture metrologique SI = architecture definitionnelle et operationnelle confirmee
 ```
 
-et non :
-
-```text
-nouvelle famille superieure
-```
+Cette consequence fixe un rang architectural, non une sortie taxonomique large.
 
 La note sert de reference courte pour les cartes consolidees ulterieures.
 
@@ -53,17 +49,13 @@ La decision de rang est :
 metrologique SI = architecture de definition et de realisation
 ```
 
-et non :
+Cette decision maintient le SI comme architecture de definition et de realisation.
 
-```text
-metrologique SI = famille fonctionnelle autonome
-```
-
-Cette decision evite de creer une famille trop large qui absorberait toutes les constantes exactes, les relations de conversion, les choix d'unites et les grandeurs physiquement structurantes.
+Cette decision repartit constantes exactes, relations de conversion, choix d'unites et grandeurs physiquement structurantes dans une architecture de definition et de realisation.
 
 ### 3. Definition locale proposee
 
-Une architecture metrologique SI est une configuration inter-familles dans laquelle des constantes definissantes et des compositions exactes rendent operatoire un systeme coherent d'unites, sans epuiser le role physique des grandeurs qui y sont fixees.
+Une architecture metrologique SI est une configuration de solidarisation dans laquelle des constantes definissantes et des compositions exactes rendent operatoire un systeme coherent d'unites, sans epuiser le role physique des grandeurs qui y sont fixees.
 
 Cette definition repose sur cinq elements.
 
@@ -515,7 +507,7 @@ Les cartes consolidees ulterieures doivent conserver six decisions.
 
 ```text
 1. Architecture metrologique SI est confirmee et etendue.
-2. Metrologique SI ne doit pas devenir une famille superieure.
+2. Metrologique SI reste une architecture de definition et de realisation.
 3. Convention reste la famille principale des constantes definissantes.
 4. Les constantes exactes par composition relevent d'abord du rang 0 ; Relation n'est pas la case par defaut.
 5. Exactitude SI n'est pas precision empirique.

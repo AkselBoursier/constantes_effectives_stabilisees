@@ -8,7 +8,7 @@
 statut : predictions verrouillees du test C5-4, cycle C5, cas de
 durcissement ;
 CE FICHIER NE CONTIENT AUCUNE DONNEE ACQUISE : redige et ancre
-(SHA-256, OpenTimestamps, reçu .ots au depot) avant toute recherche,
+(SHA-256, OpenTimestamps, recu .ots au depot) avant toute recherche,
 conformement au protocole d'horodatage v0.1. Verdict et donnees :
 fichier separe, posterieur a l'ancrage.
 
@@ -37,7 +37,7 @@ domaine, en refusant de le qualifier comme une stabilisation de
 plus.
 
 D1 - non-absorption (critere de reussite) : la grille laisse vides
-les rangs physiques (regime physique, fonction situee physique,
+les rangs physiques (regime physique, fonction physique en regime,
 milieu, architecture) et le declare, au lieu de les remplir de
 force. Une grille qui remplit tous les rangs pour pi est une grille
 vide (totalisante) : ce serait l'echec.

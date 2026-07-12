@@ -67,7 +67,7 @@ qu'ils repondent directement ou indirectement a la question des constantes.
 | Code | Affirmation prudente | Appui | Portee | Condition de validite |
 |---|---|---|---|---|
 | L1 | Une grandeur peut etre qualifiee de constante lorsque son mode de stabilisation est explicite | Matrice des acquis, note de recentrage | Question directrice | Ne pas confondre qualification prudente et essence ultime |
-| L2 | Les constantes gagnent a etre lues comme stabilisations effectives situees | Carte v1.3, matrice des acquis | Noyau theorique | Ne pas les reduire a de simples constructions |
+| L2 | Les constantes gagnent a etre lues comme stabilisations effectives qualifiees par regime, acces et limites | Carte v1.3, matrice des acquis | Noyau theorique | Ne pas les reduire a de simples constructions |
 | L3 | Cette qualification depend d'un regime, d'un acces et d'une trajectoire | Cycles physiques, matrice temporelle | Lecture transversale | Respecter les differences de secteurs |
 | L4 | La constance peut etre definissante, effective, reconstruite, bornee, constitutive ou compositionnelle | Carte v1.3, matrice des acquis | Typologie prudente | Ne pas durcir ces modes en classes exclusives |
 | L5 | Une architecture active peut etre necessaire pour comprendre pourquoi une grandeur tient comme constante | Cercle 2A-2F | Niveau architectural | Ne pas creer d'architecture artificielle |
@@ -150,8 +150,8 @@ Les formulations suivantes sont compatibles avec la prudence actuelle.
 
 ```text
 Une grandeur peut etre dite constante lorsque son mode de stabilisation est explicite.
-Les constantes gagnent a etre lues comme des stabilisations effectives situees.
-Le statut de constance depend d'un regime, d'une fonction situee, d'un acces et d'une trajectoire.
+Les constantes gagnent a etre lues comme des stabilisations effectives qualifiees.
+Le statut de constance depend d'un regime, d'une fonction exercee, d'un acces et d'une trajectoire.
 Une architecture active rend lisibles des solidarites de fonctionnement.
 Une borne ou une tension peut stabiliser un statut sans produire une mesure positive.
 Les limites conservees font partie de la qualification prudente de la constance.
@@ -187,7 +187,7 @@ Le noyau de these admissible peut donc etre formule ainsi :
 
 ```text
 les constantes peuvent etre etudiees comme des grandeurs dont le statut de
-constance se stabilise par forme, regime, fonction situee, acces,
+constance se stabilise par forme, regime, fonction exercee, acces,
 trajectoire, architecture eventuelle et limite conservee.
 ```
 

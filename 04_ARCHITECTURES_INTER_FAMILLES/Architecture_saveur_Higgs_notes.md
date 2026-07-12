@@ -4,7 +4,7 @@
 
 ### 1. Fonction de la note
 
-Cette note met l'architecture Saveur-Higgs au meme format que les autres architectures inter-familles actives.
+Cette note met l'architecture Saveur-Higgs au meme format que les autres architectures actives.
 
 Elle prolonge la note historique :
 
@@ -35,14 +35,10 @@ La note ne remplace pas les fiches locales sur `v`, les Yukawa, CKM, PMNS ou les
 Elle en extrait la consequence taxonomique principale :
 
 ```text
-Architecture Saveur-Higgs = architecture constitutive inter-familles
+Architecture Saveur-Higgs = architecture constitutive de solidarisation
 ```
 
-et non :
-
-```text
-nouvelle famille superieure
-```
+Cette consequence fixe un rang architectural, non une sortie taxonomique large.
 
 ### 2. Decision centrale
 
@@ -65,11 +61,7 @@ La decision de rang est :
 Saveur-Higgs = architecture constitutive
 ```
 
-et non :
-
-```text
-Saveur-Higgs = famille fonctionnelle autonome
-```
+Cette decision maintient Saveur-Higgs comme architecture constitutive.
 
 Cette decision evite deux erreurs opposees :
 
@@ -80,7 +72,7 @@ ou creer une famille Saveur-Higgs qui absorberait echelles, couplages, masses et
 
 ### 3. Definition locale proposee
 
-Une architecture Saveur-Higgs est une configuration inter-familles dans laquelle une echelle de brisure, des matrices de couplage, des spectres de masses et des matrices d'orientation deviennent solidaires dans le regime electrofaible brise.
+Une architecture Saveur-Higgs est une configuration de solidarisation dans laquelle une echelle de brisure, des matrices de couplage, des spectres de masses et des matrices d'orientation deviennent solidaires dans le regime electrofaible brise.
 
 Cette definition repose sur six elements.
 
@@ -209,7 +201,7 @@ couplage de texture
 Limite :
 
 ```text
-differenciation fermionique n'est pas une famille autonome.
+differenciation fermionique designe un effet interne de l'architecture.
 ```
 
 #### 6.3 Masses fermioniques
@@ -362,7 +354,7 @@ ecarts spectraux stabilisant les dephasages oscillatoires.
 Decision :
 
 ```text
-Delta m^2 n'est pas une famille oscillatoire.
+Delta m^2 joue un role de dephasage oscillatoire dans le dossier neutrino.
 ```
 
 Rang v1.3 :
@@ -370,7 +362,7 @@ Rang v1.3 :
 ```text
 forme logique : ecart spectral
 role contextuel : dephasage oscillatoire
-famille candidate : Relation sous audit ou Echelle locale selon le dossier
+role candidat : relation qualifiee ou echelle locale selon le dossier
 ```
 
 ### 7. Matrice de criblage appliquee
@@ -379,10 +371,10 @@ famille candidate : Relation sous audit ou Echelle locale selon le dossier
 |---|---|---|---|---|
 | `v` | Valeur / echelle | Echelle | Echelle structurante | Classement confirme |
 | `Y_f` | Matrice | Couplage | Texture de distribution | Classement confirme avec sous-type |
-| `m_f` | Valeur spectrale issue d'une relation | Relation sous audit / Echelle locale | Spectre stabilise | Classement deplace vers architecture |
+| `m_f` | Valeur spectrale issue d'une relation | Relation qualifiee / Echelle locale | Spectre stabilise | Classement deplace vers architecture |
 | `CKM` | Matrice | Orientation | Orientation transitionnelle | Classement confirme |
 | `PMNS` | Matrice | Orientation | Orientation oscillatoire | Classement confirme avec prudence neutrino |
-| `Delta m^2` | Ecart | Relation sous audit | Dephasage oscillatoire | Role contextuel a expliciter |
+| `Delta m^2` | Ecart | Relation qualifiee | Dephasage oscillatoire | Role contextuel a expliciter |
 | Masse absolue neutrino | Borne / projection | Echelle ou seuil sous audit | Ancrage spectral | Fiche prudente produite |
 
 Conclusion :

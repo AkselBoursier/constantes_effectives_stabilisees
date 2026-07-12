@@ -262,7 +262,7 @@ seuil d'action controle.
 
 ```text
 Q1 : qualification des statuts de constance.
-T0 : stabilisation effective situee, definie par effectuation/acces/qualification.
+T0 : stabilisation effective qualifiee, definie par effectuation/acces/qualification.
 T1-T10 : degagements elargis, sous controle de limites.
 Q2 : formation des statuts, ouverte par note genetique et pan philosophique.
 Architectures : quatre modes de solidarisation.

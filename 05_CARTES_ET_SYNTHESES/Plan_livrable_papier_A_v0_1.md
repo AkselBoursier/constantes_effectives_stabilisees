@@ -1,6 +1,6 @@
 # Plan de livrable : papier A v0.1
 
-## La these de qualification : le statut de constance comme stabilisation effective situee
+## La these de qualification : le statut de constance comme stabilisation effective qualifiee
 
 ### 0. Statut documentaire
 
@@ -37,8 +37,8 @@ qualifiee de constante ?
 
 these-noyau (T0) : une grandeur se qualifie comme constante dans la
 mesure ou son statut de constance se stabilise dans un regime, selon
-une fonction situee, par un acces determine, selon une trajectoire
-identifiable, au sein d'une architecture eventuelle, avec ses
+une fonction exercee dans ce regime, par un acces determine, selon une
+trajectoire identifiable, au sein d'une architecture eventuelle, avec ses
 limites conservees.
 
 formule d'interface (registre des deux mots) : le papier etudie la
@@ -50,7 +50,7 @@ constance des constantes - le statut, non la seule valeur.
 Ordre et rang des theses retenues (issu de la mise a l'epreuve) :
 
 ```text
-seuil : T0, la qualification comme stabilisation effective situee.
+seuil : T0, la qualification comme stabilisation effective par regime, acces et limites.
 noyau des modes : T1, la pluralite des modes de constance
 (definissant, effectif, reconstruit, borne, constitutif,
 compositionnel).
@@ -218,7 +218,7 @@ le papier B a son propre plan, ouvert apres le papier A.
 ```text
 Le papier A dit une chose et la borne : une grandeur se qualifie
 comme constante dans la mesure ou sa constance se stabilise, de
-facon situee, avec ses limites. La formation de cette constance
-attend le papier B ; l'origine, plus loin encore. Un livrable qui
-sait ce qu'il garde pour plus tard est deja a moitie ecrit.
+facon explicite par regime, acces, trajectoire et limites. La formation
+de cette constance attend le papier B ; l'origine, plus loin encore. Un
+livrable qui sait ce qu'il garde pour plus tard est deja a moitie ecrit.
 ```

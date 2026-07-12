@@ -1,6 +1,6 @@
 # Note methodologique courte post-v1.3
 
-## Procedure de lecture des stabilisations effectives situees
+## Procedure de lecture des stabilisations effectives qualifiees
 
 ### 1. Fonction
 
@@ -79,7 +79,7 @@ Toute analyse courte doit parcourir huit questions dans cet ordre.
 |---|---|---|
 | 1 | Quelle forme est stabilisee ? | Valeur, rapport, ecart, composition, matrice, fonction d'echelle, borne, reconstruction |
 | 2 | Dans quel regime cela vaut-il ? | Regime physique, definitionnel, effectif, cosmologique ou documentaire |
-| 3 | Quelle fonction situee domine ? | Couplage, echelle, raccordement, orientation, convention, validite, inference, autre fonction qualifiee |
+| 3 | Quelle fonction est exercee dans ce regime ? | Couplage, echelle, raccordement, orientation, convention, validite, inference, autre fonction qualifiee |
 | 4 | Par quel acces le statut de constance est-il qualifie ? | Mesure, ajustement, definition, realisation, extraction, inference, reconstruction, borne |
 | 5 | Quelle trajectoire stabilise le statut ? | Constitution, convergence, absorption definitionnelle, validite limitee, reconstruction, tension |
 | 6 | Quelle solidarite architecturale intervient ? | Aucune, locale, Saveur-Higgs, SI, effective, cosmologique, autre reseau a tester |
@@ -147,7 +147,7 @@ que fait principalement la grandeur dans ce regime ?
 Effet :
 
 ```text
-la fonction situee peut produire une sortie taxonomique,
+la fonction exercee dans un regime peut produire une sortie taxonomique,
 mais seulement apres test de resistance.
 ```
 
@@ -299,7 +299,7 @@ Formule de seuil :
 
 ```text
 le projet dispose maintenant d'une procedure courte pour lire les constantes
-comme stabilisations effectives situees.
+comme stabilisations effectives qualifiees.
 ```
 
 ### 10. Formule de cloture

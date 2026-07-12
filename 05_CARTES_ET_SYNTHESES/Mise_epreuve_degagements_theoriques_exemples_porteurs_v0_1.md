@@ -36,7 +36,7 @@ Il indique quels degagements peuvent entrer dans un futur livrable theorique.
 
 | Code | Degagement |
 |---|---|
-| T0 | Qualification du statut de constance comme stabilisation effective situee |
+| T0 | Qualification du statut de constance comme stabilisation effective qualifiee |
 | T1 | Pluralite des modes de constance |
 | T2 | Regime de validite |
 | T3 | Acces dans la qualification du statut |
@@ -115,7 +115,7 @@ regime limite.
 | T2 | Tient fortement : la constance vaut par domaine de validite |
 | T4 | Tient : la stabilisation suit une trajectoire de raccordement |
 | T5 | Tient : l'architecture effective solidarise coefficient, echelle et limite |
-| T6 | Tient : la non-resolution du mediateur explicite fait partie du statut |
+| T6 | Tient : la non-resolution du mediateur explicite participe a la qualification du statut |
 | T10 | Tient : le classement vient apres le regime et la fonction |
 
 #### 6.3 Limite

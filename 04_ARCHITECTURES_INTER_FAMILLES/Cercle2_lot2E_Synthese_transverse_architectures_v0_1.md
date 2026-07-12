@@ -256,7 +256,7 @@ Les quatre architectures deviennent alors quatre preuves internes :
 ```text
 constitution
 definition et realisation
-validite situee
+validite de description dans un regime determine
 inference et reconstruction
 ```
 
