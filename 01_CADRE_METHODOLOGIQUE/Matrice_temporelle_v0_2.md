@@ -9,6 +9,7 @@ statut : protocole actif ;
 complete : 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md ;
 source critique : 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md ;
 source decisionnelle : 01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md ;
+source de precision : 01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md ;
 fonction : separer les temps de constitution des temps d'acces.
 ```
 
@@ -53,6 +54,19 @@ Un troisieme axe peut etre note, mais il ne doit pas etre confondu avec les deux
 | Axe secondaire | Question | Usage |
 |---|---|---|
 | Maturation documentaire | Comment le statut du dossier s'est-il stabilise dans le corpus ? | Historique methodologique, non preuve physique |
+
+### 1.1 Usage de "situe"
+
+Dans la matrice v0.2, `situe` doit etre lu selon deux niveaux principaux.
+
+```text
+situation d'effectuation : le regime ou la grandeur devient definissable ;
+situation d'acces : la route par laquelle elle devient disponible au corpus.
+```
+
+La situation d'acces ne remplace pas la situation d'effectuation.
+
+Elle la qualifie pour le statut de constance.
 
 ### 2. Matrice de constitution physique
 

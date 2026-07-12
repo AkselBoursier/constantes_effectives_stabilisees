@@ -17,6 +17,7 @@ Elle s'appuie sur :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -52,6 +53,18 @@ Formule courte conservee :
 ```text
 constance = robustesse fonctionnelle situee
 ```
+
+Precision sur `situee` :
+
+```text
+situee signifie :
+dans un regime d'effectuation,
+par des acces explicites,
+avec une qualification de statut et de limites.
+```
+
+Le terme ne signifie pas que la grandeur est illusoire ou produite par
+l'acces.
 
 Formule enrichie :
 
@@ -337,6 +350,13 @@ H_0 : routes locales, CMB + modele, BAO + calibration.
 A_s : acces CMB couple a tau et au modele primordial.
 k_B : role thermodynamique + definition SI + realisations pratiques.
 alpha_s(M_Z) : extractions multi-processus + evolution RG.
+```
+
+Point d'equilibrage :
+
+```text
+le SI est le cas ou l'acces definitionnel prend le plus de poids ;
+il ne doit pas servir de patron general pour toutes les constantes.
 ```
 
 Nouveau champ associe :

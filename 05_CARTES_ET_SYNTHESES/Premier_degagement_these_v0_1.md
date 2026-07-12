@@ -11,6 +11,7 @@ Ce document formule un premier degagement de these a partir de :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 ```
 
 Il ne constitue pas encore une these finale.
@@ -44,6 +45,17 @@ Formulation courte :
 la constance n'est pas seulement la possession d'une valeur stable ;
 c'est un statut de stabilisation effective situee.
 ```
+
+Precision :
+
+```text
+situee signifie ici : dans un regime d'effectuation,
+par des acces explicites,
+avec une qualification de statut et de limites.
+```
+
+Cette precision empeche de lire la these comme une priorite de l'acces sur la
+realite du processus decrit.
 
 Cette these porte sur le statut des constantes.
 

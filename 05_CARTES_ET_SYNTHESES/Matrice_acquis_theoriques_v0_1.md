@@ -11,6 +11,7 @@ Elle s'appuie sur :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
@@ -102,6 +103,20 @@ registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 | A13 | Modes de stabilisation | Le corpus fait apparaitre des modes : valeur, composition, convention, orientation, validite, inference, borne | Carte v1.3 | Typologie transversale | Modes non exclusifs, a ne pas durcir en classes | Structurant prudent |
 | A14 | Methode transformable en argument | La procedure courte peut devenir argument theorique si ses acquis et ses limites sont separes | Note courte, presente matrice | Preparation de these | Controle par les non-theses et limites | Preparatoire |
 
+Precision sur A1 :
+
+```text
+"situee" signifie regime d'effectuation + acces explicites + qualification
+avec limites. Le terme ne transforme pas la constante en illusion d'acces.
+```
+
+Precision sur A8 :
+
+```text
+le SI est un cas local ou l'acces definitionnel et operationnel prend un
+poids maximal ; ce poids ne doit pas etre generalise a tous les acquis.
+```
+
 ### 4. Trois registres de lecture
 
 La table precedente extrait bien les acquis, mais elle peut devenir trop
@@ -121,7 +136,7 @@ qu'est-ce qui autorise a qualifier une grandeur de constante ?
 ```text
 A1 Stabilisation situee
 A3 Fonction situee
-A4 Acces constitutif du statut
+A4 Acces dans la qualification du statut
 A5 Temporalite de stabilisation
 A12 Limite comme composante de robustesse
 A13 Modes de stabilisation

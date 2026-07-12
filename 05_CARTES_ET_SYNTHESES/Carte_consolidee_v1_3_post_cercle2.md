@@ -26,6 +26,7 @@ Elle recoit ensuite un raccord critique cible :
 01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
 01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
 ```
 
@@ -51,6 +52,17 @@ Precision :
 l'acces qualifie le statut de constance ;
 il ne produit pas l'objet physique ou operationnel auquel la fiche se rapporte.
 ```
+
+Precision sur `situee` :
+
+```text
+situee signifie : ancree dans un regime d'effectuation,
+rendue disponible par des acces explicites,
+et qualifiee avec ses limites.
+```
+
+Le terme ne signifie ni illusion, ni simple perspectivisme, ni production de
+la grandeur par son reseau d'acces.
 
 Formule courte :
 
@@ -148,7 +160,7 @@ Ils ne doivent pas etre forces en classes exclusives.
 | Architecture | Mode dominant | Ce qu'elle rend solidaire | Limite conservee |
 |---|---|---|---|
 | Saveur-Higgs | Constitution | Echelle, textures, diagonalisation, spectres, orientations | Origine des Yukawa, hierarchies, nature neutrino |
-| Metrologique SI | Definition et realisation | Valeurs definissantes, compositions exactes, realisations, roles physiques | Origine physique et interpretation des grandeurs |
+| Metrologique SI | Definition et realisation | Valeurs definissantes, compositions exactes, realisations, roles physiques | Origine physique et interpretation des grandeurs ; ne pas generaliser le poids SI de l'acces |
 | Effective basse energie | Validite situee | Domaine, non-resolution, couplage ou echelle, seuils de description | Completion ou changement de description |
 | Cosmologique | Inference et reconstruction | Modele, sous-reseaux, acces, observables reconstruites, tensions | Energie noire, tensions `H_0` et `S_8`, microphysique primordiale |
 
@@ -205,6 +217,14 @@ Formule :
 
 ```text
 une grandeur sans acces explicite reste methodologiquement incomplete.
+```
+
+Regle de proportion :
+
+```text
+le SI est le cas ou l'acces definitionnel et operationnel prend le plus de
+poids ; cette densite locale ne doit pas deplacer la definition generale vers
+une theorie de l'acces.
 ```
 
 ### 9. Statut du vocabulaire historique

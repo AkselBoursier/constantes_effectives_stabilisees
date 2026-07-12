@@ -14,6 +14,7 @@ partir des appuis suivants :
 04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
 02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 ```
 
 Le but n'est pas de refaire le cycle SI.
@@ -125,6 +126,21 @@ Regle de reprise :
 ```text
 aucune grandeur SI ne doit etre presentee sans distinguer valeur
 definissante, realisation pratique et contenu physique.
+```
+
+Regle de proportion :
+
+```text
+le poids de l'acces dans le SI est normal pour une architecture
+definitionnelle ; il devient excessif s'il sert a definir toutes les formes
+de constance.
+```
+
+Le SI doit donc rester un cas local :
+
+```text
+cas de definition et de realisation,
+modele local d'une constance fixee et mise en oeuvre dans un systeme d'unites.
 ```
 
 ### 7. Formulations a eviter

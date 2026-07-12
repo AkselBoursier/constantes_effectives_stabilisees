@@ -24,6 +24,7 @@ Complement de reprise positive :
 
 ```text
 04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 ```
 
 La presente note reste la consolidation locale.
@@ -379,6 +380,33 @@ Le regime d'acces SI ne remplace pas le regime physique.
 ```
 
 Il rend le regime physique operatoire dans un systeme de mesure.
+
+Point d'equilibrage :
+
+```text
+le SI est un cas localement tres dense en acces, definition et realisation ;
+il ne doit pas devenir le modele implicite de toutes les constantes
+effectives stabilisees.
+```
+
+La lecture SI commence par la chaine :
+
+```text
+valeur definissante
++ realisation pratique
++ role physique conserve.
+```
+
+Les autres cycles doivent retrouver leur propre centre de gravite :
+
+```text
+constitution,
+validite,
+reconstruction,
+borne,
+seuil,
+ou tension d'acces.
+```
 
 ### 9. Distinction entre famille et architecture
 

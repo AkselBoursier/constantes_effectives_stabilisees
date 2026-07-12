@@ -39,7 +39,7 @@ Il indique quels degagements peuvent entrer dans un futur livrable theorique.
 | T0 | Qualification du statut de constance comme stabilisation effective situee |
 | T1 | Pluralite des modes de constance |
 | T2 | Regime de validite |
-| T3 | Acces constitutif du statut |
+| T3 | Acces dans la qualification du statut |
 | T4 | Temporalite de stabilisation |
 | T5 | Architecture comme solidarisation |
 | T6 | Limite comme robustesse |
@@ -269,7 +269,7 @@ hypotheses Majorana.
 |---|---|
 | T0 | Tient : le statut peut etre qualifie par borne et ancrage spectral |
 | T1 | Tient : le mode borne est un mode de constance prudent |
-| T3 | Tient fortement : les acces heterogenes changent la qualification du statut de l'enonce |
+| T3 | Tient fortement : les acces heterogenes changent la qualification du statut de constance |
 | T4 | Tient : la trajectoire des bornes est epistemique, non variation physique de la masse |
 | T6 | Tient fortement : la limite conservee est le coeur du statut actuel |
 | T9 | Tient localement : l'objet reste ancre dans Saveur-Higgs et l'interface neutrino |
@@ -318,7 +318,7 @@ T0 tient dans une forme prudente : qualification par limite.
 Trois degagements apparaissent transversaux.
 
 ```text
-T3 Acces constitutif du statut
+T3 Acces dans la qualification du statut
 T4 Temporalite de stabilisation
 T6 Limite comme robustesse
 ```

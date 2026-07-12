@@ -11,6 +11,7 @@ Elle s'appuie sur :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
@@ -58,6 +59,17 @@ l'acces qualifie le statut de constance ;
 il ne fabrique pas le processus physique, operationnel ou definitionnel
 auquel la grandeur renvoie.
 ```
+
+Regle d'usage de `situee` :
+
+```text
+situee = dans un regime d'effectuation, par des acces explicites,
+avec une qualification de statut et de limites.
+```
+
+Le mot ne doit pas devenir une cloture vague. Si une fiche emploie `situee`,
+elle doit laisser comprendre ce qui est situe : le regime, l'acces ou la
+qualification.
 
 ### 3. Procedure en huit questions
 
@@ -238,6 +250,7 @@ Termes a utiliser avec prudence :
 | `fondamental` | Eviter hors contexte strictement etabli |
 | `tension` | Propriete d'acces ou de modele, non verdict immediat |
 | `architecture` | Reseau situe avec regime, acces, trajectoire et limite |
+| `situe` / `situee` | Operateur de precision : regime d'effectuation, acces et qualification ; jamais derealisation |
 
 Regle :
 

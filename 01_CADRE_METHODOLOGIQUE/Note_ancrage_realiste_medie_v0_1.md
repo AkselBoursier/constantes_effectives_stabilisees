@@ -8,6 +8,7 @@
 statut : note de correction methodologique ;
 fonction : empecher une lecture derealisante de la stabilisation effective ;
 portee : definition v1.3, note courte, carte consolidee, degagements theoriques.
+complete : Note_situation_effective_et_equilibrage_SI_v0_1.md.
 ```
 
 Cette note corrige un risque de lecture.
@@ -83,7 +84,33 @@ c'est la qualification d'une grandeur, d'une operation ou d'une structure
 ancree dans un regime.
 ```
 
-### 5. Formule de cloture
+### 5. Raccord avec "situe"
+
+Le terme `situe` doit etre lu comme un operateur de precision.
+
+Il indique :
+
+```text
+un regime d'effectuation,
+une route d'acces,
+et une qualification prudente du statut.
+```
+
+Il ne signifie pas :
+
+```text
+relativisation de la grandeur,
+production de l'objet par l'acces,
+ou reduction de la constante a une construction documentaire.
+```
+
+Precision associee :
+
+```text
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
+```
+
+### 6. Formule de cloture
 
 ```text
 Le cadre reste epistemiquement prudent, mais il n'est pas derealisant :
