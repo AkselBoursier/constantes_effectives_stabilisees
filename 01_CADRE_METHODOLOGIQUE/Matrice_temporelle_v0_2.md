@@ -164,6 +164,12 @@ Elle ne demande pas de modifier immediatement la carte consolidee.
 
 La carte ne devra recevoir ces ajouts qu'apres un cas traversant.
 
+Passerelle produite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+```
+
 ### 9. Formule de cloture
 
 ```text

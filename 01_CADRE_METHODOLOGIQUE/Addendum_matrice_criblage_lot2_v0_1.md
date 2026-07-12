@@ -168,6 +168,12 @@ Etat du premier point :
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
 ```
 
+Etat du deuxieme point :
+
+```text
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+```
+
 ### 8. Formule de cloture
 
 ```text
