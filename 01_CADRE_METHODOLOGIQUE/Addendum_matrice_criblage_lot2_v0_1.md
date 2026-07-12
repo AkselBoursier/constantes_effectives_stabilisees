@@ -162,6 +162,12 @@ Cet addendum appelle trois suites, dans cet ordre :
 
 La carte consolidee ne doit etre modifiee qu'apres ces controles.
 
+Etat du premier point :
+
+```text
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+```
+
 ### 8. Formule de cloture
 
 ```text

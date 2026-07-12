@@ -21,6 +21,7 @@ Elle ne remplace pas :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
 ```
 
 Elle est completee, pour les cas litigieux issus du second lot critique, par :
@@ -257,6 +258,7 @@ Pour les cas ou le rang 5 devient structurant, utiliser le protocole autonome :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
 ```
 
 ### 11. Niveaux de tension
