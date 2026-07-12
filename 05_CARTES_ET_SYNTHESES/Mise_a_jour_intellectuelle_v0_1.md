@@ -16,6 +16,8 @@ voisinages, phase de test, programme de publication).
 rang : les hypotheses implicites degagees en section 3 sont des
 diagnostics, non des theses ; leur instruction passe par le circuit
 de validation.
+statut apres v0.2 : document historique recent ; le bilan courant
+est 05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md.
 ```
 
 ### 1. Fonction

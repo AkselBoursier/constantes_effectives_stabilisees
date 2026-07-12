@@ -92,6 +92,13 @@ trois ebauches.
 Mise_a_jour_intellectuelle_v0_1.md - envergure du projet entier,
 huit hypotheses implicites (HI-1 a HI-8), chantiers physiques codes
 CP-1 a CP-4, avec le cycle du seuil electrofaible desormais ouvert.
+Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md - audit
+transversal apres critiques, reequilibrage SI et definition de
+`situe` ; identifie acquis, deplacements, frictions et reprises par
+couches.
+Mise_a_jour_intellectuelle_v0_2.md - bilan intellectuel actif apres
+mise a plat ; remplace la v0.1 comme synthese courante sans l'effacer
+comme etape historique.
 Audit_integration_branche_philosophique_v0_1.md - sas de
 raccordement : apports integrables, reserves, micro-corrections et
 point de jonction Brout-Englert-Higgs reconnu, puis prolonge par
@@ -140,8 +147,10 @@ Plan_preparation_arene, Fiche_horizon_anthropique (differe).
 appareil critique (nouveau) : branche 06_PHILOSOPHIE,
 Synthese_phase_de_test.
 livrables (nouveau) : plans A1/A2, Programme_publication.
-bilan transversal (nouveau) : Mise_a_jour_intellectuelle
-(hypotheses implicites, chantiers).
+bilan transversal (nouveau) : Audit_mise_a_plat_conceptuelle et
+Mise_a_jour_intellectuelle_v0_2
+(acquis, deplacements conceptuels, frictions et strategie de
+resynchronisation).
 sas d'integration (nouveau) : Audit_integration_branche_philosophique
 (tri de rang, corrections, reserve des horizons).
 zone de jonction BEH (nouveau) :
@@ -157,7 +166,7 @@ Protocole_travail_redaction_post_philosophie_v0_1
 ### 6. Chantiers ouverts, references depuis l'index
 
 ```text
-physiques (Mise_a_jour_intellectuelle, section 5) : cycle du seuil
+physiques (Mise_a_jour_intellectuelle_v0_2, sections 8-9) : cycle du seuil
 electrofaible (CP-1), chantier du secteur scalaire de Higgs (CP-2),
 reprise cosmologique par sous-reseaux (CP-3), microfondation
 cosmologique differee (CP-4).

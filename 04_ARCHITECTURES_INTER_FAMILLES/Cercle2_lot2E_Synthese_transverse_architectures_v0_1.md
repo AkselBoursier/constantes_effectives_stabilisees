@@ -108,8 +108,8 @@ Cosmologie : modele, sous-reseaux, acces, reconstruction, tensions.
 
 #### 5.3 Acces
 
-Le statut d'une grandeur depend de la route par laquelle elle est connue ou
-rendue operatoire.
+Le statut de constance d'une grandeur se qualifie par la route par laquelle
+elle est connue ou rendue operatoire.
 
 ```text
 mesure et ajustement
@@ -121,7 +121,8 @@ borne ou tension entre acces
 
 L'acces n'est pas une annexe empirique.
 
-Il fait partie du statut.
+Il participe a la qualification du statut, sans remplacer le regime
+d'effectuation.
 
 #### 5.4 Trajectoire
 

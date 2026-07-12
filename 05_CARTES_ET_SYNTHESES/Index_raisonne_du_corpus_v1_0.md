@@ -91,6 +91,8 @@ Ces documents forment le noyau actif du corpus.
 | `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective situee |
 | `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Ouverture des autres theses et articulations theoriques possibles |
 | `05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md` | Reference active | Test des degagements theoriques sur exemples porteurs |
+| `05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md` | Audit actif | Mise a plat apres critiques, reequilibrage SI et definition de `situe` |
+| `05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md` | Reference active | Bilan intellectuel courant apres mise a plat conceptuelle |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
@@ -121,6 +123,8 @@ Fiche_limites_non_theses_v0_1.md
 Premier_degagement_these_v0_1.md
 Matrice_degagements_theoriques_v0_1.md
 Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md
+Mise_a_jour_intellectuelle_v0_2.md
 Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -195,6 +199,8 @@ extension SI
 | `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Degagement de these v0.1 sur la qualification des constantes |
 | `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Cartographie des degagements theoriques au-dela de la these-noyau |
 | `05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md` | Reference active | Resistance des degagements sur `R`, `G_F`, cosmologie, Saveur-Higgs et neutrinos |
+| `05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md` | Audit actif | Effets conceptuels des critiques, du SI rehierarchise et du terme `situe` |
+| `05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md` | Reference active | Synthese courante des acquis, deplacements et frictions |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
@@ -777,6 +783,12 @@ Matrice des degagements active :
 
 Mise a l'epreuve active :
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+
+Audit de mise a plat actif :
+05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md
+
+Mise a jour intellectuelle active :
+05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md
 
 Carte historique recente :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md

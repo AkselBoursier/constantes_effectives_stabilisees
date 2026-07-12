@@ -45,7 +45,7 @@ trois choses :
 
 | Element du corpus | Position implicite | Tradition la plus proche | Force |
 |---|---|---|---|
-| Stabilisation effective situee (T0) | Le statut d'une grandeur est relatif a un regime et un point de vue instrumente, sans cesser d'etre objectif | Realisme perspectiviste (Giere ; Massimi) | Instruit par Voisinage_01 : recouvrement partiel du socle, deux divergences precises (tether nomologique ; regime physique non perspectival), trois imports possibles |
+| Stabilisation effective situee (T0) | Le statut de constance d'une grandeur ancree se qualifie dans un regime d'effectuation et par des acces instrumentes, sans perdre son objectivite | Realisme perspectiviste (Giere ; Massimi) | Instruit par Voisinage_01 : recouvrement partiel du socle, deux divergences precises (tether nomologique ; regime physique non perspectival), trois imports possibles |
 | Acces dans la qualification du statut (T3, N6) | L'acces participe a la qualification du statut de constance sans etre l'essence de la chose : anti-essentialisme de l'acces | Philosophie de la mesure (Tal, van Fraassen) ; lecon negative de Bergson-Einstein (Situation 01) | Instruit par Voisinage_02 : recouvrement le plus serre (coordination), objet inverse et face physique comme differenciations |
 | Trajectoire de stabilisation (T4) | Les objets de science ont une histoire ; leur stabilite est un accomplissement, pas un donne | Epistemologie historique (Bachelard : rectification ; Daston : biographies d'objets ; Rheinberger : systemes experimentaux) ; iteration epistemique (Chang) | Implicite fort |
 | Convergence multi-acces (modes de formation epistemique) | La robustesse vient de la concordance de determinations independantes | Wimsatt (robustesse) ; Coko et Castellani sur Perrin | Implicite fort, deja adosse a des verifies |
@@ -70,7 +70,7 @@ defendre comme telle.
    local et testable : position originale, a defendre comme telle.
 
 2. accompli et situe : "stabilisation effective" affirme un resultat
-   reel, "situee" indexe ce resultat sur un regime et un acces. Le
+   reel, "situee" precise son regime d'effectuation et ses acces. Le
    realisme perspectiviste est le candidat naturel pour tenir les
    deux ensemble ; il sera instruit avant d'etre retenu (la non-these
    N4 conserve ici sa formulation positive : le statut des constantes

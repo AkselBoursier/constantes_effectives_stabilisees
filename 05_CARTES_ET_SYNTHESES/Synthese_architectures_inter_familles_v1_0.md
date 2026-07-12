@@ -557,7 +557,7 @@ La synthese stabilise dix decisions.
 5. Metrologique SI est une architecture definitionnelle.
 6. Effective basse energie est une architecture de validite.
 7. Cosmologique est une architecture inferentielle et reconstructive.
-8. Le regime d'acces est constitutif du classement.
+8. Le regime d'acces participe a la qualification du statut et du classement.
 9. La stabilisation doit etre qualifiee.
 10. La limite de ce que la grandeur ne dit pas fait partie du classement.
 ```
