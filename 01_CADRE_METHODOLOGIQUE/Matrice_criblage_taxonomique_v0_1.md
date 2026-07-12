@@ -23,6 +23,12 @@ Elle ne remplace pas :
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
 ```
 
+Elle est completee, pour les cas litigieux issus du second lot critique, par :
+
+```text
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
+```
+
 Elle en donne l'ordre d'application.
 
 Regle directrice :
@@ -287,7 +293,16 @@ Stress test d'architecture :
 Rang 5 - trajectoire de stabilisation :
 Tension eventuelle :
 
+Bloc decisionnel lot 2 si necessaire :
+Contrainte transversale active :
+Couplage fort regime-acces :
+Degre de tension :
+Test de degradation :
+Test de substitution :
+Verrous d'options :
+
 Test de retrait :
+Sortie taxonomique proposee :
 Decision de classement :
 Limite conservee :
 ```
@@ -330,7 +345,8 @@ une nouvelle famille fonctionnelle,
 une requalification des liaisons stabilisees,
 une nouvelle carte consolidee,
 un stress test cosmologique,
-ou une note d'architecture manquante.
+une note d'architecture manquante,
+ou un cas issu du second lot critique.
 ```
 
 Elle doit aussi accompagner les futurs cas litigieux.
