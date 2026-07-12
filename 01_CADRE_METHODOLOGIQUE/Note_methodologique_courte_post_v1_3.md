@@ -10,6 +10,7 @@ Elle s'appuie sur :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
+01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
@@ -33,7 +34,8 @@ Principe :
 
 ```text
 une constante effective stabilisee doit etre lue comme une stabilisation
-situee, non comme un nombre a classer immediatement.
+situee d'une grandeur ou structure ancree, non comme un nombre a classer
+immediatement.
 ```
 
 La question initiale n'est donc pas :
@@ -49,6 +51,14 @@ qu'est-ce qui est stabilise, dans quel regime, par quel acces,
 selon quelle trajectoire, et avec quelles limites ?
 ```
 
+Regle d'ancrage :
+
+```text
+l'acces qualifie le statut de constance ;
+il ne fabrique pas le processus physique, operationnel ou definitionnel
+auquel la grandeur renvoie.
+```
+
 ### 3. Procedure en huit questions
 
 Toute analyse courte doit parcourir huit questions dans cet ordre.
@@ -58,7 +68,7 @@ Toute analyse courte doit parcourir huit questions dans cet ordre.
 | 1 | Quelle forme est stabilisee ? | Valeur, rapport, ecart, composition, matrice, fonction d'echelle, borne, reconstruction |
 | 2 | Dans quel regime cela vaut-il ? | Regime physique, definitionnel, effectif, cosmologique ou documentaire |
 | 3 | Quelle fonction situee domine ? | Couplage, echelle, raccordement, orientation, convention, validite, inference, autre fonction qualifiee |
-| 4 | Par quel acces le statut est-il etabli ? | Mesure, ajustement, definition, realisation, extraction, inference, reconstruction, borne |
+| 4 | Par quel acces le statut de constance est-il qualifie ? | Mesure, ajustement, definition, realisation, extraction, inference, reconstruction, borne |
 | 5 | Quelle trajectoire stabilise le statut ? | Constitution, convergence, absorption definitionnelle, validite limitee, reconstruction, tension |
 | 6 | Quelle solidarite architecturale intervient ? | Aucune, locale, Saveur-Higgs, SI, effective, cosmologique, autre reseau a tester |
 | 7 | Quelle limite doit rester visible ? | Origine ouverte, domaine de validite, dependance de modele, tension, non-mesure positive |

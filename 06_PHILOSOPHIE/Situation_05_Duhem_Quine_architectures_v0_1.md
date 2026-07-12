@@ -216,9 +216,9 @@ retirer le droit n'a pas dissous la pratique.
    externe : ni Duhem (groupe indistinct), ni Quine (reseau total),
    mais des solidarites typees et testees.
 
-3. T3 (acces constitutif) gagne un ancetre explicite : la these
-   duhemienne de l'interpretation. A ajouter aux filiations lors de
-   la prochaine reprise de la carte implicite.
+3. T3 (acces dans la qualification du statut) gagne un ancetre
+   explicite : la these duhemienne de l'interpretation. A ajouter aux
+   filiations lors de la prochaine reprise de la carte implicite.
 
 4. pour le papier B (formation), la situation fournit l'argument de
    cadrage : les conditions de formation d'une constante incluent la

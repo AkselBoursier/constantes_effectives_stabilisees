@@ -67,14 +67,15 @@ Le pan physique porte des engagements qu'il n'a jamais thematises.
 Les voici, avec leur statut apres le travail philosophique.
 
 ```text
-HI-1 - l'acces est constitutif du statut (engagement
-verificationniste/pragmatiste). "Une grandeur sans acces explicite
-reste methodologiquement incomplete." Pose comme evidence, jamais
-situe face au realisme.
+HI-1 - l'acces participe a la qualification du statut de constance.
+"Une grandeur sans acces explicite reste methodologiquement incomplete."
+Pose comme evidence, jamais situe face au realisme.
 STATUT : deja instruit. C'est T3 ; le voisinage V2 (coordination)
 et V1 (Massimi) l'ont situe ; N6 le borne (l'acces n'est pas
-converti en essence). Hypothese devenue engagement controle du
-corpus, sans promotion doctrinale.
+converti en essence). La note d'ancrage realiste medie precise que
+l'acces ne remplace pas l'ancrage physique ou operationnel.
+Hypothese devenue engagement controle du corpus, sans promotion
+doctrinale.
 
 HI-2 - le test de retrait est un critere holiste de type
 Duhem-Quine, et il n'examine pas ses faux positifs : presque tout

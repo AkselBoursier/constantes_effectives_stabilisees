@@ -146,7 +146,7 @@ accessible et potentiellement en tension.
 | Degagement | Resultat |
 |---|---|
 | T0 | Tient : `H_0` peut etre qualifie par son statut de parametre d'etat actuel |
-| T3 | Tient fortement : les routes d'acces sont constitutives du statut |
+| T3 | Tient fortement : les routes d'acces qualifient le statut de constance |
 | T4 | Tient : la stabilisation est liee a l'histoire des determinations |
 | T6 | Tient : la tension conservee fait partie de la prudence |
 | T8 | Tient fortement : reconstruction, modele et acces sont inseparables |
@@ -269,7 +269,7 @@ hypotheses Majorana.
 |---|---|
 | T0 | Tient : le statut peut etre qualifie par borne et ancrage spectral |
 | T1 | Tient : le mode borne est un mode de constance prudent |
-| T3 | Tient fortement : les acces heterogenes changent le statut de l'enonce |
+| T3 | Tient fortement : les acces heterogenes changent la qualification du statut de l'enonce |
 | T4 | Tient : la trajectoire des bornes est epistemique, non variation physique de la masse |
 | T6 | Tient fortement : la limite conservee est le coeur du statut actuel |
 | T9 | Tient localement : l'objet reste ancre dans Saveur-Higgs et l'interface neutrino |
@@ -304,7 +304,7 @@ T0 tient dans une forme prudente : qualification par limite.
 | T0 | Resiste sur tous les exemples, mais reste une these-noyau insuffisante seule |
 | T1 | Resiste fortement : les modes de constance sont pluriels |
 | T2 | Resiste fortement dans le cycle effectif, localement |
-| T3 | Resiste transversalement : l'acces participe au statut |
+| T3 | Resiste transversalement : l'acces participe a la qualification du statut |
 | T4 | Resiste transversalement : la stabilisation a une trajectoire |
 | T5 | Resiste fortement dans les architectures, mais doit rester controle |
 | T6 | Resiste transversalement : les limites conservees sont structurantes |

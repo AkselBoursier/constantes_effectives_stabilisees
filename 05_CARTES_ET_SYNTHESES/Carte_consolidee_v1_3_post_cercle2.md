@@ -43,13 +43,21 @@ il stabilise des modes effectifs situes.
 
 Definition de reference :
 
-> Une constante effective stabilisee est une grandeur, une forme, une liaison qualifiee, une operation ou une reconstruction dont le statut devient robuste dans un regime donne, par un acces determine, selon une trajectoire de stabilisation explicite, au sein d'une architecture eventuelle, avec ses limites conservees.
+> Une constante effective stabilisee est une grandeur, une forme, une operation ou une reconstruction a ancrage physique ou operationnel, dont le statut de constance devient robuste dans un regime donne, par des acces determines, selon une trajectoire de stabilisation explicite, au sein d'une architecture eventuelle, avec ses limites conservees.
+
+Precision :
+
+```text
+l'acces qualifie le statut de constance ;
+il ne produit pas l'objet physique ou operationnel auquel la fiche se rapporte.
+```
 
 Formule courte :
 
 ```text
 constante effective stabilisee =
-forme stabilisee
+ancrage physique ou operationnel
++ forme stabilisee
 + fonction situee
 + regime
 + acces
@@ -418,7 +426,7 @@ Formule v1.3 :
 
 ```text
 Une constante effective stabilisee n'est pas seulement un nombre classe ;
-c'est une stabilisation situee, rendue robuste par un regime, une fonction
-situee, un acces, une trajectoire, une eventuelle architecture et des limites
-explicites.
+c'est la qualification stabilisee d'une grandeur ou structure ancree,
+rendue robuste par un regime, une fonction situee, des acces, une trajectoire,
+une eventuelle architecture et des limites explicites.
 ```

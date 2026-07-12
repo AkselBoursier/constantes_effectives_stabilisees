@@ -15,7 +15,8 @@ lectures restantes avant manuscrit : Tal (2018), le volume
 de Courtenay-Darrigol-Schlaudt (2019), Wolff (2020), Papale (2024)
 en texte integral ;
 lignes instruites : carte de la philosophie implicite, lignes
-"acces constitutif" (T3) et, pour partie, "trajectoire" (T4) ;
+"acces dans la qualification du statut" (T3) et, pour partie,
+"trajectoire" (T4) ;
 la fiche applique la regle des deux registres constance / constante
 et en rend compte en section 7.
 ```
@@ -73,7 +74,7 @@ La lignee, telle que l'entree la documente :
 
 | Point de contact | Enonce du corpus | Enonce du voisin | Sortie |
 |---|---|---|---|
-| Acces constitutif | T3 : l'acces participe a la qualification du statut | La coordination : concept et procedure ne se determinent qu'ensemble | Recouvrement le plus serre du paysage, confirme sur primaire : citer massivement |
+| Acces dans la qualification du statut | T3 : l'acces participe a la qualification du statut de constance | La coordination : concept et procedure ne se determinent qu'ensemble | Recouvrement le plus serre du paysage, confirme sur primaire : citer massivement |
 | Trajectoire | T4 : le statut s'installe selon une trajectoire | Iteration epistemique, coherentisme historique : raffinement mutuel dans le temps | Recouvrement fort ; voir la divergence 3 sur les stations |
 | Convergence multi-acces | D6, face epistemique de H1 ; routes de N_A, H_0 | Sous-critere d'objectivite de Tal (consistance a travers instruments et modeles) ; robustesse entre modeles de processus differents | Recouvrement fort : le corpus gagne une formalisation publiee de sa convergence |
 | Exactitude et realisation | A8 : l'exactitude definissante laisse ouverte la realisation | Le deplacement des definitions vers les realisations ; realiser le kilogramme est "highly theory-laden" | Recouvrement direct : A8 est la distinction definition / realisation, appliquee et datee par S03-S04 |

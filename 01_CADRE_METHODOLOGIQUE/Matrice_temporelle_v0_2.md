@@ -39,6 +39,15 @@ La v0.2 impose donc deux questions separees :
 | Constitution physique | Quelles conditions rendent la grandeur definissable dans un regime ? | Regime, seuil, transition, dependances physiques |
 | Acces epistemique | Par quelles routes la grandeur devient-elle mesuree, reconstruite, bornee ou fixee ? | Mesures, modeles, conventions, tensions |
 
+Cette scission ne privilegie pas l'acces contre la constitution physique.
+
+Elle empeche deux confusions symetriques :
+
+```text
+prendre l'acces pour l'objet ;
+prendre l'objet pour immediatement disponible hors acces.
+```
+
 Un troisieme axe peut etre note, mais il ne doit pas etre confondu avec les deux premiers :
 
 | Axe secondaire | Question | Usage |
@@ -63,6 +72,8 @@ La constitution physique decrit le moment ou le statut de la grandeur devient po
 ### 3. Matrice d'acces epistemique
 
 L'acces epistemique decrit la route par laquelle la grandeur devient disponible pour le corpus.
+
+Il ne remplace pas la constitution physique ou operationnelle de la grandeur.
 
 | Champ | Question | Sortie attendue |
 |---|---|---|

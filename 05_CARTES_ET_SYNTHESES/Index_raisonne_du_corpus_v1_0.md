@@ -81,6 +81,7 @@ Ces documents forment le noyau actif du corpus.
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
+| `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Ancrage physique ou operationnel des grandeurs contre une lecture derealisante |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 et raccord critique cible |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant controle des limites |
@@ -103,6 +104,7 @@ Ordre recommande :
 ```text
 Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 Note_methodologique_courte_post_v1_3.md
+Note_ancrage_realiste_medie_v0_1.md
 Matrice_criblage_taxonomique_v0_1.md
 Addendum_matrice_criblage_lot2_v0_1.md
 Matrice_temporelle_v0_2.md
@@ -126,6 +128,7 @@ Index_raisonne_du_corpus_v1_0.md
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte de premiere passe apres carte v1.3 |
+| `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Correction realiste medie de la definition v1.3 |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
 | `01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md` | Addendum actif | Couche decisionnelle issue des cinq critiques supplementaires |
 | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md` | Protocole actif | Scission constitution physique / acces epistemique pour cas litigieux |
@@ -159,6 +162,7 @@ Pour comprendre la refonte de la methode, lire aussi :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
+01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md
 01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
@@ -732,6 +736,9 @@ Methode active :
 
 Methode historique recente :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
+
+Correction active :
+01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 
 Protocole actif :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md

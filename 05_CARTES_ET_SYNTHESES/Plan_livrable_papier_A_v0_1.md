@@ -55,7 +55,7 @@ noyau des modes : T1, la pluralite des modes de constance
 (definissant, effectif, reconstruit, borne, constitutif,
 compositionnel).
 axes transversaux (les trois qui ont resiste partout) :
-T3 acces constitutif du statut ;
+T3 acces dans la qualification du statut de constance ;
 T4 temporalite de stabilisation (trajectoire) ;
 T6 limite comme composante de robustesse.
 appuis locaux forts (parcimonie, section 4) :
@@ -122,7 +122,8 @@ V1 Massimi (realisme perspectiviste) - le voisin ontologique :
 
 V2 Coordination (Tal, van Fraassen, Chang, Papale) - le voisin
 methodologique le plus serre :
-- recouvrement a citer massivement : T3/T4 et l'acces constitutif ;
+- recouvrement a citer massivement : T3/T4 et l'acces dans la
+  qualification du statut ;
   A8 et la distinction definition / realisation ;
 - differenciation a defendre : l'objet - la coordination explique
   comment les unites tiennent aux constantes ; le papier A qualifie

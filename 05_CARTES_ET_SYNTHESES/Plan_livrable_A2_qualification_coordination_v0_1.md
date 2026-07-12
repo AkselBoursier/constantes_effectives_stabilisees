@@ -20,10 +20,10 @@ appuis :
 ### 1. La these
 
 ```text
-these (T0 restreint) : une grandeur se qualifie comme constante dans
-la mesure ou sa constance se stabilise dans un regime, par un acces,
-selon une trajectoire, avec ses limites - et cette qualification se
-decline en modes de constance (T1).
+these (T0 restreint) : une grandeur ancree se qualifie comme constante
+dans la mesure ou sa constance se stabilise dans un regime, par des
+acces, selon une trajectoire, avec ses limites - et cette qualification
+se decline en modes de constance (T1).
 
 cadrage : extension du probleme de la coordination aux constantes
 elles-memes. La coordination (Reichenbach -> Chang -> van Fraassen

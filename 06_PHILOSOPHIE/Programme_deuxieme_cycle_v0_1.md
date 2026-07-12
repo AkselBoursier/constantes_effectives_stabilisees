@@ -23,7 +23,7 @@ rectifications : l'histoire des constantes. Le deuxieme cycle
 travaille un implicite plus profond :
 
 ```text
-le corpus dit que l'acces participe au statut (T3), que le milieu
+le corpus dit que l'acces participe a la qualification du statut (T3), que le milieu
 d'effectuation co-determine la constance (fiche d'horizon), que
 l'observateur est un produit tardif de la cascade de stabilisations
 (deplacement 3 de Carter). Il ne dit pas encore ce que ces enonces
@@ -159,7 +159,7 @@ force : implicite reel, non formule ; c'est l'objet du cycle.
 Le premier cycle a demande ce que les constantes ont ete ;
 le deuxieme demande ce que leur stabilite presuppose.
 Le corpus contient deja la question sans l'avoir posee :
-l'acces participe au statut - reste a dire ce qui, dans le monde
+l'acces participe a la qualification du statut - reste a dire ce qui, dans le monde
 et dans la pratique, rend un acces possible.
 Epaissir, ici, c'est reveler ; et reveler, c'est toujours passer
 par le guichet.

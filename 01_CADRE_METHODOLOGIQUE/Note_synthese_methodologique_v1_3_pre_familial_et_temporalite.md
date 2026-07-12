@@ -38,7 +38,14 @@ et quelle trajectoire de stabilisation elle suit.
 
 Definition v1.3 :
 
-> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une liaison qualifiee, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+> Une constante effective stabilisee est une grandeur ou une structure physiquement ou operationnellement ancree dont une valeur, une forme, un role, une operation ou une dependance devient robuste dans un regime donne, selon des acces determines, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+
+Precision d'ancrage :
+
+```text
+l'acces participe a la qualification du statut de constance ;
+il ne remplace pas le regime physique, effectif ou operationnel de la grandeur.
+```
 
 Formule courte conservee :
 
@@ -50,7 +57,8 @@ Formule enrichie :
 
 ```text
 constance effective stabilisee =
-forme stabilisee
+ancrage physique ou operationnel
++ forme stabilisee
 + fonction principale
 + role contextuel
 + regime physique
@@ -1096,4 +1104,4 @@ du statut fixe vers la trajectoire de stabilisation.
 
 Formule finale :
 
-> Une constante effective stabilisee n'est pas d'abord une case taxonomique ; c'est une forme stabilisee qui prend fonction dans un regime, devient accessible par un dispositif, s'inscrit parfois dans une architecture, et suit une trajectoire de stabilisation.
+> Une constante effective stabilisee n'est pas d'abord une case taxonomique ; c'est une grandeur ou une forme ancree dans un regime, dont la constance prend fonction, devient qualifiable par des acces, s'inscrit parfois dans une architecture, et suit une trajectoire de stabilisation.

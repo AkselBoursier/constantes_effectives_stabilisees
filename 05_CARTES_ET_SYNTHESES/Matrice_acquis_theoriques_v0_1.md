@@ -87,10 +87,10 @@ registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 
 | Code | Acquis theorique | Formulation affirmable | Appuis principaux | Portee | Limite conservee | Statut |
 |---|---|---|---|---|---|---|
-| A1 | Stabilisation situee | Une constante effective stabilisee doit etre lue comme une stabilisation situee, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
+| A1 | Stabilisation situee | Une constante effective stabilisee doit etre lue comme la stabilisation situee d'une grandeur ancree, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
 | A2 | Forme avant classement | La forme stabilisee doit etre identifiee avant toute sortie taxonomique | Methode v1.3, matrice de criblage | Protocole de lecture | Ne suffit pas a determiner la fonction physique | Robuste |
 | A3 | Fonction situee | La fonction d'une grandeur depend du regime ou elle opere | Carte v1.2, note courte | Analyse des fiches | Une meme grandeur peut garder plusieurs roles selon contexte | Robuste |
-| A4 | Acces constitutif du statut | Le mode d'acces fait partie du statut methodologique de la grandeur | Cosmologie, SI, note courte | Tous les cas reconstruits, definis ou bornes | N'identifie pas toujours le contenu physique sous-jacent | Robuste |
+| A4 | Acces dans la qualification du statut | Le mode d'acces participe a la qualification du statut de constance sans remplacer l'ancrage physique ou operationnel | Cosmologie, SI, note courte | Tous les cas reconstruits, definis ou bornes | N'identifie pas toujours le contenu physique sous-jacent | Robuste |
 | A5 | Temporalite de stabilisation | Le statut d'une grandeur s'installe selon une trajectoire : constitution, validite, definition, reconstruction ou tension | Matrice temporelle, carte v1.3 | Methode transversale | Ne transforme pas la temporalite en nouvelle classe | Robuste |
 | A6 | Architecture comme solidarisation | Une architecture active rend solidaires fonctions, acces, operations et limites dans un regime | Cercle 2A-2F | Niveau architectural | Ne cree pas une architecture pour toute collection de grandeurs | Robuste |
 | A7 | Taxonomie subordonnee | La sortie taxonomique reste utile, mais elle vient apres forme, regime, acces et trajectoire | Reecriture positive, note courte | Methode de classement | Les familles fonctionnelles fortes restent disponibles | Robuste |
@@ -185,7 +185,7 @@ reponse a la question de la qualification des constantes.
 | Axe | Enonce disponible | Appui | Prudence |
 |---|---|---|---|
 | Methodologique | On ne classe pas une constante avant d'avoir etabli sa stabilisation | Note courte, matrice de criblage | Ne pas transformer la procedure en ontologie |
-| Physique | Le statut d'une grandeur depend de son regime et de son acces | Cycles physiques, architectures | Respecter les differences entre secteurs |
+| Physique | La qualification du statut d'une grandeur depend de son regime et de ses acces | Cycles physiques, architectures | Respecter les differences entre secteurs |
 | Architectural | Certaines grandeurs ne sont lisibles que dans des solidarites de fonctions | Cercle 2 | Ne pas creer d'architecture artificielle |
 | Epistemique | Les tensions, bornes et reconstructions font partie du statut d'acces | Cosmologie, neutrinos, SI | Ne pas convertir tension ou borne en verdict |
 

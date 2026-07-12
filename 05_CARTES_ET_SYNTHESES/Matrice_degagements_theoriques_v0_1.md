@@ -40,7 +40,7 @@ Mais elle ne doit pas limiter artificiellement les degagements ulterieurs.
 
 | Code | Degagement | Formulation | Statut |
 |---|---|---|---|
-| T0 | Qualification du statut de constance | Une grandeur peut etre dite constante lorsque son statut de constance se stabilise dans un regime, une fonction situee, un acces, une trajectoire, une architecture eventuelle et des limites conservees | Produit dans `Premier_degagement_these_v0_1.md` |
+| T0 | Qualification du statut de constance | Une grandeur ancree peut etre dite constante lorsque son statut de constance se stabilise dans un regime, une fonction situee, des acces, une trajectoire, une architecture eventuelle et des limites conservees | Produit dans `Premier_degagement_these_v0_1.md` |
 
 T0 est le noyau.
 
@@ -56,7 +56,7 @@ Ils ne doivent pas tous etre formules comme theses finales immediates.
 |---|---|---|---|---|
 | T1 | Pluralite des modes de constance | La constance peut etre definissante, effective, reconstruite, bornee, constitutive ou compositionnelle | Carte v1.3, matrice des acquis, these v0.1 | Defendable comme articulation |
 | T2 | Regime de validite | Une grandeur peut etre constante dans un domaine sans etre universelle hors de ce domaine | Cycle effectif, `G_F`, couplages, basse energie | Defendable localement |
-| T3 | Acces constitutif du statut | L'acces n'est pas seulement une voie de connaissance externe ; il participe a la qualification du statut | Cosmologie, SI, neutrinos, note courte | Defendable avec prudence |
+| T3 | Acces dans la qualification du statut | L'acces n'est pas seulement une voie de connaissance externe ; il participe a la qualification du statut de constance sans se substituer a l'ancrage physique ou operationnel | Cosmologie, SI, neutrinos, note courte | Defendable avec prudence |
 | T4 | Temporalite de stabilisation | Une constante a une trajectoire de stabilisation : constitution, definition, validite, reconstruction, tension ou limite | Matrice temporelle, carte v1.3 | Defendable transversalement |
 | T5 | Architecture comme solidarisation | Certaines constantes ne tiennent comme constantes qu'a travers des solidarites de fonctions, operations, acces et limites | Cercle 2, synthese transverse | Defendable comme description architecturale |
 | T6 | Limite comme robustesse | Une limite conservee ne diminue pas toujours la robustesse ; elle peut en etre une condition | Fiche limites, neutrinos, cosmologie, effectif | Defendable |
@@ -72,7 +72,7 @@ Certains degagements sont feconds, mais demandent encore des tests.
 | Code | Ouverture | Pourquoi c'est fecond | Controle necessaire |
 |---|---|---|---|
 | O1 | Theorie des modes de stabilisation | Elle pourrait donner une grammaire generale des constantes sans revenir a une simple liste | Tester les modes sur plusieurs cycles |
-| O2 | Statut epistemique des acces | Elle pourrait distinguer mesure, definition, reconstruction, inference et borne | Eviter de transformer l'acces en essence |
+| O2 | Statut epistemique des acces | Elle pourrait distinguer mesure, definition, reconstruction, inference et borne | Eviter de transformer l'acces en essence ou en source de l'objet |
 | O3 | Temporalite des constantes | Elle pourrait remplacer le tableau plat par une dynamique de stabilisation | Ne pas en faire une nouvelle classe |
 | O4 | Architectures de dependance | Elle pourrait montrer comment certaines constantes tiennent par reseau d'operations | Ne pas creer d'architecture artificielle |
 | O5 | Robustesse par limite | Elle pourrait produire une these forte sur bornes, tensions et domaines | Ne pas convertir limite en resultat positif |
@@ -104,7 +104,7 @@ Un livrable plus ambitieux devrait articuler plusieurs theses.
 ```text
 1. These-noyau : statut de constance comme stabilisation effective situee.
 2. These des modes : plusieurs modes de constance sont possibles.
-3. These de l'acces : l'acces participe a la qualification du statut.
+3. These de l'acces : l'acces participe a la qualification du statut de constance.
 4. These temporelle : une constante a une trajectoire de stabilisation.
 5. These architecturale : certaines constantes tiennent par solidarisation.
 6. These des limites : les limites conservees appartiennent a la robustesse.

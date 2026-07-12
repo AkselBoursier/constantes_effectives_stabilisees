@@ -90,7 +90,7 @@ Elles empechent le cadre de se durcir trop vite.
 | N1 | Le projet ne fournit pas une nouvelle theorie physique | Il propose une methode d'etablissement du statut des constantes |
 | N2 | Le cadre n'explique pas l'origine ultime des constantes | Il decrit comment leur statut devient stabilise dans des regimes donnes |
 | N3 | Le corpus empirique consensuel n'est pas corrige par decret | Il sert d'appui et de contrainte aux reconstructions methodologiques |
-| N4 | Les constantes ne sont pas reduites a des constructions documentaires ou linguistiques | Leur statut est lu a travers operations, acces, mesures, definitions et modeles |
+| N4 | Les constantes ne sont pas reduites a des constructions documentaires ou linguistiques | Leur ancrage physique ou operationnel est qualifie a travers operations, acces, mesures, definitions et modeles |
 | N5 | Les classements fonctionnels ne commandent pas la these | Ils interviennent apres qualification de la stabilisation |
 | N6 | L'acces n'est pas transforme en essence de la grandeur | Il devient un element de qualification du statut de constance |
 | N7 | Les tensions cosmologiques ne sont pas resolues par le cadre | Elles deviennent des indicateurs de regime, de modele et d'acces |

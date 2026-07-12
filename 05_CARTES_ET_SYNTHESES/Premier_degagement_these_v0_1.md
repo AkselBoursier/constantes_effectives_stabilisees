@@ -31,10 +31,11 @@ le corpus permet maintenant d'ouvrir.
 Formulation principale :
 
 ```text
-Une grandeur peut etre qualifiee de constante dans la mesure ou son statut
-devient stabilise dans un regime determine, selon une fonction situee, par un
-acces specifie, selon une trajectoire identifiable, eventuellement dans une
-architecture de dependances, avec ses limites conservees.
+Une grandeur physiquement ou operationnellement ancree peut etre qualifiee de
+constante dans la mesure ou son statut de constance devient stabilise dans un
+regime determine, selon une fonction situee, par des acces specifies, selon une
+trajectoire identifiable, eventuellement dans une architecture de dependances,
+avec ses limites conservees.
 ```
 
 Formulation courte :
@@ -48,6 +49,12 @@ Cette these porte sur le statut des constantes.
 
 Elle est methodologiquement controlee, mais elle n'a pas pour objet premier la
 methode interne du corpus.
+
+Elle ne derealise pas les constantes.
+
+Elle decrit comment leur statut de constance devient qualifiable pour des
+grandeurs, processus ou operations deja ancrees dans des regimes physiques,
+effectifs ou definitionnels.
 
 ### 3. Deplacement central
 
@@ -207,10 +214,11 @@ Le centre de la these reste le statut de constance.
 Formule condensee :
 
 ```text
-Une constante effective stabilisee est une grandeur dont le statut de
-constance devient robuste dans un regime donne, selon une fonction situee, par
-un acces determine, selon une trajectoire de stabilisation identifiable, au sein
-d'une architecture eventuelle, avec ses limites conservees.
+Une constante effective stabilisee est une grandeur physiquement ou
+operationnellement ancree dont le statut de constance devient robuste dans un
+regime donne, selon une fonction situee, par des acces determines, selon une
+trajectoire de stabilisation identifiable, au sein d'une architecture
+eventuelle, avec ses limites conservees.
 ```
 
 Cette formule ne remplace pas les fiches physiques.
