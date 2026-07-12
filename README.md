@@ -11,6 +11,7 @@ La question sert ici d’instruction d’enquête. Le projet distingue les forme
 1. [Cadre canonique de la refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
 2. [Synthèse transversale des cycles](05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md)
 3. [Test des cinq cas sentinelles](01_CADRE_METHODOLOGIQUE/test-cas-sentinelles.md)
+4. [Cadrage du cycle fine-tuning](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md)
 
 ## Dossiers actifs de la refondation
 
@@ -38,6 +39,15 @@ La question sert ici d’instruction d’enquête. Le projet distingue les forme
 - [Vérification physique](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/verification-physique-cosmologique.md)
 - [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md)
 
+### Fine-tuning
+
+- [Cadrage méthodologique](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md)
+- [Hiérarchie électrofaible](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-hierarchie-electrofaible.md)
+- [Univers sans interaction faible](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-univers-sans-interaction-faible.md)
+- [Quarks légers et état de Hoyle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-quarks-legers-etat-hoyle.md)
+- [Constante cosmologique](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-constante-cosmologique.md)
+- [Synthèse du premier lot](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md)
+
 ## Résultat provisoire
 
 Les cycles ne révèlent pas une espèce naturelle unique appelée « constante physique ». Ils distinguent au moins :
@@ -48,6 +58,8 @@ Les cycles ne révèlent pas une espèce naturelle unique appelée « constante 
 - une robustesse inférentielle, qui porte sur l’accès et non sur la constance de l’objet.
 
 Le terme `stabilisée` n’est plus utilisé comme explication générale. Il désigne éventuellement le résultat d’un test explicitant le régime, les transformations pertinentes et la tolérance admise.
+
+Le cycle fine-tuning examine ensuite ce qui reste réellement à expliquer après retrait des grandeurs dérivées, corrélations théoriques, paramètres d’état et reconstructions inférentielles. Il distingue sensibilité structurelle, improbabilité sous une mesure, contrainte environnementale et interprétation explicative.
 
 ## Statut de l’ancien corpus
 
@@ -64,8 +76,11 @@ Les travaux sont menés sur des branches thématiques, avec des commits séparan
 - évaluation conceptuelle ;
 - migration documentaire.
 
-La branche actuelle de refondation est :
+Branches actives :
 
 ```text
 agent/refondation-domaine
+agent/cycle-fine-tuning
 ```
+
+Le cycle fine-tuning est développé comme branche empilée sur la refondation tant que celle-ci n’est pas fusionnée dans `main`.
