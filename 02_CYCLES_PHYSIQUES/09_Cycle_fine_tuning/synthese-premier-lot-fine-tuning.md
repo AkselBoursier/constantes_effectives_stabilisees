@@ -9,7 +9,7 @@ Cette synthèse compare les quatre premiers cas instruits :
 3. masses des quarks légers et état de Hoyle ;
 4. constante cosmologique.
 
-Elle ne clôt pas le cycle. Elle vérifie si la méthode produit des verdicts différenciés.
+Elle ne clôt pas le cycle. Elle vérifie si la méthode produit des verdicts différenciés et si le poids attribué à chaque cas reste proportionné à la littérature disponible.
 
 ## 1. Résultat général
 
@@ -33,8 +33,8 @@ Le même langage de « réglage fin » recouvre donc plusieurs problèmes.
 
 | Cas | Réglage apparent | Effet de la reconstruction | Contingence résiduelle | Verdict provisoire |
 |---|---|---|---|---|
-| hiérarchie électrofaible | petite échelle faible et compensations du Higgs | sépare masses dérivées, sensibilité UV et nécessité anthropique | paramètres du potentiel, seuils lourds, théorie UV | problème technique réel mais dépendant de la théorie ; nécessité anthropique affaiblie |
-| univers sans interaction faible | interaction faible nécessaire aux étoiles et éléments | ouvre une trajectoire compensée par deutérium primordial et paramètres cosmologiques | origine et probabilité des compensations | nécessité générale réfutée ; typicité indéterminée |
+| hiérarchie électrofaible | petite échelle faible et compensations du Higgs | sépare masses dérivées, sensibilité UV et nécessité anthropique | paramètres du potentiel, seuils lourds, théorie UV | problème technique réel mais dépendant de la théorie ; nécessité anthropique à instruire séparément |
+| univers sans interaction faible | interaction faible nécessaire aux étoiles et éléments | ouvre des trajectoires compensées dans une famille limitée de modèles astrophysiques | origine, réalisation et probabilité des compensations ; habitabilité complète | la nécessité absolue est fragilisée, non réfutée en général ; typicité indéterminée |
 | quarks légers / Hoyle | résonance réglée sur un point infinitésimal | montre des déplacements corrélés des niveaux nucléaires et une réponse stellaire | Yukawa légers, QCD, `alpha`, incertitudes nucléaires | sensibilité réelle, région viable non ponctuelle |
 | constante cosmologique | valeur effective minuscule et compatible avec les structures | retire les faux cadrans cosmologiques et sépare petitesse, réalisation et sélection | valeur effective, stabilité radiative, mesure du multivers | réglage résiduel fort, analyse anthropique conditionnelle |
 
@@ -128,7 +128,11 @@ variation de x seul
 variation corrélée de {x, y, z}
 ```
 
-Le cas weakless est le contre-exemple principal. Le cas des quarks légers montre également que des bandes de viabilité peuvent apparaître dans un espace multidimensionnel.
+Le cas weakless constitue ici un stress test de possibilité important : il montre qu'une conclusion obtenue en supprimant l'interaction faible à paramètres fixés ne s'étend pas automatiquement à toutes les variations corrélées. Les travaux ultérieurs sur les neutrons stables et sur une force faible variable indiquent qu'il ne s'agit pas d'un exemple totalement isolé.
+
+Cependant, son poids doit rester limité. La famille de modèles étudiée demeure spécialement construite, sans mesure sur l'espace des théories, sans mécanisme complet de réalisation et sans démonstration d'habitabilité générale. Elle fragilise une thèse de nécessité absolue ; elle ne suffit pas à conclure que l'échelle faible est anthropiquement non réglée.
+
+Le cas des quarks légers montre également que des bandes de viabilité peuvent apparaître dans un espace multidimensionnel.
 
 Mais l'ouverture de directions compensées ne prouve pas leur réalisation physique. Il faut savoir si les corrélations sont :
 
@@ -164,9 +168,11 @@ Le concept de contingence canalisée reçoit une première différenciation.
 
 Les corrélations nucléaires autour du processus triple alpha montrent une canalisation : plusieurs niveaux varient ensemble et protègent partiellement un écart pertinent.
 
-### 7.2 Reconfiguration historique
+### 7.2 Reconfiguration conditionnelle
 
-L'univers weakless montre une reconfiguration : l'absence d'un processus modifie les voies ultérieures, mais une autre histoire devient possible sous des conditions initiales différentes.
+Les modèles weakless montrent une reconfiguration possible : l'absence d'un processus modifie les voies ultérieures, mais d'autres histoires astrophysiques peuvent devenir opératoires sous des conditions initiales et paramètres différents.
+
+Cette reconfiguration est mieux étayée qu'une simple curiosité ponctuelle, mais elle reste conditionnelle. Elle ne dit ni combien de telles trajectoires existent, ni quelle part de l'espace des théories elles occupent, ni si elles conduisent effectivement à la vie.
 
 ### 7.3 Canalisation incomplète
 
@@ -190,8 +196,8 @@ Sa force varie selon les cas.
 
 | Cas | Portée anthropique provisoire |
 |---|---|
-| échelle faible | faible sans restriction forte des paramètres autorisés à varier |
-| weakless | sert surtout à montrer l'insuffisance d'une nécessité à un paramètre |
+| échelle faible | ouverte ; séparer naturalité technique et nécessité environnementale |
+| weakless | montre qu'une nécessité absolue à un paramètre est insuffisamment établie, sans fournir un verdict global |
 | Hoyle | peut pondérer une région favorable à la chimie carbonée, sans définir le prior |
 | `Lambda` | cas le plus structuré pour une sélection par formation de galaxies, sous hypothèses |
 
@@ -254,7 +260,7 @@ Réponse provisoire :
 Réponse provisoire :
 
 - les paramètres générateurs du secteur Higgs et des Yukawa ;
-- la réalisation des compensations dans les mondes alternatifs ;
+- la réalisation et la pondération des compensations dans les mondes alternatifs ;
 - les paramètres microscopiques de QCD et de l'électromagnétisme ;
 - la valeur et la stabilité de la constante cosmologique ;
 - les distributions ou mesures permettant un langage probabiliste.
@@ -291,7 +297,7 @@ Chaque extension devra apporter un contraste nouveau, non accumuler des exemples
 ## 14. Décision provisoire
 
 ```text
-Premier lot du cycle fine-tuning : concluant.
+Premier lot du cycle fine-tuning : concluant sous réserve de pondérer chaque cas.
 ```
 
 Il confirme :
@@ -301,6 +307,7 @@ Il confirme :
 3. l'utilité des relations constitutives ;
 4. la persistance de contingences résiduelles ;
 5. l'impossibilité d'une probabilité sans mesure ;
-6. la différence entre sélection et génération.
+6. la différence entre sélection et génération ;
+7. la nécessité de distinguer un stress test de possibilité d'un argument statistique ou anthropique complet.
 
 > Le déplacement principal n'est pas de nier le fine-tuning, mais de remplacer la question « combien de nombres sont improbables ? » par la question « quelles sensibilités et contingences subsistent après reconstruction de l'architecture physique qui les produit et les relie ? »
