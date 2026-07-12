@@ -20,6 +20,15 @@ Elle intervient apres :
 04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
+Elle recoit ensuite un raccord critique cible :
+
+```text
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
+```
+
 La v1.2 organisait les rangs, les roles, les acces, les architectures et la
 temporalite.
 
@@ -70,6 +79,7 @@ par quel acces, selon quelle trajectoire, et avec quelles limites ?
 | Acces | Regime obligatoire | Part du statut de la grandeur |
 | Vocabulaire historique | Surveille | Relegue en controle de rang |
 | Sortie taxonomique | Toujours disponible | Subordonnee a l'analyse regime / acces / trajectoire |
+| Decision | Formule de prudence | Sortie explicite apres diagnostic, verrou et test eventuel |
 
 Decision :
 
@@ -90,16 +100,23 @@ Toute fiche ou synthese active doit suivre l'ordre suivant :
 5. trajectoire de stabilisation ;
 6. solidarite architecturale eventuelle ;
 7. limite conservee ;
-8. controle de rang.
+8. controle de rang ;
+9. couche decisionnelle si le cas est litigieux.
 ```
 
 La sortie taxonomique arrive donc apres la stabilisation.
 
 Elle ne doit plus ouvrir l'analyse.
 
+Pour les cas litigieux, ajouter :
+
+```text
+diagnostic -> verrou -> test eventuel -> sortie taxonomique.
+```
+
 ### 5. Modes de stabilisation effectifs
 
-Le corpus stabilise au moins neuf modes.
+Le corpus stabilise au moins dix modes.
 
 | Mode | Question | Exemples |
 |---|---|---|
@@ -111,6 +128,7 @@ Le corpus stabilise au moins neuf modes.
 | Validite limitee | Une description vaut-elle dans un domaine determine ? | `G_F`, Fermi, gravitation effective |
 | Inference reconstruite | Une grandeur est-elle stabilisee par modele et donnees ? | `sigma_8`, `S_8`, `H_0` selon acces |
 | Borne ou contrainte | Une limite remplace-t-elle une mesure positive directe ? | masse absolue neutrino, tensions cosmologiques |
+| Escalade de tension | Une divergence d'acces impose-t-elle un stress test ou une substitution ? | `H_0`, `S_8`, raccord `A_s` / `sigma_8` |
 | Constance de seuil | Une echelle rend-elle un regime physiquement lisible et architecturalement disponible ? | seuil BEH, `v`, masses faibles |
 
 Ces modes peuvent se croiser.
@@ -153,6 +171,7 @@ La temporalite devient un axe general, mais elle prend des formes locales.
 | Validite locale | Une description vaut dans un domaine d'energie ou d'echelle | theorie de Fermi, QCD effective |
 | Reconstruction | Une grandeur tardive est inferee par modele et donnees | cosmologie |
 | Borne persistante | Une absence de mesure positive stabilise un domaine admissible | masse absolue neutrino |
+| Scission constitution / acces | Une grandeur est-elle definissable avant d'etre connue par une route stable ? | `H_0`, `v`, masse absolue neutrino |
 
 Regle :
 
@@ -172,7 +191,7 @@ Le regime d'acces doit etre explicite dans tout document actif.
 | Extraction effective | Stabilise une grandeur dans un domaine | Domaine de validite et modele |
 | Inference de modele | Reconstruit une grandeur globale | Dependances de modele et donnees |
 | Borne | Delimite un domaine admissible | Ne pas la transformer en mesure positive |
-| Tension | Signale une incompatibilite entre acces | Ne pas la transformer en verdict immediat |
+| Tension | Signale une incompatibilite entre acces | Qualifier son niveau avant tout stress test ou substitution |
 
 Formule :
 
@@ -224,6 +243,10 @@ Methode active :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
 ```
 
 Cercle 2 architectural :
@@ -345,11 +368,51 @@ Etat de cloture :
 ```text
 le seuil electrofaible est raccorde a la carte des dependances ;
 les codes internes restent des reperes documentaires ;
-la prochaine ouverture peut porter sur le chantier critique deja
-extrait, sans reouvrir le cycle du seuil.
+le chantier critique extrait est maintenant raccorde sans reouvrir
+le cycle du seuil.
 ```
 
-### 14. Formule de cloture
+### 14. Raccord critique lot 2
+
+Le second lot critique ajoute une couche decisionnelle.
+
+Il ne remplace pas la carte v1.3.
+
+Il precise son usage dans les cas litigieux :
+
+```text
+1. la sortie taxonomique vient apres diagnostic ;
+2. les temporalites de constitution et d'acces doivent etre scindees ;
+3. les tensions cosmologiques recoivent un niveau d'escalade ;
+4. un test traversant peut valider le dispositif avant refonte de carte.
+```
+
+Documents raccordes :
+
+```text
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
+```
+
+Decision issue du test `H_0` :
+
+```text
+H_0 reste un parametre d'etat actuel ;
+la tension H_0 devient une tension persistante sous stress test,
+avec test de substitution ouvert ;
+elle ne devient ni famille, ni anomalie conclue, ni these physique autonome.
+```
+
+Effet sur la carte :
+
+```text
+la prudence n'est plus seulement une reserve ;
+elle produit des seuils d'action controles.
+```
+
+### 15. Formule de cloture
 
 Formule v1.3 :
 

@@ -82,7 +82,7 @@ Ces documents forment le noyau actif du corpus.
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 et raccord critique cible |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant controle des limites |
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Recentrage sur la question : dans quelle mesure une grandeur peut-elle etre dite constante |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Garde-fou des limites et non-theses avant premier degagement |
