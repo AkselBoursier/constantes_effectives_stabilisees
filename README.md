@@ -49,6 +49,17 @@ La question sert ici d’instruction d’enquête. Le projet distingue les forme
 
 Le cas weakless est traité comme une construction de possibilité prolongée par quelques travaux ultérieurs, non comme une réfutation générale du fine-tuning ou une démonstration d’habitabilité.
 
+### Fixité électrofaible dynamique
+
+- [Cadrage du cycle](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md)
+- [Typologie des variations](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/typologie-des-variations-electrofaibles.md)
+- [Mécanismes de constitution et de stabilisation](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/mecanismes-de-constitution-et-stabilisation.md)
+- [Contraintes observationnelles](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/contraintes-observationnelles-variation-electrofaible.md)
+- [Modèle test scalaire–Higgs](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-test-scalaire-higgs-portal.md)
+- [Synthèse de phase 1](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/synthese-phase1-fixite-electrofaible-dynamique.md)
+
+Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Il teste comment une grandeur variable pourrait devenir quasi fixe dans un régime tardif.
+
 ## Résultat provisoire
 
 Les cycles ne révèlent pas une espèce naturelle unique appelée « constante physique ». Ils distinguent au moins :
@@ -80,4 +91,5 @@ Branches actives :
 ```text
 agent/refondation-domaine
 agent/cycle-fine-tuning
+agent/cycle-fixite-electrofaible-dynamique
 ```
