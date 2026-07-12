@@ -299,7 +299,7 @@ Formule courte :
 > Le cycle du seuil qualifie un seuil : `v` en est le noyau, les masses faibles
 > en sont le controle.
 
-### 12. Suite logique
+### 12. Cloture documentaire
 
 La synthese issue du cycle est :
 
@@ -307,11 +307,28 @@ La synthese issue du cycle est :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
 ```
 
+Raccords produits :
+
+```text
+05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
+05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_terminologie_chantiers_v0_1.md
+```
+
 Fonction tenue :
 
 ```text
 resserrer le cycle en une synthese courte ;
-preparer le raccord avec la carte consolidee ;
-maintenir le chantier scalaire et la jonction d'historicite
-cosmique comme reserves clairement nommees.
+raccorder le seuil electrofaible aux cartes consolidees ;
+maintenir le chantier du secteur scalaire et la jonction d'historicite
+cosmique comme reserves clairement nommees ;
+reserver CP-1 au reperage documentaire.
+```
+
+Etat de cloture :
+
+```text
+le cycle du seuil electrofaible est consolide comme entree vers
+Saveur-Higgs ; il n'appelle plus de raccord immediat avant l'ouverture
+du chantier critique deja extrait.
 ```

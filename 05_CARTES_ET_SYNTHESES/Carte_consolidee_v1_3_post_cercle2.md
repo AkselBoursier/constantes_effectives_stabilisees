@@ -334,11 +334,19 @@ montrer le seuil electrofaible comme entree vers Saveur-Higgs,
 avec `v` comme noeud partage.
 ```
 
-Suite logique :
+Relecture terminologique produite :
 
 ```text
-relecture terminologique legere du chantier seuil electrofaible,
-pour reserver les codes internes au reperage documentaire.
+01_CADRE_METHODOLOGIQUE/Note_terminologie_chantiers_v0_1.md
+```
+
+Etat de cloture :
+
+```text
+le seuil electrofaible est raccorde a la carte des dependances ;
+les codes internes restent des reperes documentaires ;
+la prochaine ouverture peut porter sur le chantier critique deja
+extrait, sans reouvrir le cycle du seuil.
 ```
 
 ### 14. Formule de cloture

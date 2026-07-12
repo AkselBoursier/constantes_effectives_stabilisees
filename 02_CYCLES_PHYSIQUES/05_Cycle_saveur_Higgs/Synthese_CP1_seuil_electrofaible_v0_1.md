@@ -295,12 +295,18 @@ Raccord produit :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 ```
 
-### 12. Suite logique
+### 12. Cloture et raccords
 
 Le raccord a la carte des dependances architecturales est produit :
 
 ```text
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
+```
+
+La relecture terminologique legere est produite :
+
+```text
+01_CADRE_METHODOLOGIQUE/Note_terminologie_chantiers_v0_1.md
 ```
 
 Fonction obtenue :
@@ -309,13 +315,15 @@ Fonction obtenue :
 montrer le seuil electrofaible comme entree vers Saveur-Higgs ;
 situer `v` comme noeud partage ;
 maintenir les chantiers scalaire et cosmologique associes comme
-reserves clairement nommees.
+reserves clairement nommees ;
+garder CP-1 comme code documentaire plutot que comme vocabulaire
+principal.
 ```
 
-Suite utile :
+Etat de cloture :
 
 ```text
-relecture terminologique legere du chantier seuil electrofaible,
-pour garder CP-1 comme code documentaire plutot que comme vocabulaire
-principal.
+le seuil electrofaible est raccorde a la carte consolidee, a la carte
+des dependances et a la note terminologique ; la prochaine ouverture
+peut porter sur le chantier critique sans rouvrir ce cycle.
 ```

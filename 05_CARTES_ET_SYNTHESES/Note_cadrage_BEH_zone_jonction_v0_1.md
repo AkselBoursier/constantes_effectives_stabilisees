@@ -263,7 +263,7 @@ Formules reservees a une instruction ulterieure :
 | arbitrage philosophique du mecanisme | transformation en controle de formulation, puis retour aux sources physiques |
 | origine du regime brise par Saveur-Higgs | cycle physique BEH / Higgs instruit en amont de l'architecture |
 
-### 10. Suite logique
+### 10. Raccord produit
 
 La piece physique ouverte depuis ce cadrage est :
 
@@ -279,15 +279,15 @@ experimentaux et ses formulations prudentes, avant toute extraction
 de these.
 ```
 
-Elle fournit ensuite les criteres pour decider si le cycle du seuil
-s'ouvre comme :
+Elle a ensuite fourni les criteres permettant d'ouvrir le cycle du seuil
+electrofaible comme :
 
 ```text
-cycle sur `v` ;
-cycle sur le regime electroweak ;
-cycle sur les masses faibles ;
-cycle sur le potentiel de Higgs ;
-cycle de jonction entre seuil physique et architecture Saveur-Higgs.
+cycle du seuil electrofaible ;
+qualification de `v` comme noyau d'echelle ;
+controle par les masses faibles ;
+raccord vers l'architecture Saveur-Higgs ;
+reserve explicite pour le chantier du secteur scalaire de Higgs.
 ```
 
 ### 11. Formule de cloture
@@ -295,7 +295,7 @@ cycle de jonction entre seuil physique et architecture Saveur-Higgs.
 ```text
 BEH prend ici le rang de seuil.
 Il nomme le point ou l'architecture Saveur-Higgs recoit son echelle
-d'entree. La prochaine tache consiste a instruire ce seuil assez
-froidement pour savoir quelle constance le corpus peut vraiment y
-qualifier.
+d'entree. La note physique, le cycle du seuil electrofaible et sa
+synthese qualifient cette entree sans transformer la brisure en these
+autonome.
 ```

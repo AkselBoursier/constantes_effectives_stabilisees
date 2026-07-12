@@ -254,7 +254,7 @@ Documents actifs :
 
 | Document | Statut | Role |
 |---|---|---|
-| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md` | Cycle ouvert | Seuil electrofaible et constance de seuil |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md` | Cycle consolide | Seuil electrofaible et constance de seuil |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md` | Consolidation | Synthese du seuil electrofaible et raccord aux cartes |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md` | Note physique preparatoire | Mecanisme BEH, grandeurs et regimes d'acces |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
