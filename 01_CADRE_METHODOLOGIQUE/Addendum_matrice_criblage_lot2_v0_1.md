@@ -174,6 +174,12 @@ Etat du deuxieme point :
 01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
 ```
 
+Etat du troisieme point :
+
+```text
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
+```
+
 ### 8. Formule de cloture
 
 ```text

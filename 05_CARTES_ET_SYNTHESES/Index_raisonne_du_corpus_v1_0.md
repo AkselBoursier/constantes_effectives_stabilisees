@@ -146,6 +146,7 @@ Tests taxonomiques remontes :
 | Document | Statut | Role |
 |---|---|---|
 | `03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md` | Consolidation active | Recuperation positive de Seuil, Fond, liaison stabilisee et familles fragiles |
+| `03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md` | Test actif | Application addendum, matrice temporelle v0.2 et passerelle a H_0 |
 | `03_TESTS_TAXONOMIQUES/README.md` | Index local | Sources DOCX extraites du lot 2 |
 
 Decision :

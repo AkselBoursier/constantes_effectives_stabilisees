@@ -170,7 +170,11 @@ Limite conservee :
 
 Cette passerelle ne modifie pas encore la carte consolidee.
 
-Elle prepare un test traversant.
+Test traversant produit :
+
+```text
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
+```
 
 La carte ne devra integrer une nouvelle formulation qu'apres verification sur un cas :
 

@@ -30,3 +30,9 @@ Synthese de recuperation :
 ```text
 03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
 ```
+
+Test traversant apres critiques lot 2 :
+
+```text
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
+```

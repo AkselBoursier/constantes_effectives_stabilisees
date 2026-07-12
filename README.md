@@ -71,6 +71,7 @@ Tests taxonomiques :
 
 ```text
 03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md
+03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md
 ```
 
 Architectures :
