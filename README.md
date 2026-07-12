@@ -38,6 +38,17 @@ La question sert ici d’instruction d’enquête. Le projet distingue les forme
 - [Vérification physique](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/verification-physique-cosmologique.md)
 - [Évaluation du gain explicatif](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md)
 
+### Fine-tuning
+
+- [Cadrage du cycle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md)
+- [Hiérarchie électrofaible](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-hierarchie-electrofaible.md)
+- [Univers sans interaction faible — stress test de possibilité](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-univers-sans-interaction-faible.md)
+- [Quarks légers et état de Hoyle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-quarks-legers-etat-hoyle.md)
+- [Constante cosmologique](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/fiche-cas-constante-cosmologique.md)
+- [Synthèse du premier lot](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md)
+
+Le cas weakless est traité comme une construction de possibilité prolongée par quelques travaux ultérieurs, non comme une réfutation générale du fine-tuning ou une démonstration d’habitabilité.
+
 ## Résultat provisoire
 
 Les cycles ne révèlent pas une espèce naturelle unique appelée « constante physique ». Ils distinguent au moins :
@@ -64,8 +75,9 @@ Les travaux sont menés sur des branches thématiques, avec des commits séparan
 - évaluation conceptuelle ;
 - migration documentaire.
 
-La branche actuelle de refondation est :
+Branches actives :
 
 ```text
 agent/refondation-domaine
+agent/cycle-fine-tuning
 ```
