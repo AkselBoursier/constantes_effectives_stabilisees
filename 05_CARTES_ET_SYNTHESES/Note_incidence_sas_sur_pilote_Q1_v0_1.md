@@ -78,8 +78,7 @@ Le terme `coupe` ne sera pas utilisé avant que son type soit spécifié.
 ## 5. Garde-fous pédagogiques
 
 ```text
-aucune toupie pour représenter le spin ;
-aucune petite sphère en rotation ;
+aucune petite sphère en rotation pour représenter le spin ;
 aucune trajectoire classique présupposée entre source et impact ;
 aucune conversion immédiate de deux taches en propriété classique préexistante ;
 aucune assimilation de l'expérience à une stabilisation de constante.
