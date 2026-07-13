@@ -32,8 +32,9 @@ Puis suivre, selon le besoin :
 | 1 | [Note methodologique courte](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Criblage pratique des cas litigieux |
 | 2 | [Carte consolidee v1.3](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Etat transversal du pan physique |
 | 3 | [Matrice des acquis theoriques](05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md) | Acquis argumentables et limites |
-| 4 | [README philosophique](06_PHILOSOPHIE/README.md) | Charte, genres et ordre de lecture du pan philosophique |
-| 5 | [Audit de taxonomie](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md) | Diagnostic et decisions sur la genealogie taxonomique |
+| 4 | [Synthese de la refondation](05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md) | Resultats des cycles relationnels |
+| 5 | [README philosophique](06_PHILOSOPHIE/README.md) | Charte, genres et ordre de lecture du pan philosophique |
+| 6 | [Audit de taxonomie](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md) | Diagnostic et decisions sur la genealogie taxonomique |
 
 ## Organisation du depot
 
@@ -57,7 +58,10 @@ constantes_effectives_stabilisees/
 | Couche | Point d'entree | Statut |
 |---|---|---|
 | Methode | [Note methodologique v1.3](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md) | Reference active |
+| Refonte des cycles | [Cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | Consolidation relationnelle |
 | Cycles physiques | [02_CYCLES_PHYSIQUES](02_CYCLES_PHYSIQUES/) | Preuves locales et syntheses de cycle |
+| Fine-tuning | [Cadrage du cycle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Cycle transversal de test |
+| Fixite electroweak dynamique | [Cadrage du cycle](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Cycle de test dynamique |
 | Tests taxonomiques | [README des tests](03_TESTS_TAXONOMIQUES/README.md) | Genealogie controlee des categories |
 | Architectures | [Cercle 2](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md) | Architectures actives |
 | Cartes et syntheses | [Carte consolidee v1.3](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Navigation transverse |
