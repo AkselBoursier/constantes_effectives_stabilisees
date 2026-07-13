@@ -2,6 +2,12 @@
 
 ## Navigation, statuts documentaires et ordre de lecture
 
+> **Mise a jour de rangement** : les references historiques aux "Word racine"
+> decrivent l'etat precedent du depot. Les 60 DOCX et le fichier texte sont
+> maintenant ranges dans les dossiers thematiques `00_Sources_docx`. Voir le
+> [registre des sources primaires](Registre_sources_primaires_v0_1.md) pour
+> les chemins et empreintes actuels.
+
 ### 1. Fonction de l'index
 
 Cet index ne modifie pas la methode.
@@ -69,7 +75,7 @@ L'index utilise six statuts.
 | Protocole actif | Document d'application reutilisable | Matrices de criblage, tests de resistance |
 | Consolidation | Document qui stabilise un cycle ou une architecture | Notes d'architecture, syntheses de cycles |
 | Preuve locale | Fiche ou cycle qui justifie une decision | Fiches physiques detaillees |
-| Source primaire historique | Document source anterieur encore porteur de matiere | Fichiers Word racine, fiches initiales, tests, cartes anciennes |
+| Source primaire historique | Document source anterieur encore porteur de matiere | DOCX ranges dans les dossiers thematiques `00_Sources_docx`, fiches initiales, tests, cartes anciennes |
 | Archive future | Original conserve apres extraction et integration | DOCX apres remontee Markdown controlee |
 | A produire | Document utile mais non encore cree | Lacunes identifiees |
 
@@ -97,6 +103,7 @@ Ces documents forment le noyau actif du corpus.
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
+| `05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md` | Registre de provenance | Chemins thematiques et empreintes des originaux et extractions |
 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` | Protocole actif | Seuil de remontee ciblee avant cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Consolidation active | Cloture du traitement cible avant cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |

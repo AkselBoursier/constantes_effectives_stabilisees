@@ -80,6 +80,11 @@ Markdown, leur rattachement et leur verification sont pilotes par :
 
 - [Plan de remontee des sources](05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md)
 - [Table de remontee des sources](05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md)
+- [Registre des sources primaires](05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md)
+
+Les originaux sont ranges dans les dossiers thematiques `00_Sources_docx`;
+le registre associe chaque original a son extraction et a son empreinte
+SHA-256.
 
 Les fichiers `Source_docx_*` sont des extractions de travail. Une formule,
 un tableau ou une image insuffisamment restituee doit etre signale par la

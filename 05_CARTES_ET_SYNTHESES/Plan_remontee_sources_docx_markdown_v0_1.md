@@ -6,8 +6,8 @@
 
 Ce document corrige une ambiguite de vocabulaire documentaire.
 
-Les fichiers `.docx` de la racine ne doivent pas etre traites comme des
-archives au sens faible.
+Les fichiers `.docx` initialement a la racine ne doivent pas etre traites
+comme des archives au sens faible.
 
 Ils sont :
 
@@ -28,12 +28,12 @@ Ils ne deviendront des archives qu'apres :
 
 ### 2. Constat actuel
 
-Inventaire indicatif :
+Inventaire apres consolidation :
 
 ```text
-47 fichiers DOCX a la racine ;
-8 fichiers DOCX de critiques constructives dans le dossier 90_Critiques ;
-1 fichier Ecriture.txt lie a la fiche Lambda.
+60 fichiers DOCX ranges dans les dossiers thematiques `00_Sources_docx` ;
+1 fichier Ecriture.txt lie a la fiche Lambda et range avec le lot 1B ;
+61 extractions Markdown tracees dans le registre des sources primaires.
 ```
 
 Un audit existe deja :
@@ -42,7 +42,8 @@ Un audit existe deja :
 05_CARTES_ET_SYNTHESES/Audit_dependances_et_reorganisation_v0_1.md
 ```
 
-Cet audit a correctement pose que les Word racine ne sont pas des archives.
+Cet audit a correctement pose que les Word initialement a la racine ne sont
+pas des archives.
 
 Mais il preparait surtout une reorganisation physique.
 
@@ -50,7 +51,8 @@ La tache presente ajoute un autre objectif :
 
 ```text
 remonter la matiere source en Markdown exploitable,
-sans deplacer ni supprimer les fichiers d'origine.
+deplacer les originaux sans les modifier vers leur dossier thematique,
+et conserver une table de correspondance verifiable.
 ```
 
 ### 3. Decision de priorite
@@ -116,7 +118,8 @@ Format recommande pour les fichiers Markdown de remontee :
 Source_docx_<nom_ascii>_v0_1.md
 ```
 
-Le fichier source d'origine reste inchange.
+Le fichier source d'origine reste inchange, conserve dans le dossier
+`00_Sources_docx` correspondant.
 
 ### 6. Lots de traitement
 
@@ -230,7 +233,7 @@ Ne pas faire :
 
 ```text
 supprimer les DOCX ;
-deplacer les DOCX avant table de correspondance ;
+deplacer les DOCX hors du chemin declare dans la table et le registre ;
 renommer les DOCX ;
 traiter les DOCX comme secondaires ;
 convertir en Markdown puis effacer les formulations initiales ;
@@ -247,23 +250,18 @@ integrer,
 et seulement ensuite archiver au sens strict.
 ```
 
-### 8. Prochaine tache concrete
+### 8. Etat de la remontee
 
-La prochaine tache logique devient :
-
-```text
-produire une table de remontee des sources DOCX,
-lot par lot,
-avec destination Markdown cible et document actif concerne.
-```
-
-Table produite :
+La table et la conversion complete sont maintenant produites :
 
 ```text
 05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md
+05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md
 ```
 
-Cette table precede toute conversion massive.
+Le registre fixe les emplacements physiques, les sorties Markdown et les
+empreintes SHA-256. Les futures reprises se concentrent donc sur la lecture,
+la comparaison et l'integration, non sur la recuperation de fichiers racine.
 
 Premier lot ouvert :
 
@@ -282,10 +280,10 @@ Deuxieme lot ouvert :
 Troisieme lot ouvert :
 
 ```text
-04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md
-02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_1.md
-02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md
-02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md
+04_ARCHITECTURES/00_Sources_docx/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_1.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_2.md
+02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_3.md
 04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
 ```
 
