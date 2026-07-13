@@ -6,6 +6,14 @@ Ce document est le cadre canonique actif de la refondation.
 
 Son historique est désormais porté par Git. Aucun numéro de version n’est ajouté à son nom.
 
+Décision de rang associée :
+
+- [Constance de l’objet, stabilisation de l’accès et mode de constitution](Decision_statuts_constance_acces_constitution_v0_1.md)
+
+Carte de jonction associée :
+
+- [Carte des frottements entre chantiers](../05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md)
+
 Document de synthèse associé :
 
 - [Synthèse de la refondation des cycles](../05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md)
@@ -60,7 +68,7 @@ Une grandeur `g` peut recevoir un statut de constance relativement à un régime
 
 Le mot `stabilisée` désigne le résultat éventuel d’un test. Il ne définit pas circulairement la stabilisation.
 
-## 4. Trois statuts de constance
+## 4. Trois statuts de constance de l’objet
 
 ### 4.1 Constance physique
 
@@ -74,7 +82,27 @@ Coefficient traité comme fixe dans une approximation contrôlée, avec correcti
 
 Valeur numérique fixée exactement dans un système d’unités, sans assimilation à une mesure parfaite ni à une invariance physique démontrée.
 
-## 5. Axes auxiliaires
+## 5. Niveaux à ne pas confondre
+
+Le corpus distingue désormais explicitement :
+
+```text
+constance de l’objet
+≠
+stabilisation de l’accès ou de l’estimation
+≠
+mode de constitution ou d’organisation.
+```
+
+Une borne, une reconstruction ou une tension peuvent stabiliser un domaine admissible, une estimation ou un niveau de maturité sans constituer une constance de l’objet.
+
+Une architecture, une composition ou une dynamique peuvent constituer une relation ou canaliser une fixité sans expliquer automatiquement la valeur de leurs paramètres libres.
+
+La décision détaillée est portée par :
+
+- [Décision de rang — constance, accès et constitution](Decision_statuts_constance_acces_constitution_v0_1.md)
+
+## 6. Axes auxiliaires
 
 Les propriétés suivantes ne constituent pas, à elles seules, des statuts de constance physique :
 
@@ -92,7 +120,7 @@ robustesse de l’accès
 constance de l’objet.
 ```
 
-## 6. Fonction de fixité
+## 7. Fonction de fixité
 
 Une fonction de fixité désigne provisoirement :
 
@@ -102,7 +130,7 @@ Cette fonction n’est pas un type ontologique.
 
 Le même objet peut exercer plusieurs fonctions, et plusieurs objets physiquement différents peuvent tenir une fonction similaire.
 
-## 7. Objets exclus du noyau
+## 8. Objets exclus du noyau
 
 Le qualificatif de constante est refusé ou suspendu pour :
 
@@ -117,7 +145,9 @@ Le qualificatif de constante est refusé ou suspendu pour :
 - un paramètre rendu fixe seulement par procédure ;
 - une valeur numérique dont le système d’unités est omis.
 
-## 8. Test des cinq cas sentinelles
+Le refus du mot `constante` ne retire pas à ces objets leur intérêt scientifique. Il les requalifie comme paramètres d’état, conditions, bornes, reconstructions ou éléments d’une architecture d’inférence.
+
+## 9. Test des cinq cas sentinelles
 
 Document :
 
@@ -130,17 +160,17 @@ Résultat :
 | `G_F` | admis comme constante effective à basse énergie |
 | `h` dans le SI | admis comme constante métrologique définissante |
 | `alpha_s(mu)` | refusé comme constante simpliciter |
-| `H_0` | refusé comme constante nomologique |
-| borne sur la masse des neutrinos | refusée comme constante |
+| `H_0` | refusé comme constante nomologique ; conservé comme paramètre d’état reconstruit |
+| borne sur la masse des neutrinos | refusée comme constante ; conservée comme domaine admissible borné |
 
 ```text
 2 admissions relatives
 3 refus.
 ```
 
-## 9. Résultat des cycles
+## 10. Résultat des cycles
 
-### 9.1 Higgs–Yukawa
+### 10.1 Higgs–Yukawa
 
 - [Dossier central](../02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/architecture-relationnelle-higgs-yukawa.md)
 - [Vérification](../02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/verification-physique-higgs-yukawa.md)
@@ -148,7 +178,7 @@ Résultat :
 
 Verdict : architecture physique et représentationnelle confirmée ; famille unique de constantes refusée.
 
-### 9.2 Basse énergie
+### 10.2 Basse énergie
 
 - [Dossier central](../02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md)
 - [Vérification](../02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md)
@@ -156,7 +186,7 @@ Verdict : architecture physique et représentationnelle confirmée ; famille uni
 
 Verdict : architecture méthodologique de validité confirmée ; espèce unique de constantes effectives refusée.
 
-### 9.3 SI
+### 10.3 SI
 
 - [Dossier central](../02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md)
 - [Vérification](../02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/verification-metrologique-si.md)
@@ -164,7 +194,7 @@ Verdict : architecture méthodologique de validité confirmée ; espèce unique 
 
 Verdict : architecture définitionnelle confirmée ; homogénéité physique des constantes définissantes refusée.
 
-### 9.4 Cosmologie
+### 10.4 Cosmologie
 
 - [Dossier central](../02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md)
 - [Vérification](../02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/verification-physique-cosmologique.md)
@@ -172,7 +202,23 @@ Verdict : architecture définitionnelle confirmée ; homogénéité physique des
 
 Verdict : architecture inférentielle confirmée ; architecture de constantes refusée ; `Lambda` seul candidat direct dans un modèle spécifié.
 
-## 10. Distinctions acquises
+### 10.5 Fine-tuning
+
+- [Cadrage](../02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md)
+- [Synthèse du premier lot](../02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md)
+
+Verdict : le fine-tuning doit être audité comme relation entre espace de paramètres, carte vers des observables, critère de viabilité et mesure éventuelle. Les dépendances et corrélations dissolvent ou réduisent certains réglages ; des contingences résiduelles subsistent, notamment pour la constante cosmologique.
+
+### 10.6 Fixité électrofaible dynamique
+
+- [Cadrage](../02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md)
+- [Phase 2 — modèle minimal](../02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase2-modele-minimal.md)
+- [Phase 3 — régime quartique](../02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase3-regime-quartique.md)
+- [Phase 4 — toy model dissipatif](../02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase4-toy-model-dissipatif.md)
+
+Verdict : rendre une grandeur dynamique ne constitue pas une explication. Les modèles conservatifs testés stabilisent `v` mais échouent sur le devenir énergétique ; un bilan ouvert possède une fenêtre phénoménologique, dont la réalisation microscopique reste à établir.
+
+## 11. Distinctions acquises
 
 ```text
 explication d’une relation
@@ -208,7 +254,15 @@ architecture d’un domaine
 architecture de constantes
 ```
 
-## 11. Conditions d’échec
+```text
+constitution d’une fixité
+≠
+qualification de cette fixité
+≠
+interprétation ontologique de sa constitution
+```
+
+## 12. Conditions d’échec
 
 Le cadre échoue si :
 
@@ -219,9 +273,11 @@ Le cadre échoue si :
 5. il confond fonction locale et nature de l’objet ;
 6. il transforme un paramètre libre en explication ;
 7. ses catégories dépendent seulement de son vocabulaire interne ;
-8. une carte relationnelle n’ajoute ni dérivation, ni exclusion, ni contrefactuel.
+8. une carte relationnelle n’ajoute ni dérivation, ni exclusion, ni contrefactuel ;
+9. une dynamique déplace le réglage sans en comptabiliser le coût ;
+10. une interprétation philosophique est présentée comme résultat physique acquis.
 
-## 12. Statut du corpus antérieur
+## 13. Statut du corpus antérieur
 
 Les anciennes familles, cartes et architectures restent disponibles comme archives de recherche.
 
@@ -237,19 +293,23 @@ Les éléments réutilisables sont :
 - limites explicatives ;
 - intuitions philosophiques requalifiées.
 
-## 13. Prochaine phase
+Les documents philosophiques actifs conservent leur fonction d’exploration, de test, de voisinage et de préparation des livrables. Leur intégration au noyau passe par une décision de rang, non par leur seule présence dans le même dépôt.
 
-La phase conceptuelle minimale est close.
+## 14. Phase actuelle
 
-La prochaine phase est documentaire et Git :
+La migration documentaire, la réunion des branches historiques et l’ouverture des cycles fine-tuning et fixité dynamique ont été réalisées dans une branche de récupération.
 
-1. rendre le `README` navigable depuis ce noyau ;
-2. définir les statuts `actif`, `source`, `archive` ;
-3. remplacer progressivement les noms versionnés des documents actifs par des noms canoniques ;
-4. préserver les états historiques dans Git et dans les archives ;
-5. réparer les liens relatifs ;
-6. ouvrir une pull request de migration séparée.
+La phase actuelle est une resynchronisation bornée avant validation :
 
-## 14. Formule de clôture
+1. appliquer la distinction entre constance de l’objet, accès et constitution ;
+2. réparer les références actives et les versions déclarées courantes ;
+3. rendre visibles les frottements entre les chantiers ;
+4. maintenir les documents exploratoires sans leur attribuer un rang canonique implicite ;
+5. contrôler les liens, terminaisons, placeholders et fichiers annoncés ;
+6. soumettre la consolidation corrigée à revue avant toute fusion dans `main`.
 
-> La question « qu’est-ce qu’une constante ? » fournit moins une réponse substantielle unique qu’un opérateur critique : demander à chaque fixité qui la porte, sous quelles transformations elle tient, dans quel régime, par quelle voie nous y accédons et à quel niveau elle doit être refusée.
+Après cette validation, les nouveaux chantiers devront partir du nouveau `main` et les branches thématiques rester bornées et temporaires.
+
+## 15. Formule de clôture
+
+> La question « qu’est-ce qu’une constante ? » fournit moins une réponse substantielle unique qu’un opérateur critique : demander à chaque fixité qui la porte, sous quelles transformations elle tient, dans quel régime, par quelle voie nous y accédons, par quelle histoire elle se constitue et à quel niveau elle doit être refusée.
