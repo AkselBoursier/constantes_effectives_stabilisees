@@ -507,7 +507,7 @@ Formule courte :
 La suite historique a ete la note d'integration architecturale :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 Objectif realise :
@@ -536,7 +536,7 @@ Documents internes utilises :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 ### 18. Sources de controle externes

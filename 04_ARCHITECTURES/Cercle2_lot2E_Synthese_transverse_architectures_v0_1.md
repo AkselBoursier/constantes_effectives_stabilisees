@@ -10,11 +10,11 @@ Elle reprend la synthese transverse des architectures apres les lots 2A a 2D,
 a partir des appuis suivants :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 

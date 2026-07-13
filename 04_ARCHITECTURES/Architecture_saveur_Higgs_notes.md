@@ -22,7 +22,7 @@ Elle integre aussi les corrections introduites par :
 Complement de reprise positive :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
 ```
 
 La presente note reste la consolidation locale.

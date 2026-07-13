@@ -282,11 +282,11 @@ Deuxieme lot ouvert :
 Troisieme lot ouvert :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md
-04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
+04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
 ```
 
 Traitement cible pre-Cercle 2 ouvert :

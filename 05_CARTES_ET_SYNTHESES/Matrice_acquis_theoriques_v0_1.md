@@ -12,8 +12,8 @@ Elle s'appuie sur :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
 Son but n'est pas encore de formuler une these complete.

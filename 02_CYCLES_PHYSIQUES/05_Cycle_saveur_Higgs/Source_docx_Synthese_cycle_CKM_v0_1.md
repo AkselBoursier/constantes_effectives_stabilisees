@@ -19,6 +19,15 @@ Elle rend la matiere lisible en Markdown pour comparaison et integration.
 La mise en page Word n'est pas reconstruite.
 ```
 
+## Avertissement d'extraction
+
+> Ce fichier contient des placeholders `[  ]` (et variants comme `[ X= ]`) correspondant
+> a des passages incomplets dans le DOCX source : formules non rendues, tableaux mal convertis,
+> elements graphiques ou equations complexes.
+> Ne pas interpreter ces placeholders comme du contenu valide.
+> Verifier le DOCX source avant toute reprise scientifique.
+> Convention : [CONVENTION_PLACEHOLDERS.md](../../CONVENTION_PLACEHOLDERS.md)
+
 ## Extraction
 
 ### Synthèse du cycle CKM v0.1
