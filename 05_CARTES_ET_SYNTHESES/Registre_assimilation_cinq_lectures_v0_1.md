@@ -141,28 +141,15 @@ REJETER : traduction directe d'une mesure en conclusion philosophique.
 méthode de transition ; Q1 ; M1 ; architecture publique ; chantier A.
 ```
 
-## 6. Analogie de la toupie — correction d'auteur
+## 6. Trace méthodologique d'un retrait
 
-L'analogie n'est conservée que pour un mouvement cognitif structurel :
+Une analogie de stabilisation envisagée pendant cette première passe est retirée
+entièrement du corpus actif. Elle risquait d'introduire une image préconçue de la
+constance et de la stabilisation avant l'analyse des cas.
 
-```text
-un comportement mobile ou irrégulier peut entrer dans un régime plus stable ;
-une photographie prise dans une fenêtre donnée peut donner une impression de fixité ;
-les échelles temporelles modifient la description pertinente.
-```
-
-Point d'arrêt absolu :
-
-```text
-aucune représentation de l'électron ;
-aucune représentation du spin ;
-aucune rotation microscopique classique ;
-aucune loi générale de stabilisation des constantes.
-```
-
-Le passage exact consacré à la toupie n'apparaît pas dans les résumés extraits ;
-son sens et ses limites sont donc enregistrés à partir de la correction explicite
-de l'auteur.
+La règle conservée est seulement procédurale : une ressource pédagogique doit
+pouvoir être supprimée sans remplacement lorsque son effet de cadrage devient
+plus fort que son utilité.
 
 ## 7. Verdicts communs
 
@@ -205,7 +192,7 @@ Stern–Gerlach comme événement de constitution des constantes.
 | preuves et contraintes | fiches publiques de cas |
 | transitions | Q1 et futurs textes philosophiques |
 | accès pluriel | méthode active |
-| analogies | réserve pédagogique |
+| analogies retenues après examen | réserve pédagogique |
 | contresens | carte de réception |
 | radicalisation narrative | chantier A |
 | administration GitHub | arrière-scène et provenance |
