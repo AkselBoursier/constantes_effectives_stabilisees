@@ -1,5 +1,21 @@
 # Matrice de criblage taxonomique v0.1
 
+## Note de statut (audit taxonomie v0.1)
+
+```text
+Ce document reste disponible comme reference historique.
+
+Il n'est plus le protocole operatif obligatoire.
+
+Pour le travail courant, utiliser la procedure courte :
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
+
+Pour le diagnostic taxonomique actuel :
+05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md
+```
+
+---
+
 ## Protocole d'application de la methode v1.3
 
 ### 1. Fonction du document

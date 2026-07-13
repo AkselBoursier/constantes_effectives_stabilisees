@@ -128,15 +128,31 @@ Document : [Architecture effective basse energie — notes](04_ARCHITECTURES_INT
 
 ---
 
+## Modes de stabilisation
+
+Les huit modes de stabilisation sont la grille de lecture principale du corpus.
+
+Ils repondent directement a la question directrice :
+dans quelle mesure une grandeur peut-elle etre dite constante ?
+
+| Mode | Description | Exemples |
+|---|---|---|
+| Valeur mesuree ou ajustee | Une valeur robuste est etablie dans un regime | masses, `M_W`, `Lambda_QCD` |
+| Couplage courant ou situe | Une intensite depend d'une echelle ou d'un schema | `alpha_s(Q^2)`, `alpha_G(E)`, Yukawa |
+| Composition exacte | Une grandeur derivee herite d'une exactitude definitionnelle | `R`, `K_J`, `R_K` |
+| Convention definissante | Une valeur fixe une unite | `k_B`, `N_A`, `c`, `h`, `e` |
+| Orientation | Une relation entre bases ou secteurs est stabilisee | CKM, PMNS |
+| Validite limitee | Une description vaut dans un domaine determine | `G_F`, Fermi, gravitation effective |
+| Inference reconstruite | Une grandeur est stabilisee par modele et donnees | `sigma_8`, `S_8`, `H_0` selon acces |
+| Borne ou contrainte | Une limite remplace une mesure positive directe | masse absolue neutrino, tensions cosmologiques |
+
+Ces modes peuvent se croiser.
+
+Ils ne sont pas des classes exclusives.
+
+---
+
 ## Termes de methode
-
-### Famille fonctionnelle controlee
-
-Regroupement de grandeurs partageant une meme fonction directrice dans un regime
-physique donne.
-
-Attention : les familles sont des outils de classement fonctionnel, non des
-categories ontologiques fixes.
 
 ### Regime physique / regime d'acces
 
@@ -152,9 +168,20 @@ Deux axes orthogonaux de la methode v1.3 :
 Comment le statut de la grandeur s'installe, varie, persiste ou se transforme
 dans le temps ou en fonction du regime.
 
+### Famille fonctionnelle controlee (terme historique controle)
+
+Regroupement de grandeurs partageant une meme fonction directrice dans un regime
+physique donne.
+
+Ce terme reste disponible comme sortie taxonomique apres test de resistance.
+
+Il ne doit pas etre utilise comme point de depart d'une analyse.
+
+Voir : [Audit de taxonomie v0.1](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md)
+
 ### Cercle 2
 
-Phase du projet consistant a tester les architectures inter-familles par des
+Phase du projet consistant a tester les architectures actives par des
 stress tests de validite.
 
 Dossier : [04_ARCHITECTURES_INTER_FAMILLES/](04_ARCHITECTURES_INTER_FAMILLES/)

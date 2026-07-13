@@ -112,11 +112,12 @@ Voir : [Convention des placeholders et statuts](CONVENTION_PLACEHOLDERS.md)
 | Cosmologique | [Synthese cycle cosmologique](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md) | [07_Cycle_cosmologique](02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/) |
 | Metrologique SI | [Cycle metrologique SI v0.1](02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md) | [08_Cycle_metrologique_SI](02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/) |
 
-### Tests taxonomiques
+### Archives taxonomiques
 
 | Document | Statut |
 |---|---|
-| [Synthese recuperation tests taxonomiques](03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md) | Consolidation |
+| [Audit de taxonomie v0.1](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md) | Reference active — diagnostic et decisions |
+| [Synthese recuperation tests taxonomiques](03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md) | Archive historique — genealogie des categories |
 
 Voir le [README du dossier 03_TESTS_TAXONOMIQUES](03_TESTS_TAXONOMIQUES/README.md).
 
@@ -141,6 +142,7 @@ Voir le [README du dossier 03_TESTS_TAXONOMIQUES](03_TESTS_TAXONOMIQUES/README.m
 
 | Document | Statut |
 |---|---|
+| [Audit de taxonomie v0.1](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md) | Reference active |
 | [Index raisonne du corpus v1.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md) | Reference active |
 | [Carte consolidee v1.3 post-cercle 2](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Reference active |
 | [Carte consolidee v1.2 refonte](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md) | Consolidation historique recente |
@@ -225,7 +227,9 @@ les outils Unix standards (`grep`, `awk`, `file`, `sort`, `uniq`).
 ```text
 1. Ne pas modifier le contenu scientifique des sources historiques DOCX.
 2. Ne pas supprimer les DOCX ni les extractions Source_docx_*.
-3. Ne pas transformer les architectures en familles ni modifier la taxonomie de fond.
+3. Ne pas transformer les architectures physiques actives en familles.
+   L'evolution de la taxonomie methodologique est autorisee
+   apres audit explicite.
 4. Ne pas fabriquer de references scientifiques absentes des fichiers sources.
 5. Conserver le francais et les conventions lexicales du projet.
 6. Signaler les passages d'extraction incomplets avec la convention :

@@ -1,13 +1,33 @@
-# Tests taxonomiques
+# Tests taxonomiques — Archive historique
 
-## Lot 2 - sources DOCX remontees
+## Statut
+
+```text
+Ce dossier est une archive historique.
+
+Il n'est plus une source de methode active.
+Il conserve la genealogie du travail de construction des categories.
+
+Ses conclusions ne sont actives que si elles passent la methode v1.3.
+Voir : 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
+```
+
+Document d'audit de la taxonomie actuelle :
+
+```text
+05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md
+```
+
+---
+
+## Lot 2 - sources DOCX remontees (archive)
 
 Ce dossier contient les extractions Markdown de travail des tests
 taxonomiques historiques.
 
 Ces fichiers ne remplacent pas les DOCX originaux.
 
-Ils servent a :
+Ils documentaient les problemes des anciennes categories :
 
 ```text
 recuperer les problemes conceptuels poses par les anciennes categories ;
