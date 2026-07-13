@@ -1,0 +1,33 @@
+name: Audit du corpus
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Vérifier la structure
+        run: python audit/audit_structure_corpus.py
+
+      - name: Vérifier les liens
+        run: bash audit/audit_liens.sh
+
+      - name: Vérifier l'encodage
+        run: bash audit/audit_encodage.sh
+
+      - name: Inventorier les placeholders connus
+        continue-on-error: true
+        run: bash audit/audit_placeholders.sh
