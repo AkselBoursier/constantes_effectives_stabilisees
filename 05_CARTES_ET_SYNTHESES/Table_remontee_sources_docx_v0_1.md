@@ -258,12 +258,12 @@ Etat :
 ouvert ;
 extractions Markdown produites ;
 synthese de recuperation produite :
-04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
+04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md
 ```
 
 | Source primaire | Sortie Markdown cible | Document actif concerne | Priorite | Controle |
 |---|---|---|---|---|
-| Note de consolidation saveur-Higgs v0.1.docx | `04_ARCHITECTURES_INTER_FAMILLES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | Architecture Saveur-Higgs, synthese Saveur-Higgs | P0 | Extraction avant cercle 2 |
+| Note de consolidation saveur-Higgs v0.1.docx | `04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | Architecture Saveur-Higgs, synthese Saveur-Higgs | P0 | Extraction avant cercle 2 |
 | Cycle effectif basse energie v0.1.docx | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_1.md` | Architecture effective basse energie | P0 | Extraction + comparaison |
 | Cycle effectif basse energie v0.2.docx | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md` | Architecture effective basse energie | P0 | Extraction + comparaison |
 | Cycle effectif basse energie v0.3.docx | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md` | Architecture effective basse energie | P0 | Extraction + comparaison |

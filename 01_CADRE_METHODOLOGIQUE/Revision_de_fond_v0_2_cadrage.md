@@ -377,7 +377,7 @@ La v0.2 en ajoute deux :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
-04_ARCHITECTURES_INTER_FAMILLES/ (les trois notes actives)
+04_ARCHITECTURES/ (les trois notes actives)
 Regimes de constance.docx (socle fondateur)
 PROJECT_BRIEF.docx (socle fondateur)
 Note critique de compression v0.1.docx (socle fondateur)

@@ -1105,7 +1105,7 @@ protocole actif pour les nouvelles fiches et les cas litigieux.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 ```
 
 Role :
@@ -1146,7 +1146,7 @@ consolidation active avant la carte consolidee de refonte.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Role :
@@ -1187,7 +1187,7 @@ la carte v1.2 consolide ces apports dans une carte active.
 Stress test cosmologique produit ensuite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Suite possible :

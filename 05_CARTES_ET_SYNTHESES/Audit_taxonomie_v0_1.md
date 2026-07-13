@@ -82,7 +82,7 @@ Il n'est pas supprime : il conserve la genealogie du travail.
 Il n'est plus reference comme source active.
 ```
 
-#### 3.3 Le dossier 04_ARCHITECTURES_INTER_FAMILLES porte un nom obsolete
+#### 3.3 Le dossier 04_ARCHITECTURES porte un nom obsolete
 
 La Carte consolidee v1.3 dit explicitement :
 
@@ -97,7 +97,7 @@ acces et trajectoire.
 Decision :
 
 ```text
-Le dossier 04_ARCHITECTURES_INTER_FAMILLES sera renomme 04_ARCHITECTURES
+Le dossier 04_ARCHITECTURES sera renomme 04_ARCHITECTURES
 lors d'une prochaine session de reorganisation.
 Cette operation necessite une mise a jour de tous les liens internes :
 elle est signalee ici mais pas executee automatiquement.
@@ -185,7 +185,7 @@ aux anciennes familles, mais le sens est different.
 | 03_TESTS_TAXONOMIQUES passe en archive signalee | `03_TESTS_TAXONOMIQUES/README.md` | Applique ici |
 | Regle 3 du README reformulee | `README.md` | Applique ici |
 | Glossaire simplifie | `GLOSSAIRE.md` | Applique ici |
-| Dossier 04 renomme | `04_ARCHITECTURES_INTER_FAMILLES/` -> `04_ARCHITECTURES/` | A planifier |
+| Dossier 04 renomme | `04_ARCHITECTURES/` -> `04_ARCHITECTURES/` | A planifier |
 | Modes de stabilisation recentres | Prochaine carte ou note | A produire |
 
 ---

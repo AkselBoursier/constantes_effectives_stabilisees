@@ -774,7 +774,7 @@ Formule plus courte :
 La prochaine etape historique a ete la note d'integration :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/
+04_ARCHITECTURES/
 `-- Architecture_effective_basse_energie_notes.md
 ```
 
@@ -805,7 +805,7 @@ Cycle effectif basse energie v0.3 - alpha_s(Q^2) / Lambda_QCD
 Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 Carte consolidee v0.8
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 PROJECT_BRIEF.docx
 ```
 

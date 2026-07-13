@@ -23,7 +23,7 @@ La note sert de reference courte pour les cartes consolidees actives.
 Complement de reprise positive :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md
 ```
 
 La presente note reste la consolidation locale.
@@ -499,7 +499,7 @@ Document de refonte produit ensuite :
 Stress test produit ensuite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Decision du stress test :
@@ -525,7 +525,7 @@ Documents internes a relier a cette note :
 PROJECT_BRIEF.docx
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
@@ -537,7 +537,7 @@ PROJECT_BRIEF.docx
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Les sources de controle externes restent repertoriees dans :

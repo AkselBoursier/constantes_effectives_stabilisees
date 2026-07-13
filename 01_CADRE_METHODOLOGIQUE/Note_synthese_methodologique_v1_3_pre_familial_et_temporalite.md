@@ -801,7 +801,7 @@ protocole actif pour les nouvelles fiches et les cas litigieux.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 ```
 
 Role :
@@ -859,7 +859,7 @@ et la carte des dependances.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Role :
@@ -1055,10 +1055,10 @@ Documents produits en application de la v1.3 :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
@@ -1069,10 +1069,10 @@ Documents produits en application de la v1.3 :
 Architectures :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 Critiques source :

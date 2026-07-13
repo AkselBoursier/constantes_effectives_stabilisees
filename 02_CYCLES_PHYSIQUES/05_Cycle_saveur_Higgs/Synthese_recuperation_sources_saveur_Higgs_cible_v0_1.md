@@ -133,6 +133,6 @@ Documents actifs concernes :
 
 ```text
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 ```

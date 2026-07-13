@@ -467,7 +467,7 @@ Son exactitude vient du systeme de definition, non d'une mesure plus precise.
 Note d'integration produite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 Decision :
@@ -895,7 +895,7 @@ Premier document produit :
 
 ```text
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 #### 26.2 Sous-cycles cosmologiques eventuels
@@ -924,7 +924,7 @@ Une consolidation documentaire ulterieure pourrait renforcer :
 01_CADRE_METHODOLOGIQUE/
 02_CYCLES_PHYSIQUES/
 03_TESTS_TAXONOMIQUES/
-04_ARCHITECTURES_INTER_FAMILLES/
+04_ARCHITECTURES/
 05_CARTES_ET_SYNTHESES/
 ```
 
@@ -958,9 +958,9 @@ Documents de reference integres dans la v1.0 :
 PROJECT_BRIEF.docx
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md

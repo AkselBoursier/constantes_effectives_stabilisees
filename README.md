@@ -14,14 +14,15 @@ Definition de reference (v1.3) :
 
 Point d'entree recommande :
 
+- [Grille de lecture des 8 modes](05_CARTES_ET_SYNTHESES/Grille_lecture_8_modes_v0_1.md) — formulaire court et table des modes pour toute grandeur
 - [Index raisonne du corpus v1.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md) — navigation globale, statuts et ordre de lecture
 
 Puis, dans l'ordre :
 
 | Priorite | Document | Role |
 |---|---|---|
-| 1 | [Note methodologique v1.3](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md) | Methode actuelle : formes, roles, temporalite |
-| 2 | [Note methodologique courte post-v1.3](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Procedure courte de criblage |
+| 1 | [Grille de lecture des 8 modes](05_CARTES_ET_SYNTHESES/Grille_lecture_8_modes_v0_1.md) | Point d'entree pratique : modes, architectures, formulaire court |
+| 2 | [Note methodologique courte post-v1.3](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Procedure courte de criblage pour cas litigieux |
 | 3 | [Carte consolidee v1.3](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Carte generale actuelle apres cercle 2 |
 | 4 | [Matrice acquis theoriques](05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md) | Acquis argumentables avant controle des limites |
 | 5 | [Fiche limites et non-theses](05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md) | Garde-fous et limites explicites |
@@ -59,7 +60,7 @@ constantes_effectives_stabilisees/
 │
 ├── 03_TESTS_TAXONOMIQUES/             ← tests de passage des anciennes familles
 │
-├── 04_ARCHITECTURES_INTER_FAMILLES/   ← architectures et cercle 2
+├── 04_ARCHITECTURES/                  ← architectures actives et cercle 2
 │
 ├── 05_CARTES_ET_SYNTHESES/            ← cartes, index, syntheses transversales
 │
@@ -125,23 +126,24 @@ Voir le [README du dossier 03_TESTS_TAXONOMIQUES](03_TESTS_TAXONOMIQUES/README.m
 
 | Document | Statut |
 |---|---|
-| [Cercle 2 — architectures actives](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md) | Reference active |
-| [Cercle 2 — lot 2A Saveur-Higgs](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md) | Consolidation |
-| [Cercle 2 — lot 2B Metrologique SI](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md) | Consolidation |
-| [Cercle 2 — lot 2C Effectif basse energie](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md) | Consolidation |
-| [Cercle 2 — lot 2D Cosmologique](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md) | Consolidation |
-| [Cercle 2 — lot 2E Synthese transverse architectures](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md) | Reference active |
-| [Cercle 2 — lot 2F Controle occurrences cartes](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md) | Protocole actif |
-| [Synthese recuperation sources architecture lot 3](04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md) | Consolidation |
-| [Architecture Saveur-Higgs — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md) | Consolidation |
-| [Architecture Effectif basse energie — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md) | Consolidation |
-| [Architecture Metrologique SI — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md) | Consolidation |
-| [Architecture Cosmologique — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md) | Consolidation |
+| [Cercle 2 — architectures actives](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md) | Reference active |
+| [Cercle 2 — lot 2A Saveur-Higgs](04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md) | Consolidation |
+| [Cercle 2 — lot 2B Metrologique SI](04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md) | Consolidation |
+| [Cercle 2 — lot 2C Effectif basse energie](04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md) | Consolidation |
+| [Cercle 2 — lot 2D Cosmologique](04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md) | Consolidation |
+| [Cercle 2 — lot 2E Synthese transverse architectures](04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md) | Reference active |
+| [Cercle 2 — lot 2F Controle occurrences cartes](04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md) | Protocole actif |
+| [Synthese recuperation sources architecture lot 3](04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md) | Consolidation |
+| [Architecture Saveur-Higgs — notes](04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md) | Consolidation |
+| [Architecture Effectif basse energie — notes](04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md) | Consolidation |
+| [Architecture Metrologique SI — notes](04_ARCHITECTURES/Architecture_metrologique_SI_notes.md) | Consolidation |
+| [Architecture Cosmologique — notes](04_ARCHITECTURES/Architecture_cosmologique_notes.md) | Consolidation |
 
 ### Cartes et syntheses
 
 | Document | Statut |
 |---|---|
+| [Grille de lecture des 8 modes](05_CARTES_ET_SYNTHESES/Grille_lecture_8_modes_v0_1.md) | Reference active |
 | [Audit de taxonomie v0.1](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md) | Reference active |
 | [Index raisonne du corpus v1.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md) | Reference active |
 | [Carte consolidee v1.3 post-cercle 2](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Reference active |

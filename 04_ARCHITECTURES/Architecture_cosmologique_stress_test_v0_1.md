@@ -9,7 +9,7 @@ Ce document applique le stress test d'architecture a l'architecture cosmologique
 Il prolonge :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
@@ -516,7 +516,7 @@ Documents cosmologiques :
 ```text
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 ```
 
 Documents methodologiques et cartes :

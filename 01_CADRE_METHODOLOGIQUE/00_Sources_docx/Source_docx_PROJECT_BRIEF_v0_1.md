@@ -188,7 +188,7 @@ constantes_effectives_stabilisees/
 │   ├── Test_Fond_v0_1.md
 │   └── Test_Relation_v0_1.md
 │
-├── 04_ARCHITECTURES_INTER_FAMILLES/
+├── 04_ARCHITECTURES/
 │   ├── Note_consolidation_saveur_Higgs_v0_1.md
 │   ├── Architecture_metrologique_SI_notes.md
 │   ├── Architecture_effective_basse_energie_notes.md
@@ -241,7 +241,7 @@ Ordre recommandé :
 
 03_TESTS_TAXONOMIQUES/Test_Relation_v0_1.md
 
-04_ARCHITECTURES_INTER_FAMILLES/Note_consolidation_saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Note_consolidation_saveur_Higgs_v0_1.md
 
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
 
