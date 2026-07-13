@@ -5,7 +5,7 @@
 ```text
 statut : bibliographie de première passe ;
 fonction : distinguer source historique, reconstruction physique, analyse de mesure,
-           histoire/philosophie et recherche pédagogique ;
+           séquences, cohérence, histoire/philosophie et recherche pédagogique ;
 limite : antériorité non exhaustive avant toute publication.
 ```
 
@@ -57,7 +57,53 @@ Rôle : traitement unitaire du spin et de la position avec résolution finie des
 
 Gain pour Q1 : la partition des positions et la résolution de détection participent à l'information effectivement obtenue sur le spin.
 
-## 3. Concepts classiques et fonction de l'expérience
+## 3. Séquences, changements d'axe et reconstruction d'état
+
+### Tekin, B. (2015)
+
+**Stern-Gerlach Experiment with Higher Spins.** arXiv:1506.04632.
+
+Rôle : probabilités de séquences idéalisées selon l'angle entre analyseurs et clarification de confusions fréquentes autour du spin 1/2.
+
+Gain pour Q1 : permet de séparer changement d'axe, probabilités conditionnelles et image d'un vecteur classique complet.
+
+### Amiet, J.-P., & Weigert, S. (1998)
+
+**Reconstructing a pure state of a spin s through three Stern-Gerlach measurements.** arXiv:quant-ph/9809018.
+
+Rôle : reconstruction d'un état pur à partir de probabilités obtenues selon plusieurs directions.
+
+Gain pour Q1 : une seule distribution terminale ne suffit pas à déterminer l'état ou la préparation.
+
+## 4. Cohérence, séparation et recombinaison
+
+### Margalit, Y., et al. (2018)
+
+**Realization of a complete Stern-Gerlach interferometer.** arXiv:1801.02708.
+
+### Margalit, Y., et al. (2020)
+
+**Realization of a complete Stern-Gerlach interferometer: Towards a test of quantum gravity.** arXiv:2011.10928.
+
+Rôle : séparation et recombinaison cohérentes à l'aide de gradients magnétiques contrôlés sur puce atomique.
+
+Gain pour Q1 : empêche d'identifier automatiquement séparation spatiale et mélange classique ; rend l'accès à la phase expérimentalement pertinent.
+
+### Amit, O., et al. (2019)
+
+**T^3-Stern-Gerlach Matter-Wave Interferometer.** arXiv:1908.03879.
+
+Rôle : architecture en boucle complète utilisant plusieurs impulsions de gradient pour séparer et recombiner les paquets.
+
+### Paraniak, M. M., & Englert, B.-G. (2021)
+
+**Quantum Dynamical Simulation of a Transversal Stern-Gerlach Interferometer.** arXiv:2106.00205.
+
+Rôle : étude numérique des difficultés de recombinaison dans le montage transversal idéal.
+
+Contrôle : ne pas confondre ce schéma avec les réalisations sur puce atomique, qui utilisent une architecture et un contrôle différents.
+
+## 5. Concepts classiques et fonction de l'expérience
 
 ### Camilleri, K., & Schlosshauer, M. (2015)
 
@@ -75,7 +121,7 @@ Rôle : distinction entre plusieurs formulations de la doctrine des concepts cla
 
 Gain pour Q1 : empêcher que `classique` soit traité comme une catégorie univoque.
 
-## 4. Recherche pédagogique
+## 6. Recherche pédagogique
 
 ### Zhu, G., & Singh, C. (2011/2016)
 
@@ -85,19 +131,23 @@ Rôle : enquête sur les difficultés d'étudiants et usage de Stern–Gerlach p
 
 Gain pour Q1 : les catégories pédagogiques ne sont pas neutres ; elles peuvent faciliter une opération tout en créant une confusion à une étape ultérieure.
 
-## 5. Sources différées
+## 7. Sources différées
 
 Une seconde passe devra examiner :
 
 ```text
-travaux de Platt sur l'analyse moderne de Stern–Gerlach ;
+théorie des instruments quantiques et règle de Lüders ;
+mesures sélectives et non sélectives ;
 modèles complets de l'appareil et de la détection ;
-théories des instruments et POVM appliquées au cas ;
-travaux sur séquences Stern–Gerlach et préparation d'état ;
+POVM appliquées au cas ;
+décohérence de chemin et états réduits ;
+philosophie de la préparation comme opération ;
 littérature sur contextualité, propriété et attribution ;
-études pédagogiques comparant schémas semi-classiques et traitements ondulatoires.
+comparaison avec interférence et information de chemin.
 ```
 
-## 6. Règle d'usage
+## 8. Règle d'usage
 
 Aucune source ne porte seule la thèse du pilote. Les sources historiques fixent ce qui a été fait et observé ; les modèles physiques reconstruisent des chaînes différentes ; les analyses philosophiques distinguent leurs fonctions ; les travaux pédagogiques documentent les confusions possibles.
+
+> La bibliographie empêche trois raccourcis : identifier l'expérience historique au schéma de manuel, identifier séparation et détection, ou identifier perte locale d'accès à une phase et disparition ontologique de la cohérence.
