@@ -169,7 +169,7 @@ Le cycle donne une formulation plus précise :
 
 > Une contingence est canalisée lorsque la dynamique réduit l'ensemble des trajectoires tardives accessibles sans imposer directement leur résultat comme condition initiale.
 
-Trois degrés sont distingués :
+Trois degrés sont distingués.
 
 ### Canalisation faible
 
@@ -213,7 +213,7 @@ Elle établit :
 
 ## 13. Phase 2
 
-La phase 2 devra produire un dossier calculatoire minimal.
+La phase 2 devait produire un dossier calculatoire minimal.
 
 ### Étape 1
 
@@ -251,6 +251,33 @@ aggravation
 ou indétermination
 ```
 
-## 14. Formule de clôture
+## 14. Résultat de phase 2
 
-> Le passage d'une constante supposée fixe à une grandeur dynamique n'explique rien par lui-même. Il devient explicatif seulement lorsqu'une histoire physique montre pourquoi des trajectoires diverses convergent vers une relation tardive stable, et pourquoi cette convergence résiste aux contraintes et aux corrections.
+La phase 2 est maintenant documentée dans :
+
+```text
+resultats-phase2-modele-minimal.md
+calculs/scan_portail_higgs.py
+```
+
+Verdict :
+
+```text
+le portail quadratique stabilise rapidement v,
+mais le condensat Z_2 stable surproduit une relique de matière.
+```
+
+Le modèle minimal est donc écarté comme mécanisme autonome d'une variation électrofaible ancienne significative.
+
+Le résultat relève d'un déplacement et d'une aggravation partielle :
+
+```text
+problème de fixité électrofaible
+-> problème d'abondance du condensat
+```
+
+La prochaine extension prioritaire est un régime quartique ou dissipatif, capable de modifier la loi de dilution de l'énergie du champ.
+
+## 15. Formule de clôture
+
+> Le passage d'une constante supposée fixe à une grandeur dynamique n'explique rien par lui-même. Il devient explicatif seulement lorsqu'une histoire physique montre pourquoi des trajectoires diverses convergent vers une relation tardive stable, pourquoi l'énergie associée à cette convergence reste cosmologiquement admissible, et pourquoi l'ensemble résiste aux contraintes et aux corrections.
