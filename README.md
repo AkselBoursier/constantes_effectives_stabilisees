@@ -13,10 +13,10 @@ constante ?
 > Une borne, une reconstruction ou une tension peuvent stabiliser une
 > qualification sans devenir, a elles seules, une constance de l'objet.
 
-> Une constante effective stabilisee est une grandeur physiquement ou
-> formellement identifiee dont la fixite est testee dans un regime et sous des
-> transformations declares. Les modes d'acces et de constitution qualifient ou
-> expliquent cette fixite sans etre automatiquement des statuts de constance.
+> **Hierarchie philosophique active** :
+> `constance de l'objet > constitution > acces`.
+> L'acces reste indispensable comme condition probatoire et critique, mais il
+> n'est pas le centre philosophique actuel du projet.
 
 ## Entree rapide
 
@@ -26,12 +26,12 @@ Commencer par :
    pour les criteres d'admission et de refus.
 2. [Decision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md)
    pour separer objet, acces et constitution.
-3. [Grille de lecture des 8 modes](05_CARTES_ET_SYNTHESES/Grille_lecture_8_modes_v0_1.md)
-   comme outil de qualification, sans promotion automatique en statuts de constance.
-4. [Index raisonne du corpus v1.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md)
-   pour la navigation physique et methodologique.
-5. [Supplement d'index du pan philosophique](05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md)
-   pour la couche philosophique, les tests et les livrables recents.
+3. [Synthese methodologique v1.4](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md)
+   pour l'ordre actif : objet, constitution, acces.
+4. [Index raisonne du corpus v1.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md)
+   pour la navigation courante.
+5. [Premier degagement de these v0.2](05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md)
+   pour la these-noyau.
 6. [Carte des frottements](05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md)
    pour les jonctions entre refondation, philosophie, fine-tuning et fixite dynamique.
 7. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
@@ -41,11 +41,11 @@ Puis suivre, selon le besoin :
 
 | Priorite | Document | Role |
 |---|---|---|
-| 1 | [Note methodologique courte](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Criblage pratique des cas litigieux ; references en cours de resynchronisation |
-| 2 | [Carte consolidee v1.3](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Etat transversal du pan physique |
-| 3 | [Matrice des acquis theoriques](05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md) | Acquis argumentables et limites |
-| 4 | [Synthese de la refondation](05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md) | Resultats des cycles relationnels |
-| 5 | [README philosophique](06_PHILOSOPHIE/README.md) | Charte, genres et ordre de lecture du pan philosophique |
+| 1 | [Matrice des degagements v0.2](05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_2.md) | Classe les propositions selon objet, constitution et acces |
+| 2 | [Mise a l'epreuve v0.2](05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md) | Admissions, refus et cas negatifs |
+| 3 | [Plan du papier A v0.2](05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_2.md) | Premier article centre sur le critere de constance |
+| 4 | [Note methodologique courte](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Criblage pratique sous le controle de la v1.4 |
+| 5 | [README philosophique](06_PHILOSOPHIE/README.md) | Charte, situations, voisinages et programmes |
 | 6 | [Audit d'integration philosophique](05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md) | Tri entre apports actifs, hypotheses et reserves |
 
 ## Organisation du depot
@@ -53,7 +53,7 @@ Puis suivre, selon le besoin :
 ```text
 constantes_effectives_stabilisees/
 |
-|-- 01_CADRE_METHODOLOGIQUE/    methode, protocoles et sources de methode
+|-- 01_CADRE_METHODOLOGIQUE/    methode, protocoles et decisions de rang
 |-- 02_CYCLES_PHYSIQUES/        fiches, cycles, calculs et syntheses locales
 |-- 03_TESTS_TAXONOMIQUES/      genealogie et tests des anciennes familles
 |-- 04_ARCHITECTURES/           architectures actives et raccords transversaux
@@ -71,20 +71,19 @@ constantes_effectives_stabilisees/
 |---|---|---|
 | Cadre canonique | [Refondation du domaine](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | Reference active |
 | Decision de rang | [Objet, acces et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) | Arbitrage canonique actif |
-| Methode | [Note methodologique v1.3](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md) | Reference active sous controle du cadre canonique |
+| Methode | [Synthese methodologique v1.4](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md) | Reference active |
+| These-noyau | [Premier degagement v0.2](05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md) | Degagement actif |
 | Cycles physiques | [02_CYCLES_PHYSIQUES](02_CYCLES_PHYSIQUES/) | Preuves locales et syntheses de cycle |
 | Fine-tuning | [Cadrage du cycle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Cycle transversal de test |
 | Fixite electroweak dynamique | [Cadrage du cycle](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Cycle de test dynamique |
-| Tests taxonomiques | [README des tests](03_TESTS_TAXONOMIQUES/README.md) | Genealogie controlee des categories |
-| Architectures | [Cercle 2](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md) | Architectures actives |
-| Cartes et syntheses | [Carte consolidee v1.3](05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md) | Navigation transverse |
+| Architectures | [Cercle 2](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md) | Modes de constitution et de maintien |
+| Cartes et syntheses | [Index v1.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md) | Navigation transverse |
 | Jonctions | [Carte des frottements](05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md) | Dialogue controle entre chantiers |
 | Philosophie | [README philosophique](06_PHILOSOPHIE/README.md) | Exploration active en amont des decisions de rang |
 
-Les statuts documentaires de reference sont : **reference active**,
-**decision canonique**, **protocole actif**, **consolidation**, **preuve locale**,
-**source primaire historique** et **archive future**. Voir la
-[convention des placeholders](CONVENTION_PLACEHOLDERS.md) pour les extractions.
+Les versions remplacees restent dans Git et dans le depot comme couches
+genealogiques. Elles ne commandent plus l'usage courant lorsque leur successeur
+est explicitement indique.
 
 ## Sources primaires DOCX
 
@@ -96,13 +95,9 @@ Markdown, leur rattachement et leur verification sont pilotes par :
 - [Table de remontee des sources](05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md)
 - [Registre des sources primaires](05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md)
 
-Les originaux sont ranges dans les dossiers thematiques `00_Sources_docx`;
-le registre associe chaque original a son extraction et a son empreinte
-SHA-256.
-
-Les fichiers `Source_docx_*` sont des extractions de travail. Une formule,
-un tableau ou une image insuffisamment restituee doit etre signale par la
-convention de placeholder et verifie dans le DOCX original.
+Les fichiers `Source_docx_*` sont des extractions de travail. Une formule, un
+tableau ou une image insuffisamment restituee doit etre signale par la convention
+de placeholder et verifie dans le DOCX original.
 
 ## Workflow GitHub
 
@@ -121,10 +116,6 @@ Elle reste soumise a audit et ne constitue pas encore le tronc valide.
 Le [registre des branches](01_CADRE_METHODOLOGIQUE/Registre_branches_corpus_v0_1.md)
 situe les chantiers historiques et leur presence dans l'integration courante.
 
-Les decisions conceptuelles restent soumises a validation explicite. Les
-reorganisations documentaires, controles et commits peuvent etre delegues une
-fois le contenu stabilise.
-
 ## Audits documentaires
 
 Les controles existants sont dans [`audit/`](audit/).
@@ -133,9 +124,10 @@ Les controles existants sont dans [`audit/`](audit/).
 bash audit/audit_placeholders.sh
 bash audit/audit_liens.sh
 bash audit/audit_encodage.sh
+python audit/audit_structure_corpus.py
 ```
 
-Un audit de structure doit egalement verifier avant fusion :
+Avant fusion, verifier :
 
 ```text
 marqueurs de conflit ;
@@ -155,4 +147,5 @@ anciennes versions encore declarees actives.
 6. Signaler les passages incomplets avec la convention de placeholder.
 7. Valider explicitement toute decision conceptuelle.
 8. Distinguer constance de l'objet, stabilisation de l'acces et mode de constitution.
-9. Privilegier des commits lisibles, coherents et reversibles.
+9. Appliquer la hierarchie philosophique active : objet, constitution, acces.
+10. Privilegier des commits lisibles, coherents et reversibles.
