@@ -24,7 +24,7 @@ Documents integres :
 05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 ```
 
 Rang stabilise :

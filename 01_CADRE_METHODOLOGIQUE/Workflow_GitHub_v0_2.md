@@ -54,18 +54,24 @@ suppression de la branche -> resynchronisation de travail.
    sur le chantier, ses commits racontent les etapes.
 ```
 
-### 4. Etat a la mise en place (juillet 2026)
+### 4. Etat de consolidation (juillet 2026)
 
 ```text
-branche methodologie : reecriture positive v0.2 et v0.3, protocole
-de test et copies, present workflow v0.2.
-branche philosophie : branche 06_PHILOSOPHIE (README, situations 01
-a 04, carte de la philosophie implicite), note d'ouverture
-genetique, fiche d'horizon anthropique, plan de preparation de
-l'arene.
-branche travail : integration des deux, etat courant du dossier.
-branche heritee agent/reprise-cycle-cosmologique : a merger ou a
-cloturer lors de la reprise du cycle cosmologique.
+la branche de recuperation consolide les couches `travail`, la chaine
+refondation -> fine-tuning -> fixite electrofaible, la navigabilite et
+l'audit de coherence avant validation vers `main`.
+
+les branches de provenance restent conservees pendant cette transition ;
+elles ne sont ni reecrites ni supprimees.
+
+apres validation vers `main`, `travail` doit etre resynchronisee depuis
+`main` afin que les deux points d'entree ne divergent plus.
+```
+
+Le detail des branches, de leur contenu et de leur statut est maintenu dans :
+
+```text
+01_CADRE_METHODOLOGIQUE/Registre_branches_corpus_v0_1.md
 ```
 
 ### 5. Frequence des commits et des pushs

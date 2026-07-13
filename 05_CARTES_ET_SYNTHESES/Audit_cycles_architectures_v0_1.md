@@ -38,12 +38,12 @@ Cycles et syntheses de cycles :
 Architectures actives :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 ```
 
 Cartes et notes de controle :
@@ -502,7 +502,7 @@ carte consolidee v1.3.
 Raccords executes dans la meme passe :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 ```

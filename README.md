@@ -96,6 +96,9 @@ travail  : integration quotidienne des chantiers ;
 branches : chantiers thematiques, conserves jusqu'a leur integration validee.
 ```
 
+Le [registre des branches](01_CADRE_METHODOLOGIQUE/Registre_branches_corpus_v0_1.md)
+situe les chantiers historiques et leur presence dans l'integration courante.
+
 Les decisions conceptuelles restent soumises a validation explicite. Les
 reorganisations documentaires, controles et commits peuvent etre delegues une
 fois le contenu stabilise.

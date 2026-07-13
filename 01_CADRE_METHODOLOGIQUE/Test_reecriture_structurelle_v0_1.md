@@ -23,7 +23,7 @@ elle risque le plus :
 | Copie | Document source | Genre | Ce que le genre teste |
 |---|---|---|---|
 | A | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Garde-fou : document negatif par fonction | La force prophylactique survit-elle a la positivisation du cadre ? |
-| B | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` (extraits 2, 4, 13, 16) | Protocole eliminatoire | La logique falsificatrice reste-t-elle lisible ? un test rate reste-t-il un resultat ? |
+| B | `04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md` (extraits 2, 4, 13, 16) | Protocole eliminatoire | La logique falsificatrice reste-t-elle lisible ? un test rate reste-t-il un resultat ? |
 | C | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` (extraits 7, 12, 16) | Reference dense | Le cout de longueur reste-t-il acceptable sur un texte charge ? |
 
 Portee des copies :
