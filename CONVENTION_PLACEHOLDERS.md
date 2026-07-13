@@ -99,7 +99,7 @@ L'ensemble du corpus utilise les statuts suivants.
 | **Protocole actif** | Document d'application reutilisable | Matrices de criblage, tests de resistance |
 | **Consolidation** | Document qui stabilise un cycle ou une architecture | Notes d'architecture, syntheses de cycles |
 | **Preuve locale** | Fiche ou cycle qui justifie une decision | Fiches physiques detaillees |
-| **Consolidation historique recente** | Document recent mais superseде par une version ulterieure | Cartes et notes intermediaires |
+| **Consolidation historique recente** | Document recent mais supersede par une version ulterieure | Cartes et notes intermediaires |
 | **Source primaire historique** | Document source anterieur encore porteur de matiere | Fichiers Word racine, fiches initiales, tests, cartes anciennes |
 | **Archive future** | Original conserve apres extraction et integration | DOCX apres remontee Markdown controlee |
 | **A produire** | Document utile identifie mais non encore cree | Lacunes identifiees dans l'index |
