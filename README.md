@@ -5,6 +5,9 @@ Corpus de travail sur les constantes effectives stabilisees.
 **Question directrice** : dans quelle mesure une grandeur peut-elle etre dite
 constante ?
 
+> **Pour un agent** : lire d'abord le
+> [guide d'amorcage](AGENTS.md), puis ce README.
+
 > Une constante effective stabilisee est une grandeur dont une valeur, une
 > forme, une liaison qualifiee, un role ou une dependance devient robuste dans
 > un regime donne, selon un acces determine, avec un mode et une trajectoire de
