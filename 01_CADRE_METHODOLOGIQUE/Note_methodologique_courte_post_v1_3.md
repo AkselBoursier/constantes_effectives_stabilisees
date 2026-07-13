@@ -6,14 +6,21 @@
 
 Cette note condense la methode active apres la carte consolidee v1.3.
 
-Elle s'appuie sur :
+Elle est subordonnee au cadre canonique et a la decision de rang :
+
+```text
+01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md
+01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md
+```
+
+Elle s'appuie egalement sur :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
+01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_3.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 ```
 
@@ -27,19 +34,17 @@ ou tout degagement theorique.
 
 Elle ne remplace pas les matrices longues.
 
-Elle sert de protocole de premiere passe.
-
 ### 2. Principe directeur
 
 Principe :
 
 ```text
-une constante effective stabilisee doit etre lue comme une stabilisation
-situee d'une grandeur ou structure ancree, non comme un nombre a classer
-immediatement.
+commencer par identifier l'objet et la fixite testee,
+puis distinguer ce qui releve de l'acces,
+de la constitution et de l'interpretation.
 ```
 
-La question initiale n'est donc pas :
+La question initiale n'est pas :
 
 ```text
 dans quelle famille la grandeur entre-t-elle ?
@@ -48,266 +53,237 @@ dans quelle famille la grandeur entre-t-elle ?
 Elle devient :
 
 ```text
-qu'est-ce qui est stabilise, dans quel regime, par quel acces,
-selon quelle trajectoire, et avec quelles limites ?
+qu'est-ce qui est stabilise,
+sous quelles transformations,
+dans quel regime,
+par quel acces,
+selon quelle trajectoire,
+et avec quelles limites ?
 ```
 
-Regle d'ancrage :
+Regles de rang :
 
 ```text
-l'acces qualifie le statut de constance ;
-il ne fabrique pas le processus physique, operationnel ou definitionnel
-auquel la grandeur renvoie.
+constance de l'objet
+!=
+stabilisation de l'acces
+!=
+mode de constitution.
 ```
-
-Regle d'usage de `situee` :
 
 ```text
-situee = dans un regime d'effectuation, par des acces explicites,
-avec une qualification de statut et de limites.
+l'acces qualifie l'attribution ;
+il ne fabrique pas l'objet physique, operationnel ou definitionnel.
 ```
 
-Le mot ne doit pas devenir une cloture vague. Si une fiche emploie `situee`,
-elle doit laisser comprendre ce qui est situe : le regime, l'acces ou la
-qualification.
+Le terme `situe` reste une abreviation controlee :
 
-### 3. Procedure en huit questions
+```text
+situe = dans un regime d'effectuation,
+avec transformations, acces et limites explicites.
+```
 
-Toute analyse courte doit parcourir huit questions dans cet ordre.
+### 3. Procedure en neuf questions
 
 | Ordre | Question | Sortie attendue |
 |---|---|---|
-| 1 | Quelle forme est stabilisee ? | Valeur, rapport, ecart, composition, matrice, fonction d'echelle, borne, reconstruction |
-| 2 | Dans quel regime cela vaut-il ? | Regime physique, definitionnel, effectif, cosmologique ou documentaire |
-| 3 | Quelle fonction est exercee dans ce regime ? | Couplage, echelle, raccordement, orientation, convention, validite, inference, autre fonction qualifiee |
-| 4 | Par quel acces le statut de constance est-il qualifie ? | Mesure, ajustement, definition, realisation, extraction, inference, reconstruction, borne |
-| 5 | Quelle trajectoire stabilise le statut ? | Constitution, convergence, absorption definitionnelle, validite limitee, reconstruction, tension |
-| 6 | Quelle solidarite architecturale intervient ? | Aucune, locale, Saveur-Higgs, SI, effective, cosmologique, autre reseau a tester |
-| 7 | Quelle limite doit rester visible ? | Origine ouverte, domaine de validite, dependance de modele, tension, non-mesure positive |
-| 8 | Quel controle de rang reste necessaire ? | Sortie taxonomique possible, role contextuel, architecture, refus de classement trop large |
+| 1 | Quel objet est examine ? | grandeur, relation, parametre, borne, reconstruction ou condition |
+| 2 | Quelle forme est stabilisee ? | valeur, rapport, ecart, composition, matrice, fonction d'echelle, domaine admissible |
+| 3 | Sous quelles transformations ou variables ? | temps, energie, echelle RG, base, schema, unite, modele, pivot |
+| 4 | Dans quel regime cela vaut-il ? | physique, effectif, definitionnel, cosmologique, documentaire |
+| 5 | Quelle fonction est exercee dans ce regime ? | couplage, echelle, raccordement, orientation, convention, validite, inference |
+| 6 | Par quel acces le statut est-il qualifie ? | mesure, ajustement, definition, realisation, inference, reconstruction, borne |
+| 7 | Quelle trajectoire intervient ? | constitution, convergence, validite limitee, reconstruction, tension, dynamique |
+| 8 | Quelle architecture et quelle limite restent actives ? | reseau de dependances, origine ouverte, domaine, modele, non-detection |
+| 9 | Quel rang est justifie ? | constance de l'objet, acces stabilise, constitution, role contextuel ou refus |
 
 Regle :
 
 ```text
-ne jamais passer directement de la forme au classement.
+ne jamais passer directement de la forme ou de l'acces au classement.
 ```
 
 ### 4. Format minimal d'une fiche
 
-Une fiche courte peut suivre ce canevas.
-
 ```text
-Grandeur :
+Objet :
 Forme stabilisee :
+Transformations / variables :
 Regime :
-Fonction situee :
+Fonction exercee dans le regime :
 Acces :
 Trajectoire :
 Architecture eventuelle :
 Limite conservee :
-Controle de rang :
+Niveau de sortie : objet / acces / constitution / interpretation :
+Decision de rang :
 Formule positive :
 ```
 
-La formule positive doit pouvoir etre lue sans vocabulaire defensif.
-
-Exemple de forme :
+Exemple :
 
 ```text
 H_0 est un parametre d'etat actuel de l'expansion,
-stabilise par des routes d'acces distinctes,
-dans une architecture cosmologique inferentielle et reconstructive.
+reconstruit par des routes d'acces distinctes dans des modeles specifies.
+La robustesse ou la tension de son estimation qualifie l'acces ;
+elle n'en fait pas une constante nomologique.
 ```
 
 ### 5. Tests rapides
 
-#### 5.1 Test de forme
-
-Question :
+#### 5.1 Test de l'objet
 
 ```text
-ce qui est stabilise est-il une valeur, un rapport, une composition,
-une orientation, une fonction d'echelle, une borne ou une reconstruction ?
+la fiche porte-t-elle sur une grandeur, une relation, une estimation,
+une borne, une condition initiale ou une coordonnee ?
 ```
 
-Effet :
+Une borne ou une estimation ne doivent pas etre substituees a la grandeur.
+
+#### 5.2 Test de transformation
 
 ```text
-la forme logique evite de transformer trop vite une ecriture en fonction.
+par rapport a quoi la fixite est-elle testee ?
 ```
 
-#### 5.2 Test de fonction
+Sans transformation, echelle, epoque ou variable pertinente, le mot
+`constante` reste sous-qualifie.
 
-Question :
+#### 5.3 Test de fonction
 
 ```text
 que fait principalement la grandeur dans ce regime ?
 ```
 
-Effet :
+La fonction peut soutenir une sortie taxonomique, mais ne determine pas a elle
+seule la nature de l'objet.
+
+#### 5.4 Test d'acces
 
 ```text
-la fonction exercee dans un regime peut produire une sortie taxonomique,
-mais seulement apres test de resistance.
+comment la valeur, la borne ou le statut sont-ils etablis ?
 ```
 
-#### 5.3 Test d'acces
+Une mesure, une reconstruction, une definition et une borne n'ont pas le meme
+rang.
 
-Question :
+#### 5.5 Test temporel
 
 ```text
-comment le statut est-il connu ou rendu operatoire ?
+qu'est-ce qui evolue : l'objet, le regime, l'estimation ou le statut ?
 ```
 
-Effet :
-
-```text
-une valeur exacte, mesuree, reconstruite ou bornee n'a pas le meme statut.
-```
-
-#### 5.4 Test temporel
-
-Question :
-
-```text
-comment le statut s'installe-t-il ?
-```
-
-Effet :
-
-```text
-la temporalite distingue constitution, validite, absorption definitionnelle,
+La temporalite distingue constitution physique, histoire thermique,
 reconstruction et tension persistante.
-```
 
-#### 5.5 Test architectural
-
-Question :
+#### 5.6 Test architectural
 
 ```text
-la grandeur tient-elle seule, ou seulement dans une solidarite de fonctions,
-d'acces et de limites ?
+la grandeur tient-elle seule, ou dans une solidarite de dependances ?
 ```
 
-Effet :
+Le retrait d'un noeud doit etre gradue : dissolution locale, degradation,
+substitution ou non-dissolution.
 
-```text
-si le retrait du reseau dissout le statut, le niveau architectural est actif.
-```
-
-#### 5.6 Test de limite
-
-Question :
+#### 5.7 Test de limite
 
 ```text
 que la stabilisation ne dit-elle pas ?
 ```
 
-Effet :
+La limite conservee protege contre la surextension theorique.
+
+#### 5.8 Test de migration
 
 ```text
-la limite conservee protege la methode contre la surextension theorique.
+un mecanisme reduit-il la contingence,
+ou la deplace-t-il vers d'autres parametres et conditions ?
 ```
+
+Ce test est obligatoire pour le fine-tuning et les dynamiques de fixite.
 
 ### 6. Sorties possibles
 
-La procedure peut produire plusieurs sorties.
+| Niveau | Sortie | Sens |
+|---|---|---|
+| Objet | Constance physique, effective ou metrologique | fixite admise sous criteres declares |
+| Acces | Estimation robuste, reconstruction, borne, tension ou suspension | qualification epistemique sans promotion automatique |
+| Constitution | Seuil, architecture, composition ou dynamique | histoire ou organisation de la relation |
+| Fonction | Role contextuel ou fonction directrice | ce que la grandeur fait dans le regime |
+| Refus | Attribution de constance suspendue | criteres insuffisants ou objet mal type |
+| Interpretation | Hypothese philosophique modalisee | portee discutee apres le resultat local |
 
-| Sortie | Sens |
-|---|---|
-| Fonction directrice robuste | La grandeur a une fonction dominante stable |
-| Role contextuel | La grandeur agit dans un contexte sans devenir classe generale |
-| Architecture active | Le statut depend d'une solidarite de fonctions et d'acces |
-| Mode de stabilisation | Le cas illustre valeur, composition, convention, validite, inference, borne ou reconstruction |
-| Controle de rang | Un classement trop large est evite ou deplace |
-| Limite methodologique | Ce que le cas ne permet pas encore d'affirmer reste visible |
-
-Ces sorties peuvent coexister.
-
-La methode ne force pas une sortie unique.
+Ces sorties peuvent coexister, mais leur rang doit rester explicite.
 
 ### 7. Vocabulaire actif
 
 Ordre recommande :
 
 ```text
+objet
 forme
+transformations
 regime
 fonction
 acces
 trajectoire
 architecture
 limite
-controle
+rang
 ```
-
-Termes a utiliser avec prudence :
 
 | Terme | Usage correct |
 |---|---|
-| `famille` | Sortie taxonomique apres test, non point de depart |
-| `relation` | Seulement si la forme locale est qualifiee |
-| `fondamental` | Eviter hors contexte strictement etabli |
-| `tension` | Propriete d'acces ou de modele, non verdict immediat |
-| `architecture` | Reseau situe avec regime, acces, trajectoire et limite |
-| `situe` / `situee` | Operateur de precision : regime d'effectuation, acces et qualification ; jamais derealisation |
-
-Regle :
-
-```text
-dire d'abord ce que le cas stabilise.
-```
+| `famille` | sortie taxonomique apres test, non point de depart |
+| `relation` | rapport, composition, orientation ou liaison explicitement typee |
+| `fondamental` | seulement dans un contexte theorique strictement etabli |
+| `tension` | divergence qualifiee entre acces ou modeles |
+| `architecture` | reseau de dependances dans un regime, non classe superieure |
+| `situe` | abreviation de regime, transformations, acces et limites explicites |
+| `mode de constance` | reserve aux statuts de l'objet ou accompagne d'une precision de niveau |
 
 ### 8. Quand utiliser les matrices longues
-
-Cette note suffit pour une premiere passe.
 
 Utiliser les matrices longues si :
 
 ```text
-1. la fonction directrice reste ambigue ;
+1. l'objet ou la fonction restent ambigus ;
 2. une ancienne categorie revient comme tiroir large ;
 3. le regime d'acces porte une tension ;
 4. la trajectoire temporelle devient centrale ;
 5. une architecture ou sous-architecture doit etre testee ;
-6. le cas doit entrer dans une carte consolidee.
+6. le cas entre dans une carte consolidee ;
+7. une proposition passe de l'acces a l'objet ou de la constitution a l'explication.
 ```
 
-Documents a utiliser alors :
+Documents actifs :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md
 04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
 ### 9. Statut avant degagement de these
 
-Cette note transforme la methode en procedure.
+Cette note transforme la methode en procedure. Elle ne produit pas a elle seule
+une these sur l'objet.
 
-Elle ne produit pas encore la these.
-
-Elle prepare :
-
-```text
-1. la matrice des acquis theoriques ;
-2. la fiche des limites et non-theses ;
-3. le premier degagement de these v0.1.
-```
-
-Formule de seuil :
+Avant tout degagement theorique, controler :
 
 ```text
-le projet dispose maintenant d'une procedure courte pour lire les constantes
-comme stabilisations effectives qualifiees.
+1. le statut de constance de l'objet ;
+2. le mode de stabilisation de l'acces ;
+3. le mode de constitution ;
+4. la limite conservee ;
+5. la modalite philosophique de la proposition.
 ```
 
 ### 10. Formule de cloture
 
-Formule operative :
-
 ```text
-Pour analyser une constante, commencer par la stabilisation :
-forme, regime, fonction, acces, trajectoire, architecture, limite,
-puis seulement controler le rang.
+Pour analyser une constante, commencer par l'objet et la fixite testee ;
+distinguer ensuite regime, transformations, fonction, acces, trajectoire,
+architecture et limite ; puis seulement decider le rang de la proposition.
 ```
