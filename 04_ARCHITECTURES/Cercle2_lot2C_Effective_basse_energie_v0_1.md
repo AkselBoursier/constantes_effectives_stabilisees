@@ -10,8 +10,8 @@ Elle reprend l'architecture effective basse energie par formulations positives,
 a partir des appuis suivants :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md
 ```

@@ -23,7 +23,7 @@ La note doit donc servir de reference courte pour les prochaines cartes consolid
 Complement de reprise positive :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
 ```
 
 La presente note reste la consolidation locale.

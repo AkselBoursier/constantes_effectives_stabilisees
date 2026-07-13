@@ -255,7 +255,7 @@ Documents a utiliser alors :
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
 ### 9. Statut avant degagement de these

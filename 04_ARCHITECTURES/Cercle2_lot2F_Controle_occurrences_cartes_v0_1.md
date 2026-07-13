@@ -11,12 +11,12 @@ Elle controle la reprise positive des architectures apres les lots 2A a 2E.
 Appuis :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 ```
 
 Le controle porte sur trois points :
@@ -102,10 +102,10 @@ Les notes anciennes ne doivent pas etre purifiees ligne a ligne maintenant.
 Documents concernes :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 ```
 
@@ -153,7 +153,7 @@ Raccords necessaires :
 README.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
 ```
 
 Ces raccords ne doivent pas produire une nouvelle these.

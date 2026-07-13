@@ -23,7 +23,7 @@ La note sert de reference courte pour les cartes consolidees ulterieures.
 Complement de reprise positive :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md
 ```
 
 La presente note reste la consolidation locale.

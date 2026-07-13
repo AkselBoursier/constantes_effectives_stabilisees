@@ -71,7 +71,7 @@ Les fichiers suivants contiennent des placeholders identifies (au 2026-07-13) :
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Synthese_cycle_CKM_v0_1.md` | 49 | — |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md` | 48 | — |
 | `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Seuil_v0_1.md` | 47 | — |
-| `04_ARCHITECTURES_INTER_FAMILLES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | 39 | `[ M_W= ]`, `[ M_Z= ]`, `[ m_f= ]`, `[ s_{12}= ]` |
+| `04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | 39 | `[ M_W= ]`, `[ M_Z= ]`, `[ m_f= ]`, `[ s_{12}= ]` |
 | `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Synthese_quatrieme_cycle_v0_1.md` | 34 | — |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md` | 28 | — |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_CKM_v0_1.md` | 24 | — |

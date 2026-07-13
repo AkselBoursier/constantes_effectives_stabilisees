@@ -195,18 +195,18 @@ Le corpus stabilise quatre architectures.
 
 | Architecture | Forme | Document principal | Statut |
 |---|---|---|---|
-| Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Sequence cloturee |
-| Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
-| Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
-| Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
-| Cercle 2D Cosmologique | Reprise positive inferentielle et reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
-| Cercle 2E Synthese transverse | Reprise positive des modes de solidarisation | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
-| Cercle 2F Controle | Controle d'occurrences et raccords de cartes | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
-| Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
-| Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
-| Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
-| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` + stress test v0.1 | Consolidation active avec sous-reseaux |
-| Sources d'architecture lot 3 | Recuperation source | `04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md` | Consolidation active avant cercle 2 |
+| Cercle 2 | Reprise positive | `04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md` | Sequence cloturee |
+| Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
+| Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
+| Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
+| Cercle 2D Cosmologique | Reprise positive inferentielle et reconstructive | `04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
+| Cercle 2E Synthese transverse | Reprise positive des modes de solidarisation | `04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
+| Cercle 2F Controle | Controle d'occurrences et raccords de cartes | `04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
+| Saveur-Higgs | Constitutive | `04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
+| Metrologique SI | Definitionnelle | `04_ARCHITECTURES/Architecture_metrologique_SI_notes.md` | Consolidation active |
+| Effective basse energie | Validite | `04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
+| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES/Architecture_cosmologique_notes.md` + stress test v0.1 | Consolidation active avec sous-reseaux |
+| Sources d'architecture lot 3 | Recuperation source | `04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md` | Consolidation active avant cercle 2 |
 
 Regle de rang :
 
@@ -254,7 +254,7 @@ Documents actifs :
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md` | Consolidation source | Recuperation cible v, Yukawa, CKM, Wolfenstein avant cercle 2 |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Fiche prudente | Ancrage spectral neutrino et interface cosmologique |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
+| `04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
 
@@ -292,7 +292,7 @@ Documents actifs :
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md` | Preuve locale | Cas gravitationnel effectif |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md` | Consolidation | Synthese du cycle |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md` | Consolidation source | Comparaison du doublon alpha_G / M_Pl |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active | Architecture issue du cycle |
+| `04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
 
@@ -329,10 +329,10 @@ Documents actifs :
 | 6 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md` | Preuve locale | A_s et n_s |
 | 7 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md` | Preuve locale | sigma_8 et S_8 |
 | 8 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md` | Consolidation | Synthese du cycle |
-| 9 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
-| 10 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
+| 9 | `04_ARCHITECTURES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
+| 10 | `04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
 | 11 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Plan de reprise | Reprise controlee du cycle |
-| 12 | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Reprise positive | Architecture inferentielle et reconstructive prudente |
+| 12 | `04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md` | Reprise positive | Architecture inferentielle et reconstructive prudente |
 
 Decision :
 
@@ -356,7 +356,7 @@ Documents actifs :
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md` | Preuve locale | Extension SI a c, h, e, K_J, R_K |
 | `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md` | Consolidation source | Recuperation k_B, N_A, R et quatrieme cycle avant cercle 2 |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active | Architecture SI etendue |
+| `04_ARCHITECTURES/Architecture_metrologique_SI_notes.md` | Consolidation active | Architecture SI etendue |
 
 Documents racine historiques associes :
 
@@ -445,10 +445,10 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 
 ```text
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 ```
 
 Pour retracer la genealogie Saveur-Higgs :
@@ -597,7 +597,7 @@ Documents d'application produits ensuite :
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
@@ -605,7 +605,7 @@ Documents d'application produits ensuite :
 Stress test cosmologique produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 #### 15.2 Note Markdown et cycle Saveur-Higgs produits
@@ -613,7 +613,7 @@ Stress test cosmologique produit :
 La note Markdown dediee est produite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
@@ -763,11 +763,11 @@ Revision active :
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 
 Architectures actives :
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 
 Cycles actifs :
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md

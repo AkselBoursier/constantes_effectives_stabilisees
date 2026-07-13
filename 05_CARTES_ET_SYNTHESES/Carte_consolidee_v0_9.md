@@ -739,7 +739,7 @@ Une consolidation ulterieure pourrait produire :
 01_CADRE_METHODOLOGIQUE/
 02_CYCLES_PHYSIQUES/
 03_TESTS_TAXONOMIQUES/
-04_ARCHITECTURES_INTER_FAMILLES/
+04_ARCHITECTURES/
 05_CARTES_ET_SYNTHESES/
 ```
 
@@ -805,7 +805,7 @@ Documents internes integres dans la v0.9 :
 ```text
 Carte consolidee v0.8.docx
 PROJECT_BRIEF.docx
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 ```

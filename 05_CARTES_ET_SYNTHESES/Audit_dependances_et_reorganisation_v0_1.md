@@ -153,7 +153,7 @@ constantes_effectives_stabilisees/
 |   |-- Test de la famille Fond.docx
 |   |-- Test de la famille Relation v0.1.docx
 |
-|-- 04_ARCHITECTURES_INTER_FAMILLES/
+|-- 04_ARCHITECTURES/
 |   |-- (md existants)
 |   |-- Note de consolidation saveur-Higgs v0.1.docx
 |   |-- Architecture_saveur_Higgs_notes.md (version Markdown produite ensuite)
@@ -192,7 +192,7 @@ Points laisses ouverts :
 | Fiches cycle 5 (CKM, Wolfenstein) + synthese | 3 | 02/05_Cycle_CKM_saveur/ |
 | Cycle effectif basse energie v0.1-0.3 | 3 | 02/06_Cycle_effectif_basse_energie/ |
 | Tests taxonomiques | 4 | 03_TESTS_TAXONOMIQUES/ |
-| Note de consolidation saveur-Higgs | 1 | 04_ARCHITECTURES_INTER_FAMILLES/ |
+| Note de consolidation saveur-Higgs | 1 | 04_ARCHITECTURES/ |
 | Cartes consolidees v0.1-0.8 | 7 | 05/Genealogie_cartes/ |
 | Note de synthese methodologique (Word), Note de synthese methodologique.docx | 1 | 01/00_Socle_fondateur/ |
 | PROJECT_BRIEF.docx | 1 | 01/00_Socle_fondateur/ (copie de reference en 00_README envisageable) |

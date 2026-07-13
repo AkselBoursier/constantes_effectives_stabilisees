@@ -10,9 +10,9 @@ Elle reprend l'architecture cosmologique par formulations positives prudentes,
 a partir des appuis suivants :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 ```

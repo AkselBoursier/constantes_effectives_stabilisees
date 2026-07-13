@@ -10,8 +10,8 @@ Elle reprend l'architecture metrologique SI par formulations positives, a
 partir des appuis suivants :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
 ```

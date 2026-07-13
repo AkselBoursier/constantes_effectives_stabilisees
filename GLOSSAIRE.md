@@ -86,7 +86,7 @@ Une architecture n'est pas une famille : c'est un reseau de dependances
 structurelles, au-dessus du niveau de la fiche individuelle.
 
 Documents de reference :
-- [Cercle 2 — architectures actives](04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md)
+- [Cercle 2 — architectures actives](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md)
 - [Synthese architectures inter-familles v1.0](05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md)
 
 ### Mode de solidarisation
@@ -103,28 +103,28 @@ meme famille.
 Reseau de solidarite entre les grandeurs du regime cosmologique :
 Lambda, H_0, Omega_i, w, A_s, n_s, sigma_8, S_8.
 
-Document : [Architecture cosmologique — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md)
+Document : [Architecture cosmologique — notes](04_ARCHITECTURES/Architecture_cosmologique_notes.md)
 
 ### Architecture Saveur-Higgs
 
 Reseau de solidarite entre les grandeurs du secteur Higgs/Yukawa/saveur :
 v (VEV), masses de fermions, couplages de Yukawa, matrice CKM, parametres de Wolfenstein.
 
-Document : [Architecture Saveur-Higgs — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md)
+Document : [Architecture Saveur-Higgs — notes](04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md)
 
 ### Architecture Metrologique SI
 
 Reseau de solidarite entre les constantes fondamentales fixees par le SI 2019 :
 c, h, e, k_B, N_A, ainsi que leurs contraintes metriques.
 
-Document : [Architecture metrologique SI — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md)
+Document : [Architecture metrologique SI — notes](04_ARCHITECTURES/Architecture_metrologique_SI_notes.md)
 
 ### Architecture Effective basse energie
 
 Reseau de solidarite entre les grandeurs effectives du regime de basse energie :
 G_F, M_W, m_f, alpha_G, M_Pl.
 
-Document : [Architecture effective basse energie — notes](04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md)
+Document : [Architecture effective basse energie — notes](04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md)
 
 ---
 
@@ -149,6 +149,9 @@ dans quelle mesure une grandeur peut-elle etre dite constante ?
 Ces modes peuvent se croiser.
 
 Ils ne sont pas des classes exclusives.
+
+Document de reference :
+[Grille de lecture des 8 modes](05_CARTES_ET_SYNTHESES/Grille_lecture_8_modes_v0_1.md)
 
 ---
 
@@ -184,7 +187,7 @@ Voir : [Audit de taxonomie v0.1](05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md)
 Phase du projet consistant a tester les architectures actives par des
 stress tests de validite.
 
-Dossier : [04_ARCHITECTURES_INTER_FAMILLES/](04_ARCHITECTURES_INTER_FAMILLES/)
+Dossier : [04_ARCHITECTURES/](04_ARCHITECTURES/)
 
 ---
 
