@@ -14,7 +14,9 @@ Ordre de lecture :
 4. [Verdict provisoire](Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
 5. [Bibliographie raisonnée](Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
 
-Statut : première passe produite ; originalité non établie ; pouvoir discriminant minimal de la matrice établi.
+Le second test sur les séquences d'axes est accessible depuis l'entrée du pilote. Il distingue préparation, sélection, séparation cohérente, décohérence et résultat terminal.
+
+Statut : deux tests produits ; Q2 provisoirement renforcé ; Q3 non établi. La prochaine comparaison porte sur l'information de chemin et l'interférence.
 
 ## Charte de la branche philosophique v0.1
 
