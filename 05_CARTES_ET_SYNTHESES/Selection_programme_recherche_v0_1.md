@@ -114,7 +114,7 @@ niveau possible : Q3.
 
 Variables : branche Git, ordre de lecture, rang décision/diagnostic/exploration,
 budget de contexte, objections présentes, accès aux sources et possibilité de
-validation d'auteur.
+validation explicite.
 
 Protocole : soumettre une même question à plusieurs paquets de contexte contrôlés,
 préenregistrer les différences attendues, puis comparer problème, sources, modalité,
@@ -170,10 +170,9 @@ rejeter ;
 utiliser comme symptôme de réception ou contresens à prévenir.
 ```
 
-Les analogies seront versées dans une réserve distincte des preuves et des
-arguments. La toupie pourra seulement illustrer, sous point d'arrêt explicite, un
-mouvement cognitif de stabilisation et l'effet d'une fenêtre temporelle ; jamais
-l'électron, le spin ou une rotation microscopique classique.
+Les analogies retenues sont versées dans une réserve distincte des preuves et des
+arguments. Toute analogie peut être supprimée sans remplacement lorsqu'elle
+préstructure indûment l'objet de recherche.
 
 ---
 
