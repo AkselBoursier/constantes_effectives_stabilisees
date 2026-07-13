@@ -4,65 +4,82 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures et
 processus par lesquels certaines fixités deviennent opératoires.
 
-> **Statut actuel : cycle zéro de reconnaissance transversale.**
+> **Statut actuel : cycle zéro validé, reprise philosophique à ouvrir.**
 > La branche de consolidation n'est pas encore le tronc canonique. Les dernières
-> réécritures philosophiques v0.2/v1.4 sont placées sous revue : elles conservent
-> une valeur locale, mais ne commandent plus provisoirement l'orientation générale.
+> réécritures philosophiques v0.2/v1.4 restent sous revue : elles conservent une
+> valeur locale, mais ne commandent plus l'orientation générale.
 
 ## Entrée actuelle
 
 Lire dans cet ordre :
 
 1. [Cadrage du cycle zéro](05_CARTES_ET_SYNTHESES/Cadrage_cycle_zero_reconnaissance_transversale_v0_1.md)
-   pour le périmètre, la méthode et le moratoire documentaire.
+   pour le périmètre et la méthode généalogique.
 2. [Cartographie généalogique des lignées](05_CARTES_ET_SYNTHESES/Cartographie_genealogique_lignees_projet_v0_1.md)
    pour les centres de gravité successifs du projet.
 3. [Registre des propositions transversales](05_CARTES_ET_SYNTHESES/Registre_propositions_transversales_cycle_zero_v0_1.md)
    pour suivre l'origine, la migration et le statut proposé des principaux énoncés.
 4. [Diagnostic d'orientation](05_CARTES_ET_SYNTHESES/Diagnostic_orientation_cycle_zero_v0_1.md)
-   pour la proposition actuelle : constitution comme ordre heuristique,
-   différenciation comme opération générale, accès comme contrôle.
-5. [Note fondatrice — régimes de constance](01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Regimes_de_constance_v0_1.md)
+   pour la proposition soumise à validation.
+5. [Note de décision du cycle zéro](05_CARTES_ET_SYNTHESES/Note_decision_cycle_zero_v0_1.md)
+   pour l'orientation désormais validée par l'auteur.
+6. [Note fondatrice — régimes de constance](01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Regimes_de_constance_v0_1.md)
    pour la question initiale sur les conditions physiques de la constance.
-6. [Cadre canonique de refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
+7. [Cadre canonique de refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
    comme garde-fou critique sur les objets, régimes et transformations.
-7. [README philosophique](06_PHILOSOPHIE/README.md)
+8. [README philosophique](06_PHILOSOPHIE/README.md)
    pour les situations, voisinages, tests et programmes.
-8. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
+9. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
    pour le statut de `main`, `travail` et des branches thématiques.
 
-## Orientation proposée, non encore canonique
+## Orientation validée
 
-Le cycle zéro distingue plusieurs ordres.
+### Opération générale
+
+```text
+différencier ce que le terme commun « constante » comprime,
+en reconstruisant les régimes, architectures, dépendances et trajectoires
+qui rendent chaque fixité possible ou opératoire.
+```
 
 ### Ordre heuristique de recherche
 
 ```text
 constitution ou conditions de régime
 -> identification de ce qui devient fixe, dérivé, corrélé ou libre
--> différenciation de la forme et du statut de la fixité
+-> différenciation de la forme de fixité
 -> qualification éventuelle comme constance
 -> contrôle des accès, modèles et limites.
 ```
 
-### Pan sobre
+Cet ordre guide l'enquête. Il ne constitue ni une hiérarchie ontologique, ni
+l'ordre obligatoire des futurs textes.
+
+### Volet 1 — Différenciation conceptuelle et physique des formes de constance
 
 ```text
 partir des usages du mot « constante » ;
 faire apparaître les différences d'objets, de fonctions, de dépendances et de régimes ;
+comparer sans homogénéiser ;
 ne pas réduire le projet à l'admission ou au refus d'un vocabulaire.
 ```
 
-### Pan ambitieux
+### Volet 2 — Constitution, historicité et contingence des fixités
 
 ```text
-examiner la constitution, l'historicité, la contingence résiduelle,
-le fine-tuning et la fixité dynamique ;
-conserver les conséquences ontologiques au rang d'interprétations contrôlées.
+examiner comment certaines fixités deviennent possibles ou opératoires ;
+distinguer constitution de la relation, stabilisation du comportement et valeur ;
+étudier la contingence résiduelle, le fine-tuning et la fixité dynamique ;
+garder les conséquences ontologiques au rang d'interprétations contrôlées.
 ```
 
-L'accès reste indispensable comme contrôle probatoire. Il n'est pas le centre
-philosophique actuel de la recherche.
+### Place de l'accès
+
+> L'accès ne dirige pas l'enquête sur les fixités ; il contrôle ce que l'enquête
+> est autorisée à en affirmer.
+
+Les recherches sur la mesure, la coordination, les reconstructions, les bornes
+et le SI restent disponibles comme matériau et comme appareil critique.
 
 ## Documents provisoires sous revue
 
@@ -78,17 +95,8 @@ surcentré le pouvoir de refus et la hiérarchie `objet > constitution > accès`
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md
 ```
 
-Statut pendant le cycle zéro :
-
-```text
-propositions provisoires ;
-réservoirs de distinctions locales ;
-non directrices pour le prochain travail ;
-à reprendre après validation du diagnostic transversal.
-```
-
-Les versions antérieures restent également disponibles comme couches
-généalogiques. Aucun de ces documents n'est supprimé.
+Ils restent conservés et utilisables pour leurs distinctions locales. Leur
+reprise doit suivre la [note de décision du cycle zéro](05_CARTES_ET_SYNTHESES/Note_decision_cycle_zero_v0_1.md).
 
 ## Organisation du dépôt
 
@@ -133,10 +141,10 @@ le DOCX original.
 ## Workflow GitHub
 
 ```text
-main     : état validé du corpus ;
-travail  : intégration quotidienne après resynchronisation ;
-branches : chantiers thématiques bornés ;
-récupération : réunion exceptionnelle soumise à revue.
+main          : état validé du corpus ;
+travail       : intégration quotidienne après resynchronisation ;
+branches      : chantiers thématiques bornés ;
+récupération  : réunion exceptionnelle soumise à revue.
 ```
 
 La PR de consolidation reste en brouillon. Aucun nouveau chantier scientifique
@@ -155,13 +163,13 @@ Les trois premiers contrôles sont bloquants dans GitHub Actions. L'inventaire
 des placeholders est informatif : les lacunes connues des extractions ne sont
 pas confondues avec une régression.
 
-## Règles de contribution pendant le cycle zéro
+## Règles de contribution après le cycle zéro
 
 1. Ne pas modifier les sources historiques DOCX.
-2. Ne pas réécrire les documents de thèse avant validation de la reconnaissance.
-3. Distinguer intention fondatrice, centre temporaire, acquis durable et orientation proposée.
-4. Ne pas transformer une correction locale en centre général.
-5. Ne pas confondre ordre de recherche, ordre d'exposition et hiérarchie ontologique.
-6. Revenir aux preuves locales pour toute affirmation sectorielle.
-7. Conserver les résultats physiques, leurs hypothèses et leurs conditions d'échec.
-8. Privilégier des commits lisibles, bornés et réversibles.
+2. Distinguer intention fondatrice, centre temporaire, acquis durable et orientation validée.
+3. Ne pas transformer une correction locale en centre général.
+4. Ne pas confondre ordre de recherche, ordre d'exposition et hiérarchie ontologique.
+5. Revenir aux preuves locales pour toute affirmation sectorielle.
+6. Conserver les résultats physiques, leurs hypothèses et leurs conditions d'échec.
+7. Reprendre les documents philosophiques par versions nouvelles et réversibles.
+8. Placer la constitution en ouverture heuristique, la différenciation au centre général et l'accès au contrôle probatoire.
