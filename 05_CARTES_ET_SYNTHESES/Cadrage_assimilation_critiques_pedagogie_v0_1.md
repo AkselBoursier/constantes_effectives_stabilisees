@@ -161,16 +161,16 @@ indiquer :
 source ;
 fonction cognitive ;
 structure ou relation effectivement conservée ;
-éléments non conservés ;
+élements non conservés ;
 inférences interdites ;
 point d'arrêt ;
 public et niveau d'expertise ;
 usage possible.
 ```
 
-L'analogie de la toupie est traitée exclusivement comme image structurelle de
-stabilisation et de fenêtre temporelle. Elle ne représente ni l'électron, ni le
-spin, ni une rotation microscopique classique.
+Une analogie peut être retirée entièrement, sans réécriture positive ni substitut,
+si elle impose une image préalable de l'objet étudié ou si son coût de correction
+dépasse son gain pédagogique.
 
 ## 7. Scène intellectuelle et arrière-scène technique
 
