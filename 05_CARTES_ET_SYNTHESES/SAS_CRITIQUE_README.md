@@ -9,4 +9,4 @@ Lire dans cet ordre :
 5. [Carte des contre-interprétations](Carte_contreinterpretations_et_signaux_de_reception_v0_1.md)
 6. [Incidence sur le pilote Q1](Note_incidence_sas_sur_pilote_Q1_v0_1.md)
 
-Statut : première passe produite, en attente de validation d'auteur. Le pilote Q1 sur Stern–Gerlach n'est pas encore lancé.
+Statut : première passe validée après rectification. Le pilote Q1 sur Stern–Gerlach est la prochaine opération et n'est pas encore lancé.
