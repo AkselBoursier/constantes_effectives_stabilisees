@@ -1,5 +1,21 @@
 # 06_PHILOSOPHIE
 
+## Pilote actif — Q1 Stern–Gerlach
+
+Branche : `agent/pilote-q1-stern-gerlach`
+
+Le pilote teste une typologie fonctionnelle des catégories classiques en distinguant trois objets : l'expérience historique de 1922, le modèle quantique idéalisé et les dispositifs modernes ou séquentiels.
+
+Ordre de lecture :
+
+1. [Entrée du pilote](PILOTE_Q1_STERN_GERLACH_README.md)
+2. [Cadrage physique et niveaux](Pilote_Q1_Stern_Gerlach_cadrage_physique_v0_1.md)
+3. [Matrice des fonctions](Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md)
+4. [Verdict provisoire](Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
+5. [Bibliographie raisonnée](Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
+
+Statut : première passe produite ; originalité non établie ; pouvoir discriminant minimal de la matrice établi.
+
 ## Charte de la branche philosophique v0.1
 
 ### 1. Fonction
@@ -72,10 +88,8 @@ rang : exploration philosophique active ;
 la branche est en amont des degagements theoriques :
 elle nourrit la matrice des degagements et les fiches d'horizon,
 elle ne les remplace pas.
-
 l'integration de cette branche a l'index raisonne du corpus est
 une decision de statut soumise a validation.
-
 le sas de raccordement actuel est :
 05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 ```
