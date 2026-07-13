@@ -57,10 +57,15 @@ Le cas weakless est traité comme une construction de possibilité prolongée pa
 - [Contraintes observationnelles](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/contraintes-observationnelles-variation-electrofaible.md)
 - [Modèle test scalaire–Higgs](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-test-scalaire-higgs-portal.md)
 - [Synthèse de phase 1](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/synthese-phase1-fixite-electrofaible-dynamique.md)
-- [Résultats de phase 2 — modèle minimal](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase2-modele-minimal.md)
-- [Code reproductible du scan](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs.py)
+- [Résultats de phase 2 — modèle quadratique minimal](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase2-modele-minimal.md)
+- [Résultats de phase 3 — régime quartique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase3-regime-quartique.md)
+- [Toy model homogène dissipatif](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-toy-homogene-dissipatif.md)
+- [Résultats de phase 4 — bilan énergétique ouvert](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase4-toy-model-dissipatif.md)
+- [Code du scan quadratique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs.py)
+- [Code du scan quartique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs_quartique.py)
+- [Code du scan dissipatif](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_dissipation_homogene.py)
 
-Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Le premier calcul montre qu’un portail quadratique peut amortir rapidement une variation de `v`, mais qu’un condensat `Z_2` stable surproduit ensuite une composante de matière. Le modèle minimal est donc écarté comme mécanisme autonome ; le régime quartique devient l’extension prioritaire.
+Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Les modèles conservatifs quadratique et quartique amortissent `v` mais échouent sur le devenir de l’énergie du condensat. Le toy model dissipatif ouvre une fenêtre phénoménologique : un transfert assez précoce peut supprimer la relique avec une injection d’entropie contrôlée. La question se déplace désormais vers la réalisation microscopique du taux requis.
 
 ## Résultat provisoire
 
