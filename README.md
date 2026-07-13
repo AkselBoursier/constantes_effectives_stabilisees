@@ -49,6 +49,24 @@ La question sert ici d’instruction d’enquête. Le projet distingue les forme
 
 Le cas weakless est traité comme une construction de possibilité prolongée par quelques travaux ultérieurs, non comme une réfutation générale du fine-tuning ou une démonstration d’habitabilité.
 
+### Fixité électrofaible dynamique
+
+- [Cadrage du cycle](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md)
+- [Typologie des variations](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/typologie-des-variations-electrofaibles.md)
+- [Mécanismes de constitution et de stabilisation](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/mecanismes-de-constitution-et-stabilisation.md)
+- [Contraintes observationnelles](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/contraintes-observationnelles-variation-electrofaible.md)
+- [Modèle test scalaire–Higgs](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-test-scalaire-higgs-portal.md)
+- [Synthèse de phase 1](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/synthese-phase1-fixite-electrofaible-dynamique.md)
+- [Résultats de phase 2 — modèle quadratique minimal](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase2-modele-minimal.md)
+- [Résultats de phase 3 — régime quartique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase3-regime-quartique.md)
+- [Toy model homogène dissipatif](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-toy-homogene-dissipatif.md)
+- [Résultats de phase 4 — bilan énergétique ouvert](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase4-toy-model-dissipatif.md)
+- [Code du scan quadratique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs.py)
+- [Code du scan quartique](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs_quartique.py)
+- [Code du scan dissipatif](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_dissipation_homogene.py)
+
+Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Les modèles conservatifs quadratique et quartique amortissent `v` mais échouent sur le devenir de l’énergie du condensat. Le toy model dissipatif ouvre une fenêtre phénoménologique : un transfert assez précoce peut supprimer la relique avec une injection d’entropie contrôlée. La question se déplace désormais vers la réalisation microscopique du taux requis.
+
 ## Résultat provisoire
 
 Les cycles ne révèlent pas une espèce naturelle unique appelée « constante physique ». Ils distinguent au moins :
@@ -80,4 +98,5 @@ Branches actives :
 ```text
 agent/refondation-domaine
 agent/cycle-fine-tuning
+agent/cycle-fixite-electrofaible-dynamique
 ```
