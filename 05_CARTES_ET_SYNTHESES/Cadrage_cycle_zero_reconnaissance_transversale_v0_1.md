@@ -3,17 +3,18 @@
 ## 0. Statut
 
 ```text
-statut : cadrage de reconnaissance ;
+statut : cycle de reconnaissance validé ;
 branche : agent/cycle-zero-reconnaissance-transversale ;
 fonction : reconstruire l'intention, les lignées et les migrations conceptuelles
-           avant toute nouvelle réécriture du noyau philosophique ;
-effet : aucun document de thèse n'est promu, supprimé ou rendu canonique ;
-base : branche consolidée akselboursier-cartographier-projet.
+           avant la reprise du noyau philosophique ;
+effet : aucun document de thèse n'est supprimé ou rendu canonique ;
+base : branche consolidée akselboursier-cartographier-projet ;
+décision de clôture : Note_decision_cycle_zero_v0_1.md.
 ```
 
 Le cycle zéro répond à un incident méthodologique précis : une correction locale
 utile — distinguer constance de l'objet, constitution et accès — a été promue trop
-vite en nouveau centre du projet. Le présent cycle élargit le cercle documentaire
+vite en nouveau centre du projet. Le présent cycle a élargi le cercle documentaire
 avant toute nouvelle orientation générale.
 
 ## 1. Question directrice
@@ -25,8 +26,6 @@ encore être tenues ensemble sans qu'une étape locale soit prise pour le projet
 entier ?
 ```
 
-Cette question précède désormais toute reformulation globale.
-
 ## 2. Distinctions de méthode
 
 Le cycle distingue quatre choses :
@@ -35,7 +34,7 @@ Le cycle distingue quatre choses :
 intention fondatrice : ce qui motivait initialement l'enquête ;
 centre de gravité temporaire : ce qu'une phase de travail a privilégié ;
 acquis durable : distinction ou résultat qui résiste aux changements de centre ;
-orientation actuelle proposée : ordre de recherche à discuter après reconnaissance.
+orientation actuelle validée : ordre de recherche adopté après reconnaissance.
 ```
 
 Une proposition peut avoir été utile sans devoir rester centrale. Une proposition
@@ -44,17 +43,18 @@ soient annulés.
 
 ## 3. Principe généalogique
 
-Une branche Git n'est pas une unité conceptuelle. Le cycle ne procède donc pas
+Une branche Git n'est pas une unité conceptuelle. Le cycle n'a donc pas procédé
 par lecture exhaustive d'une branche après l'autre.
 
-Il suit plutôt :
+Il a suivi :
 
 ```text
 corpus consolidé
 -> lignées conceptuelles transversales
 -> retour aux documents d'origine
--> retour ciblé aux branches lorsque la provenance reste ambiguë
--> proposition de statut.
+-> retour ciblé aux branches lorsque la provenance restait ambiguë
+-> proposition de statut
+-> décision d'auteur.
 ```
 
 Les branches servent à établir la provenance et les états successifs. Les
@@ -62,7 +62,7 @@ synthèses, cadrages, audits et preuves locales servent à reconstruire le sens.
 
 ## 4. Corpus de première passe
 
-La première passe couvre les points d'entrée suivants.
+La première passe a couvert les points d'entrée suivants.
 
 ### 4.1 Strate fondatrice
 
@@ -100,19 +100,19 @@ La première passe couvre les points d'entrée suivants.
 - résultats des phases 2 à 4 du cycle 10 déjà contrôlés lors de l'audit borné.
 
 Cette couverture n'est pas une relecture ligne à ligne de tous les fichiers. Elle
-est une première reconnaissance des documents qui déclarent explicitement la
-fonction, le résultat et le statut des principales lignées. Toute conclusion qui
-dépend d'un cas local devra revenir à sa preuve locale.
+est une reconnaissance des documents qui déclarent explicitement la fonction,
+le résultat et le statut des principales lignées. Toute conclusion dépendant
+d'un cas local doit revenir à sa preuve locale.
 
-## 5. Procédure
+## 5. Procédure accomplie
 
 ### Passe 1 — synchronique
 
-Identifier les questions, concepts et rangs coexistants dans la consolidation.
+Identification des questions, concepts et rangs coexistants dans la consolidation.
 
 ### Passe 2 — généalogique
 
-Retrouver pour chaque proposition :
+Pour chaque proposition importante :
 
 ```text
 formulation d'origine ;
@@ -124,7 +124,7 @@ risque de surpromotion.
 
 ### Passe 3 — différentielle
 
-Séparer ce qui concerne :
+Séparation de ce qui concerne :
 
 ```text
 les objets et relations physiques ;
@@ -134,12 +134,24 @@ les voies d'accès et de preuve ;
 les interprétations philosophiques ou ontologiques.
 ```
 
-### Passe 4 — décision différée
+### Passe 4 — décision
 
-Aucune orientation ne devient canonique par le seul cycle zéro. Le cycle produit
-une carte, un diagnostic et des propositions de statut soumises à validation.
+La cartographie et le diagnostic ont été soumis à l'auteur. La décision est
+consignée dans `Note_decision_cycle_zero_v0_1.md`.
 
-## 6. Règles contre la surcorrection
+## 6. Décisions de clôture
+
+```text
+opération générale : différenciation conceptuelle et physique de ce que le terme
+                      « constante » comprime ;
+ordre heuristique : constitution -> identification de la fixité -> différenciation
+                    -> qualification éventuelle -> contrôle de l'accès ;
+volet 1 : Différenciation conceptuelle et physique des formes de constance ;
+volet 2 : Constitution, historicité et contingence des fixités ;
+accès : contrôle probatoire, non centre philosophique.
+```
+
+## 7. Règles contre la surcorrection
 
 1. Une contradiction locale autorise un garde-fou local, pas un nouveau centre général.
 2. Une distinction analytique ne devient pas automatiquement une hiérarchie d'intérêt.
@@ -149,28 +161,8 @@ une carte, un diagnostic et des propositions de statut soumises à validation.
 6. Les formulations historiques restent disponibles comme preuves de migration.
 7. Toute nouvelle synthèse doit indiquer ce qu'elle conserve, ce qu'elle déplace et ce qu'elle laisse ouvert.
 
-## 7. Moratoire documentaire
+## 8. Sortie du cycle
 
-Pendant le cycle zéro :
-
-```text
-- la PR de consolidation reste en brouillon ;
-- les versions v0.2/v1.4 produites lors de l'arbitrage récent sont des
-  propositions provisoires sous revue ;
-- aucun papier A ou B n'est recentré définitivement ;
-- le pan physique n'est pas réécrit ;
-- les résultats numériques des cycles 9 et 10 restent inchangés.
-```
-
-## 8. Livrables du cycle
-
-1. `Cartographie_genealogique_lignees_projet_v0_1.md` ;
-2. `Registre_propositions_transversales_cycle_zero_v0_1.md` ;
-3. `Diagnostic_orientation_cycle_zero_v0_1.md` ;
-4. une proposition de reprise des documents actifs, seulement après validation.
-
-## 9. Formule de clôture
-
-> Le cycle zéro ne cherche pas encore la meilleure thèse. Il reconstruit d'abord
-> les questions que le projet a réellement portées, afin qu'aucune réponse locale
-> ne devienne par accident la question entière.
+Le cycle zéro autorise maintenant une reprise philosophique bornée des documents
+provisoires, puis une relecture constitutive du pan physique. Il n'autorise pas
+encore la fusion de la consolidation dans `main`.
