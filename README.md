@@ -15,7 +15,7 @@ cycle transversal qui ne présuppose pas que le thème des constantes doive rest
 centre du programme. Lire dans cet ordre :
 
 1. [Rectification — accès, trajectoires et stabilisation](05_CARTES_ET_SYNTHESES/Rectification_acces_trajectoires_stabilisation_v0_1.md)
-   pour la décision d'auteur la plus récente sur l'accès transversal, les trajectoires et le retrait du terme général `fixité dynamique`.
+   pour la décision méthodologique active sur l'accès transversal, les trajectoires et le retrait du terme général `fixité dynamique`.
 2. [Index raisonné actif v1.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_2.md)
    pour la navigation actuelle et le rang des documents antérieurs.
 3. [Cadrage du cycle](05_CARTES_ET_SYNTHESES/Cadrage_cycle_questions_contemporaines_v0_1.md)
@@ -30,11 +30,11 @@ centre du programme. Lire dans cet ordre :
    pour les premiers verdicts d'antériorité et les conditions de maintien.
 8. [Sélection du programme de recherche](05_CARTES_ET_SYNTHESES/Selection_programme_recherche_v0_1.md)
    pour les trois chantiers Q, M et A, leurs pilotes et leurs critères d'échec.
+9. [Sas critique et pédagogique](05_CARTES_ET_SYNTHESES/SAS_CRITIQUE_README.md)
+   pour le tri multidimensionnel des cinq lectures et leurs incidences sur Q1.
 
-Prochaine opération : assimilation multidimensionnelle des cinq critiques et de
-l'analyse transmises le 13 juillet 2026, puis constitution d'une réserve
-pédagogique distincte des arguments. Le pilote Q1 sur Stern–Gerlach viendra
-ensuite.
+La rectification et le sas critique sont produits et validés. La prochaine
+opération substantielle est le pilote Q1 sur Stern–Gerlach.
 
 ## Entrée actuelle du corpus consolidé
 
@@ -227,3 +227,4 @@ pas confondues avec une régression.
 8. Placer la constitution en ouverture heuristique, la différenciation au centre comparatif et traiter l'accès comme dimension transversale et plurielle.
 9. Ne pas transformer une analogie pédagogique en argument physique.
 10. Ne pas transformer une quasi-stationnarité locale en théorie générale des constantes.
+11. Enregistrer les décisions par leur contenu, leur date, leur statut et leurs raisons, sans faire de l'attribution personnelle une source d'autorité.
