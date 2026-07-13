@@ -4,11 +4,25 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures et
 processus par lesquels certaines fixités deviennent opératoires.
 
-> **Statut actuel : cycle zéro validé ; place de l'accès rectifiée ; cartographie des questions contemporaines active.**
+> **Statut actuel : cycle zéro validé ; place de l'accès rectifiée ; pilote Q1 Stern–Gerlach actif.**
 > La reprise philosophique et le premier dégagement v0.3 restent suspendus pendant
 > les pilotes. La branche de consolidation n'est pas encore le tronc canonique.
 
-## Entrée de la branche actuelle — Questions contemporaines
+## Pilote actif — Q1 Stern–Gerlach
+
+La branche `agent/pilote-q1-stern-gerlach` teste une typologie fonctionnelle des catégories classiques. Deux tests sont maintenant produits : distinction entre expérience historique, modèle idéal et dispositifs modernes ; puis séquences d'analyseurs selon plusieurs axes.
+
+1. [Entrée du pilote Q1](06_PHILOSOPHIE/PILOTE_Q1_STERN_GERLACH_README.md)
+2. [Cadrage physique et niveaux](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_cadrage_physique_v0_1.md)
+3. [Matrice des fonctions](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md)
+4. [Verdict de première passe](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
+5. [Second test — protocole des séquences d'axes](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_sequence_axes_protocole_v0_1.md)
+6. [Second test — verdict](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_sequence_axes_verdict_v0_1.md)
+7. [Bibliographie raisonnée](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
+
+Résultat actuel : pouvoir discriminant Q2 provisoirement renforcé ; Q3 non établi. La prochaine comparaison doit quitter Stern–Gerlach et tester la matrice sur l'information de chemin et l'interférence.
+
+## Entrée de la branche précédente — Questions contemporaines
 
 La branche `agent/cartographie-questions-contemporaines` et la PR nº 11 portent un
 cycle transversal qui ne présuppose pas que le thème des constantes doive rester le
@@ -32,9 +46,6 @@ centre du programme. Lire dans cet ordre :
    pour les trois chantiers Q, M et A, leurs pilotes et leurs critères d'échec.
 9. [Sas critique et pédagogique](05_CARTES_ET_SYNTHESES/SAS_CRITIQUE_README.md)
    pour le tri multidimensionnel des cinq lectures et leurs incidences sur Q1.
-
-La rectification et le sas critique sont produits et validés. La prochaine
-opération substantielle est le pilote Q1 sur Stern–Gerlach.
 
 ## Entrée actuelle du corpus consolidé
 
