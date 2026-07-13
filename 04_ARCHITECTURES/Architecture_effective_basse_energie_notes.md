@@ -4,19 +4,15 @@
 
 ### 1. Fonction de la note
 
-Cette note integre le resultat du cycle effectif basse energie dans le niveau des architectures inter-familles.
+Cette note integre le resultat du cycle effectif basse energie dans le niveau des architectures actives.
 
 Elle ne remplace pas la synthese du cycle. Elle en extrait la consequence taxonomique principale :
 
 ```text
-Architecture effective basse energie = architecture inter-familles confirmee
+Architecture effective basse energie = architecture de validite confirmee
 ```
 
-et non :
-
-```text
-nouvelle famille superieure
-```
+Cette consequence fixe un rang architectural, non une sortie taxonomique large.
 
 La note doit donc servir de reference courte pour les prochaines cartes consolidees.
 
@@ -41,7 +37,7 @@ Elle articule principalement :
 Raccordement
 Echelle
 Couplage
-Relation sous audit, lorsque des liaisons de regime doivent etre explicitees
+Relations qualifiees, lorsque des liaisons de regime doivent etre explicitees
 ```
 
 Elle mobilise aussi des fonctions transversales :
@@ -58,17 +54,13 @@ La decision de rang est :
 effectif = mode architectural de description
 ```
 
-et non :
+Cette decision maintient l'effectif comme mode architectural de description.
 
-```text
-effectif = famille fonctionnelle autonome
-```
-
-Cette decision evite de creer une famille trop large qui absorberait les coefficients, les echelles, les couplages courants et les limites de validite.
+Cette decision repartit les coefficients, echelles, couplages courants et limites de validite dans une architecture de description.
 
 ### 3. Definition locale proposee
 
-Une architecture effective basse energie est une configuration inter-familles dans laquelle un regime limite stabilise des coefficients, couplages, echelles et fonctions de validite permettant de decrire un domaine sans resoudre explicitement toute la structure pertinente a plus haute energie, a plus courte distance ou dans un autre regime de description.
+Une architecture effective basse energie est une configuration de solidarisation dans laquelle un regime limite stabilise des coefficients, couplages, echelles et fonctions de validite permettant de decrire un domaine sans resoudre explicitement toute la structure pertinente a plus haute energie, a plus courte distance ou dans un autre regime de description.
 
 Cette definition repose sur quatre elements.
 
@@ -283,7 +275,7 @@ Validite = fonction transversale centrale de l'architecture effective basse ener
 La note confirme la retrogradation de Seuil.
 
 ```text
-Seuil n'est pas une famille superieure.
+Seuil garde un role de visibilite locale d'un passage ou d'une limite.
 ```
 
 Dans cette architecture :
@@ -316,7 +308,7 @@ Q par rapport a Lambda_QCD
 E << M_Pl
 ```
 
-Mais elle ne doit pas devenir une famille.
+Elle garde donc un role local de visibilite du passage ou de la limite.
 
 Decision :
 
@@ -430,8 +422,8 @@ Elle fixe seulement le statut methodologique de l'architecture.
 Les cartes consolidees ulterieures doivent conserver cinq decisions.
 
 ```text
-1. Architecture effective basse energie est confirmee comme architecture inter-familles.
-2. Effectif ne doit pas devenir une famille superieure.
+1. Architecture effective basse energie est confirmee comme architecture active de validite.
+2. Effectif reste un mode architectural de description.
 3. Raccordement peut etre local ou architectural.
 4. Validite devient une fonction transversale centrale.
 5. Seuil et Hierarchie restent des fonctions transversales.
