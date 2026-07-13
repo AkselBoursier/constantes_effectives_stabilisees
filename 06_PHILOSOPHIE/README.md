@@ -1,22 +1,31 @@
 # 06_PHILOSOPHIE
 
-## Pilote actif — Q1 Stern–Gerlach
+## Audit actif — non-trivialité de Q1
 
-Branche : `agent/pilote-q1-stern-gerlach`
+Branche : `agent/audit-non-trivialite-q1`
 
-Le pilote teste une typologie fonctionnelle des catégories classiques en distinguant trois objets : l'expérience historique de 1922, le modèle quantique idéalisé et les dispositifs modernes ou séquentiels.
+Le pilote Stern–Gerlach est clos comme calibration. Il n'établit aucune nouveauté en mécanique quantique ni aucune thèse philosophique originale. L'audit examine seulement s'il reste un protocole méthodologique non redondant pour contrôler le transport d'inférences entre plusieurs usages d'une catégorie.
 
 Ordre de lecture :
+
+1. [Entrée de l'audit](AUDIT_NON_TRIVIALITE_Q1_README.md)
+2. [Recouvrements avec les cadres existants](Audit_non_trivialite_Q1_recouvrements_v0_1.md)
+3. [Verdict](Audit_non_trivialite_Q1_verdict_v0_1.md)
+4. [Protocole candidat](Protocole_candidat_transfert_inferentiel_v0_1.md)
+
+Statut : Q2 retiré ; Q1 conservé comme calibration ; aucun nouveau cas quantique avant le verdict bibliographique sur le protocole candidat.
+
+## Dossier calibratoire — Q1 Stern–Gerlach
+
+Branche : `agent/pilote-q1-stern-gerlach`
 
 1. [Entrée du pilote](PILOTE_Q1_STERN_GERLACH_README.md)
 2. [Cadrage physique et niveaux](Pilote_Q1_Stern_Gerlach_cadrage_physique_v0_1.md)
 3. [Matrice des fonctions](Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md)
-4. [Verdict provisoire](Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
+4. [Verdict provisoire antérieur à l'audit](Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
 5. [Bibliographie raisonnée](Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
 
-Le second test sur les séquences d'axes est accessible depuis l'entrée du pilote. Il distingue préparation, sélection, séparation cohérente, décohérence et résultat terminal.
-
-Statut : deux tests produits ; Q2 provisoirement renforcé ; Q3 non établi. La prochaine comparaison porte sur l'information de chemin et l'interférence.
+Les deux tests restent conservés comme exercices de calibration. Leur rang est désormais fixé par l'audit actif.
 
 ## Charte de la branche philosophique v0.1
 
