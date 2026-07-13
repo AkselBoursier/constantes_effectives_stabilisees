@@ -3,12 +3,11 @@
 ## 0. Statut
 
 ```text
-statut : diagnostic soumis à validation ;
+statut : diagnostic validé par décision d'auteur ;
 fonction : proposer une orientation après reconnaissance transversale ;
 ne remplace pas : cadre canonique, preuves locales, documents philosophiques,
-                  cycles physiques ni futurs arbitrages ;
-effet immédiat : suspendre la promotion des réécritures récentes comme centre
-                 définitif du corpus.
+                   cycles physiques ni futurs arbitrages ;
+prolongement décisionnel : Note_decision_cycle_zero_v0_1.md.
 ```
 
 ## 1. Diagnostic général
@@ -36,7 +35,7 @@ Le diagnostic du cycle zéro est donc :
 > question fondatrice restée active dans les architectures, le fine-tuning et la
 > fixité dynamique.
 
-## 2. Orientation générale proposée
+## 2. Orientation générale validée
 
 L'opération la plus stable du projet est :
 
@@ -62,7 +61,7 @@ constantes, ni de prouver leur invariance ultime.
 
 ### 3.1 Oui, comme ordre heuristique
 
-Pour la recherche, l'ordre suivant est pertinent :
+Pour la recherche, l'ordre suivant est validé :
 
 ```text
 constitution / conditions de régime
@@ -131,16 +130,16 @@ Il intervient pour :
 - évaluer la force probatoire des affirmations ;
 - prévenir la surinterprétation réaliste ou ontologique.
 
-Formule proposée :
+Formule validée :
 
 > L'accès ne dirige pas l'enquête sur les fixités, mais il contrôle ce que
 > l'enquête est autorisée à en affirmer.
 
-## 5. Pan sobre et pan ambitieux
+## 5. Deux volets d'exposition
 
-### 5.1 Pan sobre — ordre conservé
+### 5.1 Différenciation conceptuelle et physique des formes de constance
 
-Le pan sobre commence par l'usage scientifique ordinaire du mot `constante` et
+Ce volet commence par l'usage scientifique ordinaire du mot `constante` et
 montre pourquoi cet usage regroupe des réalités différentes.
 
 Il privilégie :
@@ -154,9 +153,9 @@ Il privilégie :
 Il ne fait pas de la question « cette grandeur mérite-t-elle le mot ? » son
 objet principal. L'admission ou le refus ne sont que des résultats locaux.
 
-### 5.2 Pan ambitieux — ordre conservé
+### 5.2 Constitution, historicité et contingence des fixités
 
-Le pan ambitieux demande :
+Ce volet demande :
 
 ```text
 comment des fixités se constituent-elles ?
@@ -218,35 +217,31 @@ Plan_livrable_papier_A_v0_2.md ;
 Index_raisonne_du_corpus_v1_1.md.
 ```
 
-Statut proposé pendant le cycle zéro :
+Statut après validation du cycle zéro :
 
 ```text
 propositions provisoires sous revue ;
 utilisables pour leurs distinctions locales ;
 non directrices pour l'orientation générale ;
-à reprendre après validation de la cartographie généalogique.
+à reprendre selon Note_decision_cycle_zero_v0_1.md.
 ```
 
 Elles ne doivent ni être supprimées ni servir de points d'entrée canoniques tant
 que cette reprise n'est pas effectuée.
 
-## 8. Séquence de reprise proposée
+## 8. Séquence de reprise validée
 
-### Étape 1 — validation du cycle zéro
+### Étape 1 — intégration du cycle zéro
 
-Valider ou corriger :
-
-- la cartographie des lignées ;
-- le registre des propositions ;
-- l'ordre heuristique `constitution -> fixité -> différenciation -> accès` ;
-- la distinction pan sobre / pan ambitieux.
+Intégrer la cartographie, le registre, le diagnostic et la note de décision dans
+la branche de récupération.
 
 ### Étape 2 — reprise philosophique
 
 Réviser les documents de thèse sans troisième surcorrection :
 
 ```text
-- replacer la différenciation au centre du pan sobre ;
+- replacer la différenciation au centre du premier volet ;
 - replacer la constitution au centre de l'ordre de recherche ;
 - conserver l'accès comme contrôle ;
 - rendre explicite la pluralité des réponses possibles à la question de
@@ -302,7 +297,7 @@ La proposition échoue si elle :
 5. transforme la différenciation en simple taxonomie ;
 6. fait de la contingence résiduelle une preuve métaphysique ;
 7. confond l'ordre de recherche avec l'ordre d'exposition ;
-8. transforme le pan ambitieux en nouvelle théorie physique.
+8. transforme le second volet en nouvelle théorie physique.
 
 ## 10. Formule de clôture
 
