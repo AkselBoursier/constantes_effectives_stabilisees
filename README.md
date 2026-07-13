@@ -4,12 +4,34 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures et
 processus par lesquels certaines fixités deviennent opératoires.
 
-> **Statut actuel : cycle zéro validé, reprise philosophique à ouvrir.**
-> La branche de consolidation n'est pas encore le tronc canonique. Les dernières
-> réécritures philosophiques v0.2/v1.4 restent sous revue : elles conservent une
-> valeur locale, mais ne commandent plus l'orientation générale.
+> **Statut actuel : cycle zéro validé ; cartographie des questions contemporaines active.**
+> La reprise philosophique et le premier dégagement v0.3 restent suspendus pendant
+> les pilotes. La branche de consolidation n'est pas encore le tronc canonique.
 
-## Entrée actuelle
+## Entrée de la branche actuelle — Questions contemporaines
+
+La branche `agent/cartographie-questions-contemporaines` et la PR nº 11 portent un
+cycle transversal qui ne présuppose pas que le thème des constantes doive rester le
+centre du programme. Lire dans cet ordre :
+
+1. [Cadrage du cycle](05_CARTES_ET_SYNTHESES/Cadrage_cycle_questions_contemporaines_v0_1.md)
+   pour la méthode, les niveaux d'originalité et les livrables.
+2. [Atlas des questions fondamentales contemporaines](05_CARTES_ET_SYNTHESES/Atlas_questions_fondamentales_contemporaines_v0_1.md)
+   pour les six domaines et les familles transversales de problèmes.
+3. [Carte des affinités et priorités de recherche](05_CARTES_ET_SYNTHESES/Carte_affinites_et_priorites_recherche_v0_1.md)
+   pour les zones de travail retenues sans évaluation personnelle implicite.
+4. [Matrice questions / corpus / voisinages](05_CARTES_ET_SYNTHESES/Matrice_questions_corpus_voisinages_v0_1.md)
+   pour le croisement entre questions exogènes, matériaux du corpus et dettes bibliographiques.
+5. [Registre des questions candidates originales](05_CARTES_ET_SYNTHESES/Registre_questions_candidates_originales_v0_1.md)
+   pour les premiers verdicts d'antériorité et les conditions de maintien.
+6. [Sélection du programme de recherche](05_CARTES_ET_SYNTHESES/Selection_programme_recherche_v0_1.md)
+   pour les trois chantiers Q, M et A, leurs pilotes et leurs critères d'échec.
+
+Prochaine opération substantielle : pilote Q1 sur Stern–Gerlach. Ces documents
+restent exploratoires tant que les pilotes et la recherche d'antériorité approfondie
+n'ont pas produit de résultat discriminant.
+
+## Entrée actuelle du corpus consolidé
 
 Lire dans cet ordre :
 
@@ -69,7 +91,7 @@ ne pas réduire le projet à l'admission ou au refus d'un vocabulaire.
 ```text
 examiner comment certaines fixités deviennent possibles ou opératoires ;
 distinguer constitution de la relation, stabilisation du comportement et valeur ;
-étudier la contingence résiduelle, le fine-tuning et la fixité dynamique ;
+étudier la contingence résiduelle, le fine-tuning et les profils temporels locaux ;
 garder les conséquences ontologiques au rang d'interprétations contrôlées.
 ```
 
@@ -121,11 +143,12 @@ constantes_effectives_stabilisees/
 |---|---|---|
 | Architectures | [Synthèse transverse](04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md) | Comment des grandeurs deviennent-elles solidaires et opératoires ? |
 | Fine-tuning | [Cadrage du cycle 9](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Qu'est-ce qui est réellement réglé et que reste-t-il à expliquer ? |
-| Fixité dynamique | [Cadrage du cycle 10](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Une grandeur variable peut-elle devenir quasi fixe dans un même univers ? |
+| Cycle 10 local | [Cadrage du cycle 10](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Un modèle cosmologique simplifié peut-il produire une quasi-fixité électrofaible sans dette énergétique rédhibitoire ? |
 | Jonction BEH | [Note de cadrage](05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md) | Quel régime et quels objets deviennent opératoires au seuil électrofaible ? |
 
 Les résultats numériques des phases 2 à 4 du cycle 10 restent inchangés et ont
-été reproduits lors de l'audit borné.
+été reproduits lors de l'audit borné. La « fixité dynamique » n'est plus traitée
+comme principe général ; le cycle 10 est conservé comme cas physique local.
 
 ## Sources primaires et extractions
 
