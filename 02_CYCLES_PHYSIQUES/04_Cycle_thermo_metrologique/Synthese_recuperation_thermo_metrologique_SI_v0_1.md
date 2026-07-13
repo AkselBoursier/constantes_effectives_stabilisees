@@ -122,7 +122,7 @@ exactitude derivee, role physique et regime d'acces metrologique.
 Documents actifs concernes :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 ```

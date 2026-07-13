@@ -17,6 +17,7 @@ Elle s'appuie sur :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -38,7 +39,14 @@ et quelle trajectoire de stabilisation elle suit.
 
 Definition v1.3 :
 
-> Une constante effective stabilisee est une grandeur dont une valeur, une forme, une liaison qualifiee, un role ou une dependance devient robuste dans un regime donne, selon un acces determine, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+> Une constante effective stabilisee est une grandeur ou une structure physiquement ou operationnellement ancree dont une valeur, une forme, un role, une operation ou une dependance devient robuste dans un regime donne, selon des acces determines, avec un mode et une trajectoire de stabilisation explicites, sans que cette robustesse implique necessairement une constance absolue, une universalite hors contexte ou un statut fondamental.
+
+Precision d'ancrage :
+
+```text
+l'acces participe a la qualification du statut de constance ;
+il ne remplace pas le regime physique, effectif ou operationnel de la grandeur.
+```
 
 Formule courte conservee :
 
@@ -46,11 +54,24 @@ Formule courte conservee :
 constance = robustesse fonctionnelle situee
 ```
 
+Precision sur `situee` :
+
+```text
+situee signifie :
+dans un regime d'effectuation,
+par des acces explicites,
+avec une qualification de statut et de limites.
+```
+
+Le terme ne signifie pas que la grandeur est illusoire ou produite par
+l'acces.
+
 Formule enrichie :
 
 ```text
 constance effective stabilisee =
-forme stabilisee
+ancrage physique ou operationnel
++ forme stabilisee
 + fonction principale
 + role contextuel
 + regime physique
@@ -329,6 +350,13 @@ H_0 : routes locales, CMB + modele, BAO + calibration.
 A_s : acces CMB couple a tau et au modele primordial.
 k_B : role thermodynamique + definition SI + realisations pratiques.
 alpha_s(M_Z) : extractions multi-processus + evolution RG.
+```
+
+Point d'equilibrage :
+
+```text
+le SI est le cas ou l'acces definitionnel prend le plus de poids ;
+il ne doit pas servir de patron general pour toutes les constantes.
 ```
 
 Nouveau champ associe :
@@ -801,7 +829,7 @@ protocole actif pour les nouvelles fiches et les cas litigieux.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 ```
 
 Role :
@@ -859,7 +887,7 @@ et la carte des dependances.
 Document produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Role :
@@ -1055,10 +1083,10 @@ Documents produits en application de la v1.3 :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
@@ -1069,10 +1097,10 @@ Documents produits en application de la v1.3 :
 Architectures :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 ```
 
 Critiques source :
@@ -1096,4 +1124,4 @@ du statut fixe vers la trajectoire de stabilisation.
 
 Formule finale :
 
-> Une constante effective stabilisee n'est pas d'abord une case taxonomique ; c'est une forme stabilisee qui prend fonction dans un regime, devient accessible par un dispositif, s'inscrit parfois dans une architecture, et suit une trajectoire de stabilisation.
+> Une constante effective stabilisee n'est pas d'abord une case taxonomique ; c'est une grandeur ou une forme ancree dans un regime, dont la constance prend fonction, devient qualifiable par des acces, s'inscrit parfois dans une architecture, et suit une trajectoire de stabilisation.

@@ -21,14 +21,10 @@ masse absolue des neutrinos
 Elle extrait leur consequence methodologique principale :
 
 ```text
-Saveur-Higgs = architecture constitutive inter-familles
+Saveur-Higgs = architecture constitutive de solidarisation
 ```
 
-et non :
-
-```text
-famille Saveur-Higgs
-```
+Cette consequence fixe un rang architectural, non une sortie taxonomique locale.
 
 ### 2. Question directrice
 
@@ -106,7 +102,7 @@ U_PMNS = U_L^e dagger U_nu
 Delta m^2_ij = m_i^2 - m_j^2
 ```
 
-Mais une forme relationnelle ne suffit pas a classer la grandeur dans la famille Relation.
+Mais une forme relationnelle ne suffit pas a faire de `Relation` une sortie taxonomique.
 
 Decision :
 
@@ -175,7 +171,7 @@ Le cycle confirme :
 
 ```text
 1. Saveur-Higgs est une architecture constitutive.
-2. Cette architecture n'est pas une famille.
+2. Cette architecture stabilise une solidarite constitutive.
 3. Relation ne doit pas absorber les masses, matrices et ecarts.
 4. Orientation reste une famille forte pour CKM et PMNS.
 5. Les neutrinos exigent une prudence d'acces et de modele.
@@ -191,8 +187,8 @@ une origine dynamique des Yukawa ;
 une explication des hierarchies fermioniques ;
 une resolution de la nature Dirac ou Majorana des neutrinos ;
 une valeur absolue stabilisee des masses neutrino ;
-une famille Saveur-Higgs ;
-une famille Relation pour toute ecriture de masse ou de melange.
+une sortie taxonomique Saveur-Higgs ;
+un classement relationnel pour toute ecriture de masse ou de melange.
 ```
 
 ### 11. Stress test d'architecture
@@ -220,14 +216,14 @@ Formule longue :
 
 Formule courte :
 
-> Saveur-Higgs stabilise une constitution, non une famille.
+> Saveur-Higgs stabilise une constitution architecturale.
 
 ### 13. Effet sur les documents actifs
 
 Cette synthese sert de piece de cycle pour :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
@@ -261,7 +257,7 @@ Documents Markdown actifs :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md

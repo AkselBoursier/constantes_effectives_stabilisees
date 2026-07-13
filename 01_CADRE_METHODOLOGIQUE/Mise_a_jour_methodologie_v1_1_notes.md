@@ -269,7 +269,7 @@ Documents internes a utiliser pour rediger la v1.1 :
 
 ```text
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_1_cadrage.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_2_Lambda.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_3_H0.md

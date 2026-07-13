@@ -17,7 +17,7 @@ Elle l'integre dans le cadre actif :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 ```
 
 Objectif :

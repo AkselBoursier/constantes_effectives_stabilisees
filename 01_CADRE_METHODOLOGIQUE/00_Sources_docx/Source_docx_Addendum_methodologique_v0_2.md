@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: Addendum méthodologique v0.2.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/Addendum méthodologique v0.2.docx
+sha256_source: 58a96ae4ae39e3a7596188ef4856dd68f6037b601f38a2b63622f6441ce46335
 statut: extraction textuelle de travail
 document actif concerne: Methode v1.3 ; revision de fond
 controle attendu: Extraction + comparaison

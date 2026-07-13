@@ -2,6 +2,12 @@
 
 ## Navigation, statuts documentaires et ordre de lecture
 
+> **Mise a jour de rangement** : les references historiques aux "Word racine"
+> decrivent l'etat precedent du depot. Les 60 DOCX et le fichier texte sont
+> maintenant ranges dans les dossiers thematiques `00_Sources_docx`. Voir le
+> [registre des sources primaires](Registre_sources_primaires_v0_1.md) pour
+> les chemins et empreintes actuels.
+
 ### 1. Fonction de l'index
 
 Cet index ne modifie pas la methode.
@@ -69,7 +75,7 @@ L'index utilise six statuts.
 | Protocole actif | Document d'application reutilisable | Matrices de criblage, tests de resistance |
 | Consolidation | Document qui stabilise un cycle ou une architecture | Notes d'architecture, syntheses de cycles |
 | Preuve locale | Fiche ou cycle qui justifie une decision | Fiches physiques detaillees |
-| Source primaire historique | Document source anterieur encore porteur de matiere | Fichiers Word racine, fiches initiales, tests, cartes anciennes |
+| Source primaire historique | Document source anterieur encore porteur de matiere | DOCX ranges dans les dossiers thematiques `00_Sources_docx`, fiches initiales, tests, cartes anciennes |
 | Archive future | Original conserve apres extraction et integration | DOCX apres remontee Markdown controlee |
 | A produire | Document utile mais non encore cree | Lacunes identifiees |
 
@@ -81,17 +87,23 @@ Ces documents forment le noyau actif du corpus.
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle : forme logique, fonction directrice, famille fonctionnelle controlee, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte : forme, regime, fonction, acces, trajectoire, architecture, limite, controle |
+| `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Ancrage physique ou operationnel des grandeurs contre une lecture derealisante |
+| `01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md` | Correction active | Definition controlee de `situe` et reequilibrage du poids SI |
+| `01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md` | Correction active | Formulations actives apres v0.2 : situe, acces, regime, famille, relation, architecture, borne, tension, seuil, validite |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Versionnement prudent du corpus |
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 : stabilisations effectives situees |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte generale actuelle apres cercle 2 et raccord critique cible |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Acquis theoriques argumentables avant controle des limites |
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Recentrage sur la question : dans quelle mesure une grandeur peut-elle etre dite constante |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Garde-fou des limites et non-theses avant premier degagement |
-| `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective situee |
+| `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Premier enonce sur le statut de constance comme stabilisation effective qualifiee |
 | `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Ouverture des autres theses et articulations theoriques possibles |
 | `05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md` | Reference active | Test des degagements theoriques sur exemples porteurs |
+| `05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md` | Audit actif | Mise a plat apres critiques, reequilibrage SI et definition de `situe` |
+| `05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md` | Reference active | Bilan intellectuel courant apres mise a plat conceptuelle |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cloture du cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` | Protocole actif | Remontee des sources DOCX primaires en Markdown |
 | `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Table de pilotage | Correspondance source DOCX -> Markdown cible -> document actif |
+| `05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md` | Registre de provenance | Chemins thematiques et empreintes des originaux et extractions |
 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` | Protocole actif | Seuil de remontee ciblee avant cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Consolidation active | Cloture du traitement cible avant cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Comparaison des quatre architectures |
@@ -103,7 +115,13 @@ Ordre recommande :
 ```text
 Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 Note_methodologique_courte_post_v1_3.md
+Note_ancrage_realiste_medie_v0_1.md
+Note_situation_effective_et_equilibrage_SI_v0_1.md
+Audit_terminologique_actif_v0_1.md
 Matrice_criblage_taxonomique_v0_1.md
+Addendum_matrice_criblage_lot2_v0_1.md
+Matrice_temporelle_v0_2.md
+Passerelle_escalade_tensions_cosmologiques_v0_1.md
 Workflow_GitHub_v0_1.md
 Synthese_architectures_inter_familles_v1_0.md
 Carte_dependances_architectures_v0_1.md
@@ -114,6 +132,8 @@ Fiche_limites_non_theses_v0_1.md
 Premier_degagement_these_v0_1.md
 Matrice_degagements_theoriques_v0_1.md
 Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
+Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md
+Mise_a_jour_intellectuelle_v0_2.md
 Index_raisonne_du_corpus_v1_0.md
 ```
 
@@ -123,12 +143,20 @@ Index_raisonne_du_corpus_v1_0.md
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md` | Reference active | Methode actuelle apres criblage : rang 0, roles contextuels, temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md` | Reference active | Procedure courte de premiere passe apres carte v1.3 |
+| `01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md` | Correction active | Correction realiste medie de la definition v1.3 |
+| `01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md` | Correction active | Usage de `situe` comme precision de regime, acces et qualification ; SI borne comme cas local |
+| `01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md` | Correction active | Vocabulaire positif et rang des termes sensibles apres la mise a jour v0.2 |
 | `01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md` | Protocole actif | Application operationnelle de la methode v1.3 aux cas litigieux |
+| `01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md` | Addendum actif | Couche decisionnelle issue des cinq critiques supplementaires |
+| `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md` | Protocole actif | Scission constitution physique / acces epistemique pour cas litigieux |
+| `01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md` | Protocole actif | Escalade prudente des tensions cosmologiques vers stress test ou substitution |
 | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Protocole actif | Reecriture positive des anciens termes de classement |
+| `01_CADRE_METHODOLOGIQUE/Note_terminologie_chantiers_v0_1.md` | Protocole leger | Codes de chantier reserves au reperage documentaire |
 | `01_CADRE_METHODOLOGIQUE/Synthese_recuperation_lot0_socle_methodologique_v0_1.md` | Consolidation active | Recuperation du socle DOCX methodologique avant tests taxonomiques |
 | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` | Protocole actif | Regle de commit, push et branches apres stabilisation documentaire |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md` | Consolidation historique | Methode avant rang de forme logique et temporalite explicite |
 | `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md` | Revision active | Extraction et recoupement des huit critiques constructives |
+| `01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md` | Revision active | Extraction et recoupement des cinq critiques constructives supplementaires |
 | `01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md` | Revision active | Reorganisation de fond autour de la temporalite |
 | `01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_1.md` | Consolidation historique | Socle methodologique precedent |
 | `01_CADRE_METHODOLOGIQUE/Mise_a_jour_methodologie_v1_1_notes.md` | Archive de consolidation | Notes preparatoires de la v1.1 |
@@ -138,6 +166,7 @@ Tests taxonomiques remontes :
 | Document | Statut | Role |
 |---|---|---|
 | `03_TESTS_TAXONOMIQUES/Synthese_recuperation_tests_taxonomiques_v0_1.md` | Consolidation active | Recuperation positive de Seuil, Fond, liaison stabilisee et familles fragiles |
+| `03_TESTS_TAXONOMIQUES/Test_traversant_H0_passerelle_tensions_v0_1.md` | Test actif | Application addendum, matrice temporelle v0.2 et passerelle a H_0 |
 | `03_TESTS_TAXONOMIQUES/README.md` | Index local | Sources DOCX extraites du lot 2 |
 
 Decision :
@@ -150,7 +179,14 @@ Pour comprendre la refonte de la methode, lire aussi :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
+01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
+01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
 ```
@@ -167,13 +203,15 @@ extension SI
 
 | Document | Statut | Role |
 |---|---|---|
-| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives situees apres cercle 2 |
+| `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md` | Reference active | Carte des stabilisations effectives qualifiees apres cercle 2 |
 | `05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md` | Reference active | Passage des stabilisations effectives aux acquis argumentables |
 | `05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md` | Controle actif | Subordination de la methode a la question directrice des constantes |
 | `05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md` | Reference active | Limites, non-theses et seuil vers le premier degagement |
 | `05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_1.md` | Reference active | Degagement de these v0.1 sur la qualification des constantes |
 | `05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_1.md` | Reference active | Cartographie des degagements theoriques au-dela de la these-noyau |
 | `05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md` | Reference active | Resistance des degagements sur `R`, `G_F`, cosmologie, Saveur-Higgs et neutrinos |
+| `05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md` | Audit actif | Effets conceptuels des critiques, du SI rehierarchise et du terme `situe` |
+| `05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md` | Reference active | Synthese courante des acquis, deplacements et frictions |
 | `05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md` | Consolidation historique recente | Carte de rangs et dependances avant cercle 2 cloture |
 | `05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md` | Reference active | Synthese transverse des architectures |
 | `05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md` | Consolidation active | Representation des architectures comme reseaux de dependance |
@@ -195,18 +233,18 @@ Le corpus stabilise quatre architectures.
 
 | Architecture | Forme | Document principal | Statut |
 |---|---|---|---|
-| Cercle 2 | Reprise positive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Sequence cloturee |
-| Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
-| Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
-| Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
-| Cercle 2D Cosmologique | Reprise positive inferentielle et reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
-| Cercle 2E Synthese transverse | Reprise positive des modes de solidarisation | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
-| Cercle 2F Controle | Controle d'occurrences et raccords de cartes | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
-| Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
-| Metrologique SI | Definitionnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active |
-| Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
-| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` + stress test v0.1 | Consolidation active avec sous-reseaux |
-| Sources d'architecture lot 3 | Recuperation source | `04_ARCHITECTURES_INTER_FAMILLES/Synthese_recuperation_sources_architecture_lot3_v0_1.md` | Consolidation active avant cercle 2 |
+| Cercle 2 | Reprise positive | `04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md` | Sequence cloturee |
+| Cercle 2A Saveur-Higgs | Reprise positive constitutive | `04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
+| Cercle 2B Metrologique SI | Reprise positive definitionnelle | `04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
+| Cercle 2C Effective basse energie | Reprise positive de validite | `04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
+| Cercle 2D Cosmologique | Reprise positive inferentielle et reconstructive | `04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
+| Cercle 2E Synthese transverse | Reprise positive des modes de solidarisation | `04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
+| Cercle 2F Controle | Controle d'occurrences et raccords de cartes | `04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
+| Saveur-Higgs | Constitutive | `04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md` | Consolidation active |
+| Metrologique SI | Definitionnelle | `04_ARCHITECTURES/Architecture_metrologique_SI_notes.md` | Consolidation active |
+| Effective basse energie | Validite | `04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md` | Consolidation active |
+| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES/Architecture_cosmologique_notes.md` + stress test v0.1 | Consolidation active avec sous-reseaux |
+| Sources d'architecture lot 3 | Recuperation source | `04_ARCHITECTURES/Synthese_recuperation_sources_architecture_lot3_v0_1.md` | Consolidation active avant cercle 2 |
 
 Regle de rang :
 
@@ -251,10 +289,13 @@ Documents actifs :
 
 | Document | Statut | Role |
 |---|---|---|
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md` | Cycle consolide | Seuil electrofaible et constance de seuil |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md` | Consolidation | Synthese du seuil electrofaible et raccord aux cartes |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md` | Note physique preparatoire | Mecanisme BEH, grandeurs et regimes d'acces |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md` | Consolidation | Synthese du cycle et trajectoire constitutive |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md` | Consolidation source | Recuperation cible v, Yukawa, CKM, Wolfenstein avant cercle 2 |
 | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md` | Fiche prudente | Ancrage spectral neutrino et interface cosmologique |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
+| `04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
 
@@ -273,7 +314,8 @@ Decision :
 
 ```text
 pour comprendre l'architecture Saveur-Higgs,
-lire d'abord la synthese de cycle,
+lire d'abord le cycle du seuil electrofaible,
+puis la synthese Saveur-Higgs pour la constitution interne,
 puis la note d'architecture.
 ```
 
@@ -292,7 +334,7 @@ Documents actifs :
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md` | Preuve locale | Cas gravitationnel effectif |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md` | Consolidation | Synthese du cycle |
 | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_comparaison_alphaG_MPl_sources_v0_1.md` | Consolidation source | Comparaison du doublon alpha_G / M_Pl |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Consolidation active | Architecture issue du cycle |
+| `04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md` | Consolidation active | Architecture issue du cycle |
 
 Documents racine historiques associes :
 
@@ -329,10 +371,10 @@ Documents actifs :
 | 6 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_6_As_ns.md` | Preuve locale | A_s et n_s |
 | 7 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Cycle_cosmologique_v0_7_sigma8_S8.md` | Preuve locale | sigma_8 et S_8 |
 | 8 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md` | Consolidation | Synthese du cycle |
-| 9 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
-| 10 | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
+| 9 | `04_ARCHITECTURES/Architecture_cosmologique_notes.md` | Consolidation active | Architecture issue du cycle |
+| 10 | `04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md` | Protocole actif | Stress test des sous-reseaux |
 | 11 | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Plan de reprise | Reprise controlee du cycle |
-| 12 | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Reprise positive | Architecture inferentielle et reconstructive prudente |
+| 12 | `04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md` | Reprise positive | Architecture inferentielle et reconstructive prudente |
 
 Decision :
 
@@ -356,7 +398,7 @@ Documents actifs :
 |---|---|---|
 | `02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md` | Preuve locale | Extension SI a c, h, e, K_J, R_K |
 | `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md` | Consolidation source | Recuperation k_B, N_A, R et quatrieme cycle avant cercle 2 |
-| `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Consolidation active | Architecture SI etendue |
+| `04_ARCHITECTURES/Architecture_metrologique_SI_notes.md` | Consolidation active | Architecture SI etendue |
 
 Documents racine historiques associes :
 
@@ -445,10 +487,10 @@ les DOCX restent les sources primaires a remonter avant archivage strict.
 
 ```text
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 ```
 
 Pour retracer la genealogie Saveur-Higgs :
@@ -597,7 +639,7 @@ Documents d'application produits ensuite :
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
@@ -605,7 +647,7 @@ Documents d'application produits ensuite :
 Stress test cosmologique produit :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 #### 15.2 Note Markdown et cycle Saveur-Higgs produits
@@ -613,7 +655,7 @@ Stress test cosmologique produit :
 La note Markdown dediee est produite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 ```
@@ -716,12 +758,21 @@ Methode active :
 Methode historique recente :
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_2.md
 
+Correction active :
+01_CADRE_METHODOLOGIQUE/Note_ancrage_realiste_medie_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
+01_CADRE_METHODOLOGIQUE/Audit_terminologique_actif_v0_1.md
+
 Protocole actif :
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+01_CADRE_METHODOLOGIQUE/Passerelle_escalade_tensions_cosmologiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md
 01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_terminologie_chantiers_v0_1.md
 01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md
 
 Carte active :
@@ -745,6 +796,12 @@ Matrice des degagements active :
 Mise a l'epreuve active :
 05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_1.md
 
+Audit de mise a plat actif :
+05_CARTES_ET_SYNTHESES/Audit_mise_a_plat_conceptuelle_post_critiques_v0_1.md
+
+Mise a jour intellectuelle active :
+05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_2.md
+
 Carte historique recente :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
@@ -761,15 +818,19 @@ Index actif :
 Revision active :
 01_CADRE_METHODOLOGIQUE/Revision_de_fond_v0_1_temporalite.md
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
+01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md
 
 Architectures actives :
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 
 Cycles actifs :
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Cycle_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_CP1_seuil_electrofaible_v0_1.md
+02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Note_physique_BEH_mecanisme_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md
 02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Fiche_masse_absolue_neutrinos_v0_1.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
