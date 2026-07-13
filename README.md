@@ -1,151 +1,175 @@
 # constantes_effectives_stabilisees
 
-Corpus de travail sur les constantes effectives stabilisees.
+Corpus de recherche sur ce que la physique appelle des constantes, sur les
+différences que ce terme commun recouvre et sur les régimes, architectures et
+processus par lesquels certaines fixités deviennent opératoires.
 
-**Question directrice** : dans quelle mesure une grandeur peut-elle etre dite
-constante ?
+> **Statut actuel : cycle zéro validé, reprise philosophique à ouvrir.**
+> La branche de consolidation n'est pas encore le tronc canonique. Les dernières
+> réécritures philosophiques v0.2/v1.4 restent sous revue : elles conservent une
+> valeur locale, mais ne commandent plus l'orientation générale.
 
-> **Pour un agent** : lire d'abord le
-> [guide d'amorcage](AGENTS.md), puis ce README.
+## Entrée actuelle
 
-> **Decision de rang active** : distinguer la
-> [constance de l'objet, la stabilisation de l'acces et le mode de constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
-> Une borne, une reconstruction ou une tension peuvent stabiliser une
-> qualification sans devenir, a elles seules, une constance de l'objet.
+Lire dans cet ordre :
 
-> **Hierarchie philosophique active** :
-> `constance de l'objet > constitution > acces`.
-> L'acces reste indispensable comme condition probatoire et critique, mais il
-> n'est pas le centre philosophique actuel du projet.
+1. [Cadrage du cycle zéro](05_CARTES_ET_SYNTHESES/Cadrage_cycle_zero_reconnaissance_transversale_v0_1.md)
+   pour le périmètre et la méthode généalogique.
+2. [Cartographie généalogique des lignées](05_CARTES_ET_SYNTHESES/Cartographie_genealogique_lignees_projet_v0_1.md)
+   pour les centres de gravité successifs du projet.
+3. [Registre des propositions transversales](05_CARTES_ET_SYNTHESES/Registre_propositions_transversales_cycle_zero_v0_1.md)
+   pour suivre l'origine, la migration et le statut proposé des principaux énoncés.
+4. [Diagnostic d'orientation](05_CARTES_ET_SYNTHESES/Diagnostic_orientation_cycle_zero_v0_1.md)
+   pour la proposition soumise à validation.
+5. [Note de décision du cycle zéro](05_CARTES_ET_SYNTHESES/Note_decision_cycle_zero_v0_1.md)
+   pour l'orientation désormais validée par l'auteur.
+6. [Note fondatrice — régimes de constance](01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Regimes_de_constance_v0_1.md)
+   pour la question initiale sur les conditions physiques de la constance.
+7. [Cadre canonique de refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
+   comme garde-fou critique sur les objets, régimes et transformations.
+8. [README philosophique](06_PHILOSOPHIE/README.md)
+   pour les situations, voisinages, tests et programmes.
+9. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
+   pour le statut de `main`, `travail` et des branches thématiques.
 
-## Entree rapide
+## Orientation validée
 
-Commencer par :
+### Opération générale
 
-1. [Cadre canonique de refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
-   pour les criteres d'admission et de refus.
-2. [Decision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md)
-   pour separer objet, acces et constitution.
-3. [Synthese methodologique v1.4](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md)
-   pour l'ordre actif : objet, constitution, acces.
-4. [Index raisonne du corpus v1.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md)
-   pour la navigation courante.
-5. [Premier degagement de these v0.2](05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md)
-   pour la these-noyau.
-6. [Carte des frottements](05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md)
-   pour les jonctions entre refondation, philosophie, fine-tuning et fixite dynamique.
-7. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
-   pour le statut de `main`, `travail` et des branches thematiques.
+```text
+différencier ce que le terme commun « constante » comprime,
+en reconstruisant les régimes, architectures, dépendances et trajectoires
+qui rendent chaque fixité possible ou opératoire.
+```
 
-Puis suivre, selon le besoin :
+### Ordre heuristique de recherche
 
-| Priorite | Document | Role |
-|---|---|---|
-| 1 | [Matrice des degagements v0.2](05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_2.md) | Classe les propositions selon objet, constitution et acces |
-| 2 | [Mise a l'epreuve v0.2](05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md) | Admissions, refus et cas negatifs |
-| 3 | [Plan du papier A v0.2](05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_2.md) | Premier article centre sur le critere de constance |
-| 4 | [Note methodologique courte](01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md) | Criblage pratique sous le controle de la v1.4 |
-| 5 | [README philosophique](06_PHILOSOPHIE/README.md) | Charte, situations, voisinages et programmes |
-| 6 | [Audit d'integration philosophique](05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md) | Tri entre apports actifs, hypotheses et reserves |
+```text
+constitution ou conditions de régime
+-> identification de ce qui devient fixe, dérivé, corrélé ou libre
+-> différenciation de la forme de fixité
+-> qualification éventuelle comme constance
+-> contrôle des accès, modèles et limites.
+```
 
-## Organisation du depot
+Cet ordre guide l'enquête. Il ne constitue ni une hiérarchie ontologique, ni
+l'ordre obligatoire des futurs textes.
+
+### Volet 1 — Différenciation conceptuelle et physique des formes de constance
+
+```text
+partir des usages du mot « constante » ;
+faire apparaître les différences d'objets, de fonctions, de dépendances et de régimes ;
+comparer sans homogénéiser ;
+ne pas réduire le projet à l'admission ou au refus d'un vocabulaire.
+```
+
+### Volet 2 — Constitution, historicité et contingence des fixités
+
+```text
+examiner comment certaines fixités deviennent possibles ou opératoires ;
+distinguer constitution de la relation, stabilisation du comportement et valeur ;
+étudier la contingence résiduelle, le fine-tuning et la fixité dynamique ;
+garder les conséquences ontologiques au rang d'interprétations contrôlées.
+```
+
+### Place de l'accès
+
+> L'accès ne dirige pas l'enquête sur les fixités ; il contrôle ce que l'enquête
+> est autorisée à en affirmer.
+
+Les recherches sur la mesure, la coordination, les reconstructions, les bornes
+et le SI restent disponibles comme matériau et comme appareil critique.
+
+## Documents provisoires sous revue
+
+Les documents suivants ont explicité des distinctions utiles, mais ont
+surcentré le pouvoir de refus et la hiérarchie `objet > constitution > accès` :
+
+```text
+01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md
+05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md
+05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_2.md
+05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md
+05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_2.md
+05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md
+```
+
+Ils restent conservés et utilisables pour leurs distinctions locales. Leur
+reprise doit suivre la [note de décision du cycle zéro](05_CARTES_ET_SYNTHESES/Note_decision_cycle_zero_v0_1.md).
+
+## Organisation du dépôt
 
 ```text
 constantes_effectives_stabilisees/
 |
-|-- 01_CADRE_METHODOLOGIQUE/    methode, protocoles et decisions de rang
-|-- 02_CYCLES_PHYSIQUES/        fiches, cycles, calculs et syntheses locales
-|-- 03_TESTS_TAXONOMIQUES/      genealogie et tests des anciennes familles
-|-- 04_ARCHITECTURES/           architectures actives et raccords transversaux
-|-- 05_CARTES_ET_SYNTHESES/     cartes, index, audits et syntheses globales
-|-- 06_PHILOSOPHIE/             exploration philosophique, situations et tests
+|-- 01_CADRE_METHODOLOGIQUE/    méthode, protocoles, sources fondatrices
+|-- 02_CYCLES_PHYSIQUES/        fiches, cycles, calculs et synthèses locales
+|-- 03_TESTS_TAXONOMIQUES/      généalogie et tests des anciennes familles
+|-- 04_ARCHITECTURES/           architectures et modes de solidarisation
+|-- 05_CARTES_ET_SYNTHESES/     cartes, index, audits et synthèses globales
+|-- 06_PHILOSOPHIE/             situations, voisinages, tests et programmes
 |-- 90_Critiques_.../           sources de critiques constructives
-|-- audit/                       controles documentaires
-|-- GLOSSAIRE.md                 termes de reference
-`-- CONVENTION_PLACEHOLDERS.md  statut des extractions et limites de conversion
+|-- audit/                       contrôles documentaires
+|-- GLOSSAIRE.md                 termes de référence
+`-- CONVENTION_PLACEHOLDERS.md  limites des extractions
 ```
 
-## Couches documentaires
+## Lignées physiques actives
 
-| Couche | Point d'entree | Statut |
+| Lignée | Point d'entrée | Question |
 |---|---|---|
-| Cadre canonique | [Refondation du domaine](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | Reference active |
-| Decision de rang | [Objet, acces et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) | Arbitrage canonique actif |
-| Methode | [Synthese methodologique v1.4](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md) | Reference active |
-| These-noyau | [Premier degagement v0.2](05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md) | Degagement actif |
-| Cycles physiques | [02_CYCLES_PHYSIQUES](02_CYCLES_PHYSIQUES/) | Preuves locales et syntheses de cycle |
-| Fine-tuning | [Cadrage du cycle](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Cycle transversal de test |
-| Fixite electroweak dynamique | [Cadrage du cycle](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Cycle de test dynamique |
-| Architectures | [Cercle 2](04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md) | Modes de constitution et de maintien |
-| Cartes et syntheses | [Index v1.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md) | Navigation transverse |
-| Jonctions | [Carte des frottements](05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md) | Dialogue controle entre chantiers |
-| Philosophie | [README philosophique](06_PHILOSOPHIE/README.md) | Exploration active en amont des decisions de rang |
+| Architectures | [Synthèse transverse](04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md) | Comment des grandeurs deviennent-elles solidaires et opératoires ? |
+| Fine-tuning | [Cadrage du cycle 9](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Qu'est-ce qui est réellement réglé et que reste-t-il à expliquer ? |
+| Fixité dynamique | [Cadrage du cycle 10](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Une grandeur variable peut-elle devenir quasi fixe dans un même univers ? |
+| Jonction BEH | [Note de cadrage](05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md) | Quel régime et quels objets deviennent opératoires au seuil électrofaible ? |
 
-Les versions remplacees restent dans Git et dans le depot comme couches
-genealogiques. Elles ne commandent plus l'usage courant lorsque leur successeur
-est explicitement indique.
+Les résultats numériques des phases 2 à 4 du cycle 10 restent inchangés et ont
+été reproduits lors de l'audit borné.
 
-## Sources primaires DOCX
+## Sources primaires et extractions
 
-Les DOCX et le fichier texte historique sont des sources primaires, non des
-archives prematures. Ils sont conserves sans modification; leur extraction
-Markdown, leur rattachement et leur verification sont pilotes par :
+Les DOCX et `Ecriture.txt` sont des sources primaires conservées sans
+modification. Les fichiers `Source_docx_*` sont des extractions de travail. Une
+formule, un tableau ou une image insuffisamment restituée doit être vérifié dans
+le DOCX original.
 
-- [Plan de remontee des sources](05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md)
-- [Table de remontee des sources](05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md)
+- [Plan de remontée des sources](05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md)
+- [Table de remontée](05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md)
 - [Registre des sources primaires](05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md)
-
-Les fichiers `Source_docx_*` sont des extractions de travail. Une formule, un
-tableau ou une image insuffisamment restituee doit etre signale par la convention
-de placeholder et verifie dans le DOCX original.
 
 ## Workflow GitHub
 
-Le depot emploie le modele de
-[Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md) :
-
 ```text
-main     : etat valide du corpus ;
-travail  : integration quotidienne des chantiers ;
-branches : chantiers thematiques, conserves jusqu'a leur integration validee.
+main          : état validé du corpus ;
+travail       : intégration quotidienne après resynchronisation ;
+branches      : chantiers thématiques bornés ;
+récupération  : réunion exceptionnelle soumise à revue.
 ```
 
-La branche de recuperation rassemble actuellement les chantiers historiques.
-Elle reste soumise a audit et ne constitue pas encore le tronc valide.
-
-Le [registre des branches](01_CADRE_METHODOLOGIQUE/Registre_branches_corpus_v0_1.md)
-situe les chantiers historiques et leur presence dans l'integration courante.
+La PR de consolidation reste en brouillon. Aucun nouveau chantier scientifique
+ne doit être ouvert depuis `main` avant la décision explicite de consolidation.
 
 ## Audits documentaires
 
-Les controles existants sont dans [`audit/`](audit/).
-
 ```bash
-bash audit/audit_placeholders.sh
+python audit/audit_structure_corpus.py
 bash audit/audit_liens.sh
 bash audit/audit_encodage.sh
-python audit/audit_structure_corpus.py
+bash audit/audit_placeholders.sh
 ```
 
-Avant fusion, verifier :
+Les trois premiers contrôles sont bloquants dans GitHub Actions. L'inventaire
+des placeholders est informatif : les lacunes connues des extractions ne sont
+pas confondues avec une régression.
 
-```text
-marqueurs de conflit ;
-blocs Markdown non fermes ;
-titres terminaux vides ;
-references a des fichiers inexistants ;
-anciennes versions encore declarees actives.
-```
+## Règles de contribution après le cycle zéro
 
-## Regles de contribution et de reprise
-
-1. Ne pas modifier le contenu scientifique des sources historiques DOCX.
-2. Ne pas supprimer les DOCX ni les extractions `Source_docx_*`.
-3. Ne pas restaurer les anciennes familles comme premier niveau de classement.
-4. Ne pas fabriquer de references scientifiques absentes des sources.
-5. Conserver le francais et les conventions lexicales du corpus.
-6. Signaler les passages incomplets avec la convention de placeholder.
-7. Valider explicitement toute decision conceptuelle.
-8. Distinguer constance de l'objet, stabilisation de l'acces et mode de constitution.
-9. Appliquer la hierarchie philosophique active : objet, constitution, acces.
-10. Privilegier des commits lisibles, coherents et reversibles.
+1. Ne pas modifier les sources historiques DOCX.
+2. Distinguer intention fondatrice, centre temporaire, acquis durable et orientation validée.
+3. Ne pas transformer une correction locale en centre général.
+4. Ne pas confondre ordre de recherche, ordre d'exposition et hiérarchie ontologique.
+5. Revenir aux preuves locales pour toute affirmation sectorielle.
+6. Conserver les résultats physiques, leurs hypothèses et leurs conditions d'échec.
+7. Reprendre les documents philosophiques par versions nouvelles et réversibles.
+8. Placer la constitution en ouverture heuristique, la différenciation au centre général et l'accès au contrôle probatoire.
