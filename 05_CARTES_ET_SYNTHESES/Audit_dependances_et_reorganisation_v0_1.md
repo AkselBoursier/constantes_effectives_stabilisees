@@ -2,6 +2,13 @@
 
 ## Inventaire, references croisees, anomalies et table de correspondance
 
+> **Statut post-migration** : cet audit decrit l'inventaire avant classement.
+> Les 47 DOCX et le fichier texte initialement a la racine, ainsi que les
+> critiques, sont maintenant ranges sans renommage dans leurs dossiers
+> thematiques. Voir
+> [Registre_sources_primaires_v0_1.md](Registre_sources_primaires_v0_1.md)
+> pour l'etat physique et les empreintes actuels.
+
 ### 1. Fonction de l'audit
 
 L'index v1.0 fixait la regle :
