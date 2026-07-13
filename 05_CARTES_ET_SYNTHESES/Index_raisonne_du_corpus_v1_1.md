@@ -1,21 +1,69 @@
 # Index raisonné du corpus v1.1
 
+## Avertissement de navigation — 13 juillet 2026
+
+Cet index reste conservé comme carte détaillée de la couche antérieure, mais ses
+sections sur la hiérarchie `objet > constitution > accès`, les dégagements v0.2 et
+les anciens plans de livrables sont sous revue. Pour l'orientation validée après le
+cycle zéro, consulter d'abord `README.md` et
+`Note_decision_cycle_zero_v0_1.md`.
+
+Le cycle actuel sur les questions contemporaines est exploratoire. Il ne modifie
+pas encore le canon du corpus, mais ses documents doivent être visibles dans la
+navigation afin que leur statut, leur ordre et leurs limites ne soient pas perdus.
+
+## A. Cycle transversal actif — Questions contemporaines
+
+Branche : `agent/cartographie-questions-contemporaines`
+
+PR : nº 11, maintenue en brouillon pendant les pilotes.
+
+Ordre de lecture :
+
+```text
+1. 05_CARTES_ET_SYNTHESES/Cadrage_cycle_questions_contemporaines_v0_1.md
+2. 05_CARTES_ET_SYNTHESES/Atlas_questions_fondamentales_contemporaines_v0_1.md
+3. 05_CARTES_ET_SYNTHESES/Carte_affinites_et_priorites_recherche_v0_1.md
+4. 05_CARTES_ET_SYNTHESES/Matrice_questions_corpus_voisinages_v0_1.md
+5. 05_CARTES_ET_SYNTHESES/Registre_questions_candidates_originales_v0_1.md
+6. 05_CARTES_ET_SYNTHESES/Selection_programme_recherche_v0_1.md
+```
+
+Fonction des six documents :
+
+| Document | Fonction |
+|---|---|
+| `Cadrage_cycle_questions_contemporaines_v0_1.md` | méthode, niveaux d'originalité, livrables et règles d'abandon |
+| `Atlas_questions_fondamentales_contemporaines_v0_1.md` | carte exogène des questions et familles transversales |
+| `Carte_affinites_et_priorites_recherche_v0_1.md` | priorités thématiques et dettes de recherche |
+| `Matrice_questions_corpus_voisinages_v0_1.md` | croisement des questions, matériaux du corpus et voisinages |
+| `Registre_questions_candidates_originales_v0_1.md` | première antériorité, verdicts et conditions de maintien |
+| `Selection_programme_recherche_v0_1.md` | trois chantiers Q, M et A, pilotes et critères d'échec |
+
+Prochaine opération substantielle : pilote Q1 sur Stern–Gerlach. Aucun des trois
+chantiers n'est encore déclaré original ; ce statut dépendra des pilotes et d'une
+recherche d'antériorité approfondie.
+
 ## Objet, constitution, accès
 
 ### 0. Statut
 
 ```text
-statut : index actif de navigation ;
+statut : index détaillé de navigation, actuellement sous revue ;
 remplace pour l’usage courant : Index_raisonne_du_corpus_v1_0.md ;
 conserve la v1.0 : comme index détaillé de la couche antérieure ;
 complété par : Index_supplement_pan_philosophique_v0_1.md ;
-principe de lecture : objet > constitution > accès.
+principe historique de la v1.1 : objet > constitution > accès ;
+orientation actuelle : constitution en ouverture heuristique,
+                       différenciation au centre général,
+                       accès comme contrôle probatoire.
 ```
 
 La v1.1 ne répertorie pas chaque fichier. Elle indique les points d’entrée qui
-font autorité et l’ordre dans lequel les couches doivent être consultées.
+ont fait autorité dans la couche précédente et l’ordre dans lequel ces couches
+peuvent être consultées généalogiquement.
 
-## 1. Parcours minimal
+## 1. Parcours minimal de la couche antérieure
 
 ```text
 1. README.md
@@ -28,7 +76,10 @@ font autorité et l’ordre dans lequel les couches doivent être consultées.
 8. 05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md
 ```
 
-## 2. Hiérarchie active
+Les points 4 à 7 sont conservés pour leurs distinctions locales, mais ils ne
+commandent plus l'orientation générale avant leur reprise post-cycle zéro.
+
+## 2. Hiérarchie historique sous revue
 
 | Rang | Question | Point d’entrée |
 |---|---|---|
@@ -36,16 +87,16 @@ font autorité et l’ordre dans lequel les couches doivent être consultées.
 | II | comment cette fixité se constitue-t-elle ? | cycles physiques, architectures, carte des frottements |
 | III | comment l’attribution est-elle établie ou limitée ? | audits des limites, cosmologie, métrologie et philosophie de l’accès |
 
-Cette hiérarchie concerne l’intérêt philosophique actuel. Elle n’autorise pas à
-négliger les preuves ou les contrôles d’accès.
+Cette hiérarchie décrit la couche v1.1 avant le cycle zéro. Elle ne doit plus être
+prise pour l'ordre heuristique actuel de la recherche.
 
-## 3. Cadre méthodologique actif
+## 3. Cadre méthodologique de la couche antérieure
 
 | Document | Fonction |
 |---|---|
 | `refondation-du-domaine.md` | critère canonique et tests de refus |
 | `Decision_statuts_constance_acces_constitution_v0_1.md` | séparation des trois niveaux |
-| `Note_synthese_methodologique_v1_4.md` | procédure active objet/constitution/accès |
+| `Note_synthese_methodologique_v1_4.md` | procédure historique objet/constitution/accès, sous reprise |
 | `Note_methodologique_courte_post_v1_3.md` | fiche opératoire courte, lue sous la v1.4 |
 | `Matrice_temporelle_v0_2.md` | séparation des temporalités physiques, épistémiques et documentaires |
 | `Workflow_GitHub_v0_2.md` | modèle de branches et validation |
@@ -115,7 +166,7 @@ Point d’entrée :
 Question principale : quelles contingences restent après reconstruction des
 dépendances, corrélations et mécanismes ?
 
-### 4.7 Fixité électrofaible dynamique
+### 4.7 Cycle 10 — cas local de quasi-fixité électrofaible
 
 Ordre de lecture :
 
@@ -127,8 +178,9 @@ resultats-phase3-regime-quartique.md
 resultats-phase4-toy-model-dissipatif.md
 ```
 
-Question principale : comment une quasi-fixité peut-elle être constituée sans
-surabondance énergétique ni migration équivalente du réglage ?
+Question locale : un modèle cosmologique simplifié peut-il produire une
+quasi-fixité électrofaible sans surabondance énergétique ni migration équivalente
+du réglage ? La « fixité dynamique » n'est plus retenue comme principe général.
 
 ## 5. Architectures
 
@@ -144,14 +196,14 @@ Points d’entrée :
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 ```
 
-## 6. Dégagements théoriques actifs
+## 6. Dégagements théoriques sous revue
 
-| Document | Statut |
+| Document | Statut actuel |
 |---|---|
-| `Premier_degagement_these_v0_2.md` | thèse-noyau |
-| `Matrice_degagements_theoriques_v0_2.md` | classement des dégagements par rang |
-| `Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md` | admissions et refus |
-| `Plan_livrable_papier_A_v0_2.md` | premier article resserré |
+| `Premier_degagement_these_v0_2.md` | formulation sous revue post-cycle zéro |
+| `Matrice_degagements_theoriques_v0_2.md` | distinctions locales conservées |
+| `Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md` | admissions et refus comme contrôles secondaires |
+| `Plan_livrable_papier_A_v0_2.md` | plan à reprendre après les pilotes |
 | `Carte_frottements_chantiers_v0_1.md` | jonction entre lignes du projet |
 
 Les versions v0.1 de ces documents restent des archives généalogiques utiles.
@@ -170,15 +222,18 @@ Le pan philosophique conserve trois fonctions :
 2. instruire la question de constitution et d’historicité ;
 3. fournir les contrôles épistémologiques et probatoires.
 
-Hiérarchie actuelle :
+Ordre heuristique actuellement validé :
 
 ```text
-constance de l’objet : priorité philosophique première ;
-constitution : priorité seconde et chantier de développement ;
-accès : priorité troisième, comme contrôle et matériau réutilisable.
+constitution ou conditions de régime ;
+identification de ce qui devient fixe, dérivé, corrélé ou libre ;
+différenciation de la forme de fixité ;
+qualification éventuelle ;
+contrôle des accès et des limites.
 ```
 
-Les analyses de l’accès ne sont pas supprimées. Elles changent de rang.
+Les analyses de l’accès ne sont pas supprimées. Elles remplissent une fonction
+probatoire plutôt que directrice.
 
 ## 8. Zone de jonction BEH
 
@@ -216,43 +271,43 @@ sont des extractions de travail. Toute formule, image ou table incomplète doit
 être vérifiée dans l’original et conserver son placeholder tant que ce contrôle
 n’est pas effectué.
 
-## 11. Plans de livrables
+## 11. Plans de livrables sous revue
 
-### Papier A
+### Travail sur les constantes
+
+Le premier dégagement v0.3, le test O2 général et les plans des papiers A et B
+restent suspendus pendant le cycle des questions contemporaines.
+
+### Programme transversal
+
+Les trois chantiers provisoires sont :
 
 ```text
-05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_2.md
+Q — fonctions différenciées des catégories classiques en microphysique ;
+M — portée réelle des mécanismes physiques ;
+A — effet des coupes de contexte sur les agents scientifiques.
 ```
 
-Centre : critère de constance et pouvoir de refus.
-
-### Papier B
-
-Centre prévu : constitution des fixités, historicité, BEH, fixité dynamique,
-fine-tuning et contingence canalisée.
-
-### Accès et coordination
-
-Les matériaux correspondants peuvent former une section de contrôle, un article
-méthodologique ultérieur ou un voisinage bibliographique. Ils ne sont pas la
-priorité philosophique immédiate.
+Leur ordre de démarrage est Stern–Gerlach, puis `G_F`, puis conception du
+protocole agentique.
 
 ## 12. Règle pour les agents
 
 Avant une synthèse transversale :
 
 ```text
-1. identifier le rang de la question ;
-2. lire le document canonique correspondant ;
-3. consulter les documents locaux ;
-4. utiliser la carte des frottements ;
-5. conserver les refus et limites ;
-6. ne pas promouvoir un matériau exploratoire sans validation.
+1. identifier le rang et le statut de la question ;
+2. lire la décision d'auteur et le cadrage du cycle actif ;
+3. consulter les documents locaux et les sources ;
+4. distinguer diagnostic, exploration et décision ;
+5. conserver les objections, refus et conditions d'échec ;
+6. ne pas promouvoir un matériau exploratoire sans validation ;
+7. vérifier l'antériorité avant toute revendication d'originalité.
 ```
 
-## 13. Formule de clôture
+## 13. Formule de clôture provisoire
 
-> Le corpus est désormais navigable selon trois questions : ce qui tient, ce qui
-> le fait tenir, et ce qui nous autorise à l’affirmer. La première commande le
-> critère de constance ; la deuxième ouvre le chantier philosophique le plus
-> fécond ; la troisième assure la discipline probatoire.
+> Le corpus des constantes reste un banc d'essai important, mais il n'épuise plus
+> l'espace de recherche. Le cycle actuel reconstruit d'abord les questions, puis
+> teste si le corpus permet d'en formuler certaines plus précisément, de manière
+> discriminante et publiable.
