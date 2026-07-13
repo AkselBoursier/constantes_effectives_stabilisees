@@ -17,57 +17,14 @@ Toute analogie doit préciser :
 question ou difficulté visée ;
 mouvement cognitif recherché ;
 structure effectivement conservée ;
-éléments non conservés ;
+élements non conservés ;
 inférences interdites ;
 point d'arrêt ;
 public et niveau d'expertise ;
 cas où l'analogie devient nuisible.
 ```
 
-## 2. Toupie — stabilisation et fenêtre temporelle
-
-### Fonction cognitive
-
-Faire saisir qu'un comportement mobile ou irrégulier peut entrer dans un régime
-plus stable et qu'une observation limitée peut donner une impression de fixité.
-
-### Structure conservée
-
-```text
-évolution temporelle ;
-changement de régime descriptif ;
-dépendance à la fenêtre d'observation ;
-différence entre mouvement instantané et profil observé sur une durée.
-```
-
-### Non conservé
-
-```text
-nature du porteur physique ;
-équations et mécanisme de stabilisation ;
-échelle microscopique ;
-statut d'une constante ;
-forme du potentiel ou des dissipation réelles.
-```
-
-### Inferences interdites
-
-```text
-l'électron est une petite toupie ;
-le spin est une rotation classique ;
-une constante suit une trajectoire analogue ;
-la stabilité observée implique un attracteur ;
-toute fixité est le résultat d'une stabilisation dynamique.
-```
-
-### Point d'arrêt
-
-L'analogie cesse dès que la discussion porte sur le spin, l'électron, la valeur
-d'une constante ou un mécanisme physique particulier. Elle ne sert qu'à ouvrir
-la question : comment décrire un comportement relativement stable à une échelle
-temporelle donnée ?
-
-## 3. Photographie — coupe temporelle
+## 2. Photographie — coupe temporelle
 
 ### Fonction cognitive
 
@@ -95,7 +52,7 @@ conclure qu'une évolution existe simplement parce que l'observation est locale.
 Une photographie n'établit ni le passé ni le futur du système. Elle appelle une
 reconstruction dynamique indépendante.
 
-## 4. Types de glace — différenciation sous un mot commun
+## 3. Types de glace — différenciation sous un mot commun
 
 ### Fonction cognitive
 
@@ -125,7 +82,7 @@ Introduction très courte à la différenciation conceptuelle, suivie immédiate
 de cas qui ne possèdent aucune analogie pertinente avec une congélation : nombres
 géométriques, valeurs définissantes du SI, paramètres reconstruits.
 
-## 5. Toile d'araignée — stabilité relationnelle
+## 4. Toile d'araignée — stabilité relationnelle
 
 ### Fonction cognitive
 
@@ -153,7 +110,7 @@ suggérer que le réseau continue nécessairement à vibrer ou se réajuster.
 
 Avant toute équation, mécanisme ou conclusion sur une valeur physique.
 
-## 6. Plans et coulage du béton — schéma et réalisation
+## 5. Plans et coulage du béton — schéma et réalisation
 
 ### Fonction cognitive
 
@@ -180,7 +137,7 @@ faire de la constitution physique une exécution déterministe du formalisme.
 Pédagogie de la distinction formalisme / réalisation, à condition de signaler
 que les théories physiques ne sont pas nécessairement des plans causaux.
 
-## 7. Thermomètre et thermodynamique — accès et théorie
+## 6. Thermomètre et thermodynamique — accès et théorie
 
 ### Fonction cognitive
 
@@ -207,7 +164,7 @@ reléguer tout accès à l'après-coup.
 L'image doit être complétée par les cas où dispositif, calibration et modèle
 participent à la définition opérationnelle de la grandeur.
 
-## 8. Plans du CERN et spectres de collision — administration et preuve
+## 7. Plans du CERN et spectres de collision — administration et preuve
 
 ### Fonction cognitive
 
@@ -234,7 +191,7 @@ assimiler le dépôt à une expérience unique.
 
 Réflexion sur l'architecture publique du dépôt, non explication de physique.
 
-## 9. Flaque et forme de l'eau — canalisation
+## 8. Flaque et forme de l'eau — canalisation
 
 ### Fonction cognitive
 
@@ -261,7 +218,7 @@ confondre canalisation d'une trajectoire et sélection d'une valeur numérique.
 Avant toute conclusion sur la naturalité, les Yukawa ou les constantes
 cosmologiques.
 
-## 10. Règles d'usage
+## 9. Règles d'usage
 
 ```text
 1. une analogie ne doit jamais porter seule une conclusion ;
@@ -272,10 +229,10 @@ cosmologiques.
 6. une analogie pédagogique n'entre pas automatiquement dans le glossaire conceptuel.
 ```
 
-## 11. Priorité actuelle
+## 10. Priorité actuelle
 
-Pour Q1, aucune analogie de rotation ou de toupie ne sera utilisée pour expliquer
-le spin. La réserve pourra seulement aider à analyser pourquoi certaines images
+Pour Q1, aucune analogie de rotation ne sera utilisée pour expliquer le spin.
+La réserve pourra seulement aider à analyser pourquoi certaines images
 classiques sont pédagogiquement attirantes et à quel moment elles doivent être
 retirées.
 
