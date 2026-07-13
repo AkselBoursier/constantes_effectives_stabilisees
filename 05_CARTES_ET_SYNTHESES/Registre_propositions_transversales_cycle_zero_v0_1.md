@@ -3,9 +3,9 @@
 ## 0. Statut
 
 ```text
-statut : registre de reconnaissance ;
+statut : registre de reconnaissance validé pour la reprise ;
 fonction : suivre les propositions importantes entre leur origine, leur migration
-           et leur statut actuel proposé ;
+           et leur statut actuel ;
 ne fait pas : transformer ces propositions en doctrine ou en plan final.
 ```
 
@@ -17,16 +17,16 @@ Chaque proposition reçoit cinq champs :
 origine : première fonction documentaire repérée ;
 question d'origine : problème auquel elle répondait ;
 migration : usages ou reformulations ultérieurs ;
-statut proposé : robuste, local, hypothèse, réserve ou à reprendre ;
+statut : robuste, local, hypothèse, réserve ou à reprendre ;
 risque : erreur produite par une promotion excessive.
 ```
 
 ## 2. Registre principal
 
-| Code | Proposition | Origine / question d'origine | Migration | Statut proposé | Risque |
+| Code | Proposition | Origine / question d'origine | Migration | Statut | Risque |
 |---|---|---|---|---|---|
 | P1 | La constance peut être une propriété de régime | `Régimes de constance` ; quand une grandeur devient-elle définissable et robuste ? | Régime dans la méthode, validité EFT, seuil BEH, fixité dynamique | Fondatrice et robuste comme question | Appeler constitué ce qui est seulement paramétré |
-| P2 | Le mot `constante` comprime des objets et statuts hétérogènes | Note fondatrice, taxonomies, cycles | Familles, formes logiques, cas sentinelles, refondation | Axe sobre durable | Réduire le projet à décider qui mérite le mot |
+| P2 | Le mot `constante` comprime des objets et statuts hétérogènes | Note fondatrice, taxonomies, cycles | Familles, formes logiques, cas sentinelles, refondation | Axe durable de différenciation | Réduire le projet à décider qui mérite le mot |
 | P3 | Une grandeur doit être reconstruite dans son réseau de dépendances | Fiches physiques et architectures | Test de retrait, carte du conditionné, fine-tuning | Robuste | Holisme vague sans équations ni seuil de retrait |
 | P4 | Les fonctions d'une grandeur dépendent du régime | Taxonomie fonctionnelle | Architectures, théorie effective, cosmologie | Robuste localement | Multiplier les rôles sans critère de priorité |
 | P5 | Une architecture rend solidaires des grandeurs, opérations et limites | Cercle 2 | Formation, fine-tuning, BEH | Acquis transversal fort | Faire de toute dépendance une architecture |
@@ -42,9 +42,9 @@ risque : erreur produite par une promotion excessive.
 | P15 | Une dynamique de fixité doit suivre le devenir énergétique | Phases 2 à 4 du cycle 10 | Toy model dissipatif | Résultat physique local fort | Généraliser un no-go de toy model à toute microphysique |
 | P16 | La philosophie du corpus est un appareil d'instruction, non une doctrine prête | Charte 06, audits de solidité et d'intégration | Situations, voisinages, programmes | Robuste | Promouvoir une convergence philosophique en position endossée |
 | P17 | Le projet possède une valeur comparative entre secteurs | Architectures et tests C5 | Exportabilité bornée | Résultat méthodologique borné | Proclamer une grammaire universelle |
-| P18 | La question des constantes est disciplinairment distribuée | Programme C3 | Workflow, index, positionnement éditorial | Hypothèse d'observation prometteuse | Faire de l'auto-description le sujet du projet |
-| P19 | La constitution peut servir d'ordre heuristique de recherche | Strate fondatrice, architectures, fine-tuning, cycle 10 | Discussion de juillet 2026 | Proposition actuelle à tester | En faire une métaphysique ou présupposer un mécanisme partout |
-| P20 | La différenciation conceptuelle et physique est l'opération générale la plus stable | Ensemble des cycles, tests de familles, refondation | Pan sobre / pan ambitieux | Proposition de synthèse du cycle zéro | La réduire à une taxonomie ou à un pouvoir de refus |
+| P18 | La question des constantes est disciplinairement distribuée | Programme C3 | Workflow, index, positionnement éditorial | Hypothèse d'observation prometteuse | Faire de l'auto-description le sujet du projet |
+| P19 | La constitution peut servir d'ordre heuristique de recherche | Strate fondatrice, architectures, fine-tuning, cycle 10 | Discussion et validation de juillet 2026 | Orientation validée | En faire une métaphysique ou présupposer un mécanisme partout |
+| P20 | La différenciation conceptuelle et physique est l'opération générale la plus stable | Ensemble des cycles, tests de familles, refondation | Deux volets d'exposition validés | Orientation validée | La réduire à une taxonomie ou à un pouvoir de refus |
 
 ## 3. Propositions récemment surpromues
 
@@ -70,7 +70,7 @@ un ordre de recherche ;
 un ordre d'exposition.
 ```
 
-Elle doit être remplacée par des ordres explicitement typés.
+Elle est remplacée par des ordres explicitement typés.
 
 ### 3.3 `H_0` comme cas négatif central
 
@@ -88,9 +88,9 @@ constance.
 | Nécessité conditionnelle de régime | Peut articuler contingence absolue et fixité après constitution | Travail modal et cas physiques précis |
 | Constitution mutuelle accès/instrument/objet | Très riche philosophiquement, mais risque de recentrage sur l'accès | Cycle philosophique séparé, non moteur du pan physique |
 | Existence disciplinaire de la question | Peut clarifier l'originalité réelle et les interlocuteurs | Coupe bibliographique et éditoriale |
-| Historicité cosmique des fixités | Jonction entre pan ambitieux et cycle 10 | Après consolidation des mécanismes physiques |
+| Historicité cosmique des fixités | Jonction entre le second volet et le cycle 10 | Après consolidation des mécanismes physiques |
 
-## 5. Ordres proposés
+## 5. Ordres validés
 
 ### 5.1 Ordre heuristique de recherche
 
@@ -98,11 +98,12 @@ constance.
 1. reconstruire la constitution, l'architecture ou les conditions de régime ;
 2. identifier ce qui devient fixe, dérivé, corrélé ou encore libre ;
 3. différencier la forme et le statut de cette fixité ;
-4. contrôler les voies d'accès, les modèles et les limites ;
-5. seulement ensuite examiner les conséquences philosophiques générales.
+4. qualifier éventuellement la constance ;
+5. contrôler les voies d'accès, les modèles et les limites ;
+6. seulement ensuite examiner les conséquences philosophiques générales.
 ```
 
-### 5.2 Ordre d'exposition sobre
+### 5.2 Différenciation conceptuelle et physique des formes de constance
 
 ```text
 mot commun « constante »
@@ -112,7 +113,7 @@ mot commun « constante »
 -> limites de la dénomination commune.
 ```
 
-### 5.3 Ordre d'exposition ambitieux
+### 5.3 Constitution, historicité et contingence des fixités
 
 ```text
 architectures et mécanismes de constitution
