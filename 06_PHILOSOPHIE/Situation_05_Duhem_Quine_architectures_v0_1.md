@@ -271,8 +271,8 @@ Documents internes mobilises (verifies par lecture directe) :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
   (rangs 3 et 4, stress test, section 12)
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
 06_PHILOSOPHIE/Situation_03_SI_2019_convention_vecue_v0_1.md
 06_PHILOSOPHIE/Situation_04_Regime_gris_electrique_1990_2019_v0_1.md
 06_PHILOSOPHIE/Carte_philosophie_implicite_corpus_v0_1.md (tension 1)

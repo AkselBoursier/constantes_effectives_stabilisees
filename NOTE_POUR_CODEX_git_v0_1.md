@@ -39,7 +39,7 @@ verite, et committer depuis le disque.
 
 ```text
 01_CADRE_METHODOLOGIQUE/Protocole_horodatage_tests_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md
 05_CARTES_ET_SYNTHESES/Mise_a_jour_intellectuelle_v0_1.md
 05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_1.md

@@ -4,7 +4,7 @@
 
 ```text
 copie de test produite pour Test_reecriture_structurelle_v0_1.md ;
-source : 04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md ;
+source : 04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md ;
 extraits reecrits : sections 2, 4, 13 et 16 ;
 la source reste le document actif.
 Genre teste : protocole eliminatoire ; les sorties negatives de test

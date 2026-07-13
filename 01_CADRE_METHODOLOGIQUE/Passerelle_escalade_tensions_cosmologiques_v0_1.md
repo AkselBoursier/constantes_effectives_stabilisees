@@ -11,7 +11,7 @@ sources :
   01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_lot2_v0_1.md ;
   01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md ;
   01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md ;
-  04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md.
+  04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md.
 ```
 
 Cette passerelle ne tranche aucune tension cosmologique.
