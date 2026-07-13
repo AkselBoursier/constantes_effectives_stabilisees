@@ -57,8 +57,10 @@ Le cas weakless est traité comme une construction de possibilité prolongée pa
 - [Contraintes observationnelles](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/contraintes-observationnelles-variation-electrofaible.md)
 - [Modèle test scalaire–Higgs](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/modele-test-scalaire-higgs-portal.md)
 - [Synthèse de phase 1](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/synthese-phase1-fixite-electrofaible-dynamique.md)
+- [Résultats de phase 2 — modèle minimal](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/resultats-phase2-modele-minimal.md)
+- [Code reproductible du scan](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/calculs/scan_portail_higgs.py)
 
-Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Il teste comment une grandeur variable pourrait devenir quasi fixe dans un régime tardif.
+Ce cycle distingue la variation entre univers-modèles d’une variation portée par une dynamique au cours d’un même univers. Le premier calcul montre qu’un portail quadratique peut amortir rapidement une variation de `v`, mais qu’un condensat `Z_2` stable surproduit ensuite une composante de matière. Le modèle minimal est donc écarté comme mécanisme autonome ; le régime quartique devient l’extension prioritaire.
 
 ## Résultat provisoire
 
