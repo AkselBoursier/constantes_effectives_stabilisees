@@ -4,11 +4,23 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures et
 processus par lesquels certaines fixités deviennent opératoires.
 
-> **Statut actuel : cycle zéro validé ; place de l'accès rectifiée ; cartographie des questions contemporaines active.**
+> **Statut actuel : cycle zéro validé ; place de l'accès rectifiée ; pilote Q1 Stern–Gerlach actif.**
 > La reprise philosophique et le premier dégagement v0.3 restent suspendus pendant
 > les pilotes. La branche de consolidation n'est pas encore le tronc canonique.
 
-## Entrée de la branche actuelle — Questions contemporaines
+## Pilote actif — Q1 Stern–Gerlach
+
+La branche `agent/pilote-q1-stern-gerlach` teste une typologie fonctionnelle des catégories classiques. Elle distingue l'expérience historique de 1922, le modèle quantique idéalisé et les dispositifs modernes ou séquentiels.
+
+1. [Entrée du pilote Q1](06_PHILOSOPHIE/PILOTE_Q1_STERN_GERLACH_README.md)
+2. [Cadrage physique et niveaux](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_cadrage_physique_v0_1.md)
+3. [Matrice des fonctions](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md)
+4. [Verdict provisoire](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
+5. [Bibliographie raisonnée](06_PHILOSOPHIE/Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
+
+Résultat de première passe : pouvoir discriminant minimal établi ; originalité disciplinaire non établie. Le second test prévu porte sur une séquence de dispositifs selon des axes différents.
+
+## Entrée de la branche précédente — Questions contemporaines
 
 La branche `agent/cartographie-questions-contemporaines` et la PR nº 11 portent un
 cycle transversal qui ne présuppose pas que le thème des constantes doive rester le
@@ -33,8 +45,7 @@ centre du programme. Lire dans cet ordre :
 9. [Sas critique et pédagogique](05_CARTES_ET_SYNTHESES/SAS_CRITIQUE_README.md)
    pour le tri multidimensionnel des cinq lectures et leurs incidences sur Q1.
 
-La rectification et le sas critique sont produits et validés. La prochaine
-opération substantielle est le pilote Q1 sur Stern–Gerlach.
+La rectification et le sas critique sont produits et validés.
 
 ## Entrée actuelle du corpus consolidé
 
