@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: Note de synthèse méthodologique.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/Note de synthèse méthodologique.docx
+sha256_source: 0d0c2d98202d93a1c36af8cc46a21795477916bdfedf0f36433c8b1d35a04ee3
 statut: extraction textuelle de travail
 document actif concerne: Notes methodologiques v1.1, v1.2, v1.3
 controle attendu: Extraction + genealogie

@@ -63,24 +63,24 @@ Les fichiers suivants contiennent des placeholders identifies (au 2026-07-13) :
 | Fichier | Placeholders `[  ]` | Autres placeholders |
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Note_synthese_methodologique_v0_1.md` | 115 | — |
-| `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Fond_v0_1.md` | 101 | — |
+| `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Fond_v0_1.md` | 101 | — |
 | `01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Note_critique_compression_v0_1.md` | 64 | — |
-| `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Relation_v0_1.md` | 62 | — |
+| `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Relation_v0_1.md` | 62 | — |
 | `01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Methode_v0_1.md` | 61 | — |
-| `03_TESTS_TAXONOMIQUES/Source_docx_Test_familles_fragiles_v0_1.md` | 54 | — |
-| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Synthese_cycle_CKM_v0_1.md` | 49 | — |
-| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md` | 48 | — |
-| `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Seuil_v0_1.md` | 47 | — |
-| `04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | 39 | `[ M_W= ]`, `[ M_Z= ]`, `[ m_f= ]`, `[ s_{12}= ]` |
-| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Synthese_quatrieme_cycle_v0_1.md` | 34 | — |
-| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md` | 28 | — |
-| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_CKM_v0_1.md` | 24 | — |
+| `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_familles_fragiles_v0_1.md` | 54 | — |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/00_Sources_docx/Source_docx_Synthese_cycle_CKM_v0_1.md` | 49 | — |
+| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_3.md` | 48 | — |
+| `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Seuil_v0_1.md` | 47 | — |
+| `04_ARCHITECTURES/00_Sources_docx/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` | 39 | `[ M_W= ]`, `[ M_Z= ]`, `[ m_f= ]`, `[ s_{12}= ]` |
+| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/00_Sources_docx/Source_docx_Synthese_quatrieme_cycle_v0_1.md` | 34 | — |
+| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_2.md` | 28 | — |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/00_Sources_docx/Source_docx_Fiche_CKM_v0_1.md` | 24 | — |
 | `01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Addendum_methodologique_v0_2.md` | 22 | — |
-| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Source_docx_Fiche_Wolfenstein_v0_1.md` | 21 | — |
-| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Fiche_R_v0_1.md` | 14 | — |
-| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Fiche_k_B_v0_1.md` | 13 | — |
-| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/Source_docx_Fiche_N_A_v0_1.md` | 13 | — |
-| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Fiche_alpha_G_M_Pl_B_v0_1.md` | 3 | — |
+| `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/00_Sources_docx/Source_docx_Fiche_Wolfenstein_v0_1.md` | 21 | — |
+| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/00_Sources_docx/Source_docx_Fiche_R_v0_1.md` | 14 | — |
+| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/00_Sources_docx/Source_docx_Fiche_k_B_v0_1.md` | 13 | — |
+| `02_CYCLES_PHYSIQUES/04_Cycle_thermo_metrologique/00_Sources_docx/Source_docx_Fiche_N_A_v0_1.md` | 13 | — |
+| `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Fiche_alpha_G_M_Pl_B_v0_1.md` | 3 | — |
 
 Ce tableau est produit par le script `audit/audit_placeholders.sh`.
 Il reflete l'audit du 2026-07-13 (les fichiers de documentation README et CONVENTION_PLACEHOLDERS
@@ -100,7 +100,7 @@ L'ensemble du corpus utilise les statuts suivants.
 | **Consolidation** | Document qui stabilise un cycle ou une architecture | Notes d'architecture, syntheses de cycles |
 | **Preuve locale** | Fiche ou cycle qui justifie une decision | Fiches physiques detaillees |
 | **Consolidation historique recente** | Document recent mais supersede par une version ulterieure | Cartes et notes intermediaires |
-| **Source primaire historique** | Document source anterieur encore porteur de matiere | Fichiers Word racine, fiches initiales, tests, cartes anciennes |
+| **Source primaire historique** | Document source anterieur encore porteur de matiere | DOCX ranges dans les dossiers thematiques `00_Sources_docx`, fiches initiales, tests, cartes anciennes |
 | **Archive future** | Original conserve apres extraction et integration | DOCX apres remontee Markdown controlee |
 | **A produire** | Document utile identifie mais non encore cree | Lacunes identifiees dans l'index |
 
@@ -118,6 +118,8 @@ Format recommande :
 ```text
 lot: <numero> - <libelle du lot>
 source physique: <nom du fichier DOCX source>
+source physique path: <chemin thematique du fichier source>
+sha256_source: <empreinte SHA-256 de la source>
 statut: extraction textuelle de travail
 document actif concerne: <reference au document actif>
 controle attendu: <etape de verification>

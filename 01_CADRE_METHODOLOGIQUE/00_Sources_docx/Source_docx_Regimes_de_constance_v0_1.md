@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: Régimes de constance.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/Régimes de constance.docx
+sha256_source: ee637aa53a5c0abd257efcd8c45812e798337474296ca194e29232b89ff98ffa
 statut: extraction textuelle de travail
 document actif concerne: Methode v1.3 ; matrice temporelle
 controle attendu: Extraction + comparaison
