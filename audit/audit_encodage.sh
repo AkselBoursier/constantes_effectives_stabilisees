@@ -10,7 +10,7 @@
 # Usage : bash audit/audit_encodage.sh [repertoire]
 #   Si aucun repertoire n'est fourni, utilise le repertoire courant.
 #
-# Dependances : iconv ou file (encodage), awk, sort, uniq (tous standards Unix)
+# Dependances standard : iconv, awk, sort, uniq (outils Unix standards)
 
 ROOT="${1:-.}"
 ROOT="$(cd "$ROOT" && pwd)"
