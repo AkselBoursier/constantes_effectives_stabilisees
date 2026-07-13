@@ -27,7 +27,8 @@ Lire dans cet ordre :
 5. [Atlas des questions fondamentales contemporaines](Atlas_questions_fondamentales_contemporaines_v0_1.md) — six domaines et familles de problèmes.
 6. [Registre des questions candidates](Registre_questions_candidates_originales_v0_1.md) — première recherche d'antériorité.
 7. [Sélection du programme](Selection_programme_recherche_v0_1.md) — chantiers Q, M et A.
-8. [README philosophique](../06_PHILOSOPHIE/README.md) — situations, voisinages et programmes philosophiques.
+8. [Sas critique et pédagogique](SAS_CRITIQUE_README.md) — assimilation des cinq lectures et incidence sur Q1.
+9. [README philosophique](../06_PHILOSOPHIE/README.md) — situations, voisinages et programmes philosophiques.
 
 ## 2. Formule méthodologique active
 
@@ -93,16 +94,16 @@ M — portée réelle des mécanismes physiques ;
 A — effet des coupes de contexte sur les agents scientifiques.
 ```
 
-La prochaine opération scientifique reste le pilote Q1 sur Stern–Gerlach,
-mais elle est précédée d'un sas de réception des cinq critiques et matériaux
-pédagogiques transmis le 13 juillet 2026.
+La prochaine opération scientifique est le pilote Q1 sur Stern–Gerlach. Le sas
+de réception des cinq critiques et matériaux pédagogiques a été produit et
+validé après rectification.
 
 ## 6. Séquence immédiate validée
 
 ```text
-1. rectification de l'accès et du vocabulaire de stabilisation — en cours ;
-2. assimilation multidimensionnelle des cinq critiques et de l'analyse ;
-3. réserve pédagogique séparée des arguments et des preuves ;
+1. rectification de l'accès et du vocabulaire de stabilisation — produite ;
+2. assimilation multidimensionnelle des cinq critiques et de l'analyse — produite ;
+3. réserve pédagogique séparée des arguments et des preuves — produite ;
 4. pilote Q1 sur Stern–Gerlach ;
 5. pilote M1 sur G_F ;
 6. conception du protocole A1.
@@ -138,21 +139,21 @@ Une réponse négative ou une absence de trajectoire pertinente est admise.
 
 ## 9. Pédagogie et analogies
 
-Les analogies sont conservées dans une réserve séparée. Elles ne valent ni
-preuve ni modèle.
+Les analogies retenues sont conservées dans une réserve séparée. Elles ne valent
+ni preuve ni modèle.
 
 Pour chaque analogie :
 
 ```text
 fonction cognitive ;
-élément correctement saisi ;
+élement correctement saisi ;
 inférences interdites ;
 point d'arrêt explicite.
 ```
 
-La toupie peut éventuellement illustrer un mouvement cognitif de stabilisation
-et l'effet d'une fenêtre temporelle. Elle ne doit jamais représenter l'électron,
-le spin ou une rotation classique microscopique.
+Une analogie peut être supprimée entièrement, sans substitut, lorsqu'elle
+préstructure indûment l'objet de recherche. Aucune image particulière n'est
+retenue comme point d'entrée pour la stabilisation ou les constantes.
 
 ## 10. Couche antérieure conservée
 
@@ -176,7 +177,7 @@ et le vocabulaire de stabilisation.
 Avant toute synthèse transversale :
 
 ```text
-1. lire la décision d'auteur la plus récente ;
+1. lire la décision méthodologique active la plus récente ;
 2. distinguer objet, constitution, différenciation et modes d'accès ;
 3. identifier le rang du document : source, exploration, diagnostic ou décision ;
 4. revenir aux preuves locales et aux sources sectorielles ;
@@ -185,6 +186,9 @@ Avant toute synthèse transversale :
 7. ne pas transformer une quasi-stationnarité locale en théorie générale ;
 8. vérifier l'antériorité avant toute revendication d'originalité.
 ```
+
+Les décisions sont suivies par leur contenu, leur date, leur statut et leurs
+raisons. Leur valeur ne dépend pas de l'attribution personnelle d'une idée.
 
 ## 12. Formule de clôture
 
