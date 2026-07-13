@@ -7,7 +7,8 @@ statut : verdict de première passe ;
 objet : expérience historique, modèle idéal et dispositifs modernes Stern–Gerlach ;
 question : fonctions différenciées des catégories classiques ;
 originalité : non établie ;
-résultat : pouvoir discriminant minimal établi.
+résultat : pouvoir discriminant minimal établi ;
+suite : complété par le second test sur les séquences d'axes.
 ```
 
 ## 1. Le pilote ne s'effondre pas dans la thèse générale de Bohr
@@ -58,93 +59,74 @@ Cette catégorie fournit donc un cas de **dispensabilité formelle sous utilité
 
 ### 3.3 Impact ou dépôt — enregistrement sans identité avec la propriété
 
-La trace spatiale est indispensable à l'accès expérimental. Elle n'est pourtant pas la composante de spin elle-même. Son interprétation exige une chaîne de modèle, calibration et classification.
+Dans l'expérience historique, le dépôt est cumulatif. Dans les dispositifs modernes, un clic individuel peut être enregistré. Dans les deux cas, la trace n'est pas identique à la composante de spin : une chaîne de modélisation et de calibration relie les deux.
 
-Cette catégorie fournit un cas de **nécessité d'enregistrement sans identité ontologique**.
+### 3.4 État et propriété — nécessité formelle, ouverture ontologique
 
-### 3.4 État et propriété — puissance formelle, ouverture ontologique
+L'état permet de calculer les probabilités et de représenter la préparation. Le passage de l'état à une propriété possédée dépend d'une interprétation supplémentaire.
 
-L'état est nécessaire au calcul et à la préparation ; la propriété organise les attributions et les contre-factuels. Leur statut ontologique n'est pas fixé par le dispositif seul.
+## 4. Résultat sur l'accès
 
-Elles fournissent un cas de **nécessité inférentielle sous sous-détermination interprétative**.
-
-## 4. L'accès est distribué dans toute la chaîne
-
-Le pilote confirme la rectification méthodologique récente. L'accès n'intervient pas uniquement après la physique :
+L'accès est distribué dans toute la chaîne :
 
 ```text
-la source et la collimation définissent le faisceau disponible ;
-l'orientation fixe le couplage pertinent ;
-le modèle relie spin et position ;
-le détecteur transforme une interaction en trace ;
-le coarse-graining transforme des positions en classes ;
-l'inférence transforme les classes en énoncés sur le spin.
+source et préparation ;
+collimation ;
+champ et gradient ;
+orientation ;
+corrélation spin–position ;
+détection ;
+classement des traces ;
+modèle probabiliste ;
+attribution au système.
 ```
 
-Aucune de ces opérations ne commande seule l'expérience. Leur coordination produit la capacité d'attribution.
+Il n'est ni un contrôle terminal ni une origine unique du phénomène.
 
-## 5. Les coupes ne forment pas encore un concept unifié
+## 5. Statut des coupes
 
-Le terme `coupe` recouvre au moins :
+Le terme `coupe` reste insuffisamment déterminé. Le cas Stern–Gerlach contient au moins :
 
 ```text
 partition matérielle du dispositif ;
-factorisation formelle des degrés de liberté ;
-choix d'une composante mesurée ;
-seuil de coarse-graining ;
-différence entre expérience historique et reconstruction moderne ;
-découpage pédagogique de la chaîne.
+factorisation formelle espace / spin ;
+choix d'un axe d'analyse ;
+coarse-graining des positions ;
+séparation entre expérience historique et reconstruction moderne ;
+découpage pédagogique entre étapes.
 ```
 
-Le pilote ne justifie donc pas une théorie générale de la coupe. Il établit une règle : toute occurrence doit indiquer le type de partition, son opération et la conclusion qu'elle autorise.
+Ces coupes n'ont pas les mêmes effets. Une théorie générale de la coupe n'est pas obtenue.
 
-## 6. Ce que le pilote interdit désormais
+## 6. Originalité
 
 ```text
-1. décrire le dépôt historique comme une série observée de clics individuels ;
-2. identifier la position détectée à la propriété de spin ;
-3. identifier l'axe macroscopique à une direction classique complète du spin ;
-4. parler de deux trajectoires microscopiques sans préciser le modèle ;
-5. traiter interaction, séparation, détection et résultat comme un instant unique ;
-6. conclure que la nécessité fonctionnelle d'une catégorie prouve sa fondamentalité ;
-7. conclure que l'appareil crée seul le phénomène ou révèle passivement une propriété complète.
+Q0 — question classique correctement instruite : établi ;
+Q1 — jonction entre histoire, physique, épistémologie et pédagogie : plausible ;
+Q2 — distinction qui modifie l'analyse du cas : provisoirement satisfaite ;
+Q3 — résultat reproductible sur plusieurs cas : non établi ;
+Q4 — problème substantiellement nouveau : non revendiqué.
 ```
 
-## 7. Originalité : verdict strict
+## 7. Limites
 
-La question générale est occupée par les travaux sur Bohr, les concepts classiques, les modèles de mesure et la pédagogie quantique.
-
-Le pilote établit néanmoins un résultat méthodologique local :
-
-> Une matrice croisant `niveau de l'objet expérimental` et `fonction de la catégorie` produit des distinctions que la formule générale « langage classique nécessaire » ne fournit pas à elle seule.
-
-Statut proposé :
+Le pilote ne décide pas :
 
 ```text
-Q0 : question classique correctement instruite — établi ;
-Q1 : jonction entre histoire, physique, épistémologie et pédagogie — plausible ;
-Q2 : distinction modifiant l'analyse des cas — provisoirement satisfaite ;
-Q3 : protocole ou résultat reproductible — non établi ;
-Q4 : problème substantiellement nouveau — non revendiqué.
+quelle interprétation de la mécanique quantique est correcte ;
+si la mesure crée ou révèle une propriété ;
+si la décohérence produit le résultat unique ;
+si toute catégorie classique a un profil analogue ;
+si la matrice se transfère à une autre expérience.
 ```
 
-Le niveau Q2 restera seulement si la matrice résiste à un second cas et produit des profils différents sans être ajustée après coup.
+## 8. Suite
 
-## 8. Condition de poursuite
+Ce verdict est désormais complété par :
 
-La prochaine épreuve doit être une **séquence de dispositifs Stern–Gerlach selon des axes différents**. Elle permettra de tester :
+- `Pilote_Q1_Stern_Gerlach_sequence_axes_protocole_v0_1.md` ;
+- `Pilote_Q1_Stern_Gerlach_sequence_axes_verdict_v0_1.md`.
 
-```text
-la différence entre préparation et mesure ;
-la migration du mot `état` entre entrée et sortie ;
-la fonction du changement de base ;
-l'impossibilité de conserver une image de composantes classiques simultanément définies ;
-la différence entre mélange et superposition ;
-le statut de la sélection d'un sous-faisceau.
-```
+Le second test examine préparation, sélection, superposition, mélange et sous-détermination d'une chaîne par la statistique terminale.
 
-Condition d'échec : si la matrice ne produit que les mêmes verdicts que pour le dispositif simple, Q1 sera rétrogradé à un outil pédagogique ou documentaire.
-
-## 9. Verdict de clôture
-
-> Le premier pilote ne démontre pas une philosophie nouvelle de la mesure. Il montre que les catégories classiques employées autour de Stern–Gerlach sont fonctionnellement hétérogènes et que leur portée dépend du niveau — historique, idéal ou moderne — auquel l'expérience est décrite. Cette discrimination est suffisamment réelle pour justifier un second test, mais insuffisante pour établir une originalité disciplinaire.
+> Premier verdict : la catégorie classique n'est ni simplement nécessaire ni simplement trompeuse. Elle peut être indispensable à une opération, transformée dans le formalisme, requise pour l'enregistrement et illégitime comme image ontologique du système.
