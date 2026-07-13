@@ -3,7 +3,7 @@
 ## 0. Statut
 
 ```text
-statut : rectification d'auteur validée ;
+statut : rectification méthodologique validée ;
 date : 13 juillet 2026 ;
 portée : orientation méthodologique active ;
 effet : supplante les formulations réduisant l'accès au seul contrôle probatoire ;
@@ -156,37 +156,22 @@ question de trajectoire non pertinente pour le cas.
 La comparaison entre trajectoires ne deviendra un instrument du projet que si
 elle produit des distinctions non triviales entre plusieurs cas.
 
-## 6. Réserve pédagogique — analogie de la toupie
+## 6. Trace méthodologique minimale
 
-L'analogie de la toupie est conservée uniquement comme ressource pédagogique
-possible pour le **mouvement cognitif de stabilisation** :
+Une analogie de stabilisation envisagée pendant l'exploration est retirée du
+corpus actif. Elle risquait d'imposer une représentation préalable de ce qu'est
+une constante ou une stabilisation avant que les cas physiques aient été
+différenciés.
 
-```text
-un comportement initialement mobile ou irrégulier peut entrer dans un régime
-plus stable ; une photographie prise dans une fenêtre donnée peut donner une
-impression de fixité ; la description dépend des échelles temporelles choisies.
-```
-
-L'analogie s'arrête impérativement avant toute assimilation à :
+La seule règle conservée est générale :
 
 ```text
-l'électron comme petite toupie ;
-le spin comme rotation classique ;
-une grandeur physique particulière sans mécanisme établi ;
-une loi générale de stabilisation des constantes.
+une image pédagogique qui préstructure l'objet de recherche doit pouvoir être
+abandonnée entièrement lorsque son coût de cadrage dépasse son gain cognitif.
 ```
 
-Pour tout usage futur, la fiche pédagogique devra indiquer :
-
-```text
-ce que l'image aide à saisir ;
-la fonction cognitive recherchée ;
-les inférences interdites ;
-le point exact où l'analogie cesse.
-```
-
-La toupie appartient donc à un réservoir pédagogique, non au registre des
-preuves ou des modèles physiques.
+Aucune analogie particulière n'est conservée comme point d'entrée pour les
+trajectoires, la stabilisation ou les constantes.
 
 ## 7. Incidences documentaires immédiates
 
@@ -203,6 +188,10 @@ documents du cycle 10 utilisant le nom généalogique « fixité dynamique ».
 Aucun résultat numérique du cycle 10 n'est modifié par cette rectification.
 Aucune thèse générale sur l'évolution temporelle des constantes n'est retenue.
 
+Les décisions du corpus sont enregistrées par leur contenu, leur date, leur
+statut et leurs raisons. L'attribution personnelle d'une proposition ne lui
+confère aucune autorité épistémique supplémentaire.
+
 ## 8. Séquence de travail validée
 
 ```text
@@ -218,5 +207,4 @@ Aucune thèse générale sur l'évolution temporelle des constantes n'est retenu
 > Il est une dimension plurielle de la constitution expérimentale, de
 > l'attribution, de la représentation, de l'inférence et de la preuve. Les
 > comportements temporels doivent être décrits localement, sans transformer la
-> lenteur relative, la quasi-stationnarité ou une analogie de stabilisation en
-> théorie générale des constantes.
+> lenteur relative ou la quasi-stationnarité en théorie générale des constantes.
