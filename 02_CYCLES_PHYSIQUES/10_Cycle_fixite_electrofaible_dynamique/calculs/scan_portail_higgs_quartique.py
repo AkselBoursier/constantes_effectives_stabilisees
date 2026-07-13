@@ -47,25 +47,18 @@ def evaluate(lambda_hphi: float, lambda_phi: float, q_i: float) -> Point:
     phi_i = math.sqrt(q_i * MU_H2_GEV2 / lambda_hphi)
     phi_i_over_mpl = phi_i / MPL_REDUCED_GEV
 
-    # Transition quartique -> quadratique définie par
-    # lambda_phi phi^2 ~ m_eff^2, avec m_eff^2 = lambda_hphi v^2.
     q_transition = lambda_hphi**2 / (lambda_phi * LAMBDA_H)
     quartic_initially = q_i > q_transition
 
-    # Dans le régime quartique, phi ∝ a^-1 et q ∝ a^-2.
     if quartic_initially and q_transition > 0.0:
         t_transition_gev = T_EW_GEV * math.sqrt(q_transition / q_i)
     else:
         t_transition_gev = T_EW_GEV
 
-    # Excès énergétique au crossover : auto-interaction quartique + déplacement
-    # du minimum du Higgs. Approximation au niveau arbre.
     delta_v_higgs = 0.25 * LAMBDA_H * V0_GEV**4 * (2.0 * q_i - q_i**2)
     rho_quartic = 0.25 * lambda_phi * phi_i**4
     r_ew = (delta_v_higgs + rho_quartic) / RHO_RAD_EW
 
-    # Tant que le régime quartique domine, rho_phi/rho_rad reste approximativement
-    # constant. Après la transition quadratique, il croît comme a ∝ 1/T.
     if t_transition_gev <= T_EQ_GEV:
         r_eq = r_ew
     else:
@@ -110,7 +103,8 @@ def run_scan() -> tuple[list[Point], dict[str, float]]:
                 point = evaluate(float(lambda_hphi), float(lambda_phi), float(q_i))
                 if point.acceptable:
                     acceptable_count += 1
-                if point.significant and point.phi_i_over_mpl < 1.0:
+                quartic_initially = point.q_i > point.q_transition
+                if point.significant and point.phi_i_over_mpl < 1.0 and quartic_initially:
                     if best_significant is None or point.r_eq < best_significant.r_eq:
                         best_significant = point
                 points.append(point)
