@@ -21,10 +21,10 @@ et ce qui ne doit pas redevenir une categorie trop haute.
 
 | Source DOCX | Markdown de travail |
 |---|---|
-| `Note de consolidation saveur-Higgs v0.1.docx` | `04_ARCHITECTURES/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` |
-| `Cycle effectif basse energie v0.1.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_1.md` |
-| `Cycle effectif basse energie v0.2.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_2.md` |
-| `Cycle effectif basse energie v0.3.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Source_docx_Cycle_effectif_basse_energie_v0_3.md` |
+| `Note de consolidation saveur-Higgs v0.1.docx` | `04_ARCHITECTURES/00_Sources_docx/Source_docx_Note_consolidation_saveur_Higgs_v0_1.md` |
+| `Cycle effectif basse energie v0.1.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_1.md` |
+| `Cycle effectif basse energie v0.2.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_2.md` |
+| `Cycle effectif basse energie v0.3.docx` | `02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_3.md` |
 
 Statut :
 

@@ -46,7 +46,7 @@ le comportement physique change qualitativement.
 Elle n'est pas une famille : elle est un role que peut jouer une grandeur dans
 un contexte donne.
 
-Source : [Tests taxonomiques — famille Seuil](03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Seuil_v0_1.md)
+Source : [Tests taxonomiques — famille Seuil](03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Seuil_v0_1.md)
 
 ### Fond
 
@@ -59,7 +59,7 @@ auquel d'autres grandeurs sont definies ou mesurees.
 Elle n'est pas une famille : elle est un role architectural de reference de
 niveau.
 
-Source : [Tests taxonomiques — famille Fond](03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Fond_v0_1.md)
+Source : [Tests taxonomiques — famille Fond](03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Fond_v0_1.md)
 
 ### Relation
 
@@ -71,7 +71,7 @@ elle porte une structure de dependance entre au moins deux objets du corpus.
 
 Elle n'est pas une famille : elle est un role de liaison qualifiee.
 
-Source : [Tests taxonomiques — famille Relation](03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Relation_v0_1.md)
+Source : [Tests taxonomiques — famille Relation](03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Relation_v0_1.md)
 
 ---
 

@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: Note critique de compression v0.1.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/Note critique de compression v0.1.docx
+sha256_source: ac1ed62ac888349e9fac29c50929ae2bbbe5466f3113b2a7426e6a093551a8e1
 statut: extraction textuelle de travail
 document actif concerne: Refonte v1.2 ; audit de resynchronisation
 controle attendu: Extraction + controle des pertes
