@@ -11,6 +11,7 @@ Cette fiche intervient apres :
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
+05_CARTES_ET_SYNTHESES/Audit_regimes_limite_v0_1.md
 ```
 
 Elle ne remplace pas la matrice des acquis.
@@ -59,6 +60,30 @@ La prudence ne consiste donc pas a retirer l'affirmation.
 
 Elle consiste a donner a l'affirmation son rang, son domaine et son seuil.
 
+### 2.1 Typologie courte des regimes de limite
+
+Le terme `limite` doit etre decompose avant usage argumentatif.
+
+Il ne designe pas un seul type de prudence.
+
+| Regime de limite | Question | Garde-fou |
+|---|---|---|
+| Validite | Dans quel domaine la description vaut-elle ? | Ne pas convertir une validite locale en universalite |
+| Completion | Que laisse ouverte la description ? | Ne pas transformer l'ouverture en objection |
+| Borne | Quelle region admissible est stabilisee ? | Ne pas convertir la borne en mesure positive |
+| Non-detection | Que signifie l'absence de signal convergent ? | Ne pas conclure a l'inexistence ou a la valeur nulle |
+| Tension | Quelles routes d'acces divergent ? | Ne pas sauter de tension a anomalie |
+| Modele | Quel cadre conditionne l'inference ? | Ne pas naturaliser une valeur modele-dependante |
+| Retrait ou substitution | Que devient le reseau si un noeud change ? | Ne pas prendre le test pour une preuve physique |
+| Realisation | Une exactitude formelle est-elle mise en oeuvre ? | Ne pas confondre definition et realisation parfaite |
+
+Regle :
+
+```text
+une limite renforce la robustesse seulement si son type,
+son regime, son acces et son niveau de maturite sont explicites.
+```
+
 ### 3. Enonces deja autorises
 
 Les acquis suivants peuvent entrer dans le futur degagement de these parce
@@ -67,11 +92,11 @@ qu'ils repondent directement ou indirectement a la question des constantes.
 | Code | Affirmation prudente | Appui | Portee | Condition de validite |
 |---|---|---|---|---|
 | L1 | Une grandeur peut etre qualifiee de constante lorsque son mode de stabilisation est explicite | Matrice des acquis, note de recentrage | Question directrice | Ne pas confondre qualification prudente et essence ultime |
-| L2 | Les constantes gagnent a etre lues comme stabilisations effectives situees | Carte v1.3, matrice des acquis | Noyau theorique | Ne pas les reduire a de simples constructions |
+| L2 | Les constantes gagnent a etre lues comme stabilisations effectives qualifiees par regime, acces et limites | Carte v1.3, matrice des acquis | Noyau theorique | Ne pas les reduire a de simples constructions |
 | L3 | Cette qualification depend d'un regime, d'un acces et d'une trajectoire | Cycles physiques, matrice temporelle | Lecture transversale | Respecter les differences de secteurs |
 | L4 | La constance peut etre definissante, effective, reconstruite, bornee, constitutive ou compositionnelle | Carte v1.3, matrice des acquis | Typologie prudente | Ne pas durcir ces modes en classes exclusives |
 | L5 | Une architecture active peut etre necessaire pour comprendre pourquoi une grandeur tient comme constante | Cercle 2A-2F | Niveau architectural | Ne pas creer d'architecture artificielle |
-| L6 | Les bornes, tensions et reconstructions appartiennent a la qualification prudente du statut | Cosmologie, neutrinos, SI | Cas sensibles | Ne pas convertir une limite en mesure positive |
+| L6 | Les bornes, non-detections, tensions, reconstructions et limites de validite appartiennent a la qualification prudente du statut | Cosmologie, neutrinos, SI, effectivite basse energie | Cas sensibles | Ne pas convertir une limite en resultat positif |
 | L7 | L'outillage methodologique sert a etablir la qualification, non a la remplacer | Note de recentrage | Controle de rang | Garder l'outil a son rang auxiliaire |
 
 Ces enonces sont affirmables parce qu'ils portent sur le statut des constantes
@@ -90,7 +115,7 @@ Elles empechent le cadre de se durcir trop vite.
 | N1 | Le projet ne fournit pas une nouvelle theorie physique | Il propose une methode d'etablissement du statut des constantes |
 | N2 | Le cadre n'explique pas l'origine ultime des constantes | Il decrit comment leur statut devient stabilise dans des regimes donnes |
 | N3 | Le corpus empirique consensuel n'est pas corrige par decret | Il sert d'appui et de contrainte aux reconstructions methodologiques |
-| N4 | Les constantes ne sont pas reduites a des constructions documentaires ou linguistiques | Leur statut est lu a travers operations, acces, mesures, definitions et modeles |
+| N4 | Les constantes ne sont pas reduites a des constructions documentaires ou linguistiques | Leur ancrage physique ou operationnel est qualifie a travers operations, acces, mesures, definitions et modeles |
 | N5 | Les classements fonctionnels ne commandent pas la these | Ils interviennent apres qualification de la stabilisation |
 | N6 | L'acces n'est pas transforme en essence de la grandeur | Il devient un element de qualification du statut de constance |
 | N7 | Les tensions cosmologiques ne sont pas resolues par le cadre | Elles deviennent des indicateurs de regime, de modele et d'acces |
@@ -150,10 +175,10 @@ Les formulations suivantes sont compatibles avec la prudence actuelle.
 
 ```text
 Une grandeur peut etre dite constante lorsque son mode de stabilisation est explicite.
-Les constantes gagnent a etre lues comme des stabilisations effectives situees.
-Le statut de constance depend d'un regime, d'une fonction situee, d'un acces et d'une trajectoire.
+Les constantes gagnent a etre lues comme des stabilisations effectives qualifiees.
+Le statut de constance depend d'un regime, d'une fonction exercee, d'un acces et d'une trajectoire.
 Une architecture active rend lisibles des solidarites de fonctionnement.
-Une borne ou une tension peut stabiliser un statut sans produire une mesure positive.
+Une borne, une non-detection ou une tension peut stabiliser un statut sans produire une mesure positive.
 Les limites conservees font partie de la qualification prudente de la constance.
 Le cadre prepare une these sur le statut des constantes, methodologiquement controlee.
 ```
@@ -187,7 +212,7 @@ Le noyau de these admissible peut donc etre formule ainsi :
 
 ```text
 les constantes peuvent etre etudiees comme des grandeurs dont le statut de
-constance se stabilise par forme, regime, fonction situee, acces,
+constance se stabilise par forme, regime, fonction exercee, acces,
 trajectoire, architecture eventuelle et limite conservee.
 ```
 

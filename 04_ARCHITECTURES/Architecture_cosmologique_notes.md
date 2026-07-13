@@ -4,19 +4,15 @@
 
 ### 1. Fonction de la note
 
-Cette note integre le resultat du cycle cosmologique dans le niveau des architectures inter-familles.
+Cette note integre le resultat du cycle cosmologique dans le niveau des architectures actives.
 
 Elle ne remplace pas la synthese du cycle. Elle en extrait la consequence taxonomique principale :
 
 ```text
-Architecture cosmologique = architecture inter-familles confirmee
+Architecture cosmologique = architecture inferentielle et reconstructive confirmee
 ```
 
-et non :
-
-```text
-nouvelle famille superieure
-```
+Cette consequence fixe un rang architectural, non une sortie taxonomique large.
 
 La note sert de reference courte pour les cartes consolidees actives.
 
@@ -57,17 +53,13 @@ La decision de rang est :
 cosmologique = mode architectural de solidarisation
 ```
 
-et non :
+Cette decision maintient le cosmologique comme mode architectural de solidarisation.
 
-```text
-cosmologique = famille fonctionnelle autonome
-```
-
-Cette decision evite de creer une famille trop large qui absorberait des constantes, des parametres de modele, des relations normalisees, des conditions initiales, des observables reconstruites et des tensions d'acces.
+Cette decision repartit constantes, parametres de modele, relations normalisees, conditions initiales, observables reconstruites et tensions d'acces dans une architecture inferentielle.
 
 ### 3. Definition locale proposee
 
-Une architecture cosmologique est une configuration inter-familles dans laquelle des grandeurs globales, normalisees, relationnelles, initiales et reconstruites deviennent solidaires dans un modele d'expansion et dans plusieurs regimes d'acces.
+Une architecture cosmologique est une configuration de solidarisation dans laquelle des grandeurs globales, normalisees, relationnelles, initiales et reconstruites deviennent solidaires dans un modele d'expansion et dans plusieurs regimes d'acces.
 
 Cette definition repose sur cinq elements.
 
@@ -128,7 +120,7 @@ terme de fond dans l'architecture cosmologique
 Decision :
 
 ```text
-Fond est une fonction architecturale, non une famille.
+Fond est une fonction architecturale locale.
 ```
 
 Lambda peut etre fortement stabilisee dans LambdaCDM tout en gardant un statut physique profond ouvert.
@@ -451,9 +443,9 @@ Elle fixe seulement le statut methodologique de l'architecture.
 Les cartes consolidees ulterieures doivent conserver six decisions.
 
 ```text
-1. Architecture cosmologique est confirmee comme architecture inter-familles.
-2. Cosmologie ne doit pas devenir une famille superieure.
-3. Fond reste une fonction architecturale, non une famille.
+1. Architecture cosmologique est confirmee comme architecture active inferentielle et reconstructive.
+2. Cosmologie reste un mode architectural inferentiel et reconstructif.
+3. Fond reste une fonction architecturale locale.
 4. Observable reconstruite est ajoutee aux fonctions architecturales stabilisees.
 5. Tension de donnees appartient au regime d'acces.
 6. La dependance de modele doit accompagner toute stabilisation cosmologique.

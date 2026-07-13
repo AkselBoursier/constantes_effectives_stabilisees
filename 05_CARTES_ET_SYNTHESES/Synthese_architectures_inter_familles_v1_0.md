@@ -1,10 +1,15 @@
-# Synthese des architectures inter-familles v1.0
+# Synthese des architectures actives v1.0
 
 ## Invariants methodologiques, differences internes et statut de rang
 
 ### 1. Fonction de la synthese
 
-Cette synthese compare les quatre architectures inter-familles stabilisees par la carte consolidee v1.1.
+Cette synthese compare les quatre architectures actives stabilisees par la carte consolidee v1.1.
+
+Le nom de fichier conserve `inter_familles` pour la genealogie du corpus.
+
+Dans les formulations actives, le niveau vise est celui de la solidarisation
+de fonctions, d'operations, d'acces et de limites dans un regime.
 
 Architectures traitees :
 
@@ -38,13 +43,13 @@ Elle montre comment plusieurs familles deviennent solidaires dans un regime de d
 Resultat de rang :
 
 ```text
-architecture inter-familles = niveau methodologique autonome
+architecture active = niveau methodologique autonome de solidarisation
 ```
 
 mais non :
 
 ```text
-famille superieure supplementaire
+sortie taxonomique superieure
 ```
 
 La difference est decisive :
@@ -56,11 +61,11 @@ Architecture : comment plusieurs fonctions deviennent-elles solidaires ?
 
 ### 3. Les quatre architectures stabilisees
 
-| Architecture | Forme dominante | Familles mobilisees | Corpus de reference |
+| Architecture | Forme dominante | Fonctions et roles mobilises | Corpus de reference |
 |---|---|---|---|
-| Saveur-Higgs | Constitutive | Echelle, Couplage, Orientation, roles spectraux, Relation sous audit | v, Y_f, m_f, CKM, PMNS, Delta m^2 |
+| Saveur-Higgs | Constitutive | Echelle, Couplage, Orientation, roles spectraux, relations qualifiees | v, Y_f, m_f, CKM, PMNS, Delta m^2 |
 | Metrologique SI | Definitionnelle | Convention, composition exacte, Echelle, relation qualifiee | k_B, N_A, R, c, h, e, K_J, R_K |
-| Effective basse energie | Effective / validite | Raccordement, Echelle, Couplage, Validite, Relation sous audit | G_F, M_W, alpha_s(Q^2), Lambda_QCD, alpha_G(E), M_Pl |
+| Effective basse energie | Effective / validite | Raccordement, Echelle, Couplage, Validite, liaisons de regime qualifiees | G_F, M_W, alpha_s(Q^2), Lambda_QCD, alpha_G(E), M_Pl |
 | Cosmologique | Inferentielle / reconstructive | Fonctions architecturales, roles relationnels, acces | Lambda, H_0, Omega_i, w, A_s, n_s, sigma_8, S_8 |
 
 Chaque architecture est robuste parce qu'elle organise plusieurs fonctions.
@@ -111,13 +116,13 @@ fragmenter le secteur en familles locales trop nombreuses
 ou, inversement :
 
 ```text
-creer une famille Saveur-Higgs.
+reduire Saveur-Higgs a une sortie taxonomique locale.
 ```
 
 Decision :
 
 ```text
-Saveur-Higgs = architecture constitutive inter-familles.
+Saveur-Higgs = architecture constitutive de solidarisation.
 ```
 
 ### 5. Architecture metrologique SI
@@ -168,7 +173,7 @@ confondre exactitude SI et mesure parfaite.
 Decision :
 
 ```text
-Metrologique SI = architecture definitionnelle inter-familles.
+Metrologique SI = architecture definitionnelle de solidarisation.
 ```
 
 ### 6. Architecture effective basse energie
@@ -205,7 +210,7 @@ une description effective vaut dans un domaine, pas absolument.
 Risque controle :
 
 ```text
-transformer Effectif en famille superieure
+transformer Effectif en sortie taxonomique superieure
 ```
 
 ou :
@@ -217,7 +222,7 @@ oublier le domaine de validite.
 Decision :
 
 ```text
-Effective basse energie = architecture de validite inter-familles.
+Effective basse energie = architecture de validite de description.
 ```
 
 ### 7. Architecture cosmologique
@@ -274,7 +279,7 @@ transformer une tension d'acces en verdict physique.
 Decision :
 
 ```text
-Cosmologique = architecture inferentielle inter-familles.
+Cosmologique = architecture inferentielle et reconstructive.
 ```
 
 ### 8. Quatre formes d'architecture
@@ -310,14 +315,14 @@ architecture = solidarisation fonctionnelle dans un regime
 
 #### 9.2 Correction de rang
 
-Chaque architecture corrige une tentation de famille trop large.
+Chaque architecture decrit positivement une solidarisation qui depasse une sortie taxonomique locale.
 
 | Tentation | Correction |
 |---|---|
-| famille Saveur-Higgs | architecture constitutive |
-| famille Metrologie | architecture definitionnelle |
-| famille Effectif | architecture de validite |
-| famille Cosmologie | architecture inferentielle |
+| lecture Saveur-Higgs comme famille | architecture constitutive |
+| lecture Metrologie comme famille | architecture definitionnelle |
+| lecture Effectif comme famille | architecture de validite |
+| lecture Cosmologie comme famille | architecture inferentielle |
 
 #### 9.3 Regime avant essence
 
@@ -358,7 +363,8 @@ Saveur-Higgs ne donne pas l'origine ultime des hierarchies de saveur.
 
 #### 9.6 Stabilisation situee
 
-La robustesse d'une grandeur est toujours situee.
+La robustesse d'une grandeur se qualifie toujours dans un regime,
+par des acces explicites et avec des limites conservees.
 
 Types de stabilisation :
 
@@ -489,13 +495,13 @@ Une architecture doit etre reconnue lorsque les cinq conditions suivantes sont r
 Si ces conditions sont remplies, la bonne decision est :
 
 ```text
-architecture inter-familles
+architecture active de solidarisation
 ```
 
 et non :
 
 ```text
-famille superieure nouvelle
+sortie taxonomique trop large
 ```
 
 ### 15. Consequence pour la methode
@@ -542,7 +548,7 @@ Plusieurs familles deviennent-elles solidaires dans un regime donne ?
 Si oui :
 
 ```text
-classer au niveau Architecture inter-familles.
+classer au niveau Architecture active.
 ```
 
 ### 16. Ce que la synthese stabilise
@@ -550,14 +556,14 @@ classer au niveau Architecture inter-familles.
 La synthese stabilise dix decisions.
 
 ```text
-1. Les architectures inter-familles forment un niveau methodologique stable.
-2. Une architecture n'est pas une famille.
+1. Les architectures actives forment un niveau methodologique stable.
+2. Une architecture stabilise une solidarisation de fonctions.
 3. Les quatre architectures reconnues ont des formes differentes.
 4. Saveur-Higgs est une architecture constitutive.
 5. Metrologique SI est une architecture definitionnelle.
 6. Effective basse energie est une architecture de validite.
 7. Cosmologique est une architecture inferentielle et reconstructive.
-8. Le regime d'acces est constitutif du classement.
+8. Le regime d'acces participe a la qualification du statut et du classement.
 9. La stabilisation doit etre qualifiee.
 10. La limite de ce que la grandeur ne dit pas fait partie du classement.
 ```
@@ -567,12 +573,12 @@ La synthese stabilise dix decisions.
 La synthese ne cree pas :
 
 ```text
-une famille Architecture
-une famille Systeme
-une famille Metrologie
-une famille Effectif
-une famille Cosmologie
-une famille Saveur-Higgs
+une sortie taxonomique Architecture
+une sortie taxonomique Systeme
+une sortie taxonomique Metrologie
+une sortie taxonomique Effectif
+une sortie taxonomique Cosmologie
+une sortie taxonomique Saveur-Higgs
 ```
 
 Elle ne resout pas non plus :
@@ -603,7 +609,7 @@ Documents produits ensuite :
 Objectif :
 
 ```text
-integrer explicitement les invariants des architectures inter-familles dans la methode.
+integrer explicitement les invariants des architectures actives dans la methode.
 ```
 
 Cette mise a jour ne remplacait pas toute la v1.1. Elle ajoutait :
@@ -635,7 +641,7 @@ Documents internes utilises :
 
 Formule longue :
 
-> Une architecture inter-familles apparait lorsqu'un regime de description rend solidaires plusieurs familles, plusieurs fonctions, plusieurs acces ou plusieurs modes de stabilisation, sans que cette solidarite puisse devenir une famille superieure.
+> Une architecture active apparait lorsqu'un regime de description rend solidaires plusieurs fonctions, roles, operations, acces ou modes de stabilisation, sans que cette solidarite doive devenir une sortie taxonomique superieure.
 
 Formule courte :
 

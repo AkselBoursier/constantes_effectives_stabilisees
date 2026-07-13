@@ -81,7 +81,7 @@ Ils presentent chaque architecture par ce qu'elle fait :
 ```text
 Saveur-Higgs : constitution.
 Metrologique SI : definition et realisation.
-Effective basse energie : validite situee.
+Effective basse energie : validite de description dans un regime determine.
 Cosmologique : inference et reconstruction.
 ```
 
@@ -136,7 +136,7 @@ puis seulement ensuite mentionner les controles de rang.
 Ordre recommande :
 
 ```text
-1. stabilisations effectives situees ;
+1. stabilisations effectives qualifiees ;
 2. modes architecturaux ;
 3. regimes d'acces ;
 4. temporalites ;

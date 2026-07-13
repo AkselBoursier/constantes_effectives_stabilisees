@@ -58,7 +58,7 @@ image issue de la theorie de Fermi.
 Formule :
 
 ```text
-la stabilisation effective est une validite situee,
+la stabilisation effective est une validite de description dans un regime determine,
 pas une valeur absolue hors domaine.
 ```
 
@@ -175,7 +175,7 @@ formulations positives suivantes.
 
 | Formulation a eviter | Formulation positive |
 |---|---|
-| `effectif n'est pas une famille superieure` | `effectif decrit un mode de validite situee` |
+| `effectif n'est pas une famille superieure` | `effectif decrit un mode de validite dans un regime determine` |
 | `basse energie n'est pas toujours simplification` | `la basse energie prend une forme locale, non perturbative ou supprimee selon le secteur` |
 | `Seuil n'est pas une famille` | `le seuil est la visibilite locale d'une echelle de validite` |
 | `Hierarchie n'est pas une famille` | `la hierarchie qualifie un ecart d'echelle, de couplage ou de validite` |
@@ -245,7 +245,7 @@ a une logique de description des validites situees.
 Priorite de reprise future :
 
 ```text
-1. ouvrir par la notion de validite situee ;
+1. ouvrir par la notion de validite de description dans un regime determine ;
 2. presenter les trois formes d'effectivite comme formes positives ;
 3. expliciter le sens variable de basse energie ;
 4. placer les garde-fous sur Seuil, Hierarchie et Effectif dans une section dediee ;
