@@ -79,11 +79,18 @@ identifiants, adresse électronique, liens de conversation et URL signées de
 pièces jointes. Ne pas les citer, les recopier ou les exposer dans une synthèse.
 
 ```text
-assainissement de la copie de branche : autorisé le 14 juillet 2026 ;
+assainissement de la copie de branche : accompli le 14 juillet 2026 ;
 contenu de recherche : conservé ;
 métadonnées personnelles et techniques : retirées des exports assainis ;
+historique de la branche : reconstruit depuis le dernier commit antérieur aux
+                           exports bruts ;
 usage courant : lecture locale prudente et citations conceptuelles minimales.
 ```
+
+Les anciens commits bruts ne sont plus atteignables depuis une branche distante.
+Cette réécriture retire l'exposition par la navigation Git ordinaire ; la purge
+physique d'objets devenus inaccessibles dépend ensuite du cycle de conservation
+et de nettoyage de l'hébergeur Git.
 
 ## 6. Intégrité documentaire connue
 
