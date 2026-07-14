@@ -1,6 +1,6 @@
 # La soustraction de soi
 
-*Manuscrit — rédaction ouverte le 6 juillet 2026. Révision développée du 8 juillet 2026 : [critique constructive](CRITIQUE_CONSTRUCTIVE_MANUSCRIT_soustraction_de_soi_8juillet2026.md) intégrée ; état scientifique actualisé ; appareil vérifié dans la [fiche des notes](FICHE_NOTES_MANUSCRIT_soustraction_de_soi_8juillet2026.md). Mouvements continus, numéros seuls. Chaque passage est une proposition, soumise à amendement.
+*Manuscrit — rédaction ouverte le 6 juillet 2026. Révision développée du 8 juillet 2026 : critique constructive intégrée ; état scientifique actualisé ; appareil vérifié dans une fiche de notes. Les deux documents de travail correspondants ne sont pas versés dans la présente archive. Mouvements continus, numéros seuls. Chaque passage est une proposition, soumise à amendement.
 Auteur : Aksel Boursier-Dalsbaek*
 
 ---
