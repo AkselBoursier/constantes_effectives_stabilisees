@@ -84,7 +84,8 @@ plus déterminées.
 
 - simulation, automatisation et agence épistémique ;
 - compréhension de résultats produits par des systèmes opaques ;
-- responsabilité et vérification dans la science assistée par IA ;
+- responsabilité et vérification dans la science assistée par intelligence
+  artificielle (IA) ;
 - pluralité des modèles et décisions communes.
 
 ## 3. Génération de questions à partir du corpus
@@ -100,22 +101,26 @@ même résultat, accès différents ;
 migration physique -> épistémologie -> ontologie ;
 réussite locale qui déplace une dépendance ou une contingence ;
 comparaison qui doit être interdite ou rendue asymétrique ;
-concept qui change de sens entre temps, échelle RG et histoire documentaire.
+concept qui change de sens entre temps, échelle du groupe de renormalisation
+(RG) et histoire documentaire.
 ```
 
-## 4. Degrés d'originalité d'une question
+## 4. Niveaux de maturité d'une contribution
+
+Les niveaux `C0–C4` désignent la maturité d'une contribution, et non une série
+de questions ni une mesure automatique de son originalité.
 
 ```text
-Q0 : question classique correctement reformulée ;
-Q1 : jonction peu explicite entre littératures ;
-Q2 : distinction qui modifie l'analyse de cas ;
-Q3 : question accompagnée d'un test, d'un corpus ou d'une prédiction ;
-Q4 : problème substantiellement nouveau après recherche d'antériorité forte.
+C0 : correction ou reformulation correctement instruite ;
+C1 : coordination peu explicite entre littératures ;
+C2 : contribution différenciée qui modifie l'analyse d'un cas ;
+C3 : protocole, corpus ou résultat transférable ;
+C4 : nouveauté substantielle éventuelle après recherche d'antériorité forte.
 ```
 
-Le cycle ne recherchera pas Q4 à tout prix. Les niveaux Q1 à Q3 sont plus réalistes
-et souvent plus démontrables. Aucun changement de vocabulaire ne suffira à établir
-l'originalité.
+Le cycle ne recherchera pas `C4` à tout prix. Les niveaux `C1–C3` sont plus
+réalistes et souvent plus démontrables. Aucun changement de vocabulaire ne
+suffira à établir l'originalité.
 
 ## 5. Livrables
 
@@ -138,8 +143,9 @@ l'originalité.
 8. sélectionner cinq à huit questions de programme.
 ```
 
-Le test O2 de la matrice des constantes est différé, non abandonné. Il deviendra un
-banc d'essai parmi d'autres et ne définira plus seul l'horizon du projet.
+Le test de résultat méthodologique (`O2`, code historique de la matrice des
+constantes) est différé, non abandonné. Il deviendra un banc d'essai parmi
+d'autres et ne définira plus seul l'horizon du projet.
 
 ## 7. Conditions d'échec
 

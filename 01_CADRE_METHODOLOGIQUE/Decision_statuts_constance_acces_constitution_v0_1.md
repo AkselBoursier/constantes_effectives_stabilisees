@@ -53,7 +53,7 @@ Le noyau actif conserve trois statuts :
 |---|---|---|
 | Constance physique | invariance d’une grandeur ou relation sous des transformations physiques déclarées | rapport ou relation invariante dans un domaine |
 | Constance effective | coefficient traité comme fixe dans une approximation contrôlée, avec corrections et rupture explicites | `G_F` à basse énergie |
-| Constance métrologique | valeur numérique fixée exactement dans un système d’unités, sans assimilation à une invariance physique | `h` dans le SI |
+| Constance métrologique | valeur numérique fixée exactement dans un système d’unités, sans assimilation à une invariance physique | `h` dans le Système international d’unités (SI) |
 
 Ces statuts peuvent être relatifs à un régime. Ils ne sont ni absolus ni
 ontologiquement homogènes.
@@ -106,7 +106,35 @@ Ils peuvent expliquer une relation, une échelle ou une quasi-fixité. Ils ne
 fixent pas automatiquement la valeur numérique des paramètres libres qui les
 portent.
 
+### 2.4 Articulation non linéaire des trois niveaux
+
+La distinction entre objet, accès et constitution n'impose pas un ordre unique
+de recherche. Le point d'entrée dépend de l'objet étudié, de la question posée
+et de l'état des preuves disponibles.
+
+```text
+une difficulté d'accès peut conduire à redéfinir l'objet ;
+un mécanisme de constitution peut révéler la transformation pertinente ;
+un test de fixité peut obliger à reprendre l'architecture constitutive ;
+une reconstruction peut suspendre une attribution sans rendre l'objet irréel.
+```
+
+Les trois niveaux sont donc distincts sans être indépendants. Ils se
+contraignent et se reformulent mutuellement. La priorité donnée à l'un d'eux
+dans un cycle ou un article est une décision locale d'enquête ou d'exposition,
+non une hiérarchie ontologique ni une doctrine universelle.
+
+La distinction conserve toutefois une fonction stricte : quelle que soit la
+porte d'entrée, une conclusion sur la constance de l'objet exige un test au
+niveau de l'objet ; une conclusion sur sa constitution exige un mécanisme ou
+une architecture explicitée ; une conclusion sur l'accès exige les opérations,
+modèles et limites qui la soutiennent.
+
 ## 3. Règles de passage entre les niveaux
+
+Les règles suivantes contrôlent des changements de rang. Elles ne décrivent
+pas une chaîne chronologique obligatoire et n'interdisent pas les boucles entre
+objet, accès et constitution.
 
 ### 3.1 Accès vers constance de l’objet
 
@@ -160,7 +188,7 @@ Elle ne devient pas une valeur positive mesurée ni une constante.
 | `sigma_8`, `S_8` | grandeurs tardives reconstruites ou dérivées dans un réseau cosmologique | constantes de même rang que `G_F` |
 | `G_F` | constante effective à basse énergie | constante fondamentale universelle |
 | `h` dans le SI | constante métrologique définissante ; rôle physique à distinguer de sa valeur fixée | invariance physique démontrée par la seule définition |
-| CKM / PMNS | structures de paramètres et orientations de secteur ; éléments traités comme fixes dans un modèle donné | une unique constante scalaire |
+| matrices de Cabibbo–Kobayashi–Maskawa (CKM) et de Pontecorvo–Maki–Nakagawa–Sakata (PMNS) | structures de paramètres et orientations de secteur ; éléments traités comme fixes dans un modèle donné | une unique constante scalaire |
 
 ## 5. Effet sur les dégagements théoriques
 
@@ -191,8 +219,8 @@ confondre :
 | Chantier | Question | Niveau principal |
 |---|---|---|
 | Refondation | qu’est-ce qui peut être légitimement appelé constant ? | constance de l’objet |
-| Philosophie Q1 | comment la qualification du statut est-elle établie et bornée ? | accès et qualification |
-| Philosophie Q2 | comment un statut se forme-t-il, se maintient-il ou se défait-il ? | constitution et trajectoire |
+| Question de qualification (`Q-qual`) | comment la qualification du statut est-elle établie et bornée ? | accès, objet et qualification selon le cas |
+| Question de formation (`Q-form`) | comment un statut se forme-t-il, se maintient-il ou se défait-il ? | constitution, trajectoire et accès selon le cas |
 | Fine-tuning | quelles contingences subsistent après reconstruction des dépendances ? | explication et contingence résiduelle |
 | Fixité dynamique | comment une relation variable devient-elle quasi fixe dans l’histoire physique ? | constitution physique testable |
 | Ontologie | que signifie cette constitution pour le statut du réel ? | interprétation différée et contrôlée |
@@ -219,8 +247,9 @@ mode de constitution.
 ```
 
 Ces niveaux se conditionnent et peuvent se renforcer. Ils ne sont pas
-interchangeables.
+interchangeables et ne forment pas une hiérarchie universelle.
 
 > Le projet peut étudier conjointement ce qui tient fixe, la manière dont nous
 > l’établissons et l’histoire par laquelle cette fixité se constitue, à
-> condition de conserver le rang propre de chacune de ces questions.
+> condition de conserver le rang propre de chacune de ces questions et de
+> laisser l'objet étudié déterminer leur ordre local.

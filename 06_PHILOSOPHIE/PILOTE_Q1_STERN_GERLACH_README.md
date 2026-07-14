@@ -1,4 +1,4 @@
-# Dossier Q1 — Stern–Gerlach
+# Dossier Stern–Gerlach du chantier Q (catégories, accès et inférences en microphysique)
 
 ## Statut révisé
 
@@ -10,7 +10,7 @@ standard actif : contribution située, non recherche de nouveauté.
 
 L’entrée actuelle du programme est :
 
-[Programme Q1 — Catégories, accès et inférences](PROGRAMME_Q1_CONTRIBUTION_README.md)
+[Chantier Q — Catégories, accès et inférences](PROGRAMME_Q1_CONTRIBUTION_README.md)
 
 ## Question du dossier
 
@@ -18,11 +18,10 @@ L’entrée actuelle du programme est :
 
 ## Niveaux distingués
 
-```text
-H — expérience historique de 1922 : dépôt cumulatif ;
-I — modèle quantique idéalisé : couplage spin–position ;
-M — dispositifs modernes ou séquentiels : préparation, analyse et détection.
-```
+- L'expérience historique de 1922 (`H`) produit un dépôt cumulatif.
+- Le modèle quantique idéalisé (`I`) décrit un couplage spin–position.
+- Les dispositifs modernes ou séquentiels (`M`) servent à la préparation, à
+  l'analyse et à la détection.
 
 ## Ordre de lecture
 
@@ -47,4 +46,7 @@ Ces distinctions sont largement occupées dans la littérature. Leur valeur pour
 
 ## Limites
 
-Le dossier ne tranche aucune interprétation de la mécanique quantique et ne fournit pas une nouvelle théorie de la mesure. Il constitue le premier cas du programme Q1, désormais complété par le test sur l’interférence et le marquage des voies.
+Le dossier ne tranche aucune interprétation de la mécanique quantique et ne
+fournit pas une nouvelle théorie de la mesure. Il constitue le premier cas du
+chantier Q, désormais complété par le test sur l’interférence et le marquage des
+voies.

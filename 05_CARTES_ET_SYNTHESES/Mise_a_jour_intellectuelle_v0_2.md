@@ -1,6 +1,6 @@
 # Mise a jour intellectuelle v0.2
 
-## Etat du projet apres critiques, reequilibrage SI et definition de "situe"
+## Etat du projet apres critiques, reequilibrage du Systeme international d'unites (SI) et definition de "situe"
 
 ### 0. Statut documentaire
 
@@ -51,34 +51,37 @@ Elle donne une grammaire de lecture pour le corpus consensuel.
 
 Deux questions organisent maintenant le projet.
 
-#### 2.1 Q1 : qualification
+#### 2.1 Question de qualification (`Q-qual`)
 
 ```text
 dans quelle mesure une grandeur peut-elle etre qualifiee de constante ?
 ```
 
-Q1 reste le seuil.
+La question de qualification reste le seuil de toute conclusion qui attribue
+effectivement une constance à un objet ou à une relation.
 
 Elle gouverne :
 
 ```text
-these-noyau T0 ;
+these-noyau (`T0`, critere commun de qualification) ;
 modes de constance ;
 regime, acces, trajectoire ;
 limites et non-theses ;
 premiers livrables.
 ```
 
-#### 2.2 Q2 : formation
+#### 2.2 Question de formation (`Q-form`)
 
 ```text
 dans quelles conditions un statut de constance se forme-t-il,
 se maintient-il, se transforme-t-il ou se defait-il ?
 ```
 
-Q2 est ouverte.
+La question de formation est ouverte.
 
-Elle ne remplace pas Q1.
+Elle ne remplace pas le test de qualification, mais elle ne lui est pas non plus
+subordonnée comme ordre universel de recherche. Selon le cas, la formation d'un
+régime peut être étudiée avant que son statut de constance soit tranché.
 
 Elle devient un chantier de formation, de genese, de trajectoires et de
 conditions, avec passage par les statuts probatoires.
@@ -167,16 +170,20 @@ seuil electrofaible : entree de regime.
 
 #### 5.3 Acquis sur la philosophie du projet
 
-```text
 1. Le pan philosophique fournit des instruments, non une doctrine prete.
-2. Q2 est legitime, mais reste subordonnee au seuil Q1.
+2. La question de formation est légitime ; toute conclusion positive sur une
+   constance reste contrôlée par le test de qualification.
 3. Les voisinages Massimi, coordination, Duhem-Quine, Bachelard et metrologie
    eclairent le corpus sans le remplacer.
-4. Les tests C5 donnent une exportabilite bornee et discriminante.
-5. Les statuts probatoires P1-P6 doivent gouverner les futures redactions.
-```
+4. Les tests d'exportabilite hors physique donnent un resultat borne et
+   discriminant.
+5. Les six statuts probatoires (`P1-P6`) doivent gouverner les futures
+   redactions.
 
 ### 6. Ce qui a bouge depuis la v0.1
+
+Les codes d'hypotheses implicites (`HI-1` a `HI-7`) conservent ici la
+numerotation du diagnostic anterieur.
 
 #### 6.1 HI-1
 
@@ -260,16 +267,17 @@ seuil d'action controle.
 
 ### 7. Carte actuelle du projet
 
-```text
-Q1 : qualification des statuts de constance.
-T0 : stabilisation effective qualifiee, definie par effectuation/acces/qualification.
-T1-T10 : degagements elargis, sous controle de limites.
-Q2 : formation des statuts, ouverte par note genetique et pan philosophique.
-Architectures : quatre modes de solidarisation.
-Cycles : preuves locales et centres de gravite distincts.
-Philosophie : instruments de clarification, voisinages et tests bornes.
-Livrables : plans A1/A2 et papier A, a resserrer.
-```
+- `Q-qual` : qualification des statuts de constance.
+- `T0` : stabilisation effective qualifiee, definie par
+  effectuation/acces/qualification.
+- Les degagements theoriques `T1-T10` sont elargis, sous controle de limites.
+- `Q-form` : formation des statuts, ouverte par note génétique et pan
+  philosophique.
+- Architectures : quatre modes de solidarisation.
+- Cycles : preuves locales et centres de gravite distincts.
+- Philosophie : instruments de clarification, voisinages et tests bornes.
+- Livrables : premier plan sur la latitude (`A1`), second plan sur qualification
+  et coordination (`A2`) et papier A, a resserrer.
 
 ### 8. Points de friction actifs
 
@@ -282,7 +290,7 @@ Livrables : plans A1/A2 et papier A, a resserrer.
 | Test de retrait | Durcissement requis |
 | Plans de livrables | A resserrer apres la mise a jour v0.2 |
 | Pan philosophique | A garder comme instrument, non comme doctrine |
-| BEH / secteur scalaire | Zone de jonction a cadrer avant extension |
+| Mecanisme Brout-Englert-Higgs (BEH) / secteur scalaire | Zone de jonction a cadrer avant extension |
 
 ### 9. Strategie de synchronisation
 

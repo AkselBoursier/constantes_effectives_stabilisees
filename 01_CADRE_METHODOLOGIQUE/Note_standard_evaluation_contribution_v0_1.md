@@ -18,26 +18,25 @@ Ici, « originalité » peut désigner une niche où des questions restent à po
 
 ### Quatre critères
 
-```text
-C1 — conversation réelle : le débat, problème ou usage engagé est identifié ;
-C2 — recouvrement honnête : les voisins et équivalents sont reconnus et cités ;
-C3 — différenciation défendable : ce que le travail articule, clarifie,
-     compare, teste ou déplace est formulé précisément ;
-C4 — limites conservées : dettes, exclusions et conditions d’échec restent visibles.
-```
+- **Conversation réelle** : le débat, problème ou usage engagé est identifié.
+- **Recouvrement honnête** : les voisins et équivalents sont reconnus et cités.
+- **Différenciation défendable** : ce que le travail articule, clarifie,
+  compare, teste ou déplace est formulé précisément.
+- **Limites conservées** : dettes, exclusions et conditions d’échec restent
+  visibles.
 
 Le contrôle « est-ce déjà occupé ? » demeure obligatoire. Il sert à situer la contribution et à éviter la redite involontaire, non à éliminer automatiquement une piste.
 
 ### Deux axes distincts
 
-```text
-N — nouveauté : existe-t-il un résultat, énoncé ou protocole sans équivalent établi ?
-C — contribution : le travail améliore-t-il une conversation existante ?
-```
+La nouveauté demande s'il existe un résultat, un énoncé ou un protocole sans
+équivalent établi. La contribution demande si le travail améliore une
+conversation existante.
 
-Une contribution peut être forte avec `N = 0`. Une revendication de nouveauté exige un contrôle supplémentaire ; elle n’est jamais présupposée.
+Une contribution peut être forte sans nouveauté. Une revendication de nouveauté
+exige un contrôle supplémentaire ; elle n’est jamais présupposée.
 
-### Incidence sur Q1
+### Incidence sur le chantier Q (catégories, accès et inférences en microphysique)
 
 L’ancien audit a utilement établi l’absence de nouveauté quantique ou de thèse philosophique nouvelle. Ce constat empêche la survente, mais il ne mesure pas la contribution.
 

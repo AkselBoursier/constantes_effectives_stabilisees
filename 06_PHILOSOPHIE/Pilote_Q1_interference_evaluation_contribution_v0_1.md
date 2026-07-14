@@ -1,4 +1,4 @@
-# Pilote Q1 — Interférence : évaluation de contribution v0.1
+# Chantier Q (catégories, accès et inférences) — Interférence : évaluation de contribution v0.1
 
 ## Verdict synthétique
 
@@ -11,7 +11,7 @@ limites conservées : établies ;
 transférabilité générale de la matrice : non établie.
 ```
 
-## C1 — Conversations réelles
+## Conversations réelles
 
 Le test rejoint quatre conversations déjà constituées :
 
@@ -22,7 +22,7 @@ interprétation des effaceurs quantiques et du choix retardé ;
 statut épistémique de l’information, du résultat et de l’enregistrement.
 ```
 
-## C2 — Recouvrement honnête
+## Recouvrement honnête
 
 Les distinctions physiques centrales sont déjà disponibles :
 
@@ -34,7 +34,7 @@ Les distinctions physiques centrales sont déjà disponibles :
 
 Le projet ne doit donc pas présenter ces distinctions comme découvertes.
 
-## C3 — Différenciation proposée
+## Différenciation proposée
 
 La contribution candidate est une matrice à trois dimensions :
 
@@ -63,7 +63,7 @@ Cette coordination rend plus précises deux formulations fréquentes :
 
 Elles doivent préciser qui ou quoi « connaît », le statut de la corrélation, le niveau statistique considéré et l’opération de conditionnement.
 
-## C4 — Limites
+## Limites
 
 La matrice :
 
@@ -75,18 +75,21 @@ ne transforme pas une clarification pédagogique en résultat physique ;
 ne prétend pas que tous les usages d’« information » se réduisent à cinq statuts.
 ```
 
-## Incidence sur Q1
+## Incidence sur le chantier Q
 
-Le troisième test modifie le verdict précédent : l’absence de nouveauté ne clôt pas Q1. La matrice possède une contribution clarificatrice plausible parce qu’elle coordonne des distinctions techniques, expérimentales, inférentielles et communicationnelles souvent exposées séparément.
+Le troisième test modifie le verdict précédent : l’absence de nouveauté ne
+clôt pas le chantier Q. La matrice possède une contribution clarificatrice
+plausible parce qu’elle coordonne des distinctions techniques, expérimentales,
+inférentielles et communicationnelles souvent exposées séparément.
 
-Le niveau proposé devient :
+Les niveaux `C0–C4` (maturité de la contribution) donnent le verdict suivant :
 
 ```text
-Q0 — correction et documentation : établi ;
-Q1 — coordination de couches : établi ;
-Q2 — contribution différenciée : plausible, à éprouver bibliographiquement ;
-Q3 — protocole transférable : non établi ;
-Q4 — nouveauté substantielle : non recherchée.
+C0 — correction et documentation : établi ;
+C1 — coordination de couches : établi ;
+C2 — contribution différenciée : plausible, à éprouver bibliographiquement ;
+C3 — protocole transférable : non établi ;
+C4 — nouveauté substantielle : non recherchée.
 ```
 
 ## Suite

@@ -1,4 +1,4 @@
-# Pilote Q1 — Verdict provisoire v0.1
+# Chantier Q (catégories, accès et inférences) — Stern–Gerlach : verdict provisoire v0.1
 
 ## 0. Statut
 
@@ -98,14 +98,16 @@ découpage pédagogique entre étapes.
 
 Ces coupes n'ont pas les mêmes effets. Une théorie générale de la coupe n'est pas obtenue.
 
-## 6. Originalité
+## 6. Maturité de la contribution
+
+Les niveaux `C0–C4` désignent ici la maturité de la contribution.
 
 ```text
-Q0 — question classique correctement instruite : établi ;
-Q1 — jonction entre histoire, physique, épistémologie et pédagogie : plausible ;
-Q2 — distinction qui modifie l'analyse du cas : provisoirement satisfaite ;
-Q3 — résultat reproductible sur plusieurs cas : non établi ;
-Q4 — problème substantiellement nouveau : non revendiqué.
+C0 — correction correctement instruite : établi ;
+C1 — coordination entre histoire, physique, épistémologie et pédagogie : plausible ;
+C2 — contribution différenciée qui modifie l'analyse du cas : plausible ;
+C3 — résultat transférable sur plusieurs cas : non établi ;
+C4 — nouveauté substantielle : non revendiquée.
 ```
 
 ## 7. Limites

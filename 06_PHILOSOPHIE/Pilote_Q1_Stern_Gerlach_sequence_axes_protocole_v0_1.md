@@ -1,9 +1,9 @@
-# Pilote Q1 — Séquences d'axes : protocole v0.1
+# Chantier Q (catégories, accès et inférences) — Séquences d'axes : protocole v0.1
 
 ## Statut
 
 ```text
-statut : second test du pilote Q1, corrigé méthodologiquement ;
+statut : second test du chantier Q, corrigé méthodologiquement ;
 objet : séquences idéalisées d'analyseurs Stern–Gerlach de spin 1/2 ;
 fonction : distinguer préparation, sélection, analyse, séparation cohérente,
            décohérence et résultat terminal ;
@@ -71,7 +71,7 @@ P(+x | +z) = P(-x | +z) = 1/2.
 
 Ces relations décrivent le modèle idéal. Elles ne remplacent pas la dynamique spatiale, les champs réels, la résolution des détecteurs ou l'analyse de cohérence.
 
-## 4. Séquence S1 — `+z`, puis `z`
+## 4. Première séquence (`S1`) — `+z`, puis `z`
 
 ```text
 source -> SG_z -> sélection +z -> SG_z -> détection.
@@ -79,7 +79,7 @@ source -> SG_z -> sélection +z -> SG_z -> détection.
 
 La seconde analyse donne `+z` avec certitude dans le modèle idéal. Le premier dispositif ne fonctionne pas seulement comme mesure : sa sortie sélectionnée prépare le sous-ensemble soumis au second appareil.
 
-## 5. Séquence S2 — `+z`, puis `x`
+## 5. Deuxième séquence (`S2`) — `+z`, puis `x`
 
 ```text
 source -> SG_z, sélection +z -> SG_x -> détection.
@@ -89,7 +89,7 @@ Les sorties `+x` et `-x` sont équiprobables. L'orientation du second appareil n
 
 Ce résultat ne décide pas à lui seul si la propriété est créée, révélée, relationnelle ou seulement représentée par l'état.
 
-## 6. Séquence S3 — `+z`, sélection `+x`, puis `z`
+## 6. Troisième séquence (`S3`) — `+z`, sélection `+x`, puis `z`
 
 ```text
 source -> SG_z, sélection +z -> SG_x, sélection +x -> SG_z -> détection.

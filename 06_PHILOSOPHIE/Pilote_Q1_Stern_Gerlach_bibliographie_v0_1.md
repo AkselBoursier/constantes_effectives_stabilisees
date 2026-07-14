@@ -1,4 +1,4 @@
-# Pilote Q1 — Bibliographie raisonnée v0.1
+# Chantier Q (catégories, accès et inférences) — Stern–Gerlach : bibliographie raisonnée v0.1
 
 ## 0. Statut
 
@@ -8,6 +8,9 @@ fonction : distinguer source historique, reconstruction physique, analyse de mes
            séquences, cohérence, histoire/philosophie et recherche pédagogique ;
 limite : antériorité non exhaustive avant toute publication.
 ```
+
+L'identifiant d'objet numérique (`digital object identifier`, DOI) est donné
+lorsqu'il est disponible.
 
 ## 1. Expérience historique
 
@@ -39,7 +42,7 @@ Rôle : reconstruction historique et physique de la pluralité des résultats as
 
 Rôle : traitement quantique du mouvement dans un champ inhomogène, comparaison aux approximations semi-classiques, prédiction de focalisation et de retournements de spin, évaluation de la fiabilité de la mesure de projection.
 
-Gain pour Q1 : `mesure de S_z` est un statut de régime et d'approximation, non une identité indépendante du montage.
+Gain pour le chantier Q : `mesure de S_z` est un statut de régime et d'approximation, non une identité indépendante du montage.
 
 ### Fonseca-Romero, K. M. (2024, version révisée)
 
@@ -47,7 +50,7 @@ Gain pour Q1 : `mesure de S_z` est un statut de régime et d'approximation, non 
 
 Rôle : dérivation accessible de l'opérateur d'évolution, distinction espace physique / espace de spin et mise en évidence de la corrélation ou intrication position–spin.
 
-Gain pour Q1 : la trajectoire newtonienne est une approximation pédagogique possible, mais un traitement complet doit faire évoluer conjointement les degrés spatial et de spin.
+Gain pour le chantier Q : la trajectoire newtonienne est une approximation pédagogique possible, mais un traitement complet doit faire évoluer conjointement les degrés spatial et de spin.
 
 ### Reddy, A., Samuel, J., Shivam, K., & Sinha, S. (2016)
 
@@ -55,7 +58,7 @@ Gain pour Q1 : la trajectoire newtonienne est une approximation pédagogique pos
 
 Rôle : traitement unitaire du spin et de la position avec résolution finie des sondes de position.
 
-Gain pour Q1 : la partition des positions et la résolution de détection participent à l'information effectivement obtenue sur le spin.
+Gain pour le chantier Q : la partition des positions et la résolution de détection participent à l'information effectivement obtenue sur le spin.
 
 ## 3. Séquences, changements d'axe et reconstruction d'état
 
@@ -65,7 +68,7 @@ Gain pour Q1 : la partition des positions et la résolution de détection partic
 
 Rôle : probabilités de séquences idéalisées selon l'angle entre analyseurs et clarification de confusions fréquentes autour du spin 1/2.
 
-Gain pour Q1 : permet de séparer changement d'axe, probabilités conditionnelles et image d'un vecteur classique complet.
+Gain pour le chantier Q : permet de séparer changement d'axe, probabilités conditionnelles et image d'un vecteur classique complet.
 
 ### Amiet, J.-P., & Weigert, S. (1998)
 
@@ -73,7 +76,7 @@ Gain pour Q1 : permet de séparer changement d'axe, probabilités conditionnelle
 
 Rôle : reconstruction d'un état pur à partir de probabilités obtenues selon plusieurs directions.
 
-Gain pour Q1 : une seule distribution terminale ne suffit pas à déterminer l'état ou la préparation.
+Gain pour le chantier Q : une seule distribution terminale ne suffit pas à déterminer l'état ou la préparation.
 
 ## 4. Cohérence, séparation et recombinaison
 
@@ -87,7 +90,7 @@ Gain pour Q1 : une seule distribution terminale ne suffit pas à déterminer l'�
 
 Rôle : séparation et recombinaison cohérentes à l'aide de gradients magnétiques contrôlés sur puce atomique.
 
-Gain pour Q1 : empêche d'identifier automatiquement séparation spatiale et mélange classique ; rend l'accès à la phase expérimentalement pertinent.
+Gain pour le chantier Q : empêche d'identifier automatiquement séparation spatiale et mélange classique ; rend l'accès à la phase expérimentalement pertinent.
 
 ### Amit, O., et al. (2019)
 
@@ -111,7 +114,7 @@ Contrôle : ne pas confondre ce schéma avec les réalisations sur puce atomique
 
 Rôle : analyse historique et philosophique de la doctrine des concepts classiques comme thèse principalement fonctionnelle et épistémologique.
 
-Contrôle pour Q1 : distinguer nécessité fonctionnelle d'une description et émergence dynamique du classique ; ne pas conclure de la première à une ontologie fondamentale.
+Contrôle pour le chantier Q : distinguer nécessité fonctionnelle d'une description et émergence dynamique du classique ; ne pas conclure de la première à une ontologie fondamentale.
 
 ### Schlosshauer, M., & Camilleri, K. (2008)
 
@@ -119,7 +122,7 @@ Contrôle pour Q1 : distinguer nécessité fonctionnelle d'une description et é
 
 Rôle : distinction entre plusieurs formulations de la doctrine des concepts classiques et analyse de son rapport à la décohérence.
 
-Gain pour Q1 : empêcher que `classique` soit traité comme une catégorie univoque.
+Gain pour le chantier Q : empêcher que `classique` soit traité comme une catégorie univoque.
 
 ## 6. Recherche pédagogique
 
@@ -129,7 +132,7 @@ Gain pour Q1 : empêcher que `classique` soit traité comme une catégorie univo
 
 Rôle : enquête sur les difficultés d'étudiants et usage de Stern–Gerlach pour enseigner préparation d'état, évolution, mesure, bases, espace physique / espace de Hilbert et différence entre mélange et superposition.
 
-Gain pour Q1 : les catégories pédagogiques ne sont pas neutres ; elles peuvent faciliter une opération tout en créant une confusion à une étape ultérieure.
+Gain pour le chantier Q : les catégories pédagogiques ne sont pas neutres ; elles peuvent faciliter une opération tout en créant une confusion à une étape ultérieure.
 
 ## 7. Sources différées
 
@@ -139,7 +142,8 @@ Une seconde passe devra examiner :
 théorie des instruments quantiques et règle de Lüders ;
 mesures sélectives et non sélectives ;
 modèles complets de l'appareil et de la détection ;
-POVM appliquées au cas ;
+mesures à valeurs dans les opérateurs positifs (`positive operator-valued
+measures`, POVM) appliquées au cas ;
 décohérence de chemin et états réduits ;
 philosophie de la préparation comme opération ;
 littérature sur contextualité, propriété et attribution ;

@@ -1,4 +1,4 @@
-# Pilote Q1 — Stern–Gerlach : cadrage physique et niveaux v0.1
+# Chantier Q (catégories, accès et inférences) — Stern–Gerlach : cadrage physique et niveaux v0.1
 
 ## 0. Statut
 
@@ -11,7 +11,7 @@ limite : ni revue exhaustive, ni théorie de la mesure, ni choix d'interprétati
 
 ## 1. Trois Stern–Gerlach à distinguer
 
-### H — expérience historique de 1922
+### Expérience historique de 1922 (`H`)
 
 Le dispositif de Gerlach et Stern produisait un faisceau d'atomes d'argent à partir d'un four, le collimatait par deux ouvertures, le faisait passer le long d'un aimant fortement inhomogène, puis déposait les atomes sur une plaque de verre. L'exposition durait plusieurs heures et le dépôt devait être développé pour devenir visible.
 
@@ -28,7 +28,7 @@ interprétation rétrospective : signature compatible avec un degré de liberté
 
 Le spin électronique n'était pas encore formulé en 1922. L'expérience historique ne doit donc pas être décrite comme si ses auteurs avaient directement préparé puis mesuré un qubit de spin au sens moderne.
 
-### I — modèle quantique idéalisé
+### Modèle quantique idéalisé (`I`)
 
 Le modèle moderne minimal traite un atome neutre possédant un moment magnétique et un degré de liberté spatial. Une écriture courante est :
 
@@ -78,7 +78,7 @@ attribution des étiquettes + et -.
 
 Le déplacement spatial n'est pas le spin lui-même. Il constitue une corrélation exploitée pour inférer une composante de spin à partir d'une position détectée.
 
-### M — dispositifs modernes ou séquentiels
+### Dispositifs modernes ou séquentiels (`M`)
 
 Les dispositifs appelés Stern–Gerlach aujourd'hui peuvent servir à :
 

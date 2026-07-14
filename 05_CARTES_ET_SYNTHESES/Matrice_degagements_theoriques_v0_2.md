@@ -6,11 +6,14 @@
 statut : matrice théorique active ;
 remplace pour l’usage courant : Matrice_degagements_theoriques_v0_1.md ;
 conserve la v0.1 : comme généalogie des premières formulations ;
-principe : objet > constitution > accès.
+principe : distinction objet / constitution / accès, avec ordre local selon
+           l'objet et la question.
 ```
 
-Cette matrice ne hiérarchise pas la valeur scientifique des documents. Elle
-hiérarchise les questions philosophiques qu’ils permettent de poser.
+Cette matrice ne hiérarchise ni la valeur scientifique des documents ni les
+portes d'entrée de toute enquête. Les rangs I, II et III identifient le niveau
+visé par une proposition. Leur ordre sert ici la lecture du critère de
+constance ; il n'est pas une doctrine universelle.
 
 ## 1. Trois familles de dégagements
 
@@ -21,6 +24,9 @@ hiérarchise les questions philosophiques qu’ils permettent de poser.
 | III | Accès et qualification | comment l’attribution est-elle établie, contrainte ou suspendue ? |
 
 ## 2. Thèse-noyau
+
+La thèse-noyau (`T0`) désigne le critère commun de qualification d'une
+constance.
 
 | Code | Dégagement | Formulation active | Rang |
 |---|---|---|---|
@@ -34,7 +40,7 @@ T0 est le seuil commun. Il peut produire une admission ou un refus.
 |---|---|---|---|
 | T1 | Pluralité des statuts de constance | Les constances physique, effective et métrologique répondent à des critères distincts et ne forment pas une espèce naturelle homogène | transversal défendable |
 | T2 | Régime de validité | Une fixité peut être réelle dans un domaine sans valoir hors de ce domaine | fort dans les théories effectives |
-| T7 | Exactitude et invariance | Une valeur exacte par définition ne démontre pas à elle seule une invariance physique | fort dans le SI |
+| T7 | Exactitude et invariance | Une valeur exacte par définition ne démontre pas à elle seule une invariance physique | fort dans le Système international d'unités (SI) |
 | T10 | Pouvoir de refus | Le cadre est non trivial s’il refuse borne, paramètre d’état, reconstruction ou coefficient incomplet lorsqu’aucune fixité de l’objet n’est établie | garde-fou transversal |
 
 ## 4. Dégagements de rang II — constitution
@@ -58,8 +64,10 @@ Les codes T11 et T12 sont ajoutés par la resynchronisation avec les cycles 9 et
 | T6 | Limite qualifiée | Une borne, tension ou non-détection stabilise un domaine admissible ou un niveau de maturité, non une constance de l’objet | garde-fou fort |
 | T8 | Reconstruction cosmologique | Une reconstruction peut être robuste dans un modèle et demeurer un paramètre d’état ou une observable inférée | fort comme analyse d’accès |
 
-Ces dégagements sont indispensables à la rigueur. Ils occupent cependant un rang
-philosophique subordonné dans l’orientation actuelle du projet.
+Ces dégagements sont indispensables à la rigueur. Leur fonction devient
+centrale lorsque l'objet étudié est une mesure, une reconstruction, une trace
+ou un dispositif expérimental ; ils ne suffisent simplement pas, à eux seuls,
+à établir une constance de l'objet.
 
 ## 6. Reclassement des anciennes expressions
 
@@ -80,11 +88,11 @@ indiquer le rang.
 | Cas | Rang I | Rang II | Rang III |
 |---|---|---|---|
 | `G_F` | constance effective | médiation électrofaible, séparation d’échelles | extractions faibles |
-| `h` SI | constance métrologique | définition et réalisation | chaînes métrologiques |
+| `h` dans le Système international d'unités (SI) | constance métrologique | définition et réalisation | chaînes métrologiques |
 | `H_0` | refus comme constante nomologique | histoire de l’expansion | reconstruction et tension |
 | neutrinos, borne de masse | aucun verdict positif de constance | constitution du secteur ouverte | bornes hétérogènes |
-| CKM / PMNS | structures traitées comme fixes dans le modèle | diagonalisation et constitution de secteur | fits et oscillations |
-| cycle 10 | quasi-fixité à établir | dynamique et bilan énergétique | contraintes BBN et tardives |
+| matrices de Cabibbo–Kobayashi–Maskawa (CKM) et de Pontecorvo–Maki–Nakagawa–Sakata (PMNS) | structures traitées comme fixes dans le modèle | diagonalisation et constitution de secteur | ajustements et oscillations |
+| cycle 10 | quasi-fixité à établir | dynamique et bilan énergétique | contraintes de nucléosynthèse primordiale (BBN) et tardives |
 
 ## 8. Questions ouvertes prioritaires
 
@@ -124,7 +132,7 @@ une généralisation des toy models à l’histoire cosmique réelle.
 
 ## 10. Architecture de livrable
 
-Un livrable resserré doit suivre l’ordre :
+Le papier A peut suivre l'ordre argumentatif local suivant :
 
 ```text
 T0 : critère et pouvoir de refus ;
@@ -137,5 +145,6 @@ T11/T12 : programme dynamique différé ou second papier.
 ## 11. Formule de contrôle
 
 > Les accès disent avec quelle force nous pouvons attribuer une fixité ; les
-> mécanismes disent comment elle peut se constituer ; la thèse de constance porte
-> d’abord sur ce qui tient effectivement dans l’objet ou la relation.
+> mécanismes disent comment elle peut se constituer ; le test de l'objet dit si
+> le qualificatif de constante est justifié. Selon le cas, chacune de ces
+> questions peut ouvrir l'enquête et conduire à reformuler les autres.

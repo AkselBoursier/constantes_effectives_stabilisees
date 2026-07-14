@@ -1,4 +1,4 @@
-# Pilote Q1 — Séquences d'axes : verdict v0.1
+# Chantier Q (catégories, accès et inférences) — Séquences d'axes : verdict v0.1
 
 ## Statut
 
@@ -93,18 +93,23 @@ La théorie des instruments quantiques possède déjà les distinctions entre op
 
 Sa possibilité propre reste de croiser ces distinctions formelles avec les fonctions matérielles, inférentielles, communicationnelles, pédagogiques et ontologiques des mêmes catégories, puis de tester cette matrice sur plusieurs expériences.
 
-## 7. Originalité après le second test
+## 7. Maturité après le second test
+
+Les niveaux `C0–C4` désignent ici la maturité de la contribution.
 
 ```text
-Q0 : établi ;
-Q1 : renforcé ;
-Q2 : provisoirement satisfait ;
-Q3 : non établi ;
-Q4 : non revendiqué.
+C0 : établi ;
+C1 : renforcé ;
+C2 : plausible ;
+C3 : non établi ;
+C4 : non revendiqué.
 ```
 
 ## 8. Suite recommandée
 
-Une troisième variante de Stern–Gerlach apporterait peu. Le prochain test de Q1 devrait changer de type d'accès : expérience d'information de chemin et d'interférence, avec comparaison de `chemin`, `trace`, `visibilité`, `information`, `enregistrement`, `décohérence` et `événement`.
+Une troisième variante de Stern–Gerlach apporterait peu. Le prochain test du
+chantier Q devait changer de type d'accès : expérience d'information de chemin
+et d'interférence, avec comparaison de `chemin`, `trace`, `visibilité`,
+`information`, `enregistrement`, `décohérence` et `événement`.
 
 > Le second test montre qu'une catégorie classique distribue plusieurs fonctions dans une chaîne expérimentale, et qu'une même donnée finale peut perdre l'information permettant de distinguer plusieurs chaînes. La question porte sur ce que chaque accès autorise à attribuer, non sur une opposition globale entre langage classique et réalité quantique.

@@ -164,6 +164,25 @@ reponse ;
 les operations Git distantes restent regulieres mais moins frequentes.
 ```
 
+### 5.1 Exception stricte pour l'environnement ChatGPT classic
+
+Dans l'environnement ChatGPT classic utilisé par l'auteur pour le présent
+chantier, la limitation des pushs motivée par l'économie de la fenêtre de
+contexte ne s'applique pas. Cet environnement est limité par le temps
+d'utilisation, non par un budget de tokens de conversation.
+
+Règle locale :
+
+```text
+l'agent peut pousser un commit cohérent à sa discrétion ;
+il n'a pas à attendre un jalon substantiel pour la seule économie de contexte ;
+il conserve les contrôles Git et documentaires proportionnés au risque.
+```
+
+Cette exception ne s'étend pas aux autres environnements. Elle ne transforme
+pas non plus un push en validation conceptuelle, en fusion vers `main` ou en
+autorisation de modifier le périmètre du chantier.
+
 ### 6. Controle editorial et verification
 
 Les controles doivent suivre le risque.

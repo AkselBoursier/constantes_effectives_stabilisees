@@ -1,8 +1,16 @@
-# Programme Q1 — Catégories, accès et inférences en microphysique
+# Chantier Q (catégories, accès et inférences en microphysique)
 
 ## Standard actif
 
-Q1 n’est plus évalué par la recherche d’une nouveauté. Il est évalué comme contribution à des conversations existantes selon quatre critères : conversation identifiée, recouvrement reconnu, différenciation défendable et limites conservées.
+Le chantier Q, consacré aux catégories, aux accès et aux inférences en
+microphysique, n’est plus évalué par la seule recherche d’une nouveauté. Il est
+évalué comme contribution à des conversations existantes selon quatre critères :
+conversation identifiée, recouvrement reconnu, différenciation défendable et
+limites conservées.
+
+Il ne doit pas être confondu avec la question de qualification (`Q-qual`) ni
+avec la question de formation (`Q-form`). Les codes `C0–C4` employés ci-dessous
+désignent uniquement la maturité de la contribution.
 
 Points d’entrée méthodologiques :
 
@@ -25,18 +33,24 @@ Rang : calibration correcte et premier matériau de contribution sur les relatio
 2. [Fonctions et migrations](Pilote_Q1_interference_fonctions_v0_1.md)
 3. [Évaluation de contribution](Pilote_Q1_interference_evaluation_contribution_v0_1.md)
 
-Rang : troisième test de Q1. Il distingue indication encodée, accessible, lue, enregistrée et utilisée dans une inférence. Il ne revendique aucune nouveauté en mécanique quantique.
+Rang : troisième test du chantier Q. Il distingue indication encodée,
+accessible, lue, enregistrée et utilisée dans une inférence. Il ne revendique
+aucune nouveauté en mécanique quantique.
 
 ## Verdict actuel
 
 ```text
-Q0 — correction et documentation : établi ;
-Q1 — coordination de couches : établi ;
-Q2 — contribution différenciée : plausible, à contrôler bibliographiquement ;
-Q3 — protocole transférable : non établi ;
-Q4 — nouveauté substantielle : non recherchée.
+C0 — correction et documentation : établi ;
+C1 — coordination de couches : établi ;
+C2 — contribution différenciée : plausible, à contrôler bibliographiquement ;
+C3 — protocole transférable : non établi ;
+C4 — nouveauté substantielle : non recherchée.
 ```
 
 ## Suite
 
-La prochaine opération est un positionnement bibliographique ciblé de la contribution Q2, non un quatrième cas. Il faudra comparer la matrice aux analyses existantes de la complémentarité, des usages de l’information, des pratiques expérimentales et des migrations entre formalisme, dispositif et discours.
+La prochaine opération est un positionnement bibliographique ciblé de la
+contribution candidate de niveau `C2`, non un quatrième cas. Il faudra comparer
+la matrice aux analyses existantes de la complémentarité, des usages de
+l’information, des pratiques expérimentales et des migrations entre formalisme,
+dispositif et discours.

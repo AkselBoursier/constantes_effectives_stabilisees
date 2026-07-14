@@ -1,22 +1,31 @@
 # 06_PHILOSOPHIE
 
-## Pilote actif — Q1 Stern–Gerlach
+## Chantier actif — catégories, accès et inférences en microphysique
 
-Branche : `agent/pilote-q1-stern-gerlach`
+Branche : `agent/contribution-q1-information-chemin`
 
-Le pilote teste une typologie fonctionnelle des catégories classiques en distinguant trois objets : l'expérience historique de 1922, le modèle quantique idéalisé et les dispositifs modernes ou séquentiels.
+Le chantier Q (catégories, accès et inférences en microphysique) étudie les
+fonctions des catégories dans la préparation, le contrôle, l'enregistrement,
+l'inférence et la communication. Il ne doit pas être
+confondu avec la question de qualification (`Q-qual`) ni avec la question de
+formation (`Q-form`). Les niveaux `C0–C4` désignent la maturité d'une
+contribution.
 
 Ordre de lecture :
 
-1. [Entrée du pilote](PILOTE_Q1_STERN_GERLACH_README.md)
-2. [Cadrage physique et niveaux](Pilote_Q1_Stern_Gerlach_cadrage_physique_v0_1.md)
-3. [Matrice des fonctions](Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md)
-4. [Verdict provisoire](Pilote_Q1_Stern_Gerlach_verdict_v0_1.md)
-5. [Bibliographie raisonnée](Pilote_Q1_Stern_Gerlach_bibliographie_v0_1.md)
+1. [Entrée du chantier Q](PROGRAMME_Q1_CONTRIBUTION_README.md)
+2. [Dossier Stern–Gerlach](PILOTE_Q1_STERN_GERLACH_README.md)
+3. [Interférence — cadrage](Pilote_Q1_interference_cadrage_v0_1.md)
+4. [Interférence — fonctions et migrations](Pilote_Q1_interference_fonctions_v0_1.md)
+5. [Interférence — évaluation de contribution](Pilote_Q1_interference_evaluation_contribution_v0_1.md)
 
-Le second test sur les séquences d'axes est accessible depuis l'entrée du pilote. Il distingue préparation, sélection, séparation cohérente, décohérence et résultat terminal.
+Stern–Gerlach et les séquences d'axes servent de calibration. Le troisième test
+sur l'interférence distingue une indication encodée, accessible, lue,
+enregistrée ou utilisée pour conditionner une inférence.
 
-Statut : deux tests produits ; Q2 provisoirement renforcé ; Q3 non établi. La prochaine comparaison porte sur l'information de chemin et l'interférence.
+Statut : coordination de couches établie (`C1`) ; contribution différenciée
+plausible (`C2`) ; protocole transférable non établi (`C3`). La prochaine
+opération est le positionnement bibliographique de `C2`.
 
 ## Charte de la branche philosophique v0.1
 

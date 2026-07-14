@@ -1,19 +1,19 @@
-# Pilote Q1 — Matrice des fonctions des catégories v0.1
+# Chantier Q (catégories, accès et inférences) — Stern–Gerlach : matrice des fonctions v0.1
 
 ## 0. Légende
 
-```text
-PREP — préparation ou individuation de l'objet d'étude ;
-OPER — réglage, intervention ou contrôle matériel ;
-FORM — rôle dans le modèle, le calcul ou la représentation ;
-ENR  — enregistrement ou stabilisation d'une trace ;
-INF  — inférence à partir des traces ;
-COM  — description publique et reproductible ;
-PED  — fonction pédagogique ;
-ONT? — risque d'engagement ontologique excédant la fonction établie.
-```
+- La préparation ou l'individuation de l'objet d'étude est notée `PREP`.
+- Le réglage, l'intervention ou le contrôle matériel sont notés `OPER`.
+- Le rôle dans le modèle, le calcul ou la représentation est noté `FORM`.
+- L'enregistrement ou la stabilisation d'une trace sont notés `ENR`.
+- L'inférence à partir des traces est notée `INF`.
+- La description publique et reproductible est notée `COM`.
+- La fonction pédagogique est notée `PED`.
+- Le risque d'engagement ontologique excédant la fonction établie est noté
+  `ONT?`.
 
-Les colonnes `H`, `I` et `M` désignent respectivement l'expérience historique, le modèle quantique idéalisé et les dispositifs modernes ou séquentiels.
+Les colonnes distinguent l'expérience historique (`H`), le modèle quantique
+idéalisé (`I`) et les dispositifs modernes ou séquentiels (`M`).
 
 ## 1. Vue synthétique
 

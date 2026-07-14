@@ -18,14 +18,16 @@ chaîne : sa fonction varie selon les objets, les pratiques et les questions.
 
 ## 1. Formule directrice rectifiée
 
-> La constitution ouvre l'enquête ; la différenciation en est l'opération
-> comparative centrale ; l'accès traverse l'enquête en déterminant comment
-> les objets, propriétés, phénomènes, traces et preuves deviennent disponibles,
-> attribuables, reconstruisibles et communicables.
+> Le point d'entrée dépend de l'objet et de la question. Constitution,
+> différenciation et accès désignent des fonctions distinctes mais couplées de
+> l'enquête : chacune peut conduire à reformuler les deux autres, sans devenir
+> pour autant leur principe universel.
 
 Cette formule n'établit pas trois substances ni trois rangs ontologiques.
-Elle distingue trois fonctions de recherche dont les rapports varient selon
-les cas.
+Elle distingue trois fonctions de recherche dont les rapports, l'ordre et le
+poids varient selon les cas. La constitution peut ouvrir une enquête physique ;
+une difficulté d'accès peut obliger à redéfinir l'objet ; un test de fixité peut
+conduire à reprendre le mécanisme constitutif.
 
 ## 2. L'accès comme dimension transversale et plurielle
 
@@ -61,24 +63,23 @@ réduire l'accès à une vérification ajoutée après la physique ;
 conclure que le dispositif constitue à lui seul la réalité physique.
 ```
 
-## 3. Ordre heuristique révisé
+## 3. Articulation heuristique révisée
 
-L'ordre de recherche reste orienté par la constitution, mais il n'est plus une
-chaîne où l'accès n'apparaît qu'au dernier terme.
+Il n'existe pas d'ordre de recherche valable pour tous les objets. Une enquête
+peut entrer par l'une des questions suivantes :
 
 ```text
-constitution ou conditions de régime
--> identification de l'objet, de la relation ou du comportement
--> différenciation conceptuelle et physique
--> qualification éventuelle
-
-à chaque étape : explicitation des accès pertinents, de leurs opérations,
-de leurs dépendances et de leurs limites.
+constitution : qu'est-ce qui rend le régime ou la relation opératoire ?
+objet : quel porteur et quelle fixité sont effectivement testés ?
+accès : comment l'objet, la trace ou la preuve devient-il disponible ?
+différenciation : quelles confusions le vocabulaire commun masque-t-il ?
+qualification : quel statut et quelles limites peut-on finalement soutenir ?
 ```
 
-Dans certains cas, une question d'accès peut obliger à reformuler l'objet ou la
-constitution recherchée. Stern–Gerlach, les reconstructions cosmologiques et
-la métrologie SI ne donnent pas le même poids ni la même fonction à l'accès.
+Ces questions forment une boucle contrôlée, non une chaîne. Stern–Gerlach, les
+reconstructions cosmologiques et le Système international d'unités (SI) ne
+donnent pas le même poids ni la même fonction à l'accès, à la constitution ou
+au test de l'objet.
 
 ## 4. Retrait du terme général « fixité dynamique »
 
@@ -194,11 +195,14 @@ confère aucune autorité épistémique supplémentaire.
 
 ## 8. Séquence de travail validée
 
+Le chantier Q (catégories, accès et inférences en microphysique) désigne le
+dossier auquel se rapporte la quatrième opération.
+
 ```text
 1. rectifier la place de l'accès et le vocabulaire de stabilisation ;
 2. assimiler les cinq critiques et l'analyse selon plusieurs registres ;
 3. constituer une réserve pédagogique séparée des arguments ;
-4. lancer le pilote Q1 sur Stern–Gerlach avec une conception plurielle de l'accès.
+4. lancer le premier dossier du chantier Q sur Stern–Gerlach avec une conception plurielle de l'accès.
 ```
 
 ## 9. Formule de clôture

@@ -14,27 +14,30 @@ conversation identifiée
 
 ## Documents à relire
 
-```text
-Cadrage_cycle_questions_contemporaines_v0_1.md ;
-Registre_questions_candidates_originales_v0_1.md ;
-Selection_programme_recherche_v0_1.md ;
-verdicts du pilote Q1 ;
-descriptions des PR nº 11 et nº 12.
-```
+- `Cadrage_cycle_questions_contemporaines_v0_1.md` ;
+- `Registre_questions_candidates_originales_v0_1.md` ;
+- `Selection_programme_recherche_v0_1.md` ;
+- les verdicts du dossier Stern–Gerlach du chantier Q (catégories, accès et
+  inférences en microphysique) ;
+- les descriptions des demandes de fusion (`pull requests`, PR) nº 11 et nº 12.
 
 Le constat qu’une question est déjà occupée reste utile. Il ne permet plus de conclure que le travail est sans valeur.
 
 ## Niveaux révisés
 
+Les niveaux `C0–C4` (maturité d'une contribution) sont désormais :
+
 ```text
-Q0 — correction et documentation du cas ;
-Q1 — coordination de couches ou de littératures ;
-Q2 — contribution différenciée à une conversation ;
-Q3 — protocole transférable et publiquement contrôlable ;
-Q4 — nouveauté substantielle éventuelle, jamais requise.
+C0 — correction et documentation du cas ;
+C1 — coordination de couches ou de littératures ;
+C2 — contribution différenciée à une conversation ;
+C3 — protocole transférable et publiquement contrôlable ;
+C4 — nouveauté substantielle éventuelle, jamais requise.
 ```
 
-Une contribution Q2 peut consister en une clarification, une articulation, un test, un déplacement de question ou une ressource méthodologique ou pédagogique.
+Une contribution de niveau `C2` peut consister en une clarification, une
+articulation, un test, un déplacement de question ou une ressource
+méthodologique ou pédagogique.
 
 ## Ordre des futurs audits
 
@@ -46,4 +49,6 @@ Une contribution Q2 peut consister en une clarification, une articulation, un te
 5. nouveauté éventuelle, seulement si elle est revendiquée.
 ```
 
-La PR nº 13 est remplacée comme voie active. Son historique reste conservé. La nouvelle branche reprend Q1 avant cet audit et ouvre l’évaluation de contribution ainsi que le troisième test.
+La PR nº 13 est remplacée comme voie active. Son historique reste conservé. La
+nouvelle branche reprend le chantier Q avant cet audit et ouvre l’évaluation de
+contribution ainsi que le troisième test.

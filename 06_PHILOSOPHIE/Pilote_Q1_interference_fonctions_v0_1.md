@@ -1,4 +1,4 @@
-# Pilote Q1 — Interférence : fonctions et migrations v0.1
+# Chantier Q (catégories, accès et inférences) — Interférence : fonctions et migrations v0.1
 
 ## 1. Catégorie « voie »
 
@@ -13,15 +13,13 @@ Le mot « voie » migre donc du montage au formalisme, puis du formalisme à une
 
 ## 2. Catégorie « information »
 
-Le test distingue cinq statuts :
+Le test distingue cinq statuts d'information :
 
-```text
-I1 — corrélation encodée ;
-I2 — distinguabilité en principe par une opération ;
-I3 — donnée effectivement lue ;
-I4 — trace enregistrée et partageable ;
-I5 — donnée utilisée pour conditionner une inférence.
-```
+- la corrélation encodée (`I1`) ;
+- la distinguabilité en principe par une opération (`I2`) ;
+- la donnée effectivement lue (`I3`) ;
+- la trace enregistrée et partageable (`I4`) ;
+- la donnée utilisée pour conditionner une inférence (`I5`).
 
 Ces statuts ne sont pas équivalents. La perte de visibilité peut apparaître dès `I1–I2`, sans lecture effective `I3`. Une attribution empirique de voie demande en revanche une opération et un résultat pertinents.
 

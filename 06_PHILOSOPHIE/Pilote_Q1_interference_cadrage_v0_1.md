@@ -1,9 +1,9 @@
-# Pilote Q1 — Interférence et marquage des voies : cadrage v0.1
+# Chantier Q (catégories, accès et inférences) — Interférence et marquage des voies : cadrage v0.1
 
 ## Statut
 
 ```text
-rang : troisième test de Q1 ;
+rang : troisième test du chantier Q ;
 objet : interféromètre à deux voies avec marqueur quantique ;
 cible : contribution à des conversations existantes, non nouveauté physique.
 ```

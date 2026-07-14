@@ -13,22 +13,24 @@ condition : aucune thèse générale avant positionnement et tests.
 
 Chaque chantier doit établir :
 
-```text
-C1 — conversation réelle ;
-C2 — recouvrement honnête ;
-C3 — différenciation défendable ;
-C4 — limites conservées.
-```
+- conversation réelle ;
+- recouvrement honnête ;
+- différenciation défendable ;
+- limites conservées.
 
-Les niveaux deviennent :
+Les niveaux `C0–C4` (maturité d'une contribution) deviennent :
 
 ```text
-Q0 — correction et documentation ;
-Q1 — coordination de couches ;
-Q2 — contribution différenciée ;
-Q3 — protocole transférable ;
-Q4 — nouveauté substantielle éventuelle, non requise.
+C0 — correction et documentation ;
+C1 — coordination de couches ;
+C2 — contribution différenciée ;
+C3 — protocole transférable ;
+C4 — nouveauté substantielle éventuelle, non requise.
 ```
+
+Cette échelle ne doit pas être confondue avec la question de qualification
+(`Q-qual`), la question de formation (`Q-form`) ni avec le chantier Q consacré
+à la microphysique.
 
 ## Chantier Q — Catégories, accès et inférences en microphysique
 
@@ -49,7 +51,7 @@ x inférence autorisée ou interdite.
 
 Tests produits : Stern–Gerlach ; séquences d’axes ; interférence et marquage des voies.
 
-Statut : `Q2 plausible`, à positionner bibliographiquement. L’absence de nouveauté physique n’invalide pas cette contribution clarificatrice.
+Statut : niveau `C2` — contribution différenciée — plausible, à positionner bibliographiquement. L’absence de nouveauté physique n’invalide pas cette contribution clarificatrice.
 
 ## Chantier M — Portée explicative des mécanismes
 
@@ -57,7 +59,8 @@ Question :
 
 > Lorsqu’un mécanisme est présenté comme une explication, explique-t-il une valeur, une relation, un domaine d’opérativité, une robustesse ou le transfert d’une dépendance ?
 
-Conversations engagées : mécanismes, explication, EFT, naturalité, brisure de symétrie et dépendances de modèles.
+Conversations engagées : mécanismes, explication, théorie effective des champs
+(EFT), naturalité, brisure de symétrie et dépendances de modèles.
 
 Contribution visée : matrice intersectorielle comparant objet expliqué, relation dérivée, valeur libre, domaine, corrections, contingence déplacée et dette nouvelle.
 
@@ -76,9 +79,9 @@ Contribution visée : protocole comparatif reproductible sur des paquets de cont
 ## Ordre révisé
 
 ```text
-1. positionner bibliographiquement la contribution Q1 ;
-2. appliquer M1 à G_F ;
-3. concevoir A1 sans lancement massif ;
+1. positionner bibliographiquement la contribution candidate du chantier Q ;
+2. appliquer le premier test du chantier M (`M1`) à G_F ;
+3. concevoir le premier protocole du chantier A (`A1`) sans lancement massif ;
 4. comparer la forme des contributions Q, M et A ;
 5. choisir le programme principal selon utilité, robustesse et faisabilité.
 ```

@@ -84,7 +84,7 @@ architecture sans preciser le niveau.
 
 ## Sources primaires et extractions
 
-- Les DOCX et `Ecriture.txt` sont des sources primaires : ne pas les
+- Les documents Microsoft Word (`DOCX`) et `Ecriture.txt` sont des sources primaires : ne pas les
   supprimer, les renommer ou les reecrire.
 - Ils sont ranges dans les dossiers thematiques `00_Sources_docx`.
 - Les fichiers `Source_docx_*` et `Source_txt_*` sont des extractions de
@@ -95,9 +95,37 @@ architecture sans preciser le niveau.
   verification.
 - Le
   [registre des sources primaires](05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md)
-  associe chaque source a son extraction et a son SHA-256.
+  associe chaque source a son extraction et a son empreinte produite par
+  l'algorithme de hachage securise sur 256 bits (`SHA-256`).
 - La [convention des placeholders](CONVENTION_PLACEHOLDERS.md) fixe les
   avertissements et les statuts a conserver.
+- Les exports de conversation `ChatGPT-Recherche sur les constantes.json` et
+  `ChatGPT-Recherche sur les constantes.md` sont des sources brutes de
+  provenance. Ne pas les normaliser ni corriger leurs titres repetes ; ces
+  repetitions peuvent produire des avertissements d'audit attendus.
+- Lire leur extraction raisonnee dans
+  `05_CARTES_ET_SYNTHESES/Extraction_questions_conversation_cycles_1_a_3_v0_1.md`
+  plutot que de tirer directement une attribution intellectuelle des roles de
+  conversation.
+
+## Archive des travaux anterieurs
+
+Le dossier `91_TRAVAUX_ANTERIEURS` est une archive genealogique placee a la
+racine. Ce n'est ni une branche Git, ni un cadre actif, ni un reservoir a
+reinjecter automatiquement.
+
+Regles :
+
+1. lire d'abord son `README.md` ;
+2. employer les documents pour reperer des antecedents, bifurcations, abandons
+   et reformulations ;
+3. ne restaurer aucun concept, resultat ou vocabulaire sans comparaison avec
+   l'etat actif, verification scientifique et validation humaine ;
+4. ne pas inferer la chronologie d'origine depuis la seule date du commit Git ;
+5. ne pas reproduire les identifiants, adresses, liens de conversation ou URL
+   signees contenus dans les exports bruts ;
+6. traiter les notes anciennes sur la mesure comme antecedents en quarantaine,
+   non comme cadrage actuel du futur chantier.
 
 ## Regles intellectuelles
 
@@ -113,6 +141,51 @@ architecture sans preciser le niveau.
    de l'objet.
 7. Ne pas convertir un toy model en histoire cosmique realisee.
 8. Ne pas convertir une ouverture ontologique en resultat physique.
+
+## Provenance humaine et modeles de langage
+
+Le role affiche dans une conversation renseigne la provenance textuelle d'une
+phrase, pas sa propriete intellectuelle complete.
+
+Regles :
+
+1. Ne pas inferer, depuis l'alternance `Prompt` / `Response`, qui a fourni seul
+   l'intuition, l'orientation ou la rigueur d'une question.
+2. Distinguer la formulation visible, les recherches et intuitions anterieures,
+   la selection des pistes, la redirection, la redaction et la validation.
+3. Lorsque l'archive ne permet pas une attribution fine, parler de construction
+   distribuee ou de co-construction, non d'invention exclusive.
+4. Ne pas reduire l'auteur a l'approbation de propositions, ni attribuer a
+   l'auteur toute phrase produite par un modele.
+5. Limiter les indications de provenance aux endroits ou elles eclairent une
+   decision, une bifurcation ou une responsabilite scientifique. Ne pas ajouter
+   de didascalies d'attribution dans chaque fiche.
+6. Une attribution juridique ou editoriale exige un protocole propre et ne
+   doit pas etre deduite d'une extraction de conversation.
+7. Appliquer une condition d'arret : lorsque les traces suffisent a eviter une
+   fausse attribution et a comprendre la decision, ne pas poursuivre la fouille
+   pour etablir une propriete intellectuelle. La genealogie n'est rouverte que
+   pour une question scientifique, editoriale ou historique determinee.
+
+## Lisibilite des sigles et des codes
+
+Un sigle ou un code reste utile pour naviguer, mais il ne doit jamais etre le
+seul moyen de comprendre une phrase.
+
+Regle de redaction : a la premiere occurrence dans un document, donner le nom
+ou la fonction en toutes lettres, directement dans la phrase, puis le code
+entre parentheses. Exemples : `mecanisme Brout-Englert-Higgs (BEH)`, `Systeme
+international d'unites (SI)` ou `question de qualification (Q-qual)`.
+
+Les conventions actives sont la question de qualification de la constance
+(`Q-qual`), la question de formation, de maintien ou de dissolution d'un statut
+(`Q-form`), le chantier sur les categories, les acces et les inferences en
+microphysique (`chantier Q`) et les niveaux de maturite d'une contribution
+(`C0-C4`).
+
+Les noms de fichiers historiques peuvent conserver leurs anciens codes. Dans
+le texte actif, expliciter leur fonction et eviter les formules comme `Q2 est
+acquis` lorsqu'elles ne permettent pas de savoir de quelle serie il s'agit.
 
 ## Git et genealogie
 
@@ -183,4 +256,5 @@ Avant de promouvoir une proposition philosophique :
 5. Verifier les references de version, les fichiers annonces et les blocs non
    fermes avant un jalon.
 6. Produire des commits lisibles ; reserver push et pull request aux jalons
-   substantiels ou a une demande explicite.
+   substantiels ou a une demande explicite, sauf dans l'environnement ChatGPT
+   classic vise par l'exception stricte decrite dans le workflow GitHub v0.2.

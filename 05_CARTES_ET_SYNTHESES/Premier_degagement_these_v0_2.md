@@ -40,9 +40,10 @@ constance = fixité qualifiée d’un porteur dans un régime.
 La robustesse des accès peut justifier cette qualification. Elle ne la constitue
 pas automatiquement.
 
-## 3. Hiérarchie des questions
+## 3. Articulation locale des questions
 
-Le corpus distingue trois questions ordonnées :
+Pour cette thèse-noyau centrée sur le qualificatif de constante, le texte suit
+l'ordre argumentatif suivant :
 
 ```text
 1. Qu’est-ce qui tient ?
@@ -58,7 +59,9 @@ Elles correspondent à :
 | II | constitution | mécanisme, architecture, trajectoire et maintien |
 | III | accès | mesure, inférence, reconstruction, borne et preuve |
 
-Les trois rangs sont liés mais non interchangeables.
+Les trois rangs sont liés mais non interchangeables. Cet ordre appartient à ce
+livrable : une enquête expérimentale, cosmologique ou constitutive peut entrer
+par l'accès ou par la formation du régime et revenir ensuite au test de l'objet.
 
 ## 4. Trois statuts de constance
 
@@ -99,7 +102,7 @@ L’explication constitutive doit montrer ce qu’elle stabilise, dans quel bass
 Elle ne vaut pas encore explication de la valeur numérique de tous ses
 paramètres.
 
-## 6. Le rôle subordonné mais indispensable de l’accès
+## 6. Le rôle décisif et non autosuffisant de l’accès
 
 L’accès répond à la question de justification :
 
@@ -131,8 +134,8 @@ constance de l’objet.
 | Cas | Verdict de rang I | Apport des rangs II et III |
 |---|---|---|
 | `G_F` | constante effective à basse énergie | constitution électrofaible et accès faibles |
-| `h` dans le SI | constante métrologique définissante | définition, réalisation et rôle physique distincts |
-| `alpha_s(mu)` | refus simpliciter | fonctionnement RG et extractions multi-échelles |
+| `h` dans le Système international d'unités (SI) | constante métrologique définissante | définition, réalisation et rôle physique distincts |
+| `alpha_s(mu)` | refus simpliciter | fonctionnement du groupe de renormalisation (RG) et extractions multi-échelles |
 | `H_0` | paramètre d’état actuel, non constante nomologique | histoire cosmique et reconstruction multi-accès |
 | borne sur la masse neutrino | borne, non constante | accès hétérogènes et domaine admissible |
 | `v(t)` dans un toy model | quasi-fixité à tester | constitution dynamique et contraintes cosmologiques |
@@ -148,16 +151,18 @@ Le projet ne soutient plus comme thèse centrale :
 la constance est avant tout un statut stabilisé par des accès.
 ```
 
-Il soutient :
+Pour la thèse-noyau de ce document, il soutient :
 
 ```text
-la constance porte d’abord sur une fixité de l’objet ou de la relation ;
-sa constitution forme la deuxième question philosophique ;
-l’accès établit et borne l’attribution sans en devenir le centre.
+la constance attribuée doit être testée au niveau de l'objet ou de la relation ;
+la constitution demande comment cette fixité devient opératoire ;
+l'accès établit et borne l'attribution, et peut conduire à reformuler l'objet.
 ```
 
-Cette hiérarchie conserve un réalisme minimal : les accès ne fabriquent pas le
-processus physique auquel ils donnent prise.
+Cette distinction conserve un réalisme minimal sans imposer une séquence
+universelle : les accès ne fabriquent pas à eux seuls le processus physique
+auquel ils donnent prise, mais ils peuvent participer à la définition de
+l'objet expérimental et de ce qui peut lui être attribué.
 
 ## 9. Non-thèses
 
@@ -185,10 +190,10 @@ une distinction entre accès et propriété.
 
 ## 11. Formule condensée
 
-> Une constante n’est pas d’abord une estimation robuste, mais une fixité
-> attribuée à un porteur sous des transformations, dans un régime. La question
-> suivante est celle de sa constitution ; la question de l’accès établit enfin
-> la portée et les limites de cette attribution.
+> Dire d'une grandeur qu'elle est constante exige une fixité attribuable à un
+> porteur sous des transformations, dans un régime. Sa constitution et ses
+> accès en déterminent conjointement l'intelligibilité, la portée et les
+> limites, selon un ordre qui dépend du cas étudié.
 
 ## 12. Suite
 

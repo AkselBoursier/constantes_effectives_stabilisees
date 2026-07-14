@@ -19,8 +19,8 @@ un même dépôt ne suffit pas à les faire dialoguer.
 | Chantier | Question centrale | Résultat actuel | Risque de débordement |
 |---|---|---|---|
 | Refondation | qu’est-ce qui mérite le nom de constante ? | trois statuts de constance et tests de refus | réduire tout le projet à un criblage nominal |
-| Philosophie Q1 | comment le statut de constance est-il qualifié ? | régime, accès, trajectoire et limites | confondre robustesse de l’accès et constance de l’objet |
-| Philosophie Q2 | comment ce statut se forme-t-il et se défait-il ? | question génétique ouverte | promouvoir une orientation en mécanisme établi |
+| Question de qualification (`Q-qual`) | comment le statut de constance est-il qualifié ? | régime, accès, trajectoire et limites | confondre robustesse de l’accès et constance de l’objet |
+| Question de formation (`Q-form`) | comment ce statut se forme-t-il et se défait-il ? | question génétique ouverte | promouvoir une orientation en mécanisme établi |
 | Fine-tuning | qu’est-ce qui est réellement réglé ? | dépendances, corrélations et contingences résiduelles | dissoudre ou confirmer tous les cas par principe |
 | Fixité dynamique | comment une quasi-fixité physique peut-elle être constituée ? | modèles quadratique, quartique et dissipatif | prendre un toy model pour une histoire cosmique acquise |
 | Ontologie | que signifie la constitution des fixités pour le réel ? | horizon de discussion | conclure avant séparation des niveaux modaux |
@@ -43,7 +43,7 @@ Référence :
 
 ## 3. Frottements féconds
 
-### 3.1 Refondation / philosophie Q1
+### 3.1 Refondation / question de qualification (`Q-qual`)
 
 Question :
 
@@ -52,17 +52,18 @@ le statut de constance est-il une propriété de l’objet,
 ou une qualification établie à travers des accès ?
 ```
 
-Décision provisoire :
+Décision :
 
 ```text
-l’objet et son régime viennent en premier ;
-l’accès qualifie l’attribution sans produire l’objet.
+le point d'entrée dépend du cas ;
+l'accès peut participer à la définition de l'objet expérimental ;
+une conclusion sur la constance exige néanmoins un test au niveau de l'objet.
 ```
 
 Gain : le pluralisme reste réaliste sans naturaliser toutes les valeurs
 utilisées comme constantes.
 
-### 3.2 Refondation / philosophie Q2
+### 3.2 Refondation / question de formation (`Q-form`)
 
 Question :
 
@@ -101,7 +102,7 @@ bassin de trajectoires
 Les phases 2 à 4 du cycle 10 donnent déjà un cas précis de migration du
 réglage, puis une fenêtre phénoménologique dont la microphysique reste ouverte.
 
-### 3.4 Philosophie Q2 / fixité dynamique
+### 3.4 Question de formation (`Q-form`) / fixité dynamique
 
 Question :
 
@@ -126,7 +127,7 @@ ou un trait du réel ?
 Statut : question différée. L’audit physique doit précéder la promotion
 métaphysique.
 
-## 4. Zone de jonction Brout–Englert–Higgs
+## 4. Zone de jonction Brout–Englert–Higgs (BEH)
 
 Le mécanisme BEH concentre plusieurs plans :
 
@@ -174,7 +175,7 @@ contingence résiduelle
 3. Une même grandeur peut-elle changer de statut sans changer physiquement ?
 4. Quand une reconstruction cosmologique mérite-t-elle le langage de constante opérationnelle ?
 5. Comment une contingence canalisée se mesure-t-elle sans prior arbitraire ?
-6. Quels résultats du cycle 10 modifient réellement Q2, et lesquels ne sont que des illustrations ?
+6. Quels résultats du cycle 10 modifient réellement la question de formation (`Q-form`), et lesquels ne sont que des illustrations ?
 7. À quel seuil une interprétation ontologique devient-elle argumentable plutôt que suggestive ?
 
 ## 7. Ordre de lecture pour un agent
