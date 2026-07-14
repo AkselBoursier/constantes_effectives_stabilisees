@@ -26,10 +26,11 @@ Lire dans cet ordre :
 3. [Décision objet, accès et constitution](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — distinction canonique et articulation souple.
 4. [Rectification accès, trajectoires et stabilisation](Rectification_acces_trajectoires_stabilisation_v0_1.md) — accès transversal et ordres locaux.
 5. [Standard d'évaluation des contributions](../01_CADRE_METHODOLOGIQUE/Note_standard_evaluation_contribution_v0_1.md) — contribution plutôt que nouveauté obligatoire.
-6. [Sélection du programme v0.2](Selection_programme_recherche_v0_2.md) — chantier Q sur la microphysique, chantier M sur les mécanismes et chantier A sur le contexte et les agents.
-7. [Entrée du chantier Q](../06_PHILOSOPHIE/PROGRAMME_Q1_CONTRIBUTION_README.md) — catégories, accès et inférences en microphysique ; état des trois tests et prochaine opération.
-8. [Note de décision du cycle zéro](Note_decision_cycle_zero_v0_1.md) — orientation validée avant les rectifications.
-9. [README philosophique](../06_PHILOSOPHIE/README.md) — situations, voisinages et programmes philosophiques.
+6. [Accueil central des dix cycles physiques](../02_CYCLES_PHYSIQUES/README.md) — cinq contrastes, rôles comparatifs, points d'entrée et dettes distinctes.
+7. [Sélection du programme v0.2](Selection_programme_recherche_v0_2.md) — chantier Q sur la microphysique, chantier M sur les mécanismes et chantier A sur le contexte et les agents.
+8. [Entrée du chantier Q](../06_PHILOSOPHIE/PROGRAMME_Q1_CONTRIBUTION_README.md) — catégories, accès et inférences en microphysique ; état des trois tests et prochaine opération.
+9. [Note de décision du cycle zéro](Note_decision_cycle_zero_v0_1.md) — orientation validée avant les rectifications.
+10. [README philosophique](../06_PHILOSOPHIE/README.md) — situations, voisinages et programmes philosophiques.
 
 ## 2. Formule méthodologique active
 

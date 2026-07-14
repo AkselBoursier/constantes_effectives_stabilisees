@@ -2,7 +2,12 @@
 
 ## Statut
 
-Ce document clôt le transfert du cycle SI.
+Ce document clôt le transfert du cycle consacré au Système international
+d'unités (SI). Son verdict est requalifié par le contrôle comparatif des dix
+cycles du 14 juillet 2026 : les distinctions métrologiques sont conservées,
+mais leur portée philosophique reste conditionnelle à un effet non
+tautologique sur les réalisations, les incertitudes, les comparaisons ou les
+inférences.
 
 Documents associés :
 
@@ -16,7 +21,7 @@ Documents associés :
 ## 2. Résultat principal
 
 ```text
-Cycle SI concluant comme cas contrasté.
+Cycle SI techniquement clair comme cas calibratoire ; gain philosophique conditionnel.
 ```
 
 Le gain ne réside pas dans la découverte que les valeurs sont exactes. Il réside dans la séparation de quatre niveaux :
@@ -83,13 +88,16 @@ Le cycle produit plusieurs contrefactuels :
 
 Ces cas donnent au dossier un pouvoir explicatif supérieur à une simple liste de valeurs exactes.
 
-## 7. Réponse à la fonction de fixité
+## 7. Fonction métrologique décrite
 
-Le SI confirme que plusieurs types d’objets peuvent tenir une même fonction de fixité :
+Le SI permet de décrire une fonction métrologique commune tenue par plusieurs
+types d'objets :
 
 > fournir des points fixes numériques permettant la construction et la reproduction d’un système de mesure.
 
-Cette conclusion soutient l’hypothèse selon laquelle « constante » peut parfois désigner une fonction tenue dans une architecture plutôt qu’une espèce naturelle unique.
+Cette description montre qu'un rôle définitionnel commun ne suppose pas une
+espèce physique unique. Elle ne suffit pas, à elle seule, à établir une théorie
+générale de la constance comme fonction architecturale.
 
 Mais elle impose une limite :
 
@@ -171,9 +179,9 @@ exact dans le SI = empiriquement connu sans incertitude
 ## 12. Verdict
 
 ```text
-Architecture métrologique définitionnelle : confirmée.
+Architecture métrologique définitionnelle : établie au sens descriptif minimal.
 Espèce physique unique des constantes définissantes : refusée.
-Gain explicatif : confirmé.
+Gain philosophique différentiel : à démontrer par ses effets opératoires.
 ```
 
 ## 13. Conséquence pour la question directrice
@@ -206,4 +214,7 @@ Il devra probablement exclure davantage d’objets qu’il n’en admet.
 
 ## 15. Formule de clôture
 
-> Le SI montre qu’une fixité peut être exacte sans être dynamique, universelle sans être ontologiquement homogène, et physiquement appuyée sans être une explication de la nature.
+> Le SI fixe des valeurs numériques pour organiser les unités et les
+> comparaisons. L'intérêt du cas ne tient pas à cette convention seule, mais aux
+> effets observables de la fixation sur les réalisations, les incertitudes et
+> les inférences.

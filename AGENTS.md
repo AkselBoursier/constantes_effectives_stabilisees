@@ -47,7 +47,7 @@ Les jonctions entre chantiers sont explicitees par la
 | Dossier | Fonction | Point d'entree |
 |---|---|---|
 | `01_CADRE_METHODOLOGIQUE` | Methode, protocoles, cadres et decisions de rang | `refondation-du-domaine.md` |
-| `02_CYCLES_PHYSIQUES` | Fiches, calculs, preuves et syntheses de cycle | le sous-dossier du cycle concerne |
+| `02_CYCLES_PHYSIQUES` | Fiches, calculs, preuves et syntheses de cycle | `README.md` du dossier, puis le sous-dossier concerne |
 | `03_TESTS_TAXONOMIQUES` | Genealogie et tests des anciennes familles | `README.md` du dossier |
 | `04_ARCHITECTURES` | Architectures actives et raccords transversaux | `Cercle2_architectures_actives_v0_1.md` |
 | `05_CARTES_ET_SYNTHESES` | Index, cartes, audits et syntheses globales | `Index_raisonne_du_corpus_v1_0.md` |

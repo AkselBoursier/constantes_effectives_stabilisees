@@ -247,5 +247,14 @@ La pondération étant validée comme instrument provisoire :
 4. conserver la vérification scientifique détaillée cycle par cycle comme une
    opération distincte de cette réorganisation documentaire.
 
+### Mise en œuvre du 14 juillet 2026
+
+Les deux premières opérations sont accomplies : les verdicts trop forts des
+cycles Saveur–Higgs et métrologique ont été requalifiés, puis la cartographie a
+été transformée en
+[fichier d'accueil central des cycles physiques](../02_CYCLES_PHYSIQUES/README.md).
+Le protocole sur la mesure demeure séparé et la vérification scientifique
+détaillée reste conduite cycle par cycle.
+
 > La hiérarchie utile n'ordonne pas les cycles du meilleur au moins bon. Elle
 > dit quel travail chaque cycle est réellement capable d'accomplir.

@@ -6,14 +6,14 @@ taxonomie ni à un protocole unique.
 ## 0. Statut documentaire
 
 ```text
-statut : document d'instruction transversal ;
+statut : document d'instruction transversal validé pour mise à l'épreuve ;
 fonction : relire les dix cycles physiques sous deux questions communes sans
            leur imposer une forme de résultat identique ;
 portée : matériau interne du dépôt, avant nouveau paysage bibliographique ;
 ne remplace pas : les synthèses de cycle, les preuves locales ni les décisions
                   méthodologiques ;
-validation : requise avant intégration au fichier d'accueil (`README`), à
-             l'index actif ou à une vue d'ensemble ultérieure.
+mise en œuvre : intégrée le 14 juillet 2026 au fichier d'accueil central des
+               cycles et à l'index actif ; pondération révisable par l'usage.
 ```
 
 Les cycles 1 à 3 disposent maintenant chacun d'une synthèse de récupération
@@ -693,10 +693,12 @@ dix cycles en cinq couples de contraste. Cette pondération est validée pour
 être éprouvée dans le travail ; elle n'est ni absolue ni soustraite à la
 révision par les cas.
 
-La récupération séparée et le premier contrôle comparatif sont accomplis. La
-prochaine opération documentaire consiste à réviser seulement les formulations
-actives qui contredisent la pondération validée, puis à l'éprouver dans le
-fichier d'accueil central et dans les reprises de cycle.
+La récupération séparée et le premier contrôle comparatif sont accomplis. Les
+formulations actives les plus manifestement incompatibles avec la pondération
+ont été requalifiées dans les cycles 5 et 8. Le
+[fichier d'accueil central des cycles physiques](../02_CYCLES_PHYSIQUES/README.md)
+éprouve désormais cette pondération comme instrument de navigation et de
+reprise, sans la rendre définitive.
 
 La clarification du cycle 2, l'évaluation du cycle métrologique du SI et cet
 ordre documentaire sont validés. Le test de retrait généralisé reste, lui, à

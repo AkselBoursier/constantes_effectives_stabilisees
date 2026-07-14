@@ -13,6 +13,11 @@ processus par lesquels certaines fixités deviennent opératoires.
 La [vue d'ensemble resynchronisée](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_2.md)
 donne l'état courant sans exiger de connaître les codes du dépôt.
 
+Le [fichier d'accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md)
+organise ensuite les cas autour de cinq comparaisons structurantes. Il indique
+le rôle, le point d'entrée et la dette de chaque cycle sans les classer selon
+une valeur générale.
+
 Les codes actifs sont explicités à leur première occurrence : la question de
 qualification (`Q-qual`) demande dans quelle mesure une grandeur mérite d'être
 dite constante ; la question de formation (`Q-form`) demande comment un statut
