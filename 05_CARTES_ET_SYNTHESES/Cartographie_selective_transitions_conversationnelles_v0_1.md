@@ -9,7 +9,8 @@ période couverte : 8 au 16 juillet 2026 ;
 fonction : restituer les bifurcations, continuités, abandons, ajournements et
            non-décisions qui éclairent l'état actuel du projet ;
 rang : consolidation de provenance, subordonnée aux décisions et documents actifs ;
-validation : contenu soumis à validation humaine ;
+validation : reconstruction générale non exhaustive validée le 16 juillet 2026
+             pour instruire un premier essai réflexif borné ;
 effet immédiat : aucun changement de doctrine, de rang documentaire ou de
                  résultat scientifique.
 ```
@@ -311,18 +312,16 @@ Cette cartographie :
 - n'autorise pas une révision globale des sources, calculs ou interprétations ;
 - ne valide pas par elle-même le futur chantier sur la mesure.
 
-## 8. Point de décision après lecture
+## 8. Décision après lecture
 
-La validation attendue porte seulement sur la fidélité de cette reconstruction :
+La lecture humaine du 16 juillet 2026 valide cette carte comme reconstruction
+fidèle de l'évolution générale visible dans les trois archives, tout en
+maintenant deux limites : la sélection n'est pas exhaustive et le pan
+philosophique n'y est pas reconstruit. Cette seconde dimension pourra être
+ajoutée si les premiers résultats en montrent le besoin ; elle n'est pas
+requise pour le premier essai.
 
-```text
-les transitions retenues sont-elles les bonnes ?
-leurs qualifications sont-elles proportionnées aux traces ?
-un abandon a-t-il été confondu avec un ajournement ?
-une continuité a-t-elle été reconstruite trop fortement ?
-```
-
-Après cette validation, la carte pourra servir à instruire un essai réflexif
-borné sur quelques documents actifs. Elle ne doit pas déclencher seule une
-resynchronisation générale ni devenir un nouveau centre bureaucratique du
-projet.
+La carte peut donc instruire un [essai réflexif borné sur trois
+objets](Cadrage_essai_reflexif_borne_v0_1.md). Cette validation ne déclenche ni
+resynchronisation générale, ni modification des documents mis à l'épreuve, ni
+promotion de la carte en nouveau centre du projet.

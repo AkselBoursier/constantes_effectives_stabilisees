@@ -11,8 +11,8 @@ rang : archive de provenance, sans autorité scientifique ou doctrinale active
 ordre : chronologique, de la plus ancienne à la plus récente
 formats : JSON archivistique et Markdown de lecture humaine
 assainissement : accompli le 16 juillet 2026
-extraction des transitions : cartographie sélective v0.1 produite le 16 juillet 2026 ;
-                             contenu soumis à validation
+extraction des transitions : cartographie sélective v0.1 produite et validée
+                             pour un usage réflexif borné le 16 juillet 2026
 ```
 
 Ces archives documentent une partie du travail conversationnel associé au
@@ -117,8 +117,10 @@ importé dans le corpus actif par le seul archivage.
 La première extraction transversale est la [cartographie sélective des
 transitions conversationnelles
 v0.1](../05_CARTES_ET_SYNTHESES/Cartographie_selective_transitions_conversationnelles_v0_1.md).
-Elle reste une consolidation de provenance soumise à validation et ne remplace
-pas les documents actifs.
+Elle reste une reconstruction générale non exhaustive et ne remplace pas les
+documents actifs. Le pan philosophique n'y est pas reconstruit ; cette limite
+est acceptée pour le [premier essai réflexif
+borné](../05_CARTES_ET_SYNTHESES/Cadrage_essai_reflexif_borne_v0_1.md).
 
 ## 7. Régime futur
 
