@@ -5,10 +5,16 @@ des conformités utiles, localise quatre corrections et place leur mise en œuvr
 sous validation humaine. Les trois objets mis à l'épreuve conservent donc leur
 état pendant la lecture des résultats.
 
+Cette première restitution est conservée pour la généalogie. La [v0.2,
+restitution positive et architecture
+distribuée](Resultats_essai_reflexif_borne_v0_2.md), constitue la version
+courante de lecture.
+
 ## 0. Statut
 
 ```text
 type : résultat d'un micro-pilote réflexif ;
+rang actuel : version antérieure, remplacée pour l'usage courant par la v0.2 ;
 instruction : Cadrage_essai_reflexif_borne_v0_1.md ;
 échantillon : vue d'ensemble v0.3, contraste des cycles 9 et 10,
               workflow GitHub v0.2 confronté à l'opération d'extraction ;

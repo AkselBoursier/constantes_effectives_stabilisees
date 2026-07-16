@@ -3,7 +3,8 @@
 ## 0. Statut
 
 ```text
-statut : index actif de navigation après les cinq contrastes ;
+statut : index actif de navigation après les cinq contrastes et le micro-pilote
+         réflexif ;
 remplace pour l'usage courant : Index_raisonne_du_corpus_v1_2.md ;
 conserve la v1.2 : comme état de navigation antérieur au contrôle transversal ;
 orientation : deux questions communes, pondération fonctionnelle des cycles,
@@ -36,6 +37,13 @@ Lire dans cet ordre :
    accès transversal et refus d'une dynamique générale présupposée.
 7. [Cadre critique de refondation](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
    — garde-fous sur les objets, régimes et transformations.
+8. [Résultats de l'essai réflexif borné
+   v0.2](Resultats_essai_reflexif_borne_v0_2.md) — acquis du micro-pilote,
+   corrections proposées et décision formelle en cours.
+9. [Architecture distribuée — auteur, modèles, GitHub et
+   outils](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
+   — contributions singulières, responsabilités différenciées et explication
+   de la cohésion cumulative.
 
 Le `README.md` de la racine fournit la navigation générale. Le présent index
 donne l'ordre intellectuel minimal.
@@ -62,6 +70,8 @@ du corpus.
 | `Controle_consolidation_cinq_contrastes_v0_1.md` | état de synchronisation et limites de l'autorité documentaire |
 | cinq fichiers `Reprise_comparative_cycles_*` | résultats détaillés des cinq tests |
 | `Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md` | panorama des dix cycles, à lire avec sa note de clôture |
+| `Resultats_essai_reflexif_borne_v0_2.md` | résultat courant du micro-pilote et propositions soumises à décision |
+| `01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md` | fonctions de l'auteur, des modèles, de GitHub et des outils dans la cohésion du projet |
 
 Ces documents organisent le travail. Ils ne remplacent pas la vérification
 scientifique propre à chaque cycle.
@@ -137,6 +147,10 @@ théorie générale de la mesure.
 - la navigation est organisée par la vue v0.3 et le présent index ;
 - la comparaison est organisée par les cinq contrastes ;
 - la vérification scientifique reste conduite cycle par cycle ;
+- le micro-pilote réflexif produit quatre corrections locales soumises à une
+  décision formelle ;
+- l'architecture distribuée distingue les apports de l'auteur, des modèles, de
+  GitHub et des outils sur un même plan d'analyse causale ;
 - une nouvelle recherche externe exige une décision d'orientation ;
 - une resynchronisation générale n'est pas ouverte ;
 - les archives ne sont pas normalisées pour ressembler aux verdicts actuels.
@@ -144,8 +158,8 @@ théorie générale de la mesure.
 ## 10. Séquence immédiate
 
 ```text
-lot ciblé de navigation et de rang
--> validation humaine
+validation formelle de la restitution v0.2 et de l'architecture distribuée
+-> mise en œuvre locale des propositions A à D si la forme est validée
 -> choix explicite de la prochaine orientation
 ```
 

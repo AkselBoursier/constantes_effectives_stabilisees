@@ -407,7 +407,7 @@ ajoute deux exigences :
    empêchent de voir un problème situé hors de l'échantillon.
 
 Ces exigences sont intégrées aux [résultats de l'essai réflexif
-borné](Resultats_essai_reflexif_borne_v0_1.md). La seconde ne commande pas un
+borné v0.2](Resultats_essai_reflexif_borne_v0_2.md). La seconde ne commande pas un
 audit de l'audit : lorsqu'une couche exclue devient nécessaire, elle est
 consignée comme dette, puis le passage borné s'arrête.
 
@@ -434,8 +434,34 @@ conservation des refus. Le retour d'usage ajoute un contrôle de complétude :
 chaque limite importante doit borner un résultat, une fonction, un appui, un
 rang ou une opération explicitement nommés.
 
-Le document de résultats est repris sous ce contrôle. Les refus et les dettes
-gardent leur force ; l'information positive qu'ils délimitent devient
-directement lisible. Cette correction porte sur la restitution du micro-pilote
-et sur la règle d'écriture ; elle laisse les trois objets éprouvés dans leur
-état en attente de la validation des propositions A à D.
+La première restitution v0.1 est reprise sous ce contrôle dans les [résultats
+v0.2](Resultats_essai_reflexif_borne_v0_2.md). Les refus et les dettes gardent
+leur force ; l'information positive qu'ils délimitent devient directement
+lisible. Cette correction porte sur la restitution du micro-pilote et sur la
+règle d'écriture ; elle laisse les trois objets éprouvés dans leur état pendant
+la décision formelle des propositions A à D.
+
+### 9.9 GitHub comme composante de l'architecture distribuée
+
+Le retour suivant attribue à GitHub un rôle plus fort que celui de support :
+son infrastructure versionnée contribue à la mémoire, à la sélection du
+contexte pertinent, à la réversibilité et à la cohésion méthodologique du
+projet. Les outils employés par les modèles rendent cette infrastructure
+consultable, modifiable et vérifiable.
+
+La [note sur l'architecture
+distribuée](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
+place donc l'auteur, les modèles, GitHub et les outils sur un même plan
+d'analyse causale. Elle distingue quatre contributions et deux registres de
+responsabilité : scientifique et décisionnel pour l'auteur ; fonctionnel et
+traçable pour les modèles, l'infrastructure et les outils.
+
+Cette architecture fournit une explication positive de la fluidité observée :
+les validations humaines deviennent des contraintes durables du dépôt, les
+modèles retrouvent ces contraintes par les routes documentaires et les outils,
+puis GitHub conserve le nouvel état pour l'itération suivante. L'accord fréquent
+peut ainsi manifester une convergence cumulative sous mémoire structurée.
+
+La même propriété ouvre un risque de dépendance au chemin. Les clauses de
+révision, les alternatives archivées, la littérature extérieure et les tests
+de réception restent les contrepoids actifs de cette cohésion.

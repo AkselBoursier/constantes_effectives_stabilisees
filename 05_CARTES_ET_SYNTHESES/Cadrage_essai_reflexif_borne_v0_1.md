@@ -12,17 +12,17 @@ fonction : déterminer si les recommandations du projet produisent, lorsqu'elles
            lui sont appliquées, une hygiène critique féconde ou une boucle
            auto-confirmatrice ;
 périmètre : trois objets seulement ;
-étape actuelle : cadrage validé et passage unique exécuté, sans correction
-                 des objets ;
-validation requise ensuite : propositions du micro-pilote avant toute
-                              propagation ;
+étape actuelle : cadrage validé, passage unique exécuté et fond des résultats
+                 validé ;
+validation requise ensuite : forme de la restitution v0.2 et positionnement de
+                              l'architecture distribuée avant mise en œuvre ;
 date : 16 juillet 2026.
 ```
 
 Ce cadrage sépare trois gestes : instruire l'essai, l'exécuter, puis décider si
 ses résultats justifient une correction documentaire. Il a d'abord accompli le
 premier ; l'exécution est maintenant restituée dans les [résultats de l'essai
-réflexif borné](Resultats_essai_reflexif_borne_v0_1.md). Les corrections restent
+réflexif borné v0.2](Resultats_essai_reflexif_borne_v0_2.md). Les corrections restent
 séparées et soumises à validation.
 
 La [cartographie sélective des transitions
@@ -291,5 +291,7 @@ conversationnelle postérieure à `A3-M67` et déclarer non seulement les limite
 de l'essai, mais aussi le risque que ses propres exclusions masquent un
 problème.
 
-Le [document de résultats](Resultats_essai_reflexif_borne_v0_1.md) applique ces
-deux précautions. Il clôt le passage unique et s'arrête avant toute propagation.
+Le [document de résultats v0.2](Resultats_essai_reflexif_borne_v0_2.md) applique
+ces précautions, définit positivement les objets étudiés et intègre
+l'architecture distribuée du travail. Il clôt le passage unique et place les
+propositions A à D dans leur décision formelle.

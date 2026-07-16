@@ -28,7 +28,7 @@ La decision active est :
 1. Lire le [README](README.md).
 2. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 3. Lire la [decision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
-4. Consulter l'[index raisonne](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md).
+4. Consulter l'[index raisonne](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md).
 5. Identifier le statut du document cible : reference active, decision
    canonique, protocole, consolidation, preuve locale, exploration ou source.
 6. Ne lire ensuite que la couche necessaire : methode, cycle physique, test
@@ -50,7 +50,7 @@ Les jonctions entre chantiers sont explicitees par la
 | `02_CYCLES_PHYSIQUES` | Fiches, calculs, preuves et syntheses de cycle | `README.md` du dossier, puis le sous-dossier concerne |
 | `03_TESTS_TAXONOMIQUES` | Genealogie et tests des anciennes familles | `README.md` du dossier |
 | `04_ARCHITECTURES` | Architectures actives et raccords transversaux | `Cercle2_architectures_actives_v0_1.md` |
-| `05_CARTES_ET_SYNTHESES` | Index, cartes, audits et syntheses globales | `Index_raisonne_du_corpus_v1_0.md` |
+| `05_CARTES_ET_SYNTHESES` | Index, cartes, audits et syntheses globales | `Index_raisonne_du_corpus_v1_3.md` |
 | `06_PHILOSOPHIE` | Exploration philosophique, situations, voisinages et tests | `README.md` du dossier |
 | `90_Critiques_ constantes_effectives_stabilisees` | Sources de critiques constructives | documents actifs avant sources |
 
@@ -166,6 +166,29 @@ Regles :
    fausse attribution et a comprendre la decision, ne pas poursuivre la fouille
    pour etablir une propriete intellectuelle. La genealogie n'est rouverte que
    pour une question scientifique, editoriale ou historique determinee.
+
+## Architecture distribuee du travail
+
+Lire la [note sur l'architecture distribuee](01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
+lorsqu'une tache porte sur la provenance, la methode de collaboration ou le
+role de l'infrastructure.
+
+Le dispositif se decrit sur un meme plan d'analyse causale par quatre
+composantes :
+
+```text
+auteur : orientation, arbitrage et validation scientifique ;
+modeles de langage : lecture, comparaison, proposition et orchestration ;
+GitHub : memoire versionnee, comparaison, reversibilite et contraintes ;
+outils GitHub : mediation executable, ciblage et verification des operations.
+```
+
+Leur couplage explique une part de la coherence cumulative du projet. Employer
+« responsabilite » en precisant son registre : scientifique et decisionnel pour
+l'auteur ; fonctionnel et tracable pour les modeles, l'infrastructure et les
+outils. Les apports de GitHub et des outils doivent etre nommes lorsqu'ils
+modifient effectivement la continuite, la selection du contexte, la preuve
+documentaire ou la route de lecture.
 
 ## Lisibilite des sigles et des codes
 
