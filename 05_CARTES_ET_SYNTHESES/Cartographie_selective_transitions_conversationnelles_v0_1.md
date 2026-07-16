@@ -325,3 +325,97 @@ La carte peut donc instruire un [essai réflexif borné sur trois
 objets](Cadrage_essai_reflexif_borne_v0_1.md). Cette validation ne déclenche ni
 resynchronisation générale, ni modification des documents mis à l'épreuve, ni
 promotion de la carte en nouveau centre du projet.
+
+## 9. Continuation postérieure aux archives
+
+Cette section prolonge la carte jusqu'au jalon du micro-pilote sans prétendre
+constituer une nouvelle archive de conversation.
+
+### 9.1 Régime de preuve distinct
+
+Les trois exports s'arrêtent au message `A3-M67`. La continuation ci-dessous
+ne reçoit donc pas de repères `A`–`M`, qui désignent exclusivement des messages
+présents dans les copies JSON assainies.
+
+Elle retient seulement :
+
+- les décisions explicitement formulées dans la conversation encore
+  accessible lors de l'écriture ;
+- les documents et événements Git qui en matérialisent l'exécution ;
+- les limites et non-décisions nécessaires à la reprise du chantier.
+
+Ce régime est moins riche qu'une archive intégrale. Il ne permet ni citation
+exhaustive, ni reconstruction de toutes les inflexions, ni attribution fine des
+intuitions. Il suffit ici à documenter les bifurcations sans installer un
+journal permanent du clavardage.
+
+### 9.2 De la limite du clavardage à une extraction unique
+
+Après `A3-M67`, la limite produite par l'absence d'archives conversationnelles
+est reconnue. Deux solutions sont distinguées : une récupération exceptionnelle
+des conversations déjà accumulées et, pour l'avenir, de courts paragraphes
+naturels dans les documents qui portent une orientation, une réorientation ou
+une continuité importante.
+
+Le journal exhaustif et l'export systématique de chaque conversation sont
+écartés. La règle future consiste à rendre une décision reconstructible, non à
+conserver chaque tour de dialogue.
+
+### 9.3 Assainissement, reconstruction et nouveau clone
+
+L'auteur fournit trois conversations, autorise explicitement l'assainissement
+de leurs données personnelles et techniques, puis autorise la reconstruction
+de la branche et sa publication distante. Après confirmation du jalon, il
+reclone la branche reconstruite.
+
+Le commit distant `1279975` matérialise l'assainissement et l'indexation des
+six copies, sous les deux formats JSON et Markdown. L'opération améliore la
+provenance sans promouvoir les archives au rang de preuve scientifique ou
+d'autorité doctrinale.
+
+### 9.4 Extraction des transitions et validation de sa portée
+
+Une lecture sélective des 278 messages produit la présente carte. Le commit
+distant `642f592` la publie sans modifier les archives ni les documents actifs
+qu'elle met en relation.
+
+La lecture humaine la valide comme reconstruction fidèle de l'évolution
+générale physique et méthodologique, avec deux réserves : elle n'est pas
+exhaustive et elle ne reconstruit pas le pan philosophique. Cette absence est
+acceptée pour le premier essai ; elle ne devient ni preuve d'incompatibilité ni
+décision d'abandon.
+
+### 9.5 Instruction du micro-pilote
+
+La carte sert ensuite à borner un essai réflexif sur trois objets : la vue
+d'ensemble v0.3, le contraste des cycles 9 et 10 et le workflow GitHub confronté
+à l'opération d'extraction. Le commit distant `55370fc` publie ce cadrage.
+
+L'instruction sépare explicitement trois gestes : cadrage, passage unique et
+propagation éventuelle. Elle interdit de modifier les objets pendant le test,
+de rouvrir tout le corpus ou de transformer l'essai en attribution de propriété
+intellectuelle.
+
+### 9.6 Autorisation d'exécution et limite des limites
+
+La lecture humaine valide ensuite le cadrage et autorise l'exécution. Elle
+ajoute deux exigences :
+
+1. consigner tout jalon postérieur à la dernière archive qui serait nécessaire
+   à la reprise, y compris cette demande elle-même ;
+2. déclarer les limites du micro-pilote, ainsi que le risque que ses exclusions
+   empêchent de voir un problème situé hors de l'échantillon.
+
+Ces exigences sont intégrées aux [résultats de l'essai réflexif
+borné](Resultats_essai_reflexif_borne_v0_1.md). La seconde ne commande pas un
+audit de l'audit : lorsqu'une couche exclue devient nécessaire, elle est
+consignée comme dette, puis le passage borné s'arrête.
+
+### 9.7 État atteint
+
+Le micro-pilote est exécuté une fois sur les trois objets. Il ne modifie aucun
+d'eux. Ses constats, limites et propositions sont restitués séparément et
+attendent une validation humaine avant tout lot de correction.
+
+Cette continuation ferme la lacune conversationnelle connue jusqu'à ce jalon.
+Elle n'affirme pas que tout le clavardage intermédiaire est désormais archivé.

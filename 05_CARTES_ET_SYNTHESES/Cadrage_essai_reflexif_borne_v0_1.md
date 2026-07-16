@@ -12,14 +12,18 @@ fonction : déterminer si les recommandations du projet produisent, lorsqu'elles
            lui sont appliquées, une hygiène critique féconde ou une boucle
            auto-confirmatrice ;
 périmètre : trois objets seulement ;
-étape actuelle : cadrage, sans exécution du test ni correction des objets ;
-validation requise ensuite : résultats du micro-pilote avant toute propagation ;
+étape actuelle : cadrage validé et passage unique exécuté, sans correction
+                 des objets ;
+validation requise ensuite : propositions du micro-pilote avant toute
+                              propagation ;
 date : 16 juillet 2026.
 ```
 
 Ce cadrage sépare trois gestes : instruire l'essai, l'exécuter, puis décider si
-ses résultats justifient une correction documentaire. Le présent document
-n'accomplit que le premier.
+ses résultats justifient une correction documentaire. Il a d'abord accompli le
+premier ; l'exécution est maintenant restituée dans les [résultats de l'essai
+réflexif borné](Resultats_essai_reflexif_borne_v0_1.md). Les corrections restent
+séparées et soumises à validation.
 
 La [cartographie sélective des transitions
 conversationnelles](Cartographie_selective_transitions_conversationnelles_v0_1.md)
@@ -278,3 +282,14 @@ Le micro-pilote n'inclura pas :
 
 Ces exclusions n'annoncent pas leur abandon. Elles empêchent le premier essai
 réflexif d'absorber les chantiers qu'il doit seulement aider à orienter.
+
+## 11. État après exécution
+
+La lecture humaine a validé le cadrage et autorisé l'exécution le 16 juillet
+2026. Elle a demandé deux précautions supplémentaires : consigner la continuité
+conversationnelle postérieure à `A3-M67` et déclarer non seulement les limites
+de l'essai, mais aussi le risque que ses propres exclusions masquent un
+problème.
+
+Le [document de résultats](Resultats_essai_reflexif_borne_v0_1.md) applique ces
+deux précautions. Il clôt le passage unique et s'arrête avant toute propagation.
