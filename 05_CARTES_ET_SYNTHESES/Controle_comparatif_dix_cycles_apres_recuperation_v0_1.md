@@ -88,8 +88,8 @@ générale peut être plus faible qu'une limite locale précisément établie.
 | 6. Théories effectives à basse énergie | l'effectivité prend des formes locales, dynamiques et hiérarchiques selon le secteur | traiter validité, seuil, degrés de liberté et rupture comme contenu positif de la description | synthèse physique riche ; extensions à ne pas généraliser automatiquement | noyau physique comparatif |
 | 7. Cosmologie | une grandeur prend fonction dans un réseau de modèle, d'inférence et de données | rendre les routes d'accès, dégénérescences et tensions constitutives du dossier de preuve | architecture forte ; données et littérature rapidement révisables | noyau épistémique et pont vers la mesure |
 | 8. Système international d'unités (SI) | exactitude définitionnelle, incertitude de réalisation et rôle physique restent distincts | suivre la redistribution des incertitudes et des opérations après fixation d'une valeur | premier effet différentiel établi ; transfert philosophique hors métrologie encore ouvert | cycle calibratoire et test de non-tautologie |
-| 9. Ajustement fin | le réglage fin allégué dépend d'un espace, de coordonnées, de corrélations, d'un critère et parfois d'une mesure | remplacer le comptage de nombres par l'audit des sensibilités et contingences résiduelles | premier lot différencié mais cycle ouvert | noyau méthodologique comparatif |
-| 10. Quasi-fixité électrofaible | les modèles conservatifs testés échouent par leur bilan énergétique ; une fenêtre dissipative phénoménologique reste ouverte | exiger porteur, équations, bassin, coût énergétique, tolérance et mécanisme de rupture | calculs reproductibles ; réalisation microscopique non acquise | noyau calculatoire local et test de limites |
+| 9. Ajustement fin | le réglage fin allégué dépend d'un espace, de coordonnées, de corrélations, d'un critère et parfois d'une mesure | remplacer le comptage de nombres par l'audit des sensibilités et contingences résiduelles | premier lot différencié ; cinquième test accompli ; cycle ouvert | noyau méthodologique comparatif |
+| 10. Quasi-fixité électrofaible | les modèles conservatifs testés échouent par leur bilan énergétique ; une fenêtre dissipative phénoménologique reste ouverte | exiger porteur, équations, bassin, coût énergétique, tolérance et mécanisme de rupture | calculs reproductibles ; cinquième test accompli ; réalisation microscopique non acquise | noyau calculatoire local et test de limites |
 
 ## 4. Pondération fonctionnelle proposée
 
@@ -104,7 +104,7 @@ cycles 1, 3, 6, 7, 9 et 10
 
 Ils modifient directement au moins une des deux questions : indexation à
 l'échelle, pluralité des accès, validité effective, reconstruction cosmologique,
-espace contrefactuel ou histoire dynamique réelle.
+espace contrefactuel ou trajectoire dynamique modélisée.
 
 À l'intérieur de cet ensemble, les forces ne sont pas de même nature :
 
@@ -153,7 +153,7 @@ les cycles ; ils localisent un contraste précis.
 | cycles 2 et 5 | à quelles conditions plusieurs fonctions forment-elles un réseau physique instructif, et que ce réseau explique-t-il réellement ? | tester la différence entre organisation, mécanisme et explication d'origine |
 | cycles 3 et 7 | que doit-il être commun, et quels ponts doivent être fournis, pour que des accès non équivalents contraignent le même objet ou secteur ? | préparer le chantier sur la mesure sans présupposer l'identité de l'objet ni unifier les problèmes |
 | cycles 4 et 8 | que change la fixation d'une valeur dans la fonction des expériences, la réalisation des unités et la distribution des incertitudes ? | établir le renversement métrologique et le déplacement de l'incertitude sans confondre convention et rôle physique |
-| cycles 9 et 10 | quelle différence entre varier des paramètres entre mondes et faire évoluer un porteur dans un même monde ? | séparer contrefactuel, dynamique physique et migration du réglage |
+| cycles 9 et 10 | qu'ajoute une trajectoire dynamique explicite à un audit contrefactuel, et à quelles conditions réduit-elle plutôt que déplacer la contingence ? | [séparer espace de paramètres, axe du temps, histoire possible et dette explicative](Reprise_comparative_cycles_9_10_contrefactuel_dynamique_contingence_v0_1.md) |
 
 Cette organisation donne au panorama une structure plus lisible que dix
 portraits juxtaposés, tout en conservant les différences d'objet.
@@ -183,14 +183,17 @@ constituent un seul problème.
 
 ### 6.3 Rendre une grandeur dynamique déplace les exigences d'explication
 
-Les cycles 9 et 10 montrent que l'ouverture d'un espace de possibles ou
-l'ajout d'un porteur dynamique ne résout pas un problème par définition. Il
-faut suivre les corrélations, les mesures, les bassins, le coût énergétique et
-la migration éventuelle de la contingence.
+Le [cinquième test comparatif](Reprise_comparative_cycles_9_10_contrefactuel_dynamique_contingence_v0_1.md)
+montre que l'ouverture d'un espace de possibles ou l'ajout d'un porteur
+dynamique ne résout pas un problème par définition. Un scan compare encore des
+paramètres ou des conditions initiales ; l'intégration temporelle ajoute une
+trajectoire à chaque point, non une probabilité ni une histoire empiriquement
+établie. Il faut suivre les corrélations, les mesures, les bassins, le coût
+énergétique et le déplacement éventuel de la contingence.
 
-Les lignes issues des cycles 2, 4, 5 et 8 restent utiles, mais leur force
-philosophique dépend d'un gain différentiel encore à établir. Elles jouent pour
-l'instant un rôle de contrôle contre les confusions.
+Les cycles 2 et 5 gardent une force relationnelle limitée. Les cycles 4 et 8
+ont établi un gain métrologique local. Ces quatre cycles restent des contrôles
+contre les confusions sans devenir des philosophies générales.
 
 ## 7. Piste de la mesure : antécédent et quarantaine
 
@@ -231,23 +234,27 @@ comme dynamique réelle.
    confirmée » du cycle 5, trop catégorique sous la doctrine actuelle ;
 4. conserver l'effet non tautologique local établi pour les cycles 4 et 8 sans
    lui attribuer une portée philosophique générale ;
-5. conserver le cycle 10 comme résultat local, calculatoire et négatif en deux
-   phases, puis phénoménologiquement ouvert, jamais comme principe général ;
+5. conserver le cycle 9 comme audit méthodologique et le cycle 10 comme résultat
+   calculatoire local — négatif en deux phases, puis phénoménologiquement
+   ouvert — sans convertir scan, trajectoire ou fenêtre en probabilité ou en
+   histoire réelle ;
 6. maintenir la piste de la mesure comme chantier à instruire par un nouveau
    paysage de littérature, sans importer ses réponses anciennes ;
 7. traiter le dossier 91 comme archive généalogique et non comme source active.
 
-## 9. Prochaine opération
+## 9. État après les cinq tests
 
-La pondération étant validée comme instrument provisoire :
+Les cinq contrastes sont accomplis et le fichier d'accueil central les rend
+accessibles. La pondération reste un instrument provisoire validé pour le
+travail, non une hiérarchie définitive des cycles.
 
-1. réviser seulement les formulations actives qui contredisent les nouveaux
-   rôles, en commençant par le cycle 5 et les passages trop forts sur le SI ;
-2. transformer la cartographie en noyau d'un fichier d'accueil central des
-   cycles physiques, avec les cinq comparaisons structurantes comme entrée ;
-3. préparer séparément le protocole de paysage contemporain sur la mesure ;
-4. conserver la vérification scientifique détaillée cycle par cycle comme une
-   opération distincte de cette réorganisation documentaire.
+La prochaine opération doit être choisie séparément : validation d'ensemble
+des cinq résultats, poursuite d'un cycle physique ou préparation du protocole
+de paysage contemporain sur la mesure. Elle ne doit pas déclencher une nouvelle
+resynchronisation générale sans décision explicite.
+
+La vérification scientifique détaillée cycle par cycle reste une opération
+distincte de cette réorganisation documentaire.
 
 ### Mise en œuvre du 14 juillet 2026
 

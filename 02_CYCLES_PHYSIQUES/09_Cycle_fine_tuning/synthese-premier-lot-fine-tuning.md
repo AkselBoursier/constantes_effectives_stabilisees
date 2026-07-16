@@ -11,6 +11,13 @@ Cette synthèse compare les quatre premiers cas instruits :
 
 Elle ne clôt pas le cycle. Elle vérifie si la méthode produit des verdicts différenciés et si le poids attribué à chaque cas reste proportionné à la littérature disponible.
 
+Le [contraste avec le cycle de quasi-fixité électrofaible](../../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_9_10_contrefactuel_dynamique_contingence_v0_1.md),
+achevé le 16 juillet 2026, précise deux limites. Un balayage de paramètres ne
+devient pas une probabilité sans mesure justifiée, même lorsqu'il contient des
+trajectoires dynamiques. La « migration du réglage » désigne un déplacement de
+la contingence ou de la dette explicative, non un mouvement physique du
+réglage.
+
 ## 1. Résultat général
 
 Le premier lot confirme que le fine-tuning ne constitue pas une propriété unique portée par une liste de nombres.
