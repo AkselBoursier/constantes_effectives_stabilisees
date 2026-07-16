@@ -1,5 +1,10 @@
 # Index raisonné du corpus v1.2
 
+> **Statut remplacé pour l'usage courant — 16 juillet 2026.** Cet index reste
+> lisible comme état antérieur de navigation. L'[index raisonné
+> v1.3](Index_raisonne_du_corpus_v1_3.md) définit désormais l'ordre intellectuel
+> minimal après les cinq contrastes et le contrôle de consolidation.
+
 ## 0. Statut
 
 ```text

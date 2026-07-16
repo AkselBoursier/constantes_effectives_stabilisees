@@ -1,5 +1,12 @@
 # Note de recentrage sur la question directrice v0.1
 
+> **Avis de rang — 16 juillet 2026.** Cette note reste le temoin d'un correctif
+> necessaire lorsque la methode prenait le pas sur les objets. Son recentrage
+> sur la qualification ne definit toutefois plus, a lui seul, la question
+> directrice actuelle. Voir la [vue d'ensemble
+> v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle de
+> consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
 ## Constantes d'abord, methode ensuite
 
 ### 1. Fonction

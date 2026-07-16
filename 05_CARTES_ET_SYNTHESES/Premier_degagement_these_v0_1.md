@@ -1,5 +1,11 @@
 # Premier degagement de these v0.1
 
+> **Avis de rang — 16 juillet 2026.** Ce premier degagement reste une
+> proposition de these documentee, non la formulation generale actuelle du
+> projet. Ses acquis locaux sont conserves ; son centre doctrinal est relu
+> depuis la [vue d'ensemble v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle
+> de consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
 ## Le statut de constance comme stabilisation effective qualifiee
 
 ### 1. Fonction

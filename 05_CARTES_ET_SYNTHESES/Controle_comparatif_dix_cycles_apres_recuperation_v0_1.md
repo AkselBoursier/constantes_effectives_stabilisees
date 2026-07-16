@@ -230,8 +230,9 @@ comme dynamique réelle.
 1. conserver les six cycles centraux sans les présenter comme équivalents ;
 2. maintenir le cycle 2 comme carrefour, sans « résultat négatif » ni verdict
    de stabilité électrofaible ;
-3. requalifier ultérieurement l'expression « architecture constitutive
-   confirmée » du cycle 5, trop catégorique sous la doctrine actuelle ;
+3. tenir pour accomplie la requalification de l'expression « architecture
+   constitutive confirmée » du cycle 5 : elle nomme désormais un réseau local
+   sans verdict général d'origine ou de constitution ;
 4. conserver l'effet non tautologique local établi pour les cycles 4 et 8 sans
    lui attribuer une portée philosophique générale ;
 5. conserver le cycle 9 comme audit méthodologique et le cycle 10 comme résultat
@@ -250,13 +251,12 @@ travail, non une hiérarchie définitive des cycles.
 
 Le [contrôle de consolidation après les cinq contrastes](Controle_consolidation_cinq_contrastes_v0_1.md)
 sépare désormais les acquis, les formulations provisoires, les contradictions
-actives et les dettes locales. Il recommande un lot ciblé de navigation et de
-rang avant la prochaine orientation, non une resynchronisation générale.
+actives et les dettes locales. Le lot ciblé de navigation et de rang a été mis
+en œuvre le 16 juillet 2026 et reste soumis à validation humaine ; aucune
+resynchronisation générale n'est déclenchée.
 
-La prochaine opération documentaire recommandée est le lot ciblé de navigation
-et de rang décrit par ce contrôle. Après sa validation, la poursuite d'un cycle
-physique ou la préparation du paysage contemporain sur la mesure devront être
-choisies séparément. Aucune resynchronisation générale n'est déclenchée.
+Après sa validation, la poursuite d'un cycle physique ou la préparation du
+paysage contemporain sur la mesure devront être choisies séparément.
 
 La vérification scientifique détaillée cycle par cycle reste une opération
 distincte de cette réorganisation documentaire.

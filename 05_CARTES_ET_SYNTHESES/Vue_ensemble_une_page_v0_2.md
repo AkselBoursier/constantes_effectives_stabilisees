@@ -1,5 +1,11 @@
 # Vue d'ensemble resynchronisée v0.2
 
+> **Statut remplacé pour l'usage courant — 16 juillet 2026.** Cette version
+> reste conservée comme état daté. La [vue d'ensemble actuelle
+> v0.3](Vue_ensemble_une_page_v0_3.md) porte désormais l'orientation courante,
+> notamment les deux questions directrices et la place non directrice du
+> chantier philosophique antérieur.
+
 ## État humain du projet au 14 juillet 2026
 
 Cette page donne un point d'entrée lisible. Elle ne remplace ni les décisions

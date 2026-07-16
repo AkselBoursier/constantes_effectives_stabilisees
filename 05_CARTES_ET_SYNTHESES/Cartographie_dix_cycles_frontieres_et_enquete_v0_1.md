@@ -716,3 +716,15 @@ réactivés et aucun résultat physique n'en est importé par défaut.
 
 > La comparaison doit rendre les cycles accessibles sans les rendre identiques.
 > Le panorama sert à préparer la surprise, non à la supprimer.
+
+### 8.1 Clôture comparative du 16 juillet 2026
+
+La séquence prospective du point 6 ci-dessus est désormais accomplie. Les cinq
+contrastes 1–6, 2–5, 3–7, 4–8 et 9–10 ont été réalisés, puis soumis à un
+[contrôle de consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+Le [fichier d'accueil central des cycles
+physiques](../02_CYCLES_PHYSIQUES/README.md) en porte la navigation active.
+
+Cette clôture remplace seulement les indications d'étape encore formulées au
+futur dans la présente section. Elle conserve les dix portraits, leur première
+validation humaine et les réserves qui leur sont propres.

@@ -1,5 +1,12 @@
 # Cercle 2 lot 2A - Saveur-Higgs v0.1
 
+> **Avis de requalification — 16 juillet 2026.** La chaine et les dependances
+> locales exposees dans ce lot restent actives. Le terme « constitutive » y
+> nomme une fonction architecturale dans le regime electrofaible brise ; il ne
+> suffit pas a etablir un mecanisme d'origine ni une philosophie generale de la
+> constitution. Voir la [reprise comparative des cycles 2 et
+> 5](../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_2_5_fonction_architecture_explication_v0_1.md).
+
 ## Reprise positive de l'architecture constitutive
 
 ### 1. Fonction

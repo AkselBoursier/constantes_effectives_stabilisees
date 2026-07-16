@@ -28,7 +28,8 @@ Documents associés :
 ## 2. Résultat principal
 
 ```text
-Cycle SI techniquement clair comme cas calibratoire ; gain philosophique conditionnel.
+Cycle SI techniquement clair comme cas calibratoire ; gain différentiel local
+établi, transfert philosophique général non acquis.
 ```
 
 Le gain ne réside pas dans la découverte que les valeurs sont exactes. Il réside dans la séparation de quatre niveaux :

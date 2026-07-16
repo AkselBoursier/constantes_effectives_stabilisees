@@ -4,28 +4,32 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures et
 processus par lesquels certaines fixités deviennent opératoires.
 
-> **Statut au 14 juillet 2026 : cadre canonique resynchronisé ; chantier Q (catégories, accès et inférences en microphysique) en cours de positionnement bibliographique.**
-> La branche de consolidation n'est pas encore le tronc canonique. Les anciens
-> codes restent visibles dans les noms de fichiers pour conserver la généalogie.
+> **Statut au 16 juillet 2026 : cinq contrastes accomplis, contrôle de consolidation achevé et portes d'entrée resynchronisées par un lot ciblé.**
+> La branche de consolidation n'est pas encore le tronc canonique. Les sources,
+> archives, calculs et résultats physiques n'ont pas été réécrits par cette
+> opération. La prochaine orientation de recherche reste à choisir explicitement.
 
 ## Point d'entrée humain
 
-La [vue d'ensemble resynchronisée](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_2.md)
-donne l'état courant sans exiger de connaître les codes du dépôt.
+La [vue d'ensemble actuelle v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md)
+donne l'état courant sans exiger de connaître les codes du dépôt. L'[index
+raisonné v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md) précise
+ensuite le rang des documents antérieurs et l'ordre intellectuel minimal.
 
 Le [fichier d'accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md)
 organise ensuite les cas autour de cinq comparaisons structurantes. Il indique
 le rôle, le point d'entrée et la dette de chaque cycle sans les classer selon
 une valeur générale.
 
-Les codes actifs sont explicités à leur première occurrence : la question de
-qualification (`Q-qual`) demande dans quelle mesure une grandeur mérite d'être
-dite constante ; la question de formation (`Q-form`) demande comment un statut
-se forme, se maintient ou se défait ; le chantier Q étudie les catégories, les
-accès et les inférences en microphysique ; les niveaux `C0–C4` indiquent la
-maturité d'une contribution.
+Les codes hérités restent visibles lorsqu'ils sont utiles à la généalogie. La
+question de qualification (`Q-qual`) demande localement dans quelle mesure une
+grandeur peut être dite constante ; la question de formation (`Q-form`) demande
+comment un statut se forme, se maintient ou se défait. Le chantier Q désigne un
+programme antérieur sur les catégories, les accès et les inférences en
+microphysique. Les niveaux `C0–C4` indiquent la maturité d'une contribution.
+Ces codes ne définissent plus à eux seuls le centre du projet.
 
-## Chantier actif — catégories, accès et inférences en microphysique
+## Chantier Q — matériau conservé, non directeur
 
 La branche `agent/contribution-q1-information-chemin` contient trois tests :
 Stern–Gerlach, les séquences d'axes, puis l'interférence avec marquage des voies.
@@ -36,9 +40,11 @@ Stern–Gerlach, les séquences d'axes, puis l'interférence avec marquage des v
 4. [Interférence — fonctions et migrations](06_PHILOSOPHIE/Pilote_Q1_interference_fonctions_v0_1.md)
 5. [Interférence — évaluation de contribution](06_PHILOSOPHIE/Pilote_Q1_interference_evaluation_contribution_v0_1.md)
 
-Résultat actuel : la coordination de couches est établie (`C1`) et une
-contribution différenciée est plausible (`C2`). La prochaine opération est son
-positionnement bibliographique, non l'ajout d'un quatrième cas.
+Résultat conservé : la coordination de couches est établie (`C1`) et une
+contribution différenciée est plausible (`C2`). Ce chantier est placé en
+quarantaine sélective : il reste disponible sans commander la prochaine étape.
+Son éventuel positionnement bibliographique devra répondre à une question de
+recherche ou à un projet éditorial explicitement choisi.
 
 ## Entrée de la branche précédente — Questions contemporaines
 
@@ -48,7 +54,7 @@ le thème des constantes doive rester le centre du programme. Lire dans cet ordr
 
 1. [Rectification — accès, trajectoires et stabilisation](05_CARTES_ET_SYNTHESES/Rectification_acces_trajectoires_stabilisation_v0_1.md)
    pour la décision méthodologique active sur l'accès transversal, les trajectoires et le retrait du terme général `fixité dynamique`.
-2. [Index raisonné actif v1.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_2.md)
+2. [Index raisonné actif v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md)
    pour la navigation actuelle et le rang des documents antérieurs.
 3. [Cadrage du cycle](05_CARTES_ET_SYNTHESES/Cadrage_cycle_questions_contemporaines_v0_1.md)
    pour la méthode, les niveaux de maturité d'une contribution et les livrables.

@@ -236,17 +236,23 @@ La correction documentaire ne résoudra pas :
 Ces dettes doivent rester séparées pour qu'une meilleure navigation ne soit pas
 prise pour une validation scientifique.
 
-## 9. Décision recommandée
+## 9. Décision et mise en œuvre
 
 ```text
 resynchronisation générale : différée
-lot ciblé de navigation et de rang : recommandé avant la prochaine orientation
+lot ciblé de navigation et de rang : accompli le 16 juillet 2026 ; validation humaine attendue
 nouvelle recherche : non déclenchée par ce contrôle
 ```
 
-La prochaine opération la plus économique est donc le lot ciblé A–C. Une fois
-ce lot validé et audité, la prochaine orientation pourra être choisie depuis un
-point d'entrée qui ne ramène plus automatiquement l'ancien centre du projet.
+Les lots A à C ont produit la vue d'ensemble v0.3 et l'index v1.3, actualisé la
+porte d'entrée racine, requalifié les anciennes autorités générales et les
+notes Saveur–Higgs visées, puis harmonisé le verdict métrologique et clôturé la
+cartographie. Les sources, archives, calculs et résultats physiques sont restés
+hors du périmètre.
+
+Après validation humaine et audit, la prochaine orientation pourra être
+choisie depuis un point d'entrée qui ne ramène plus automatiquement l'ancien
+centre du projet.
 
 Une resynchronisation générale ne deviendra pertinente que si une future
 orientation modifie à nouveau les deux questions, les rôles des cycles ou la

@@ -1,5 +1,12 @@
 # Mise a jour intellectuelle v0.2
 
+> **Avis de rang — 16 juillet 2026.** Ce document demeure une synthese
+> transversale de son etat de recherche, mais n'est plus le bilan general
+> courant. La question de qualification y conserve une valeur locale sans
+> commander seule le projet. Lire d'abord la [vue d'ensemble
+> v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle de
+> consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
 ## Etat du projet apres critiques, reequilibrage du Systeme international d'unites (SI) et definition de "situe"
 
 ### 0. Statut documentaire
