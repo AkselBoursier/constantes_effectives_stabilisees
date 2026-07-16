@@ -187,6 +187,27 @@ Les noms de fichiers historiques peuvent conserver leurs anciens codes. Dans
 le texte actif, expliciter leur fonction et eviter les formules comme `Q2 est
 acquis` lorsqu'elles ne permettent pas de savoir de quelle serie il s'agit.
 
+## Completude informative des formulations
+
+La [reecriture positive active](01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_3.md)
+porte sur le rang et sur la quantite d'information transmise.
+
+Regle de redaction : toute limite importante est appariee a ce qu'elle borne.
+Le texte nomme d'abord ou dans la meme unite argumentative :
+
+```text
+le resultat etabli ;
+la fonction exercee ;
+l'appui disponible ;
+le rang tenu ;
+ou l'operation suivante rendue possible.
+```
+
+Une negation factuelle, une non-these ou une sortie de test conserve sa force
+exacte. Dans une synthese ou un verdict, elle ne tient toutefois pas lieu de
+description positive : le lecteur doit pouvoir identifier a la fois l'acquis
+et sa frontiere sans deduire l'un de l'autre.
+
 ## Git et genealogie
 
 Lire le
@@ -258,3 +279,6 @@ Avant de promouvoir une proposition philosophique :
 6. Produire des commits lisibles ; reserver push et pull request aux jalons
    substantiels ou a une demande explicite, sauf dans l'environnement ChatGPT
    classic vise par l'exception stricte decrite dans le workflow GitHub v0.2.
+7. Avant de clore un document actif, verifier que chaque limite importante
+   borne un contenu positivement nomme et que les refus factuels gardent leur
+   force exacte.

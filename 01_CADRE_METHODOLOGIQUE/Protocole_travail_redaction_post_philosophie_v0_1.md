@@ -47,13 +47,17 @@ Regles d'usage :
 4. proteger la force des refus : la reecriture positive ne transforme
    pas "non confirme" en "reste a confirmer" ;
 5. appliquer la charite de rang aux positions discutees : decrire
-   d'abord ce qu'elles ont stabilise, puis donner le verdict.
+   d'abord ce qu'elles ont stabilise, puis donner le verdict ;
+6. apparier toute limite importante a un resultat, une fonction, un appui,
+   un rang ou une operation positivement nommes : le lecteur ne doit pas
+   reconstruire le contenu informatif a partir de la seule negation.
 ```
 
 Formule courte :
 
 ```text
-le cadre devient positif ; les refus gardent leur force.
+le cadre et le resultat deviennent positifs ; les refus en fixent la portee et
+gardent leur force.
 ```
 
 ### 2. Regle des deux registres
@@ -267,12 +271,14 @@ Usage :
 4. Q1, Q2, reserve ou jonction ?
 5. Quelle regle de reecriture positive s'applique ?
 6. Les refus eventuels gardent-ils leur force exacte ?
-7. Les formules fortes ont-elles un statut probatoire explicite ?
-8. "constante" ou "constance" est-il employe au bon registre ?
-9. Le SI ou la convention portent-ils la clause modale ?
-10. Le document exige-t-il un protocole d'horodatage ?
-11. Le raccord README / index est-il additif ?
-12. Le commit correspond-il a un cycle de travail coherent ?
+7. Chaque limite borne-t-elle un resultat, une fonction ou une operation
+   positivement nommes ?
+8. Les formules fortes ont-elles un statut probatoire explicite ?
+9. "constante" ou "constance" est-il employe au bon registre ?
+10. Le SI ou la convention portent-ils la clause modale ?
+11. Le document exige-t-il un protocole d'horodatage ?
+12. Le raccord README / index est-il additif ?
+13. Le commit correspond-il a un cycle de travail coherent ?
 ```
 
 ### 10. Formule de cloture

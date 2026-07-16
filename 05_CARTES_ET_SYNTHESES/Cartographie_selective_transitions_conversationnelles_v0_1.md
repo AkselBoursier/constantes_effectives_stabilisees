@@ -419,3 +419,23 @@ attendent une validation humaine avant tout lot de correction.
 
 Cette continuation ferme la lacune conversationnelle connue jusqu'à ce jalon.
 Elle n'affirme pas que tout le clavardage intermédiaire est désormais archivé.
+
+### 9.8 Retour de lecture — complétude informative
+
+La lecture humaine des premiers résultats accepte le fond du micro-pilote et
+signale une perte d'information dans sa formulation : plusieurs limites disent
+clairement ce que l'essai, Git ou les résultats physiques n'établissent pas,
+mais laissent parfois au lecteur la charge de reconstruire leur fonction
+positive.
+
+La règle de réécriture positive v0.3 contient déjà le principe « dire d'abord
+ce que le cas est ». Son test contrôlait surtout le rang, la structure et la
+conservation des refus. Le retour d'usage ajoute un contrôle de complétude :
+chaque limite importante doit borner un résultat, une fonction, un appui, un
+rang ou une opération explicitement nommés.
+
+Le document de résultats est repris sous ce contrôle. Les refus et les dettes
+gardent leur force ; l'information positive qu'ils délimitent devient
+directement lisible. Cette correction porte sur la restitution du micro-pilote
+et sur la règle d'écriture ; elle laisse les trois objets éprouvés dans leur
+état en attente de la validation des propositions A à D.

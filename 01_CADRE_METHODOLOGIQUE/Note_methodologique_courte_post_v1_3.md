@@ -185,13 +185,16 @@ la grandeur tient-elle seule, ou dans une solidarite de dependances ?
 Le retrait d'un noeud doit etre gradue : dissolution locale, degradation,
 substitution ou non-dissolution.
 
-#### 5.7 Test de limite
+#### 5.7 Test de portee et de limite
 
 ```text
-que la stabilisation ne dit-elle pas ?
+qu'etablit positivement la stabilisation,
+et quelle limite fixe la portee de cet acquis ?
 ```
 
-La limite conservee protege contre la surextension theorique.
+Le resultat positif et sa limite forment deux informations distinctes. La
+premiere nomme l'acquis, la fonction ou l'operation possible ; la seconde
+protege cet acquis contre la surextension theorique.
 
 #### 5.8 Test de migration
 
