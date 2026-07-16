@@ -486,3 +486,30 @@ transitions](Cartographie_roles_trois_transitions_v0_1.md) applique la grille à
 la reformulation des deux questions, au contraste des cycles 9 et 10 et à la
 réécriture positive avec l'architecture distribuée. Elle reste un micro-pilote
 soumis à validation avant toute intégration dans les règles courantes.
+
+### 9.11 Clarification de la micro-défaillance informationnelle
+
+Avant de valider les trois portraits, la lecture humaine demande que le
+troisième intègre la première réécriture positive insuffisante. Elle se demande
+si sa cause relève de la méthode, de l'architecture documentaire, de
+l'infrastructure ou d'un mélange de ces couches.
+
+La reconstruction confirme que le diagnostic humain portait déjà
+explicitement sur une perte de contenu informatif et de précision. La formule
+« complétude informative » est la traduction opératoire ultérieure de ce
+diagnostic. La forme négative constitue le symptôme visible ; le défaut
+sémantique réside dans un contenu positif encore dépendant de l'inférence du
+lecteur.
+
+La [cartographie des rôles](Cartographie_roles_trois_transitions_v0_1.md#43-diagnostic-causal-de-la-micro-défaillance)
+distingue ensuite trois temps : une règle initialement centrée sur le rang, une
+première application de la règle corrigée encore trop proche du texte source,
+puis une ambiguïté de version dans le visualiseur. GitHub a conservé les états
+et permis leur comparaison ; il n'est pas identifié comme origine du défaut
+informationnel. L'hypothèse précise d'un cache d'interface reste non démontrée.
+
+La [note sur l'architecture
+distribuée](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md#10-complémentarité-révélée-par-une-micro-défaillance)
+formalise la complémentarité : la méthode définit la propriété, l'architecture
+la rend récupérable, GitHub conserve les états, les outils vérifient leur
+périmètre et la lecture humaine éprouve l'effet sémantique.

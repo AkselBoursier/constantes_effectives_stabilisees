@@ -217,3 +217,53 @@ que rapportée à une catégorie technique unique.
 Cette grille compare des fonctions situées et conserve les contributions
 indéterminables. Elle reste au rang de micro-pilote jusqu'à sa validation
 humaine ; ses catégories ne deviennent pas automatiquement des rôles fixes.
+
+## 10. Complémentarité révélée par une micro-défaillance
+
+L'incident de la réécriture positive fournit un test local de l'architecture
+distribuée. La première restitution de l'essai réflexif conservait les limites
+avec précision, mais plusieurs acquis restaient à déduire de ce qu'ils
+n'étaient pas. La lecture humaine a décrit explicitement une perte de contenu
+informatif et de précision. Le modèle a ensuite formalisé ce critère sous le
+nom de « complétude informative ».
+
+### 10.1 Distribution du mécanisme
+
+| Couche | Fonction positive | Défaillance ou limite observée | Correction |
+|---|---|---|---|
+| Méthodologie rédactionnelle | définir l'ordre, le rang et la force des formulations | le test initial contrôlait la place de la négation plus précisément que l'autonomie informationnelle de l'affirmation | ajouter un test où résultat positif et limite doivent rester identifiables séparément |
+| Architecture documentaire | rendre règles, statuts et versions accessibles | la règle, les consignes actives et le document produit n'étaient pas encore raccordés sur ce critère ; la première reprise gardait le même chemin | propager le critère dans les consignes et créer une v0.2 distincte |
+| Infrastructure GitHub | conserver et comparer les états | l'infrastructure établit les différences sans juger leur suffisance sémantique | employer l'historique pour séparer état initial, première correction et reconstruction |
+| Outils GitHub et audits | exécuter, publier et vérifier des propriétés déclarées | structure, liens, encodage et identité distante peuvent réussir tandis qu'un contenu reste informativement pauvre | déclarer la portée de chaque contrôle et ajouter une épreuve sémantique humaine |
+| Modèle de langage | appliquer les règles et transformer les retours en documents | la première application de la nouvelle règle est restée trop proche de l'architecture source | reconstruire par acquis et fonctions, puis vérifier le nouvel état sous un nom distinct |
+| Lecture et décision humaines | éprouver la pertinence et l'effet réel de la restitution | le visualiseur ne permettait pas d'identifier avec certitude si l'écart venait de l'état affiché ou du texte | distinguer synchronisation et adéquation, puis maintenir la forme sous examen |
+
+### 10.2 Répartition des responsabilités
+
+La responsabilité méthodologique consiste à définir la propriété recherchée :
+ici, la présence autonome du résultat positif et de sa limite. La responsabilité
+architecturale consiste à rendre cette règle récupérable et ses versions
+distinguables. La responsabilité infrastructurelle consiste à préserver les
+états et leur comparaison. La responsabilité opérationnelle consiste à cibler,
+publier et vérifier les propriétés que les outils savent contrôler.
+
+Le jugement de suffisance sémantique reste une épreuve de lecture et de
+décision. Le modèle contribue à cette épreuve par l'analyse et la
+reformulation ; la lecture humaine a fourni dans cet incident le signal qui a
+distingué correction formelle et gain informationnel.
+
+### 10.3 Boucle corrigée
+
+```text
+méthode : définit la propriété attendue
+-> architecture : rend la règle et les versions accessibles
+-> infrastructure : conserve et compare les états
+-> outils : exécutent et vérifient leur périmètre déclaré
+-> lecture : éprouve l'effet sémantique obtenu
+-> modèle et auteur : corrigent la règle, le document ou la route
+```
+
+Cette boucle décrit une complémentarité, pas une garantie automatique. Un
+contrôle peut réussir dans son registre pendant qu'un autre registre reste à
+éprouver. La micro-défaillance épaissit donc l'analyse de l'architecture sans
+devenir une théorie générale de la collaboration humain–machine.

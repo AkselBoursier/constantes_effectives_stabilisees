@@ -184,9 +184,10 @@ ses outils sont simultanément des moyens de travail et des objets de réflexion
 
 La transition part d'une première restitution du micro-pilote réflexif dont le
 fond est accepté, mais dont plusieurs objets restent définis surtout par leurs
-limites. Elle aboutit à la [restitution
-v0.2](Resultats_essai_reflexif_borne_v0_2.md) et à la [note sur l'architecture
-distribuée](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md).
+limites. Une première correction ajoute la complétude informative à la règle et
+réécrit la v0.1 ; une seconde reprise reconstruit la [restitution
+v0.2](Resultats_essai_reflexif_borne_v0_2.md) et produit la [note sur
+l'architecture distribuée](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md).
 
 La [continuation conversationnelle](Cartographie_selective_transitions_conversationnelles_v0_1.md#98-retour-de-lecture--complétude-informative)
 consigne l'objection de forme, la reprise de la règle de réécriture positive,
@@ -197,13 +198,49 @@ distant `453f21f` publie le nouvel état sous un nom distinct.
 
 | Composante | Ouvrir | Éprouver | Décider | Continuer |
 |---|---|---|---|---|
-| Auteur | détecte une perte d'information dans les définitions négatives, rappelle une ancienne méthode et demande de placer GitHub au même niveau causal que l'auteur et les modèles | relit le document dans le visualiseur, distingue la validité du fond et l'insuffisance de la forme, puis décrit la fluidité nouvelle produite par la mémoire du dépôt | valide le fond, maintient la forme sous examen et valide ensuite la structure du présent essai sur les rôles | propose d'aller plus loin dans la détermination des rôles sans les classer |
-| Modèles de langage | diagnostiquent une règle de rang devenue insuffisante et proposent la complétude informative | réécrivent les résultats par fonctions et acquis, distinguent les registres de responsabilité et soumettent l'explication de la fluidité à des contrepoids | créent une v0.2 distincte, conservent la v0.1 comme généalogie et soumettent les rôles à validation | produisent le présent micro-pilote comparatif et maintiennent la possibilité d'une contribution indéterminable |
-| GitHub | conserve la règle positive ancienne, la v0.1 des résultats et les décisions qui permettent de détecter l'écart | rend la révision inspectable et révèle l'ambiguïté pratique d'une modification sous le même nom de fichier | inscrit la v0.2 sous une nouvelle adresse, relie les deux versions et conserve l'état publié | ajoute la nouvelle règle et la nouvelle route au contexte disponible pour les reprises futures |
-| Outils employés par les modèles | les outils GitHub retrouvent la note méthodologique, les versions et l'état distant | comparent fichier local, fichier distant, arbre Git et visualisation ; ils distinguent ainsi synchronisation réussie et insuffisance réelle de la révision | créent les objets Git, publient le commit distant et vérifient le succès de l'audit automatique | rendent la v0.2 et la note d'architecture directement accessibles au présent passage |
-| Appuis et résistances extérieurs | l'expérience de lecture fournit l'objection initiale ; les documents antérieurs apportent une méthode récupérable | la persistance de formulations négatives et l'effet de cache du visualiseur résistent à une simple correction déclarée | le contrôle de complétude et les audits établissent la lisibilité positive et l'intégrité documentaire du nouvel état | les futures lectures humaines fourniront le test de réception que les contrôles formels ne peuvent produire |
+| Auteur | décrit explicitement une perte de contenu informatif et de précision, puis rappelle une ancienne méthode ; il demande ensuite de placer GitHub au même niveau causal que l'auteur et les modèles | relit la première correction dans le visualiseur, distingue la validité du fond et l'insuffisance persistante de la restitution, puis décrit la fluidité produite par la mémoire du dépôt | valide le fond, maintient la forme sous examen et valide ensuite la structure du présent essai sur les rôles | propose d'étudier la complémentarité entre méthodologie, architecture, infrastructure et outils sans classer leurs contributions |
+| Modèles de langage | transforment le diagnostic informationnel en contrôle de complétude | appliquent d'abord ce contrôle dans une révision encore trop proche du texte source, puis distinguent le défaut sémantique de l'ambiguïté de visualisation | reconstruisent une v0.2 distincte, conservent la v0.1 comme généalogie et soumettent les rôles à validation | produisent le présent micro-pilote comparatif et maintiennent la possibilité d'une contribution indéterminable |
+| GitHub | conserve la règle initiale, la première restitution et les décisions qui permettent de reconstruire l'écart | rend comparables l'état initial, la première correction et la v0.2 ; le maintien du même chemin pour les deux premiers états réduit toutefois leur distinction dans certaines interfaces | inscrit la v0.2 sous une nouvelle adresse, relie les versions et conserve l'état publié | ajoute la règle corrigée et la nouvelle route au contexte disponible pour les reprises futures |
+| Outils employés par les modèles | les outils GitHub retrouvent la note méthodologique, les versions et l'état distant | les audits formels contrôlent structure, liens et encodage ; la lecture distante des fichiers et arbres établit que la première correction était publiée sans établir sa suffisance sémantique | créent les objets Git, publient le commit distant et vérifient le succès de l'audit automatique | rendent la v0.2, la note d'architecture et leurs différences directement accessibles au présent passage |
+| Appuis et résistances extérieurs | l'expérience de lecture fournit un test sémantique que les contrôles formels ne portent pas ; les documents antérieurs apportent une méthode récupérable | la persistance d'un contenu positif encore à déduire résiste à la première correction ; un possible effet de cache ou de réouverture du même chemin ajoute une ambiguïté perceptive sans cause établie | le contrôle de complétude établit la capacité informative visée ; les audits établissent séparément l'intégrité documentaire | les futures lectures humaines fourniront le test de réception que les contrôles formels ne peuvent produire |
 
-### 4.3 Contribution distribuée et indéterminations
+### 4.3 Diagnostic causal de la micro-défaillance
+
+Le retour humain formule directement le critère décisif : la restitution fait
+perdre du contenu informatif et de la précision lorsqu'elle dit ce que l'objet
+n'est pas sans rendre aussi lisible ce qu'il est ou ce qu'il accomplit. La
+formule « complétude informative » est l'opérationnalisation ultérieure de ce
+diagnostic par le modèle ; l'intuition informationnelle lui est antérieure.
+
+La comparaison des états permet de distribuer les causes sans les confondre.
+
+| Couche | Mécanisme observé | Statut causal dans cet incident | Fonction dans la correction |
+|---|---|---|---|
+| Méthodologie rédactionnelle | la règle initiale prescrivait le rang positif, la charité avant verdict et la conservation des refus ; son test ne vérifiait pas que l'acquis reste identifiable indépendamment de la négation | cause principale de la première restitution insuffisante | ajout d'un test de complétude portant sur résultat, fonction, appui, rang et opération |
+| Application par le modèle | la première reprise ajoute le bon critère, mais conserve encore une part de l'architecture et des formulations du texte source | facteur de persistance après la correction de la règle | reconstruction plus franche de la v0.2 à partir des fonctions et acquis |
+| Architecture documentaire | la règle était distribuée entre une note spécialisée, les consignes d'agent et le document de résultats ; la première correction modifiait la v0.1 sous le même nom | facteur secondaire de récupération et de visibilité | raccord de la règle aux consignes actives, conservation de la v0.1 et création d'une v0.2 distincte |
+| Infrastructure GitHub | GitHub conservait les états et leurs différences, mais n'évaluait pas leur contenu sémantique | condition de mémoire et de comparaison, non origine du défaut informationnel | établissement des trois états, identité des arbres publiés et réversibilité |
+| Outils et interfaces | les audits vérifiaient structure, liens, encodage et publication ; le visualiseur rendait l'état consulté difficile à identifier avec certitude | limite de vérification et ambiguïté perceptive ; l'hypothèse précise de cache reste non démontrée | lecture distante, comparaison des fichiers et publication sous une nouvelle adresse |
+| Lecture humaine | la différence entre correction formelle et gain informationnel devient observable à la lecture | test sémantique qui déclenche et oriente la correction | formulation du manque, seconde épreuve de la restitution et décision |
+
+Le mécanisme complet est donc mixte, mais les couches n'exercent pas la même
+fonction causale :
+
+```text
+règle centrée sur le rang
+-> première restitution : contenu positif partiellement laissé à déduire
+-> premier diagnostic humain du manque informationnel
+-> règle de complétude + première réécriture sous le même chemin
+-> dépendance informationnelle résiduelle + ambiguïté de version dans l'interface
+-> seconde lecture humaine
+-> reconstruction v0.2 sous une nouvelle adresse + vérification distante
+```
+
+La forme négative était le symptôme visible. La cause sémantique était la
+dépendance du contenu positif à l'inférence du lecteur. L'architecture et
+l'interface ont ensuite influé sur la répétition et la visibilité du défaut.
+
+### 4.4 Contribution distribuée et indéterminations
 
 L'objection de forme, le rappel de la méthode et l'intuition sur la fonction de
 GitHub sont explicitement formulés par l'auteur. Les modèles transforment ces
@@ -224,11 +261,11 @@ distribution stable du mérite.
 
 | Composante | Reformulation des questions | Contraste 9–10 | Réécriture et architecture | Continuité observable |
 |---|---|---|---|---|
-| Auteur | correction de l'objet général et ouverture de deux questions | orientation du programme comparatif, arbitrage de portée et validation | objection de forme, intuition infrastructurelle et décision | fournit l'orientation située et les corrections qui changent le cours du projet |
-| Modèles de langage | formulation, distinction et audit du corpus | comparaison physico-calculatoire et synthèse des niveaux | diagnostic méthodologique, réécriture et formalisation | transforment une orientation en propositions explicites et contrôlables |
-| GitHub | mémoire des états et route vers les cycles | architecture probatoire entre calculs, résultats et contraste | objet de l'analyse et mémoire active de la correction | rend les décisions durables, comparables et récupérables |
-| Outils employés par les modèles | inspection, modification et publication | exécution calculatoire en amont, lecture ciblée et publication GitHub | vérification distante, création des objets Git et audit | ferment la boucle entre intention, opération, état modifié et contrôle |
-| Appuis et résistances extérieurs | hétérogénéité des objets et recherches antérieures | résultats numériques, contraintes physiques et dettes empiriques | expérience de lecture, règle antérieure et futurs tests de réception | empêchent la cohérence interne de tenir lieu de preuve suffisante |
+| Auteur | correction de l'objet général et ouverture de deux questions | orientation du programme comparatif, arbitrage de portée et validation | diagnostic du manque informationnel, intuition infrastructurelle et décision | fournit l'orientation située et les corrections qui changent le cours du projet |
+| Modèles de langage | formulation, distinction et audit du corpus | comparaison physico-calculatoire et synthèse des niveaux | première application insuffisante, formalisation de la complétude et reconstruction | transforment une orientation en propositions explicites, éprouvables et révisables |
+| GitHub | mémoire des états et route vers les cycles | architecture probatoire entre calculs, résultats et contraste | mémoire comparative des trois états et nouvelle adresse de la v0.2 | rend les décisions durables, comparables et récupérables |
+| Outils employés par les modèles | inspection, modification et publication | exécution calculatoire en amont, lecture ciblée et publication GitHub | audits formels, vérification distante, création des objets Git et publication | ferment la boucle entre intention, opération, état modifié et contrôle déclaré |
+| Appuis et résistances extérieurs | hétérogénéité des objets et recherches antérieures | résultats numériques, contraintes physiques et dettes empiriques | lecture humaine comme test sémantique, règle antérieure et futurs tests de réception | empêchent la cohérence interne ou la correction formelle de tenir lieu de preuve suffisante |
 
 Aucune colonne ne résume la valeur d'une composante. La même infrastructure
 qui exerce une fonction de mémoire dans la première transition devient une
@@ -239,7 +276,7 @@ mobile.
 
 ## 6. Résultats du micro-pilote
 
-Le croisement des trois transitions produit six résultats de méthode soumis à
+Le croisement des trois transitions produit sept résultats de méthode soumis à
 la lecture humaine.
 
 ### 6.1 Une cartographie des rôles est possible
@@ -277,7 +314,20 @@ composante est donc élargie aux outils employés par les modèles, en nommant
 localement leur type. Cette correction conserve le rôle propre des outils
 GitHub sans leur attribuer l'exécution des calculs physiques.
 
-### 6.6 L'indétermination est un résultat positif
+### 6.6 Méthode, architecture, infrastructure et outils sont complémentaires
+
+La méthodologie définit la propriété sémantique attendue. L'architecture
+documentaire rend cette règle accessible et distingue ses versions. GitHub
+conserve les états et leurs différences. Les outils appliquent des opérations
+et vérifient les propriétés prévues par leurs contrôles. La lecture humaine
+éprouve enfin l'effet informationnel réel, puis le modèle transforme ce retour
+en règle et en nouvel état.
+
+Chaque couche remplit ainsi une fonction propre. Un audit formel réussi
+établit l'intégrité documentaire ; il laisse à un test sémantique la mesure de
+la complétude informative.
+
+### 6.7 L'indétermination est un résultat positif
 
 Lorsque les traces établissent une production distribuée sans permettre une
 allocation fine, la formule exacte est « contribution distribuée, répartition
@@ -323,13 +373,15 @@ conserve alors une mémoire suffisante sans installer un métalangage permanent.
 
 ## 9. Décision suivante
 
-La lecture humaine doit maintenant vérifier quatre points :
+La lecture humaine doit maintenant vérifier cinq points :
 
-1. les cinq composantes décrivent-elles les participants et résistances utiles
+1. le diagnostic de la micro-défaillance distingue-t-il correctement la cause
+   méthodologique, sa persistance documentaire et l'ambiguïté d'interface ?
+2. les cinq composantes décrivent-elles les participants et résistances utiles
    sans les rendre artificiellement symétriques ?
-2. les trois profils correspondent-ils aux transitions vécues et documentées ?
-3. la comparaison informe-t-elle sans produire un classement implicite ?
-4. le micro-paragraphe proposé suffit-il pour les futures transitions ?
+3. les trois profils correspondent-ils aux transitions vécues et documentées ?
+4. la comparaison informe-t-elle sans produire un classement implicite ?
+5. le micro-paragraphe proposé suffit-il pour les futures transitions ?
 
 Une validation autoriserait l'intégration de la grille légère dans la note sur
 l'architecture distribuée et dans les règles de continuité. Une correction
