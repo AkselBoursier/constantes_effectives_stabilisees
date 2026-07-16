@@ -248,10 +248,15 @@ Les cinq contrastes sont accomplis et le fichier d'accueil central les rend
 accessibles. La pondération reste un instrument provisoire validé pour le
 travail, non une hiérarchie définitive des cycles.
 
-La prochaine opération doit être choisie séparément : validation d'ensemble
-des cinq résultats, poursuite d'un cycle physique ou préparation du protocole
-de paysage contemporain sur la mesure. Elle ne doit pas déclencher une nouvelle
-resynchronisation générale sans décision explicite.
+Le [contrôle de consolidation après les cinq contrastes](Controle_consolidation_cinq_contrastes_v0_1.md)
+sépare désormais les acquis, les formulations provisoires, les contradictions
+actives et les dettes locales. Il recommande un lot ciblé de navigation et de
+rang avant la prochaine orientation, non une resynchronisation générale.
+
+La prochaine opération documentaire recommandée est le lot ciblé de navigation
+et de rang décrit par ce contrôle. Après sa validation, la poursuite d'un cycle
+physique ou la préparation du paysage contemporain sur la mesure devront être
+choisies séparément. Aucune resynchronisation générale n'est déclenchée.
 
 La vérification scientifique détaillée cycle par cycle reste une opération
 distincte de cette réorganisation documentaire.

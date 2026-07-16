@@ -20,6 +20,7 @@ Documents transversaux :
 
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
+- [contrôle de consolidation des cinq contrastes](../05_CARTES_ET_SYNTHESES/Controle_consolidation_cinq_contrastes_v0_1.md) ;
 - [extraction des questions de la conversation des cycles 1 à 3](../05_CARTES_ET_SYNTHESES/Extraction_questions_conversation_cycles_1_a_3_v0_1.md).
 
 ## 1. Deux questions communes
