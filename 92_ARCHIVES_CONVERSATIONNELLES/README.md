@@ -11,7 +11,8 @@ rang : archive de provenance, sans autorité scientifique ou doctrinale active
 ordre : chronologique, de la plus ancienne à la plus récente
 formats : JSON archivistique et Markdown de lecture humaine
 assainissement : accompli le 16 juillet 2026
-extraction des transitions : non commencée ; décision séparée requise
+extraction des transitions : cartographie sélective v0.1 produite le 16 juillet 2026 ;
+                             contenu soumis à validation
 ```
 
 Ces archives documentent une partie du travail conversationnel associé au
@@ -60,6 +61,16 @@ indépendante.
 Les titres et périodes proviennent des métadonnées d'export. L'inventaire ne
 préjuge pas du contenu intellectuel de chaque séquence.
 
+### Convention de référence
+
+La cartographie sélective désigne les archives par `A1`, `A2` et `A3`. Un
+repère tel que `A2-M56` renvoie au cinquante-sixième message du tableau
+`messages` de la deuxième copie JSON assainie. La numérotation commence à 1 et
+reste liée aux empreintes consignées ci-dessous.
+
+Les rôles `Prompt` et `Response` indiquent la provenance textuelle d'un tour.
+Ils ne constituent pas une attribution de propriété intellectuelle.
+
 ## 4. Assainissement
 
 L'assainissement retire :
@@ -98,10 +109,16 @@ Ces archives pourront servir à une cartographie sélective des transitions :
 - alternatives abandonnées ;
 - continuités importantes.
 
-Cette extraction n'est pas automatique. Elle devra distinguer ce qui est
-explicite, fortement impliqué ou seulement reconstruit rétrospectivement. Aucun
+Toute extraction doit distinguer ce qui est explicite, fortement impliqué ou
+seulement reconstruit rétrospectivement. Aucun
 résultat physique, verdict philosophique ou attribution de contribution n'est
 importé dans le corpus actif par le seul archivage.
+
+La première extraction transversale est la [cartographie sélective des
+transitions conversationnelles
+v0.1](../05_CARTES_ET_SYNTHESES/Cartographie_selective_transitions_conversationnelles_v0_1.md).
+Elle reste une consolidation de provenance soumise à validation et ne remplace
+pas les documents actifs.
 
 ## 7. Régime futur
 

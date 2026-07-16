@@ -15,25 +15,34 @@ source : export au format JavaScript Object Notation (JSON), intitulé
          « Recherche sur les constantes », intégré au dépôt le 14 juillet 2026 ;
 période de la conversation : 8 juillet 2026, 15 h 44, au 9 juillet 2026, 9 h 32 ;
 volume : 112 messages, soit 56 messages de l'auteur et 56 réponses ;
-empreinte SHA-256 de la copie assainie : f038c19b1c3c4c4e503d75a9ccf9ae2fe7a834a939b3a0c96b8d56605288b2c6 ;
+empreinte par algorithme de hachage sécurisé sur 256 bits (SHA-256) de la copie
+assainie actuelle : 45ab83d1d3663465068e048db86f5de125c34c2782f2be8c55bb5942afa04fba ;
 ne vaut pas : validation scientifique des réponses, vérification des sources
               citées, transcription exhaustive, attribution de propriété
               intellectuelle ou autorité sur le cadre actif.
 ```
 
-Le dépôt conserve désormais deux formes de la source :
+Le dépôt conserve désormais deux formes de la source dans l'archive
+conversationnelle centralisée :
 
 ```text
-02_CYCLES_PHYSIQUES/ChatGPT-Recherche sur les constantes.json
-02_CYCLES_PHYSIQUES/ChatGPT-Recherche sur les constantes.md
+92_ARCHIVES_CONVERSATIONNELLES/1-ChatGPT-Recherche sur les constantes.json
+92_ARCHIVES_CONVERSATIONNELLES/1-ChatGPT-Recherche sur les constantes.md
 ```
 
-Le fichier PDF redondant n'est pas conservé. L'export JSON a été assaini le
-14 juillet 2026 : l'identité, l'adresse électronique et le lien privé de
+Le fichier PDF redondant n'est pas conservé. L'export JSON a été assaini une
+première fois le 14 juillet, puis intégré à l'archive centralisée assainie le
+16 juillet 2026 : l'identité, l'adresse électronique et le lien privé de
 conversation ont été retirés, tandis que les 112 messages, leurs rôles et leurs
 horodatages sont conservés sans modification. Les numéros de message employés
 ci-dessous sont les indices de son tableau `messages` ; ils servent uniquement
 de repères de provenance textuelle.
+
+Cette extraction conserve sa numérotation technique historique commençant à 0.
+La [cartographie transversale des trois
+archives](Cartographie_selective_transitions_conversationnelles_v0_1.md) emploie
+une convention plus lisible commençant à 1 : le `message 62` ci-dessous
+correspond à `A1-M63` dans cette nouvelle carte.
 
 ## 1. Provenance textuelle et construction distribuée
 
