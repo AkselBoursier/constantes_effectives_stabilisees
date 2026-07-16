@@ -1,5 +1,16 @@
 # Synthese du cycle effectif basse energie v0.1
 
+> **Statut de lecture — synthèse historique requalifiée.** Ce document conserve
+> l'état initial du cycle et son ancien verdict d'« architecture inter-familles
+> confirmée ». Ce verdict ne fait plus autorité. La reprise active est portée
+> par le [dossier relationnel](architecture-relationnelle-basse-energie.md), la
+> [vérification physique](verification-physique-basse-energie.md) et
+> l'[évaluation du gain explicatif](evaluation-gain-explicatif-basse-energie.md),
+> qui retient plus sobrement une architecture méthodologique de validité. Les
+> formulations anciennes ci-dessous restent consultables comme matériau de
+> récupération et ne doivent pas être citées isolément comme conclusions
+> actuelles.
+
 ## Architecture effective basse energie, validite et formes d'effectivite
 
 ### 1. Fonction de cette synthese
