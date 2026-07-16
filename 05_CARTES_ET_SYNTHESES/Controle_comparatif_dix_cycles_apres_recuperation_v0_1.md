@@ -151,7 +151,7 @@ les cycles ; ils localisent un contraste précis.
 |---|---|---|
 | cycles 1 et 6 | comment distinguer dépendance à l'échelle, changement de régime et domaine de validité ? | typer une dynamique qui n'est pas automatiquement temporelle |
 | cycles 2 et 5 | à quelles conditions plusieurs fonctions forment-elles un réseau physique instructif, et que ce réseau explique-t-il réellement ? | tester la différence entre organisation, mécanisme et explication d'origine |
-| cycles 3 et 7 | comment plusieurs accès non équivalents reconstruisent-ils un objet ou un secteur ? | préparer le chantier sur la mesure sans unifier prématurément les problèmes |
+| cycles 3 et 7 | que doit-il être commun, et quels ponts doivent être fournis, pour que des accès non équivalents contraignent le même objet ou secteur ? | préparer le chantier sur la mesure sans présupposer l'identité de l'objet ni unifier les problèmes |
 | cycles 4 et 8 | que change le passage d'une valeur mesurée à une valeur définissante ? | dépasser la tautologie par les effets de réalisation et d'incertitude |
 | cycles 9 et 10 | quelle différence entre varier des paramètres entre mondes et faire évoluer un porteur dans un même monde ? | séparer contrefactuel, dynamique physique et migration du réglage |
 
@@ -168,16 +168,18 @@ Les cycles 1 et 6 montrent qu'une valeur de référence peut coexister avec un
 flot, un changement de degrés de liberté ou une validité limitée. La dynamique
 ne se réduit donc pas au devenir temporel.
 
-### 6.2 L'objet scientifique peut être distribué entre plusieurs accès
+### 6.2 L'unité de l'objet doit être éprouvée entre plusieurs accès
 
 Les cycles 3 et 7 montrent que les opérations d'accès ne livrent pas toujours
-des copies convertibles d'un objet déjà totalement donné. Elles établissent des
-combinaisons, des projections et des contraintes dont l'articulation fait
-partie de l'enquête.
+des estimations interchangeables. Elles contraignent des combinaisons, des
+projections et des paramètres dont la comparaison exige des ponts physiques et
+inférentiels explicites.
 
-Cette ligne ouvre une question philosophique forte sans conclure que la mesure
-quantique, l'expérience classique et l'inférence cosmologique constituent un
-seul problème.
+Ils ne démontrent ni que l'objet est intégralement donné avant toute médiation,
+ni qu'il est constitué ou distribué par ses accès. Cette alternative reste une
+question philosophique à instruire. Elle n'autorise pas davantage à conclure
+que la mesure quantique, l'expérience classique et l'inférence cosmologique
+constituent un seul problème.
 
 ### 6.3 Rendre une grandeur dynamique déplace les exigences d'explication
 
