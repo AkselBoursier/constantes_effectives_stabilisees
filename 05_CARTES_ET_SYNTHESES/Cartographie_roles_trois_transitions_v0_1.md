@@ -16,8 +16,12 @@ fonction : éprouver une comparaison des rôles sans classement ;
 résultat : profils situés, contributions partagées et indéterminations ;
 effet immédiat : aucun changement d'attribution, de doctrine ou de résultat
                  scientifique ;
-décision suivante : validation humaine du micro-pilote avant toute promotion
-                    de la grille.
+validation : structure, diagnostic causal, cinq composantes, trois portraits,
+             comparaison et usage léger validés le 16 juillet 2026 ;
+complément demandé : distinguer les apports saillants à l'échelle du projet
+                     sans faire de l'échantillon une mesure de représentativité ;
+décision suivante : lecture humaine du complément transversal avant toute
+                    promotion de la grille.
 ```
 
 ## 1. Méthode du passage
@@ -274,6 +278,54 @@ troisième. Le même auteur intervient par correction conceptuelle, arbitrage de
 portée ou objection de forme selon le cas. Le rôle est donc relationnel et
 mobile.
 
+### 5.1 Limite de représentativité de l'échantillon
+
+Les trois portraits éprouvent la grille ; ils ne sélectionnent pas les
+contributions les plus fortes du projet. Le contraste 9–10, en particulier,
+rend bien visibles les calculs, les résultats négatifs et l'architecture de
+preuve, mais il ne résume ni la capacité de lecture transversale des modèles ni
+l'apport cumulatif de GitHub. Déduire les « meilleurs apports » de cette seule
+sélection accentuerait le biais introduit par le choix des transitions.
+
+Le complément suivant change donc d'unité. Il s'appuie sur les continuités
+reconstruites dans les trois phases des archives, sur les documents actifs et
+sur les transitions Git nécessaires à leur reprise. Un apport est retenu comme
+**saillant et fortement étayé** lorsqu'il :
+
+1. réapparaît dans plusieurs phases ou plusieurs familles de documents ;
+2. modifie sensiblement la capacité d'orienter, d'éprouver, de cumuler ou de
+   reprendre le travail ;
+3. correspond à une fonction particulièrement distinctive de la composante ;
+4. reste formulable sans lui attribuer seule un résultat distribué.
+
+Ces critères n'établissent ni score, ni mérite global, ni propriété. Ils
+permettent une mise en valeur proportionnée, dans le périmètre documenté à ce
+jour. Le pan philosophique antérieur et l'ensemble des interactions avec les
+modèles n'étant pas reconstruits avec la même finesse, la sélection reste
+révisable et non exhaustive.
+
+### 5.2 Apports saillants au-delà des trois portraits
+
+| Composante | Apport saillant le mieux étayé à l'échelle élargie | Effet propre observable | Traces convergentes |
+|---|---|---|---|
+| Auteur | orientation située et critique récursive : choisir les objets, sentir qu'une formulation commande indûment l'enquête, puis déplacer ou suspendre le cadre sans effacer le matériau | maintient le projet sur un fil intellectuel tout en autorisant l'ouverture ; transforme les objections de fond ou de lecture en décisions de portée | entrée « par la petite porte », retrait d'« émergence » et de la toupie, assouplissement objet–constitution–accès, déplacement vers les deux questions, diagnostic du manque informationnel |
+| Modèles de langage | transformation d'un matériau vaste et distribué en architectures explicites, comparables, éprouvables et révisables | augmente l'échelle de lecture et la vitesse d'articulation ; fait émerger distinctions, contradictions, questions, tests et dettes que chaque document isolé rend moins visibles | audits systémiques, différenciation des cycles, cinq contrastes, contrôles transversaux, reformulations méthodologiques et reprises après objection |
+| Infrastructure GitHub | conversion des décisions accumulées en mémoire active, adressable et sélective, compatible avec l'exploration ramifiée | rend la cohérence cumulative praticable au-delà d'une conversation : les états divergent sans se confondre, les validations deviennent récupérables et les reprises peuvent rester ciblées | architecture initiale contre la saturation du clavardage, branches spécialisées, index et rangs, comparaisons d'états, resynchronisation ciblée, assainissement et reconstruction de branche |
+| Outils employés par les modèles | fermeture de la boucle entre proposition, opération effective et état contrôlable | donne une prise exécutable aux analyses : retrouver, calculer, modifier, publier, comparer et vérifier ; les sorties négatives ou les échecs d'opération deviennent eux aussi inspectables | scripts et scans des cycles, recherche ciblée dans le corpus, création et lecture des objets Git, différences, contrôles de structure, de liens, d'encodage et de publication distante |
+
+Les appuis et résistances extérieurs gardent une place distincte. Les objets,
+la littérature, les calculs, les résultats négatifs et les expériences de
+lecture rendent le dispositif comptable d'autre chose que de sa cohérence
+interne. Ils constituent une condition épistémique transversale, et non une
+cinquième personne à laquelle attribuer un « meilleur apport ».
+
+Cette synthèse compare des puissances d'action différentes sans les classer.
+L'auteur ne remplace pas l'échelle de traitement des modèles ; les modèles ne
+remplacent pas l'orientation et la décision situées ; GitHub ne remplace pas
+leur jugement mais transforme leur mémoire commune ; les outils ne décident
+pas de la portée scientifique mais rendent certaines propositions et certains
+contrôles effectivement réalisables.
+
 ## 6. Résultats du micro-pilote
 
 Le croisement des trois transitions produit sept résultats de méthode soumis à
@@ -371,18 +423,21 @@ La condition d'arrêt est atteinte lorsque la décision, sa transformation, sa
 trace et son indétermination éventuelle sont reconstructibles. Le dispositif
 conserve alors une mémoire suffisante sans installer un métalangage permanent.
 
-## 9. Décision suivante
+## 9. Validation acquise et décision restante
 
-La lecture humaine doit maintenant vérifier cinq points :
+La lecture humaine valide le diagnostic de la micro-défaillance, les cinq
+composantes, les trois portraits, leur comparaison sans classement et le
+micro-paragraphe destiné aux futures transitions. La grille légère peut donc
+être intégrée dans la note sur l'architecture distribuée et employée sous sa
+condition d'arrêt.
 
-1. le diagnostic de la micro-défaillance distingue-t-il correctement la cause
-   méthodologique, sa persistance documentaire et l'ambiguïté d'interface ?
-2. les cinq composantes décrivent-elles les participants et résistances utiles
-   sans les rendre artificiellement symétriques ?
-3. les trois profils correspondent-ils aux transitions vécues et documentées ?
-4. la comparaison informe-t-elle sans produire un classement implicite ?
-5. le micro-paragraphe proposé suffit-il pour les futures transitions ?
+La même lecture demande une correction de représentativité : les apports
+saillants ne doivent pas être déduits des trois cas choisis, car cet échantillon
+ne représente pas également les capacités de l'auteur, des modèles, de GitHub
+et des outils. Les sections 5.1 et 5.2 répondent à cette objection par une
+lecture transversale, non exhaustive et sans classement.
 
-Une validation autoriserait l'intégration de la grille légère dans la note sur
-l'architecture distribuée et dans les règles de continuité. Une correction
-maintiendrait le présent document au rang d'essai sans modifier les pratiques.
+La décision restante porte seulement sur ce complément : la sélection est-elle
+assez juste, proportionnée et étayée pour être reprise comme état actuel de
+l'analyse ? Une correction future de cette sélection ne remettrait pas en
+cause la validation acquise du micro-pilote.

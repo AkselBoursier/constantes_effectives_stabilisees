@@ -513,3 +513,23 @@ distribuée](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_mode
 formalise la complémentarité : la méthode définit la propriété, l'architecture
 la rend récupérable, GitHub conserve les états, les outils vérifient leur
 périmètre et la lecture humaine éprouve l'effet sémantique.
+
+### 9.12 Validation des portraits et correction de représentativité
+
+La lecture humaine valide ensuite le diagnostic causal, les cinq composantes,
+les trois portraits, la comparaison sans classement et le micro-paragraphe de
+continuité. Cette validation clôt le micro-pilote dans son périmètre propre.
+
+Elle ajoute une objection à toute généralisation de ses exemples. Les trois
+transitions ont été choisies pour éprouver la grille, non pour représenter les
+contributions les plus fortes de chaque composante. Le contraste 9–10 ne peut
+donc pas devenir, à lui seul, la mesure des apports des modèles de langage ou de
+GitHub.
+
+La [cartographie des rôles](Cartographie_roles_trois_transitions_v0_1.md#51-limite-de-représentativité-de-léchantillon)
+sépare désormais deux résultats : les portraits situés restent bornés à leur
+échantillon ; une synthèse transversale, révisable et non exhaustive recherche
+les apports saillants dans plusieurs phases des archives, dans les documents
+actifs et dans les transitions Git. Elle retient la récurrence, la force
+causale et le caractère distinctif sans produire de score, de classement ou
+d'attribution propriétaire.

@@ -46,7 +46,8 @@ Lire dans cet ordre :
    de la cohésion cumulative.
 10. [Cartographie des rôles dans trois
     transitions](Cartographie_roles_trois_transitions_v0_1.md) — micro-pilote
-    comparatif sans classement, soumis à validation.
+    comparatif validé dans son périmètre, complété par une lecture transversale
+    des apports saillants soumise à lecture.
 
 Le `README.md` de la racine fournit la navigation générale. Le présent index
 donne l'ordre intellectuel minimal.
@@ -162,9 +163,9 @@ théorie générale de la mesure.
 ## 10. Séquence immédiate
 
 ```text
-validation formelle de la restitution v0.2 et de l'architecture distribuée
--> lecture de la cartographie des rôles dans trois transitions
--> mise en œuvre locale des propositions validées
+lecture du complément transversal sur les apports saillants
+-> intégration légère de la grille de rôles validée
+-> mise en œuvre locale des autres propositions validées
 -> choix explicite de la prochaine orientation
 ```
 

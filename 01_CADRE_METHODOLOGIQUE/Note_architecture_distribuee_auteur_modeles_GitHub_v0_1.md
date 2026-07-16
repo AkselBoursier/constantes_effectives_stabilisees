@@ -9,11 +9,13 @@ la cohésion méthodologique du projet.
 type : clarification méthodologique bornée ;
 origine : retour de lecture de l'essai réflexif borné ;
 objet : contribution de l'auteur, des modèles de langage, de GitHub et des
-        outils d'action sur GitHub ;
+        outils employés par les modèles ;
 fonction : rendre visibles leurs apports singuliers et leurs responsabilités
            distinctes dans un même dispositif de recherche ;
 portée : description fonctionnelle et épistémique du travail présent ;
-validation requise : positionnement proposé et vocabulaire de responsabilité ;
+validation : architecture, rôles et vocabulaire de responsabilité validés le
+             16 juillet 2026 ;
+complément sous lecture : apports saillants établis au-delà des trois portraits ;
 date : 16 juillet 2026.
 ```
 
@@ -215,7 +217,7 @@ appelés par l'objet scientifique. Leur fonction est nommée localement plutôt
 que rapportée à une catégorie technique unique.
 
 Cette grille compare des fonctions situées et conserve les contributions
-indéterminables. Elle reste au rang de micro-pilote jusqu'à sa validation
+indéterminables. Sa structure et ses trois portraits ont reçu une validation
 humaine ; ses catégories ne deviennent pas automatiquement des rôles fixes.
 
 ## 10. Complémentarité révélée par une micro-défaillance
@@ -267,3 +269,30 @@ Cette boucle décrit une complémentarité, pas une garantie automatique. Un
 contrôle peut réussir dans son registre pendant qu'un autre registre reste à
 éprouver. La micro-défaillance épaissit donc l'analyse de l'architecture sans
 devenir une théorie générale de la collaboration humain–machine.
+
+## 11. Apports saillants à l'échelle élargie du projet
+
+Les trois portraits ont été choisis pour varier les configurations, non pour
+représenter le meilleur de chaque composante. Le contraste 9–10 donne, par
+exemple, une bonne prise sur une chaîne physico-calculatoire locale ; il mesure
+mal l'amplitude de la lecture transversale des modèles et la fonction
+cumulative de GitHub. Une synthèse plus juste doit donc croiser plusieurs
+phases du projet.
+
+Le terme « saillant » désigne ici un apport récurrent, fortement tracé,
+causalement important et distinctif. Il ne désigne ni un vainqueur, ni une part
+de propriété, ni une capacité générale établie hors de ce projet.
+
+| Composante | Apport saillant | Formulation positive de sa fonction |
+|---|---|---|
+| Auteur | orientation située et critique récursive | tient la direction d'ensemble, reconnaît les cadres qui deviennent trop directifs et transforme les résistances en choix, corrections ou suspensions |
+| Modèles de langage | mise en architecture explicite d'un matériau distribué | lisent transversalement, proposent des distinctions et des questions, construisent des comparaisons et rendent les acquis, contradictions et dettes révisables |
+| Infrastructure GitHub | mémoire active et sélective d'une recherche ramifiée | conserve les états, matérialise les décisions et permet aux explorations de diverger puis d'être comparées ou resynchronisées sans perdre leur généalogie |
+| Outils employés par les modèles | passage de l'analyse à l'opération vérifiable | rendent possibles la recherche ciblée, le calcul, la modification, la publication et les contrôles dont les résultats peuvent être inspectés |
+
+Ces fonctions se renforcent sans devenir interchangeables. Leur formulation
+détaillée et leurs traces convergentes figurent dans la [cartographie des
+rôles](../05_CARTES_ET_SYNTHESES/Cartographie_roles_trois_transitions_v0_1.md#52-apports-saillants-au-delà-des-trois-portraits).
+Les objets, sources, calculs et lectures forment en outre une condition
+transversale d'épreuve : ils empêchent que la fluidité du dispositif soit prise
+pour une preuve scientifique suffisante.
