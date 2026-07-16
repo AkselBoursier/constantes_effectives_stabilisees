@@ -10,11 +10,18 @@ const markdownTargets = [
   "02_CYCLES_PHYSIQUES/ChatGPT-Recherche sur les constantes.md",
   "91_TRAVAUX_ANTERIEURS/ChatGPT-refonte_cadre.md",
   "91_TRAVAUX_ANTERIEURS/Claude-Emotions_modeles_de_langage_et_transcendance_epistemique.md",
-  "91_TRAVAUX_ANTERIEURS/Claude-Spontaneous_collapse_models_and_cosmological_time_confusion.md"
+  "91_TRAVAUX_ANTERIEURS/Claude-Spontaneous_collapse_models_and_cosmological_time_confusion.md",
+  "92_ARCHIVES_CONVERSATIONNELLES/1-ChatGPT-Recherche sur les constantes.md",
+  "92_ARCHIVES_CONVERSATIONNELLES/2-ChatGPT-Analyse cohérence projet.md",
+  "92_ARCHIVES_CONVERSATIONNELLES/3-ChatGPT-Travail collaboratif projet GitHub.md"
 ];
 
-const firstJsonTarget =
-  "02_CYCLES_PHYSIQUES/ChatGPT-Recherche sur les constantes.json";
+const chatGptJsonTargets = [
+  "02_CYCLES_PHYSIQUES/ChatGPT-Recherche sur les constantes.json",
+  "92_ARCHIVES_CONVERSATIONNELLES/1-ChatGPT-Recherche sur les constantes.json",
+  "92_ARCHIVES_CONVERSATIONNELLES/2-ChatGPT-Analyse cohérence projet.json",
+  "92_ARCHIVES_CONVERSATIONNELLES/3-ChatGPT-Travail collaboratif projet GitHub.json"
+];
 const qwenJsonTarget =
   "91_TRAVAUX_ANTERIEURS/QWEN_chat-export-1765463032811.json";
 
@@ -35,6 +42,10 @@ function redactText(value) {
       "[LIEN_CONVERSATION_RETIRE]"
     )
     .replace(
+      /https:\/\/chatgpt\.com\/backend-api\/[^\s)\]>'\"]+/gi,
+      "[URL_SIGNEE_RETIREE]"
+    )
+    .replace(
       /https:\/\/cdn\.qwenlm\.ai\/[^\s)\]>'\"]+/gi,
       "[URL_SIGNEE_RETIREE]"
     )
@@ -43,15 +54,31 @@ function redactText(value) {
       "$1[VALEUR_RETIREE]"
     )
     .replace(
-      /[A-Z]:\\Users\\[^\\\s]+/gi,
-      "C:\\Users\\[UTILISATEUR]"
+      /sandbox:\/[^\s)\]>'\"]+/gi,
+      "[CHEMIN_TECHNIQUE_RETIRE]"
+    )
+    .replace(
+      /\/workspace\/scratch\/[A-Za-z0-9._\/-]+/gi,
+      "[CHEMIN_TECHNIQUE_RETIRE]"
+    )
+    .replace(
+      /[A-Z]:\\Users\\[^\\\s]+(?:\\[^\s,;:()\[\]{}]+)*/gi,
+      "[RACINE_LOCALE_ORIGINALE_RETIREE]"
     );
 }
 
 function redactMarkdown(source) {
   return redactText(source)
     .replace(/^\*\*User:\*\*.*$/gim, "**User:** [IDENTITE_RETIREE]")
-    .replace(/^\*\*Link:\*\*.*$/gim, "**Link:** [LIEN_CONVERSATION_RETIRE]");
+    .replace(/^\*\*Link:\*\*.*$/gim, "**Link:** [LIEN_CONVERSATION_RETIRE]")
+    .replace(
+      /!\[([^\]]*)\]\(\[(CHEMIN_TECHNIQUE_RETIRE|URL_SIGNEE_RETIREE)\]\)/g,
+      "[$1 — $2]"
+    )
+    .replace(
+      /\[([^\]]*)\]\(\[(CHEMIN_TECHNIQUE_RETIRE|URL_SIGNEE_RETIREE)\]\)/g,
+      "[$1 — $2]"
+    );
 }
 
 function sanitizeFirstJson(raw) {
@@ -172,11 +199,13 @@ for (const relativePath of markdownTargets) {
   results.push(processFile(relativePath, redactMarkdown));
 }
 
-results.push(
-  processFile(firstJsonTarget, (source) =>
-    `${JSON.stringify(sanitizeFirstJson(source), null, 2)}\n`
-  )
-);
+for (const relativePath of chatGptJsonTargets) {
+  results.push(
+    processFile(relativePath, (source) =>
+      `${JSON.stringify(sanitizeFirstJson(source), null, 2)}\n`
+    )
+  );
+}
 results.push(
   processFile(qwenJsonTarget, (source) =>
     `${JSON.stringify(sanitizeQwenJson(source), null, 2)}\n`
