@@ -153,8 +153,8 @@ fonctionnel.
 
 | Bloc du cycle initial | Redistribution | Conséquence |
 |---|---|---|
-| `v` et Yukawa | [synthèse du cycle Saveur–Higgs](../05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | architecture constitutive confirmée ; origine des valeurs laissée ouverte |
-| `G_F` et rapport à l'échelle faible | [synthèse du cycle effectif à basse énergie](../06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md) | constance effective locale, non fonction structurante universelle |
+| `v` et Yukawa | [synthèse du cycle Saveur–Higgs](../05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | pont architectural documenté ; origine des valeurs laissée ouverte |
+| `G_F` et rapport à l'échelle faible | [évaluation du cycle effectif à basse énergie](../06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | coefficient effectif à domaine contrôlé, non fonction structurante universelle |
 | gravitation rapportée à l'échelle de Planck | même cycle effectif | forme d'effectivité différente du raccordement faible |
 | `Λ` | [synthèse du cycle cosmologique](../07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md) | terme de fond dans une macro-architecture reconstructive |
 | hiérarchies électrofaible et cosmologique | cycles 9 et 10 | questions d'explication, d'ajustement et de dynamique séparées du classement fonctionnel |

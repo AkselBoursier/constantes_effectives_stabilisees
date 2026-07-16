@@ -150,7 +150,7 @@ les cycles ; ils localisent un contraste précis.
 | Couple | Question comparative | Gain attendu |
 |---|---|---|
 | cycles 1 et 6 | comment distinguer dépendance à l'échelle, changement de régime et domaine de validité ? | typer une dynamique qui n'est pas automatiquement temporelle |
-| cycles 2 et 5 | quand une fonction structurante devient-elle une architecture physique réellement instructive ? | tester la différence entre organisation et explication |
+| cycles 2 et 5 | à quelles conditions plusieurs fonctions forment-elles un réseau physique instructif, et que ce réseau explique-t-il réellement ? | tester la différence entre organisation, mécanisme et explication d'origine |
 | cycles 3 et 7 | comment plusieurs accès non équivalents reconstruisent-ils un objet ou un secteur ? | préparer le chantier sur la mesure sans unifier prématurément les problèmes |
 | cycles 4 et 8 | que change le passage d'une valeur mesurée à une valeur définissante ? | dépasser la tautologie par les effets de réalisation et d'incertitude |
 | cycles 9 et 10 | quelle différence entre varier des paramètres entre mondes et faire évoluer un porteur dans un même monde ? | séparer contrefactuel, dynamique physique et migration du réglage |

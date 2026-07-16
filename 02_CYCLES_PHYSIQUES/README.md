@@ -42,7 +42,7 @@ sans fusionner les objets ni les résultats.
 | Cycles | Question comparative | Travail attendu |
 |---|---|---|
 | 1 et 6 | Comment distinguer dépendance à l'échelle, changement de régime et domaine de validité ? | [Premier test accompli](../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_1_6_echelle_regime_validite_v0_1.md) : séparer notamment échelle cinématique, échelle de renormalisation, régime et validité sans les rendre automatiquement temporels. |
-| 2 et 5 | Quand une fonction structurante devient-elle une architecture physique réellement instructive ? | Séparer organisation, mécanisme et explication. |
+| 2 et 5 | À quelles conditions plusieurs fonctions forment-elles un réseau physique instructif, et que ce réseau explique-t-il réellement ? | [Deuxième test accompli](../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_2_5_fonction_architecture_explication_v0_1.md) : séparer rôle, relation, réseau, mécanisme et explication d'origine. |
 | 3 et 7 | Comment plusieurs accès non équivalents reconstruisent-ils un objet ou un secteur ? | Comparer les médiations sans unifier prématurément les problèmes de mesure. |
 | 4 et 8 | Que change le passage d'une valeur mesurée à une valeur définissante ? | Montrer les effets sur réalisation, incertitude, comparaison ou inférence. |
 | 9 et 10 | Quelle différence entre varier des paramètres entre mondes et faire évoluer un porteur dans un même monde ? | Séparer contrefactuel, dynamique physique et déplacement du réglage. |
