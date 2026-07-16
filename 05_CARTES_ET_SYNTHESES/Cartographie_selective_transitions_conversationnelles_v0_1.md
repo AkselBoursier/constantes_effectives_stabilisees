@@ -465,3 +465,24 @@ peut ainsi manifester une convergence cumulative sous mémoire structurée.
 La même propriété ouvre un risque de dépendance au chemin. Les clauses de
 révision, les alternatives archivées, la littérature extérieure et les tests
 de réception restent les contrepoids actifs de cette cohésion.
+
+### 9.10 Instruction d'une cartographie des rôles
+
+La discussion suivante propose de déterminer les rôles de l'auteur, des
+modèles, de GitHub et des outils sans produire de hiérarchie entre eux. La
+comparaison reste autorisée : elle porte sur l'orientation, la proposition,
+l'appui, la transformation, la contrainte, l'arbitrage, l'inscription, la
+vérification et la relance propres à une transition.
+
+La structure reçoit une validation humaine, avec trois règles : aucun
+pourcentage d'attribution, aucun ordre général entre les composantes et une
+sortie explicite « contribution distribuée ou indéterminable » lorsque les
+traces le demandent. Les objets, sources, calculs et expériences de lecture
+sont ajoutés comme pôle d'appui et de résistance, sans être transformés en
+acteur homogène.
+
+La [cartographie des rôles dans trois
+transitions](Cartographie_roles_trois_transitions_v0_1.md) applique la grille à
+la reformulation des deux questions, au contraste des cycles 9 et 10 et à la
+réécriture positive avec l'architecture distribuée. Elle reste un micro-pilote
+soumis à validation avant toute intégration dans les règles courantes.

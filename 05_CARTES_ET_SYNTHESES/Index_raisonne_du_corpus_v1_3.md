@@ -44,6 +44,9 @@ Lire dans cet ordre :
    outils](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
    — contributions singulières, responsabilités différenciées et explication
    de la cohésion cumulative.
+10. [Cartographie des rôles dans trois
+    transitions](Cartographie_roles_trois_transitions_v0_1.md) — micro-pilote
+    comparatif sans classement, soumis à validation.
 
 Le `README.md` de la racine fournit la navigation générale. Le présent index
 donne l'ordre intellectuel minimal.
@@ -72,6 +75,7 @@ du corpus.
 | `Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md` | panorama des dix cycles, à lire avec sa note de clôture |
 | `Resultats_essai_reflexif_borne_v0_2.md` | résultat courant du micro-pilote et propositions soumises à décision |
 | `01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md` | fonctions de l'auteur, des modèles, de GitHub et des outils dans la cohésion du projet |
+| `Cartographie_roles_trois_transitions_v0_1.md` | épreuve bornée des rôles distribués, sans classement ni attribution propriétaire |
 
 Ces documents organisent le travail. Ils ne remplacent pas la vérification
 scientifique propre à chaque cycle.
@@ -159,7 +163,8 @@ théorie générale de la mesure.
 
 ```text
 validation formelle de la restitution v0.2 et de l'architecture distribuée
--> mise en œuvre locale des propositions A à D si la forme est validée
+-> lecture de la cartographie des rôles dans trois transitions
+-> mise en œuvre locale des propositions validées
 -> choix explicite de la prochaine orientation
 ```
 

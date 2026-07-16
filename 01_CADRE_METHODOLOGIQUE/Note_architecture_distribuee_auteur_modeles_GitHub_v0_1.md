@@ -199,3 +199,21 @@ médiation exécutable qui relie ces trois pôles.
 
 Cette répartition décrit positivement ce que chaque composante apporte avant de
 fixer la frontière de sa responsabilité.
+
+## 9. Épreuve des rôles distribués
+
+La [cartographie des rôles dans trois
+transitions](../05_CARTES_ET_SYNTHESES/Cartographie_roles_trois_transitions_v0_1.md)
+éprouve cette architecture sur la reformulation des deux questions, le
+contraste des cycles 9 et 10 et la réécriture positive. Elle ajoute les appuis
+et résistances extérieurs afin que les objets, calculs, sources et expériences
+de lecture puissent contraindre la cohérence interne du dispositif.
+
+Le contraste 9–10 conduit aussi à distinguer, dans la composante « outils »,
+les outils GitHub qui pilotent le dépôt et les outils de calcul ou d'analyse
+appelés par l'objet scientifique. Leur fonction est nommée localement plutôt
+que rapportée à une catégorie technique unique.
+
+Cette grille compare des fonctions situées et conserve les contributions
+indéterminables. Elle reste au rang de micro-pilote jusqu'à sa validation
+humaine ; ses catégories ne deviennent pas automatiquement des rôles fixes.
