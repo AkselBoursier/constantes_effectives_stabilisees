@@ -9,6 +9,13 @@ mais leur portée philosophique reste conditionnelle à un effet non
 tautologique sur les réalisations, les incertitudes, les comparaisons ou les
 inférences.
 
+La [reprise comparative des cycles 4 et 8](../../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_4_8_mesure_definition_realisation_v0_1.md),
+achevée le 16 juillet 2026, établit un premier effet différentiel : la fixation
+d'une valeur transforme la fonction de certaines expériences et déplace
+l'incertitude vers les réalisations et d'autres grandeurs. Cette reprise lève
+la dette locale de non-tautologie ; elle n'établit pas de transfert
+philosophique général hors de la métrologie.
+
 Documents associés :
 
 - [architecture-relationnelle-metrologique-si.md](architecture-relationnelle-metrologique-si.md)
@@ -181,7 +188,8 @@ exact dans le SI = empiriquement connu sans incertitude
 ```text
 Architecture métrologique définitionnelle : établie au sens descriptif minimal.
 Espèce physique unique des constantes définissantes : refusée.
-Gain philosophique différentiel : à démontrer par ses effets opératoires.
+Gain différentiel local : établi par la transformation des expériences et des
+incertitudes ; transfert philosophique général non acquis.
 ```
 
 ## 13. Conséquence pour la question directrice

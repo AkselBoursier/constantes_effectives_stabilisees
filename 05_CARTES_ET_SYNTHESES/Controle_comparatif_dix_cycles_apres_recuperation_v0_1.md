@@ -87,7 +87,7 @@ générale peut être plus faible qu'une limite locale précisément établie.
 | 5. Saveur–Higgs | masses, couplages, spectres et orientations deviennent solidaires dans le régime électrofaible brisé | passer de la valeur isolée au réseau de dépendances | architecture documentée ; expression « constitutive confirmée » à requalifier sous la doctrine actuelle | pont architectural |
 | 6. Théories effectives à basse énergie | l'effectivité prend des formes locales, dynamiques et hiérarchiques selon le secteur | traiter validité, seuil, degrés de liberté et rupture comme contenu positif de la description | synthèse physique riche ; extensions à ne pas généraliser automatiquement | noyau physique comparatif |
 | 7. Cosmologie | une grandeur prend fonction dans un réseau de modèle, d'inférence et de données | rendre les routes d'accès, dégénérescences et tensions constitutives du dossier de preuve | architecture forte ; données et littérature rapidement révisables | noyau épistémique et pont vers la mesure |
-| 8. Système international d'unités (SI) | exactitude définitionnelle, incertitude de réalisation et rôle physique restent distincts | suivre la redistribution des incertitudes et des opérations après fixation d'une valeur | techniquement clair ; gain philosophique trivial tant que ses effets ne sont pas démontrés | cycle calibratoire et test de non-tautologie |
+| 8. Système international d'unités (SI) | exactitude définitionnelle, incertitude de réalisation et rôle physique restent distincts | suivre la redistribution des incertitudes et des opérations après fixation d'une valeur | premier effet différentiel établi ; transfert philosophique hors métrologie encore ouvert | cycle calibratoire et test de non-tautologie |
 | 9. Ajustement fin | le réglage fin allégué dépend d'un espace, de coordonnées, de corrélations, d'un critère et parfois d'une mesure | remplacer le comptage de nombres par l'audit des sensibilités et contingences résiduelles | premier lot différencié mais cycle ouvert | noyau méthodologique comparatif |
 | 10. Quasi-fixité électrofaible | les modèles conservatifs testés échouent par leur bilan énergétique ; une fenêtre dissipative phénoménologique reste ouverte | exiger porteur, équations, bassin, coût énergétique, tolérance et mécanisme de rupture | calculs reproductibles ; réalisation microscopique non acquise | noyau calculatoire local et test de limites |
 
@@ -136,11 +136,11 @@ cycles 4 et 8
 ```
 
 Ils empêchent de confondre exactitude, mesure, définition, composition et rôle
-physique. Leur présence est nécessaire, mais leur portée philosophique ne peut
-pas reposer sur la seule phrase « une définition conventionnelle n'épuise pas
-la physique ». Pour devenir probants, ils doivent montrer ce que la fixation
-modifie effectivement dans les réalisations, les incertitudes, les comparaisons
-ou les inférences.
+physique. Le [quatrième test comparatif](Reprise_comparative_cycles_4_8_mesure_definition_realisation_v0_1.md)
+établit un premier effet non tautologique : la fixation inverse la direction
+métrologique de certaines expériences et déplace l'incertitude vers les
+réalisations et d'autres grandeurs. Ce résultat confirme leur fonction
+calibratoire sans leur attribuer une portée philosophique générale.
 
 ## 5. Cinq comparaisons structurantes
 
@@ -152,7 +152,7 @@ les cycles ; ils localisent un contraste précis.
 | cycles 1 et 6 | comment distinguer dépendance à l'échelle, changement de régime et domaine de validité ? | typer une dynamique qui n'est pas automatiquement temporelle |
 | cycles 2 et 5 | à quelles conditions plusieurs fonctions forment-elles un réseau physique instructif, et que ce réseau explique-t-il réellement ? | tester la différence entre organisation, mécanisme et explication d'origine |
 | cycles 3 et 7 | que doit-il être commun, et quels ponts doivent être fournis, pour que des accès non équivalents contraignent le même objet ou secteur ? | préparer le chantier sur la mesure sans présupposer l'identité de l'objet ni unifier les problèmes |
-| cycles 4 et 8 | que change le passage d'une valeur mesurée à une valeur définissante ? | dépasser la tautologie par les effets de réalisation et d'incertitude |
+| cycles 4 et 8 | que change la fixation d'une valeur dans la fonction des expériences, la réalisation des unités et la distribution des incertitudes ? | établir le renversement métrologique et le déplacement de l'incertitude sans confondre convention et rôle physique |
 | cycles 9 et 10 | quelle différence entre varier des paramètres entre mondes et faire évoluer un porteur dans un même monde ? | séparer contrefactuel, dynamique physique et migration du réglage |
 
 Cette organisation donne au panorama une structure plus lisible que dix
@@ -229,8 +229,8 @@ comme dynamique réelle.
    de stabilité électrofaible ;
 3. requalifier ultérieurement l'expression « architecture constitutive
    confirmée » du cycle 5, trop catégorique sous la doctrine actuelle ;
-4. demander aux cycles 4 et 8 un effet non tautologique avant de leur attribuer
-   une forte portée philosophique ;
+4. conserver l'effet non tautologique local établi pour les cycles 4 et 8 sans
+   lui attribuer une portée philosophique générale ;
 5. conserver le cycle 10 comme résultat local, calculatoire et négatif en deux
    phases, puis phénoménologiquement ouvert, jamais comme principe général ;
 6. maintenir la piste de la mesure comme chantier à instruire par un nouveau
