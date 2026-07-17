@@ -1,0 +1,35 @@
+{
+  "status": "official_metadata_only_chains_not_fully_ingested",
+  "manifest": "manifest_produits_officiels_c2.json",
+  "data_root": null,
+  "models": [
+    {
+      "model": "base_mnu",
+      "definition": "LambdaCDM + somme libre, prior Sigma m_nu > 0",
+      "relative_directory": "cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "expected_chain_count": 4,
+      "expected_chain_bytes": 79811100,
+      "files": [],
+      "status": "not_inspected_no_data_root"
+    },
+    {
+      "model": "base_mnu059",
+      "definition": "LambdaCDM + somme libre, prior scalaire Sigma m_nu > 0.059 eV",
+      "relative_directory": "cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "expected_chain_count": 4,
+      "expected_chain_bytes": 68224500,
+      "files": [],
+      "status": "not_inspected_no_data_root"
+    },
+    {
+      "model": "base_mnu_w_wa",
+      "definition": "w0waCDM + somme libre",
+      "relative_directory": "cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "expected_chain_count": 4,
+      "expected_chain_bytes": 171453516,
+      "files": [],
+      "status": "not_inspected_no_data_root"
+    }
+  ],
+  "guardrail": "Aucun substitut C1 n'est utilisé lorsqu'une chaîne officielle manque."
+}
