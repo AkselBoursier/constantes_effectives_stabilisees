@@ -553,3 +553,9 @@ Les consignes d'agent appliquent la même limite : le travail scientifique
 ordinaire utilise l'infrastructure et les outils sans produire de commentaire
 routinier sur la répartition des contributions. La prochaine décision redevient
 le choix explicite d'une orientation scientifique ou éditoriale.
+
+La continuation conversationnelle de la présente carte s'arrête à ce jalon.
+Les arbitrages structurants ultérieurs relèvent du [registre court conservé
+avec les archives](../92_ARCHIVES_CONVERSATIONNELLES/Registre_court_arbitrages_v0_1.md).
+Ce relais maintient une provenance légère sans transformer la cartographie en
+journal permanent ni réactiver l'analyse des rôles.

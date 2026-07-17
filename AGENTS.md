@@ -167,6 +167,25 @@ Regles :
    pour etablir une propriete intellectuelle. La genealogie n'est rouverte que
    pour une question scientifique, editoriale ou historique determinee.
 
+## Archivage silencieux des arbitrages
+
+Le [registre court des arbitrages](92_ARCHIVES_CONVERSATIONNELLES/Registre_court_arbitrages_v0_1.md)
+conserve les decisions structurantes posterieures aux exports conversationnels.
+A la fin d'une tache, y ajouter un micro-paragraphe seulement si la conversation
+a modifie une question de recherche, une priorite, la portee d'un resultat, le
+rang d'un document, une regle de methode ou l'etat d'un chantier.
+
+Ne pas y consigner les operations Git ordinaires, les reformulations mineures,
+les validations d'execution deja prevues ou les explorations sans arbitrage. Une
+entree nomme le point de depart, la decision, son effet, ce qui reste ouvert et
+les documents de reprise. Elle n'attribue pas l'origine des intuitions si cette
+attribution n'est pas necessaire a la decision.
+
+Cet archivage est silencieux mais non cache : ne pas le presenter ni le
+commenter a chaque tour, sauf si l'entree modifie elle-meme le travail ou si
+l'auteur demande un etat de provenance. Le registre reste hors du parcours
+scientifique actif.
+
 ## Outil reflexif en reserve
 
 La [note sur l'architecture distribuee](01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)

@@ -14,7 +14,10 @@ assainissement : accompli le 16 juillet 2026
 extraction des transitions : cartographie sélective v0.1 produite et validée
                              pour un usage réflexif borné le 16 juillet 2026
 continuation après A3-M67 : jalons consignés dans la cartographie sous un
-                           régime distinct des archives exportées
+                           régime distinct des archives exportées jusqu'au
+                           17 juillet 2026
+continuité suivante : registre court des arbitrages, alimenté silencieusement
+                      à partir du 17 juillet 2026
 ```
 
 Ces archives documentent une partie du travail conversationnel associé au
@@ -126,14 +129,22 @@ borné](../05_CARTES_ET_SYNTHESES/Cadrage_essai_reflexif_borne_v0_1.md).
 
 La section « Continuation postérieure aux archives » de cette cartographie
 consigne les jalons suivants sans leur attribuer de faux identifiants de
-message. Elle ne constitue ni un quatrième export, ni un journal intégral.
+message. Elle ne constitue ni un quatrième export, ni un journal intégral. Sa
+continuation s'arrête après la mise en réserve du chantier réflexif.
 
 ## 7. Régime futur
 
 L'export intégral des conversations n'est pas une obligation courante. Les
-documents enregistrant une bifurcation importante devraient plutôt indiquer,
-en quelques phrases naturelles, le constat de départ, le déplacement accompli
-et ce qui reste hors décision.
+décisions structurantes postérieures sont consignées dans le [registre court
+des arbitrages](Registre_court_arbitrages_v0_1.md). Cette archive discrète
+indique, en quelques phrases naturelles, le constat de départ, le déplacement
+accompli, son effet et ce qui reste hors décision. Elle n'est pas ajoutée au
+parcours scientifique et son alimentation n'appelle pas de restitution séparée
+à chaque étape.
+
+Le seuil d'inscription écarte les opérations ordinaires, les reformulations
+mineures et les explorations sans décision. Cette sélection conserve la
+continuité sans transformer le registre en compte rendu permanent du travail.
 
 Un nouvel export complet peut néanmoins être justifié :
 
