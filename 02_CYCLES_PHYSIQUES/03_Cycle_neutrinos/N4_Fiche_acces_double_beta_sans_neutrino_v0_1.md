@@ -69,7 +69,7 @@ T_{1/2}^{0\nu}(^{A}X).
 ### 1.2 Masse effective sous échange de neutrinos légers
 
 Si le mécanisme dominant est l'échange de trois neutrinos légers de Majorana, la
-combinaison leptoniqe pertinente est :
+combinaison leptonique pertinente est :
 
 ```math
 m_{\beta\beta}
@@ -317,8 +317,8 @@ epsilon : efficacité totale ;
 T_1/2^0nu : demi-vie recherchée.
 ```
 
-Cette relation est simple seulement en apparence. L'efficacité dépend de la
-containment de l'énergie, des seuils, des coupures, de la multiplicité, du volume
+Cette relation est simple seulement en apparence. L'efficacité dépend du
+confinement de l'énergie, des seuils, des coupures, de la multiplicité, du volume
 fiduciel et des périodes de données.
 
 ### 3.3 Limite observée et sensibilité attendue
@@ -583,7 +583,7 @@ seraient comparables qu'après choix du mécanisme et calculs nucléaires.
 | LEGEND-200 ne trouve pas de signal dans sa première exposition | `^{76}Ge`, `61 kg yr`, germanium source-détecteur dans argon liquide | limite `90 % CL` | LEGEND seul : `T_1/2^0nu > 0.5 x 10^26 yr` | non utilisée seule comme état directeur | [LEGEND-200](https://doi.org/10.1103/25tk-nctn) |
 | La combinaison des expériences germanium améliore la limite mais fluctue sous sa sensibilité médiane | `^{76}Ge`, LEGEND-200 + GERDA + MAJORANA | limite observée `90 % CL`, sensibilité médiane `2.8 x 10^26 yr` | `T_1/2^0nu > 1.9 x 10^26 yr` | `m_beta_beta < 70–200 meV` sous échange léger | [arXiv:2505.10440](https://arxiv.org/abs/2505.10440) |
 | CUORE ne trouve pas de signal avec le jeu de deux tonnes-années | `^{130}Te`, plus de `2 tonne yr` de `TeO_2`, bolomètres calorimétriques | limite bayésienne, intervalle crédible `90 %` | `T_1/2^0nu > 3.5 x 10^25 yr` | conversion dépendante du jeu de NME, non prise comme comparaison primaire | [Science 2025](https://doi.org/10.1126/science.adp6474) |
-| EXO-200 fournit un contrôle historique de la même isotope que KamLAND-Zen avec une TPC au xénon liquide | `^{136}Xe`, `234.1 kg yr`, charge + scintillation et topologie mono/multi-site | limite `90 % CL` | `T_1/2^0nu > 3.5 x 10^25 yr` | ancienne conversion, non état directeur | [EXO-200](https://arxiv.org/abs/1906.02723) |
+| EXO-200 fournit un contrôle historique du même isotope que KamLAND-Zen avec une TPC au xénon liquide | `^{136}Xe`, `234.1 kg yr`, charge + scintillation et topologie mono/multi-site | limite `90 % CL` | `T_1/2^0nu > 3.5 x 10^25 yr` | ancienne conversion, non état directeur | [EXO-200](https://arxiv.org/abs/1906.02723) |
 
 La plus grande limite de demi-vie à la coupure est celle de KamLAND-Zen sur `^{136}Xe`.
 Cette phrase ne signifie pas qu'un isotope ou une expérience possède automatiquement
