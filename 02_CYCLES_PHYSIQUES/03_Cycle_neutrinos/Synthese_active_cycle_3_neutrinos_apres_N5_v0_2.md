@@ -291,7 +291,7 @@ de la mesure.
 
 ```text
 ordre des masses ;
-violation de CP leptoniqe ;
+violation de CP leptonique ;
 masse minimale ;
 nature Dirac ou Majorana ;
 mécanisme de génération des masses ;
