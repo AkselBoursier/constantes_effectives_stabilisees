@@ -15,7 +15,9 @@ version antérieure : v0.1 conservée comme première restitution ;
 fond : validé par la lecture humaine du 16 juillet 2026 ;
 révision : formulation positive et positionnement de l'architecture distribuée ;
 sortie : quatre propositions documentaires A à D ;
-décision suivante : validation de la forme avant leur mise en œuvre.
+validation : fond, forme et analyse des rôles validés le 16 juillet 2026 ;
+rang courant : résultat réflexif en réserve, hors du parcours actif ;
+décision suivante : aucune ; réouverture conditionnée par un besoin déterminé.
 ```
 
 ## 1. Résultat synthétique
@@ -295,10 +297,12 @@ Trois propriétés soutiennent ce verdict :
 Le résultat porte sur l'utilité de ce passage unique. La qualification générale
 de la méthode appartient à un programme comparatif ultérieur.
 
-## 9. Propositions soumises à validation formelle
+## 9. Propositions conservées avec le résultat
 
-Le fond des quatre propositions a reçu une validation humaine. Leur formulation
-et leur articulation dans cette v0.2 constituent le point de décision actuel.
+Le fond et la forme des quatre propositions ont reçu une validation humaine.
+Elles restent attachées au résultat du micro-pilote. La mise en réserve clôt
+leur statut de lot immédiat : elles pourront être reprises localement si un
+écart concret les rend de nouveau utiles.
 
 ### A — Utilité et statut de la pondération
 
@@ -347,15 +351,14 @@ Formulation proposée :
 Effet : rendre l'infrastructure, les outils et la branche lisibles par leurs
 fonctions positives.
 
-## 10. Décision suivante
+## 10. Clôture et condition de réouverture
 
-La lecture de la v0.2 doit vérifier trois points :
+La lecture a confirmé la définition positive des objets, la précision des
+limites et la différenciation des responsabilités. Le passage atteint donc sa
+condition d'arrêt. Il rejoint la réserve réflexive avec son cadrage, la note
+d'architecture distribuée et la cartographie des rôles.
 
-1. chaque objet est-il défini par sa fonction et son acquis avant sa limite ?
-2. les limites et résultats négatifs gardent-ils leur précision ?
-3. l'auteur, les modèles, GitHub et les outils reçoivent-ils une place causale
-   et une responsabilité correctement différenciées ?
-
-Une réponse positive aux trois points ouvrira le lot local A à D. Les sources,
-calculs, résultats physiques et documents philosophiques conservent leur état
-pendant ce lot.
+Une réouverture exige un écart déterminé dans le travail scientifique, une
+question de provenance ou de responsabilité, un besoin éditorial, ou l'étude
+d'un effet infrastructurel précis. L'essai ne devient pas un contrôle récurrent
+du projet sur lui-même.

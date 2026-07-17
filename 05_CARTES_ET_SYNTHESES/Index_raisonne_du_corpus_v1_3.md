@@ -3,8 +3,8 @@
 ## 0. Statut
 
 ```text
-statut : index actif de navigation après les cinq contrastes et le micro-pilote
-         réflexif ;
+statut : index actif de navigation après les cinq contrastes et la clôture du
+         micro-pilote réflexif ;
 remplace pour l'usage courant : Index_raisonne_du_corpus_v1_2.md ;
 conserve la v1.2 : comme état de navigation antérieur au contrôle transversal ;
 orientation : deux questions communes, pondération fonctionnelle des cycles,
@@ -37,17 +37,6 @@ Lire dans cet ordre :
    accès transversal et refus d'une dynamique générale présupposée.
 7. [Cadre critique de refondation](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
    — garde-fous sur les objets, régimes et transformations.
-8. [Résultats de l'essai réflexif borné
-   v0.2](Resultats_essai_reflexif_borne_v0_2.md) — acquis du micro-pilote,
-   corrections proposées et décision formelle en cours.
-9. [Architecture distribuée — auteur, modèles, GitHub et
-   outils](../01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
-   — contributions singulières, responsabilités différenciées et explication
-   de la cohésion cumulative.
-10. [Cartographie des rôles dans trois
-    transitions](Cartographie_roles_trois_transitions_v0_1.md) — micro-pilote
-    comparatif validé dans son périmètre, complété par une lecture transversale
-    des apports saillants soumise à lecture.
 
 Le `README.md` de la racine fournit la navigation générale. Le présent index
 donne l'ordre intellectuel minimal.
@@ -74,12 +63,22 @@ du corpus.
 | `Controle_consolidation_cinq_contrastes_v0_1.md` | état de synchronisation et limites de l'autorité documentaire |
 | cinq fichiers `Reprise_comparative_cycles_*` | résultats détaillés des cinq tests |
 | `Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md` | panorama des dix cycles, à lire avec sa note de clôture |
-| `Resultats_essai_reflexif_borne_v0_2.md` | résultat courant du micro-pilote et propositions soumises à décision |
-| `01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md` | fonctions de l'auteur, des modèles, de GitHub et des outils dans la cohésion du projet |
-| `Cartographie_roles_trois_transitions_v0_1.md` | épreuve bornée des rôles distribués, sans classement ni attribution propriétaire |
 
 Ces documents organisent le travail. Ils ne remplacent pas la vérification
 scientifique propre à chaque cycle.
+
+### 3.1 Outils réflexifs en réserve
+
+| Document | Valeur conservée | Condition de réouverture |
+|---|---|---|
+| `Cadrage_essai_reflexif_borne_v0_1.md` | protocole du passage unique | nouvel essai explicitement décidé |
+| `Resultats_essai_reflexif_borne_v0_2.md` | résultats, limites et quatre propositions locales | écart concret auquel une proposition répond |
+| `01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md` | vocabulaire fonctionnel de la collaboration et de l'infrastructure | question déterminée de provenance, de responsabilité ou d'effet causal |
+| `Cartographie_roles_trois_transitions_v0_1.md` | grille de comparaison et portraits situés | besoin scientifique, éditorial ou historique de reconstruire des rôles |
+
+Cette réserve reste accessible par l'index sans appartenir au parcours minimal.
+Elle n'introduit aucune étape automatique, aucun commentaire réflexif régulier
+et aucune autorité sur les objets scientifiques.
 
 ## 4. Entrées physiques actives
 
@@ -152,10 +151,8 @@ théorie générale de la mesure.
 - la navigation est organisée par la vue v0.3 et le présent index ;
 - la comparaison est organisée par les cinq contrastes ;
 - la vérification scientifique reste conduite cycle par cycle ;
-- le micro-pilote réflexif produit quatre corrections locales soumises à une
-  décision formelle ;
-- l'architecture distribuée distingue les apports de l'auteur, des modèles, de
-  GitHub et des outils sur un même plan d'analyse causale ;
+- le micro-pilote, l'architecture distribuée et la cartographie des rôles sont
+  conservés dans la réserve réflexive ;
 - une nouvelle recherche externe exige une décision d'orientation ;
 - une resynchronisation générale n'est pas ouverte ;
 - les archives ne sont pas normalisées pour ressembler aux verdicts actuels.
@@ -163,12 +160,10 @@ théorie générale de la mesure.
 ## 10. Séquence immédiate
 
 ```text
-lecture du complément transversal sur les apports saillants
--> intégration légère de la grille de rôles validée
--> mise en œuvre locale des autres propositions validées
--> choix explicite de la prochaine orientation
+choix explicite de la prochaine orientation scientifique ou éditoriale
 ```
 
 Le choix suivant pourra être une poursuite physique, le paysage sur la mesure,
 une préparation éditoriale ou une autre orientation. Aucun de ces chemins n'est
-déduit automatiquement de l'architecture documentaire.
+déduit automatiquement de l'architecture documentaire. Le chantier réflexif
+n'est plus une étape préalable à ce choix.

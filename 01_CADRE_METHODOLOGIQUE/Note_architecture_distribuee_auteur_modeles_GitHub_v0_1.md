@@ -15,7 +15,10 @@ fonction : rendre visibles leurs apports singuliers et leurs responsabilités
 portée : description fonctionnelle et épistémique du travail présent ;
 validation : architecture, rôles et vocabulaire de responsabilité validés le
              16 juillet 2026 ;
-complément sous lecture : apports saillants établis au-delà des trois portraits ;
+complément : apports saillants établis au-delà des trois portraits ;
+rang courant : outil réflexif en réserve, sans autorité sur le programme actif ;
+réouverture : besoin explicite de provenance, de responsabilité, de
+              collaboration ou d'analyse infrastructurelle ;
 date : 16 juillet 2026.
 ```
 
@@ -296,3 +299,18 @@ rôles](../05_CARTES_ET_SYNTHESES/Cartographie_roles_trois_transitions_v0_1.md#5
 Les objets, sources, calculs et lectures forment en outre une condition
 transversale d'épreuve : ils empêchent que la fluidité du dispositif soit prise
 pour une preuve scientifique suffisante.
+
+## 12. Rang courant et condition d'usage
+
+Cette note a rempli sa fonction de clarification. Elle conserve un vocabulaire
+et des distinctions disponibles pour une question réflexive déterminée. Son
+rang courant est celui d'un outil en réserve : elle ne constitue plus une étape
+du programme et n'accompagne pas la reprise ordinaire des cycles, des sources,
+des calculs ou des chantiers philosophiques.
+
+Le travail courant peut employer GitHub, les modèles et leurs outils sans
+produire à chaque opération un commentaire sur leurs rôles respectifs. La note
+est rouverte seulement lorsqu'un effet causal de l'infrastructure, une question
+de provenance, une responsabilité scientifique ou une sortie publique exige
+ces distinctions. Ce seuil d'usage préserve son apport sans laisser la
+réflexivité occuper la recherche qu'elle devait servir.

@@ -18,10 +18,11 @@ effet immédiat : aucun changement d'attribution, de doctrine ou de résultat
                  scientifique ;
 validation : structure, diagnostic causal, cinq composantes, trois portraits,
              comparaison et usage léger validés le 16 juillet 2026 ;
-complément demandé : distinguer les apports saillants à l'échelle du projet
-                     sans faire de l'échantillon une mesure de représentativité ;
-décision suivante : lecture humaine du complément transversal avant toute
-                    promotion de la grille.
+complément : apports saillants distingués à l'échelle élargie sans faire de
+             l'échantillon une mesure de représentativité ;
+rang courant : outil réflexif en réserve, hors du parcours scientifique actif ;
+réouverture : seulement pour une question déterminée de provenance, de
+              collaboration, de responsabilité ou d'effet infrastructurel.
 ```
 
 ## 1. Méthode du passage
@@ -423,7 +424,7 @@ La condition d'arrêt est atteinte lorsque la décision, sa transformation, sa
 trace et son indétermination éventuelle sont reconstructibles. Le dispositif
 conserve alors une mémoire suffisante sans installer un métalangage permanent.
 
-## 9. Validation acquise et décision restante
+## 9. Validation acquise et mise en réserve
 
 La lecture humaine valide le diagnostic de la micro-défaillance, les cinq
 composantes, les trois portraits, leur comparaison sans classement et le
@@ -437,7 +438,12 @@ ne représente pas également les capacités de l'auteur, des modèles, de GitHu
 et des outils. Les sections 5.1 et 5.2 répondent à cette objection par une
 lecture transversale, non exhaustive et sans classement.
 
-La décision restante porte seulement sur ce complément : la sélection est-elle
-assez juste, proportionnée et étayée pour être reprise comme état actuel de
-l'analyse ? Une correction future de cette sélection ne remettrait pas en
-cause la validation acquise du micro-pilote.
+La lecture suivante accepte cette mise en valeur comme un outil possible, tout
+en lui donnant une portée réduite dans le projet présent. Le micro-pilote est
+donc clos et placé en réserve. Il ne commande ni la navigation, ni la prochaine
+orientation, ni la description ordinaire du travail.
+
+Une réouverture demanderait un besoin déterminé : préparer une provenance
+publique, instruire une responsabilité, comparer un dispositif de collaboration
+ou analyser un effet causal précis de l'infrastructure. Dans les autres cas,
+les documents restent disponibles sans produire de métalangage supplémentaire.

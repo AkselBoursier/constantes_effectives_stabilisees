@@ -533,3 +533,23 @@ les apports saillants dans plusieurs phases des archives, dans les documents
 actifs et dans les transitions Git. Elle retient la récurrence, la force
 causale et le caractère distinctif sans produire de score, de classement ou
 d'attribution propriétaire.
+
+### 9.13 Clôture du chantier et mise en réserve
+
+La lecture suivante reconnaît à l'analyse des rôles une valeur possible, mais
+réduite dans le projet présent. La clarification rétablit un cadre de travail
+où les considérations propres aux systèmes informatiques et langagiers ne
+dominent plus la place de l'auteur ni l'objet scientifique. Ce résultat de
+relation de travail motive une clôture, et non l'ouverture d'un nouveau centre
+de recherche.
+
+Le cadrage, les résultats, la note d'architecture distribuée et la cartographie
+des rôles sont donc conservés comme outils réflexifs en réserve. Ils sortent du
+parcours minimal et de la séquence immédiate sans être supprimés ni déplacés.
+Leur réouverture exige désormais une question déterminée de provenance, de
+responsabilité, de collaboration, de publication ou d'effet infrastructurel.
+
+Les consignes d'agent appliquent la même limite : le travail scientifique
+ordinaire utilise l'infrastructure et les outils sans produire de commentaire
+routinier sur la répartition des contributions. La prochaine décision redevient
+le choix explicite d'une orientation scientifique ou éditoriale.

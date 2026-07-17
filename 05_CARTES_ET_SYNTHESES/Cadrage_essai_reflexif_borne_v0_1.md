@@ -14,16 +14,17 @@ fonction : déterminer si les recommandations du projet produisent, lorsqu'elles
 périmètre : trois objets seulement ;
 étape actuelle : cadrage validé, passage unique exécuté et fond des résultats
                  validé ;
-validation requise ensuite : forme de la restitution v0.2 et positionnement de
-                              l'architecture distribuée avant mise en œuvre ;
+clôture : restitution v0.2 et analyse des rôles validées, puis mises en réserve ;
+rang courant : instruction historique d'un outil réflexif non actif ;
 date : 16 juillet 2026.
 ```
 
 Ce cadrage sépare trois gestes : instruire l'essai, l'exécuter, puis décider si
 ses résultats justifient une correction documentaire. Il a d'abord accompli le
 premier ; l'exécution est maintenant restituée dans les [résultats de l'essai
-réflexif borné v0.2](Resultats_essai_reflexif_borne_v0_2.md). Les corrections restent
-séparées et soumises à validation.
+réflexif borné v0.2](Resultats_essai_reflexif_borne_v0_2.md). La lecture a
+validé la restitution, puis placé le chantier en réserve. Les corrections
+restent séparées et ne forment plus un lot actif.
 
 La [cartographie sélective des transitions
 conversationnelles](Cartographie_selective_transitions_conversationnelles_v0_1.md)

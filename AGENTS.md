@@ -167,11 +167,13 @@ Regles :
    pour etablir une propriete intellectuelle. La genealogie n'est rouverte que
    pour une question scientifique, editoriale ou historique determinee.
 
-## Architecture distribuee du travail
+## Outil reflexif en reserve
 
-Lire la [note sur l'architecture distribuee](01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
-lorsqu'une tache porte sur la provenance, la methode de collaboration ou le
-role de l'infrastructure.
+La [note sur l'architecture distribuee](01_CADRE_METHODOLOGIQUE/Note_architecture_distribuee_auteur_modeles_GitHub_v0_1.md)
+est un outil en reserve. Ne pas l'introduire dans le travail scientifique
+ordinaire, ni commenter spontanement la repartition des roles. La lire seulement
+si la tache porte explicitement sur la provenance, la responsabilite, la methode
+de collaboration ou un effet causal precis de l'infrastructure.
 
 Le dispositif se decrit sur un meme plan d'analyse causale par quatre
 composantes :
@@ -183,12 +185,12 @@ GitHub : memoire versionnee, comparaison, reversibilite et contraintes ;
 outils GitHub : mediation executable, ciblage et verification des operations.
 ```
 
-Leur couplage explique une part de la coherence cumulative du projet. Employer
-« responsabilite » en precisant son registre : scientifique et decisionnel pour
-l'auteur ; fonctionnel et tracable pour les modeles, l'infrastructure et les
-outils. Les apports de GitHub et des outils doivent etre nommes lorsqu'ils
-modifient effectivement la continuite, la selection du contexte, la preuve
-documentaire ou la route de lecture.
+Lorsque cette reserve est explicitement rouverte, leur couplage peut expliquer
+une part de la coherence cumulative du projet. Employer alors « responsabilite »
+en precisant son registre : scientifique et decisionnel pour l'auteur ;
+fonctionnel et tracable pour les modeles, l'infrastructure et les outils. Dans
+les autres taches, utiliser GitHub et les outils sans ajouter de metadiscours sur
+leur contribution.
 
 ## Lisibilite des sigles et des codes
 
