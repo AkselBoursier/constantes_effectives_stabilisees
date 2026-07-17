@@ -92,3 +92,18 @@ différé en raison de son étendue et de sa vitesse d'actualisation. Cette déc
 ne classe pas la valeur générale des cycles et ne préjuge d'aucune conclusion
 ontologique. Le fil actif est fixé par l'[arbitrage de la dette
 prioritaire](../05_CARTES_ET_SYNTHESES/Arbitrage_dette_prioritaire_dix_cycles_v0_1.md).
+
+### 17 juillet 2026 — Approfondissement computationnel de la tension N1–N3
+
+Après la clôture documentaire et comparative du cycle neutrino, deux suites
+restaient recevables : ouvrir le cycle 1 ou approfondir la tension entre les
+planchers oscillatoires et la reconstruction cosmologique. La seconde devient
+prioritaire. Une première phase `C1` reconstruit les planchers et isole les
+effets de frontière, de prior et de paramétrisation à l'aide d'un substitut
+calibré sur les résultats publiés ; une phase `C2` devra ingérer les chaînes
+DESI et les profils NuFIT pour une reproduction exacte. Le cycle 1 reste le
+candidat scientifique suivant mais est différé. Cette décision ne valide ni le
+niveau exact de tension, ni une préférence d'ordre indépendante des priors, ni
+une interprétation de nouvelle physique. Le chantier actif est décrit dans le
+[README computationnel](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/README.md)
+et ses premiers résultats dans le [rapport C1](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md).
