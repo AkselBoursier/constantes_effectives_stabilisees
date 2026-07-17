@@ -79,3 +79,16 @@ reconstruction expérimentale ou d'une inférence cosmologique. Le
 et sa [matrice d'incidence](../05_CARTES_ET_SYNTHESES/Matrice_incidence_mesure_dix_cycles_v0_1.md)
 précèdent désormais le classement des dettes. L'unité du problème de la mesure
 et l'ordre des cycles restent hors décision.
+
+### 17 juillet 2026 — Priorité donnée au cycle neutrino
+
+Après comparaison des dix dettes selon la force de l'acquis, le risque
+d'invalidation, la réutilisation, l'obsolescence et le coût, la première reprise
+scientifique est attribuée au cycle 3 — neutrinos. Le chantier doit séparer les
+oscillations, la cinématique bêta, la cosmologie et la double bêta sans neutrino,
+puis établir les ponts légitimes entre les fonctions du spectre qu'elles
+contraignent. Le cycle 1 reste le meilleur candidat suivant ; le cycle 7 est
+différé en raison de son étendue et de sa vitesse d'actualisation. Cette décision
+ne classe pas la valeur générale des cycles et ne préjuge d'aucune conclusion
+ontologique. Le fil actif est fixé par l'[arbitrage de la dette
+prioritaire](../05_CARTES_ET_SYNTHESES/Arbitrage_dette_prioritaire_dix_cycles_v0_1.md).
