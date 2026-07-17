@@ -63,6 +63,8 @@ du corpus.
 | `Controle_consolidation_cinq_contrastes_v0_1.md` | état de synchronisation et limites de l'autorité documentaire |
 | cinq fichiers `Reprise_comparative_cycles_*` | résultats détaillés des cinq tests |
 | `Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md` | panorama des dix cycles, à lire avec sa note de clôture |
+| `Releve_paysage_contemporain_probleme_mesure_v0_1.md` | familles contemporaines de la mesure, continuités et discontinuités |
+| `Matrice_incidence_mesure_dix_cycles_v0_1.md` | traduction du paysage en dettes exactes, sans priorité encore fixée |
 
 Ces documents organisent le travail. Ils ne remplacent pas la vérification
 scientifique propre à chaque cycle.
@@ -139,12 +141,19 @@ faible qualité.
 ## 8. Piste de la mesure
 
 La comparaison du problème de la mesure entre microphysique, expériences
-classiques ou relativistes et cosmologie reste un chantier futur. Elle doit
-commencer par un paysage contemporain de littérature et ne pas importer comme
-réponses les anciennes notes philosophiques.
+classiques ou relativistes et cosmologie dispose désormais d'un
+[premier paysage contemporain](Releve_paysage_contemporain_probleme_mesure_v0_1.md).
+Il distingue la production d'une trace, son attribution inférentielle et le
+problème quantique du résultat, puis conclut provisoirement à une continuité des
+chaînes de médiation et à une discontinuité des problèmes qu'elles résolvent.
 
 Les contrastes 3–7, 4–8 et 9–10 fournissent des contrôles préparatoires, non une
 théorie générale de la mesure.
+
+La [matrice d'incidence](Matrice_incidence_mesure_dix_cycles_v0_1.md) précise
+les dettes de chaque cycle à partir de ce paysage. Elle ne les classe pas encore.
+Les anciennes notes du dossier `91_TRAVAUX_ANTERIEURS` restent en quarantaine et
+n'ont pas fourni les réponses du nouveau relevé.
 
 ## 9. Opérations maintenues séparées
 
@@ -160,10 +169,11 @@ théorie générale de la mesure.
 ## 10. Séquence immédiate
 
 ```text
-choix explicite de la prochaine orientation scientifique ou éditoriale
+sélection argumentée de la dette prioritaire parmi les dix cycles
 ```
 
-Le choix suivant pourra être une poursuite physique, le paysage sur la mesure,
-une préparation éditoriale ou une autre orientation. Aucun de ces chemins n'est
-déduit automatiquement de l'architecture documentaire. Le chantier réflexif
-n'est plus une étape préalable à ce choix.
+Le paysage de la mesure et sa matrice d'incidence fournissent désormais la base
+de cette sélection. L'ordre ne se déduit pas automatiquement de l'architecture :
+il doit comparer risque scientifique, réutilisation, obsolescence empirique et
+coût d'exécution. Le chantier réflexif reste en réserve et n'est pas une étape
+préalable à ce choix.

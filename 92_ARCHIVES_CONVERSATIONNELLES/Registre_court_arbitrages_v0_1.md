@@ -67,3 +67,15 @@ traces de cette décision sont le [statut de la réserve
 réflexive](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md#31-outils-réflexifs-en-réserve)
 et la [clôture du chantier dans la cartographie
 conversationnelle](../05_CARTES_ET_SYNTHESES/Cartographie_selective_transitions_conversationnelles_v0_1.md#913-clôture-du-chantier-et-mise-en-réserve).
+
+### 17 juillet 2026 — Paysage de la mesure avant sélection des dettes
+
+La sélection d'une dette prioritaire parmi les dix cycles était devenue la
+prochaine décision possible. Elle est différée jusqu'à l'instruction du paysage
+contemporain de la mesure, car une dette ne porte pas sur la même opération
+selon qu'il s'agit d'une trace quantique, d'une réalisation métrologique, d'une
+reconstruction expérimentale ou d'une inférence cosmologique. Le
+[relevé contemporain](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md)
+et sa [matrice d'incidence](../05_CARTES_ET_SYNTHESES/Matrice_incidence_mesure_dix_cycles_v0_1.md)
+précèdent désormais le classement des dettes. L'unité du problème de la mesure
+et l'ordre des cycles restent hors décision.

@@ -108,7 +108,7 @@ retrait ne modifie pas l'argument, elle reste hors du portrait.
 Ce test de retrait est une heuristique provisoire. Son extension à tous les
 fils argumentatifs n'est pas une règle méthodologique validée.
 
-## 6. Piste de la mesure maintenue à part
+## 6. Paysage de la mesure maintenu à part
 
 Les cycles 3 et 7 fournissent des cas d'entrée, les cycles 4 et 8 des contrôles
 métrologiques et le cycle 10 un rappel des exigences imposées à une médiation
@@ -116,9 +116,16 @@ présentée comme dynamique réelle.
 
 Ils ne démontrent pas que le problème de la mesure en mécanique quantique, la
 production expérimentale classique, la mesure relativiste et la reconstruction
-cosmologique forment un même problème. Le paysage contemporain correspondant
-doit faire l'objet d'un protocole et d'une recherche séparés ; les anciennes
-notes du dossier `91_TRAVAUX_ANTERIEURS` restent en quarantaine.
+cosmologique forment un même problème. Le
+[relevé contemporain correspondant](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md)
+distingue désormais une continuité des chaînes de médiation et une discontinuité
+des problèmes physiques et inférentiels. Les anciennes notes du dossier
+`91_TRAVAUX_ANTERIEURS` restent en quarantaine.
+
+Sa [matrice d'incidence sur les dix cycles](../05_CARTES_ET_SYNTHESES/Matrice_incidence_mesure_dix_cycles_v0_1.md)
+reformule les dettes comme opérations précises sans en sélectionner encore la
+priorité. Elle complète le tableau d'accueil ; elle ne remplace pas les preuves
+et synthèses locales.
 
 ## 7. Opérations à maintenir distinctes
 
