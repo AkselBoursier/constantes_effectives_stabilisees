@@ -73,11 +73,11 @@ Le résultat central du cycle peut donc être formulé ainsi :
 | information structurellement absente | translation commune des `m_i^2`, masse minimale, phases de Majorana | résolution séparée des trois masses, ordre à la sensibilité actuelle, phases | accès local, masses individuelles, phases, indépendance du modèle | masse simple sans phases, mécanisme identifié par le taux seul, nature Dirac déduite d'une non-détection |
 | niveau de reproductibilité | profils globaux publics mais likelihoods expérimentales incomplètes | données et covariances substantielles, événements et codes complets non publics | chaînes et likelihoods nombreuses mais reconstruction totale distribuée | articles détaillés, absence d'une suite commune de likelihoods multi-isotopes |
 
-Cette matrice ne définit pas un classement global de « directness ». Elle distingue :
+Cette matrice ne définit pas un classement global du caractère direct des voies. Elle distingue :
 
 ```text
-directness de la trace vers l'observable primaire ;
-directness de l'observable vers une fonction de masse ;
+caractère direct de la trace vers l'observable primaire ;
+caractère direct de l'observable vers une fonction de masse ;
 longueur de la conversion vers le spectre latent.
 ```
 
@@ -214,10 +214,10 @@ likelihoods CMB et BAO
 
 avant toute révision de l'architecture différentielle fortement étayée par `N1`.
 
-Une analyse indépendante publiée en juin 2026 revendique une évidence décisive pour
-l'ordre normal sous cosmologie standard. Elle réanalyse essentiellement le même
-réseau DESI–CMB–oscillations ; elle constitue un stress test de sélection de modèle,
-non un cinquième accès indépendant.
+Une [analyse indépendante publiée en juin 2026](https://arxiv.org/abs/2606.18987)
+revendique une évidence décisive pour l'ordre normal sous cosmologie standard. Elle
+réanalyse essentiellement le même réseau DESI–CMB–oscillations ; elle constitue un
+stress test de sélection de modèle, non un cinquième accès indépendant.
 
 ```text
 verdict : tension conditionnelle forte sous LambdaCDM ;
@@ -500,7 +500,7 @@ Il doit être modifié si ces conditions ne sont pas réunies.
 ### 11.3 Dette scientifique ouverte
 
 - ordre des masses ;
-- violation de CP leptoniqe ;
+- violation de CP leptonique ;
 - masse minimale et détection positive ;
 - nature Dirac ou Majorana ;
 - mécanisme de génération des masses ;
