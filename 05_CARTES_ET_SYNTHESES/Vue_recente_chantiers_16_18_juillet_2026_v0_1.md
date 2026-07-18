@@ -166,9 +166,8 @@ la tenue rédactionnelle ;
 la capacité des cas physiques à produire un résultat lisible hors du dépôt.
 ```
 
-Le répertoire doit être renommé localement de `93_RENDU_PUBLIC` vers
-`93_LABORATOIRE_EDITORIAL_EXPERIMENTAL`, afin que son rang soit porté par son nom et
-non par une réserve répétée dans chaque document.
+Le répertoire `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL` porte désormais son rang par
+son nom, sans imposer une réserve répétée dans chaque document.
 
 ## 7. Diagnostic Git récent
 

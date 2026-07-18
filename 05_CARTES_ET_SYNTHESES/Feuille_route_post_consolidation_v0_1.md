@@ -25,15 +25,14 @@ les dettes scientifiques sont terminées.
 
 ### Opérations
 
-1. Renommer localement :
+1. Conserver le laboratoire éditorial sous son nom actif :
 
 ```text
-93_RENDU_PUBLIC
-→ 93_LABORATOIRE_EDITORIAL_EXPERIMENTAL
+93_LABORATOIRE_EDITORIAL_EXPERIMENTAL
 ```
 
-Le renommage doit être effectué par `git mv` afin de conserver l’historique, y
-compris les PDF et autres fichiers binaires.
+Le renommage a été effectué par `git mv` afin de conserver l’historique, y compris
+les PDF et autres fichiers binaires.
 
 2. Vérifier et mettre à jour toutes les références internes à l’ancien chemin.
 3. Ajouter une vue récente et une vue globale — réalisées dans le présent lot.

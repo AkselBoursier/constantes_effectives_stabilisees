@@ -121,7 +121,7 @@ de l’enquête physique courante.
 
 ### 4.4 Laboratoire éditorial expérimental
 
-Le répertoire `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL` doit accueillir les essais de
+Le répertoire `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL` accueille les essais de
 transformation du corpus en textes continus : plans, sélections de sources, premiers
 jets, relectures et variantes.
 

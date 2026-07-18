@@ -120,16 +120,9 @@ mais ne commandent pas la prochaine étape scientifique.
 
 ### Laboratoire éditorial expérimental
 
-Le dossier actuellement nommé `93_RENDU_PUBLIC` doit être renommé localement par
-`git mv` en :
-
-```text
-93_LABORATOIRE_EDITORIAL_EXPERIMENTAL
-```
-
-Il accueille plans, sources, premiers jets, relectures et variantes. Son rôle est
-de tester le passage du corpus à une écriture continue, sans transformer une dette
-ouverte en résultat acquis.
+Le répertoire `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/` accueille plans, sources,
+premiers jets, relectures et variantes. Son rôle est de tester le passage du corpus
+à une écriture continue, sans transformer une dette ouverte en résultat acquis.
 
 ## Données externes et calculs
 
