@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: PROJECT_BRIEF.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/PROJECT_BRIEF.docx
+sha256_source: c169633e81d5004f60b343ecddb37f886688a6e798801bdd3efd7a4562989b51
 statut: extraction textuelle de travail
 document actif concerne: Methode v1.3 ; carte consolidee v1.2 ; index raisonne
 controle attendu: Extraction + comparaison
@@ -188,7 +190,7 @@ constantes_effectives_stabilisees/
 │   ├── Test_Fond_v0_1.md
 │   └── Test_Relation_v0_1.md
 │
-├── 04_ARCHITECTURES_INTER_FAMILLES/
+├── 04_ARCHITECTURES/
 │   ├── Note_consolidation_saveur_Higgs_v0_1.md
 │   ├── Architecture_metrologique_SI_notes.md
 │   ├── Architecture_effective_basse_energie_notes.md
@@ -241,7 +243,7 @@ Ordre recommandé :
 
 03_TESTS_TAXONOMIQUES/Test_Relation_v0_1.md
 
-04_ARCHITECTURES_INTER_FAMILLES/Note_consolidation_saveur_Higgs_v0_1.md
+04_ARCHITECTURES/Note_consolidation_saveur_Higgs_v0_1.md
 
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/
 

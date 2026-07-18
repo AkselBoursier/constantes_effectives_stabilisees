@@ -1,0 +1,69 @@
+name: Audit du corpus
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Vérifier la structure
+        run: python audit/audit_structure_corpus.py
+
+      - name: Vérifier les liens
+        run: bash audit/audit_liens.sh
+
+      - name: Vérifier l'encodage
+        run: bash audit/audit_encodage.sh
+
+      - name: Vérifier l'assainissement des archives conversationnelles
+        run: node audit/sanitize_conversation_exports.mjs
+
+      - name: Vérifier les données externes et PDF éditeurs
+        shell: bash
+        run: |
+          if git ls-files data_external | grep -q .; then
+            echo "Des données externes sont suivies par Git." >&2
+            exit 1
+          fi
+          if git ls-files '93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/**/*.pdf' | grep -q .; then
+            echo "Un PDF éditeur reste suivi dans le laboratoire éditorial." >&2
+            exit 1
+          fi
+
+      - name: Compiler les scripts Python
+        run: python -m compileall -q audit 02_CYCLES_PHYSIQUES
+
+      - name: Installer les dépendances du test C2
+        run: >-
+          python -m pip install
+          -r 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/requirements.txt
+
+      - name: Exécuter le test synthétique C2
+        run: >-
+          python 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2.py
+          --manifest 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/manifest_produits_officiels_c2.json
+          --output-dir /tmp/c2-self-test
+          --self-test
+          --allow-missing
+
+      - name: Inventorier les placeholders connus
+        continue-on-error: true
+        run: bash audit/audit_placeholders.sh

@@ -1,6 +1,12 @@
 # Premier degagement de these v0.1
 
-## Le statut de constance comme stabilisation effective situee
+> **Avis de rang — 16 juillet 2026.** Ce premier degagement reste une
+> proposition de these documentee, non la formulation generale actuelle du
+> projet. Ses acquis locaux sont conserves ; son centre doctrinal est relu
+> depuis la [vue d'ensemble v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle
+> de consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
+## Le statut de constance comme stabilisation effective qualifiee
 
 ### 1. Fonction
 
@@ -11,6 +17,7 @@ Ce document formule un premier degagement de these a partir de :
 05_CARTES_ET_SYNTHESES/Matrice_acquis_theoriques_v0_1.md
 05_CARTES_ET_SYNTHESES/Note_recentrage_question_directrice_v0_1.md
 05_CARTES_ET_SYNTHESES/Fiche_limites_non_theses_v0_1.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 ```
 
 Il ne constitue pas encore une these finale.
@@ -31,9 +38,10 @@ le corpus permet maintenant d'ouvrir.
 Formulation principale :
 
 ```text
-Une grandeur peut etre qualifiee de constante dans la mesure ou son statut
-devient stabilise dans un regime determine, selon une fonction situee, par un
-acces specifie, selon une trajectoire identifiable, eventuellement dans une
+Une grandeur physiquement ou operationnellement ancree peut etre qualifiee de
+constante dans la mesure ou son statut de constance devient stabilise dans un
+regime determine, par une fonction exercee dans ce regime, par des acces
+specifies, selon une trajectoire identifiable, eventuellement dans une
 architecture de dependances, avec ses limites conservees.
 ```
 
@@ -41,13 +49,30 @@ Formulation courte :
 
 ```text
 la constance n'est pas seulement la possession d'une valeur stable ;
-c'est un statut de stabilisation effective situee.
+c'est un statut de stabilisation effective qualifiee par regime, acces et limites.
 ```
+
+Precision :
+
+```text
+situee signifie ici : dans un regime d'effectuation,
+par des acces explicites,
+avec une qualification de statut et de limites.
+```
+
+Cette precision empeche de lire la these comme une priorite de l'acces sur la
+realite du processus decrit.
 
 Cette these porte sur le statut des constantes.
 
 Elle est methodologiquement controlee, mais elle n'a pas pour objet premier la
 methode interne du corpus.
+
+Elle ne derealise pas les constantes.
+
+Elle decrit comment leur statut de constance devient qualifiable pour des
+grandeurs, processus ou operations deja ancrees dans des regimes physiques,
+effectifs ou definitionnels.
 
 ### 3. Deplacement central
 
@@ -84,7 +109,7 @@ Le corpus autorise une premiere decomposition prudente.
 |---|---|---|
 | Forme stabilisee | Qu'est-ce qui est stabilise ? | Valeur, rapport, coefficient, borne, liaison, orientation, reconstruction |
 | Regime | Ou et sous quelles conditions cela vaut-il ? | Domaine physique, cadre de validite, niveau d'effectivite |
-| Fonction situee | Quel role la grandeur remplit-elle dans ce regime ? | Couplage, conversion, definition, orientation, reconstruction, coefficient |
+| Fonction en regime | Quel role la grandeur remplit-elle dans ce regime ? | Couplage, conversion, definition, orientation, reconstruction, coefficient |
 | Acces | Comment la grandeur est-elle etablie ? | Mesure, definition, reconstruction, inference, ajustement, borne |
 | Trajectoire | Comment le statut devient-il robuste ? | Constitution, definition, validite effective, reconstruction, tension, limite |
 | Architecture | De quoi la grandeur depend-elle pour tenir comme constante ? | Solidarites entre fonctions, operations, acces et limites |
@@ -103,7 +128,7 @@ constance.
 
 | Mode | Formulation prudente | Exemple porteur |
 |---|---|---|
-| Definissant | Une valeur peut etre stabilisee par convention definissante et realisation controlee | Grandeurs du SI, liaisons exactes |
+| Definissant | Une valeur peut etre stabilisee par convention definissante et realisation controlee - convention libre en sa forme, dictee en son contenu (latitude nulle a l'intervalle pres ; note de correction modale v0.1) | Grandeurs du SI, liaisons exactes |
 | Effectif | Une grandeur peut etre constante dans un domaine de validite determine | `G_F`, couplages effectifs |
 | Reconstruit | Une grandeur peut etre stabilisee par modele, donnees et acces observationnels | `H_0`, `sigma_8`, `S_8` |
 | Borne | Une limite peut stabiliser un statut sans fournir une valeur positive | Masse absolue des neutrinos |
@@ -126,7 +151,7 @@ decrit.
 Pour qualifier la constance, il faut aussi preciser son regime, sa fonction,
 son acces, sa trajectoire, ses dependances eventuelles et ses limites.
 
-#### 6.2 La constance est un statut situe
+#### 6.2 La constance est un statut qualifie
 
 Dire qu'une grandeur est constante ne signifie pas toujours :
 
@@ -183,7 +208,8 @@ Il dit seulement :
 
 ```text
 le statut de constance gagne a etre analyse comme une stabilisation effective
-situee, dont les conditions doivent etre explicitees.
+qualifiee, dont les conditions de regime, d'acces et de limites doivent etre
+explicitees.
 ```
 
 ### 9. Statut de la methode
@@ -207,10 +233,11 @@ Le centre de la these reste le statut de constance.
 Formule condensee :
 
 ```text
-Une constante effective stabilisee est une grandeur dont le statut de
-constance devient robuste dans un regime donne, selon une fonction situee, par
-un acces determine, selon une trajectoire de stabilisation identifiable, au sein
-d'une architecture eventuelle, avec ses limites conservees.
+Une constante effective stabilisee est une grandeur physiquement ou
+operationnellement ancree dont le statut de constance devient robuste dans un
+regime donne, par une fonction exercee dans ce regime, par des acces
+determines, selon une trajectoire de stabilisation identifiable, au sein d'une
+architecture eventuelle, avec ses limites conservees.
 ```
 
 Cette formule ne remplace pas les fiches physiques.

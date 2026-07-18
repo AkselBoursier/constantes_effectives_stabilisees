@@ -188,7 +188,7 @@ Formule :
 Erreur evitee :
 
 ```text
-prendre une composition exacte pour une famille Relation.
+prendre une composition exacte pour une sortie relationnelle.
 ```
 
 Decision :

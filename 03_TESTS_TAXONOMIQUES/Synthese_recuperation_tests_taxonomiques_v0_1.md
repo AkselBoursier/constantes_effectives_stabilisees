@@ -22,10 +22,10 @@ tests de non-proliferation lexicale.
 
 | Source DOCX | Markdown de travail |
 |---|---|
-| `Test des familles fragiles.docx` | `03_TESTS_TAXONOMIQUES/Source_docx_Test_familles_fragiles_v0_1.md` |
-| `Test de la famille Seuil.docx` | `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Seuil_v0_1.md` |
-| `Test de la famille Fond.docx` | `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Fond_v0_1.md` |
-| `Test de la famille Relation v0.1.docx` | `03_TESTS_TAXONOMIQUES/Source_docx_Test_famille_Relation_v0_1.md` |
+| `Test des familles fragiles.docx` | `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_familles_fragiles_v0_1.md` |
+| `Test de la famille Seuil.docx` | `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Seuil_v0_1.md` |
+| `Test de la famille Fond.docx` | `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Fond_v0_1.md` |
+| `Test de la famille Relation v0.1.docx` | `03_TESTS_TAXONOMIQUES/00_Sources_docx/Source_docx_Test_famille_Relation_v0_1.md` |
 
 Statut :
 

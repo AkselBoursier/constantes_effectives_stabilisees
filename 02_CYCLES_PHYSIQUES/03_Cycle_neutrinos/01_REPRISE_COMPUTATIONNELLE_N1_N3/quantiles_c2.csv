@@ -1,0 +1,4 @@
+model,status,parameter,rows,weight_sum,effective_sample_size,weighted_mean_eV,weighted_sd_eV,weighted_q50_eV,weighted_q95_eV,minimum_eV,maximum_eV
+base_mnu,not_inspected_no_data_root,,,,,,,,,,
+base_mnu059,not_inspected_no_data_root,,,,,,,,,,
+base_mnu_w_wa,not_inspected_no_data_root,,,,,,,,,,

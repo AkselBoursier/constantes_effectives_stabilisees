@@ -1,5 +1,16 @@
 # Synthese du cycle cosmologique v0.1
 
+> **Statut de lecture — synthèse historique requalifiée.** Ce document conserve
+> la consolidation initiale du cycle et son vocabulaire de
+> « macro-architecture stabilisée ». La reprise active confirme seulement une
+> architecture inférentielle et reconstructive de modèles dynamiques, non une
+> architecture de constantes. Elle est portée par le [dossier
+> relationnel](architecture-relationnelle-cosmologique.md), la [vérification
+> physique](verification-physique-cosmologique.md) et l'[évaluation du gain
+> explicatif](evaluation-gain-explicatif-cosmologique.md). Les formulations
+> anciennes ci-dessous restent consultables comme matériau historique et ne
+> doivent pas être citées isolément comme verdicts actuels.
+
 ## Architecture cosmologique, fonctions architecturales et regimes d'acces
 
 ### 1. Fonction de la synthese
@@ -624,10 +635,10 @@ La suite recommandee par cette synthese a ete produite.
 Documents produits ensuite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md
 ```
 

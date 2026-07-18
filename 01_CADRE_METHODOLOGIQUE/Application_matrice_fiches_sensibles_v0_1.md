@@ -159,7 +159,7 @@ Test de Relation :
 
 ```text
 R a une forme compositionnelle,
-mais cette forme ne suffit pas a produire la famille Relation.
+mais cette forme ne suffit pas a produire une sortie relationnelle.
 ```
 
 Ce que l'on perd si on retire l'architecture SI :

@@ -1,0 +1,96 @@
+{
+  "status": "official_index_verified_raw_chains_not_ingested_in_current_environment",
+  "cutoff_date": "2026-07-17",
+  "official_release": {
+    "description": "DESI DR2 BAO cosmology chains and posterior maximization products",
+    "data_root": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/",
+    "sha256_manifest": "https://data.desi.lbl.gov/public/papers/y3/bao-cosmo-params/SHA256SUMS",
+    "zenodo_record": "16644577",
+    "zenodo_archive": "dr2-bao-zenodo.zip",
+    "zenodo_archive_md5": "425623648b4b12515fa1943a5857fd46",
+    "default_cmb_dataset": "planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+    "zenodo_archive_display_size": "1.3 GB"
+  },
+  "model_distinctions": {
+    "base_mnu": "Somme libre avec seule contrainte de non-negativite, trois etats degeneres dans la construction standard.",
+    "base_mnu059": "Somme libre avec plancher scalaire 0.059 eV; ce repertoire ne remplace pas un traitement explicite des deux ordres.",
+    "base_mnu_binary_3": "Construction DR2 documentee avec priors physiques issus de NuFIT 6.0 et deux ordres; distincte de base_mnu059.",
+    "base_mnu_w_wa": "Somme libre avec energie noire w0-wa; elle teste la degenerescence masse-expansion."
+  },
+  "models": {
+    "base_mnu": {
+      "definition": "LambdaCDM + somme libre, prior Sigma m_nu > 0",
+      "relative_directory": "cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "published_anchor": {
+        "upper95_eV": 0.0642,
+        "posterior_sd_eV": 0.02
+      },
+      "chain_files": [
+        {"name": "chain.1.txt", "size_bytes": 19912500},
+        {"name": "chain.2.txt", "size_bytes": 20253600},
+        {"name": "chain.3.txt", "size_bytes": 19656900},
+        {"name": "chain.4.txt", "size_bytes": 19988100}
+      ],
+      "metadata_files": [
+        {"name": "chain.checkpoint", "size_bytes": 105},
+        {"name": "chain.covmat", "size_bytes": 6626},
+        {"name": "chain.input.yaml", "size_bytes": 3909},
+        {"name": "chain.margestats", "size_bytes": 4624},
+        {"name": "chain.progress", "size_bytes": 5067},
+        {"name": "chain.updated.yaml", "size_bytes": 9476}
+      ]
+    },
+    "base_mnu059": {
+      "definition": "LambdaCDM + somme libre, prior scalaire Sigma m_nu > 0.059 eV",
+      "relative_directory": "cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "published_anchor": null,
+      "chain_files": [
+        {"name": "chain.1.txt", "size_bytes": 16884900},
+        {"name": "chain.2.txt", "size_bytes": 16976700},
+        {"name": "chain.3.txt", "size_bytes": 17163000},
+        {"name": "chain.4.txt", "size_bytes": 17199900}
+      ],
+      "metadata_files": [
+        {"name": "chain.checkpoint", "size_bytes": 107},
+        {"name": "chain.covmat", "size_bytes": 6626},
+        {"name": "chain.input.yaml", "size_bytes": 3911},
+        {"name": "chain.margestats", "size_bytes": 4624},
+        {"name": "chain.progress", "size_bytes": 4361},
+        {"name": "chain.updated.yaml", "size_bytes": 9478}
+      ]
+    },
+    "base_mnu_w_wa": {
+      "definition": "w0waCDM + somme libre",
+      "relative_directory": "cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "published_anchor": {"upper95_eV": 0.163},
+      "chain_files": [
+        {"name": "chain.1.txt", "size_bytes": 42745248},
+        {"name": "chain.2.txt", "size_bytes": 42611972},
+        {"name": "chain.3.txt", "size_bytes": 43039760},
+        {"name": "chain.4.txt", "size_bytes": 43056536}
+      ],
+      "metadata_files": [
+        {"name": "chain.checkpoint", "size_bytes": 108},
+        {"name": "chain.covmat", "size_bytes": 8367},
+        {"name": "chain.input.yaml", "size_bytes": 4124},
+        {"name": "chain.margestats", "size_bytes": 4857},
+        {"name": "chain.progress", "size_bytes": 8179},
+        {"name": "chain.updated.yaml", "size_bytes": 9716}
+      ]
+    }
+  },
+  "expected_chain_volume": {
+    "base_mnu_bytes": 79811100,
+    "base_mnu059_bytes": 68224500,
+    "base_mnu_w_wa_bytes": 171453516,
+    "three_models_total_bytes": 319489116,
+    "three_models_total_mib": 304.6885643005371
+  },
+  "access_in_current_environment": {
+    "official_index_and_documentation": true,
+    "zenodo_archive_metadata": true,
+    "raw_chain_bytes": false,
+    "reason": "Les interfaces disponibles ont permis la lecture des index et metadonnees, mais pas le telechargement fiable des fichiers volumineux.",
+    "scientific_rule": "Aucun quantile de chaine n'est declare reproduit sans lecture effective des echantillons et des poids."
+  }
+}

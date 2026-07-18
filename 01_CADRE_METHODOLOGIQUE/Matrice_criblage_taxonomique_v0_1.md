@@ -1,5 +1,21 @@
 # Matrice de criblage taxonomique v0.1
 
+## Note de statut (audit taxonomie v0.1)
+
+```text
+Ce document reste disponible comme reference historique.
+
+Il n'est plus le protocole operatif obligatoire.
+
+Pour le travail courant, utiliser la procedure courte :
+01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
+
+Pour le diagnostic taxonomique actuel :
+05_CARTES_ET_SYNTHESES/Audit_taxonomie_v0_1.md
+```
+
+---
+
 ## Protocole d'application de la methode v1.3
 
 ### 1. Fonction du document
@@ -21,6 +37,13 @@ Elle ne remplace pas :
 ```text
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
+```
+
+Elle est completee, pour les cas litigieux issus du second lot critique, par :
+
+```text
+01_CADRE_METHODOLOGIQUE/Addendum_matrice_criblage_lot2_v0_1.md
 ```
 
 Elle en donne l'ordre d'application.
@@ -251,6 +274,7 @@ Pour les cas ou le rang 5 devient structurant, utiliser le protocole autonome :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md
+01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_2.md
 ```
 
 ### 11. Niveaux de tension
@@ -287,7 +311,16 @@ Stress test d'architecture :
 Rang 5 - trajectoire de stabilisation :
 Tension eventuelle :
 
+Bloc decisionnel lot 2 si necessaire :
+Contrainte transversale active :
+Couplage fort regime-acces :
+Degre de tension :
+Test de degradation :
+Test de substitution :
+Verrous d'options :
+
 Test de retrait :
+Sortie taxonomique proposee :
 Decision de classement :
 Limite conservee :
 ```
@@ -330,7 +363,8 @@ une nouvelle famille fonctionnelle,
 une requalification des liaisons stabilisees,
 une nouvelle carte consolidee,
 un stress test cosmologique,
-ou une note d'architecture manquante.
+une note d'architecture manquante,
+ou un cas issu du second lot critique.
 ```
 
 Elle doit aussi accompagner les futurs cas litigieux.

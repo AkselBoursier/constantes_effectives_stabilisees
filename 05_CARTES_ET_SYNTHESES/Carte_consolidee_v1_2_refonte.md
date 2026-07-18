@@ -251,10 +251,10 @@ Quatre architectures sont actives.
 
 | Architecture | Forme dominante | Document actif | Statut |
 |---|---|---|---|
-| Saveur-Higgs | Constitutive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md` | Confirmee |
-| Metrologique SI | Definitionnelle / operationnelle | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md` | Confirmee etendue |
-| Effective basse energie | Validite | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md` | Confirmee |
-| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md` + stress test | Macro-architecture confirmee avec sous-reseaux |
+| Saveur-Higgs | Constitutive | `04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md` | Confirmee |
+| Metrologique SI | Definitionnelle / operationnelle | `04_ARCHITECTURES/Architecture_metrologique_SI_notes.md` | Confirmee etendue |
+| Effective basse energie | Validite | `04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md` | Confirmee |
+| Cosmologique | Inferentielle / reconstructive | `04_ARCHITECTURES/Architecture_cosmologique_notes.md` + stress test | Macro-architecture confirmee avec sous-reseaux |
 
 Regle de rang :
 
@@ -446,11 +446,11 @@ Carte de dependances active :
 Architectures actives :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Cycles physiques actifs :
@@ -473,7 +473,7 @@ Elle ouvre des chantiers plus nets.
 
 | Chantier | Document | Statut |
 |---|---|---|
-| Stress test cosmologique | `04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md` | Produit |
+| Stress test cosmologique | `04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md` | Produit |
 | Plan de reprise du cycle cosmologique | `02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Plan_reprise_cycle_cosmologique_v0_1.md` | Produit |
 | Reprise des cycles physiques | `02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/` + cycles 06, 07, 08 | Produite sur branche |
 | Audit de resynchronisation theorique | `05_CARTES_ET_SYNTHESES/Audit_resynchronisation_theorique_v0_1.md` | Produit |
@@ -482,13 +482,13 @@ Elle ouvre des chantiers plus nets.
 | Matrice temporelle autonome | `01_CADRE_METHODOLOGIQUE/Matrice_temporelle_v0_1.md` | Produit |
 | Application temporelle aux fiches sensibles | `01_CADRE_METHODOLOGIQUE/Application_matrice_temporelle_fiches_sensibles_v0_1.md` | Produit |
 | Reecriture positive du vocabulaire actif | `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_1.md` | Cercle 1 produit puis corrige ; cercle 2 ouvert |
-| Cercle 2 des architectures actives | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_architectures_actives_v0_1.md` | Sequence produite ; lots 2A a 2F produits |
-| Lot 2A Saveur-Higgs | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
-| Lot 2B Metrologique SI | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
-| Lot 2C Effective basse energie | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
-| Lot 2D Cosmologique | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
-| Lot 2E Synthese transverse | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
-| Lot 2F Controle | `04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
+| Cercle 2 des architectures actives | `04_ARCHITECTURES/Cercle2_architectures_actives_v0_1.md` | Sequence produite ; lots 2A a 2F produits |
+| Lot 2A Saveur-Higgs | `04_ARCHITECTURES/Cercle2_lot2A_Saveur_Higgs_v0_1.md` | Produit |
+| Lot 2B Metrologique SI | `04_ARCHITECTURES/Cercle2_lot2B_Metrologique_SI_v0_1.md` | Produit |
+| Lot 2C Effective basse energie | `04_ARCHITECTURES/Cercle2_lot2C_Effective_basse_energie_v0_1.md` | Produit |
+| Lot 2D Cosmologique | `04_ARCHITECTURES/Cercle2_lot2D_Cosmologique_v0_1.md` | Produit |
+| Lot 2E Synthese transverse | `04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md` | Produit |
+| Lot 2F Controle | `04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md` | Produit |
 | Remontee des sources DOCX primaires | `05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md` + `05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md` | Lots 0, 2, 3 produits ; seuil cible pre-Cercle 2 atteint |
 | Seuil pre-Cercle 2 | `05_CARTES_ET_SYNTHESES/Seuil_suffisance_avant_cercle2_v0_1.md` + `05_CARTES_ET_SYNTHESES/Synthese_suffisance_pre_cercle2_v0_1.md` | Produit |
 | Workflow GitHub provisoire | `01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_1.md` + `README.md` | Produit |
@@ -541,11 +541,11 @@ Cartes et syntheses :
 Architectures :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Cycle cosmologique :

@@ -1,5 +1,12 @@
 # Matrice des acquis theoriques v0.1
 
+> **Avis de rang — 16 juillet 2026.** Cette matrice est conservee comme
+> extraction doctrinale d'un etat anterieur. Elle ne constitue plus une
+> autorite generale sur l'orientation ni sur la ponderation des cycles. Les
+> formulations centrees sur la qualification doivent etre relues depuis la
+> [vue d'ensemble v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle de
+> consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
 ## Passage de la carte methodologique aux enonces argumentables
 
 ### 1. Fonction
@@ -11,9 +18,10 @@ Elle s'appuie sur :
 
 ```text
 01_CADRE_METHODOLOGIQUE/Note_methodologique_courte_post_v1_3.md
+01_CADRE_METHODOLOGIQUE/Note_situation_effective_et_equilibrage_SI_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_3_post_cercle2.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md
+04_ARCHITECTURES/Cercle2_lot2F_Controle_occurrences_cartes_v0_1.md
 ```
 
 Son but n'est pas encore de formuler une these complete.
@@ -87,10 +95,10 @@ registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 
 | Code | Acquis theorique | Formulation affirmable | Appuis principaux | Portee | Limite conservee | Statut |
 |---|---|---|---|---|---|---|
-| A1 | Stabilisation situee | Une constante effective stabilisee doit etre lue comme une stabilisation situee, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
+| A1 | Stabilisation effective qualifiee | Une constante effective stabilisee doit etre lue comme la stabilisation d'une grandeur ancree, qualifiee par regime, acces et limites, non comme un nombre isole | Carte v1.3, note courte | Methode generale | Ne dit pas l'origine ultime des constantes | Robuste |
 | A2 | Forme avant classement | La forme stabilisee doit etre identifiee avant toute sortie taxonomique | Methode v1.3, matrice de criblage | Protocole de lecture | Ne suffit pas a determiner la fonction physique | Robuste |
-| A3 | Fonction situee | La fonction d'une grandeur depend du regime ou elle opere | Carte v1.2, note courte | Analyse des fiches | Une meme grandeur peut garder plusieurs roles selon contexte | Robuste |
-| A4 | Acces constitutif du statut | Le mode d'acces fait partie du statut methodologique de la grandeur | Cosmologie, SI, note courte | Tous les cas reconstruits, definis ou bornes | N'identifie pas toujours le contenu physique sous-jacent | Robuste |
+| A3 | Fonction en regime | La fonction d'une grandeur depend du regime ou elle opere | Carte v1.2, note courte | Analyse des fiches | Une meme grandeur peut garder plusieurs roles selon contexte | Robuste |
+| A4 | Acces dans la qualification du statut | Le mode d'acces participe a la qualification du statut de constance sans remplacer l'ancrage physique ou operationnel | Cosmologie, SI, note courte | Tous les cas reconstruits, definis ou bornes | N'identifie pas toujours le contenu physique sous-jacent | Robuste |
 | A5 | Temporalite de stabilisation | Le statut d'une grandeur s'installe selon une trajectoire : constitution, validite, definition, reconstruction ou tension | Matrice temporelle, carte v1.3 | Methode transversale | Ne transforme pas la temporalite en nouvelle classe | Robuste |
 | A6 | Architecture comme solidarisation | Une architecture active rend solidaires fonctions, acces, operations et limites dans un regime | Cercle 2A-2F | Niveau architectural | Ne cree pas une architecture pour toute collection de grandeurs | Robuste |
 | A7 | Taxonomie subordonnee | La sortie taxonomique reste utile, mais elle vient apres forme, regime, acces et trajectoire | Reecriture positive, note courte | Methode de classement | Les familles fonctionnelles fortes restent disponibles | Robuste |
@@ -101,6 +109,20 @@ registre auxiliaire : ce que cela dit de la methode employee pour les lire.
 | A12 | Limite comme composante de robustesse | Une stabilisation robuste doit conserver ce qu'elle ne resout pas | Carte v1.3, note courte | Tous les niveaux | Pris en charge par la fiche de limites | Robuste |
 | A13 | Modes de stabilisation | Le corpus fait apparaitre des modes : valeur, composition, convention, orientation, validite, inference, borne | Carte v1.3 | Typologie transversale | Modes non exclusifs, a ne pas durcir en classes | Structurant prudent |
 | A14 | Methode transformable en argument | La procedure courte peut devenir argument theorique si ses acquis et ses limites sont separes | Note courte, presente matrice | Preparation de these | Controle par les non-theses et limites | Preparatoire |
+
+Precision sur A1 :
+
+```text
+"situee" signifie regime d'effectuation + acces explicites + qualification
+avec limites. Le terme ne transforme pas la constante en illusion d'acces.
+```
+
+Precision sur A8 :
+
+```text
+le SI est un cas local ou l'acces definitionnel et operationnel prend un
+poids maximal ; ce poids ne doit pas etre generalise a tous les acquis.
+```
 
 ### 4. Trois registres de lecture
 
@@ -119,9 +141,9 @@ qu'est-ce qui autorise a qualifier une grandeur de constante ?
 ```
 
 ```text
-A1 Stabilisation situee
-A3 Fonction situee
-A4 Acces constitutif du statut
+A1 Stabilisation effective qualifiee
+A3 Fonction en regime
+A4 Acces dans la qualification du statut
 A5 Temporalite de stabilisation
 A12 Limite comme composante de robustesse
 A13 Modes de stabilisation
@@ -185,7 +207,7 @@ reponse a la question de la qualification des constantes.
 | Axe | Enonce disponible | Appui | Prudence |
 |---|---|---|---|
 | Methodologique | On ne classe pas une constante avant d'avoir etabli sa stabilisation | Note courte, matrice de criblage | Ne pas transformer la procedure en ontologie |
-| Physique | Le statut d'une grandeur depend de son regime et de son acces | Cycles physiques, architectures | Respecter les differences entre secteurs |
+| Physique | La qualification du statut d'une grandeur depend de son regime et de ses acces | Cycles physiques, architectures | Respecter les differences entre secteurs |
 | Architectural | Certaines grandeurs ne sont lisibles que dans des solidarites de fonctions | Cercle 2 | Ne pas creer d'architecture artificielle |
 | Epistemique | Les tensions, bornes et reconstructions font partie du statut d'acces | Cosmologie, neutrinos, SI | Ne pas convertir tension ou borne en verdict |
 
@@ -278,10 +300,10 @@ Formule matricielle :
 ```text
 Le corpus autorise deja une these sur la qualification des constantes,
 methodologiquement prudente :
-les constantes gagnent a etre lues comme stabilisations effectives situees,
-dont le statut depend d'une forme, d'un regime, d'une fonction situee,
-d'un acces, d'une trajectoire, d'une architecture eventuelle
-et d'une limite conservee.
+les constantes gagnent a etre lues comme stabilisations effectives de
+grandeurs ancrees, dont le statut depend d'une forme, d'un regime,
+d'une fonction exercee, d'un acces, d'une trajectoire, d'une architecture
+eventuelle et d'une limite conservee.
 ```
 
 Cette formule n'est pas encore le degagement final.

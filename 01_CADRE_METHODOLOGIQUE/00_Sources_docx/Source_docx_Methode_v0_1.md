@@ -5,6 +5,8 @@
 ```text
 lot: 0 - socle methodologique
 source physique: Méthode v0.1.docx
+source physique path: 01_CADRE_METHODOLOGIQUE/00_Sources_docx/Méthode v0.1.docx
+sha256_source: 2a32de162a697a4e07665eb360ce7e14154eb57d9cf8ebc7e46cb40957372f16
 statut: extraction textuelle de travail
 document actif concerne: Methode v1.3 ; matrice de criblage
 controle attendu: Extraction + genealogie
@@ -17,6 +19,15 @@ Cette extraction ne remplace pas le DOCX source.
 Elle rend la matiere lisible en Markdown pour comparaison et integration.
 La mise en page Word n'est pas reconstruite.
 ```
+
+## Avertissement d'extraction
+
+> Ce fichier contient des placeholders `[  ]` (et variants comme `[ X= ]`) correspondant
+> a des passages incomplets dans le DOCX source : formules non rendues, tableaux mal convertis,
+> elements graphiques ou equations complexes.
+> Ne pas interpreter ces placeholders comme du contenu valide.
+> Verifier le DOCX source avant toute reprise scientifique.
+> Convention : [CONVENTION_PLACEHOLDERS.md](../../CONVENTION_PLACEHOLDERS.md)
 
 ## Extraction
 

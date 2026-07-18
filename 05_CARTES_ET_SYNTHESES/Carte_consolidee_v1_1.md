@@ -945,7 +945,7 @@ Une consolidation documentaire ulterieure pourrait renforcer :
 01_CADRE_METHODOLOGIQUE/
 02_CYCLES_PHYSIQUES/
 03_TESTS_TAXONOMIQUES/
-04_ARCHITECTURES_INTER_FAMILLES/
+04_ARCHITECTURES/
 05_CARTES_ET_SYNTHESES/
 ```
 
@@ -1021,7 +1021,7 @@ Protocole d'application produit ensuite :
 Note d'architecture produite ensuite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 ```
 
 Carte de dependances produite ensuite :
@@ -1039,7 +1039,7 @@ Carte consolidee de refonte produite ensuite :
 Stress test cosmologique produit ensuite :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 ```
 
 Statut documentaire :
@@ -1061,18 +1061,18 @@ PROJECT_BRIEF.docx
 01_CADRE_METHODOLOGIQUE/Fiche_criblage_critiques_v0_1.md
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
 01_CADRE_METHODOLOGIQUE/Matrice_criblage_taxonomique_v0_1.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_saveur_Higgs_notes.md
+04_ARCHITECTURES/Architecture_saveur_Higgs_notes.md
 05_CARTES_ET_SYNTHESES/Carte_dependances_architectures_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_2_refonte.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_stress_test_v0_1.md
+04_ARCHITECTURES/Architecture_cosmologique_stress_test_v0_1.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v0_9.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_0.md
 05_CARTES_ET_SYNTHESES/Carte_consolidee_v1_1.md
 05_CARTES_ET_SYNTHESES/Synthese_architectures_inter_familles_v1_0.md
 05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_0.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_cosmologique_notes.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_metrologique_SI_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_cosmologique_notes.md
+04_ARCHITECTURES/Architecture_metrologique_SI_notes.md
 02_CYCLES_PHYSIQUES/06_Cycle_effectif_basse_energie/Synthese_cycle_effectif_basse_energie_v0_1.md
 02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/Synthese_cycle_cosmologique_v0_1.md
 02_CYCLES_PHYSIQUES/08_Cycle_metrologique_SI/Cycle_metrologique_SI_v0_1_c_h_e.md

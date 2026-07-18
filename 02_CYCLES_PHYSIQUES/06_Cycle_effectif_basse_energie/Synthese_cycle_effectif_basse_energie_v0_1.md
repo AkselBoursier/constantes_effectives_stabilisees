@@ -1,5 +1,16 @@
 # Synthese du cycle effectif basse energie v0.1
 
+> **Statut de lecture — synthèse historique requalifiée.** Ce document conserve
+> l'état initial du cycle et son ancien verdict d'« architecture inter-familles
+> confirmée ». Ce verdict ne fait plus autorité. La reprise active est portée
+> par le [dossier relationnel](architecture-relationnelle-basse-energie.md), la
+> [vérification physique](verification-physique-basse-energie.md) et
+> l'[évaluation du gain explicatif](evaluation-gain-explicatif-basse-energie.md),
+> qui retient plus sobrement une architecture méthodologique de validité. Les
+> formulations anciennes ci-dessous restent consultables comme matériau de
+> récupération et ne doivent pas être citées isolément comme conclusions
+> actuelles.
+
 ## Architecture effective basse energie, validite et formes d'effectivite
 
 ### 1. Fonction de cette synthese
@@ -774,7 +785,7 @@ Formule plus courte :
 La prochaine etape historique a ete la note d'integration :
 
 ```text
-04_ARCHITECTURES_INTER_FAMILLES/
+04_ARCHITECTURES/
 `-- Architecture_effective_basse_energie_notes.md
 ```
 
@@ -805,7 +816,7 @@ Cycle effectif basse energie v0.3 - alpha_s(Q^2) / Lambda_QCD
 Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
 Carte consolidee v0.8
 01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md
-04_ARCHITECTURES_INTER_FAMILLES/Architecture_effective_basse_energie_notes.md
+04_ARCHITECTURES/Architecture_effective_basse_energie_notes.md
 PROJECT_BRIEF.docx
 ```
 
