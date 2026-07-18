@@ -110,9 +110,29 @@ function pad(number, width) {
   return String(number).padStart(width, "0");
 }
 
+function sanitizeNormalizedQwen(source) {
+  return {
+    ...source,
+    conversations: source.conversations.map((conversation) => ({
+      ...conversation,
+      title: redactText(conversation.title),
+      messages: (conversation.messages ?? []).map((message) => ({
+        ...message,
+        content: redactText(message.content),
+        attachments: (message.attachments ?? []).map((attachment) => ({
+          ...attachment,
+          name: redactText(attachment.name)
+        }))
+      }))
+    }))
+  };
+}
+
 function sanitizeQwenJson(raw) {
   const source = JSON.parse(raw);
-  if (!source.data && Array.isArray(source.conversations)) return source;
+  if (!source.data && Array.isArray(source.conversations)) {
+    return sanitizeNormalizedQwen(source);
+  }
 
   const conversations = (source.data ?? []).map((conversation, index) => {
     const historyMessages =
@@ -190,7 +210,10 @@ function processFile(relativePath, transform) {
   const changed = before !== after;
 
   if (write && changed) fs.writeFileSync(absolutePath, after, "utf8");
-  return {relativePath, status: changed ? (write ? "sanitized" : "would-change") : "clean"};
+  return {
+    relativePath,
+    status: changed ? (write ? "sanitized" : "would-change") : "clean"
+  };
 }
 
 const results = [];
@@ -214,4 +237,8 @@ results.push(
 
 for (const result of results) {
   process.stdout.write(`${result.status}\t${result.relativePath}\n`);
+}
+
+if (!write && results.some((result) => ["would-change", "absent"].includes(result.status))) {
+  process.exitCode = 1;
 }
