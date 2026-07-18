@@ -76,6 +76,23 @@ def is_historical_or_source(path: Path) -> bool:
     return any(part in SOURCE_OR_ARCHIVE_PARTS for part in path.parts)
 
 
+def iter_lines_outside_fences(lines: list[str]):
+    """Yield 1-based line numbers and content outside fenced code blocks.
+
+    Markdown-like syntax inside code examples must not be interpreted as links or
+    active document references. PowerShell casts such as ``[int](...)`` are a
+    representative false positive avoided by this iterator.
+    """
+
+    in_fence = False
+    for number, line in enumerate(lines, start=1):
+        if FENCE_RE.match(line):
+            in_fence = not in_fence
+            continue
+        if not in_fence:
+            yield number, line
+
+
 def check_conflicts(path: Path, lines: list[str]) -> list[Finding]:
     findings: list[Finding] = []
     for number, line in enumerate(lines, start=1):
@@ -152,7 +169,7 @@ def normalize_link_target(raw: str) -> str | None:
 
 def check_links(path: Path, lines: list[str], root: Path) -> list[Finding]:
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         for match in LINK_RE.finditer(line):
             target = normalize_link_target(match.group(1))
             if target is None:
@@ -189,7 +206,7 @@ def check_obsolete_references(path: Path, lines: list[str]) -> list[Finding]:
         return []
 
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         for obsolete, replacement in OBSOLETE_ACTIVE_REFERENCES.items():
             if obsolete in line:
                 findings.append(
