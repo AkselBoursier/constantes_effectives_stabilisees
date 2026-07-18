@@ -1,248 +1,199 @@
 # constantes_effectives_stabilisees
 
 Corpus de recherche sur ce que la physique appelle des constantes, sur les
-différences que ce terme commun recouvre et sur les régimes, architectures et
-processus par lesquels certaines fixités deviennent opératoires.
+différences que ce terme commun recouvre et sur les régimes, architectures, accès
+et processus par lesquels certaines fixités deviennent opératoires ou affirmables.
 
-> **Statut au 16 juillet 2026 : cinq contrastes accomplis, contrôle de consolidation achevé et portes d'entrée resynchronisées par un lot ciblé.**
-> La branche de consolidation n'est pas encore le tronc canonique. Les sources,
-> archives, calculs et résultats physiques n'ont pas été réécrits par cette
-> opération. La prochaine orientation de recherche reste à choisir explicitement.
+> **Statut au 18 juillet 2026 :** les dix cycles physiques sont récupérés et
+> comparés ; la dette prioritaire du cycle neutrino est levée aux niveaux
+> documentaire, empirique et comparatif ; sa reprise computationnelle `N1–N3`
+> reste ouverte en `C2`. La branche cumulative est en cours de préparation comme
+> candidate à la consolidation vers `main`.
 
-## Point d'entrée humain
+## Point d’entrée humain
 
-La [vue d'ensemble actuelle v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md)
-donne l'état courant sans exiger de connaître les codes du dépôt. L'[index
-raisonné v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md) précise
-ensuite le rang des documents antérieurs et l'ordre intellectuel minimal.
+Lire d’abord :
 
-Le [fichier d'accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md)
-organise ensuite les cas autour de cinq comparaisons structurantes. Il indique
-le rôle, le point d'entrée et la dette de chaque cycle sans les classer selon
-une valeur générale.
+1. la [vue récente des chantiers du 16 au 18 juillet 2026](05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), pour comprendre la séquence récente ;
+2. la [vue d’ensemble globale v0.4](05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), pour replacer cette séquence dans l’ensemble du projet ;
+3. la [feuille de route post-consolidation](05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), pour distinguer consolidation, calcul, dettes physiques, rédaction et philosophie en réserve ;
+4. l’[accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md), pour accéder aux résultats et dettes locales ;
+5. l’[index raisonné v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md), pour le rang des documents antérieurs.
 
-Les codes hérités restent visibles lorsqu'ils sont utiles à la généalogie. La
-question de qualification (`Q-qual`) demande localement dans quelle mesure une
-grandeur peut être dite constante ; la question de formation (`Q-form`) demande
-comment un statut se forme, se maintient ou se défait. Le chantier Q désigne un
-programme antérieur sur les catégories, les accès et les inférences en
-microphysique. Les niveaux `C0–C4` indiquent la maturité d'une contribution.
-Ces codes ne définissent plus à eux seuls le centre du projet.
+La [vue d’ensemble v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md)
+reste conservée comme état du 16 juillet ; elle n’est plus l’entrée actuelle.
 
-## Chantier Q — matériau conservé, non directeur
+## Objet général
 
-La branche `agent/contribution-q1-information-chemin` contient trois tests :
-Stern–Gerlach, les séquences d'axes, puis l'interférence avec marquage des voies.
+Le projet ne cherche pas principalement à dresser un catalogue des constantes ni à
+produire une taxonomie universelle. Il examine ce que le terme commun « constante »
+comprime lorsqu’il est appliqué à des objets, relations, observables, coefficients,
+bornes, paramètres d’état et valeurs définissantes hétérogènes.
 
-1. [Entrée du chantier Q](06_PHILOSOPHIE/PROGRAMME_Q1_CONTRIBUTION_README.md)
-2. [Dossier Stern–Gerlach](06_PHILOSOPHIE/PILOTE_Q1_STERN_GERLACH_README.md)
-3. [Interférence — cadrage](06_PHILOSOPHIE/Pilote_Q1_interference_cadrage_v0_1.md)
-4. [Interférence — fonctions et migrations](06_PHILOSOPHIE/Pilote_Q1_interference_fonctions_v0_1.md)
-5. [Interférence — évaluation de contribution](06_PHILOSOPHIE/Pilote_Q1_interference_evaluation_contribution_v0_1.md)
+Deux questions organisent le travail :
 
-Résultat conservé : la coordination de couches est établie (`C1`) et une
-contribution différenciée est plausible (`C2`). Ce chantier est placé en
-quarantaine sélective : il reste disponible sans commander la prochaine étape.
-Son éventuel positionnement bibliographique devra répondre à une question de
-recherche ou à un projet éditorial explicitement choisi.
+1. Comment les sciences établissent-elles, utilisent-elles et déplacent-elles la
+   frontière entre ce qui varie et ce qui tient ?
+2. Que change pour l’enquête scientifique le fait de reconstruire certaines
+   constances à travers leurs régimes, leurs modes de constitution, leurs accès et
+   leurs transformations possibles ?
 
-## Entrée de la branche précédente — Questions contemporaines
+La qualification d’une grandeur comme constante reste une question locale utile.
+Elle ne suffit plus, à elle seule, à définir le programme.
 
-La branche `agent/cartographie-questions-contemporaines` et la demande de fusion
-(`pull request`, PR) nº 11 portent un cycle transversal qui ne présuppose pas que
-le thème des constantes doive rester le centre du programme. Lire dans cet ordre :
-
-1. [Rectification — accès, trajectoires et stabilisation](05_CARTES_ET_SYNTHESES/Rectification_acces_trajectoires_stabilisation_v0_1.md)
-   pour la décision méthodologique active sur l'accès transversal, les trajectoires et le retrait du terme général `fixité dynamique`.
-2. [Index raisonné actif v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md)
-   pour la navigation actuelle et le rang des documents antérieurs.
-3. [Cadrage du cycle](05_CARTES_ET_SYNTHESES/Cadrage_cycle_questions_contemporaines_v0_1.md)
-   pour la méthode, les niveaux de maturité d'une contribution et les livrables.
-4. [Atlas des questions fondamentales contemporaines](05_CARTES_ET_SYNTHESES/Atlas_questions_fondamentales_contemporaines_v0_1.md)
-   pour les six domaines et les familles transversales de problèmes.
-5. [Carte des affinités et priorités de recherche](05_CARTES_ET_SYNTHESES/Carte_affinites_et_priorites_recherche_v0_1.md)
-   pour les zones de travail retenues sans évaluation personnelle implicite.
-6. [Matrice questions / corpus / voisinages](05_CARTES_ET_SYNTHESES/Matrice_questions_corpus_voisinages_v0_1.md)
-   pour le croisement entre questions exogènes, matériaux du corpus et dettes bibliographiques.
-7. [Registre des questions candidates originales](05_CARTES_ET_SYNTHESES/Registre_questions_candidates_originales_v0_1.md)
-   pour les premiers verdicts d'antériorité et les conditions de maintien.
-8. [Sélection du programme de recherche v0.2](05_CARTES_ET_SYNTHESES/Selection_programme_recherche_v0_2.md)
-   pour le chantier Q déjà défini, le chantier sur les mécanismes (`M`) et le
-   chantier sur le contexte et les agents (`A`), avec leurs pilotes et leurs
-   critères d'échec.
-9. [Sas critique et pédagogique](05_CARTES_ET_SYNTHESES/SAS_CRITIQUE_README.md)
-   pour le tri multidimensionnel des cinq lectures et leurs incidences sur le chantier Q.
-
-## Entrée actuelle du corpus consolidé
-
-Lire dans cet ordre :
-
-1. [Cadrage du cycle zéro](05_CARTES_ET_SYNTHESES/Cadrage_cycle_zero_reconnaissance_transversale_v0_1.md)
-   pour le périmètre et la méthode généalogique.
-2. [Cartographie généalogique des lignées](05_CARTES_ET_SYNTHESES/Cartographie_genealogique_lignees_projet_v0_1.md)
-   pour les centres de gravité successifs du projet.
-3. [Registre des propositions transversales](05_CARTES_ET_SYNTHESES/Registre_propositions_transversales_cycle_zero_v0_1.md)
-   pour suivre l'origine, la migration et le statut proposé des principaux énoncés.
-4. [Diagnostic d'orientation](05_CARTES_ET_SYNTHESES/Diagnostic_orientation_cycle_zero_v0_1.md)
-   pour la proposition initialement soumise à validation.
-5. [Note de décision du cycle zéro](05_CARTES_ET_SYNTHESES/Note_decision_cycle_zero_v0_1.md)
-   pour l'orientation validée avant la rectification actuelle.
-6. [Rectification — accès, trajectoires et stabilisation](05_CARTES_ET_SYNTHESES/Rectification_acces_trajectoires_stabilisation_v0_1.md)
-   qui supplante les formulations réduisant l'accès au seul contrôle probatoire.
-7. [Note fondatrice — régimes de constance](01_CADRE_METHODOLOGIQUE/00_Sources_docx/Source_docx_Regimes_de_constance_v0_1.md)
-   pour la question initiale sur les conditions physiques de la constance.
-8. [Cadre canonique de refondation](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)
-   comme garde-fou critique sur les objets, régimes et transformations.
-9. [README philosophique](06_PHILOSOPHIE/README.md)
-   pour les situations, voisinages, tests et programmes.
-10. [Workflow GitHub v0.2](01_CADRE_METHODOLOGIQUE/Workflow_GitHub_v0_2.md)
-    pour le statut de `main`, `travail` et des branches thématiques.
-
-## Orientation active
-
-### Opération générale
+## Articulation heuristique
 
 ```text
-différencier ce que le terme commun « constante » comprime,
-en reconstruisant les régimes, architectures et dépendances
-qui rendent chaque fixité possible, opératoire ou affirmable.
-```
-
-Les trajectoires temporelles ne sont pas présupposées. Elles doivent être
-définies localement lorsqu'une dynamique physique pertinente existe.
-
-### Articulation heuristique de recherche
-
-```text
-objet : quel porteur et quelle fixité sont testés ?
-constitution : qu'est-ce qui rend le régime ou la relation opératoire ?
-accès : comment l'objet, la trace ou la preuve devient-il disponible ?
+objet : quel porteur, quelle relation ou quel secteur est étudié ?
+constitution : qu’est-ce qui rend le régime ou la relation opératoire ?
+accès : comment l’objet, la trace ou la preuve devient-il disponible ?
 différenciation : quelles confusions doivent être défaites ?
 qualification : quel statut et quelles limites peut-on soutenir ?
 ```
 
-Le point d'entrée et l'ordre dépendent du cas. Ces questions forment une boucle
-contrôlée : une difficulté d'accès peut reformuler l'objet, et un mécanisme de
-constitution peut modifier la transformation pertinente. Leur distinction
-empêche les glissements de rang sans imposer une hiérarchie universelle.
+Le point d’entrée et l’ordre dépendent du terrain. Aucune dimension ne commande
+uniformément les autres. La règle est de déclarer le niveau de chaque énoncé et
+d’empêcher les migrations silencieuses entre objet, constitution, accès et
+interprétation.
 
-### Volet 1 — Différenciation conceptuelle et physique des formes de constance
+## Distinctions canoniques
 
-```text
-partir des usages du mot « constante » ;
-faire apparaître les différences d'objets, de fonctions, de dépendances et de régimes ;
-comparer sans homogénéiser ;
-ne pas réduire le projet à l'admission ou au refus d'un vocabulaire.
-```
-
-### Volet 2 — Constitution, historicité et contingence des fixités
+Le corpus distingue au minimum :
 
 ```text
-examiner comment certaines fixités deviennent possibles ou opératoires ;
-distinguer constitution de la relation, stabilisation du comportement et valeur ;
-étudier la contingence résiduelle, le fine-tuning et les profils temporels locaux ;
-garder les conséquences ontologiques au rang d'interprétations contrôlées.
+constance de l’objet ;
+stabilisation ou robustesse de l’accès et de l’estimation ;
+mode de constitution ou d’organisation ;
+exactitude par définition ;
+validité dans un régime ;
+borne ou domaine admissible ;
+paramètre d’état reconstruit ;
+quasi-stationnarité dans une dynamique déterminée.
 ```
 
-### Place de l'accès
+Une borne ne devient pas une propriété positive de l’objet. Une valeur exacte par
+définition ne devient pas un résultat empirique infiniment précis. Une trajectoire
+calculée ne devient pas une histoire réelle. Une pluralité d’accès ne devient une
+validation croisée qu’après explicitation des hypothèses de conversion.
 
-> L'accès est une dimension transversale de l'expérimentation, de
-> l'attribution, de la représentation, de l'inférence et de la preuve. Son poids
-> et sa fonction varient selon les cas.
+## Les dix cycles physiques
 
-Distinguer au minimum :
+Les cycles sont organisés par cinq contrastes :
 
 ```text
-accès matériel et expérimental ;
-accès opératoire ;
-accès représentationnel ;
-accès inférentiel ;
-accès métrologique ;
-accès intersubjectif et linguistique ;
-accès documentaire et computationnel.
+1–6 : échelle, régime et validité ;
+2–5 : fonction, architecture et explication ;
+3–7 : accès, reconstruction et mesure ;
+4–8 : mesure, définition et réalisation ;
+9–10 : contrefactuel, dynamique et contingence.
 ```
 
-L'accès ne doit être ni réinstallé comme centre universel, ni réduit à la seule
-métrologie, ni repoussé systématiquement à la fin de l'enquête.
+Le cycle 3 — neutrinos — possède désormais une [synthèse active après N5](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md).
+Sa reprise computationnelle `N1–N3` est documentée dans :
 
-## Documents resynchronisés et couches historiques
+- [C1 — planchers, frontière et priors](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md) ;
+- [C2 — produits officiels DESI](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
+- [instruction à l’agent local pour les données DESI DR2](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Instruction_agent_local_extraction_DESI_DR2_v0_1.md).
 
-La séquence qui a successivement surcentré le pouvoir de refus, la hiérarchie
-`objet > constitution > accès`, puis l'accès comme seul contrôle probatoire
-reste visible dans cette lignée. Trois documents actifs portent désormais la
-correction sur l'ordre local des questions :
+Le cycle 1 — couplages, échelles et chromodynamique quantique — reste la dette
+scientifique prioritaire suivante après la consolidation et le verdict propre de
+`C2`.
+
+## Quatre espaces de travail
+
+### Cadre méthodologique
+
+`01_CADRE_METHODOLOGIQUE/` contient les décisions, protocoles, hiérarchies de
+sources et règles de travail. Il sert de garde-fou ; il ne doit pas pré-écrire les
+résultats des cas.
+
+### Laboratoire scientifique
+
+`02_CYCLES_PHYSIQUES/` contient les fiches, calculs, synthèses actives et dettes des
+dix cycles.
+
+### Laboratoire philosophique en réserve
+
+`06_PHILOSOPHIE/` conserve les dossiers Stern–Gerlach, séquences d’axes,
+interférence, coupes et accès. Ces matériaux sont disponibles sur question précise,
+mais ne commandent pas la prochaine étape scientifique.
+
+### Laboratoire éditorial expérimental
+
+Le dossier actuellement nommé `93_RENDU_PUBLIC` doit être renommé localement par
+`git mv` en :
 
 ```text
-05_CARTES_ET_SYNTHESES/Premier_degagement_these_v0_2.md
-05_CARTES_ET_SYNTHESES/Matrice_degagements_theoriques_v0_2.md
-05_CARTES_ET_SYNTHESES/Plan_livrable_papier_A_v0_2.md
+93_LABORATOIRE_EDITORIAL_EXPERIMENTAL
 ```
 
-Les couches suivantes conservent encore les formulations historiques :
+Il accueille plans, sources, premiers jets, relectures et variantes. Son rôle est
+de tester le passage du corpus à une écriture continue, sans transformer une dette
+ouverte en résultat acquis.
+
+## Données externes et calculs
+
+Les données scientifiques volumineuses restent hors de Git :
 
 ```text
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_4.md
-01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_5.md
-05_CARTES_ET_SYNTHESES/Mise_epreuve_degagements_theoriques_exemples_porteurs_v0_2.md
-05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_1.md
+data_external/
 ```
 
-Elles restent conservées et utilisables pour leurs distinctions locales. Elles
-doivent être lues sous la
-[rectification active](05_CARTES_ET_SYNTHESES/Rectification_acces_trajectoires_stabilisation_v0_1.md).
-
-## Organisation du dépôt
+Ce chemin est ignoré par `.gitignore`. Les archives, chaînes MCMC, caches et
+environnements locaux ne doivent pas être versionnés. Git conserve seulement :
 
 ```text
-constantes_effectives_stabilisees/
-|
-|-- 01_CADRE_METHODOLOGIQUE/    méthode, protocoles, sources fondatrices
-|-- 02_CYCLES_PHYSIQUES/        fiches, cycles, calculs et synthèses locales
-|-- 03_TESTS_TAXONOMIQUES/      généalogie et tests des anciennes familles
-|-- 04_ARCHITECTURES/           architectures et modes de solidarisation
-|-- 05_CARTES_ET_SYNTHESES/     cartes, index, audits et synthèses globales
-|-- 06_PHILOSOPHIE/             situations, voisinages, tests et programmes
-|-- 90_Critiques_.../           sources de critiques constructives
-|-- audit/                       contrôles documentaires
-|-- GLOSSAIRE.md                 termes de référence
-`-- CONVENTION_PLACEHOLDERS.md  limites des extractions
+manifestes ;
+sommes de contrôle ;
+scripts ;
+configurations utiles ;
+sorties dérivées de taille raisonnable ;
+rapports et limites de reproduction.
 ```
 
-## Lignées physiques actives
+Une sortie numérique n’est déclarée reproduite que si ses entrées, ses poids, sa
+provenance, son code et ses limites ont été effectivement contrôlés.
 
-| Lignée | Point d'entrée | Question |
-|---|---|---|
-| Architectures | [Synthèse transverse](04_ARCHITECTURES/Cercle2_lot2E_Synthese_transverse_architectures_v0_1.md) | Comment des grandeurs deviennent-elles solidaires et opératoires ? |
-| Fine-tuning | [Cadrage du cycle 9](02_CYCLES_PHYSIQUES/09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) | Qu'est-ce qui est réellement réglé et que reste-t-il à expliquer ? |
-| Cycle 10 local | [Cadrage du cycle 10](02_CYCLES_PHYSIQUES/10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) | Un modèle cosmologique simplifié peut-il produire un comportement électrofaible quasi stationnaire sans dette énergétique rédhibitoire ? |
-| Jonction du mécanisme Brout–Englert–Higgs (BEH) | [Note de cadrage](05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md) | Quel régime et quels objets deviennent opératoires au seuil électrofaible ? |
+## Sources primaires et couches historiques
 
-Les résultats numériques des phases 2 à 4 du cycle 10 restent inchangés et ont
-été reproduits lors de l'audit borné. La locution « fixité dynamique » reste un
-nom généalogique de fichiers ; elle n'est plus un terme général actif.
+Les documents Microsoft Word (`DOCX`) et `Ecriture.txt` sont des sources primaires
+conservées sans modification. Les fichiers `Source_docx_*` sont des extractions de
+travail. Toute formule, image ou table insuffisamment restituée doit être vérifiée
+dans l’original.
 
-## Sources primaires et extractions
+`91_TRAVAUX_ANTERIEURS/` conserve les matériaux antérieurs et leur généalogie.
+`92_ARCHIVES_CONVERSATIONNELLES/` conserve les exports et le registre court des
+arbitrages. Leur présence ne leur confère pas un rang canonique.
 
-Les documents Microsoft Word (`DOCX`) et `Ecriture.txt` sont des sources
-primaires conservées sans modification. Les fichiers `Source_docx_*` sont des
-extractions de travail. Une formule, un tableau ou une image insuffisamment
-restituée doit être vérifié dans le DOCX original.
+## État du pan philosophique antérieur
 
-- [Plan de remontée des sources](05_CARTES_ET_SYNTHESES/Plan_remontee_sources_docx_markdown_v0_1.md)
-- [Table de remontée](05_CARTES_ET_SYNTHESES/Table_remontee_sources_docx_v0_1.md)
-- [Registre des sources primaires](05_CARTES_ET_SYNTHESES/Registre_sources_primaires_v0_1.md)
+Le chantier Q a produit trois tests : Stern–Gerlach, séquences d’axes et
+interférence avec marquage des voies. La coordination de couches est établie et une
+contribution différenciée est plausible, mais le positionnement bibliographique
+reste à instruire lorsqu’une question scientifique ou éditoriale le requiert.
+
+Entrées :
+
+- [programme Q1](06_PHILOSOPHIE/PROGRAMME_Q1_CONTRIBUTION_README.md) ;
+- [dossier Stern–Gerlach](06_PHILOSOPHIE/PILOTE_Q1_STERN_GERLACH_README.md) ;
+- [interférence — cadrage](06_PHILOSOPHIE/Pilote_Q1_interference_cadrage_v0_1.md) ;
+- [interférence — fonctions](06_PHILOSOPHIE/Pilote_Q1_interference_fonctions_v0_1.md) ;
+- [évaluation de contribution](06_PHILOSOPHIE/Pilote_Q1_interference_evaluation_contribution_v0_1.md).
 
 ## Workflow GitHub
 
 ```text
-main          : état validé du corpus ;
-travail       : intégration quotidienne après resynchronisation ;
-branches      : chantiers thématiques bornés ;
-récupération  : réunion exceptionnelle soumise à revue.
+main : état validé et lisible du corpus ;
+branches : chantiers thématiques bornés ;
+PR : un objet, un résultat et ses limites ;
+data_external : données locales hors Git ;
+récupération : opération exceptionnelle soumise à revue.
 ```
 
-La PR de consolidation reste en brouillon. Aucun nouveau chantier scientifique
-ne doit être ouvert depuis `main` avant la décision explicite de consolidation.
+La branche cumulative active est candidate à la consolidation, mais la fusion dans
+`main` reste une décision explicite de l’auteur. Après consolidation, les nouveaux
+chantiers doivent repartir du `main` mis à jour afin d’éviter une nouvelle pile
+longue de PR.
 
 ## Audits documentaires
 
@@ -253,20 +204,21 @@ bash audit/audit_encodage.sh
 bash audit/audit_placeholders.sh
 ```
 
-Les trois premiers contrôles sont bloquants dans GitHub Actions. L'inventaire
-des placeholders est informatif : les lacunes connues des extractions ne sont
-pas confondues avec une régression.
+Les trois premiers contrôles sont bloquants dans GitHub Actions. L’inventaire des
+placeholders est informatif : les lacunes connues des extractions ne sont pas
+confondues avec une régression.
 
-## Règles de contribution après rectification
+## Règles de contribution
 
 1. Ne pas modifier les sources historiques DOCX.
 2. Distinguer intention fondatrice, centre temporaire, acquis durable et orientation validée.
 3. Ne pas transformer une correction locale en centre général.
-4. Ne pas confondre ordre de recherche, ordre d'exposition et hiérarchie ontologique.
+4. Ne pas confondre ordre de recherche, ordre d’exposition et hiérarchie ontologique.
 5. Revenir aux preuves locales pour toute affirmation sectorielle.
-6. Conserver les résultats physiques, leurs hypothèses, leurs accès pertinents et leurs conditions d'échec.
+6. Conserver résultats, hypothèses, accès, provenance et conditions d’échec.
 7. Reprendre les documents philosophiques par versions nouvelles et réversibles.
-8. Choisir le point d'entrée selon l'objet ; distinguer objet, constitution et accès sans leur imposer un ordre universel.
+8. Choisir le point d’entrée selon l’objet sans imposer un ordre universel.
 9. Ne pas transformer une analogie pédagogique en argument physique.
-10. Ne pas transformer une quasi-stationnarité locale en théorie générale des constantes.
-11. Enregistrer les décisions par leur contenu, leur date, leur statut et leurs raisons, sans faire de l'attribution personnelle une source d'autorité.
+10. Ne pas transformer une quasi-stationnarité locale en théorie générale.
+11. Ne jamais versionner les données scientifiques externes volumineuses.
+12. Enregistrer les décisions seulement lorsqu’elles changent rang, portée, méthode ou ordre du programme.
