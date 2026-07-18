@@ -120,3 +120,18 @@ porté par son nom. Les données DESI DR2 restent locales sous `data_external/` 
 `C2` doit être achevée par ingestion contrôlée avant le cycle 1, sans devenir une
 condition indéfinie de blocage. La fusion elle-même reste hors décision et requiert
 un accord explicite après audit. Les documents directeurs sont la [vue récente](../05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), la [vue globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), la [feuille de route](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md) et l'[instruction locale DESI](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Instruction_agent_local_extraction_DESI_DR2_v0_1.md).
+
+### 18 juillet 2026 — Dépôt privé et conservation de l'histoire détaillée
+
+L'audit de pré-fusion révèle que deux PDF éditeurs, retirés de l'arbre final, restent
+présents dans des commits déjà poussés. La première solution proposée — fusion par
+squash — est refusée parce qu'elle ferait disparaître de l'histoire de `main` la
+granularité des centaines de commits. Le dépôt devient privé et l'accès du connecteur
+GitHub est vérifié. La méthode validée est une réécriture ciblée de la seule branche
+cumulative avec `git-filter-repo`, couvrant les chemins avant et après renommage,
+assortie d'une sauvegarde privée, d'une table ancien SHA → nouveau SHA, d'un contrôle
+d'identité de l'arbre final et d'un force-push avec lease limité à cette branche. `main`
+ne doit pas être réécrite et la fusion reste interdite avant le rapport post-réécriture
+et la réussite du workflow. Cette décision préserve le sens, l'ordre et la granularité
+des commits, mais ne prétend pas conserver leurs SHA ni purger absolument d'anciens
+clones ou caches. Les documents directeurs sont le [protocole de réécriture](../01_CADRE_METHODOLOGIQUE/Protocole_recriture_historique_PDF_PR14_v0_1.md) et l'[audit v0.2](../05_CARTES_ET_SYNTHESES/Audit_pre_fusion_PR14_v0_2.md).
