@@ -22,7 +22,7 @@ données DESI brutes suivies par Git : aucune ;
 PDF éditeurs dans l'arbre final : aucun ;
 conflit avec main : aucun ;
 méthode de fusion ordinaire : refusée ;
-méthode recommandée : squash and merge, après deux décisions explicites de l'auteur.
+méthode recommandée : squash and merge, après acceptation explicite de sa limite historique.
 ```
 
 La branche peut devenir le nouveau tronc validé sans attendre la clôture de toutes les
@@ -38,15 +38,15 @@ Au moment du contrôle :
 
 ```text
 main : ancêtre exact de la branche ;
-branche en avance : 325 commits ;
+branche en avance : 325 commits avant le lot final d'audit ;
 branche en retard : 0 commit ;
 PR nº 14 : ouverte, en brouillon, fusionnable ;
 threads de revue non résolus : aucun.
 ```
 
 Il n'existe donc ni divergence avec `main`, ni conflit de contenu à résoudre. La taille
-de la PR — 526 fichiers — impose toutefois de distinguer un audit de consolidation d'une
-validation scientifique exhaustive.
+de la PR impose toutefois de distinguer un audit de consolidation d'une validation
+scientifique exhaustive.
 
 ### 2.2 Retrait des PDF et données externes
 
@@ -101,7 +101,12 @@ Le script a été corrigé afin de recontrôler également un export Qwen déjà
 échoue désormais lorsqu'un fichier est absent ou nécessiterait encore une modification.
 
 Ce contrôle est devenu bloquant dans GitHub Actions. Il valide l'assainissement technique,
-non l'opportunité éditoriale de publier l'intégralité du contenu conversationnel.
+non la totalité du contenu humain conservé.
+
+La décision documentaire antérieure est maintenue : les exports assainis restent une
+source consultable de provenance ; le corpus actif n'en reçoit que des extractions
+sélectives et le registre court des arbitrages. L'export intégral n'est pas transformé en
+journal continu et ne reçoit aucune autorité scientifique ou doctrinale.
 
 ### 2.5 Scripts et reproduction minimale
 
@@ -120,7 +125,8 @@ inventaire informatif des placeholders.
 ```
 
 L'exécution nº 124 du workflow `Audit du corpus` réussit sur le commit
-`32e7b27431c8558c5c8c52fb3b7f08b9fbfe4b38`.
+`32e7b27431c8558c5c8c52fb3b7f08b9fbfe4b38`. Le rapport lui-même est soumis au même
+workflow avant verdict final.
 
 ## 3. Point bloquant — historique des deux PDF
 
@@ -159,28 +165,28 @@ La solution pratique recommandée est :
 5. conserver hors dépôt les PDF éditeurs.
 ```
 
-## 4. Deux décisions de gouvernance avant fusion
+## 4. Gouvernance du corpus public
 
-### 4.1 Publication des archives complètes
+### 4.1 Archives consultables — décision maintenue
 
 Le dépôt est public. Les dossiers `91_TRAVAUX_ANTERIEURS/` et
-`92_ARCHIVES_CONVERSATIONNELLES/` conservent volontairement le contenu intégral de
-plusieurs échanges après retrait des métadonnées techniques. Ils peuvent inclure des
-éléments personnels, des noms de tiers, des hésitations et des matériaux hors du noyau
-scientifique public.
+`92_ARCHIVES_CONVERSATIONNELLES/` conservent volontairement le contenu de plusieurs
+échanges après retrait des métadonnées techniques.
 
-Deux choix sont recevables :
+Le régime déjà choisi est conservé :
 
 ```text
-A. conserver publiquement les archives complètes pour la provenance ;
-B. conserver publiquement seulement les cartographies sélectives, registres et
-   documents scientifiques, et déplacer les exports intégraux vers une archive privée.
+archives assainies : consultables comme source de provenance ;
+corpus actif : seulement cartes sélectives, décisions et résultats validés ;
+registre futur : traces courtes des arbitrages, sans export continu ;
+autorité des archives : aucune autorité scientifique ou doctrinale automatique.
 ```
 
-L'assainissement technique ne décide pas entre A et B. La fusion exige donc une
-acceptation explicite du choix A ou une opération de retrait correspondant au choix B.
+Ce choix rend la provenance plus complète tout en évitant que la conversation ne commande
+le parcours scientifique. Il implique d'accepter que les formulations exploratoires et
+certains éléments personnels maintenus après assainissement soient publiquement lisibles.
 
-### 4.2 Licence du corpus
+### 4.2 Licence du corpus — point non bloquant
 
 Aucun fichier `LICENSE` n'est présent. En l'absence de licence, le droit d'auteur par
 défaut s'applique : la consultation et le fork permis par GitHub ne valent pas permission
@@ -190,17 +196,10 @@ Documentation :
 
 - https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
 
-Ce point n'empêche pas techniquement la fusion. Il doit néanmoins être assumé comme l'un
-des deux régimes suivants :
-
-```text
-réserve de tous les droits, volontaire et provisoire ;
-ou licence explicite choisie selon les différents types de contenus.
-```
-
-Une licence unique pourrait être inadéquate pour un dépôt mêlant textes, code, archives,
-sources DOCX et éléments provenant de tiers. La décision peut donc être différée, mais
-l'absence actuelle de licence ne doit pas être confondue avec une ouverture libre.
+Ce point n'empêche pas la fusion. Le régime actuel peut être compris comme une réserve
+provisoire de tous les droits. Une décision ultérieure pourra distinguer, si nécessaire,
+le code, les textes de recherche, les archives et les matériaux de tiers plutôt que
+d'imposer une licence unique inadéquate à l'ensemble.
 
 ## 5. Limites de l'audit
 
@@ -222,8 +221,8 @@ prudente.
 verdict documentaire et technique : favorable ;
 verdict scientifique global : non requis pour la consolidation ;
 condition d'intégration à main : squash and merge exclusivement ;
-condition éditoriale : décision explicite sur la publication des archives complètes ;
-condition de gouvernance : reconnaître l'absence actuelle de licence ;
-statut recommandé de la PR : rester en brouillon jusqu'à ces décisions, puis passer
-                              en prête pour revue et fusionner par squash.
+archives conversationnelles : décision antérieure maintenue et assainissement validé ;
+licence : absence explicite, réserve de droits par défaut, non bloquante ;
+statut recommandé de la PR : rester en brouillon jusqu'à acceptation de la limite
+                              historique du squash, puis passer en prête pour revue.
 ```
