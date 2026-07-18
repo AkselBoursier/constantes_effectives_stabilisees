@@ -107,3 +107,16 @@ niveau exact de tension, ni une préférence d'ordre indépendante des priors, n
 une interprétation de nouvelle physique. Le chantier actif est décrit dans le
 [README computationnel](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/README.md)
 et ses premiers résultats dans le [rapport C1](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md).
+
+### 18 juillet 2026 — Consolidation et visibilité avant nouvelle dette
+
+Après `N0–N5`, `C1–C2` et l'ouverture d'un premier espace de rédaction, l'auteur
+constate qu'aucune nouvelle décision scientifique ne peut être prise proprement à
+partir des seules portes d'entrée du 16 juillet. La priorité devient la restauration
+d'une vue récente, d'une vue globale et d'une feuille de route, puis la préparation
+de la branche cumulative comme candidate à `main`. Le dossier de rédaction doit
+être renommé en `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL` afin que son statut soit
+porté par son nom. Les données DESI DR2 restent locales sous `data_external/` et
+`C2` doit être achevée par ingestion contrôlée avant le cycle 1, sans devenir une
+condition indéfinie de blocage. La fusion elle-même reste hors décision et requiert
+un accord explicite après audit. Les documents directeurs sont la [vue récente](../05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), la [vue globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), la [feuille de route](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md) et l'[instruction locale DESI](../02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Instruction_agent_local_extraction_DESI_DR2_v0_1.md).
