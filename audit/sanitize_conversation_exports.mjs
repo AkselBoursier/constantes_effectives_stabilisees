@@ -201,15 +201,29 @@ function sanitizeQwenJson(raw) {
   };
 }
 
+function normalizeLineEndings(value) {
+  return value.replace(/\r\n?/g, "\n");
+}
+
 function processFile(relativePath, transform) {
   const absolutePath = path.join(root, relativePath);
-  if (!fs.existsSync(absolutePath)) return {relativePath, status: "absent"};
 
-  const before = fs.readFileSync(absolutePath, "utf8");
-  const after = transform(before);
+  if (!fs.existsSync(absolutePath)) {
+    return { relativePath, status: "absent" };
+  }
+
+  const rawBefore = fs.readFileSync(absolutePath, "utf8");
+
+  // Le contrôle doit porter sur le contenu versionné, pas sur la convention
+  // CRLF ou LF utilisée pour matérialiser le checkout local.
+  const before = normalizeLineEndings(rawBefore);
+  const after = normalizeLineEndings(transform(before));
   const changed = before !== after;
 
-  if (write && changed) fs.writeFileSync(absolutePath, after, "utf8");
+  if (write && changed) {
+    fs.writeFileSync(absolutePath, after, "utf8");
+  }
+
   return {
     relativePath,
     status: changed ? (write ? "sanitized" : "would-change") : "clean"
