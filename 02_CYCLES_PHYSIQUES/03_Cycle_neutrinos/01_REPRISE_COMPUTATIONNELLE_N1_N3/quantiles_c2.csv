@@ -1,4 +1,4 @@
-model,status,parameter,rows,weight_sum,effective_sample_size,weighted_mean_eV,weighted_sd_eV,weighted_q50_eV,weighted_q95_eV,minimum_eV,maximum_eV
-base_mnu,not_inspected_no_data_root,,,,,,,,,,
-base_mnu059,not_inspected_no_data_root,,,,,,,,,,
-base_mnu_w_wa,not_inspected_no_data_root,,,,,,,,,,
+model,parameter,rows,weight_sum,effective_sample_size,weighted_mean_eV,weighted_sd_eV,weighted_q50_eV,weighted_q95_eV,official_margestats_upper95_eV,difference_eV,relative_difference_percent,minimum_eV,maximum_eV,result_status
+base_mnu,mnu,88675,268200.0,52114.57038279966,0.02419472870129617,0.02050400522054434,0.018812082,0.06493418274999999,0.0642,0.0007341827499999926,1.143586838006219,1.1477308e-07,0.15606072,reproduced_from_samples_with_statistical_convention_difference
+base_mnu059,mnu,75801,233321.0,44147.79409067059,0.075025874981399,0.014941611529973559,0.0706610642857143,0.1048620874,0.105,-0.00013791259999999805,-0.13134533333333148,0.059000411,0.18383392,reproduced_from_samples_with_statistical_convention_difference
+base_mnu_w_wa,mnu,183959,540621.0,109057.14094279027,0.07264955010544216,0.04915029272665762,0.06568728480000001,0.16390456635714284,0.163,0.0009045663571428386,0.5549486853637047,7.1176524e-06,0.31477967,reproduced_from_samples_with_statistical_convention_difference

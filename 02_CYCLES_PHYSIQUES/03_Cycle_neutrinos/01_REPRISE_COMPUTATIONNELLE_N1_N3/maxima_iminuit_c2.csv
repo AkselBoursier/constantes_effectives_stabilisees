@@ -1,0 +1,5 @@
+model,dataset,status,exact_directory_exists,files,profile_status
+base_mnu,desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing,directory_without_bestfit_files,True,,not_reconstructed_point_products_only
+base_mnu059,desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing,directory_without_bestfit_files,True,,not_reconstructed_point_products_only
+base_mnu_binary_3,,not_applicable,,,
+base_mnu_w_wa,desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing,exact_product_not_available,False,,
