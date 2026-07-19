@@ -1,0 +1,5 @@
+model,status,converged,Rminus1_last,burn_in,mpi_size,progress_last_row_raw
+base_mnu,chains_ingested,True,0.0091471858773292,0,4,88675.000000 2025-02-09T16:26:52.495896  0.331011  0.009147  0.062017
+base_mnu059,chains_ingested,True,0.008361589032509359,0,4,75801.000000 2025-02-10T02:22:49.907036  0.323101  0.008362  0.060349
+base_mnu_binary_3,not_available_in_verified_distribution,,,,,
+base_mnu_w_wa,chains_ingested,True,0.0066957914423917495,0,4,183959.000000 2025-02-11T10:38:52.166795  0.340556  0.006696  0.046465

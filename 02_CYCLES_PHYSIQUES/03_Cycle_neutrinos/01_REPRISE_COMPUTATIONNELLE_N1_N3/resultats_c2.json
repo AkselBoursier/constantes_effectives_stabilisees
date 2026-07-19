@@ -1,35 +1,1199 @@
 {
-  "status": "official_metadata_only_chains_not_fully_ingested",
-  "manifest": "manifest_produits_officiels_c2.json",
-  "data_root": null,
+  "status": "verified_distribution_partially_ingested_with_documented_absence",
+  "executed_at_utc": "2026-07-19T08:28:18.566635+00:00",
+  "git_commit": "08195e97af3530ae24c19e0edb464eace51cf714",
+  "manifest": "02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/manifest_produits_officiels_c2.json",
+  "data_root": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains",
+  "distribution": {
+    "date": "2026-07-19",
+    "outer_archive_md5_verified": true,
+    "outer_archive_md5_actual": "425623648b4b12515fa1943a5857fd46",
+    "inner_archive_sha256_actual": "b679ce2749618c6e641a74bf12bbbf56a86ac72ba2cdda7dce0b6d51578ce4c6",
+    "scientific_root_relative_hint": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains",
+    "raw_data_tracked_by_git": false,
+    "archive_structure": "L'archive Zenodo externe contient une archive interne cosmology_chains.zip; elle n'est pas structurellement identique au portail DESI public.",
+    "checksum_scope": "Le MD5 de l'archive Zenodo externe et le SHA-256 de l'archive interne ont été calculés localement. Le fichier SHA256SUMS du portail public n'est pas présent dans l'archive Zenodo inspectée.",
+    "absence_scope": "L'absence de base_mnu_binary_3 vaut pour l'archive Zenodo interne inspectée, non pour toute distribution officielle possible."
+  },
   "models": [
     {
       "model": "base_mnu",
       "definition": "LambdaCDM + somme libre, prior Sigma m_nu > 0",
+      "availability": "present_in_verified_zenodo_inner_archive",
       "relative_directory": "cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "files": [
+        {
+          "name": "chain.1.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "expected_size_bytes": 19912500,
+          "exists": true,
+          "actual_size_bytes": 19912500,
+          "size_matches": true,
+          "sha256": "36054b534914531b3baee465aec6c6814009f610053f4180bf105e2521dc6b0a"
+        },
+        {
+          "name": "chain.2.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "expected_size_bytes": 20253600,
+          "exists": true,
+          "actual_size_bytes": 20253600,
+          "size_matches": true,
+          "sha256": "c0d680ff5a2a4bcbd272e65ed4c9e1331a6ccaec58bd29af7415889c3df224bc"
+        },
+        {
+          "name": "chain.3.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "expected_size_bytes": 19656900,
+          "exists": true,
+          "actual_size_bytes": 19656900,
+          "size_matches": true,
+          "sha256": "beee0ff402b1b8df848eb8898b1c87ff8b945555e6e1246845634080a863ee3b"
+        },
+        {
+          "name": "chain.4.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "expected_size_bytes": 19988100,
+          "exists": true,
+          "actual_size_bytes": 19988100,
+          "size_matches": true,
+          "sha256": "1e1e3da882ac356bcada3bd2b48361dad68cdbc0962cf26651047b2fc9f7c0f4"
+        }
+      ],
+      "metadata_files": [
+        {
+          "name": "chain.checkpoint",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "expected_size_bytes": 105,
+          "exists": true,
+          "actual_size_bytes": 105,
+          "size_matches": true,
+          "sha256": "afea642240b4f694fe29b68c02d86c2f075cb29830b05622a15bb9ddcc5fc919"
+        },
+        {
+          "name": "chain.covmat",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "expected_size_bytes": 6626,
+          "exists": true,
+          "actual_size_bytes": 6626,
+          "size_matches": true,
+          "sha256": "da06c112791ff4e464f7af262c434f95ae94dac9ef9495366e41de09a4ff108c"
+        },
+        {
+          "name": "chain.input.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "expected_size_bytes": 3909,
+          "exists": true,
+          "actual_size_bytes": 3909,
+          "size_matches": true,
+          "sha256": "2a2d5f07afce6b83b86dc5b13d8022afec07a65bf724227a63f6b4e29c623cbc"
+        },
+        {
+          "name": "chain.margestats",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "expected_size_bytes": 4624,
+          "exists": true,
+          "actual_size_bytes": 4624,
+          "size_matches": true,
+          "sha256": "1efd4810e3ee78c1d6a60154fc2472a0187c9a0cf88207234a36b6b8706db227"
+        },
+        {
+          "name": "chain.progress",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "expected_size_bytes": 5067,
+          "exists": true,
+          "actual_size_bytes": 5067,
+          "size_matches": true,
+          "sha256": "850ae09920d3741134cea4512550f19326871e44ca8cf627774bab30f2971ec0"
+        },
+        {
+          "name": "chain.updated.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "expected_size_bytes": 9476,
+          "exists": true,
+          "actual_size_bytes": 9476,
+          "size_matches": true,
+          "sha256": "937df0aa2090947889ab62f5b4fa418eead4ec01dc5c3f4b66bec860ab19f0ab"
+        }
+      ],
+      "status": "chains_ingested",
+      "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
       "expected_chain_count": 4,
       "expected_chain_bytes": 79811100,
-      "files": [],
-      "status": "not_inspected_no_data_root"
+      "missing_files": [],
+      "size_mismatches": [],
+      "checksums": [
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "sha256": "36054b534914531b3baee465aec6c6814009f610053f4180bf105e2521dc6b0a"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "sha256": "c0d680ff5a2a4bcbd272e65ed4c9e1331a6ccaec58bd29af7415889c3df224bc"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "sha256": "beee0ff402b1b8df848eb8898b1c87ff8b945555e6e1246845634080a863ee3b"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "sha256": "1e1e3da882ac356bcada3bd2b48361dad68cdbc0962cf26651047b2fc9f7c0f4"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "sha256": "afea642240b4f694fe29b68c02d86c2f075cb29830b05622a15bb9ddcc5fc919"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "sha256": "da06c112791ff4e464f7af262c434f95ae94dac9ef9495366e41de09a4ff108c"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "sha256": "2a2d5f07afce6b83b86dc5b13d8022afec07a65bf724227a63f6b4e29c623cbc"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "sha256": "1efd4810e3ee78c1d6a60154fc2472a0187c9a0cf88207234a36b6b8706db227"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "sha256": "850ae09920d3741134cea4512550f19326871e44ca8cf627774bab30f2971ec0"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "sha256": "937df0aa2090947889ab62f5b4fa418eead4ec01dc5c3f4b66bec860ab19f0ab"
+        }
+      ],
+      "parameter": "mnu",
+      "columns": [
+        "weight",
+        "minuslogpost",
+        "logA",
+        "ns",
+        "theta_MC_100",
+        "ombh2",
+        "omch2",
+        "tau",
+        "mnu",
+        "A_planck",
+        "amp_143",
+        "amp_217",
+        "amp_143x217",
+        "n_143",
+        "n_217",
+        "n_143x217",
+        "calTE",
+        "calEE",
+        "As",
+        "H0",
+        "omegam",
+        "omegamh2",
+        "omegal",
+        "zrei",
+        "YHe",
+        "Y_p",
+        "DHBBN",
+        "sigma8",
+        "s8h5",
+        "s8omegamp5",
+        "s8omegamp25",
+        "A",
+        "clamp",
+        "age",
+        "rdrag",
+        "zdrag",
+        "H0rdrag",
+        "chi2__BAO",
+        "chi2__CMB",
+        "minuslogprior",
+        "minuslogprior__0",
+        "chi2",
+        "chi2__desi_y3_cosmo_bindings.cobaya_likelihoods.bao_likelihoods_v1p2.desi_bao_all",
+        "chi2__planck_2018_lowl.TT_clik",
+        "chi2__planck_2018_lowl.EE_clik",
+        "chi2__planck_NPIPE_highl_CamSpec.TTTEEE",
+        "chi2__act_dr6_lenslike_v1_2.ACTDR6LensLike"
+      ],
+      "per_chain_summaries": [
+        {
+          "model": "base_mnu",
+          "scope": "single_chain",
+          "chain": "chain.1.txt",
+          "parameter": "mnu",
+          "rows": 22124,
+          "weight_sum": 66289.0,
+          "effective_sample_size": 12979.602719251867,
+          "weighted_mean_eV": 0.024477818143086277,
+          "weighted_sd_eV": 0.02082570836734129,
+          "weighted_q50_eV": 0.018887285857142857,
+          "weighted_q95_eV": 0.06622975746666666,
+          "minimum_eV": 5.5856254e-07,
+          "maximum_eV": 0.14592726
+        },
+        {
+          "model": "base_mnu",
+          "scope": "single_chain",
+          "chain": "chain.2.txt",
+          "parameter": "mnu",
+          "rows": 22503,
+          "weight_sum": 67750.0,
+          "effective_sample_size": 13290.66047023396,
+          "weighted_mean_eV": 0.02502094511214798,
+          "weighted_sd_eV": 0.0209588377463315,
+          "weighted_q50_eV": 0.019638416333333332,
+          "weighted_q95_eV": 0.06702420839999997,
+          "minimum_eV": 1.1477308e-07,
+          "maximum_eV": 0.15569995
+        },
+        {
+          "model": "base_mnu",
+          "scope": "single_chain",
+          "chain": "chain.3.txt",
+          "parameter": "mnu",
+          "rows": 21840,
+          "weight_sum": 66384.0,
+          "effective_sample_size": 12873.288042906719,
+          "weighted_mean_eV": 0.024008073366741052,
+          "weighted_sd_eV": 0.020330207349518348,
+          "weighted_q50_eV": 0.01876166,
+          "weighted_q95_eV": 0.064414134375,
+          "minimum_eV": 1.0114586e-05,
+          "maximum_eV": 0.15606072
+        },
+        {
+          "model": "base_mnu",
+          "scope": "single_chain",
+          "chain": "chain.4.txt",
+          "parameter": "mnu",
+          "rows": 22208,
+          "weight_sum": 67777.0,
+          "effective_sample_size": 12975.918606063517,
+          "weighted_mean_eV": 0.02327478609373126,
+          "weighted_sd_eV": 0.019846132505820818,
+          "weighted_q50_eV": 0.018129398555555558,
+          "weighted_q95_eV": 0.061907438942857135,
+          "minimum_eV": 5.6079657e-06,
+          "maximum_eV": 0.14398586
+        }
+      ],
+      "combined_summary": {
+        "model": "base_mnu",
+        "scope": "combined",
+        "chain": "all",
+        "parameter": "mnu",
+        "rows": 88675,
+        "weight_sum": 268200.0,
+        "effective_sample_size": 52114.57038279966,
+        "weighted_mean_eV": 0.02419472870129617,
+        "weighted_sd_eV": 0.02050400522054434,
+        "weighted_q50_eV": 0.018812082,
+        "weighted_q95_eV": 0.06493418274999999,
+        "minimum_eV": 1.1477308e-07,
+        "maximum_eV": 0.15606072
+      },
+      "margestats": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+        "exists": true,
+        "raw_line": "mnu                                     < 0.0289                                < 0.0642",
+        "upper_limits_eV": [
+          0.0289,
+          0.0642
+        ],
+        "upper68_eV": 0.0289,
+        "upper95_eV": 0.0642
+      },
+      "checkpoint": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+        "exists": true,
+        "converged": true,
+        "Rminus1_last": 0.0091471858773292,
+        "burn_in": 0,
+        "mpi_size": 4
+      },
+      "progress": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+        "exists": true,
+        "header": [
+          "N",
+          "timestamp",
+          "acceptance_rate",
+          "Rminus1",
+          "Rminus1_cl"
+        ],
+        "last_row_raw": "88675.000000 2025-02-09T16:26:52.495896  0.331011  0.009147  0.062017",
+        "last_row_values": [
+          "88675.000000",
+          "2025-02-09T16:26:52.495896",
+          "0.331011",
+          "0.009147",
+          "0.062017"
+        ],
+        "last_row": {
+          "N": "88675.000000",
+          "timestamp": "2025-02-09T16:26:52.495896",
+          "acceptance_rate": "0.331011",
+          "Rminus1": "0.009147",
+          "Rminus1_cl": "0.062017"
+        }
+      },
+      "correlations": [
+        {
+          "model": "base_mnu",
+          "mass_parameter": "mnu",
+          "parameter": "H0",
+          "source_column": "H0",
+          "weighted_pearson_r": -0.3078148993112527
+        },
+        {
+          "model": "base_mnu",
+          "mass_parameter": "mnu",
+          "parameter": "Omega_m",
+          "source_column": "omegam",
+          "weighted_pearson_r": 0.25315536718818005
+        },
+        {
+          "model": "base_mnu",
+          "mass_parameter": "mnu",
+          "parameter": "logA",
+          "source_column": "logA",
+          "weighted_pearson_r": 0.17703330995716213
+        },
+        {
+          "model": "base_mnu",
+          "mass_parameter": "mnu",
+          "parameter": "A_s",
+          "source_column": "As",
+          "weighted_pearson_r": 0.177439667039821
+        },
+        {
+          "model": "base_mnu",
+          "mass_parameter": "mnu",
+          "parameter": "tau",
+          "source_column": "tau",
+          "weighted_pearson_r": 0.1564082107217238
+        }
+      ],
+      "iminuit": {
+        "model": "base_mnu",
+        "dataset": "desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/iminuit/base_mnu/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "exact_directory_exists": true,
+        "files": [],
+        "status": "directory_without_bestfit_files",
+        "guardrail": "Aucun modèle voisin n'est substitué au modèle demandé.",
+        "profile_status": "not_reconstructed_point_products_only"
+      },
+      "quantile_comparison": {
+        "empirical_weighted_q95_eV": 0.06493418274999999,
+        "official_margestats_upper95_eV": 0.0642,
+        "difference_eV": 0.0007341827499999926,
+        "relative_difference_percent": 1.143586838006219
+      }
     },
     {
       "model": "base_mnu059",
       "definition": "LambdaCDM + somme libre, prior scalaire Sigma m_nu > 0.059 eV",
+      "availability": "present_in_verified_zenodo_inner_archive",
       "relative_directory": "cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "files": [
+        {
+          "name": "chain.1.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "expected_size_bytes": 16884900,
+          "exists": true,
+          "actual_size_bytes": 16884900,
+          "size_matches": true,
+          "sha256": "1d3e7b0114b56167a3ee89a8ec637db3e97b7224ed1064f87a01924b6f2d5a81"
+        },
+        {
+          "name": "chain.2.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "expected_size_bytes": 16976700,
+          "exists": true,
+          "actual_size_bytes": 16976700,
+          "size_matches": true,
+          "sha256": "744d06404a2fcc82cf2e63779a37583664e50eec0bd82ef15eb573d8692e49f0"
+        },
+        {
+          "name": "chain.3.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "expected_size_bytes": 17163000,
+          "exists": true,
+          "actual_size_bytes": 17163000,
+          "size_matches": true,
+          "sha256": "b7baa592d7a028ab244e386cb1d9dcccac6f38cc8950537a9748376e21754a3c"
+        },
+        {
+          "name": "chain.4.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "expected_size_bytes": 17199900,
+          "exists": true,
+          "actual_size_bytes": 17199900,
+          "size_matches": true,
+          "sha256": "8418eed3dff304da9ae52ddb1d5cd9281520926535074a7b0bfde11cd7d70377"
+        }
+      ],
+      "metadata_files": [
+        {
+          "name": "chain.checkpoint",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "expected_size_bytes": 107,
+          "exists": true,
+          "actual_size_bytes": 107,
+          "size_matches": true,
+          "sha256": "5348112af7ca9ee9f677ba788c35b204f1e88bf8d01764e818e7a8b36bee6134"
+        },
+        {
+          "name": "chain.covmat",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "expected_size_bytes": 6626,
+          "exists": true,
+          "actual_size_bytes": 6626,
+          "size_matches": true,
+          "sha256": "96e893ee6032f20e06bf77cab4dab19b0f5a11fb6415865cedf179d948e72754"
+        },
+        {
+          "name": "chain.input.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "expected_size_bytes": 3911,
+          "exists": true,
+          "actual_size_bytes": 3911,
+          "size_matches": true,
+          "sha256": "517787dc78eca11e85e3a65f00fc28303a78053ad1894de8c2d964170a92f702"
+        },
+        {
+          "name": "chain.margestats",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "expected_size_bytes": 4624,
+          "exists": true,
+          "actual_size_bytes": 4624,
+          "size_matches": true,
+          "sha256": "d0c8202289220e65c303ca6965ca03e835e2a0783e41efa295783fceb3f31b98"
+        },
+        {
+          "name": "chain.progress",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "expected_size_bytes": 4361,
+          "exists": true,
+          "actual_size_bytes": 4361,
+          "size_matches": true,
+          "sha256": "71d157cb6f6b8c85ebd03b70728d366e43143b6afd41ff29b9be10083022ad19"
+        },
+        {
+          "name": "chain.updated.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "expected_size_bytes": 9478,
+          "exists": true,
+          "actual_size_bytes": 9478,
+          "size_matches": true,
+          "sha256": "e5000680a44f54059e98c37b040298ffcfa676e70856e17c0e699ddff8488009"
+        }
+      ],
+      "status": "chains_ingested",
+      "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
       "expected_chain_count": 4,
       "expected_chain_bytes": 68224500,
+      "missing_files": [],
+      "size_mismatches": [],
+      "checksums": [
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "sha256": "1d3e7b0114b56167a3ee89a8ec637db3e97b7224ed1064f87a01924b6f2d5a81"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "sha256": "744d06404a2fcc82cf2e63779a37583664e50eec0bd82ef15eb573d8692e49f0"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "sha256": "b7baa592d7a028ab244e386cb1d9dcccac6f38cc8950537a9748376e21754a3c"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "sha256": "8418eed3dff304da9ae52ddb1d5cd9281520926535074a7b0bfde11cd7d70377"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "sha256": "5348112af7ca9ee9f677ba788c35b204f1e88bf8d01764e818e7a8b36bee6134"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "sha256": "96e893ee6032f20e06bf77cab4dab19b0f5a11fb6415865cedf179d948e72754"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "sha256": "517787dc78eca11e85e3a65f00fc28303a78053ad1894de8c2d964170a92f702"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "sha256": "d0c8202289220e65c303ca6965ca03e835e2a0783e41efa295783fceb3f31b98"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "sha256": "71d157cb6f6b8c85ebd03b70728d366e43143b6afd41ff29b9be10083022ad19"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "sha256": "e5000680a44f54059e98c37b040298ffcfa676e70856e17c0e699ddff8488009"
+        }
+      ],
+      "parameter": "mnu",
+      "columns": [
+        "weight",
+        "minuslogpost",
+        "logA",
+        "ns",
+        "theta_MC_100",
+        "ombh2",
+        "omch2",
+        "tau",
+        "mnu",
+        "A_planck",
+        "amp_143",
+        "amp_217",
+        "amp_143x217",
+        "n_143",
+        "n_217",
+        "n_143x217",
+        "calTE",
+        "calEE",
+        "As",
+        "H0",
+        "omegam",
+        "omegamh2",
+        "omegal",
+        "zrei",
+        "YHe",
+        "Y_p",
+        "DHBBN",
+        "sigma8",
+        "s8h5",
+        "s8omegamp5",
+        "s8omegamp25",
+        "A",
+        "clamp",
+        "age",
+        "rdrag",
+        "zdrag",
+        "H0rdrag",
+        "chi2__BAO",
+        "chi2__CMB",
+        "minuslogprior",
+        "minuslogprior__0",
+        "chi2",
+        "chi2__desi_y3_cosmo_bindings.cobaya_likelihoods.bao_likelihoods_v1p2.desi_bao_all",
+        "chi2__planck_2018_lowl.TT_clik",
+        "chi2__planck_2018_lowl.EE_clik",
+        "chi2__planck_NPIPE_highl_CamSpec.TTTEEE",
+        "chi2__act_dr6_lenslike_v1_2.ACTDR6LensLike"
+      ],
+      "per_chain_summaries": [
+        {
+          "model": "base_mnu059",
+          "scope": "single_chain",
+          "chain": "chain.1.txt",
+          "parameter": "mnu",
+          "rows": 18760,
+          "weight_sum": 57596.0,
+          "effective_sample_size": 10858.376647267156,
+          "weighted_mean_eV": 0.07507725173135288,
+          "weighted_sd_eV": 0.015252288207965507,
+          "weighted_q50_eV": 0.0705043908,
+          "weighted_q95_eV": 0.10557806399999997,
+          "minimum_eV": 0.05900953,
+          "maximum_eV": 0.17429595
+        },
+        {
+          "model": "base_mnu059",
+          "scope": "single_chain",
+          "chain": "chain.2.txt",
+          "parameter": "mnu",
+          "rows": 18862,
+          "weight_sum": 57956.0,
+          "effective_sample_size": 11097.851517534411,
+          "weighted_mean_eV": 0.07501493347915661,
+          "weighted_sd_eV": 0.014614094499195504,
+          "weighted_q50_eV": 0.070889236,
+          "weighted_q95_eV": 0.10469206799999997,
+          "minimum_eV": 0.059003246,
+          "maximum_eV": 0.16271473
+        },
+        {
+          "model": "base_mnu059",
+          "scope": "single_chain",
+          "chain": "chain.3.txt",
+          "parameter": "mnu",
+          "rows": 19069,
+          "weight_sum": 58636.0,
+          "effective_sample_size": 11137.827414850954,
+          "weighted_mean_eV": 0.07496831006011666,
+          "weighted_sd_eV": 0.014769349780676904,
+          "weighted_q50_eV": 0.070717267,
+          "weighted_q95_eV": 0.10466968,
+          "minimum_eV": 0.059000411,
+          "maximum_eV": 0.18383392
+        },
+        {
+          "model": "base_mnu059",
+          "scope": "single_chain",
+          "chain": "chain.4.txt",
+          "parameter": "mnu",
+          "rows": 19110,
+          "weight_sum": 59133.0,
+          "effective_sample_size": 11057.180452126398,
+          "weighted_mean_eV": 0.07504363844914007,
+          "weighted_sd_eV": 0.01512187541221122,
+          "weighted_q50_eV": 0.070600656,
+          "weighted_q95_eV": 0.1046772184,
+          "minimum_eV": 0.059000992,
+          "maximum_eV": 0.18363614
+        }
+      ],
+      "combined_summary": {
+        "model": "base_mnu059",
+        "scope": "combined",
+        "chain": "all",
+        "parameter": "mnu",
+        "rows": 75801,
+        "weight_sum": 233321.0,
+        "effective_sample_size": 44147.79409067059,
+        "weighted_mean_eV": 0.075025874981399,
+        "weighted_sd_eV": 0.014941611529973559,
+        "weighted_q50_eV": 0.0706610642857143,
+        "weighted_q95_eV": 0.1048620874,
+        "minimum_eV": 0.059000411,
+        "maximum_eV": 0.18383392
+      },
+      "margestats": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+        "exists": true,
+        "raw_line": "mnu                                     < 0.0779                                < 0.105",
+        "upper_limits_eV": [
+          0.0779,
+          0.105
+        ],
+        "upper68_eV": 0.0779,
+        "upper95_eV": 0.105
+      },
+      "checkpoint": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+        "exists": true,
+        "converged": true,
+        "Rminus1_last": 0.008361589032509359,
+        "burn_in": 0,
+        "mpi_size": 4
+      },
+      "progress": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+        "exists": true,
+        "header": [
+          "N",
+          "timestamp",
+          "acceptance_rate",
+          "Rminus1",
+          "Rminus1_cl"
+        ],
+        "last_row_raw": "75801.000000 2025-02-10T02:22:49.907036  0.323101  0.008362  0.060349",
+        "last_row_values": [
+          "75801.000000",
+          "2025-02-10T02:22:49.907036",
+          "0.323101",
+          "0.008362",
+          "0.060349"
+        ],
+        "last_row": {
+          "N": "75801.000000",
+          "timestamp": "2025-02-10T02:22:49.907036",
+          "acceptance_rate": "0.323101",
+          "Rminus1": "0.008362",
+          "Rminus1_cl": "0.060349"
+        }
+      },
+      "correlations": [
+        {
+          "model": "base_mnu059",
+          "mass_parameter": "mnu",
+          "parameter": "H0",
+          "source_column": "H0",
+          "weighted_pearson_r": -0.23866562822986673
+        },
+        {
+          "model": "base_mnu059",
+          "mass_parameter": "mnu",
+          "parameter": "Omega_m",
+          "source_column": "omegam",
+          "weighted_pearson_r": 0.17779482249928943
+        },
+        {
+          "model": "base_mnu059",
+          "mass_parameter": "mnu",
+          "parameter": "logA",
+          "source_column": "logA",
+          "weighted_pearson_r": 0.16796699165001358
+        },
+        {
+          "model": "base_mnu059",
+          "mass_parameter": "mnu",
+          "parameter": "A_s",
+          "source_column": "As",
+          "weighted_pearson_r": 0.1683882903359774
+        },
+        {
+          "model": "base_mnu059",
+          "mass_parameter": "mnu",
+          "parameter": "tau",
+          "source_column": "tau",
+          "weighted_pearson_r": 0.14737728886374737
+        }
+      ],
+      "iminuit": {
+        "model": "base_mnu059",
+        "dataset": "desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/iminuit/base_mnu059/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "exact_directory_exists": true,
+        "files": [],
+        "status": "directory_without_bestfit_files",
+        "guardrail": "Aucun modèle voisin n'est substitué au modèle demandé.",
+        "profile_status": "not_reconstructed_point_products_only"
+      },
+      "quantile_comparison": {
+        "empirical_weighted_q95_eV": 0.1048620874,
+        "official_margestats_upper95_eV": 0.105,
+        "difference_eV": -0.00013791259999999805,
+        "relative_difference_percent": -0.13134533333333148
+      }
+    },
+    {
+      "model": "base_mnu_binary_3",
+      "definition": "Construction physique des deux ordres avec information oscillatoire NuFIT 6.0; distincte du simple plancher scalaire base_mnu059.",
+      "availability": "not_present_in_verified_zenodo_inner_archive",
+      "relative_directory": null,
       "files": [],
-      "status": "not_inspected_no_data_root"
+      "metadata_files": [],
+      "status": "not_available_in_verified_distribution",
+      "archive_observation": "Aucun chemin contenant binary, ordering ou nufit n'a été trouvé hors __MACOSX dans cosmology_chains.zip. Cette absence est bornée à la distribution inspectée."
     },
     {
       "model": "base_mnu_w_wa",
       "definition": "w0waCDM + somme libre",
+      "availability": "present_in_verified_zenodo_inner_archive",
       "relative_directory": "cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+      "files": [
+        {
+          "name": "chain.1.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "expected_size_bytes": 42745248,
+          "exists": true,
+          "actual_size_bytes": 42745248,
+          "size_matches": true,
+          "sha256": "9b31953f68c3005d3f3c3468dd212548895dc948d3b626a949599b4c3673a28d"
+        },
+        {
+          "name": "chain.2.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "expected_size_bytes": 42611972,
+          "exists": true,
+          "actual_size_bytes": 42611972,
+          "size_matches": true,
+          "sha256": "63b863c3b60d92287bec0a38c927946fc936b8eb7e55a8113f5d17e1963acbb7"
+        },
+        {
+          "name": "chain.3.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "expected_size_bytes": 43039760,
+          "exists": true,
+          "actual_size_bytes": 43039760,
+          "size_matches": true,
+          "sha256": "7a2c4b8ca21f65cad465fbcf44948292e916f0a713d5a7abb0267908a9ade484"
+        },
+        {
+          "name": "chain.4.txt",
+          "category": "chain",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "expected_size_bytes": 43056536,
+          "exists": true,
+          "actual_size_bytes": 43056536,
+          "size_matches": true,
+          "sha256": "b5375ce896e9acc1dd0e48db196b3d16c50cbcb5e45bf8889f2c363d90d56122"
+        }
+      ],
+      "metadata_files": [
+        {
+          "name": "chain.checkpoint",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "expected_size_bytes": 108,
+          "exists": true,
+          "actual_size_bytes": 108,
+          "size_matches": true,
+          "sha256": "6579aa1fb1d6fe5a3736510de9623efa068935a0b7553ed6729d0681ca14375c"
+        },
+        {
+          "name": "chain.covmat",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "expected_size_bytes": 8367,
+          "exists": true,
+          "actual_size_bytes": 8367,
+          "size_matches": true,
+          "sha256": "73f3024c8d1f62ae0b4b671ce60a008e4506f11e0f66c1e780d3dccdfc89463d"
+        },
+        {
+          "name": "chain.input.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "expected_size_bytes": 4124,
+          "exists": true,
+          "actual_size_bytes": 4124,
+          "size_matches": true,
+          "sha256": "cc2c4a44940781219c43fb35c77857f0ab6cf9a30ab096eba9f392979e47839a"
+        },
+        {
+          "name": "chain.margestats",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "expected_size_bytes": 4857,
+          "exists": true,
+          "actual_size_bytes": 4857,
+          "size_matches": true,
+          "sha256": "d577c0499e9d5c9f3033e53a8f913ff81640c7adea88a8502d5f5baf68104121"
+        },
+        {
+          "name": "chain.progress",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "expected_size_bytes": 8179,
+          "exists": true,
+          "actual_size_bytes": 8179,
+          "size_matches": true,
+          "sha256": "8e82dae576602b1bd35f6b7e4bd151daedc72978673cb4b38f58b4dda5e66179"
+        },
+        {
+          "name": "chain.updated.yaml",
+          "category": "metadata",
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "expected_size_bytes": 9716,
+          "exists": true,
+          "actual_size_bytes": 9716,
+          "size_matches": true,
+          "sha256": "05313a97ac4a7e8bd996c2ce0070da8353a733c1c83eacc93f3eafd3a09e8b4f"
+        }
+      ],
+      "status": "chains_ingested",
+      "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
       "expected_chain_count": 4,
       "expected_chain_bytes": 171453516,
-      "files": [],
-      "status": "not_inspected_no_data_root"
+      "missing_files": [],
+      "size_mismatches": [],
+      "checksums": [
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.1.txt",
+          "sha256": "9b31953f68c3005d3f3c3468dd212548895dc948d3b626a949599b4c3673a28d"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.2.txt",
+          "sha256": "63b863c3b60d92287bec0a38c927946fc936b8eb7e55a8113f5d17e1963acbb7"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.3.txt",
+          "sha256": "7a2c4b8ca21f65cad465fbcf44948292e916f0a713d5a7abb0267908a9ade484"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.4.txt",
+          "sha256": "b5375ce896e9acc1dd0e48db196b3d16c50cbcb5e45bf8889f2c363d90d56122"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+          "sha256": "6579aa1fb1d6fe5a3736510de9623efa068935a0b7553ed6729d0681ca14375c"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.covmat",
+          "sha256": "73f3024c8d1f62ae0b4b671ce60a008e4506f11e0f66c1e780d3dccdfc89463d"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.input.yaml",
+          "sha256": "cc2c4a44940781219c43fb35c77857f0ab6cf9a30ab096eba9f392979e47839a"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+          "sha256": "d577c0499e9d5c9f3033e53a8f913ff81640c7adea88a8502d5f5baf68104121"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+          "sha256": "8e82dae576602b1bd35f6b7e4bd151daedc72978673cb4b38f58b4dda5e66179"
+        },
+        {
+          "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.updated.yaml",
+          "sha256": "05313a97ac4a7e8bd996c2ce0070da8353a733c1c83eacc93f3eafd3a09e8b4f"
+        }
+      ],
+      "parameter": "mnu",
+      "columns": [
+        "weight",
+        "minuslogpost",
+        "logA",
+        "ns",
+        "theta_MC_100",
+        "ombh2",
+        "omch2",
+        "tau",
+        "mnu",
+        "w",
+        "wa",
+        "A_planck",
+        "amp_143",
+        "amp_217",
+        "amp_143x217",
+        "n_143",
+        "n_217",
+        "n_143x217",
+        "calTE",
+        "calEE",
+        "As",
+        "H0",
+        "omegam",
+        "omegamh2",
+        "omegal",
+        "zrei",
+        "YHe",
+        "Y_p",
+        "DHBBN",
+        "sigma8",
+        "s8h5",
+        "s8omegamp5",
+        "s8omegamp25",
+        "A",
+        "clamp",
+        "age",
+        "rdrag",
+        "zdrag",
+        "H0rdrag",
+        "chi2__BAO",
+        "chi2__CMB",
+        "minuslogprior",
+        "minuslogprior__0",
+        "chi2",
+        "chi2__desi_y3_cosmo_bindings.cobaya_likelihoods.bao_likelihoods_v1p2.desi_bao_all",
+        "chi2__planck_2018_lowl.TT_clik",
+        "chi2__planck_2018_lowl.EE_clik",
+        "chi2__planck_NPIPE_highl_CamSpec.TTTEEE",
+        "chi2__act_dr6_lenslike_v1_2.ACTDR6LensLike"
+      ],
+      "per_chain_summaries": [
+        {
+          "model": "base_mnu_w_wa",
+          "scope": "single_chain",
+          "chain": "chain.1.txt",
+          "parameter": "mnu",
+          "rows": 45863,
+          "weight_sum": 134990.0,
+          "effective_sample_size": 27086.368298382156,
+          "weighted_mean_eV": 0.07240122314237461,
+          "weighted_sd_eV": 0.049295713339196794,
+          "weighted_q50_eV": 0.064923119,
+          "weighted_q95_eV": 0.16471151,
+          "minimum_eV": 1.3782688e-05,
+          "maximum_eV": 0.28570387
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "scope": "single_chain",
+          "chain": "chain.2.txt",
+          "parameter": "mnu",
+          "rows": 45720,
+          "weight_sum": 134701.0,
+          "effective_sample_size": 27140.0719487843,
+          "weighted_mean_eV": 0.07272877329342324,
+          "weighted_sd_eV": 0.04906222619929881,
+          "weighted_q50_eV": 0.065371137,
+          "weighted_q95_eV": 0.16334207549999985,
+          "minimum_eV": 7.1176524e-06,
+          "maximum_eV": 0.27513574
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "scope": "single_chain",
+          "chain": "chain.3.txt",
+          "parameter": "mnu",
+          "rows": 46179,
+          "weight_sum": 135653.0,
+          "effective_sample_size": 27483.69640102098,
+          "weighted_mean_eV": 0.07296989543098274,
+          "weighted_sd_eV": 0.049360610329410116,
+          "weighted_q50_eV": 0.06658054166666667,
+          "weighted_q95_eV": 0.16442823962499997,
+          "minimum_eV": 1.7409162e-05,
+          "maximum_eV": 0.30489755
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "scope": "single_chain",
+          "chain": "chain.4.txt",
+          "parameter": "mnu",
+          "rows": 46197,
+          "weight_sum": 135277.0,
+          "effective_sample_size": 27348.46037358568,
+          "weighted_mean_eV": 0.07249722864395715,
+          "weighted_sd_eV": 0.048878501611045705,
+          "weighted_q50_eV": 0.065798953,
+          "weighted_q95_eV": 0.16272023,
+          "minimum_eV": 1.1601001e-05,
+          "maximum_eV": 0.31477967
+        }
+      ],
+      "combined_summary": {
+        "model": "base_mnu_w_wa",
+        "scope": "combined",
+        "chain": "all",
+        "parameter": "mnu",
+        "rows": 183959,
+        "weight_sum": 540621.0,
+        "effective_sample_size": 109057.14094279027,
+        "weighted_mean_eV": 0.07264955010544216,
+        "weighted_sd_eV": 0.04915029272665762,
+        "weighted_q50_eV": 0.06568728480000001,
+        "weighted_q95_eV": 0.16390456635714284,
+        "minimum_eV": 7.1176524e-06,
+        "maximum_eV": 0.31477967
+      },
+      "margestats": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.margestats",
+        "exists": true,
+        "raw_line": "mnu                                     < 0.0917                                < 0.163",
+        "upper_limits_eV": [
+          0.0917,
+          0.163
+        ],
+        "upper68_eV": 0.0917,
+        "upper95_eV": 0.163
+      },
+      "checkpoint": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.checkpoint",
+        "exists": true,
+        "converged": true,
+        "Rminus1_last": 0.0066957914423917495,
+        "burn_in": 0,
+        "mpi_size": 4
+      },
+      "progress": {
+        "path": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/cobaya/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing/chain.progress",
+        "exists": true,
+        "header": [
+          "N",
+          "timestamp",
+          "acceptance_rate",
+          "Rminus1",
+          "Rminus1_cl"
+        ],
+        "last_row_raw": "183959.000000 2025-02-11T10:38:52.166795  0.340556  0.006696  0.046465",
+        "last_row_values": [
+          "183959.000000",
+          "2025-02-11T10:38:52.166795",
+          "0.340556",
+          "0.006696",
+          "0.046465"
+        ],
+        "last_row": {
+          "N": "183959.000000",
+          "timestamp": "2025-02-11T10:38:52.166795",
+          "acceptance_rate": "0.340556",
+          "Rminus1": "0.006696",
+          "Rminus1_cl": "0.046465"
+        }
+      },
+      "correlations": [
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "H0",
+          "source_column": "H0",
+          "weighted_pearson_r": -0.2659748358985527
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "Omega_m",
+          "source_column": "omegam",
+          "weighted_pearson_r": 0.30346933043967556
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "w0",
+          "source_column": "w",
+          "weighted_pearson_r": 0.32175868746633085
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "wa",
+          "source_column": "wa",
+          "weighted_pearson_r": -0.4178662737248781
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "logA",
+          "source_column": "logA",
+          "weighted_pearson_r": 0.30967608828945525
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "A_s",
+          "source_column": "As",
+          "weighted_pearson_r": 0.3102598168633673
+        },
+        {
+          "model": "base_mnu_w_wa",
+          "mass_parameter": "mnu",
+          "parameter": "tau",
+          "source_column": "tau",
+          "weighted_pearson_r": 0.24338416354564288
+        }
+      ],
+      "iminuit": {
+        "model": "base_mnu_w_wa",
+        "dataset": "desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "resolved_directory": "data_external/desi_dr2/cosmology_chains_verified/cosmology_chains/iminuit/base_mnu_w_wa/desi-bao-all_planck2018-lowl-TT-clik_planck2018-lowl-EE-clik_planck-NPIPE-highl-CamSpec-TTTEEE_planck-act-dr6-lensing",
+        "exact_directory_exists": false,
+        "files": [],
+        "status": "exact_product_not_available",
+        "guardrail": "Aucun modèle voisin n'est substitué au modèle demandé."
+      },
+      "quantile_comparison": {
+        "empirical_weighted_q95_eV": 0.16390456635714284,
+        "official_margestats_upper95_eV": 0.163,
+        "difference_eV": 0.0009045663571428386,
+        "relative_difference_percent": 0.5549486853637047
+      }
     }
   ],
-  "guardrail": "Aucun substitut C1 n'est utilisé lorsqu'une chaîne officielle manque."
+  "guardrails": [
+    "Aucun substitut C1 n'est utilisé lorsqu'une chaîne officielle manque.",
+    "Aucun modèle iminuit voisin n'est substitué au modèle exact demandé.",
+    "Un maximum ponctuel n'est pas qualifié de profil de vraisemblance."
+  ]
 }
