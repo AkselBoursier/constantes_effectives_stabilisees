@@ -135,3 +135,17 @@ ne doit pas être réécrite et la fusion reste interdite avant le rapport post-
 et la réussite du workflow. Cette décision préserve le sens, l'ordre et la granularité
 des commits, mais ne prétend pas conserver leurs SHA ni purger absolument d'anciens
 clones ou caches. Les documents directeurs sont le [protocole de réécriture](../01_CADRE_METHODOLOGIQUE/Protocole_recriture_historique_PDF_PR14_v0_1.md) et l'[audit v0.2](../05_CARTES_ET_SYNTHESES/Audit_pre_fusion_PR14_v0_2.md).
+
+### 20 juillet 2026 — Validation de l’audit de portée des régimes de constance
+
+Après trois passes distinguant documents directeurs, cycles sentinelles et classes de
+changement, l’auteur valide l’ensemble du verdict de portée. La reformulation par
+régimes de constance autorise des ajustements distribués et trois tests locaux sans
+modifier les résultats physiques ni ouvrir une ontologie générale des stabilisations.
+La question de portée physique, épistémologique ou ontologique (`Q3`) reste un contrôle
+interne non public. L’application documentaire peut désormais commencer par un lot
+borné de maintenance, puis la reprise du cycle 1 intègre `T1`, tandis que `T2` reste
+parallèle et que `T3` précède toute révision canonique de « constante effective ». Les
+archives et versions datées restent protégées. Le fil de reprise est donné par le
+[registre décisionnel](../05_CARTES_ET_SYNTHESES/Registre_decisions_audit_portee_regimes_constance_v0_1.md)
+et le [verdict final](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
