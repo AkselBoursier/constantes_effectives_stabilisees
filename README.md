@@ -4,24 +4,23 @@ Corpus de recherche sur ce que la physique appelle des constantes, sur les
 différences que ce terme commun recouvre et sur les régimes, architectures, accès
 et processus par lesquels certaines fixités deviennent opératoires ou affirmables.
 
-> **Statut au 18 juillet 2026 :** les dix cycles physiques sont récupérés et
-> comparés ; la dette prioritaire du cycle neutrino est levée aux niveaux
-> documentaire, empirique et comparatif ; sa reprise computationnelle `N1–N3`
-> reste ouverte en `C2`. La branche cumulative est en cours de préparation comme
-> candidate à la consolidation vers `main`.
+> **Statut au 20 juillet 2026 :** `main` intègre la consolidation du corpus et la
+> clôture computationnelle de `C2`. Les phases `P0` et `P1` sont closes. L’audit de
+> portée des régimes de constance est validé sur une branche thématique bornée ; son
+> lot de maintenance documentaire est en cours. Le cycle 1 — couplages, échelles et
+> chromodynamique quantique — reste la prochaine dette scientifique prioritaire.
 
 ## Point d’entrée humain
 
 Lire d’abord :
 
-1. la [vue récente des chantiers du 16 au 18 juillet 2026](05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), pour comprendre la séquence récente ;
-2. la [vue d’ensemble globale v0.4](05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), pour replacer cette séquence dans l’ensemble du projet ;
-3. la [feuille de route post-consolidation](05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), pour distinguer consolidation, calcul, dettes physiques, rédaction et philosophie en réserve ;
-4. l’[accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md), pour accéder aux résultats et dettes locales ;
-5. l’[index raisonné v1.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md), pour le rang des documents antérieurs.
+1. le [verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md), pour l’état décisionnel courant et la séquence autorisée ;
+2. la [vue d’ensemble globale v0.4](05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme architecture générale datée du 18 juillet 2026 ;
+3. l’[accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md), pour accéder aux résultats et dettes locales ;
+4. l’[index raisonné v1.4](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_4.md), pour la navigation actuelle et le rang des documents ;
+5. la [feuille de route post-consolidation v0.1](05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), conservée comme état programmatique du 18 juillet et à lire avec le verdict final.
 
-La [vue d’ensemble v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md)
-reste conservée comme état du 16 juillet ; elle n’est plus l’entrée actuelle.
+La [vue récente des chantiers du 16 au 18 juillet 2026](05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), la [vue d’ensemble v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md) et la vue globale v0.4 restent des états datés. Elles ne sont pas réécrites rétroactivement pour refléter la clôture ultérieure de `C2` ou le verdict de l’audit.
 
 ## Objet général
 
@@ -88,16 +87,15 @@ Les cycles sont organisés par cinq contrastes :
 9–10 : contrefactuel, dynamique et contingence.
 ```
 
-Le cycle 3 — neutrinos — possède désormais une [synthèse active après N5](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md).
-Sa reprise computationnelle `N1–N3` est documentée dans :
+Le cycle 3 — neutrinos — possède une [synthèse active après N5](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md). Sa reprise computationnelle `N1–N3` est documentée dans :
 
 - [C1 — planchers, frontière et priors](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md) ;
-- [C2 — produits officiels DESI](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
-- [instruction à l’agent local pour les données DESI DR2](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Instruction_agent_local_extraction_DESI_DR2_v0_1.md).
+- [C2 — cadrage des produits officiels DESI](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
+- [C2 — résultats de l’ingestion locale DESI DR2 v0.2](02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md).
 
-Le cycle 1 — couplages, échelles et chromodynamique quantique — reste la dette
-scientifique prioritaire suivante après la consolidation et le verdict propre de
-`C2`.
+`C2` est close au niveau de l’ingestion contrôlée des produits distribués : les chaînes `base_mnu`, `base_mnu059` et `base_mnu_w_wa` ont été ingérées et comparées aux limites `margestats`. L’absence de `base_mnu_binary_3` dans la distribution vérifiée et l’absence de profils exacts restent des limites positives documentées. Le test de sensibilité `T2` peut être poursuivi en parallèle sans bloquer la suite du programme.
+
+Le cycle 1 — couplages, échelles et chromodynamique quantique — est la dette scientifique prioritaire suivante. Le test local `T1` est intégré à cette reprise ; il ne constitue pas une condition préalable séparée qui retarderait son ouverture.
 
 ## Quatre espaces de travail
 
@@ -183,10 +181,7 @@ data_external : données locales hors Git ;
 récupération : opération exceptionnelle soumise à revue.
 ```
 
-La branche cumulative active est candidate à la consolidation, mais la fusion dans
-`main` reste une décision explicite de l’auteur. Après consolidation, les nouveaux
-chantiers doivent repartir du `main` mis à jour afin d’éviter une nouvelle pile
-longue de PR.
+`main` intègre désormais la consolidation cumulative et la clôture computationnelle de `C2`. La branche `agent/audit-portee-regimes-constance` est un chantier thématique borné, sans divergence avec `main`. Son intégration reste soumise à la revue du lot complet et à une décision explicite de l’auteur.
 
 ## Audits documentaires
 

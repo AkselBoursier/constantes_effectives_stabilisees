@@ -19,22 +19,31 @@ stabilisation de l'acces ou de l'estimation ;
 mode de constitution ou d'organisation.
 ```
 
-La decision active est :
+Les decisions actives sont :
 
-- [Decision de rang — constance, acces et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md)
+- [Decision de rang — constance, acces et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) ;
+- [Verdict final de l'audit de portee — regimes de constance](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
 
 ## Premier parcours
 
 1. Lire le [README](README.md).
-2. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
-3. Lire la [decision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
-4. Consulter l'[index raisonne](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_3.md).
-5. Identifier le statut du document cible : reference active, decision
+2. Lire le [verdict final de l'audit de portee](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
+3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
+4. Lire la [decision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
+5. Consulter l'[index raisonne v1.4](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_4.md).
+6. Identifier le statut du document cible : reference active, decision
    canonique, protocole, consolidation, preuve locale, exploration ou source.
-6. Ne lire ensuite que la couche necessaire : methode, cycle physique, test
+7. Ne lire ensuite que la couche necessaire : methode, cycle physique, test
    taxonomique, architecture, synthese ou philosophie.
-7. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme de rang
+8. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme de rang
    theorique.
+
+Etat courant au 20 juillet 2026 : `main` integre la consolidation du corpus et
+la cloture computationnelle de `C2` ; les phases `P0` et `P1` sont closes ;
+l'audit de portee est valide ; le cycle 1 — couplages, echelles et
+chromodynamique quantique — est la prochaine dette scientifique. Le test `T2`
+reste parallele et non bloquant ; `T3` precede toute revision canonique de
+« constante effective ».
 
 Les entrees philosophiques et les travaux recents sont reperes par le
 [supplement d'index](05_CARTES_ET_SYNTHESES/Index_supplement_pan_philosophique_v0_1.md).
@@ -50,7 +59,7 @@ Les jonctions entre chantiers sont explicitees par la
 | `02_CYCLES_PHYSIQUES` | Fiches, calculs, preuves et syntheses de cycle | `README.md` du dossier, puis le sous-dossier concerne |
 | `03_TESTS_TAXONOMIQUES` | Genealogie et tests des anciennes familles | `README.md` du dossier |
 | `04_ARCHITECTURES` | Architectures actives et raccords transversaux | `Cercle2_architectures_actives_v0_1.md` |
-| `05_CARTES_ET_SYNTHESES` | Index, cartes, audits et syntheses globales | `Index_raisonne_du_corpus_v1_3.md` |
+| `05_CARTES_ET_SYNTHESES` | Index, cartes, audits et syntheses globales | `Index_raisonne_du_corpus_v1_4.md` |
 | `06_PHILOSOPHIE` | Exploration philosophique, situations, voisinages et tests | `README.md` du dossier |
 | `90_Critiques_ constantes_effectives_stabilisees` | Sources de critiques constructives | documents actifs avant sources |
 
@@ -272,12 +281,11 @@ branche recuperation = union exceptionnelle, non canonique avant validation
 
 La branche `agent/cycle-fixite-electrofaible-dynamique` est un sommet
 historique de la chaine refondation -> fine-tuning -> fixite electrofaible.
-Son contenu est inclus dans la branche de consolidation. Utiliser le checkout
-consolide ou `main` apres fusion, sauf demande explicite de travailler sur
-l'historique.
+Son contenu est inclus dans `main` apres consolidation. Utiliser `main`, sauf
+demande explicite de travailler sur l'historique.
 
-Les nouvelles corrections de consolidation doivent partir d'une branche
-bornee, puis etre revues avant d'etre integrees a la branche de recuperation.
+Les nouveaux chantiers doivent partir de `main` sur une branche bornee, puis
+etre revus avant integration.
 
 ## Travail sur la fixite electrofaible dynamique
 
