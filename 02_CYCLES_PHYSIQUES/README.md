@@ -6,19 +6,20 @@ un protocole unique ni les classer du plus fort au plus faible.
 ## 0. Statut
 
 ```text
-statut : accueil central resynchronisé au 18 juillet 2026 ;
+statut : accueil central actualisé au 20 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
-base : cartographie des dix cycles, cinq contrastes, arbitrage des dettes et
-       reprise complète du cycle neutrino ;
+base : consolidation dans main, clôture computationnelle de C2 et verdict validé
+       de l’audit de portée des régimes de constance ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
 ```
 
 Documents transversaux :
 
-- [vue récente des chantiers](../05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md) ;
-- [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md) ;
-- [feuille de route post-consolidation](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md) ;
+- [verdict final de l’audit de portée](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) ;
+- [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
+- [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), à lire avec le verdict final ;
+- [index raisonné v1.4](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_4.md) ;
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
@@ -69,12 +70,12 @@ métrologiques effectivement instruits.
 
 | Cycle | Point d’entrée actuel | Résultat ou fonction | Dette principale |
 |---|---|---|---|
-| 1. Couplages, échelles et QCD | [Synthèse de récupération](01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) | Sépare stabilité temporelle, dépendance à l’échelle, paramètre de renormalisation et changement de régime. | Contrôler valeurs, schémas et sources primaires ; dette scientifique suivante après consolidation et C2. |
+| 1. Couplages, échelles et QCD | [Synthèse de récupération](01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) | Sépare stabilité temporelle, dépendance à l’échelle, paramètre de renormalisation et changement de régime. | Prochaine reprise scientifique prioritaire. Contrôler valeurs, schémas, observables et sources primaires ; intégrer le test local `T1` à la reprise. |
 | 2. Secteur électrofaible structurant | [Synthèse de récupération](02_Cycle_structurant_electrofaible/Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md) | Sépare fonction de secteur, relation, mécanisme et explication. | Instruire les objets sans reconstruire un verdict global de stabilité ou d’instabilité. |
-| 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md) et [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) | Distingue oscillations, cinématique bêta, cosmologie et double bêta sans neutrino comme quatre fonctions du spectre latent. | Dette documentaire, empirique et comparative levée ; reprise computationnelle `N1–N3` encore ouverte en [C2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md). |
+| 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit les quantiles distribués de `base_mnu`, `base_mnu059` et `base_mnu_w_wa`. | `C2` close avec limites positives : `base_mnu_binary_3` absent de la distribution vérifiée, profils exacts non reconstruits. Le test `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
 | 5. Saveur–Higgs | [Synthèse requalifiée](05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | Documente la solidarité entre échelle, couplages, spectres et orientations. | Remonter aux événements, simulations, likelihoods et extractions ; ne pas transformer le réseau en explication d’origine. |
-| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | Rendre explicites bases, matching, coefficients et incertitudes de troncature dans des cas précis. |
+| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | Rendre explicites bases, matching, coefficients et incertitudes de troncature dans des cas précis ; réaliser `T3` avant toute révision canonique de « constante effective ». |
 | 7. Cosmologie | [Architecture](07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md), [vérification](07_Cycle_cosmologique/verification-physique-cosmologique.md) et [évaluation](07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md) | Rend visibles modèles, sondes, dégénérescences, tensions et routes d’inférence. | Reprendre sonde par sonde et redater régulièrement ; ne pas rouvrir le cycle entier sans question bornée. |
 | 8. Système international | [Architecture](08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md), [vérification](08_Cycle_metrologique_SI/verification-metrologique-si.md) et [évaluation](08_Cycle_metrologique_SI/evaluation-gain-explicatif-metrologique-si.md) | Sépare valeur définissante, rôle physique, réalisation et déplacement de l’incertitude. | Cartographier quantitativement les covariances et chaînes de réalisation. |
 | 9. Ajustement fin | [Cadrage](09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) et [synthèse du premier lot](09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md) | Remplace le comptage de nombres par l’audit des espaces, coordonnées, corrélations et contingences. | Construire explicitement domaines et mesures avant toute assertion de probabilité. |
@@ -91,8 +92,8 @@ Lire dans cet ordre :
 5. [N4 — double bêta sans neutrino](03_Cycle_neutrinos/N4_Fiche_acces_double_beta_sans_neutrino_v0_1.md) ;
 6. [N5 — comparaison](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) ;
 7. [C1 — planchers et frontière](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md) ;
-8. [C2 — produits officiels](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
-9. [instruction locale DESI DR2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Instruction_agent_local_extraction_DESI_DR2_v0_1.md).
+8. [C2 — cadrage des produits officiels](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
+9. [C2 — résultats de l’ingestion locale v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md).
 
 ## 6. Contrat d’une reprise de cycle
 
