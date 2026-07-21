@@ -33,26 +33,28 @@ Les décisions et contrôles actifs sont :
 
 - [Décision de rang — constance, accès et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) ;
 - [Verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) ;
-- [Ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md).
+- [Ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) ;
+- [Clôture de la phase d’audit](05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md).
 
 ## Premier parcours
 
 1. Lire le [README](README.md).
-2. Lire les [ajustements D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md).
-3. Lire le [verdict final](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
-4. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
-5. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
-6. Consulter l’[index raisonné v1.5](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md).
-7. Identifier le statut du document cible : décision, protocole, résultat local,
+2. Lire la [clôture de la phase d’audit](05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md).
+3. Lire les [ajustements D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md).
+4. Lire le [verdict final](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
+5. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
+6. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
+7. Consulter l’[index raisonné v1.5](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md).
+8. Identifier le statut du document cible : décision, protocole, résultat local,
    accueil vivant, état daté, exploration, source ou archive.
-8. Ne lire ensuite que la couche nécessaire.
-9. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme de rang théorique.
+9. Ne lire ensuite que la couche nécessaire.
+10. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme de rang théorique.
 
-État courant au 21 juillet 2026 : la consolidation, `C2`, l’audit de portée et la
-maintenance factuelle sont intégrés ; D1–D5 sont appliqués aux portes d’entrée
-vivantes ; le cycle 1 — couplages, échelles et chromodynamique quantique — est la
-prochaine reprise scientifique. `T1` lui est interne, `T2` reste parallèle et `T3`
-précède toute révision canonique de « constante effective ».
+État courant au 21 juillet 2026 : la consolidation, `C2`, l’audit de portée, la
+maintenance factuelle et l’application de D1–D5 sont clos. Le cycle 1 — couplages,
+échelles et chromodynamique quantique — est la prochaine reprise scientifique. `T1`
+lui est interne, `T2` reste parallèle et `T3` précède toute révision canonique de
+« constante effective ».
 
 ## Architecture documentaire
 
@@ -249,9 +251,8 @@ branche historique   = provenance, pas point de départ implicite
 branche récupération = union exceptionnelle, non canonique avant validation
 ```
 
-Les nouveaux chantiers partent de `main` sur une branche bornée et sont revus avant
-intégration. La branche `agent/cycle-1-qcd-t1` reste séparée du lot D1–D5 et devra être
-resynchronisée après son intégration.
+Les nouveaux chantiers partent de `main` sur une branche bornée. Après la fusion de
+D1–D5, la branche `agent/cycle-1-qcd-t1` doit être resynchronisée avant reprise.
 
 ## Travail sur la fixité électrofaible dynamique
 
