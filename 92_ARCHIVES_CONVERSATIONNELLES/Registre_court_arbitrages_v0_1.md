@@ -185,3 +185,12 @@ indépendante des données condensées, ni audit indépendant de `b_g`, ni ouver
 T1.6 ou T1.7, ni verdict final. Le fil de reprise est donné par le
 [manifeste local](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_5_Manifeste_local_paquet_ALPHA_2026_v0_1.md)
 et le [rapport de reproduction](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md).
+
+### 21 juillet 2026 — Classification des écarts et projet de verdict local T1
+
+Après complément quantitatif de la chaîne tau, les écarts du premier lot sont classés
+sans tension nouvelle établie : le cas tau reste associé à plusieurs choix et sans cause
+inter-chaînes unique identifiable. Cette clôture bornée de T1.6 autorise un projet de
+verdict local T1.7, soumis à relecture et sans moyenne mondiale ; T1.8 reste fermé. Le
+fil est donné par la [classification T1.6](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_6_Classification_ecarts_chaines_alpha_s_v0_1.md)
+et le [projet T1.7](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md).
