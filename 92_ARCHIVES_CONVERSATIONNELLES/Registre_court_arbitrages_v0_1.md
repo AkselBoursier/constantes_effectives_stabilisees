@@ -149,3 +149,26 @@ parallèle et que `T3` précède toute révision canonique de « constante effec
 archives et versions datées restent protégées. Le fil de reprise est donné par le
 [registre décisionnel](../05_CARTES_ET_SYNTHESES/Registre_decisions_audit_portee_regimes_constance_v0_1.md)
 et le [verdict final](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
+
+### 21 juillet 2026 — Application de D1–D5 avant reprise physique
+
+Après la fusion du lot d’audit et l’ouverture initiale de la branche QCD–T1, l’auteur
+constate que les ajustements directeurs `D1–D5`, qu’il croyait déjà appliqués,
+restaient seulement validés. La reprise physique est donc suspendue sans être
+abandonnée : sa branche et son premier cadrage sont conservés, tandis qu’une branche
+distincte applique D1–D5 aux seules portes d’entrée vivantes. Cette correction ne
+remet pas en cause la fusion précédente, ne réécrit aucun résultat physique et ne
+modifie pas la décision canonique sur « constante effective » avant `T3`. Après audit
+et intégration de ce lot, la branche `agent/cycle-1-qcd-t1` devra être resynchronisée
+puis reprise. Les documents directeurs sont les [ajustements D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md)
+et l'[index raisonné v1.5](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md).
+
+### 21 juillet 2026 — Clôture de la phase d’audit de portée
+
+Après contrôle de la couverture de `D1–D5`, des portes d’entrée vivantes et des audits
+documentaires, aucune dette interne à la phase ne bloque plus le retour aux cycles
+physiques. L’audit, la maintenance factuelle et l’application directrice sont déclarés
+clos. `T1`, `T2` et `T3` restent ouverts dans leur rang de tests physiques locaux et ne
+sont pas des conditions rétroactives de clôture. La prochaine opération est
+l’intégration de la pull request 17, puis la resynchronisation de la branche
+`agent/cycle-1-qcd-t1`. Le constat détaillé est la [note de clôture](../05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md).
