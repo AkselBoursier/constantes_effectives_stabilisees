@@ -1,0 +1,4 @@
+year,participants_total,participants_in_kcrv,kcrv_offset_ug,uR_ug,D_min_ug,D_max_ug,D_range_ug,D_sample_sd_ug,median_abs_D_ug,max_abs_D_ug,within_expanded_U
+2019,7,7,-18.8000,7.5000,-21.0000,72.0000,93.0000,30.7834,15.0000,72.0000,7
+2021,9,9,-15.2000,7.4000,-31.1000,62.9000,94.0000,29.2193,19.0000,62.9000,7
+2024,10,9,-10.7000,6.4000,-40.4000,20.2000,60.6000,18.1700,10.7000,40.4000,8
