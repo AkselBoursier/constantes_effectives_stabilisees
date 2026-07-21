@@ -5,8 +5,8 @@ substantielle.
 
 ## Mission du dépôt
 
-Le corpus étudie ce que les sciences peuvent soutenir lorsqu’elles qualifient une
-grandeur, une relation ou un régime de constant.
+Le corpus étudie ce que les sciences peuvent soutenir lorsqu’elles qualifient de
+constante une grandeur, une relation ou un régime.
 
 Deux questions publiques organisent le travail :
 
