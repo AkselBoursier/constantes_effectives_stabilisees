@@ -66,6 +66,8 @@ les deux travaux partagent des données, des échelles et une généalogie méth
 
 ```text
 version de référence : article Nature du 8 avril 2026 ;
+prépublication : arXiv:2501.06633v1, soumise le 11 janvier 2025 sous le titre
+                 « The strength of the interaction between quarks and gluons » ;
 supplément : informations supplémentaires liées à l’article ;
 réplication : paquet public replication-package-2501.06633 ;
 données : sous-dossier data au format BDIO ;
@@ -74,15 +76,16 @@ code de simulation : version modifiée d’openQCD 1.6, branche gbar-massive ;
 code de reproduction : fourni dans le paquet de réplication.
 ```
 
-Le numéro interne `2501.06633` du paquet de réplication est un identifiant de dépôt ; il
-ne doit pas être interprété comme la référence arXiv de l’article.
+Le titre et la présentation ont changé entre la prépublication et la version de revue ;
+l’identifiant `2501.06633` relie bien l’arXiv et le paquet de réplication. La version
+Nature reste l’autorité pour le résultat publié.
 
 ## 5. Conséquence pour le protocole
 
 ```text
 T1.3 sélection : close ;
-T1.3 fiche primaire : à produire immédiatement ;
-T1.4 matrice : autorisée après la fiche lattice ;
+T1.3 fiche primaire : close ;
+T1.4 matrice : close ;
 T1.5 reproduction : peut commencer par le paquet lattice, qui est le seul des quatre
                      dossiers à annoncer une réplication complète des nombres finaux.
 ```
