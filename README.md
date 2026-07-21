@@ -5,20 +5,21 @@ différences que ce terme commun recouvre et sur les régimes, architectures, ac
 et opérations par lesquels certains maintiens deviennent opératoires ou affirmables.
 
 > **Statut au 21 juillet 2026 :** `main` intègre la consolidation, la clôture
-> computationnelle de `C2`, l’audit de portée et sa maintenance factuelle. Les
-> ajustements directeurs `D1–D5` sont appliqués aux portes d’entrée vivantes dans un
-> lot borné. Le cycle 1 — couplages, échelles et chromodynamique quantique — reste la
-> prochaine reprise scientifique ; sa branche dédiée est conservée pendant ce raccord.
+> computationnelle de `C2`, l’audit de portée et sa maintenance factuelle. Le présent
+> lot applique `D1–D5` et clôt la phase d’audit de portée. Après son intégration, la
+> prochaine phase est le cycle 1 — couplages, échelles et chromodynamique quantique —
+> sur sa branche dédiée, avec `T1` intégré à l’enquête.
 
 ## Point d’entrée humain
 
 Lire d’abord :
 
-1. les [ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md), pour les contrôles actifs de maintien, de portée et de chemin ;
-2. le [verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md), pour l’autorité de la décision et le rang de `Q3` ;
-3. la [vue d’ensemble globale v0.4](05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme architecture générale datée du 18 juillet 2026 ;
-4. l’[accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-5. l’[index raisonné v1.5](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md), pour la navigation actuelle et le rang des documents.
+1. la [clôture de la phase d’audit de portée](05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md), pour l’état de phase et les dettes conservées ;
+2. les [ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md), pour les contrôles actifs de maintien, de portée et de chemin ;
+3. le [verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md), pour l’autorité de la décision et le rang de `Q3` ;
+4. la [vue d’ensemble globale v0.4](05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme architecture générale datée du 18 juillet 2026 ;
+5. l’[accueil central des dix cycles physiques](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
+6. l’[index raisonné v1.5](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md), pour la navigation actuelle et le rang des documents.
 
 La [feuille de route post-consolidation v0.1](05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), la [vue récente des chantiers](05_CARTES_ET_SYNTHESES/Vue_recente_chantiers_16_18_juillet_2026_v0_1.md), la [vue d’ensemble v0.3](05_CARTES_ET_SYNTHESES/Vue_ensemble_une_page_v0_3.md) et la vue globale v0.4 restent des états datés. Elles ne sont pas réécrites rétroactivement.
 
@@ -46,8 +47,8 @@ question directrice affichée.
 ```text
 constance : maintien sous transformations déclarées ;
 stabilisation : établissement, consolidation ou maintien du régime physique,
-                expérimental, inférentiel, computationnel ou métrologique dans
-                lequel ce maintien devient opératoire ou affirmable.
+                 expérimental, inférentiel, computationnel ou métrologique dans
+                 lequel ce maintien devient opératoire ou affirmable.
 ```
 
 Cette distinction complète sans la remplacer la décision canonique :
@@ -190,9 +191,9 @@ data_external : données locales hors Git ;
 récupération : opération exceptionnelle soumise à revue.
 ```
 
-`main` intègre la PR 16, l’audit de portée et le lot de maintenance factuelle. Les
-ajustements D1–D5 et la reprise QCD sont portés par des branches distinctes afin que
-la validation documentaire ne soit pas confondue avec un résultat physique.
+Après intégration de ce lot, `main` porte la consolidation, `C2`, l’audit de portée,
+la maintenance factuelle et les ajustements D1–D5. La branche QCD–T1 devient alors le
+seul chantier prioritaire à resynchroniser avant reprise scientifique.
 
 ## Audits documentaires
 
