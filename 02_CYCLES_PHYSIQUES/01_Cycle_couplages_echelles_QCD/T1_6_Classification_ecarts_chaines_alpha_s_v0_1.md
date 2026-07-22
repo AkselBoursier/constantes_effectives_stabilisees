@@ -6,12 +6,13 @@ attribution causale générale.
 ## 0. Statut
 
 ```text
-statut : résultat local clos de classification du premier lot T1 ;
+statut : classification descriptive close pour le premier lot et les matériaux disponibles ;
 date : 21 juillet 2026 ;
 entrées : registre T1.1, fiches T1.2–T1.3, matrice T1.4 et reproduction T1.5 ;
 fonction : attribuer un statut contrôlé aux écarts entre quatre chaînes ;
-ne vaut pas : explication causale complète, moyenne mondiale, nouveau test de tension,
-               reproduction des trois chaînes phénoménologiques ou verdict ontologique.
+ne vaut pas : explication causale complète, moyenne mondiale, test global de compatibilité,
+               résultat physique sur l’origine des écarts, reproduction des trois chaînes
+               phénoménologiques ou verdict ontologique.
 ```
 
 ## 1. Règle de classification
@@ -113,8 +114,8 @@ la covariance reproduite, mais T1.5 ne refait pas les simulations lattice.
 | tau–lattice | **associé à plusieurs choix** | cause unique **non identifiable** ; tension non établie ; distance descriptive `1.884` sous indépendance |
 | tau–NNPDF | **associé à plusieurs choix** | objets statistiques et paramètres associés différents ; cause unique non identifiable ; anomalie physique non établie |
 | tau–formes | **associé à plusieurs choix** | le recouvrement dépend de la composante théorique conservée séparément ; cause unique non identifiable ; anomalie physique non établie |
-| NNPDF–lattice | **non identifiable** quant à la cause du faible écart | compatibilité descriptive oui ; explication causale non requise ; covariance inter-chaînes non établie ; tension non |
-| formes–lattice | **non identifiable** quant à la cause du faible écart | compatibilité descriptive oui ; enveloppe théorique dominante du côté formes ; tension non |
+| NNPDF–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; explication causale non requise ; covariance inter-chaînes non établie ; tension non |
+| formes–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; enveloppe théorique dominante du côté formes ; tension non |
 | NNPDF–formes | **associé à plusieurs choix** | intervalles recouvrants ; PDF associées à NNPDF, `alpha_0` aux formes ; covariance croisée absente ; tension non établie |
 
 ### 5.1 Cas tau–lattice
@@ -171,16 +172,16 @@ portée ontologique : non engagée.
 ## 7. Résultat de T1.6
 
 ```text
-classification des écarts internes et inter-chaînes : accomplie ;
+classification descriptive des écarts internes et inter-chaînes : accomplie ;
 causalité complète : non revendiquée ;
-reproduction des trois chaînes phénoménologiques : non requise pour reconnaître
-                                                   les limites de l'attribution ;
+compatibilité statistique globale : non testée ;
+reproduction des trois chaînes phénoménologiques : non effectuée ;
 moyenne mondiale : aucune ;
 tension nouvelle : aucune déclarée ;
-statut T1.6 : clos dans ce périmètre.
+statut T1.6 : clos pour le premier lot et les matériaux disponibles.
 ```
 
-Les statuts `associé à plusieurs choix` et `non identifiable` sont des résultats
-positifs de contrôle : ils fixent la limite de ce que les matériaux présents permettent
-d'attribuer. Cette clôture autorise un projet de verdict local T1.7, sous relecture ;
-elle n'ouvre pas T1.8.
+Les statuts `associé à plusieurs choix` et `non identifiable` fixent positivement la
+limite de ce que les matériaux présents permettent d'attribuer. Cette clôture autorise
+un verdict comparatif local T1.7, sous relecture ; elle n'autorise ni verdict physique
+global de cohérence ni ouverture de T1.8.
