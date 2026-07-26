@@ -6,10 +6,10 @@ un protocole unique ni les classer du plus fort au plus faible.
 ## 0. Statut
 
 ```text
-statut : accueil central actualisé au 21 juillet 2026 ;
+statut : accueil central actualisé au 26 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
-base : consolidation dans main, clôture computationnelle de C2, audit de portée clos
-       et application bornée des ajustements directeurs D1–D5 ;
+base : consolidation dans main, clôture computationnelle de C2, audit de portée clos,
+       application des ajustements D1–D5 et décisions P23–P26 ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
 ```
@@ -19,14 +19,16 @@ Documents transversaux :
 - [clôture de la phase d’audit](../05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) ;
 - [ajustements directeurs D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) ;
 - [verdict final de l’audit de portée](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) ;
+- [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) ;
+- [glossaire actif](../GLOSSAIRE.md) ;
 - [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
-- [index raisonné v1.5](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_5.md) ;
+- [index raisonné v1.6](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_6.md) ;
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
 - [arbitrage de la dette prioritaire](../05_CARTES_ET_SYNTHESES/Arbitrage_dette_prioritaire_dix_cycles_v0_1.md).
 
-La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md) reste un état daté à lire avec le verdict et l’index courant.
+La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), l’index v1.5 et les vues antérieures restent des états datés à lire avec l’index courant.
 
 ## 1. Deux questions communes
 
@@ -37,8 +39,11 @@ La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_
    reconstruction pour l’enquête scientifique ?
 
 Ces questions n’imposent pas une réponse dynamique à chaque objet. Elles demandent
-quel porteur est étudié, sous quelle transformation, dans quel régime, à quelle
-échelle et avec quelle tolérance.
+quelle cible reçoit l’attribution, sous quelle transformation, dans quel régime, à
+quelle échelle et avec quelle tolérance.
+
+Le `porteur du test` est une fonction analytique relative à l’énoncé, non un substrat
+ni une catégorie ontologique.
 
 La question de portée (`Q3`) reste un contrôle interne non public. Elle vérifie si
 un résultat engage un énoncé physique, épistémologique, ontologique ou aucun de ces
@@ -49,9 +54,9 @@ prolongements supplémentaires.
 Une reprise doit distinguer :
 
 ```text
-constance : maintien sous transformations déclarées ;
-stabilisation : établissement, consolidation ou maintien du régime dans lequel
-                ce maintien devient opératoire ou affirmable.
+constance : attribution conditionnée d’un maintien à une cible identifiée ;
+stabilisation : établissement, consolidation ou maintien des conditions dans
+                 lesquelles ce maintien devient opératoire ou affirmable.
 ```
 
 Elle doit conserver deux coordonnées :
@@ -66,6 +71,19 @@ physique, historique, expérimentale, métrologique, computationnelle, inférent
 ou représentationnelle. Les verdicts `non pertinente` et `non établie` restent
 recevables. Ces contrôles ne forment pas un formulaire identique imposé à chaque
 cycle.
+
+Les usages disciplinaires locaux précèdent les qualifications du cadre :
+
+```text
+vocabulaire du secteur
+→ description du cas
+→ conditions du test
+→ verdict analytique éventuel.
+```
+
+`Constante effective` ne doit plus servir de classe transversale. `Constance
+effective` peut qualifier un énoncé indexé lorsque l’approximation, l’ordre, la
+tolérance, les corrections et la rupture sont explicités.
 
 ## 3. Cinq entrées par contraste
 
@@ -105,11 +123,11 @@ métrologiques effectivement instruits.
 | 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit trois postérieurs distribués. | `C2` close avec limites positives ; `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
 | 5. Saveur–Higgs | [Synthèse requalifiée](05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | Documente la solidarité entre échelle, couplages, spectres et orientations. | Remonter aux événements, simulations, vraisemblances et extractions. |
-| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | Réaliser `T3` avant toute révision canonique de « constante effective ». |
+| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | `P26 / T3` est clos : appliquer la distinction entre vocabulaire disciplinaire local et statut de constance effective dans les reprises rédactionnelles. |
 | 7. Cosmologie | [Architecture](07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md), [vérification](07_Cycle_cosmologique/verification-physique-cosmologique.md) et [évaluation](07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md) | Rend visibles modèles, sondes, dégénérescences, tensions et routes d’inférence. | Reprendre sonde par sonde et redater régulièrement. |
 | 8. Système international | [Architecture](08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md), [vérification](08_Cycle_metrologique_SI/verification-metrologique-si.md) et [évaluation](08_Cycle_metrologique_SI/evaluation-gain-explicatif-metrologique-si.md) | Sépare valeur définissante, rôle physique, réalisation et déplacement de l’incertitude. | Cartographier quantitativement les covariances et chaînes de réalisation. |
 | 9. Ajustement fin | [Cadrage](09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) et [synthèse du premier lot](09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md) | Remplace le comptage de nombres par l’audit des espaces, coordonnées, corrélations et contingences. | Construire explicitement domaines et mesures. |
-| 10. Quasi-fixité électrofaible | [Cadrage](10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) et [résultats dissipatifs](10_Cycle_fixite_electrofaible_dynamique/resultats-phase4-toy-model-dissipatif.md) | Conserve deux échecs locaux et une fenêtre phénoménologique sans convertir une trajectoire possible en histoire réelle. | Mécanisme microscopique, robustesse et prise empirique non acquis. |
+| 10. Quasi-fixité électrofaible | [Cadrage](10_Cycle_fixite_electrofaible_dynamique/cadrage-cycle-fixite-electrofaible-dynamique.md) et [résultats dissipatifs](10_Cycle_fixite_electrofaible_dynamique/resultats-phase4-toy-model-dissipatif.md) | Conserve deux échecs locaux et une fenêtre phénoménologique sans convertir une trajectoire possible en histoire réelle. | Mécanisme microscopique, robustesse et prise empirique non acquis ; la quasi-stationnarité ne suffit pas à établir une constance effective. |
 
 ## 6. Reprise du cycle 3
 
@@ -129,13 +147,13 @@ Lire dans cet ordre :
 
 Une reprise doit rendre contrôlables :
 
-1. **porteur et transformation** : qu’est-ce qui tient ou varie, relativement à quoi ?
+1. **porteur du test et transformation** : quelle cible reçoit l’attribution, relativement à quoi ?
 2. **régime et tolérance** : dans quel domaine, à quelle échelle et avec quelle précision ?
 3. **résultat local** : qu’est-ce que le cycle établit réellement ?
 4. **dimensions de l’enquête** : objet, constitution et accès ;
 5. **portée de l’énoncé** : physique, épistémologique, ontologique ou non engagée ;
 6. **chemin pertinent** : physique, historique, expérimental, métrologique, computationnel, inférentiel ou représentationnel ;
-7. **effet sur l’enquête** : quelle variable, exigence, voie d’accès ou preuve est modifiée ?
+7. **condition de rupture ou de refus** : quand l’attribution cesse-t-elle d’être soutenable ?
 8. **dette** : récupération, source, calcul, actualisation, covariance ou littérature ?
 
 L’ordre de ces contrôles dépend du terrain. Une rubrique n’est ajoutée que si elle
@@ -159,7 +177,8 @@ vérification scientifique locale ;
 calcul et reproduction ;
 pondération des cycles ;
 sélection éditoriale ;
-interprétation philosophique.
+interprétation philosophique ;
+pilotage interne des LLM et du corpus.
 ```
 
 > La comparaison doit rendre les cycles accessibles sans les rendre identiques.

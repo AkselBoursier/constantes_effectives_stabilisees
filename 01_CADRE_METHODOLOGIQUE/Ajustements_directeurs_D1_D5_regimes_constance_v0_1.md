@@ -4,12 +4,12 @@
 
 ```text
 statut : couche directrice active validée pour les portes d’entrée vivantes ;
-date : 21 juillet 2026 ;
+date initiale : 21 juillet 2026 ;
+resynchronisation terminologique : 26 juillet 2026, décisions P24–P26 ;
 base : registre décisionnel et verdict final de l’audit de portée ;
 fonction : rendre D1–D5 opératoires sans réécrire les résultats physiques ;
 ne vaut pas : nouvelle décision canonique, taxonomie universelle, ontologie des
-               stabilisations, modification de « constante effective » avant T3,
-               ni grille identique imposée à tous les cycles.
+              stabilisations ni grille identique imposée à tous les cycles.
 ```
 
 Ce document applique les ajustements directeurs autorisés par le
@@ -20,13 +20,17 @@ Il complète la
 [décision de rang sur l’objet, l’accès et la constitution](Decision_statuts_constance_acces_constitution_v0_1.md)
 sans la remplacer.
 
+Les décisions P24–P26 précisent son vocabulaire : `stabilisation` est un terme
+méthodologique de second ordre ; `porteur` signifie `porteur du test` ; les statuts
+de constance qualifient des énoncés indexés ; `constante effective` ne désigne plus
+une classe transversale du projet.
+
 ## 1. D1 — distinguer constance et stabilisation
 
 ```text
-constance : maintien sous transformations déclarées ;
-stabilisation : établissement, consolidation ou maintien du régime physique,
-                expérimental, inférentiel, computationnel ou métrologique dans
-                lequel ce maintien devient opératoire ou affirmable.
+constance : attribution conditionnée d’un maintien à une cible identifiée ;
+stabilisation : établissement, consolidation ou maintien de conditions déterminées
+                 dans lesquelles ce maintien devient opératoire ou affirmable.
 ```
 
 Cette distinction interdit deux réductions opposées :
@@ -37,29 +41,37 @@ Cette distinction interdit deux réductions opposées :
 Elle complète la distinction canonique :
 
 ```text
-constance de l’objet
+constance de l’objet ou de la cible
 ≠ stabilisation de l’accès ou de l’estimation
 ≠ mode de constitution ou d’organisation.
 ```
 
-## 2. D2 — déclarer le porteur et la transformation
+Une stabilisation doit être localisée : stabilisation de quoi, par quelles opérations,
+dans quel régime, selon quel critère et jusqu’à quelle rupture ?
+
+## 2. D2 — déclarer le porteur du test et la transformation
 
 Toute reprise ou synthèse transversale doit rendre contrôlables les questions
 suivantes, sans transformer leur ordre en formulaire universel :
 
 ```text
-qu’est-ce qui tient ou varie ?
+quelle cible reçoit, refuse ou suspend l’attribution ?
 sous quelle transformation ?
 dans quel régime, à quelle échelle et à quelle tolérance ?
 ```
 
-Le porteur peut être une grandeur, une relation, une observable, un coefficient,
-un secteur, une prédiction ou une description. La transformation peut relever du
-temps, de l’échelle physique, d’une symétrie, d’une convention, d’un changement de
-schéma, d’un raccordement, d’une voie d’accès ou d’une condition expérimentale.
+Le `porteur du test` est une fonction analytique relative à l’énoncé. Il peut être
+une grandeur, une relation, une observable, un coefficient, un secteur, une
+prédiction ou une description. Il ne désigne ni un substrat ni une catégorie
+ontologique.
 
-L’énoncé de constance porte seulement sur le porteur et les transformations
-explicitement instruits.
+La transformation peut relever du temps, de l’échelle physique, d’une symétrie,
+d’une convention, d’un changement de schéma, d’un raccordement, d’une voie d’accès
+ou d’une condition expérimentale.
+
+L’énoncé de constance porte seulement sur la cible et les transformations
+explicitement instruites. Sa sortie peut être une admission, un refus ou une
+suspension.
 
 ## 3. D3 — séparer dimensions de l’enquête et portée de l’énoncé
 
@@ -79,78 +91,52 @@ résultat ne requiert aucun prolongement sur ce plan.
 La question de portée (`Q3`) reste un contrôle interne obligatoire et non public.
 Elle ne devient pas une troisième question directrice affichée.
 
-## 4. D4 — typer la dépendance de chemin
+## 4. D4 — typer les dépendances de chemin
 
-Lorsqu’une dépendance de chemin modifie l’argument, elle doit être qualifiée parmi :
+Lorsqu’une dépendance de chemin modifie l’argument, elle doit être qualifiée comme :
 
 ```text
 chemin ou trajectoire physique ;
 chemin historique ;
-chaîne expérimentale ;
-chaîne métrologique ;
+chaîne expérimentale ou métrologique ;
 chemin computationnel ;
 chemin inférentiel ;
 choix de représentation, de schéma ou de raccordement.
 ```
 
-Les verdicts `non pertinente` et `non établie` restent disponibles. Une différence
-entre deux routes de calcul, d’extraction, de reconstruction ou de réalisation ne
-constitue pas par elle-même une dépendance physique de l’objet. Inversement, une
-trajectoire physique doit nommer son porteur, sa variable d’évolution et les lois ou
-conditions qui la déterminent.
+Une route de calcul, un schéma de renormalisation ou une séquence institutionnelle
+ne deviennent pas par eux-mêmes une histoire physique de l’objet. Les verdicts
+`non pertinente` et `non établie` restent disponibles.
 
-## 5. D5 — préciser les deux questions publiques
+## 5. D5 — maintenir deux questions publiques
 
-Les deux questions publiques du programme sont désormais formulées ainsi :
+Les deux questions publiques restent complémentaires :
 
-1. **Frontière** — Comment les sciences établissent-elles, utilisent-elles et
-   déplacent-elles la frontière entre ce qui varie et ce qui tient ?
-2. **Détermination et enquête** — Par quelles structures, opérations et chemins de
-   détermination un maintien devient-il opératoire ou affirmable dans un régime, et
-   que change cette reconstruction pour l’enquête scientifique ?
+1. Comment les sciences établissent-elles, utilisent-elles et déplacent-elles la
+   frontière entre ce qui varie et ce qui tient ?
+2. Par quelles structures, opérations et chemins de détermination un maintien
+   devient-il opératoire ou affirmable dans un régime, et que change cette
+   reconstruction pour l’enquête scientifique ?
 
-La seconde question ne remplace pas la première. Elle décrit les conditions de
-constitution, d’accès et de preuve qui rendent un maintien utilisable ou soutenable ;
-elle ne présuppose ni que tout objet est construit par son accès, ni que tout régime
-possède une histoire de stabilisation commune.
+La seconde question n’absorbe pas la première. La question de portée (`Q3`) reste
+interne.
 
-## 6. Contrat d’application
+## 6. Discipline terminologique issue de P26
 
-D1–D5 s’appliquent aux portes d’entrée vivantes, aux nouveaux contrats de reprise et
-aux futures synthèses transversales. Leur propagation suit quatre règles :
-
-1. ne pas réécrire rétroactivement les vues, diagnostics, archives ou sources ;
-2. ne pas modifier un résultat physique pour l’ajuster au vocabulaire directeur ;
-3. n’ajouter une rubrique que si elle change la contrôlabilité de l’argument ;
-4. conserver les formulations locales plus précises lorsqu’elles satisfont déjà le
-   contrôle.
-
-Les décisions canoniques antérieures restent lisibles avec leur motif. Une
-modification canonique ultérieure exige son propre test et une validation humaine.
-
-## 7. Articulation avec T1, T2 et T3
-
-- `T1` applique D1–D4 aux chaînes d’extraction et de transport de `alpha_s` ; il doit
-  déterminer ce qui porte effectivement la cohérence sans convertir le groupe de
-  renormalisation en histoire temporelle.
-- `T2` distingue les dépendances physiques, inférentielles, statistiques et
-  computationnelles dans les contraintes cosmologiques sur les masses de neutrinos.
-- `T3` doit décider quels usages de « constante effective » restent recevables avant
-  toute modification canonique ou définition générale du terme.
-
-Aucun des trois tests n’est préjugé par la présente couche directrice.
-
-## 8. Portes d’entrée raccordées
-
-L’application initiale concerne seulement :
+Les usages disciplinaires locaux sont restitués avant toute qualification interne :
 
 ```text
-README.md ;
-AGENTS.md ;
-GLOSSAIRE.md ;
-02_CYCLES_PHYSIQUES/README.md ;
-Index_raisonne_du_corpus_v1_5.md.
+vocabulaire disciplinaire local
+→ description du cas
+→ conditions du test
+→ verdict analytique éventuel.
 ```
 
-Les synthèses de cycle ne seront modifiées qu’après acquisition d’un résultat local
-nouveau ou lorsqu’une reprise particulière doit expliciter un contrôle déjà validé.
+`Constante effective` est abandonné comme classe transversale du projet.
+`Constance effective` reste un statut conditionnel d’un énoncé indexé, lorsque la
+cible, l’approximation, l’ordre, la tolérance, les corrections et la rupture sont
+explicités.
+
+Les termes `constante de Fermi`, `constante de basse énergie`, `constante de
+couplage` ou `coefficient de Wilson` restent employés conformément à leur usage
+disciplinaire. Ils ne déterminent pas automatiquement le verdict du cadre.
