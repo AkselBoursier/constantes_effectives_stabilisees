@@ -172,3 +172,28 @@ clos. `T1`, `T2` et `T3` restent ouverts dans leur rang de tests physiques locau
 sont pas des conditions rétroactives de clôture. La prochaine opération est
 l’intégration de la pull request 17, puis la resynchronisation de la branche
 `agent/cycle-1-qcd-t1`. Le constat détaillé est la [note de clôture](../05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md).
+
+### 21 juillet 2026 — Levée du blocage T1.5 et reproduction du paquet ALPHA 2026
+
+Après acquisition locale de l'archive ALPHA associée à arXiv:2501.06633, le blocage
+réseau de T1.5 est levé. Le pipeline d'analyse à partir des produits condensés fournis
+est réexécuté avec Julia 1.11.5 : les deux routes vers `Lambda_MSbar^(3)`, leur
+combinaison corrélée, le transport vers `alpha_s^(5)(m_Z)` et le budget final sont
+reproduits à la précision d'affichage de la publication. T1.5 est clos dans ce
+périmètre, mais cette clôture ne vaut ni nouvelle simulation lattice, ni production
+indépendante des données condensées, ni audit indépendant de `b_g`, ni verdict
+inter-chaînes. Le fil de reprise est donné par le
+[manifeste local](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_5_Manifeste_local_paquet_ALPHA_2026_v0_1.md)
+et le [rapport de reproduction](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md).
+
+### 21–26 juillet 2026 — Classification des écarts et ratification du verdict T1.7
+
+Les écarts du premier lot sont classés sans tension nouvelle établie : les différences
+inter-chaînes restent associées à plusieurs choix ou non identifiables avec les
+matériaux disponibles. Le verdict T1.7 est ensuite ratifié comme résultat comparatif
+local : comparabilité conditionnelle admise, équivalence des chaînes refusée,
+compatibilité statistique globale et cohérence physique commune suspendues. Le résultat
+physique positif demeure interne à la reproduction aval ALPHA ; T1.8 reste fermé et
+aucune propagation générale n'est autorisée. Le fil est donné par la
+[classification T1.6](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_6_Classification_ecarts_chaines_alpha_s_v0_1.md)
+et le [verdict T1.7](../02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md).
