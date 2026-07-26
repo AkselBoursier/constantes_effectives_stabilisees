@@ -1,7 +1,7 @@
 # Guide d’amorçage pour agents
 
 Ce fichier complète le [README](README.md). Lire les deux avant toute modification
-substantielle, puis consulter l’[index raisonné v2.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_0.md) pour l’état détaillé.
+substantielle, puis consulter l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md) pour l’état détaillé.
 
 ## 1. Mission
 
@@ -17,9 +17,11 @@ La question de portée physique, épistémologique ou ontologique (`Q3`) reste u
 contrôle interne obligatoire et non public.
 
 État condensé : la séquence méthodologique `P23–P28` est appliquée et amendée. Le
-cycle 1 a intégré `T1.1–T1.8` et le dossier `alpha` α1–α5 ; les séquences locales
-QCD–T1 et `alpha` sont closes, tandis que le cycle reste ouvert et partiellement
-instruit. Ne pas recopier ici l’état détaillé : l’index courant en est le point de référence.
+cycle 1 a intégré `T1.1–T1.8`, le dossier `alpha` α1–α5 et le premier lot
+`m_p/m_e` R1–R3. Ces séquences locales sont closes dans leur périmètre. Le cycle
+reste ouvert et largement instruit dans son premier périmètre ; la nécessité d’un
+dossier autonome `m_e` doit être arbitrée. Ne pas recopier ici l’état détaillé :
+l’index courant en est le point de référence.
 
 ## 2. Premier parcours
 
@@ -28,8 +30,8 @@ instruit. Ne pas recopier ici l’état détaillé : l’index courant en est le
 3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
-6. Consulter l’[index raisonné v2.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_0.md).
-7. Pour le cycle 1, lire la [synthèse active après T1 et le dossier alpha v0.3](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md).
+6. Consulter l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md).
+7. Pour le cycle 1, lire la [synthèse active après T1, alpha et m_p/m_e v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md).
 8. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
 9. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
 10. Ne lire ensuite que la couche nécessaire.
@@ -271,7 +273,8 @@ glossaire : terminologie active.
 ### Granularité après le dossier `alpha`
 
 Le dossier `alpha` est un banc d’essai méthodologique à haute résolution, non un
-formulaire universel. Pour les dossiers suivants :
+formulaire universel. Le premier lot `m_p/m_e` confirme qu’une structure compacte
+R1–R3 suffit lorsque les distinctions acquises sont réutilisées. Pour la suite :
 
 ```text
 réutiliser les distinctions acquises par référence ;
@@ -293,21 +296,29 @@ comparabilité conditionnelle alpha_s : admise ;
 équivalence des chaînes alpha_s : refusée ;
 compatibilité statistique globale alpha_s : suspendue ;
 
-dossier alpha α1–α5 : validé, localement clos et intégré ;
+dossier alpha α1–α5 : validé, localement clos et propagé ;
 valeur de basse énergie : référence ajustée et conditionnelle ;
 running alpha(Q²) : positivement soutenu ;
 contraintes temporelles : deux familles sans signal significatif ;
 variation spatiale globale : suspendue ;
 
-dettes ouvertes : m_e, m_p/m_e,
-                  matériaux pour un test global futur de alpha_s ;
-cycle 1 : ouvert et partiellement instruit ;
-point d’entrée : synthèse active v0.3 ;
-prochaine décision : D5.
+premier lot m_p/m_e R1–R3 : validé, localement clos et propagé ;
+valeur actuelle : sortie ajustée composite ;
+accès à la variation : familles et domaines distingués ;
+constitution : proton QCD / électron électrofaible ;
+séparation de variations de m_p et m_e : refusée sans modèle ;
+
+dettes ouvertes : nécessité d’un dossier autonome m_e,
+                   matériaux pour un test global futur de alpha_s ;
+cycle 1 : ouvert et largement instruit dans son premier périmètre ;
+point d’entrée : synthèse active v0.4 ;
+prochaine décision : arbitrer m_e autonome,
+                     déplacement vers Saveur–Higgs,
+                     ou clôture/suspension du premier périmètre.
 ```
 
-Ne pas rouvrir T1 ou le dossier `alpha` sans nouveaux matériaux modifiant leur verdict.
-Ne pas étendre leurs résultats à `m_e`, `m_p/m_e`, aux autres cycles ou au cadre
+Ne pas rouvrir T1, `alpha` ou le premier lot `m_p/m_e` sans nouveaux matériaux
+modifiant leur verdict. Ne pas étendre leurs résultats aux autres cycles ou au cadre
 canonique sans instruction et validation distinctes.
 
 ## 11. Règles de modification
@@ -318,9 +329,3 @@ canonique sans instruction et validation distinctes.
 - Ne pas transformer une trajectoire de calcul en histoire physique.
 - Ne pas ajouter de catégorie parce qu’une formulation paraît commode.
 - Préférer une correction locale à une restructuration générale.
-- Après une décision validée, distinguer le dépôt dans l’issue de son application aux fichiers.
-- Toute modification canonique ou structurante requiert une autorisation humaine explicite.
-
-Le nom `constantes_effectives_stabilisees` reste un identifiant historique et
-technique. Il ne constitue ni une définition de classe ni une obligation
-terminologique pour les publications.

@@ -11,10 +11,11 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 
 > **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
 > sont validées, appliquées et amendées pour distinguer exploration et ratification.
-> Le cycle 1 a intégré `T1.1–T1.8` et le dossier `alpha` α1–α5 : les séquences locales
-> QCD–T1 et `alpha` sont closes, tandis que le cycle reste ouvert et partiellement
-> instruit. Son point d’entrée actif est la synthèse v0.3 après `alpha`. `T2` reste
-> parallèle et `Q3` demeure un contrôle interne de portée.
+> Le cycle 1 a intégré `T1.1–T1.8`, le dossier `alpha` α1–α5 et le premier lot
+> `m_p/m_e` R1–R3. Ces trois séquences locales sont closes dans leur périmètre ; le
+> cycle reste ouvert, largement instruit dans son premier périmètre, et son point
+> d’entrée actif est la synthèse v0.4. La nécessité d’un dossier autonome `m_e` doit
+> encore être arbitrée. `T2` reste parallèle et `Q3` demeure un contrôle interne.
 
 ## Point d’entrée humain
 
@@ -25,9 +26,9 @@ Lire d’abord :
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v2.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_0.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md), pour l’état détaillé, la navigation et le rang des documents.
 
-Pour le cycle 1, lire la [synthèse active après T1 et le dossier alpha v0.3](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md). La [synthèse active v0.2 après T1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md) et la [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) restent des états antérieurs.
+Pour le cycle 1, lire la [synthèse active après T1, alpha et m_p/m_e v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md). La [synthèse active v0.3 après alpha](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md), la [synthèse active v0.2 après T1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md) et la [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) restent des états antérieurs.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
@@ -185,15 +186,15 @@ maintenance, puis à une validation humaine et à une application documentaire d
 > **Formule active.** L’exploration peut créer ; seule la ratification autorise à
 > conserver durablement et à faire autorité.
 
-Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Les
-dossiers suivants réutilisent ses distinctions par référence et ne sont subdivisés que
-si la subdivision change le verdict, le rang probatoire, la cible ou la décision
-scientifique suivante.
+Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Le
+premier lot `m_p/m_e` a confirmé qu’une structure compacte suffit lorsque les
+distinctions acquises sont réutilisées par référence et que seules les subdivisions
+qui changent le verdict, le rang, la cible ou la décision scientifique sont conservées.
 
 La règle de remplacement d’une couche existante s’applique à la promotion durable,
 non à la naissance d’un support exploratoire temporaire.
 
-## Résultats locaux du cycle 1 après D4
+## Résultats locaux du cycle 1 après la propagation de `m_p/m_e`
 
 ```text
 QCD–T1 :
@@ -211,14 +212,24 @@ alpha :
   non-détection ESPRESSO locale ;
   statut spatial global suspendu ;
 
-séquences locales QCD–T1 et alpha :
+m_p/m_e :
+  valeur CODATA ajustée et composite ;
+  résultat H2+ 2025 compatible et postérieur ;
+  dérive locale, modulation annuelle et différences astrophysiques
+  contraintes dans des domaines déclarés ;
+  constitution QCD / secteur électrofaible ;
+  séparation des variations de m_p et m_e refusée sans modèle ;
+
+séquences locales QCD–T1, alpha et premier lot m_p/m_e :
   closes ;
 
 cycle 1 :
-  ouvert et partiellement instruit ;
+  ouvert et largement instruit dans son premier périmètre ;
 
 prochaine décision :
-  D5, sélectionner entre m_e et m_p/m_e.
+  arbitrer la nécessité d’un dossier autonome m_e,
+  son déplacement vers Saveur–Higgs,
+  ou la clôture/suspension du premier périmètre du cycle 1.
 ```
 
 ## Les cycles physiques
