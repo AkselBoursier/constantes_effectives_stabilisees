@@ -11,10 +11,10 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 
 > **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
 > sont validées, appliquées et amendées pour distinguer exploration et ratification.
-> Le cycle 1 a intégré `T1.1–T1.8` : la séquence locale QCD–T1 est close, tandis que
-> le cycle reste ouvert et partiellement instruit. Son point d’entrée actif est la
-> synthèse v0.2 après T1. `T2` reste parallèle et `Q3` demeure un contrôle interne
-> de portée.
+> Le cycle 1 a intégré `T1.1–T1.8` et le dossier `alpha` α1–α5 : les séquences locales
+> QCD–T1 et `alpha` sont closes, tandis que le cycle reste ouvert et partiellement
+> instruit. Son point d’entrée actif est la synthèse v0.3 après `alpha`. `T2` reste
+> parallèle et `Q3` demeure un contrôle interne de portée.
 
 ## Point d’entrée humain
 
@@ -25,9 +25,9 @@ Lire d’abord :
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v2.0](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_0.md), pour l’état détaillé, la navigation et le rang des documents.
 
-Pour le cycle 1, lire la [synthèse active après T1 v0.2](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md). La [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) reste un état antérieur.
+Pour le cycle 1, lire la [synthèse active après T1 et le dossier alpha v0.3](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md). La [synthèse active v0.2 après T1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md) et la [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) restent des états antérieurs.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
@@ -185,30 +185,40 @@ maintenance, puis à une validation humaine et à une application documentaire d
 > **Formule active.** L’exploration peut créer ; seule la ratification autorise à
 > conserver durablement et à faire autorité.
 
+Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Les
+dossiers suivants réutilisent ses distinctions par référence et ne sont subdivisés que
+si la subdivision change le verdict, le rang probatoire, la cible ou la décision
+scientifique suivante.
+
 La règle de remplacement d’une couche existante s’applique à la promotion durable,
 non à la naissance d’un support exploratoire temporaire.
 
-## Résultat local du cycle 1 après T1
+## Résultats locaux du cycle 1 après D4
 
 ```text
-résultat physique positif :
-  reproduction aval du pipeline ALPHA ;
+QCD–T1 :
+  reproduction aval ALPHA ;
+  comparabilité conditionnelle des chaînes alpha_s ;
+  équivalence refusée ;
+  compatibilité globale suspendue ;
 
-résultat comparatif :
-  comparabilité conditionnelle de quatre chaînes
-  sous convention commune ;
+alpha :
+  référence de basse énergie ajustée et conditionnelle ;
+  chaînes comparables, discordantes et non équivalentes ;
+  running avec Q² positivement soutenu ;
+  deux familles temporelles contraintes sans signal significatif ;
+  prétention spatiale historique repondérée ;
+  non-détection ESPRESSO locale ;
+  statut spatial global suspendu ;
 
-équivalence des chaînes :
-  refusée ;
-
-compatibilité statistique globale et cohérence physique commune :
-  suspendues ;
-
-séquence locale QCD–T1 :
-  close ;
+séquences locales QCD–T1 et alpha :
+  closes ;
 
 cycle 1 :
-  ouvert et partiellement instruit.
+  ouvert et partiellement instruit ;
+
+prochaine décision :
+  D5, sélectionner entre m_e et m_p/m_e.
 ```
 
 ## Les cycles physiques
