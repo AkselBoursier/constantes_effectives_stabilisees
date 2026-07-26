@@ -434,9 +434,15 @@ V3 : autorisation du contrôle final et de la fusion de la PR #46.
 
 La propagation vers la synthèse active et le statut ultérieur de la dette `m_e` restent des décisions distinctes.
 
-## 12. Sources primaires directrices de R3
+## 12. Sources directrices de R3
+
+Sources primaires :
 
 - Y.-B. Yang et al., *Proton Mass Decomposition from the QCD Energy Momentum Tensor*, Physical Review Letters 121, 212001 (2018).
+- ATLAS Collaboration, *Search for the Higgs boson decays H -> ee and H -> e mu in pp collisions at sqrt(s) = 13 TeV with the ATLAS detector*, Physics Letters B 801, 135148 (2020).
+
+Source théorique de comparaison des décompositions :
+
 - A. Metz, B. Pasquini et S. Rodini, *Revisiting the proton mass decomposition*, Physical Review D 102, 114042 (2020).
-- ATLAS Collaboration, recherche de l’interaction du boson de Higgs avec les électrons par `H -> e+e-`, 2019.
-- Les sources primaires de R1 et R2 pour les chaînes de détermination, les horloges et les spectres moléculaires.
+
+R1 et R2 conservent leurs propres sources primaires pour les chaînes de détermination, les horloges et les spectres moléculaires.
