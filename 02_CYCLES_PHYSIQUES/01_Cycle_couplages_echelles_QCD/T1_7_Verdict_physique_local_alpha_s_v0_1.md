@@ -1,39 +1,40 @@
-# T1.7 — Projet de verdict comparatif local sur `alpha_s` v0.1
+# T1.7 — Verdict comparatif local validé sur `alpha_s` v0.1
 
-Ce projet formule le résultat comparatif local autorisé par T1.6 et conserve ses limites
-comme partie du verdict.
+Ce document formule le résultat comparatif local autorisé par T1.6 et conserve ses
+limites comme partie du verdict.
 
 ## 0. Statut
 
 ```text
-statut : projet de verdict comparatif local soumis à relecture ;
-date : 21 juillet 2026 ;
+statut : verdict comparatif local validé par l'auteur ;
+date du premier état : 21 juillet 2026 ;
+date de validation finale : 26 juillet 2026 ;
 périmètre : premier lot tau, NNPDF, formes d'événements et lattice ALPHA 2026 ;
 appui : classification descriptive T1.6 et reproduction aval lattice T1.5 bornée ;
 ne vaut pas : test global de compatibilité, résultat physique commun aux quatre chaînes,
-               preuve de cohérence de leurs extractions ou validation humaine finale ;
+               preuve de cohérence de leurs extractions ou autorisation de propagation ;
 T1.8 : non ouvert ;
 portée ontologique : non engagée.
 ```
 
-Ce document propose un verdict comparatif local. Il ne modifie pas le cadre canonique,
-ne crée aucune taxonomie, ne produit aucune moyenne mondiale et ne vaut pas validation
-humaine finale.
+Ce verdict ne modifie pas le cadre canonique, ne crée aucune taxonomie, ne produit
+aucune moyenne mondiale et ne transforme pas une absence d'incompatibilité démontrée en
+preuve positive de cohérence.
 
-## 1. Contrôle des quatre porteurs
+## 1. Contrôle des quatre cibles ou fonctions analytiques
 
-| Porteur envisagé | Verdict local | Limite constitutive |
+| Cible ou fonction envisagée | Verdict local | Limite constitutive |
 |---|---|---|
 | **A. valeur `alpha_s^(n_f)(mu)`** | comparable seulement lorsque schéma, nombre de saveurs, échelle et convention sont fixés | la valeur varie avec l'échelle ; l'identité numérique entre régimes n'est pas le maintien testé |
-| **B. trajectoire du groupe de renormalisation** | porte la relation de transformation entre échelles et changements de régime | c'est une relation physique d'évolution renormalisée, pas une histoire temporelle de l'objet |
-| **C. observable physique d'extraction** | rend chaque détermination accessible dans son régime | spectre tau, données globales, formes d'événements et observables lattice diffèrent ; ce porteur n'est pas commun aux chaînes |
+| **B. relation du groupe de renormalisation** | porte la transformation déclarée entre échelles et changements de régime | c'est une relation physique d'évolution renormalisée, pas une histoire temporelle de l'objet |
+| **C. observable physique d'extraction** | rend chaque détermination accessible dans son régime | spectre tau, données globales, formes d'événements et observables lattice diffèrent ; cette cible n'est pas commune aux chaînes |
 | **D. comparaison de plusieurs chaînes après transport commun** | objet construit permettant de comparer les sorties finales sous convention commune | ne constitue ni un porteur physique démontré du maintien ni un test global de cohérence des chaînes |
 
 L'objet `D` n'absorbe pas `A`, `B` et `C`. Il organise la comparaison après conservation
 de leurs différences d'objet, d'accès, de transformation et d'incertitude. Sa construction
 ne démontre pas l'existence d'un maintien physique commun aux quatre chaînes.
 
-## 2. Verdict central proposé
+## 2. Verdict central validé
 
 > Dans le premier lot, quatre déterminations publiées peuvent être rapportées à
 > `alpha_s^(5)(m_Z)` dans un cadre conventionnel commun. Le corpus a reproduit le pipeline
@@ -47,7 +48,36 @@ ne démontre pas l'existence d'un maintien physique commun aux quatre chaînes.
 L'expression « aucune incompatibilité globale n'est établie » décrit une limite du dossier ;
 elle ne constitue pas une preuve positive de compatibilité ou de cohérence.
 
-## 3. Réponse locale à la première question publique
+## 3. Sorties de T0 et mode de soutien probatoire
+
+```text
+admission :
+  comparabilité conditionnelle des sorties finales sous une convention commune ;
+
+refus :
+  équivalence des quatre chaînes ;
+  existence d'un porteur physique inter-chaînes démontré par la seule comparaison ;
+
+suspension :
+  compatibilité statistique globale ;
+  cohérence physique commune des extractions, évolutions et raccordements ;
+
+mode de soutien probatoire — résultat ALPHA :
+  reproduction computationnelle aval depuis les produits condensés fournis ;
+
+mode de soutien probatoire — résultat inter-chaînes :
+  documentation des publications, transport vers une référence commune et comparaison
+  structurelle des objets, transformations, incertitudes et corrélations ;
+
+limite probatoire :
+  vraisemblances complètes absentes ;
+  covariances croisées absentes ;
+  trois chaînes phénoménologiques non reproduites.
+```
+
+Aucun nouveau statut de constance n'est créé par cette répartition.
+
+## 4. Réponse locale à la première question publique
 
 > Comment les sciences établissent-elles, utilisent-elles et déplacent-elles la frontière
 > entre ce qui varie et ce qui tient ?
@@ -74,7 +104,7 @@ l'échelle et de la chaîne et, d'autre part, les relations déclarées qui perm
 transport et leur comparaison. Le présent lot établit cette opérabilité comparative, non
 une cohérence physique générale des chaînes.
 
-## 4. Réponse locale à la seconde question publique
+## 5. Réponse locale à la seconde question publique
 
 > Par quelles structures, opérations et chemins de détermination un maintien devient-il
 > opératoire ou affirmable dans un régime, et que change cette reconstruction pour
@@ -95,7 +125,7 @@ rendent les résultats comparables. Elle n'autorise pas, avec les matériaux pr�
 conclure que ces chaînes valident ensemble un même résultat physique au-delà de leur
 référence finale commune.
 
-## 5. Rang et portée du résultat
+## 6. Rang et portée du résultat
 
 ```text
 résultat physique établi :
@@ -121,7 +151,7 @@ Aucun résultat physique commun aux quatre chaînes n'est revendiqué. Le résul
 positif demeure interne à la reproduction ALPHA ; le résultat inter-chaînes est comparatif
 et limité par l'absence de vraisemblances complètes et de covariances croisées.
 
-## 6. Limites appariées à l'acquis
+## 7. Limites appariées à l'acquis
 
 - La chaîne lattice a été reproduite à partir de produits condensés ; cet acquis établit
   la traçabilité du pipeline aval, sans refaire les simulations ni valider leur production
@@ -137,15 +167,15 @@ et limité par l'absence de vraisemblances complètes et de covariances croisée
   d'événements restent sous leur forme publiée ; leur recouvrement n'est pas converti en
   nombre de sigmas.
 
-## 7. Décision proposée pour relecture
+## 8. Décision validée
 
 ```text
 objet comparatif retenu : D, comparaison construite de chaînes hétérogènes après transport commun ;
 appui transformationnel : B, relations du groupe de renormalisation ;
 condition de comparaison : A fixé par schéma, n_f et échelle ;
 diversité des accès : C conservée ;
-statut du verdict : comparatif, local et révisable ;
+statut du verdict : comparatif, local, validé et révisable avec de nouveaux matériaux ;
 résultat physique inter-chaînes : non établi ;
-opération suivante autorisée : synchronisation de la PR 18 et revue du diff borné ;
+opération suivante autorisée : resynchronisation de la PR 18 et revue du diff borné ;
 T1.8 : reste fermé.
 ```
