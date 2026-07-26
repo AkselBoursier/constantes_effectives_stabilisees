@@ -10,25 +10,25 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 > d’une publication.
 
 > **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
-> sont validées et appliquées à la couche active. Aucun artefact documentaire
-> supplémentaire n’est créé par P28. La prochaine reprise scientifique de fond est le
-> cycle 1 — couplages, échelles et chromodynamique quantique (QCD) ; `T1` lui est
-> interne, `T2` reste parallèle et `Q3` demeure un contrôle interne de portée.
+> sont validées et appliquées à la couche active ; P27–P28 ont été amendées afin de
+> distinguer création exploratoire et promotion durable. La PR 18 du cycle 1 QCD est
+> `Ready for review` et doit être resynchronisée avec ce dernier amendement avant toute
+> fusion. `T1.8` reste fermé.
 
 ## Point d’entrée humain
 
 Lire d’abord :
 
-1. la [note méthodologique v1.7](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md), pour la méthode de recherche, le soutien probatoire, le gouvernement du corpus et les contraintes des grands modèles de langage (LLM) ;
+1. la [note méthodologique v1.8](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md), pour la méthode de recherche, le soutien probatoire, l’exploration, la ratification, le gouvernement du corpus et les contraintes des grands modèles de langage (LLM) ;
 2. le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md), pour le critère indexé et les statuts de constance ;
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v1.7](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_7.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md), pour l’état détaillé, la navigation et le rang des documents.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
-`STATUTS_ACTIFS.md` ou `ENTREE_SESSION.md` n’est requis.
+`STATUTS_ACTIFS.md` ou `ENTREE_SESSION.md` n’est requis comme couche durable.
 
 ## Objet général
 
@@ -128,6 +128,14 @@ En cas de désaccord entre accès, comparer leur commensurabilité et leur quali
 probatoire. L’identification d’un biais dans une route produit une repondération
 asymétrique, non automatiquement une nouvelle catégorie de constance.
 
+Le prolongement réflexif de P27 rappelle également :
+
+```text
+absence d’incident documenté
+≠
+inutilité démontrée d’un support exploratoire.
+```
+
 ## Discipline sur `constante effective`
 
 `Constante effective` n’est plus le nom d’une classe transversale propre au projet.
@@ -164,17 +172,25 @@ la longueur ou la répétition ne confèrent pas une autorité canonique.
 
 ## Exploration, ratification et appareil de rigueur
 
-L’exploration autorise des formulations provisoires lorsqu’elles sont balisées. La
-ratification soumet les termes stratégiques à des tests de nécessité, d’ablation, de
-voisinage lexical, de cas positifs, négatifs et suspendus, puis à une validation
-humaine et à une application documentaire distincte.
+L’exploration autorise des formulations et supports provisoires lorsqu’ils rendent une
+question inspectable. Ils doivent être balisés comme exploratoires, dépourvus d’autorité
+normative et assortis d’une condition de sortie.
 
-> **Règle P28.** L’appareil de rigueur ne doit pas devenir un second projet dont la
-> croissance concurrence la recherche qu’il doit protéger.
+La ratification soumet les termes stratégiques et les supports destinés à la couche active
+à des tests de nécessité, d’ablation, de voisinage, de gain discriminant et de coût de
+maintenance, puis à une validation humaine et à une application documentaire distincte.
 
-Un nouvel artefact de gouvernement n’est créé que s’il répond à un incident concret,
-réduit la charge totale et remplace une couche existante. Les archives ne reçoivent
-que des corrections locales motivées ; elles ne sont pas restructurées massivement.
+> **Formule active P28.** L’exploration peut créer ; seule la ratification autorise à
+> conserver durablement et à faire autorité.
+
+> **Principe de protection.** L’appareil de rigueur ne doit pas devenir un second projet
+> dont la croissance concurrence la recherche qu’il doit protéger.
+
+P28 est stricte sur la sédimentation, permissive sur l’essai et vigilante sur le passage
+de l’un à l’autre. Un artefact durable de gouvernement n’est promu que s’il répond à un
+besoin établi, apporte un gain discriminant, simplifie ou remplace une couche existante
+et réduit la maintenance totale. Les archives ne reçoivent que des corrections locales
+motivées ; elles ne sont pas restructurées massivement.
 
 ## Les cycles physiques
 

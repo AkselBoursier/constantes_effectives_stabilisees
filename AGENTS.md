@@ -1,7 +1,7 @@
 # Guide d’amorçage pour agents
 
 Ce fichier complète le [README](README.md). Lire les deux avant toute modification
-substantielle, puis consulter l’[index raisonné v1.7](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_7.md) pour l’état détaillé.
+substantielle, puis consulter l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md) pour l’état détaillé.
 
 ## 1. Mission
 
@@ -16,19 +16,20 @@ Deux questions publiques organisent le travail :
 La question de portée physique, épistémologique ou ontologique (`Q3`) reste un
 contrôle interne obligatoire et non public.
 
-État condensé : la séquence méthodologique `P23–P28` est validée et appliquée à la
-couche active. La prochaine reprise scientifique est le cycle 1 — couplages, échelles
-et chromodynamique quantique (QCD). Ne pas recopier ici l’état détaillé : l’index
-courant en est le point de référence.
+État condensé : la séquence méthodologique `P23–P28` est validée et appliquée ; P27–P28
+ont été amendées afin de distinguer création exploratoire et promotion durable. La PR 18
+QCD est `Ready for review` et doit être resynchronisée avec l’état courant de `main`
+avant fusion. Ne pas recopier ici l’état détaillé : l’index courant en est le point de
+référence.
 
 ## 2. Premier parcours
 
 1. Lire le [README](README.md).
-2. Lire la [note méthodologique v1.7](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md).
+2. Lire la [note méthodologique v1.8](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md).
 3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
-6. Consulter l’[index raisonné v1.7](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_7.md).
+6. Consulter l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md).
 7. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
 8. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
 9. Ne lire ensuite que la couche nécessaire.
@@ -55,7 +56,8 @@ Lorsqu’une décision est validée mais non appliquée, signaler explicitement 
 
 ```text
 état normatif courant
-≠ état documentaire appliqué.
+≠
+état documentaire appliqué.
 ```
 
 ## 4. Contrôle de constance
@@ -155,6 +157,17 @@ En cas de désaccord entre accès, comparer leur commensurabilité et leur quali
 probatoire. L’identification d’un biais dans une route appelle une repondération
 asymétrique, non une taxonomie nouvelle.
 
+Prolongement réflexif :
+
+```text
+absence d’incident documenté
+≠
+inutilité démontrée d’un support exploratoire.
+```
+
+Ne pas traiter l’absence d’une dette déjà formulée comme une preuve négative lorsque le
+dispositif antérieur pouvait manquer de puissance discriminante pour la rendre visible.
+
 ## 7. Discipline terminologique
 
 `Constante effective` ne désigne plus une classe transversale propre au projet.
@@ -176,56 +189,74 @@ vocabulaire disciplinaire local
 
 ## 8. Exploration et ratification
 
-L’exploration autorise les mots provisoires, analogies et regroupements lorsqu’ils
-rendent l’enquête possible. Leur propagation significative doit être balisée :
+### Exploration
+
+Les mots provisoires, analogies, matrices, notes et regroupements sont autorisés
+lorsqu’ils rendent l’enquête possible. Un support exploratoire temporaire doit indiquer :
 
 ```text
-statut provisoire ;
-fonction recherchée ;
-cas d’origine ;
-portée locale ;
-confusions connues ;
-condition de réexamen.
+statut exploratoire ;
+question ou fonction ;
+absence d’autorité normative ;
+condition de sortie.
 ```
 
-La ratification impose, selon le cas :
+Il n’a pas à remplacer une couche existante et ne crée aucune obligation de maintenance
+permanente. À la fin de l’instruction, il est abandonné, absorbé, conservé comme état
+daté ou soumis à ratification.
+
+### Ratification
+
+La promotion d’un terme ou support dans la couche active impose, selon le cas :
 
 ```text
 test de nécessité ;
 test d’ablation ;
-comparaison au vocabulaire existant ;
+comparaison au vocabulaire et aux couches existantes ;
 épreuve sur cas positifs, négatifs et suspendus ;
 détermination du rang ;
+gain discriminant ;
+coût de maintenance ;
 validation humaine ;
 application documentaire séparée.
 ```
 
 La fécondité exploratoire ne vaut pas ratification.
 
-## 9. Règle d’ablation documentaire — P28
+## 9. Règle d’ablation documentaire différenciée — P28
 
-L’appareil de rigueur ne doit pas devenir un second projet dont la croissance
-concurrence la recherche qu’il doit protéger.
+> L’appareil de rigueur ne doit pas devenir un second projet dont la croissance
+> concurrence la recherche qu’il doit protéger.
 
-Avant de proposer un nouvel artefact, documenter :
+Formule active :
+
+> **L’exploration peut créer ; seule la ratification autorise à conserver durablement et
+> à faire autorité.**
+
+P28 contrôle la promotion en artefact durable de gouvernement. Elle ne bloque pas la
+création d’un support exploratoire temporaire balisé.
+
+Avant une promotion durable, documenter :
 
 ```text
-incident concret ;
+besoin ou incident établi ;
 solution légère déjà essayée ;
-gain attendu ;
+gain discriminant ;
 coût de maintenance ;
-couche existante remplacée.
+couche existante remplacée ou simplifiée ;
+réduction nette de la maintenance ;
+validation humaine.
 ```
 
-Décision par défaut :
+P28 est :
 
 ```text
-absence d’incident démontré → ne pas créer ;
-doublon avec README, AGENTS, index, Issues ou Project → ne pas créer ;
-gain local sans remplacement → ne pas créer.
+stricte sur la sédimentation ;
+permissive sur l’essai ;
+vigilante sur le passage de l’un à l’autre.
 ```
 
-Ne pas créer :
+Ne pas promouvoir comme couches durables :
 
 ```text
 STATUTS_ACTIFS.md ;
@@ -235,7 +266,7 @@ nouvelle taxonomie de statuts ;
 restructuration massive des archives.
 ```
 
-Fonctions documentaires :
+Fonctions documentaires durables :
 
 ```text
 README : entrée humaine et statut condensé ;
@@ -253,6 +284,7 @@ glossaire : terminologie active.
 - Ne pas transformer une conclusion d’accès en propriété de la cible.
 - Ne pas transformer une trajectoire de calcul en histoire physique.
 - Ne pas ajouter de catégorie parce qu’une formulation paraît commode.
+- Ne pas refuser un support exploratoire au seul motif qu’il ne remplace pas encore une couche durable.
 - Préférer une correction locale à une restructuration générale.
 - Après une décision validée, distinguer le dépôt dans l’issue de son application aux fichiers.
 - Toute modification canonique ou structurante requiert une autorisation humaine explicite.
