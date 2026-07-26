@@ -10,10 +10,10 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 > d’une publication.
 
 > **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
-> sont validées et appliquées à la couche active ; P27–P28 ont été amendées afin de
-> distinguer création exploratoire et promotion durable. La PR 18 du cycle 1 QCD est
-> `Ready for review` et doit être resynchronisée avec ce dernier amendement avant toute
-> fusion. `T1.8` reste fermé.
+> sont validées et appliquées ; P27–P28 ont été amendées afin de distinguer création
+> exploratoire et promotion durable. Le lot scientifique du cycle 1 QCD `T1.1–T1.7`
+> est fusionné dans `main`. `T1.8` reste fermé et ne sera ouvert qu’après une décision
+> distincte sur la propagation du verdict local.
 
 ## Point d’entrée humain
 
@@ -24,7 +24,7 @@ Lire d’abord :
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md), pour l’état détaillé, la navigation et le rang des documents.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
@@ -191,6 +191,19 @@ de l’un à l’autre. Un artefact durable de gouvernement n’est promu que s�
 besoin établi, apporte un gain discriminant, simplifie ou remplace une couche existante
 et réduit la maintenance totale. Les archives ne reçoivent que des corrections locales
 motivées ; elles ne sont pas restructurées massivement.
+
+## Cycle 1 — QCD intégré
+
+Le lot `T1.1–T1.7` est désormais dans `main`. Il établit :
+
+```text
+reproduction aval du pipeline ALPHA : résultat physique local ;
+comparabilité conditionnelle des quatre chaînes : admise ;
+équivalence des chaînes : refusée ;
+compatibilité statistique globale : suspendue ;
+cohérence physique inter-chaînes : non établie ;
+T1.8 : non ouvert.
+```
 
 ## Les cycles physiques
 
