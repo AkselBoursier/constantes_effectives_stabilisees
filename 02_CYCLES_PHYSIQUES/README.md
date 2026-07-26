@@ -147,9 +147,9 @@ Lire dans cet ordre :
 2. [N1 — oscillations](03_Cycle_neutrinos/N1_Fiche_acces_oscillations_neutrinos_v0_1.md) ;
 3. [N2 — cinématique bêta](03_Cycle_neutrinos/N2_Fiche_acces_cinematique_beta_neutrinos_v0_1.md) ;
 4. [N3 — cosmologie](03_Cycle_neutrinos/N3_Fiche_acces_cosmologie_somme_masses_neutrinos_v0_1.md) ;
-5. [N4 — double bêta sans neutrinos](03_Cycle_neutrinos/N4_Fiche_acces_double_beta_sans_neutrinos_v0_1.md) ;
-6. [N5 — matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) ;
-7. [synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md) ;
+5. [N4 — double bêta sans neutrino](03_Cycle_neutrinos/N4_Fiche_acces_double_beta_sans_neutrino_v0_1.md) ;
+6. [N5 — comparaison](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) ;
+7. [C1 — planchers et frontière](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md) ;
 8. [C2 — cadrage](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
 9. [C2 — résultats v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md).
 
