@@ -8,18 +8,18 @@ un protocole unique ni les classer du plus fort au plus faible.
 ```text
 statut : accueil central actualisé au 26 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
-base : consolidation dans main, clôture computationnelle de C2, audit de portée clos,
-       décisions P23–P28 amendées et lot QCD T1.1–T1.7 fusionné ;
+base : consolidation dans main, décisions P23–P28 amendées,
+       cycle 1 T1.1–T1.8 intégré et résultats C2 du cycle 3 ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
 ```
 
 Documents transversaux :
 
-- [note méthodologique v1.8](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md) ;
 - [clôture de la phase d’audit](../05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) ;
 - [ajustements directeurs D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) ;
 - [verdict final de l’audit de portée](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) ;
+- [note méthodologique v1.8](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md) ;
 - [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) ;
 - [glossaire actif](../GLOSSAIRE.md) ;
 - [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
@@ -29,7 +29,8 @@ Documents transversaux :
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
 - [arbitrage de la dette prioritaire](../05_CARTES_ET_SYNTHESES/Arbitrage_dette_prioritaire_dix_cycles_v0_1.md).
 
-La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), les index antérieurs et les vues précédentes restent des états datés à lire avec l’index courant.
+Les feuilles de route, index et vues antérieurs restent des états datés à lire avec
+l’index courant.
 
 ## 1. Deux questions communes
 
@@ -86,12 +87,8 @@ vocabulaire du secteur
 effective` peut qualifier un énoncé indexé lorsque l’approximation, l’ordre, la
 tolérance, les corrections et la rupture sont explicités.
 
-L’amendement P27–P28 distingue également :
-
-```text
-support exploratoire temporaire : création autorisée avec balisage ;
-artefact durable : promotion soumise à ratification et ablation.
-```
+L’exploration peut créer des supports provisoires balisés. Seule la ratification
+autorise leur conservation durable et leur autorité active.
 
 ## 3. Cinq entrées par contraste
 
@@ -126,12 +123,12 @@ métrologiques effectivement instruits.
 
 | Cycle | Point d’entrée actuel | Résultat ou fonction | Dette principale |
 |---|---|---|---|
-| 1. Couplages, échelles et QCD | [Cadrage T1](01_Cycle_couplages_echelles_QCD/Cadrage_reprise_scientifique_cycle_1_QCD_T1_v0_1.md), [reproduction ALPHA T1.5](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md), [classification T1.6](01_Cycle_couplages_echelles_QCD/T1_6_Classification_ecarts_chaines_alpha_s_v0_1.md) et [verdict T1.7](01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md) | Reproduit le pipeline aval ALPHA ; établit la comparabilité conditionnelle et la non-équivalence de quatre chaînes sans résultat physique inter-chaînes. | Décider séparément si T1.7 doit être propagé dans la synthèse du cycle 1 ; `T1.8` reste fermé. |
+| 1. Couplages, échelles et QCD | [Synthèse active après T1 v0.2](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md), [T1.7](01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md) et [résultats ALPHA](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md) | Sépare stabilité temporelle, dépendance d’échelle, paramètres de renormalisation et régimes ; établit une reproduction aval ALPHA et la comparabilité conditionnelle de quatre chaînes sans leur équivalence. | Séquence QCD–T1 close ; cycle ouvert. Reprendre séparément `alpha`, `m_e`, `m_p/m_e` ou les matériaux nécessaires à un test global futur. |
 | 2. Secteur électrofaible structurant | [Synthèse de récupération](02_Cycle_structurant_electrofaible/Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md) | Sépare fonction de secteur, relation, mécanisme et explication. | Instruire les objets sans reconstruire un verdict global de stabilité ou d’instabilité. |
 | 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit trois postérieurs distribués. | `C2` close avec limites positives ; `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
 | 5. Saveur–Higgs | [Synthèse requalifiée](05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | Documente la solidarité entre échelle, couplages, spectres et orientations. | Remonter aux événements, simulations, vraisemblances et extractions. |
-| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | `P26 / T3` est clos : appliquer la distinction entre vocabulaire disciplinaire local et statut de constance effective dans les reprises rédactionnelles. |
+| 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | Appliquer la distinction entre vocabulaire disciplinaire local et statut de constance effective dans les reprises rédactionnelles. |
 | 7. Cosmologie | [Architecture](07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md), [vérification](07_Cycle_cosmologique/verification-physique-cosmologique.md) et [évaluation](07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md) | Rend visibles modèles, sondes, dégénérescences, tensions et routes d’inférence. | Reprendre sonde par sonde et redater régulièrement. |
 | 8. Système international | [Architecture](08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md), [vérification](08_Cycle_metrologique_SI/verification-metrologique-si.md) et [évaluation](08_Cycle_metrologique_SI/evaluation-gain-explicatif-metrologique-si.md) | Sépare valeur définissante, rôle physique, réalisation et déplacement de l’incertitude. | Cartographier quantitativement les covariances et chaînes de réalisation. |
 | 9. Ajustement fin | [Cadrage](09_Cycle_fine_tuning/cadrage-cycle-fine-tuning.md) et [synthèse du premier lot](09_Cycle_fine_tuning/synthese-premier-lot-fine-tuning.md) | Remplace le comptage de nombres par l’audit des espaces, coordonnées, corrélations et contingences. | Construire explicitement domaines et mesures. |
