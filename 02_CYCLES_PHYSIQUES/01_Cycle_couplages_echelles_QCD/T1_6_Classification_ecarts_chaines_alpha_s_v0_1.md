@@ -8,6 +8,7 @@ attribution causale générale.
 ```text
 statut : classification descriptive close pour le premier lot et les matériaux disponibles ;
 date : 21 juillet 2026 ;
+lecture actuelle : relue et ratifiée après P27 ;
 entrées : registre T1.1, fiches T1.2–T1.3, matrice T1.4 et reproduction T1.5 ;
 fonction : attribuer un statut contrôlé aux écarts entre quatre chaînes ;
 ne vaut pas : explication causale complète, moyenne mondiale, test global de compatibilité,
@@ -114,8 +115,8 @@ la covariance reproduite, mais T1.5 ne refait pas les simulations lattice.
 | tau–lattice | **associé à plusieurs choix** | cause unique **non identifiable** ; tension non établie ; distance descriptive `1.884` sous indépendance |
 | tau–NNPDF | **associé à plusieurs choix** | objets statistiques et paramètres associés différents ; cause unique non identifiable ; anomalie physique non établie |
 | tau–formes | **associé à plusieurs choix** | le recouvrement dépend de la composante théorique conservée séparément ; cause unique non identifiable ; anomalie physique non établie |
-| NNPDF–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; explication causale non requise ; covariance inter-chaînes non établie ; tension non |
-| formes–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; enveloppe théorique dominante du côté formes ; tension non |
+| NNPDF–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; explication causale non requise ; covariance inter-chaînes non établie ; tension non établie |
+| formes–lattice | **non identifiable** quant à la cause du faible écart | recouvrement descriptif des intervalles publiés ; compatibilité statistique non testée ; enveloppe théorique dominante du côté formes ; tension non établie |
 | NNPDF–formes | **associé à plusieurs choix** | intervalles recouvrants ; PDF associées à NNPDF, `alpha_0` aux formes ; covariance croisée absente ; tension non établie |
 
 ### 5.1 Cas tau–lattice
@@ -172,6 +173,14 @@ portée ontologique : non engagée.
 ## 7. Résultat de T1.6
 
 ```text
+résultat quantitatif :
+  différences centrales et intervalles publiés conservés sous leurs formes propres ;
+
+mode de soutien probatoire :
+  documentation des quatre chaînes ;
+  reproduction aval de la chaîne ALPHA ;
+  comparaison descriptive sous hypothèses déclarées ;
+
 classification descriptive des écarts internes et inter-chaînes : accomplie ;
 causalité complète : non revendiquée ;
 compatibilité statistique globale : non testée ;
@@ -182,6 +191,6 @@ statut T1.6 : clos pour le premier lot et les matériaux disponibles.
 ```
 
 Les statuts `associé à plusieurs choix` et `non identifiable` fixent positivement la
-limite de ce que les matériaux présents permettent d'attribuer. Cette clôture autorise
-un verdict comparatif local T1.7, sous relecture ; elle n'autorise ni verdict physique
+limite de ce que les matériaux présents permettent d'attribuer. Cette clôture soutient
+le verdict comparatif local T1.7 validé par l'auteur ; elle n'autorise ni verdict physique
 global de cohérence ni ouverture de T1.8.
