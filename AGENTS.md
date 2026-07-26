@@ -1,7 +1,7 @@
 # Guide d’amorçage pour agents
 
 Ce fichier complète le [README](README.md). Lire les deux avant toute modification
-substantielle, puis consulter l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md) pour l’état détaillé.
+substantielle, puis consulter l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md) pour l’état détaillé.
 
 ## 1. Mission
 
@@ -17,10 +17,10 @@ La question de portée physique, épistémologique ou ontologique (`Q3`) reste u
 contrôle interne obligatoire et non public.
 
 État condensé : la séquence méthodologique `P23–P28` est validée et appliquée ; P27–P28
-ont été amendées afin de distinguer création exploratoire et promotion durable. La PR 18
-QCD est `Ready for review` et doit être resynchronisée avec l’état courant de `main`
-avant fusion. Ne pas recopier ici l’état détaillé : l’index courant en est le point de
-référence.
+ont été amendées afin de distinguer création exploratoire et promotion durable. Le lot
+QCD `T1.1–T1.7` est fusionné dans `main`. `T1.8` reste fermé et ne doit pas être ouvert
+automatiquement. Ne pas recopier ici l’état détaillé : l’index courant en est le point
+de référence.
 
 ## 2. Premier parcours
 
@@ -29,7 +29,7 @@ référence.
 3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
-6. Consulter l’[index raisonné v1.8](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_8.md).
+6. Consulter l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md).
 7. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
 8. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
 9. Ne lire ensuite que la couche nécessaire.
@@ -277,7 +277,22 @@ Git et registre court : continuité et provenance ;
 glossaire : terminologie active.
 ```
 
-## 10. Règles de modification
+## 10. Cycle 1 intégré
+
+Le lot T1.1–T1.7 est validé et présent dans `main`.
+
+```text
+résultat physique positif : reproduction aval ALPHA ;
+résultat comparatif : référence commune et non-équivalence des chaînes ;
+compatibilité globale : suspendue ;
+cohérence physique inter-chaînes : non établie ;
+T1.8 : non ouvert.
+```
+
+Ne pas propager automatiquement ce verdict dans une synthèse générale. Toute ouverture
+de T1.8 exige une décision distincte sur le gain attendu et la portée.
+
+## 11. Règles de modification
 
 - Ne pas modifier une archive ou un état daté pour simuler une cohérence actuelle.
 - Ne pas importer une proposition ancienne sans vérification indépendante et validation humaine.
