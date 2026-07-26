@@ -9,7 +9,7 @@ un protocole unique ni les classer du plus fort au plus faible.
 statut : accueil central actualisé au 26 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
 base : consolidation dans main, décisions P23–P28 amendées,
-       cycle 1 T1.1–T1.8 intégré et résultats C2 du cycle 3 ;
+       cycle 1 QCD–T1 et dossier alpha intégrés, résultats C2 du cycle 3 ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
 ```
@@ -23,7 +23,7 @@ Documents transversaux :
 - [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) ;
 - [glossaire actif](../GLOSSAIRE.md) ;
 - [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
-- [index raisonné v1.9](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md) ;
+- [index raisonné v2.0](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_0.md) ;
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
@@ -90,6 +90,11 @@ tolérance, les corrections et la rupture sont explicités.
 L’exploration peut créer des supports provisoires balisés. Seule la ratification
 autorise leur conservation durable et leur autorité active.
 
+Le dossier `alpha` a servi de banc d’essai à haute résolution. Sa granularité ne
+devient pas un protocole obligatoire : les reprises suivantes héritent des distinctions
+acquises et ne subdivisent qu’en présence d’un gain discriminant pour le verdict, le
+rang, la cible ou la décision scientifique.
+
 ## 3. Cinq entrées par contraste
 
 | Cycles | Question comparative | Résultat du test |
@@ -123,7 +128,7 @@ métrologiques effectivement instruits.
 
 | Cycle | Point d’entrée actuel | Résultat ou fonction | Dette principale |
 |---|---|---|---|
-| 1. Couplages, échelles et QCD | [Synthèse active après T1 v0.2](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md), [T1.7](01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md) et [résultats ALPHA](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md) | Sépare stabilité temporelle, dépendance d’échelle, paramètres de renormalisation et régimes ; établit une reproduction aval ALPHA et la comparabilité conditionnelle de quatre chaînes sans leur équivalence. | Séquence QCD–T1 close ; cycle ouvert. Reprendre séparément `alpha`, `m_e`, `m_p/m_e` ou les matériaux nécessaires à un test global futur. |
+| 1. Couplages, échelles et QCD | [Synthèse active après T1 et alpha v0.3](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md), [synthèse alpha](01_Cycle_couplages_echelles_QCD/Synthese_finale_dossier_alpha_v0_1.md) et [résultats ALPHA](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md) | Sépare stabilité temporelle, dépendance d’échelle, valeur ajustée, régimes et accès ; établit la reproduction aval ALPHA, la comparabilité conditionnelle des chaînes `alpha_s`, le running de `alpha(Q²)`, des contraintes temporelles bornées et une repondération instrumentale du dossier spatial. | QCD–T1 et `alpha` clos localement ; cycle ouvert. D5 doit sélectionner entre `m_e` et `m_p/m_e`. Les matériaux nécessaires à un test global futur de `alpha_s` restent manquants. |
 | 2. Secteur électrofaible structurant | [Synthèse de récupération](02_Cycle_structurant_electrofaible/Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md) | Sépare fonction de secteur, relation, mécanisme et explication. | Instruire les objets sans reconstruire un verdict global de stabilité ou d’instabilité. |
 | 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit trois postérieurs distribués. | `C2` close avec limites positives ; `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
@@ -142,9 +147,9 @@ Lire dans cet ordre :
 2. [N1 — oscillations](03_Cycle_neutrinos/N1_Fiche_acces_oscillations_neutrinos_v0_1.md) ;
 3. [N2 — cinématique bêta](03_Cycle_neutrinos/N2_Fiche_acces_cinematique_beta_neutrinos_v0_1.md) ;
 4. [N3 — cosmologie](03_Cycle_neutrinos/N3_Fiche_acces_cosmologie_somme_masses_neutrinos_v0_1.md) ;
-5. [N4 — double bêta sans neutrino](03_Cycle_neutrinos/N4_Fiche_acces_double_beta_sans_neutrino_v0_1.md) ;
-6. [N5 — comparaison](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) ;
-7. [C1 — planchers et frontière](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C1_Resultats_planchers_frontiere_priors_v0_1.md) ;
+5. [N4 — double bêta sans neutrinos](03_Cycle_neutrinos/N4_Fiche_acces_double_beta_sans_neutrinos_v0_1.md) ;
+6. [N5 — matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) ;
+7. [synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md) ;
 8. [C2 — cadrage](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Produits_officiels_quantiles_maxima_profils_v0_1.md) ;
 9. [C2 — résultats v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md).
 
