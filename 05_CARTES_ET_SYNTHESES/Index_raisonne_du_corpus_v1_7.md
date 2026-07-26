@@ -28,20 +28,18 @@ L’état intellectuel courant est donné par la décision humaine validée la p
 qui demeure applicable, non par la date, la longueur ou la qualité rédactionnelle du
 fichier.
 
-## 1. Parcours minimal actuel
+## 1. Parcours minimal
 
-Lire dans cet ordre :
-
-1. le [README de la racine](../README.md) — entrée humaine, questions et statut condensé ;
-2. la [note méthodologique v1.7](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md) — recherche, soutien probatoire, gouvernement du corpus et contraintes des LLM ;
-3. le [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) — critère indexé et statuts ;
-4. la [décision de rang](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — cible, accès et constitution ;
-5. la [thèse-noyau v0.3](Premier_degagement_these_v0_3.md) — formulation active de T0 ;
-6. la [matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) — rangs et cas ;
-7. le [glossaire](../GLOSSAIRE.md) — terminologie active ;
-8. le [guide des agents](../AGENTS.md) — contrôles opérationnels ;
-9. l’[accueil central des cycles](../02_CYCLES_PHYSIQUES/README.md) — résultats et dettes locales ;
-10. les preuves et synthèses du cycle concerné.
+1. [README](../README.md) — entrée humaine et statut condensé ;
+2. [note méthodologique v1.7](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md) — recherche, preuve, gouvernement et contraintes des LLM ;
+3. [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) — critère indexé et statuts ;
+4. [décision de rang](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — cible, accès et constitution ;
+5. [thèse-noyau v0.3](Premier_degagement_these_v0_3.md) — formulation active de T0 ;
+6. [matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) — rangs et cas ;
+7. [glossaire](../GLOSSAIRE.md) — terminologie active ;
+8. [guide des agents](../AGENTS.md) — contrôles opérationnels ;
+9. [accueil central des cycles](../02_CYCLES_PHYSIQUES/README.md) — résultats et dettes locales ;
+10. preuves et synthèses du cycle concerné.
 
 Les versions précédentes et les vues globales restent des états datés. Elles ne sont
 pas harmonisées rétroactivement.
@@ -55,7 +53,7 @@ P24 : stabilisation, porteur du test et fixité qualifiée — close ;
 P25 : raccordement des statuts aux énoncés indexés — close ;
 P26 / T3 : usages de « constante effective » — close et appliquée ;
 P27 : borne, invariance et conflit entre accès — close et appliquée ;
-P28 : artefacts documentaires différés — décision appliquée, clôture après vérification ;
+P28 : artefacts documentaires différés — close et appliquée ;
 prochaine reprise scientifique : cycle 1 — couplages, échelles et QCD ;
 T1 : opération interne au cycle 1 ;
 T2 : parallèle et non bloquant ;
@@ -65,44 +63,25 @@ Q3 : contrôle interne de portée, non public.
 Aucune issue méthodologique ultérieure n’est ouverte. Aucune étape administrative
 supplémentaire ne précède la reprise scientifique.
 
-## 3. Couche directrice active
+## 3. Répartition des fonctions documentaires
 
 | Document | Fonction |
 |---|---|
-| [Note méthodologique v1.7](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md) | articule recherche, preuve, gouvernement, LLM et règle d’ablation documentaire |
-| [Cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | qualifie des énoncés indexés et distingue les statuts de constance |
-| [Décision objet / accès / constitution](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) | interdit les migrations silencieuses de rang |
-| [Thèse-noyau v0.3](Premier_degagement_these_v0_3.md) | formule T0 comme règle normative d’admission, refus ou suspension |
-| [Matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) | distribue les propositions entre cible, constitution et accès |
-| [Glossaire](../GLOSSAIRE.md) | référence terminologique rapide |
+| [Note méthodologique v1.7](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_7.md) | méthode, soutien probatoire, gouvernement, LLM et règle d’ablation |
+| [Cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | critère indexé et statuts de constance |
+| [Décision de rang](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) | cible, accès et constitution |
+| [Thèse-noyau v0.3](Premier_degagement_these_v0_3.md) | T0 comme règle normative |
+| [Matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) | distribution des propositions par rang |
+| [Glossaire](../GLOSSAIRE.md) | terminologie active |
 | [README](../README.md) | entrée humaine et statut condensé |
-| [Guide des agents](../AGENTS.md) | amorçage opérationnel et interdits |
+| [AGENTS.md](../AGENTS.md) | amorçage opérationnel |
 | présent index | état détaillé, navigation et rangs |
 
 Les issues portent les décisions validées et les dettes d’application. Git et le
 registre court portent la continuité et la provenance. Aucun registre exhaustif de
 certificats conceptuels n’est créé.
 
-## 4. Questions et dimensions
-
-Questions publiques :
-
-1. Comment les sciences établissent-elles, utilisent-elles et déplacent-elles la frontière entre ce qui varie et ce qui tient ?
-2. Par quelles structures, opérations et chemins de détermination un maintien devient-il opératoire ou affirmable dans un régime, et que change cette reconstruction pour l’enquête scientifique ?
-
-Contrôle interne :
-
-```text
-Q3 : portée physique / épistémologique / ontologique / non engagée.
-```
-
-Dimensions de l’enquête :
-
-```text
-objet / constitution / accès.
-```
-
-## 5. Contrôles transversaux actifs
+## 4. Contrôles transversaux actifs
 
 ```text
 D1 : distinguer constance et stabilisation ;
@@ -118,7 +97,7 @@ P28 : ne créer un artefact que s’il remplace une charge et réduit la mainten
 
 Ces contrôles ne forment pas un formulaire identique imposé à tous les cas.
 
-## 6. Sorties, statuts et soutien probatoire
+## 5. Sorties, statuts et soutien probatoire
 
 Sorties de T0 :
 
@@ -138,27 +117,11 @@ constance métrologique ;
 usage historique ou disciplinaire du mot constante.
 ```
 
-Aucun nouveau statut n’est ajouté par P27.
-
-Coordonnée descriptive :
-
-```text
-mode de soutien probatoire.
-```
-
-Modes possibles selon le cas :
-
-```text
-mesure directe d’un maintien ;
-comparaison entre régimes ;
-contrainte sensible sur une variation ;
-non-détection non discriminante ;
-conflit entre accès commensurables ;
-repondération après identification de systématiques ;
-couverture partielle du domaine.
-```
-
-### Borne et variation
+Aucun nouveau statut n’est ajouté par P27. Le `mode de soutien probatoire` est une
+coordonnée descriptive de l’accès : mesure directe, comparaison entre régimes,
+contrainte sensible sur une variation, non-détection non discriminante, conflit entre
+accès commensurables, repondération après identification de systématiques ou couverture
+partielle du domaine.
 
 ```text
 borne sur la valeur
@@ -166,17 +129,15 @@ borne sur la valeur
 borne sur la variation.
 ```
 
-Une borne sur la valeur ne produit pas une valeur positive. Une borne sur une
-variation peut corroborer une constance relative si le test aurait détecté la famille
-de variations déclarée.
+Une borne sur la valeur ne produit pas une valeur positive. Une borne sur une variation
+peut corroborer une constance relative si le test aurait détecté la famille de
+variations déclarée.
 
-### Conflit entre accès
-
-Un désaccord ne crée pas une catégorie de `constance contestée`. Comparer la cible,
-la commensurabilité, les modèles de conversion, les calibrations, les systématiques,
+Un désaccord ne crée pas une catégorie de `constance contestée`. Comparer la cible, la
+commensurabilité, les modèles de conversion, les calibrations, les systématiques,
 l’indépendance des données, la couverture du domaine et la qualité probatoire.
 
-## 7. Cas adversariaux P27
+## 6. Cas adversariaux P27
 
 ### G
 
@@ -199,31 +160,15 @@ verdict au-delà des domaines testés : suspendu.
 Le conflit historique est repondéré de manière asymétrique après identification de
 systématiques ; il n’est pas transformé en statut canonique.
 
-## 8. Décisions terminologiques actives
+## 7. Décisions terminologiques actives
 
-### Stabilisation
-
-Terme méthodologique de second ordre. Il doit indiquer ce qui est établi ou maintenu,
-par quelles opérations, dans quel régime, selon quel critère et jusqu’à quelle rupture.
-
-### Porteur du test
-
-Fonction analytique relative à l’énoncé : cible à laquelle un maintien est attribué,
-refusé ou suspendu. Le terme ne désigne ni un substrat ni une catégorie ontologique.
-
-### Fixité qualifiée
-
-Expression historique déclassée. Employer le vocabulaire de maintien sous
-transformations déclarées, avec régime, tolérance et rupture.
-
-### Constante effective / constance effective
-
-```text
-« constante effective » : non retenu comme classe transversale ;
-« constance effective » : statut conditionnel d’un énoncé indexé ;
-usages disciplinaires : conservés localement ;
-titre du dépôt : nom historique et technique.
-```
+- `stabilisation` : terme méthodologique de second ordre ;
+- `porteur du test` : fonction analytique relative à l’énoncé ;
+- `fixité qualifiée` : expression historique déclassée ;
+- `constante effective` : non retenu comme classe transversale ;
+- `constance effective` : statut conditionnel d’un énoncé indexé ;
+- usages disciplinaires : conservés localement ;
+- titre du dépôt : nom historique et technique.
 
 Ordre de publication :
 
@@ -234,7 +179,7 @@ vocabulaire disciplinaire local
 → verdict analytique éventuel.
 ```
 
-## 9. Règle d’ablation documentaire — P28
+## 8. Règle d’ablation documentaire — P28
 
 > L’appareil de rigueur ne doit pas devenir un second projet dont la croissance
 > concurrence la recherche qu’il doit protéger.
@@ -249,8 +194,6 @@ coût de maintenance ;
 couche existante remplacée.
 ```
 
-Verdicts :
-
 | Artefact différé | Décision |
 |---|---|
 | `STATUTS_ACTIFS.md` | ne pas créer ; fonction portée par l’index |
@@ -259,64 +202,41 @@ Verdicts :
 | nouvelle taxonomie de statuts | abandonner |
 | restructuration massive des archives | abandonner |
 
-Les archives ne reçoivent que des corrections locales motivées par un incident
-concret. Une généalogie ponctuelle reste possible lorsqu’un terme stratégique pose un
-problème réel.
+Les archives ne reçoivent que des corrections locales motivées par un incident concret.
+Une généalogie ponctuelle reste possible lorsqu’un terme stratégique pose un problème
+réel.
 
-## 10. Entrées physiques actives
+## 9. Entrées physiques actives
 
-| Cycle | Point d’entrée courant | Dette principale |
-|---|---|---|
-| 1 — QCD | synthèse de récupération et cadrage QCD–T1 | reprendre les chaînes d’extraction de `alpha_s`, les schémas, échelles, observables et transports vers une référence commune |
-| 2 — électrofaible | synthèse de récupération | reprise sectorielle différée |
-| 3 — neutrinos | synthèse active après N5 et résultats C2 | T2 parallèle sur les sensibilités résiduelles |
-| 4 — thermodynamique et métrologie | synthèse de récupération | chaînes de réalisation et covariances |
-| 5 — Saveur–Higgs | synthèse requalifiée | événements, simulations, vraisemblances et extractions |
-| 6 — basse énergie | architecture, vérification et évaluation | appliquer le vocabulaire local sans réécrire les sources |
-| 7 — cosmologie | architecture, vérification et évaluation | reprise sonde par sonde et actualisation |
-| 8 — SI | architecture, vérification et évaluation | réalisations et covariances |
-| 9 — ajustement fin | cadrage et synthèse | domaines, mesures et reparamétrisations |
-| 10 — quasi-fixité électrofaible | cadrage et résultats locaux | mécanisme microscopique et prise empirique |
+| Cycle | Dette principale |
+|---|---|
+| 1 — QCD | reprendre les chaînes d’extraction de `alpha_s`, les schémas, échelles, observables et transports vers une référence commune |
+| 2 — électrofaible | reprise sectorielle différée |
+| 3 — neutrinos | T2 parallèle sur les sensibilités résiduelles |
+| 4 — thermodynamique et métrologie | chaînes de réalisation et covariances |
+| 5 — Saveur–Higgs | événements, simulations, vraisemblances et extractions |
+| 6 — basse énergie | appliquer le vocabulaire local sans réécrire les sources |
+| 7 — cosmologie | reprise sonde par sonde et actualisation |
+| 8 — SI | réalisations et covariances |
+| 9 — ajustement fin | domaines, mesures et reparamétrisations |
+| 10 — quasi-fixité électrofaible | mécanisme microscopique et prise empirique |
 
-## 11. États datés conservés
+## 10. États datés conservés
 
-Restent lisibles sans harmonisation rétroactive :
+Restent lisibles sans harmonisation rétroactive : les vues globales antérieures, les
+feuilles de route datées, les index v1.3 à v1.6, la note méthodologique v1.6, les états
+théoriques antérieurs, les essais, sources et extractions précédant P23–P28.
 
-- `Vue_recente_chantiers_16_18_juillet_2026_v0_1.md` ;
-- `Vue_ensemble_une_page_v0_3.md` ;
-- `Vue_ensemble_globale_v0_4.md` ;
-- `Feuille_route_post_consolidation_v0_1.md` ;
-- `Index_raisonne_du_corpus_v1_3.md` à `v1_6.md` ;
-- `Note_synthese_methodologique_v1_5.md` et `v1_6.md` ;
-- `Premier_degagement_these_v0_2.md` ;
-- `Matrice_degagements_theoriques_v0_2.md` ;
-- les essais, sources, archives et extractions antérieurs aux décisions P23–P28.
+Un document ancien peut conserver un résultat local valide. La terminologie active
+s’applique aux nouvelles analyses et aux accueils vivants ; elle ne transforme pas les
+archives en erreurs rétrospectives.
 
-Un document antérieur peut conserver un résultat local valide. Sa terminologie n’est
-pas automatiquement réactivée.
-
-## 12. Rangs documentaires
+## 11. Prochaine opération
 
 ```text
-décision canonique : règle de passage et garde-fou de rang ;
-décision humaine validée : arbitrage le plus récent avant application éventuelle ;
-verdict validé : clôture d’un audit ou arbitrage accepté ;
-couche directrice : contrôle d’exposition, de preuve et de portée ;
-protocole : méthode réutilisable sans autorité sur le résultat ;
-résultat local : preuve, calcul, vérification ou synthèse de cycle ;
-accueil vivant : navigation modifiable en place ;
-état daté : document conservé sans correction rétroactive ;
-exploration : proposition sans autorité sur le noyau ;
-source ou archive : provenance sans autorité active par défaut.
-```
-
-## 13. Prochaine opération
-
-```text
-1. vérifier l’application documentaire P27–P28 et clore #28 ;
-2. reprendre le cycle 1 — couplages, échelles et QCD ;
-3. réinjecter T1 dans cette reprise ;
-4. conserver T2 en parallèle ;
-5. maintenir Q3 comme contrôle interne ;
-6. ne créer aucune étape méthodologique supplémentaire sans incident concret.
+reprendre le cycle 1 — couplages, échelles et QCD ;
+réintégrer T1 comme opération interne ;
+conserver T2 en parallèle et non bloquant ;
+conserver Q3 comme contrôle interne ;
+ne créer aucune nouvelle couche administrative sans incident démontré.
 ```
