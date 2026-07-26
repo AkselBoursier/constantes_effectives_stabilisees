@@ -19,30 +19,57 @@ terminologie active.
 
 ### Constance
 
-> Maintien sous transformations déclarées.
+> Attribution conditionnée d’un maintien à une cible explicitement identifiée.
 
-Un énoncé de constance doit préciser le porteur, la transformation, le régime,
-l’échelle et la tolérance pertinents. Il ne vaut pas hors de ce domaine déclaré.
+Un énoncé de constance doit préciser le `porteur du test`, la transformation, le
+régime, l’échelle et la tolérance pertinents. Il ne vaut pas hors de ce domaine
+déclaré et conserve une condition de rupture.
 
-La constance peut porter sur une grandeur, une relation, une observable, une
-prédiction ou une structure. Elle n’est pas nécessairement produite par une
-trajectoire temporelle.
+La cible peut être une grandeur, une relation, une observable, une prédiction ou une
+structure. La constance n’est pas nécessairement produite par une trajectoire
+temporelle.
 
 ### Stabilisation
 
-> Établissement, consolidation ou maintien du régime physique, expérimental,
-inférentiel, computationnel ou métrologique dans lequel un maintien devient
-opératoire ou affirmable.
+> Terme méthodologique de second ordre désignant l’établissement, la consolidation ou
+> le maintien de conditions déterminées grâce auxquelles un état, un régime, une
+> réalisation, une estimation ou une attribution devient ou demeure opératoire,
+> reproductible ou soutenable selon un critère déclaré.
 
 La stabilisation peut concerner l’accès, l’estimation, la réalisation, la chaîne de
-preuve ou le régime de description. Elle ne constitue pas automatiquement une
-constance de l’objet.
+preuve, le régime de description ou un mécanisme de maintien. Elle ne désigne ni la
+constance de la cible, ni sa constitution, ni la seule robustesse constatée, et elle
+ne fournit pas à elle seule une explication.
 
-### Porteur
+Forme de contrôle :
 
-Ce qui est soumis au test de maintien ou de variation : grandeur, relation,
-observable, coefficient, secteur, prédiction, description ou autre objet explicitement
-nommé.
+```text
+stabilisation de X
+par Y
+dans le régime R
+selon le critère C
+jusqu’à la rupture E.
+```
+
+### Porteur du test
+
+> Cible explicitement identifiée à laquelle un énoncé attribue, refuse ou suspend un
+> maintien ou une variation sous des transformations déclarées.
+
+Le `porteur du test` est une fonction analytique relative à une question et à un
+régime. Il ne désigne ni un substrat, ni une catégorie ontologique, ni nécessairement
+un objet physique individuel. Il peut être une grandeur, une relation, une
+observable, un coefficient, un secteur, une prédiction ou une description.
+
+Contrôle minimal :
+
+```text
+porteur du test : P ;
+transformation : T ;
+régime : R ;
+tolérance : epsilon ;
+verdict : admission, refus ou suspension.
+```
 
 ### Transformation déclarée
 
@@ -55,6 +82,21 @@ d’accès ou condition expérimentale.
 Le régime délimite le domaine physique ou probatoire dans lequel l’énoncé est
 soutenu. La tolérance précise la résolution, l’incertitude ou l’ordre d’approximation
 auquel le maintien est affirmé.
+
+### Constance effective
+
+> Statut analytique d’un énoncé indexé dans lequel une cible est traitée comme
+> maintenue dans une approximation contrôlée, à un ordre et une tolérance déclarés,
+> avec corrections et condition de rupture explicites.
+
+`Constance effective` ne désigne pas une espèce d’objets. Le statut ne s’applique pas
+automatiquement aux coefficients de Wilson, aux couplages courants, aux constantes de
+basse énergie, aux bornes, aux reconstructions, aux valeurs définissantes du Système
+international d’unités (SI) ou aux quasi-stationnarités dynamiques.
+
+Les appellations disciplinaires restent premières : constante de Fermi, constante de
+basse énergie, constante de couplage, coefficient de Wilson, etc. Leur présence ne
+préjuge pas le verdict du cadre.
 
 ---
 
@@ -148,24 +190,32 @@ Les verdicts `non pertinente` et `non établie` restent disponibles.
 
 ## Expression historique du projet
 
-### Constante effective stabilisée
+### Nom historique : `constantes_effectives_stabilisees`
 
-Cette expression appartient au titre et à la généalogie du projet. Elle ne désigne
-plus une classe générale définie par la seule « robustesse fonctionnelle située ».
+Le nom du dépôt conserve la formulation exploratoire qui a initié le projet. Il est
+un identifiant historique et technique, non une proposition théorique active.
 
-Jusqu’au test `T3`, son emploi doit préciser :
+Il ne désigne plus une classe générale de « constantes effectives stabilisées » et
+ne crée aucune obligation de conserver les termes `effective` ou `stabilisée` dans
+les publications ou dans les analyses locales.
+
+Le syntagme a servi d’échafaudage avant que le projet sache distinguer suffisamment :
 
 ```text
-le porteur ;
-la transformation ;
-le régime ;
-la dimension objet / constitution / accès ;
-la portée de l’énoncé.
+constance ;
+effectivité ;
+stabilisation ;
+régime ;
+accès ;
+constitution ;
+portée de l’énoncé.
 ```
 
-Le test `T3` comparera `G_F`, un coefficient de Wilson générique et `alpha_s` ou
-`Lambda_MSbar` avant toute modification canonique du terme. Le glossaire ne préjuge
-pas son verdict.
+Son utilité passée est reconnue sans droit à la conservation canonique. Sa propagation
+est relue prudemment comme l’effet conjoint d’une permissivité exploratoire humaine,
+de la traduction et de la généralisation par les grands modèles de langage (LLM), de
+la répétition documentaire et de l’absence initiale d’un seuil explicite de
+ratification.
 
 ### Forme logique de stabilisation
 
@@ -264,17 +314,32 @@ l’objet.
 Terme historique pour un regroupement partageant une fonction locale. Il reste une
 sortie possible après test de résistance, jamais un point de départ.
 
+### Régime exploratoire
+
+Phase dans laquelle des mots provisoires, analogies et regroupements peuvent être
+employés pour rendre l’enquête possible. Leur propagation significative exige un
+marquage : statut provisoire, fonction recherchée, cas d’origine, portée locale,
+confusions connues et condition de réexamen.
+
+### Régime de ratification
+
+Phase dans laquelle un terme stratégique doit subir des tests de nécessité,
+d’ablation, de voisinage lexical, de cas positifs et négatifs, de rang et de portée,
+puis une validation humaine et une application documentaire distincte.
+
+La fécondité exploratoire n’équivaut jamais à une ratification rétroactive.
+
 ---
 
 ## Convention d’écriture
 
 - `Lambda` désigne la constante cosmologique.
-- `H_0` désigne la constante de Hubble.
+- `H_0` désigne la constante de Hubble dans l’usage disciplinaire ; le cadre le qualifie comme paramètre d’état actuel.
 - `Omega_i` désigne les paramètres de densité cosmique.
 - `sigma_8` désigne l’amplitude des fluctuations de matière.
 - `S_8` désigne le paramètre de tension cosmologique.
 - `v` ou `v_Higgs` désigne la valeur d’attente dans le vide du champ de Higgs.
-- `G_F` désigne la constante de Fermi ; son statut de constante effective reste soumis à `T3`.
+- `G_F` désigne la constante de Fermi ; à basse énergie et sous indexation stricte, l’énoncé peut recevoir un statut de constance effective.
 - `alpha_G` désigne le couplage gravitationnel adimensionné.
 - `M_Pl` désigne la masse de Planck.
-- `alpha_s(mu)` désigne le couplage fort dans un schéma et à une échelle déclarés.
+- `alpha_s(mu)` désigne le couplage fort dans un schéma et à une échelle déclarés ; il est refusé comme constant sous variation de `mu`.
