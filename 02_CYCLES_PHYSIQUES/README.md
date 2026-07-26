@@ -9,26 +9,27 @@ un protocole unique ni les classer du plus fort au plus faible.
 statut : accueil central actualisé au 26 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
 base : consolidation dans main, clôture computationnelle de C2, audit de portée clos,
-       application des ajustements D1–D5 et décisions P23–P26 ;
+       décisions P23–P28 amendées et lot QCD T1.1–T1.7 fusionné ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
 ```
 
 Documents transversaux :
 
+- [note méthodologique v1.8](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md) ;
 - [clôture de la phase d’audit](../05_CARTES_ET_SYNTHESES/Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) ;
 - [ajustements directeurs D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) ;
 - [verdict final de l’audit de portée](../05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) ;
 - [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) ;
 - [glossaire actif](../GLOSSAIRE.md) ;
 - [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
-- [index raisonné v1.6](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_6.md) ;
+- [index raisonné v1.9](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md) ;
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
 - [arbitrage de la dette prioritaire](../05_CARTES_ET_SYNTHESES/Arbitrage_dette_prioritaire_dix_cycles_v0_1.md).
 
-La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), l’index v1.5 et les vues antérieures restent des états datés à lire avec l’index courant.
+La [feuille de route post-consolidation v0.1](../05_CARTES_ET_SYNTHESES/Feuille_route_post_consolidation_v0_1.md), les index antérieurs et les vues précédentes restent des états datés à lire avec l’index courant.
 
 ## 1. Deux questions communes
 
@@ -85,6 +86,13 @@ vocabulaire du secteur
 effective` peut qualifier un énoncé indexé lorsque l’approximation, l’ordre, la
 tolérance, les corrections et la rupture sont explicités.
 
+L’amendement P27–P28 distingue également :
+
+```text
+support exploratoire temporaire : création autorisée avec balisage ;
+artefact durable : promotion soumise à ratification et ablation.
+```
+
 ## 3. Cinq entrées par contraste
 
 | Cycles | Question comparative | Résultat du test |
@@ -118,7 +126,7 @@ métrologiques effectivement instruits.
 
 | Cycle | Point d’entrée actuel | Résultat ou fonction | Dette principale |
 |---|---|---|---|
-| 1. Couplages, échelles et QCD | [Synthèse de récupération](01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) | Sépare stabilité temporelle, dépendance à l’échelle, paramètre de renormalisation et changement de régime. | Reprise scientifique suivante. Contrôler valeurs, schémas, observables et sources primaires ; intégrer `T1` à la comparaison des chaînes d’extraction. |
+| 1. Couplages, échelles et QCD | [Cadrage T1](01_Cycle_couplages_echelles_QCD/Cadrage_reprise_scientifique_cycle_1_QCD_T1_v0_1.md), [reproduction ALPHA T1.5](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md), [classification T1.6](01_Cycle_couplages_echelles_QCD/T1_6_Classification_ecarts_chaines_alpha_s_v0_1.md) et [verdict T1.7](01_Cycle_couplages_echelles_QCD/T1_7_Verdict_physique_local_alpha_s_v0_1.md) | Reproduit le pipeline aval ALPHA ; établit la comparabilité conditionnelle et la non-équivalence de quatre chaînes sans résultat physique inter-chaînes. | Décider séparément si T1.7 doit être propagé dans la synthèse du cycle 1 ; `T1.8` reste fermé. |
 | 2. Secteur électrofaible structurant | [Synthèse de récupération](02_Cycle_structurant_electrofaible/Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md) | Sépare fonction de secteur, relation, mécanisme et explication. | Instruire les objets sans reconstruire un verdict global de stabilité ou d’instabilité. |
 | 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit trois postérieurs distribués. | `C2` close avec limites positives ; `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
