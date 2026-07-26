@@ -5,8 +5,10 @@
 ```text
 statut : ouverture scientifique bornée du cycle 1 ;
 date : 21 juillet 2026 ;
+lecture actuelle : état daté relu après T1.5–T1.7 et les décisions P23–P28 ;
 branche : agent/cycle-1-qcd-t1 ;
-base : nouveau main après fusion de la PR 17 et clôture de l’audit de portée ;
+base d'origine : main après fusion de la PR 17 et clôture de l’audit de portée ;
+autorité actuelle : résultats locaux T1.5–T1.7 et décisions humaines validées ultérieures ;
 fonction : transformer T1 en enquête physique exécutable sur plusieurs chaînes
 d'extraction de alpha_s ;
 ne vaut pas : nouvelle moyenne mondiale, revue générale de toute la QCD, validation
@@ -18,8 +20,9 @@ La reprise part de l'acquis déjà conservé : stabilité temporelle, dépendanc
 l'échelle, changement de régime et simplicité théorique ne sont pas équivalents.
 Elle applique les ajustements directeurs D1–D5 comme contrôles de portée et de chemin,
 sans en déduire le résultat physique. Elle ne cherche pas à ajouter une catégorie de
-constantes. Elle demande ce qui est réellement maintenu lorsque des déterminations
-issues de processus différents sont transportées dans un cadre commun.
+constantes. Elle demande ce qui peut être comparé, attribué, refusé ou suspendu lorsque
+des déterminations issues de processus différents sont transportées dans un cadre
+conventionnel commun.
 
 ## 1. Question physique de T1
 
@@ -31,22 +34,23 @@ Elle devient :
 
 > Lorsque plusieurs observables, mesurées ou calculées à des échelles et par des
 > méthodes différentes, conduisent à des déterminations de `alpha_s`, quelle
-> quantité ou relation est soumise au test de cohérence après déclaration du
+> cible, relation ou fonction analytique est soumise au test après déclaration du
 > schéma, de l'ordre perturbatif, des corrections et du transport vers une
 > référence commune ?
 
-Quatre porteurs possibles doivent rester séparés :
+Quatre cibles ou fonctions analytiques candidates doivent rester séparées :
 
 ```text
 A. alpha_s^(n_f)(mu) dans un schéma déclaré ;
-B. la trajectoire du groupe de renormalisation reliant plusieurs échelles ;
+B. la relation du groupe de renormalisation reliant plusieurs échelles ;
 C. l'observable physique dont alpha_s est un paramètre extrait ;
-D. la cohérence d'un ensemble de chaînes d'extraction après transport commun.
+D. la comparaison construite d'un ensemble de chaînes après transport commun.
 ```
 
-Le test devra déterminer lequel de ces porteurs soutient effectivement l'énoncé de
-maintien. Il est interdit de transformer la trajectoire du groupe de
-renormalisation en histoire temporelle d'un même système.
+Le test doit déterminer le rôle exact de chacune dans l'énoncé étudié. `D` organise une
+comparaison ; il ne constitue ni un porteur physique démontré d'un maintien ni une preuve
+de cohérence commune des chaînes. Il est interdit de transformer la relation du groupe
+de renormalisation en histoire temporelle d'un même système.
 
 ## 2. Transformations et chemins à typer
 
@@ -191,7 +195,7 @@ Chaque cas du premier lot devra remplir la même structure :
 | transport | beta-fonction, seuils, matching et ordre du transport |
 | résultat commun | valeur rapportée ou recalculée à `m_Z` |
 | incertitude | séparation expérimentale, théorique, non perturbative et transport |
-| test de maintien | coefficient, relation RG, observable ou cohérence inter-chaînes |
+| cible ou relation testée | coefficient, relation RG, observable ou comparaison inter-chaînes |
 | limites | ce que la fiche ne permet pas de conclure |
 
 ## 6. Comparaison et règle de décision
@@ -226,19 +230,26 @@ Une compatibilité numérique finale ne suffira pas à déclarer les chaînes
 incohérence physique tant que les hypothèses, corrélations et conventions ne sont
 pas alignées.
 
-## 7. Résultat attendu de T1
+## 7. Résultat initialement recherché et lecture actuelle
 
-T1 devra répondre à la question suivante :
+La question initiale était :
 
 ```text
-Le maintien constaté porte-t-il sur la valeur d'un coefficient, sur la forme du
-running, sur les relations de transport et de matching, ou sur la cohérence de
+L'attribution examinée porte-t-elle sur la valeur d'un coefficient, sur la forme du
+running, sur les relations de transport et de matching, ou sur la comparaison de
 plusieurs observables avec une même dynamique de renormalisation ?
 ```
 
-Hypothèse de travail, non verdict : le porteur le plus robuste devrait être la
-cohérence conditionnelle des observables et des chaînes d'extraction avec une même
-évolution RG, plutôt que l'identité numérique de `alpha_s` à toutes les échelles.
+L'hypothèse initiale d'une cohérence conditionnelle commune des chaînes n'est pas
+retenue comme verdict. Le premier lot établit seulement :
+
+```text
+comparabilité conditionnelle des sorties sous convention commune ;
+non-équivalence des chaînes ;
+résultat physique positif interne à la reproduction aval ALPHA ;
+compatibilité statistique globale : suspendue faute de vraisemblances et covariances croisées ;
+cohérence physique inter-chaînes : non démontrée.
+```
 
 La portée ontologique reste non engagée. La question de portée physique,
 épistémologique ou ontologique (`Q3`) demeure un contrôle interne non public.
@@ -252,8 +263,8 @@ T1.3 sélectionner une détermination lattice primaire distincte ;
 T1.4 construire la matrice de comparabilité et de corrélations ;
 T1.5 vérifier ou reproduire le transport vers m_Z lorsque les entrées suffisent ;
 T1.6 classifier les écarts et les dépendances de chemin ;
-T1.7 formuler le verdict physique local ;
-T1.8 seulement ensuite propager les acquis dans la synthèse du cycle 1.
+T1.7 formuler et faire valider le verdict comparatif local ;
+T1.8 reste fermé : aucune propagation automatique dans la synthèse du cycle 1.
 ```
 
 Aucune modification de la synthèse active, du cadre canonique ou des questions
