@@ -16,11 +16,10 @@ Deux questions publiques organisent le travail :
 La question de portée physique, épistémologique ou ontologique (`Q3`) reste un
 contrôle interne obligatoire et non public.
 
-État condensé : la séquence méthodologique `P23–P28` est validée et appliquée ; P27–P28
-ont été amendées afin de distinguer création exploratoire et promotion durable. Le lot
-QCD `T1.1–T1.7` est fusionné dans `main`. `T1.8` reste fermé et ne doit pas être ouvert
-automatiquement. Ne pas recopier ici l’état détaillé : l’index courant en est le point
-de référence.
+État condensé : la séquence méthodologique `P23–P28` est appliquée et amendée. Le
+cycle 1 a intégré `T1.1–T1.8` ; la séquence locale QCD–T1 est close, tandis que le
+cycle reste ouvert et partiellement instruit. Ne pas recopier ici l’état détaillé :
+l’index courant en est le point de référence.
 
 ## 2. Premier parcours
 
@@ -30,9 +29,10 @@ de référence.
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
 6. Consulter l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md).
-7. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
-8. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
-9. Ne lire ensuite que la couche nécessaire.
+7. Pour le cycle 1, lire la [synthèse active après T1 v0.2](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md).
+8. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
+9. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
+10. Ne lire ensuite que la couche nécessaire.
 
 ## 3. Précédence documentaire
 
@@ -56,8 +56,7 @@ Lorsqu’une décision est validée mais non appliquée, signaler explicitement 
 
 ```text
 état normatif courant
-≠
-état documentaire appliqué.
+≠ état documentaire appliqué.
 ```
 
 ## 4. Contrôle de constance
@@ -157,16 +156,12 @@ En cas de désaccord entre accès, comparer leur commensurabilité et leur quali
 probatoire. L’identification d’un biais dans une route appelle une repondération
 asymétrique, non une taxonomie nouvelle.
 
-Prolongement réflexif :
+Contrôle réflexif :
 
 ```text
 absence d’incident documenté
-≠
-inutilité démontrée d’un support exploratoire.
+≠ inutilité démontrée d’un support exploratoire.
 ```
-
-Ne pas traiter l’absence d’une dette déjà formulée comme une preuve négative lorsque le
-dispositif antérieur pouvait manquer de puissance discriminante pour la rendre visible.
 
 ## 7. Discipline terminologique
 
@@ -189,30 +184,30 @@ vocabulaire disciplinaire local
 
 ## 8. Exploration et ratification
 
-### Exploration
-
-Les mots provisoires, analogies, matrices, notes et regroupements sont autorisés
-lorsqu’ils rendent l’enquête possible. Un support exploratoire temporaire doit indiquer :
+L’exploration autorise les mots provisoires, analogies, matrices, notes et regroupements
+lorsqu’ils rendent l’enquête possible. Leur propagation significative doit être
+balisée :
 
 ```text
 statut exploratoire ;
-question ou fonction ;
+question ou fonction recherchée ;
+cas d’origine ;
+portée locale ;
+confusions connues ;
 absence d’autorité normative ;
-condition de sortie.
+condition de réexamen ou de sortie.
 ```
 
-Il n’a pas à remplacer une couche existante et ne crée aucune obligation de maintenance
-permanente. À la fin de l’instruction, il est abandonné, absorbé, conservé comme état
-daté ou soumis à ratification.
+Un support exploratoire n’a pas à remplacer une couche existante et ne contracte pas
+d’obligation de maintenance durable. À la fin de l’instruction, il est abandonné,
+absorbé, conservé comme état daté ou soumis à ratification.
 
-### Ratification
-
-La promotion d’un terme ou support dans la couche active impose, selon le cas :
+La ratification impose, selon le cas :
 
 ```text
 test de nécessité ;
 test d’ablation ;
-comparaison au vocabulaire et aux couches existantes ;
+comparaison au vocabulaire ou aux couches existantes ;
 épreuve sur cas positifs, négatifs et suspendus ;
 détermination du rang ;
 gain discriminant ;
@@ -221,26 +216,22 @@ validation humaine ;
 application documentaire séparée.
 ```
 
-La fécondité exploratoire ne vaut pas ratification.
+> L’exploration peut créer ; seule la ratification autorise à conserver durablement et
+> à faire autorité.
 
-## 9. Règle d’ablation documentaire différenciée — P28
+## 9. Règle d’ablation documentaire — P28 amendée
 
-> L’appareil de rigueur ne doit pas devenir un second projet dont la croissance
-> concurrence la recherche qu’il doit protéger.
+L’appareil de rigueur ne doit pas devenir un second projet dont la croissance
+concurrence la recherche qu’il doit protéger.
 
-Formule active :
+P28 régit la promotion des artefacts durables de gouvernement. Elle n’interdit pas les
+supports exploratoires temporaires nécessaires pour rendre une question inspectable.
 
-> **L’exploration peut créer ; seule la ratification autorise à conserver durablement et
-> à faire autorité.**
-
-P28 contrôle la promotion en artefact durable de gouvernement. Elle ne bloque pas la
-création d’un support exploratoire temporaire balisé.
-
-Avant une promotion durable, documenter :
+Pour une promotion durable, documenter :
 
 ```text
 besoin ou incident établi ;
-solution légère déjà essayée ;
+solution légère insuffisante ;
 gain discriminant ;
 coût de maintenance ;
 couche existante remplacée ou simplifiée ;
@@ -248,15 +239,15 @@ réduction nette de la maintenance ;
 validation humaine.
 ```
 
-P28 est :
+Décision par défaut pour la couche durable :
 
 ```text
-stricte sur la sédimentation ;
-permissive sur l’essai ;
-vigilante sur le passage de l’un à l’autre.
+absence de besoin établi → ne pas promouvoir ;
+doublon avec README, AGENTS, index, issues ou Project → ne pas promouvoir ;
+gain local sans remplacement ni simplification → absorber ou conserver comme état daté.
 ```
 
-Ne pas promouvoir comme couches durables :
+Ne pas créer comme couches durables :
 
 ```text
 STATUTS_ACTIFS.md ;
@@ -266,7 +257,7 @@ nouvelle taxonomie de statuts ;
 restructuration massive des archives.
 ```
 
-Fonctions documentaires durables :
+Fonctions documentaires :
 
 ```text
 README : entrée humaine et statut condensé ;
@@ -277,20 +268,23 @@ Git et registre court : continuité et provenance ;
 glossaire : terminologie active.
 ```
 
-## 10. Cycle 1 intégré
-
-Le lot T1.1–T1.7 est validé et présent dans `main`.
+## 10. État local du cycle 1
 
 ```text
+T1.1–T1.7 : intégrés et ratifiés dans leur périmètre ;
+T1.8 : propagation bornée accomplie ;
+séquence locale QCD–T1 : close ;
 résultat physique positif : reproduction aval ALPHA ;
-résultat comparatif : référence commune et non-équivalence des chaînes ;
-compatibilité globale : suspendue ;
+comparabilité conditionnelle : admise ;
+équivalence des chaînes : refusée ;
+compatibilité statistique globale : suspendue ;
 cohérence physique inter-chaînes : non établie ;
-T1.8 : non ouvert.
+cycle 1 : ouvert et partiellement instruit.
 ```
 
-Ne pas propager automatiquement ce verdict dans une synthèse générale. Toute ouverture
-de T1.8 exige une décision distincte sur le gain attendu et la portée.
+Ne pas rouvrir T1 sans nouveaux matériaux modifiant le verdict. Ne pas étendre ses
+résultats à `alpha`, `m_e`, `m_p/m_e`, aux autres cycles ou au cadre canonique sans
+instruction et validation distinctes.
 
 ## 11. Règles de modification
 
@@ -299,7 +293,6 @@ de T1.8 exige une décision distincte sur le gain attendu et la portée.
 - Ne pas transformer une conclusion d’accès en propriété de la cible.
 - Ne pas transformer une trajectoire de calcul en histoire physique.
 - Ne pas ajouter de catégorie parce qu’une formulation paraît commode.
-- Ne pas refuser un support exploratoire au seul motif qu’il ne remplace pas encore une couche durable.
 - Préférer une correction locale à une restructuration générale.
 - Après une décision validée, distinguer le dépôt dans l’issue de son application aux fichiers.
 - Toute modification canonique ou structurante requiert une autorisation humaine explicite.
