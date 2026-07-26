@@ -10,10 +10,11 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 > d’une publication.
 
 > **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
-> sont validées et appliquées ; P27–P28 ont été amendées afin de distinguer création
-> exploratoire et promotion durable. Le lot scientifique du cycle 1 QCD `T1.1–T1.7`
-> est fusionné dans `main`. `T1.8` reste fermé et ne sera ouvert qu’après une décision
-> distincte sur la propagation du verdict local.
+> sont validées, appliquées et amendées pour distinguer exploration et ratification.
+> Le cycle 1 a intégré `T1.1–T1.8` : la séquence locale QCD–T1 est close, tandis que
+> le cycle reste ouvert et partiellement instruit. Son point d’entrée actif est la
+> synthèse v0.2 après T1. `T2` reste parallèle et `Q3` demeure un contrôle interne
+> de portée.
 
 ## Point d’entrée humain
 
@@ -26,9 +27,11 @@ Lire d’abord :
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
 6. l’[index raisonné v1.9](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v1_9.md), pour l’état détaillé, la navigation et le rang des documents.
 
+Pour le cycle 1, lire la [synthèse active après T1 v0.2](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md). La [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) reste un état antérieur.
+
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
-`STATUTS_ACTIFS.md` ou `ENTREE_SESSION.md` n’est requis comme couche durable.
+`STATUTS_ACTIFS.md` ou `ENTREE_SESSION.md` n’est requis.
 
 ## Objet général
 
@@ -128,13 +131,9 @@ En cas de désaccord entre accès, comparer leur commensurabilité et leur quali
 probatoire. L’identification d’un biais dans une route produit une repondération
 asymétrique, non automatiquement une nouvelle catégorie de constance.
 
-Le prolongement réflexif de P27 rappelle également :
-
-```text
-absence d’incident documenté
-≠
-inutilité démontrée d’un support exploratoire.
-```
+L’absence d’un incident déjà formalisé ne démontre pas l’inutilité d’un support
+exploratoire lorsque le dispositif existant n’avait pas la puissance nécessaire pour
+rendre le besoin observable.
 
 ## Discipline sur `constante effective`
 
@@ -172,37 +171,44 @@ la longueur ou la répétition ne confèrent pas une autorité canonique.
 
 ## Exploration, ratification et appareil de rigueur
 
-L’exploration autorise des formulations et supports provisoires lorsqu’ils rendent une
-question inspectable. Ils doivent être balisés comme exploratoires, dépourvus d’autorité
-normative et assortis d’une condition de sortie.
+L’exploration autorise des formulations, matrices, notes et regroupements provisoires
+lorsqu’ils rendent l’enquête possible. Ils doivent indiquer leur statut exploratoire,
+leur fonction, leur absence d’autorité normative et leur condition de sortie.
 
-La ratification soumet les termes stratégiques et les supports destinés à la couche active
-à des tests de nécessité, d’ablation, de voisinage, de gain discriminant et de coût de
+La ratification soumet les termes ou supports destinés à la couche active à des tests
+de nécessité, d’ablation, de voisinage, de rang, de gain discriminant et de coût de
 maintenance, puis à une validation humaine et à une application documentaire distincte.
 
-> **Formule active P28.** L’exploration peut créer ; seule la ratification autorise à
+> **Règle P28 amendée.** L’appareil de rigueur ne doit pas devenir un second projet dont
+> la croissance concurrence la recherche qu’il doit protéger.
+
+> **Formule active.** L’exploration peut créer ; seule la ratification autorise à
 > conserver durablement et à faire autorité.
 
-> **Principe de protection.** L’appareil de rigueur ne doit pas devenir un second projet
-> dont la croissance concurrence la recherche qu’il doit protéger.
+La règle de remplacement d’une couche existante s’applique à la promotion durable,
+non à la naissance d’un support exploratoire temporaire.
 
-P28 est stricte sur la sédimentation, permissive sur l’essai et vigilante sur le passage
-de l’un à l’autre. Un artefact durable de gouvernement n’est promu que s’il répond à un
-besoin établi, apporte un gain discriminant, simplifie ou remplace une couche existante
-et réduit la maintenance totale. Les archives ne reçoivent que des corrections locales
-motivées ; elles ne sont pas restructurées massivement.
-
-## Cycle 1 — QCD intégré
-
-Le lot `T1.1–T1.7` est désormais dans `main`. Il établit :
+## Résultat local du cycle 1 après T1
 
 ```text
-reproduction aval du pipeline ALPHA : résultat physique local ;
-comparabilité conditionnelle des quatre chaînes : admise ;
-équivalence des chaînes : refusée ;
-compatibilité statistique globale : suspendue ;
-cohérence physique inter-chaînes : non établie ;
-T1.8 : non ouvert.
+résultat physique positif :
+  reproduction aval du pipeline ALPHA ;
+
+résultat comparatif :
+  comparabilité conditionnelle de quatre chaînes
+  sous convention commune ;
+
+équivalence des chaînes :
+  refusée ;
+
+compatibilité statistique globale et cohérence physique commune :
+  suspendues ;
+
+séquence locale QCD–T1 :
+  close ;
+
+cycle 1 :
+  ouvert et partiellement instruit.
 ```
 
 ## Les cycles physiques
