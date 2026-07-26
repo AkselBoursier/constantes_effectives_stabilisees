@@ -5,6 +5,7 @@
 ```text
 statut : comparaison structurelle du premier lot ;
 date : 21 juillet 2026 ;
+lecture actuelle : relue selon P24–P27 ;
 entrées : trois fiches phénoménologiques et une fiche lattice primaire ;
 fonction : identifier ce qui est comparable avant calcul de compatibilité ;
 ne vaut pas : moyenne, combinaison statistique, test de tension définitif ou verdict T1.
@@ -128,22 +129,42 @@ valeur lattice.
 | présentation des incertitudes | associée à plusieurs choix | symétrique, asymétrique, séparée, variance détaillée |
 | cause de l’écart tau | non identifiable | HFLAV/Belle expliquent le déplacement interne entre analyses tau, non l'écart aux autres chaînes |
 
-## 8. Porteur provisoire de la cohérence par chaîne
+## 8. Objet de contrôle ou relation testée dans chaque chaîne
 
 ```text
-tau : compatibilité spectre–FESR–corrections–transport ;
-NNPDF : cohérence du système corrélé alpha_s + PDF avec le jeu global ;
-formes : cohérence multi-échelles du running et de la séparation perturbatif / NP ;
-lattice : cohérence de deux routes non perturbatives vers Lambda_MSbar^(3), puis matching.
+tau : articulation spectre–FESR–corrections–transport ;
+NNPDF : système corrélé alpha_s + PDF avec le jeu global ;
+formes : évolution multi-échelles et séparation perturbatif / non perturbatif ;
+lattice : deux routes non perturbatives vers Lambda_MSbar^(3), puis matching.
 ```
 
-Le dénominateur commun n’est donc pas une opération identique. Il est :
+Ces éléments ne constituent pas un porteur physique commun. Le dénominateur comparatif
+est seulement :
 
 > la possibilité de rapporter des chaînes hétérogènes à une même définition de
 > `alpha_s^(5)(m_Z)` tout en conservant les transformations, schémas et incertitudes qui
 > conditionnent chaque détermination.
 
-## 9. Résultat de T1.4
+## 9. Résultat quantitatif, soutien probatoire et verdict
+
+```text
+résultat quantitatif :
+  quatre sorties finales rapportées à une référence conventionnelle commune ;
+  six différences centrales décrites sans homogénéisation artificielle des incertitudes ;
+
+mode de soutien probatoire :
+  documentation des trois chaînes phénoménologiques ;
+  reproduction computationnelle aval du pipeline ALPHA à partir de produits condensés ;
+  comparaison structurelle des objets, transformations, incertitudes et corrélations ;
+
+verdict autorisé :
+  comparabilité conditionnelle établie ;
+  équivalence des chaînes refusée ;
+  compatibilité statistique globale suspendue faute de covariance inter-chaînes ;
+  cohérence physique commune non démontrée.
+```
+
+## 10. Résultat de T1.4
 
 ```text
 comparabilité numérique finale : établie sous convention commune ;
