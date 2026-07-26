@@ -30,19 +30,22 @@ rédactionnelle.
 Lire dans cet ordre :
 
 1. le [README de la racine](../README.md) — statut, questions publiques et nom historique du dépôt ;
-2. la [note de clôture de l’audit de portée](Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) — état de phase et dettes conservées ;
-3. les [ajustements directeurs D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) — contrôles actifs de maintien, portée et chemin ;
-4. le [verdict final de l’audit](Verdict_final_audit_portee_regimes_constance_v0_1.md) — autorité de la décision et rang de `Q3` ;
-5. le [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) — critère indexé, statuts et discipline terminologique ;
-6. la [décision de rang sur l’objet, l’accès et la constitution](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — garde-fou canonique ;
-7. le [glossaire](../GLOSSAIRE.md) — terminologie active après `P24` à `P26` ;
-8. l’[accueil central des cycles](../02_CYCLES_PHYSIQUES/README.md) — résultats et dettes locales ;
-9. la [vue d’ensemble globale v0.4](Vue_ensemble_globale_v0_4.md) — architecture générale conservée comme état du 18 juillet 2026 ;
-10. les preuves et synthèses du cycle concerné.
+2. la [note de synthèse méthodologique v1.6](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_6.md) — recherche, gouvernement du corpus et contrainte des LLM ;
+3. la [note de clôture de l’audit de portée](Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) — état de phase et dettes conservées ;
+4. les [ajustements directeurs D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) — contrôles actifs de maintien, portée et chemin ;
+5. le [verdict final de l’audit](Verdict_final_audit_portee_regimes_constance_v0_1.md) — autorité de la décision et rang de `Q3` ;
+6. le [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) — critère indexé, statuts et discipline terminologique ;
+7. la [décision de rang sur l’objet, l’accès et la constitution](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — garde-fou canonique ;
+8. la [thèse-noyau v0.3](Premier_degagement_these_v0_3.md) — formulation active de T0 ;
+9. la [matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) — rangs, cas et questions ouvertes ;
+10. le [glossaire](../GLOSSAIRE.md) — terminologie active après `P24` à `P26` ;
+11. l’[accueil central des cycles](../02_CYCLES_PHYSIQUES/README.md) — résultats et dettes locales ;
+12. la [vue d’ensemble globale v0.4](Vue_ensemble_globale_v0_4.md) — architecture générale conservée comme état du 18 juillet 2026 ;
+13. les preuves et synthèses du cycle concerné.
 
 La [feuille de route post-consolidation v0.1](Feuille_route_post_consolidation_v0_1.md),
-la vue globale v0.4 et l’index v1.5 restent des états programmatiques ou documentaires
-datés. Ils ne sont pas harmonisés rétroactivement.
+la vue globale v0.4, l’index v1.5 et les états théoriques antérieurs restent des
+documents datés. Ils ne sont pas harmonisés rétroactivement.
 
 ## 2. État courant du programme
 
@@ -51,7 +54,7 @@ main : consolidation, C2, audit, maintenance factuelle et D1–D5 intégrés ;
 P23 : hiérarchie de provenance et glissements canoniques — close ;
 P24 : stabilisation, porteur du test et fixité qualifiée — close ;
 P25 : raccordement des statuts aux énoncés indexés — close ;
-P26 / T3 : usages de « constante effective » — décision appliquée, close après vérification ;
+P26 / T3 : usages de « constante effective » — décision appliquée, close ;
 #27 : prochaine unité méthodologique — borne, invariance et conflit entre accès ;
 P2 — cycle 1 / QCD : prochaine reprise scientifique de fond ;
 T1 : opération interne de P2 ;
@@ -63,10 +66,13 @@ Q3 : contrôle interne de portée, non public.
 
 | Document | Fonction |
 |---|---|
+| [Note méthodologique v1.6](../01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_6.md) | distingue recherche publique, gouvernement interne, contrainte des LLM et régimes exploration / ratification |
 | [Cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) | qualifie des énoncés indexés et refuse la classe transversale de constantes effectives |
 | [Décision objet / accès / constitution](../01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) | interdit les migrations silencieuses de rang |
+| [Thèse-noyau v0.3](Premier_degagement_these_v0_3.md) | formule T0 comme règle normative d’admission, refus ou suspension |
+| [Matrice théorique v0.3](Matrice_degagements_theoriques_v0_3.md) | distribue les propositions entre cible, constitution et accès |
 | [Verdict final](Verdict_final_audit_portee_regimes_constance_v0_1.md) | clôt le diagnostic et autorise l’application bornée |
-| [Ajustements D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) | rend actifs les contrôles de maintien, porteur, transformation, portée et chemin |
+| [Ajustements D1–D5](../01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) | rend actifs les contrôles de maintien, porteur du test, transformation, portée et chemin |
 | [Clôture de phase](Cloture_phase_audit_portee_et_application_D1_D5_v0_1.md) | constate l’achèvement de l’audit, de la maintenance et de l’application |
 | [Glossaire](../GLOSSAIRE.md) | référence rapide après requalification de `stabilisation`, `porteur du test`, `fixité qualifiée` et `constante effective` |
 | [Guide des agents](../AGENTS.md) | règle la précédence temporelle, les deux régimes de travail et la discipline des LLM |
@@ -156,7 +162,7 @@ La fécondité exploratoire ne produit aucune ratification rétroactive.
 
 | Cycle | Point d’entrée courant | Dette |
 |---|---|---|
-| 1 | synthèse de récupération ; cadrage QCD–T1 sur branche dédiée | comparer les chaînes d’extraction de `alpha_s` et identifier le porteur effectif de la cohérence |
+| 1 | synthèse de récupération ; cadrage QCD–T1 sur branche dédiée | comparer les chaînes d’extraction de `alpha_s` et identifier la cible effective de la cohérence |
 | 2 | synthèse de récupération électrofaible | reprise sectorielle différée |
 | 3 | synthèse active après N5 et résultats C2 v0.2 | T2 parallèle sur les sensibilités résiduelles |
 | 4 | synthèse thermodynamique et métrologique | chaînes de réalisation et covariances |
@@ -177,6 +183,9 @@ réécrits rétroactivement :
 - `Vue_ensemble_globale_v0_4.md` ;
 - `Feuille_route_post_consolidation_v0_1.md` ;
 - `Index_raisonne_du_corpus_v1_3.md`, `v1_4.md` et `v1_5.md` ;
+- `Note_synthese_methodologique_v1_5.md` ;
+- `Premier_degagement_these_v0_2.md` ;
+- `Matrice_degagements_theoriques_v0_2.md` ;
 - `Diagnostic_orientation_cycle_zero_v0_1.md` ;
 - les essais, sources et extractions antérieurs aux décisions P23–P26.
 
@@ -203,11 +212,10 @@ source ou archive : provenance sans autorité active par défaut.
 ## 11. Prochaine unité
 
 ```text
-1. vérifier l’application documentaire de P26 et clore l’issue #26 ;
-2. instruire #27 sur deux cas adversariaux : borne, invariance et conflit d’accès ;
-3. ne créer aucune catégorie supplémentaire avant le test ;
-4. poursuivre ensuite la reprise scientifique du cycle 1 / QCD ;
-5. conserver T2 en parallèle et Q3 comme contrôle interne.
+1. instruire #27 sur deux cas adversariaux : borne, invariance et conflit d’accès ;
+2. ne créer aucune catégorie supplémentaire avant le test ;
+3. poursuivre ensuite la reprise scientifique du cycle 1 / QCD ;
+4. conserver T2 en parallèle et Q3 comme contrôle interne.
 ```
 
 Le test #27 doit pouvoir produire une insuffisance réelle du vocabulaire existant. Il
