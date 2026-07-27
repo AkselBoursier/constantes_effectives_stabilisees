@@ -12,16 +12,18 @@ provenance       : #60 — D9 ; #61 — A0–A5 ; #62 — P29 ;
 archivage        : décision séparée #64 (rien d'initialisé ici) ;
 branche          : comp/c7-c1-comparaison-commune ;
 base             : origin/main = 5e088d1 (vérifié G1.0) ;
-porte courante   : G1.0 — environnement, octets, configurations,
-                   tests de chargement. AUCUN échantillonnage.
+porte courante   : G1.2 — qualification de la vraisemblance commune.
+                   AUCUN échantillonnage.
 ```
 
 ## Portes (résumé de #63)
 
 - G0 — provenance et spécification : **close et ratifiée** (G0.6) ;
-- G1.0 — environnement isolé, acquisition vérifiée des octets BAO,
-  transcription des configurations, tests de chargement et de point :
-  **en cours, rapport soumis à validation humaine** ;
+- G1.0 — environnement, octets, configurations, tests de point :
+  **validée** (commentaire G1.2 de #63) ;
+- G1.2 — qualification de la vraisemblance commune (repondération CMB
+  publique, contrôle BAO stock, prior joint, tolérances) : **exécutée,
+  rapport soumis à validation humaine** (`reports/rapport_G1_2.md`) ;
 - G1 — contrôles officiels (reproduction LambdaCDM et CPL) : non ouverte ;
 - G2 — validation de X(z) ; G3 — comparaison commune ; G4 — verdict.
 
