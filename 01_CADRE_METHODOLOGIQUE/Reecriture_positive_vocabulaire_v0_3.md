@@ -188,6 +188,39 @@ forme complete : la fenetre effective fixe un regime calculatoire admissible
 La seconde phrase de chaque paire ne supprime pas la limite. Elle ajoute le
 contenu positif dont cette limite fixe la portee.
 
+#### 4.6 Registres de modalite (ajout 2026-07-27)
+
+Une formule ne porte pas seulement un statut probatoire (echelle P1-P6
+d'Audit_solidite) : elle porte une modalite. Trois registres se
+distinguent a l'ecriture, et se marquent chacun a sa maniere.
+
+```text
+A. consensuel (fait etabli, consensus disciplinaire) :
+   assertion directe, adossee a sa source ; registre du constat.
+
+B. debattu (positions en conflit dans la litterature) :
+   attribution explicite des theses en presence, sans arbitrage
+   - "X soutient..., Y objecte..." -, en se tenant au niveau tiers.
+
+C. ce que l'argument pousse a dire (conclusion propre du raisonnement) :
+   assertion assumee au titre de l'argument - ni aplatie en hypothese
+   timide (ce serait mutiler), ni deguisee en constat de source
+   (ce serait usurper) ; premisses tracables, abstentions declarees.
+```
+
+Regle-cle : l'echelle probatoire P1-P6 note le statut d'une SOURCE, non
+la validite d'un ARGUMENT. Elle gouverne le registre A (et la seule part
+empirique du registre C), non le registre C lui-meme ; appliquer P1-P6 a
+la lettre a une conclusion argumentative reviendrait a la retrograder a
+tort en simple proposition (erreur de categorie). Le registre C se
+garantit par la validite du raisonnement et par la declaration de ses
+abstentions.
+
+Cette clause prolonge la charite de rang (4.4) et la completude
+informative (4.5) : ou 4.4 ordonne la description des positions et 4.5
+assure l'acces au positif, 4.6 fixe la modalite d'assertion propre a
+chaque registre.
+
 ### 5. Exceptions controlees
 
 Quatre genres conservent une forme negative, parce que la negation y

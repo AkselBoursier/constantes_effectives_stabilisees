@@ -5,7 +5,7 @@
 ### 0. Statut documentaire
 
 ```text
-statut : note d'orientation soumise a validation ;
+statut : note d'orientation - pivot vers la question de formation (Q2) active le 2026-07-27 (decision de l'auteur), la dormance ayant fait la preuve de son utilite ;
 elle ne modifie ni la methode v1.3, ni la carte v1.3, ni les non-theses ;
 elle prepare le Plan de livrable theorique v0.1 ;
 les references externes de la section 6 ont ete verifiees par recherche
@@ -414,7 +414,7 @@ philosophie des EFT
 venues possibles : Studies in History and Philosophy of Science,
 European Journal for Philosophy of Science, Synthese,
 Foundations of Physics ; en francais : Philosophia Scientiae, Lato Sensu
-statut : le corpus le permet deja ; c'est le livrable de Q1.
+statut : le corpus le permet deja ; c'est le livrable de Q1. [decision 2026-07-27 : l'essai « Qualifier la constance » (fusionne, PR #59) est un article autonome realisant Q1, distinct du papier A monographie ; le dispositif papier A / A1 / A2 / B est decouple de l'essai et a re-actualiser.]
 ```
 
 #### 8.2 Papier B : l'angle distinctif

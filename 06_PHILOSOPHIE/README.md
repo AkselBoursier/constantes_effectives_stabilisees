@@ -151,7 +151,10 @@ Ordre de la suite (decide en juillet 2026) :
    B sont ouvertes, sous reserves de lectures integrales listees
    dans chaque fiche (Massimi 2022 ; Tal 2018 ; volume Routledge
    2019 ; Papale 2024 ; Wolff 2020) ;
-   la suite se decide au guichet : plan de livrable du papier A,
+   la suite se decide au guichet [decision 2026-07-27 : l'essai « Qualifier
+   la constance » fusionne (PR #59) est un article autonome, distinct du
+   papier A / A1 / A2 ; ce dispositif de livrables est decouple de l'essai
+   et a re-actualiser] : plan de livrable du papier A,
    ou deuxieme cycle (V1-V2 ont amorce son axe), ou voisinages
    V3-V6 restants ;
 3. deuxieme cycle programme : conditions d'acces et constitution
@@ -184,6 +187,10 @@ Ordre de la suite (decide en juillet 2026) :
 8. releve de paysage brisure electrofaible : produit comme
    preparation du seuil electrofaible et de la jonction
    d'historicite cosmique, sans ouverture du chantier et sans
-   extraction de fil ; sas de cadrage correspondant :
+   extraction de fil ; cote physique, la zone de jonction BEH est
+   desormais instruite par le cycle 5 (Saveur-Higgs, cas electron), le
+   raccordement philosophique etant ouvert le 2026-07-27 comme chantier,
+   sous le sas de cadrage ; sas
+   de cadrage correspondant :
    05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md.
 ```

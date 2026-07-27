@@ -7,7 +7,9 @@
 ```text
 statut : programme de cycle (branche 06_PHILOSOPHIE), soumis a
 validation pour son contenu, sans effet sur l'ordre d'execution en
-cours : V1 (Massimi) reste le prochain geste, puis V2 ;
+cours : V1 (Massimi) et V2 (coordination) sont desormais produits
+(Voisinage_01_Massimi_v0_1.md ; Voisinage_02_Coordination_v0_1.md),
+la suite se decidant au guichet ;
 horizon : une monographie se prepare en arriere-plan ; elle est un
 horizon, pas un livrable programme - le present cycle travaille par
 curiosite et epaississement, sans enjeu de calendrier ;
@@ -134,9 +136,10 @@ laisse pas formuler dans ce vocabulaire, elle reste hors corpus.
 3. les exportations vers la methode ou les degagements passent par
    le circuit de validation ; le cycle epaissit la philosophie,
    il ne reecrit pas le cadre ;
-4. l'ordre d'execution global reste celui du README : V1, V2, puis
-   ce cycle - sauf decision contraire ; V1 et V2 se liront
-   desormais aussi avec l'axe du cycle en tete (la constitution
+4. l'ordre d'execution global reste celui du README ; V1 et V2 etant
+   desormais produits, ce cycle vient apres eux - sauf decision
+   contraire ; V1 et V2, produits, se lisent desormais aussi avec
+   l'axe du cycle en tete (la constitution
    chez Massimi, la coordination comme constitution chez Tal) ;
 5. la monographie reste un horizon : aucun document du cycle ne
    s'ecrit comme chapitre.

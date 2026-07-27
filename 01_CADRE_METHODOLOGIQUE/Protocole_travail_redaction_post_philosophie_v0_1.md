@@ -157,8 +157,11 @@ Ordre d'usage :
 1. Q2 presuppose Q1 ;
 2. les plans A1/A2 relevent de Q1 ;
 3. H1 et la formation physique / epistemique relevent de Q2 ;
-4. l'horizon anthropique, C6 et BEH restent des zones de jonction
-   a cadrer separement ;
+4. l'horizon anthropique et C6 restent des zones de jonction a cadrer
+   separement ; BEH est desormais instruit cote physique par le cycle 5
+   (cas electron : masse physique, Yukawa, vertex H-e-e), mais son
+   raccordement philosophique est ouvert le 2026-07-27 comme chantier,
+   sous le sas d'integration ;
 5. aucune reserve programmatique ne devient argument central sans
    condition d'entree explicite.
 ```
@@ -176,7 +179,7 @@ travail : branche d'integration quotidienne.
 Regle de commit :
 
 ```text
-1. message : docs: <imperatif anglais, une ligne> ;
+1. message : une ligne en francais, alignee sur la pratique du corpus (prefixe de cycle ou de decision quand il s'applique, p. ex. "D9 : ..." ou "Cycle 7 — ...") ; l'ancienne convention "docs: <imperatif anglais>" est caduque (vieille habitude anti-encodage), le corpus ecrivant en francais accentue ;
 2. un cycle de travail coherent par commit, sauf sauvegarde necessaire ;
 3. commit local apres verification proportionnee ;
 4. push seulement aux jalons substantiels ou sur demande explicite ;

@@ -6,6 +6,7 @@
 
 ```text
 statut : plan actif resserré ;
+décision 2026-07-27 : l'essai « Qualifier la constance » (fusionné dans main, PR #59) est un article autonome, distinct de ce papier A (monographie grande voilure) et des plans A1/A2 ; ce dispositif de livrables est donc découplé de l'essai et à ré-actualiser au regard de l'avancement ;
 remplace pour l’usage courant : Plan_livrable_papier_A_v0_1.md ;
 conserve la v0.1 : comme plan de grande voilure et réservoir ;
 format visé : premier article autonome, centré sur la constance de l’objet ;

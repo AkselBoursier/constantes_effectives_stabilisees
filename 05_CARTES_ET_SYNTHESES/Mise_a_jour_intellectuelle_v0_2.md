@@ -1,5 +1,7 @@
 # Mise a jour intellectuelle v0.2
 
+> **Declassement (2026-07-27, rang genealogie).** Sont declassees : la clause de perimetre "ne remplace ni la carte v1.3 ni l'index v1.0" (l'index actif est desormais v2.2/v2.3) ; la correction du poids surgeneralise du SI (deja appliquee conceptuellement). L'Avis de rang du 16 juillet 2026, qui demet deja ce document comme bilan courant, reste valable.
+
 > **Avis de rang — 16 juillet 2026.** Ce document demeure une synthese
 > transversale de son etat de recherche, mais n'est plus le bilan general
 > courant. La question de qualification y conserve une valeur locale sans
@@ -297,7 +299,7 @@ seuil d'action controle.
 | Test de retrait | Durcissement requis |
 | Plans de livrables | A resserrer apres la mise a jour v0.2 |
 | Pan philosophique | A garder comme instrument, non comme doctrine |
-| Mecanisme Brout-Englert-Higgs (BEH) / secteur scalaire | Zone de jonction a cadrer avant extension |
+| Mecanisme Brout-Englert-Higgs (BEH) / secteur scalaire | Zone de jonction desormais instruite cote physique par le cycle 5 (cas electron : masse physique, Yukawa, vertex H-e-e ; lot S1-S3) ; raccordement conceptuel ouvert le 2026-07-27 comme chantier ; sous le sas d'integration |
 
 ### 9. Strategie de synchronisation
 

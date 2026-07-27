@@ -1,5 +1,7 @@
 # Programme des cycles C4 et C5, et de la jonction d'historicite cosmique (C6) v0.1
 
+> **Declassement (2026-07-27, rang genealogie - conserve, inactif).** Sont declassees, executees : l'instruction et l'execution du cycle C5 (exportabilite) et son verdict (tests C5-1 a C5-4 produits, verdict d'exportabilite borne rendu, cf. README section 6) ; la contrainte d'ordre "V1, V2, puis cycles" (V1/V2 produits, C5 execute). Le volet C4 reste a re-decider ; la jonction C6 est desormais un chantier de raccordement ouvert (voir la note d'etat plus bas).
+
 ## Vie materielle, exportabilite, historicite cosmique
 
 ### 0. Statut documentaire
@@ -129,6 +131,10 @@ L'historicite cosmique est donc une jonction, hors serie
 philosophique :
 la regle d'arret des cinq cycles reste intacte, et cette jonction
 vivra cote physique si elle vit.
+[etat au 2026-07-27 : la jonction vit desormais cote physique - le
+cycle 7 cosmologique est ouvert (issue #61, DESI DR2 Lambda / w(z)) -
+et son raccordement philosophique est ouvert comme chantier, sous le
+sas d'integration, sur decision de l'auteur.]
 ```
 
 #### 3.3 Test de faisabilite avant toute decision

@@ -1,5 +1,7 @@
 # Cadrage d'ouverture du pan philosophique v0.1
 
+> **Declassement (2026-07-27, rang genealogie).** Sont declassees, honorees : les contraintes d'anteriorite de ce cadrage (il devait preceder Extraction, Table et Plan_instruction) et l'ordre de production de la Carte_foyers - toutes les sorties visees existent. Le contenu de cadrage (les dix foyers, la sequence P0-P7) reste disponible, a re-evaluer avec le programme d'echelles.
+
 ## 0. Statut documentaire
 
 ```text
