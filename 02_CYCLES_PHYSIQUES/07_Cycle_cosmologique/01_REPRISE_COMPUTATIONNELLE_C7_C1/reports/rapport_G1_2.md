@@ -10,7 +10,9 @@ officielle. Aucun chemin absolu local.
 ```text
 branche poussée sans réécriture : comp/c7-c1-comparaison-commune ;
 PR brouillon : #65 (base main, liée à #63) — AUCUN MERGE ;
-contenu vérifié via l'API : exactement les 12 fichiers déclarés de G1.0 ;
+contenu vérifié via l'API au push initial : les 12 fichiers déclarés de
+G1.0 ; après le commit G1.2, la PR contient 17 fichiers = 12 (G1.0)
++ 5 ajouts (G1.2) ;
 données externes suivies : aucune.
 ```
 
@@ -29,14 +31,19 @@ Décision de méthode, après deux tentatives d'émulation documentées :
   en LambdaCDM (3D) mais échoue en CPL (5D) ;
 - l'enrichissement (deg 6, 3000 points, étage RBF, queue de Mahalanobis
   exacte à 5 %) plafonne à 0,0165 sigma_theta : le diagnostic aux pires
-  points de validation montre que TOUS se situent sur ou près de la
-  surface de croisement fantôme w(a) = -1 — l'implémentation PPF y
-  introduit un pli non-analytique de theta_star qu'aucun émulateur lisse
-  ne suit au niveau requis ;
-- contrôle du plancher CAMB : perturbations relatives 1e-9 des entrées →
-  variations ~1e-12 ; AccuracyBoost=2 → +2,2e-10 (0,0001 sigma_theta).
-  CAMB 1.5.4 est déterministe et convergé : le défaut venait de
-  l'émulation, pas de la cible.
+  points de validation montre que TOUS se situent sur ou près du
+  croisement w(a) = -1. Constat borné : l'échec de l'émulation lisse est
+  LOCALISÉ près de ce croisement ; le mécanisme précis n'est pas établi
+  (CAMB présente PPF comme une approximation destinée à permettre ce
+  franchissement de manière lissée — l'attribution d'un « pli » à PPF
+  reste donc suspendue) ;
+- tests de sensibilité et de convergence numérique de la cible :
+  perturbations relatives 1e-9 des entrées → variations ~1e-12 de
+  theta_star (sensibilité aux entrées) ; AccuracyBoost=2 → +2,2e-10
+  (0,0001 sigma_theta ; contrôle de convergence numérique). Ces tests ne
+  constituent pas une mesure directe de répétabilité, mais ils bornent la
+  variabilité numérique de la cible très au-dessous des résidus
+  d'émulation observés : l'écart venait de l'émulation, pas de la cible.
 
 **Mode directeur retenu : EXACT INTÉGRAL** — un appel CAMB 1.5.4 par
 échantillon (107 532 CPL + 46 828 LambdaCDM), aucune émulation, aucune
@@ -178,8 +185,9 @@ T5 — CMB : chi2 de CMB_compressed_public_DR2_rounded est LA définition du
      chaînes historiques est celui mesuré et accepté par la repondération
      (0.013 sig / 0.22 % / 0.069, critères 0.10 sig / 2 % / 0.2) ;
 T6 — theta_star : calcul CAMB exact en production (jamais d'émulation) ;
-     reproductibilité mesurée : 1e-12 (perturbations 1e-9),
-     2.2e-10 = 0.0001 sig (AccuracyBoost x2) ;
+     tests de sensibilité/convergence numérique : ~1e-12 sous
+     perturbations 1e-9 des entrées ; 2.2e-10 = 0.0001 sig sous
+     AccuracyBoost x2 (bornes numériques, non répétabilité directe) ;
 T7 — reproduction des ancrages G0.1 §4 par le futur MCMC G1 :
      déplacement des moyennes <= 0.10 sigma vs valeurs publiées, largeurs
      68 % à ±5 % — à re-ratifier au vu des sorties G1.
@@ -194,7 +202,8 @@ décision distincte : #64.
 ## 7. État
 
 ```text
-push + PR brouillon (#65) : faits, 12 fichiers vérifiés, aucun merge ;
+push + PR brouillon (#65) : faits ; PR = 12 fichiers G1.0 + 5 ajouts
+  G1.2 (17 au total), aucun merge ;
 repondération CMB complète : exécutée en exact intégral,
   4 critères d'acceptation PASSÉS ;
 contrôle BAO secondaire : triangle bindings/transcription/stock fermé

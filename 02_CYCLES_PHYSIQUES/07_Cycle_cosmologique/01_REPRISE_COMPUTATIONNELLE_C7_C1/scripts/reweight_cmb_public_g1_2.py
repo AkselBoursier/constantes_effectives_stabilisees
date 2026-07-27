@@ -12,10 +12,10 @@ c7c1_likelihoods.CmbCompressedPR4 ; mêmes mu et C ici).
 
 theta_star est évalué selon le mode choisi :
 - degree=0 : MODE EXACT INTÉGRAL — un appel CAMB par échantillon, aucune
-  émulation. Mode directeur retenu pour G1.2 : l'implémentation PPF
-  introduit un pli non-analytique de theta_star le long de la surface de
-  croisement w(a) = -1, que les émulateurs lisses (polynôme, RBF) ne
-  suivent pas au niveau requis (diagnostic consigné dans reports/).
+  émulation. Mode directeur retenu pour G1.2 : les erreurs des émulateurs
+  lisses (polynôme, RBF) se concentrent près du croisement w(a) = -1,
+  sans que le mécanisme précis soit établi (diagnostic consigné dans
+  reports/) ; règle T6 : CAMB exact en production.
 - degree>0 : mode hybride historique (émulateur polynomial + étage RBF
   conditionnel, validé sur points CAMB tenus à l'écart, queue Mahalanobis
   exacte) ; le script S'ARRETE si la validation du coeur dépasse le seuil.
