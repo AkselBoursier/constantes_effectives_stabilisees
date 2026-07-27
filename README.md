@@ -9,13 +9,13 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 > généalogique ; il ne désigne plus une classe générale et n’impose pas le vocabulaire
 > d’une publication.
 
-> **Statut condensé au 26 juillet 2026.** Les décisions méthodologiques `P23–P28`
+> **Statut condensé au 27 juillet 2026.** Les décisions méthodologiques `P23–P28`
 > sont validées, appliquées et amendées pour distinguer exploration et ratification.
 > Le cycle 1 a intégré `T1.1–T1.8`, le dossier `alpha` α1–α5 et le premier lot
-> `m_p/m_e` R1–R3. Ces trois séquences locales sont closes dans leur périmètre ; le
-> cycle reste ouvert, largement instruit dans son premier périmètre, et son point
-> d’entrée actif est la synthèse v0.4. La nécessité d’un dossier autonome `m_e` doit
-> encore être arbitrée. `T2` reste parallèle et `Q3` demeure un contrôle interne.
+> `m_p/m_e` R1–R3. Son premier périmètre est clos ; le cycle est suspendu et
+> réouvrable sous conditions. La dette autonome `m_e` a été transférée vers le cycle
+> Saveur–Higgs sous la forme `masse physique / Yukawa / échelle de brisure / accès
+> direct au Higgs`. `T2` reste parallèle et `Q3` demeure un contrôle interne.
 
 ## Point d’entrée humain
 
@@ -26,9 +26,11 @@ Lire d’abord :
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md), pour l’état détaillé, la navigation et le rang des documents.
 
-Pour le cycle 1, lire la [synthèse active après T1, alpha et m_p/m_e v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md). La [synthèse active v0.3 après alpha](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md), la [synthèse active v0.2 après T1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md) et la [synthèse de récupération v0.1](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md) restent des états antérieurs.
+Pour le cycle 1, lire d’abord la [synthèse active de clôture du premier périmètre v0.5](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md), puis la [synthèse scientifique détaillée v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md). Les synthèses v0.3, v0.2 et v0.1 restent des états antérieurs.
+
+Pour la dette transférée, consulter la [note active masse électronique / Yukawa](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md). Elle fixe le périmètre minimal sans ouvrir automatiquement un lot scientifique.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
@@ -109,6 +111,8 @@ usage historique ou disciplinaire du mot constante.
 ```
 
 Aucune catégorie `constance contestée`, `constance bornée` ou équivalente n’est ajoutée.
+Les termes `clos` et `suspendu` employés pour un cycle qualifient l’état d’un programme
+de travail, non une forme de constance.
 
 ## Accès et soutien probatoire
 
@@ -191,10 +195,13 @@ premier lot `m_p/m_e` a confirmé qu’une structure compacte suffit lorsque les
 distinctions acquises sont réutilisées par référence et que seules les subdivisions
 qui changent le verdict, le rang, la cible ou la décision scientifique sont conservées.
 
+D7 ajoute une règle de sortie : une dette transférée vers son cycle d’accueil ne doit
+pas maintenir artificiellement ouvert son cycle d’origine.
+
 La règle de remplacement d’une couche existante s’applique à la promotion durable,
 non à la naissance d’un support exploratoire temporaire.
 
-## Résultats locaux du cycle 1 après la propagation de `m_p/m_e`
+## Résultats locaux et statut du cycle 1 après D6–D7
 
 ```text
 QCD–T1 :
@@ -220,16 +227,18 @@ m_p/m_e :
   constitution QCD / secteur électrofaible ;
   séparation des variations de m_p et m_e refusée sans modèle ;
 
-séquences locales QCD–T1, alpha et premier lot m_p/m_e :
-  closes ;
+premier périmètre du cycle 1 :
+  clos ;
 
 cycle 1 :
-  ouvert et largement instruit dans son premier périmètre ;
+  suspendu et réouvrable sous conditions ;
 
-prochaine décision :
-  arbitrer la nécessité d’un dossier autonome m_e,
-  son déplacement vers Saveur–Higgs,
-  ou la clôture/suspension du premier périmètre du cycle 1.
+m_e :
+  dette restante transférée vers Saveur–Higgs ;
+
+prochaine décision éventuelle :
+  comparer l’ouverture du lot compact Saveur–Higgs S1–S3
+  aux autres dettes scientifiques du programme.
 ```
 
 ## Les cycles physiques
