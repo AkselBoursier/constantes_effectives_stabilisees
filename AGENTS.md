@@ -1,7 +1,7 @@
 # Guide d’amorçage pour agents
 
 Ce fichier complète le [README](README.md). Lire les deux avant toute modification
-substantielle, puis consulter l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md) pour l’état détaillé.
+substantielle, puis consulter l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md) pour l’état détaillé.
 
 ## 1. Mission
 
@@ -17,11 +17,11 @@ La question de portée physique, épistémologique ou ontologique (`Q3`) reste u
 contrôle interne obligatoire et non public.
 
 État condensé : la séquence méthodologique `P23–P28` est appliquée et amendée. Le
-cycle 1 a intégré `T1.1–T1.8`, le dossier `alpha` α1–α5 et le premier lot
-`m_p/m_e` R1–R3. Ces séquences locales sont closes dans leur périmètre. Le cycle
-reste ouvert et largement instruit dans son premier périmètre ; la nécessité d’un
-dossier autonome `m_e` doit être arbitrée. Ne pas recopier ici l’état détaillé :
-l’index courant en est le point de référence.
+premier périmètre du cycle 1, comprenant QCD–T1, `alpha` et le premier lot
+`m_p/m_e`, est clos. Le cycle 1 est suspendu et réouvrable sous conditions. La dette
+restante `m_e` est transférée vers Saveur–Higgs et n’ouvre pas automatiquement un lot
+scientifique. Ne pas recopier ici l’état détaillé : l’index courant en est le point de
+référence.
 
 ## 2. Premier parcours
 
@@ -30,11 +30,13 @@ l’index courant en est le point de référence.
 3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
-6. Consulter l’[index raisonné v2.1](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md).
-7. Pour le cycle 1, lire la [synthèse active après T1, alpha et m_p/m_e v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md).
-8. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
-9. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
-10. Ne lire ensuite que la couche nécessaire.
+6. Consulter l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md).
+7. Pour le statut courant du cycle 1, lire la [synthèse active de clôture v0.5](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md).
+8. Pour ses résultats scientifiques détaillés, lire la [synthèse v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md).
+9. Pour la dette transférée, lire la [note active masse électronique / Yukawa](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md).
+10. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
+11. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
+12. Ne lire ensuite que la couche nécessaire.
 
 ## 3. Précédence documentaire
 
@@ -114,6 +116,10 @@ usage historique ou disciplinaire du mot constante.
 
 Ne pas créer `constance contestée`, `constance bornée` ou toute catégorie équivalente
 à partir d’un état de preuve ou d’une controverse.
+
+`Clos` et `suspendu`, lorsqu’ils qualifient un cycle ou un périmètre, sont des statuts
+de programme documentaire et scientifique. Ils ne doivent pas être importés dans la
+taxonomie des constances.
 
 ## 6. Accès et soutien probatoire — P27
 
@@ -286,7 +292,10 @@ subdiviser seulement si la subdivision change
 proportionner la profondeur au gain discriminant.
 ```
 
-## 10. État local du cycle 1
+Une dette transférée vers son cycle d’accueil ne maintient pas artificiellement ouvert
+son cycle d’origine. Elle peut rester active sans qu’un lot scientifique soit ouvert.
+
+## 10. État local du cycle 1 et dette transférée
 
 ```text
 T1.1–T1.8 : intégrés et ratifiés dans leur périmètre ;
@@ -308,18 +317,23 @@ accès à la variation : familles et domaines distingués ;
 constitution : proton QCD / électron électrofaible ;
 séparation de variations de m_p et m_e : refusée sans modèle ;
 
-dettes ouvertes : nécessité d’un dossier autonome m_e,
-                   matériaux pour un test global futur de alpha_s ;
-cycle 1 : ouvert et largement instruit dans son premier périmètre ;
-point d’entrée : synthèse active v0.4 ;
-prochaine décision : arbitrer m_e autonome,
-                     déplacement vers Saveur–Higgs,
-                     ou clôture/suspension du premier périmètre.
+premier périmètre du cycle 1 : clos ;
+cycle 1 : suspendu et réouvrable sous conditions ;
+activité courante dans le cycle 1 : aucune ;
+point d’entrée de statut : synthèse active de clôture v0.5 ;
+point d’entrée scientifique détaillé : synthèse v0.4 ;
+
+dette m_e : transférée vers Saveur–Higgs ;
+question active : m_e / y_e / v / accès direct au Higgs ;
+lot S1–S3 : non ouvert ;
+
+test global alpha_s : suspendu faute de matériaux.
 ```
 
 Ne pas rouvrir T1, `alpha` ou le premier lot `m_p/m_e` sans nouveaux matériaux
-modifiant leur verdict. Ne pas étendre leurs résultats aux autres cycles ou au cadre
-canonique sans instruction et validation distinctes.
+modifiant leur verdict. Ne pas rouvrir le cycle 1 pour dupliquer la dette `m_e`.
+Ne pas ouvrir S1–S3 automatiquement : comparer d’abord cette dette aux autres priorités
+scientifiques du programme.
 
 ## 11. Règles de modification
 
