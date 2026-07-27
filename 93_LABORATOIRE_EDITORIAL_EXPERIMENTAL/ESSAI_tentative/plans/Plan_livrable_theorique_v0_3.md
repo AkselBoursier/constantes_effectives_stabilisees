@@ -73,3 +73,5 @@ Test de permutation ; décompte des composantes ; délimitation du critère term
 ### 13. Limites du plan
 
 Les budgets restent des cibles ; garde-fou à 65 000. La lecture de de Courtenay a été menée par interrogation indexée du texte complet, non par lecture linéaire du PDF (non monté dans le conteneur) : la couverture des sections structurantes est établie, mais toute citation littérale insérée au premier jet devra être revérifiée sur le passage exact. La question des autres choix possibles de constantes définissantes est hors champ chez de Courtenay comme dans l'essai. Ce plan oblige ; il ne remplace pas la validation section par section.
+
+Au stade du polissage, une dette bibliographique reste à solder : avant tout dépôt, recouper sur le DOI les numéros de volume et de pages de Williams (2019), Koberinski et Fraser (2023) et Grégis (2019), ainsi que le numéro d'article d'Uzan (2025). Titres, auteurs, revues et années sont vérifiés à la source ; ces seuls localisateurs restent à confirmer.
