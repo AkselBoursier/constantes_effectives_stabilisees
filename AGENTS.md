@@ -1,7 +1,7 @@
 # Guide d’amorçage pour agents
 
 Ce fichier complète le [README](README.md). Lire les deux avant toute modification
-substantielle, puis consulter l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md) pour l’état détaillé.
+substantielle, puis consulter l’[index raisonné v2.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_3.md) pour l’état détaillé.
 
 ## 1. Mission
 
@@ -17,11 +17,10 @@ La question de portée physique, épistémologique ou ontologique (`Q3`) reste u
 contrôle interne obligatoire et non public.
 
 État condensé : la séquence méthodologique `P23–P28` est appliquée et amendée. Le
-premier périmètre du cycle 1, comprenant QCD–T1, `alpha` et le premier lot
-`m_p/m_e`, est clos. Le cycle 1 est suspendu et réouvrable sous conditions. La dette
-restante `m_e` est transférée vers Saveur–Higgs et n’ouvre pas automatiquement un lot
-scientifique. Ne pas recopier ici l’état détaillé : l’index courant en est le point de
-référence.
+premier périmètre du cycle 1 est clos et le cycle demeure suspendu sous conditions.
+La dette `m_e` transférée vers Saveur–Higgs a été instruite par S1–S3, localement
+résolue et propagée vers la synthèse active v0.2 du cycle 5. Le cycle 5 reste ouvert.
+Ne pas recopier ici l’état détaillé : l’index courant en est le point de référence.
 
 ## 2. Premier parcours
 
@@ -30,13 +29,14 @@ référence.
 3. Lire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md).
 4. Lire la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md).
 5. Consulter le [glossaire](GLOSSAIRE.md) avant de modifier un terme stratégique.
-6. Consulter l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md).
+6. Consulter l’[index raisonné v2.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_3.md).
 7. Pour le statut courant du cycle 1, lire la [synthèse active de clôture v0.5](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md).
 8. Pour ses résultats scientifiques détaillés, lire la [synthèse v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md).
-9. Pour la dette transférée, lire la [note active masse électronique / Yukawa](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md).
-10. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
-11. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
-12. Ne lire ensuite que la couche nécessaire.
+9. Pour le cycle 5, lire la [synthèse active Saveur–Higgs v0.2](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_active_cycle_5_Saveur_Higgs_apres_S1_S3_v0_2.md).
+10. Pour ses preuves locales, lire [S1](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/S1_Relation_structurelle_masse_electron_Yukawa_v0_1.md), [S2](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/S2_Acces_metrologiques_indirects_directs_Yukawa_electron_v0_1.md) et [S3](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/S3_Verdict_local_masse_electron_Yukawa_acces_Higgs_v0_1.md).
+11. Identifier le statut du document cible : décision, protocole, résultat local, accueil vivant, état daté, exploration, source ou archive.
+12. Situer sa date de rédaction, sa date de modification, son autorité normative et son état d’application documentaire.
+13. Ne lire ensuite que la couche nécessaire.
 
 ## 3. Précédence documentaire
 
@@ -279,8 +279,8 @@ glossaire : terminologie active.
 ### Granularité après le dossier `alpha`
 
 Le dossier `alpha` est un banc d’essai méthodologique à haute résolution, non un
-formulaire universel. Le premier lot `m_p/m_e` confirme qu’une structure compacte
-R1–R3 suffit lorsque les distinctions acquises sont réutilisées. Pour la suite :
+formulaire universel. Les lots `m_p/m_e` et `m_e / y_e / v` confirment qu’une structure
+compacte suffit lorsque les distinctions acquises sont réutilisées. Pour la suite :
 
 ```text
 réutiliser les distinctions acquises par référence ;
@@ -293,9 +293,10 @@ proportionner la profondeur au gain discriminant.
 ```
 
 Une dette transférée vers son cycle d’accueil ne maintient pas artificiellement ouvert
-son cycle d’origine. Elle peut rester active sans qu’un lot scientifique soit ouvert.
+son cycle d’origine. Une dette résolue ne doit pas rester présentée comme lot non ouvert
+dans son cycle d’accueil.
 
-## 10. État local du cycle 1 et dette transférée
+## 10. État local des cycles 1 et 5
 
 ```text
 T1.1–T1.8 : intégrés et ratifiés dans leur périmètre ;
@@ -323,17 +324,24 @@ activité courante dans le cycle 1 : aucune ;
 point d’entrée de statut : synthèse active de clôture v0.5 ;
 point d’entrée scientifique détaillé : synthèse v0.4 ;
 
-dette m_e : transférée vers Saveur–Higgs ;
-question active : m_e / y_e / v / accès direct au Higgs ;
-lot S1–S3 : non ouvert ;
+lot m_e / y_e / v S1–S3 : validé, localement clos et propagé ;
+M_e : déterminée métrologiquement ;
+y_e standard : inféré sous cadre et conventions déclarés ;
+accès indirects : dépendants de modèles de passage ;
+H → e+e− : directement borné, sans observation significative ;
+origine et hiérarchie de y_e : non expliquées ;
+dette m_e : localement résolue dans son premier périmètre ;
+cycle 5 : ouvert ;
+point d’entrée : synthèse active Saveur–Higgs v0.2 ;
 
-test global alpha_s : suspendu faute de matériaux.
+test global alpha_s : suspendu faute de matériaux ;
+prochaine dette scientifique : non arbitrée par la propagation.
 ```
 
-Ne pas rouvrir T1, `alpha` ou le premier lot `m_p/m_e` sans nouveaux matériaux
-modifiant leur verdict. Ne pas rouvrir le cycle 1 pour dupliquer la dette `m_e`.
-Ne pas ouvrir S1–S3 automatiquement : comparer d’abord cette dette aux autres priorités
-scientifiques du programme.
+Ne pas rouvrir T1, `alpha`, le premier lot `m_p/m_e` ou S1–S3 sans nouveaux matériaux
+modifiant leur cible, leur rang ou leur verdict. Ne pas rouvrir le cycle 1 pour dupliquer
+la dette `m_e`. Ne pas ouvrir automatiquement une nouvelle dette du cycle 5 : procéder
+à un arbitrage distinct à l’échelle du programme.
 
 ## 11. Règles de modification
 
