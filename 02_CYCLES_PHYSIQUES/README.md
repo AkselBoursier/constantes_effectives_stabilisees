@@ -6,10 +6,11 @@ un protocole unique ni les classer du plus fort au plus faible.
 ## 0. Statut
 
 ```text
-statut : accueil central actualisé au 26 juillet 2026 ;
+statut : accueil central actualisé au 27 juillet 2026 ;
 fonction : orienter la comparaison, les reprises de cycle et la lecture des dettes ;
 base : consolidation dans main, décisions P23–P28 amendées,
-       cycle 1 QCD–T1, alpha et premier lot m_p/m_e intégrés,
+       cycle 1 premier périmètre clos et suspendu sous conditions,
+       dette m_e transférée vers Saveur–Higgs,
        résultats C2 du cycle 3 ;
 ne vaut pas : validation générale des sources, plan d’article, hiérarchie
               définitive ou doctrine philosophique.
@@ -24,7 +25,7 @@ Documents transversaux :
 - [cadre canonique](../01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) ;
 - [glossaire actif](../GLOSSAIRE.md) ;
 - [vue d’ensemble globale v0.4](../05_CARTES_ET_SYNTHESES/Vue_ensemble_globale_v0_4.md), conservée comme état daté du 18 juillet 2026 ;
-- [index raisonné v2.1](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_1.md) ;
+- [index raisonné v2.2](../05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md) ;
 - [cartographie des dix cycles](../05_CARTES_ET_SYNTHESES/Cartographie_dix_cycles_frontieres_et_enquete_v0_1.md) ;
 - [contrôle comparatif après récupération](../05_CARTES_ET_SYNTHESES/Controle_comparatif_dix_cycles_apres_recuperation_v0_1.md) ;
 - [paysage contemporain de la mesure](../05_CARTES_ET_SYNTHESES/Releve_paysage_contemporain_probleme_mesure_v0_1.md) ;
@@ -96,6 +97,9 @@ Le dossier `alpha` a servi de banc d’essai à haute résolution. Le premier lo
 distinctions acquises et ne subdivisent qu’en présence d’un gain discriminant pour
 le verdict, le rang, la cible ou la décision scientifique.
 
+Une dette transférée vers un autre cycle ne maintient pas artificiellement ouvert son
+cycle d’origine. Elle peut être active sans qu’un lot scientifique soit déjà ouvert.
+
 ## 3. Cinq entrées par contraste
 
 | Cycles | Question comparative | Résultat du test |
@@ -129,11 +133,11 @@ métrologiques effectivement instruits.
 
 | Cycle | Point d’entrée actuel | Résultat ou fonction | Dette principale |
 |---|---|---|---|
-| 1. Couplages, échelles et QCD | [Synthèse active après T1, alpha et m_p/m_e v0.4](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md), [verdict R1–R3](01_Cycle_couplages_echelles_QCD/R3_Constitution_minimale_et_verdict_rapport_proton_electron_v0_1.md), [synthèse alpha](01_Cycle_couplages_echelles_QCD/Synthese_finale_dossier_alpha_v0_1.md) et [résultats ALPHA](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md) | Sépare stabilité temporelle, dépendance d’échelle, valeur ajustée, régimes, accès et constitution ; établit la reproduction aval ALPHA, le running de `alpha(Q²)`, des contraintes temporelles bornées, la repondération instrumentale du dossier spatial et l’impossibilité d’attribuer séparément une variation de `m_p/m_e` à ses deux termes sans modèle. | QCD–T1, `alpha` et premier lot `m_p/m_e` clos localement. Arbitrer la nécessité d’un dossier autonome `m_e`, son déplacement vers Saveur–Higgs ou la clôture/suspension du premier périmètre. Les matériaux nécessaires à un test global futur de `alpha_s` restent manquants. |
+| 1. Couplages, échelles et QCD | [Clôture active v0.5](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md), [synthèse scientifique v0.4](01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md), [verdict R1–R3](01_Cycle_couplages_echelles_QCD/R3_Constitution_minimale_et_verdict_rapport_proton_electron_v0_1.md), [synthèse alpha](01_Cycle_couplages_echelles_QCD/Synthese_finale_dossier_alpha_v0_1.md) et [résultats ALPHA](01_Cycle_couplages_echelles_QCD/T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md) | Sépare stabilité temporelle, dépendance d’échelle, valeur ajustée, régimes, accès et constitution ; établit la reproduction aval ALPHA, le running de `alpha(Q²)`, des contraintes temporelles bornées, la repondération instrumentale du dossier spatial et l’impossibilité d’attribuer séparément une variation de `m_p/m_e` à ses deux termes sans modèle. | Premier périmètre clos. Cycle suspendu et réouvrable sous conditions. Test global `alpha_s` suspendu faute de matériaux. `m_e` transférée vers Saveur–Higgs. |
 | 2. Secteur électrofaible structurant | [Synthèse de récupération](02_Cycle_structurant_electrofaible/Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md) | Sépare fonction de secteur, relation, mécanisme et explication. | Instruire les objets sans reconstruire un verdict global de stabilité ou d’instabilité. |
 | 3. Neutrinos | [Synthèse active après N5](03_Cycle_neutrinos/Synthese_active_cycle_3_neutrinos_apres_N5_v0_2.md), [matrice comparative](03_Cycle_neutrinos/N5_Matrice_comparative_quatre_acces_neutrinos_v0_1.md) et [résultats C2 v0.2](03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/C2_Resultats_ingestion_locale_DESI_DR2_v0_2.md) | Distingue quatre fonctions du spectre latent et reproduit trois postérieurs distribués. | `C2` close avec limites positives ; `T2` reste parallèle et non bloquant. |
 | 4. Thermodynamique et métrologie | [Synthèse de récupération](04_Cycle_thermo_metrologique/Synthese_recuperation_thermo_metrologique_SI_v0_1.md) | Distingue rôle physique, exactitude, composition et histoire empirique. | Détailler les chaînes de réalisation et covariances sans homogénéiser les cas. |
-| 5. Saveur–Higgs | [Synthèse requalifiée](05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) | Documente la solidarité entre échelle, couplages, spectres et orientations. | Remonter aux événements, simulations, vraisemblances et extractions. |
+| 5. Saveur–Higgs | [Synthèse requalifiée](05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md) et [dette active masse électronique / Yukawa](05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md) | Documente la solidarité entre échelle, couplages, spectres et orientations ; accueille le cas-test `m_e / y_e / v / accès direct au Higgs`. | Comparer l’ouverture du lot compact S1–S3 aux autres dettes du programme ; remonter aux événements, simulations, vraisemblances et extractions. |
 | 6. Théories effectives à basse énergie | [Architecture](06_Cycle_effectif_basse_energie/architecture-relationnelle-basse-energie.md), [vérification](06_Cycle_effectif_basse_energie/verification-physique-basse-energie.md) et [évaluation](06_Cycle_effectif_basse_energie/evaluation-gain-explicatif-basse-energie.md) | Traite domaine de validité, seuils, degrés de liberté et rupture comme contenu positif. | Appliquer la distinction entre vocabulaire disciplinaire local et statut de constance effective dans les reprises rédactionnelles. |
 | 7. Cosmologie | [Architecture](07_Cycle_cosmologique/architecture-relationnelle-cosmologique.md), [vérification](07_Cycle_cosmologique/verification-physique-cosmologique.md) et [évaluation](07_Cycle_cosmologique/evaluation-gain-explicatif-cosmologique.md) | Rend visibles modèles, sondes, dégénérescences, tensions et routes d’inférence. | Reprendre sonde par sonde et redater régulièrement. |
 | 8. Système international | [Architecture](08_Cycle_metrologique_SI/architecture-relationnelle-metrologique-si.md), [vérification](08_Cycle_metrologique_SI/verification-metrologique-si.md) et [évaluation](08_Cycle_metrologique_SI/evaluation-gain-explicatif-metrologique-si.md) | Sépare valeur définissante, rôle physique, réalisation et déplacement de l’incertitude. | Cartographier quantitativement les covariances et chaînes de réalisation. |
