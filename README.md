@@ -11,11 +11,11 @@ par lesquels certains maintiens deviennent opératoires ou affirmables.
 
 > **Statut condensé au 27 juillet 2026.** Les décisions méthodologiques `P23–P28`
 > sont validées, appliquées et amendées pour distinguer exploration et ratification.
-> Le cycle 1 a intégré `T1.1–T1.8`, le dossier `alpha` α1–α5 et le premier lot
-> `m_p/m_e` R1–R3. Son premier périmètre est clos ; le cycle est suspendu et
-> réouvrable sous conditions. La dette autonome `m_e` a été transférée vers le cycle
-> Saveur–Higgs sous la forme `masse physique / Yukawa / échelle de brisure / accès
-> direct au Higgs`. `T2` reste parallèle et `Q3` demeure un contrôle interne.
+> Le premier périmètre du cycle 1 est clos ; le cycle est suspendu et réouvrable sous
+> conditions. La dette autonome `m_e` a été transférée vers Saveur–Higgs, instruite par
+> S1–S3 puis localement résolue. Le cycle 5 conserve son pont architectural et intègre
+> désormais un premier réseau probatoire électronique. `T2` reste parallèle et `Q3`
+> demeure un contrôle interne.
 
 ## Point d’entrée humain
 
@@ -26,11 +26,11 @@ Lire d’abord :
 3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
 4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
 5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v2.2](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_2.md), pour l’état détaillé, la navigation et le rang des documents.
+6. l’[index raisonné v2.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_3.md), pour l’état détaillé, la navigation et le rang des documents.
 
 Pour le cycle 1, lire d’abord la [synthèse active de clôture du premier périmètre v0.5](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md), puis la [synthèse scientifique détaillée v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md). Les synthèses v0.3, v0.2 et v0.1 restent des états antérieurs.
 
-Pour la dette transférée, consulter la [note active masse électronique / Yukawa](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md). Elle fixe le périmètre minimal sans ouvrir automatiquement un lot scientifique.
+Pour le cycle 5, lire d’abord la [synthèse active Saveur–Higgs v0.2](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_active_cycle_5_Saveur_Higgs_apres_S1_S3_v0_2.md). S1, S2 et S3 demeurent les preuves locales ; la [note de dette requalifiée](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md) conserve la provenance du transfert D6.
 
 Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
 du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
@@ -190,8 +190,8 @@ maintenance, puis à une validation humaine et à une application documentaire d
 > **Formule active.** L’exploration peut créer ; seule la ratification autorise à
 > conserver durablement et à faire autorité.
 
-Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Le
-premier lot `m_p/m_e` a confirmé qu’une structure compacte suffit lorsque les
+Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Les lots
+`m_p/m_e` et `m_e / y_e / v` confirment qu’une structure compacte suffit lorsque les
 distinctions acquises sont réutilisées par référence et que seules les subdivisions
 qui changent le verdict, le rang, la cible ou la décision scientifique sont conservées.
 
@@ -201,7 +201,7 @@ pas maintenir artificiellement ouvert son cycle d’origine.
 La règle de remplacement d’une couche existante s’applique à la promotion durable,
 non à la naissance d’un support exploratoire temporaire.
 
-## Résultats locaux et statut du cycle 1 après D6–D7
+## Résultats locaux actifs
 
 ```text
 QCD–T1 :
@@ -233,12 +233,21 @@ premier périmètre du cycle 1 :
 cycle 1 :
   suspendu et réouvrable sous conditions ;
 
-m_e :
-  dette restante transférée vers Saveur–Higgs ;
+m_e / y_e / v :
+  lot S1–S3 validé, localement clos et propagé ;
+  M_e déterminée ;
+  y_e standard inféré sous cadre et conventions déclarés ;
+  accès indirects dépendants de modèles de passage ;
+  H → e+e− directement borné sans observation significative ;
+  origine et hiérarchie non expliquées ;
 
-prochaine décision éventuelle :
-  comparer l’ouverture du lot compact Saveur–Higgs S1–S3
-  aux autres dettes scientifiques du programme.
+cycle 5 :
+  ouvert ;
+  pont architectural conservé ;
+  premier réseau probatoire électronique intégré ;
+
+prochaine décision :
+  arbitrer la prochaine dette scientifique sans priorité automatique.
 ```
 
 ## Les cycles physiques
