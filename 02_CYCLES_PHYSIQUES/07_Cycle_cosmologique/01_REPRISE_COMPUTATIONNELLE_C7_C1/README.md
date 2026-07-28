@@ -21,10 +21,12 @@ porte courante   : G1.2 — qualification de la vraisemblance commune.
 - G0 — provenance et spécification : **close et ratifiée** (G0.6) ;
 - G1.0 — environnement, octets, configurations, tests de point :
   **validée** (commentaire G1.2 de #63) ;
-- G1.2 — qualification de la vraisemblance commune (repondération CMB
-  publique, contrôle BAO stock, prior joint, tolérances) : **exécutée,
-  rapport soumis à validation humaine** (`reports/rapport_G1_2.md`) ;
-- G1 — contrôles officiels (reproduction LambdaCDM et CPL) : non ouverte ;
+- G1.2 — qualification de la vraisemblance commune : **validée**
+  (commentaire G1.4 de #63 ; corrections documentaires en `1ee2b4c`) ;
+- G1.3 — reproductions LambdaCDM et CPL sous la vraisemblance commune
+  (8 chaînes convergées, T7 passé, minimisations multi-départs,
+  contraste) : **exécutée, rapport soumis à validation humaine**
+  (`reports/rapport_G1_3.md`) ;
 - G2 — validation de X(z) ; G3 — comparaison commune ; G4 — verdict.
 
 ## Interdits actifs

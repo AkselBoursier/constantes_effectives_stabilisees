@@ -133,12 +133,20 @@ def main():
     print("\n=== minimum de chi2 RENCONTRÉ dans les chaînes ===")
     print("(statistique d'échantillon ; distinct du MAP et du maximum de")
     print(" vraisemblance produits par minimize_g1_3.py)")
+    def col_chi2(fragment, fallback):
+        for n in names:
+            if n.startswith("chi2__") and fragment in n:
+                return col[n]
+        return col[fallback]
+
+    c_bao = col_chi2("DesiBaoAll", "chi2__BAO")
+    c_cmb = col_chi2("CmbCompressed", "chi2__CMB_compressed")
     chi2 = allo[:, col["chi2"]]
     i0 = int(np.argmin(chi2))
     print(f"min chi2 total = {chi2[i0]:.4f}")
     print(
-        f"  chi2_BAO = {allo[i0, col['chi2__BAO']]:.4f} ; "
-        f"chi2_CMB = {allo[i0, col['chi2__CMB_compressed']]:.4f}"
+        f"  chi2_BAO = {allo[i0, c_bao]:.4f} ; "
+        f"chi2_CMB = {allo[i0, c_cmb]:.4f}"
     )
     best_point = {p: float(allo[i0, col[p]]) for p in ["H0", "ombh2", "omm"]
                   + (["w", "wa"] if "wa" in col else [])}
