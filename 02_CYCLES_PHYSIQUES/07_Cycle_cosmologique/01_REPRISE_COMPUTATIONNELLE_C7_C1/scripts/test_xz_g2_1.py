@@ -237,6 +237,110 @@ def reference_bao_vector(ref: CambReference) -> np.ndarray:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Voie indépendante I8 (règle épistémique R1/R2/R3) : aucun appel aux méthodes
+# de XZBackground ni à scipy.interpolate ; seules dépendances partagées avec le
+# calcul principal : les valeurs nodales du profil et l'objet H_ref (déclarées).
+# ---------------------------------------------------------------------------
+
+def manual_spline(nodes, values, convention, constant_tail=True):
+    """Spline cubique par résolution directe du système des moments
+    (numpy.linalg.solve). Chemin algébrique distinct de scipy CubicSpline.
+    `constant_tail=False` sert uniquement au test adversarial « raccord
+    supprimé » (extrapolation cubique du dernier segment)."""
+    x = np.asarray(nodes, dtype=float)
+    y = np.asarray(values, dtype=float)
+    n = len(x) - 1
+    h = np.diff(x)
+    A = np.zeros((n + 1, n + 1))
+    b = np.zeros(n + 1)
+    for i in range(1, n):
+        A[i, i - 1] = h[i - 1] / 6.0
+        A[i, i] = (h[i - 1] + h[i]) / 3.0
+        A[i, i + 1] = h[i] / 6.0
+        b[i] = (y[i + 1] - y[i]) / h[i] - (y[i] - y[i - 1]) / h[i - 1]
+    if convention == "natural":
+        A[0, 0] = 1.0
+        A[n, n] = 1.0
+    elif convention == "not-a-knot":
+        A[0, 0] = h[1]
+        A[0, 1] = -(h[0] + h[1])
+        A[0, 2] = h[0]
+        A[n, n - 2] = h[n - 1]
+        A[n, n - 1] = -(h[n - 2] + h[n - 1])
+        A[n, n] = h[n - 2]
+    else:
+        raise ValueError(f"convention inconnue : {convention}")
+    moments = np.linalg.solve(A, b)
+
+    def evaluate(z):
+        arr = np.asarray(z, dtype=float).reshape(-1)
+        out = np.empty_like(arr)
+        for k, zz in enumerate(arr):
+            if constant_tail and zz >= x[-1]:
+                out[k] = y[-1]
+                continue
+            i = int(np.searchsorted(x, min(zz, x[-1]), side="right") - 1)
+            i = max(0, min(i, n - 1))
+            hi = h[i]
+            out[k] = (
+                moments[i] * (x[i + 1] - zz) ** 3 / (6.0 * hi)
+                + moments[i + 1] * (zz - x[i]) ** 3 / (6.0 * hi)
+                + (y[i] - moments[i] * hi**2 / 6.0) * (x[i + 1] - zz) / hi
+                + (y[i + 1] - moments[i + 1] * hi**2 / 6.0) * (zz - x[i]) / hi
+            )
+        return out
+
+    return evaluate
+
+
+def simpson_fixed(f, lo, hi, n=20000):
+    if n % 2:
+        n += 1
+    grid = np.linspace(lo, hi, n + 1)
+    vals = np.asarray(f(grid), dtype=float)
+    step = (hi - lo) / n
+    return float(
+        step / 3.0 * (vals[0] + vals[-1] + 4.0 * vals[1:-1:2].sum() + 2.0 * vals[2:-2:2].sum())
+    )
+
+
+def dm_independent(h_of_z, z_end, n=20000):
+    """D_M par Simpson composite en variable u = sqrt(a), a = 1/(1+z),
+    avec césure explicite à z = 2.33 : variable, intégrateur et
+    discrétisation tous distincts de XZBackground._dm_scalar (quad en z)."""
+
+    def integrand(u):
+        u = np.asarray(u, dtype=float)
+        zz = 1.0 / (u * u) - 1.0
+        return 2.0 * C_KM_S / (u**3 * np.asarray(h_of_z(zz), dtype=float))
+
+    u_end = 1.0 / np.sqrt(1.0 + z_end)
+    u_cut = 1.0 / np.sqrt(1.0 + 2.33)
+    if z_end > 2.33:
+        return simpson_fixed(integrand, u_end, u_cut, n) + simpson_fixed(
+            integrand, u_cut, 1.0, n
+        )
+    return simpson_fixed(integrand, u_end, 1.0, n)
+
+
+def eds_calibration() -> dict[str, float]:
+    """Étalonnage R3 de l'intégrateur indépendant sur une solution
+    analytique exacte : Einstein-de Sitter, H = H0 (1+z)^{3/2},
+    D_M = (2c/H0)(1 - 1/sqrt(1+z))."""
+    h0 = 70.0
+
+    def h_eds(z):
+        return h0 * (1.0 + np.asarray(z, dtype=float)) ** 1.5
+
+    out = {}
+    for z_end in (2.33, 1089.0):
+        exact = 2.0 * C_KM_S / h0 * (1.0 - 1.0 / np.sqrt(1.0 + z_end))
+        num = dm_independent(h_eds, z_end)
+        out[f"z{z_end}_rel"] = float(abs(num - exact) / exact)
+    return out
+
+
 def full_camb_tests() -> dict[str, Any]:
     bao_mean, bao_icov = load_bao_data()
     metrics: dict[str, Any] = {}
@@ -325,6 +429,172 @@ def full_camb_tests() -> dict[str, Any]:
         "rstar_zmax_1e6_minus_1e7": low_tail.rstar("corrected") - default.rstar("corrected"),
         "rstar_zmax_1e7_minus_1e8": default.rstar("corrected") - tight.rstar("corrected"),
     }
+
+    # Complément G2.1d : stabilité default/tight des grandeurs CMB pour des
+    # profils X(z) non constants, sous les deux conventions de spline.
+    cmb_stability: dict[str, Any] = {}
+    for name in ("signed_crossing", "oscillatory"):
+        for convention in ("natural", "not-a-knot"):
+            prof = XZProfile("M2a", profiles[name], convention)
+            d_bg = XZBackground(ref, prof)
+            t_bg = XZBackground(
+                ref, prof, epsabs=1e-10, epsrel=1e-12, quad_limit=500,
+                acoustic_zmax=1e8,
+            )
+            dm_d = float(d_bg.dm(ref.zstar))
+            dm_t = float(t_bg.dm(ref.zstar))
+            entry: dict[str, Any] = {
+                "DM_zstar_rel": float(rel_error(dm_d, dm_t)),
+            }
+            for mode in ("fixed", "corrected"):
+                entry[f"theta_{mode}_abs"] = abs(
+                    d_bg.theta_star(mode) - t_bg.theta_star(mode)
+                )
+                entry[f"chi2_CMB_{mode}_abs"] = abs(
+                    chi2(d_bg.cmb_vector(mode), CMB_MU, CMB_ICOV)
+                    - chi2(t_bg.cmb_vector(mode), CMB_MU, CMB_ICOV)
+                )
+            cmb_stability[f"{name}_{convention}"] = entry
+    metrics["I6_numerical_stability"]["CMB_default_vs_tight"] = cmb_stability
+
+    # -- I8 : voie indépendante (R3) -------------------------------------
+    # Dépendances partagées avec le calcul principal, déclarées : valeurs
+    # nodales du profil ; objet H_ref (CAMB) ; constantes physiques.
+    probe = np.linspace(0.0, 3.0, 3001)
+    h0sq_ox = ref.h0**2 * ref.omega_x0
+    independent: dict[str, Any] = {"eds_calibration": eds_calibration()}
+    for name in ("signed_crossing", "oscillatory"):
+        for convention in ("natural", "not-a-knot"):
+            values = profiles[name]
+            node_values = np.concatenate(([1.0], np.asarray(values, float)))
+            x_ind = manual_spline(NODES["M2a"], node_values, convention)
+            p_main = XZProfile("M2a", values, convention)
+            bg = XZBackground(ref, p_main)
+
+            def h_ind(z, _x=x_ind):
+                zz = np.asarray(z, dtype=float)
+                href = np.asarray(ref.hubble(zz), dtype=float)
+                return np.sqrt(href * href + h0sq_ox * (_x(zz) - 1.0))
+
+            z_bao = np.unique(BAO_REDSHIFTS)
+            dm_main = np.asarray(bg.dm(z_bao), dtype=float)
+            dm_ind = np.array([dm_independent(h_ind, float(zz)) for zz in z_bao])
+            dm_star_main = float(bg.dm(ref.zstar))
+            dm_star_ind = dm_independent(h_ind, ref.zstar)
+            dm_star_ind_2n = dm_independent(h_ind, ref.zstar, n=40000)
+            theta_fixed_ind = ref.rstar / dm_star_ind
+            cmb_ind = np.array([theta_fixed_ind, ref.ombh2, ref.ombh2 + ref.omch2])
+            independent[f"{name}_{convention}"] = {
+                "X_scipy_vs_manuel_abs_max": float(
+                    np.max(np.abs(p_main(probe) - x_ind(probe)))
+                ),
+                "H_rel_max": float(np.max(rel_error(bg.hubble(probe), h_ind(probe)))),
+                "DM_bao_rel_max": float(np.max(rel_error(dm_main, dm_ind))),
+                "DM_zstar_rel": float(rel_error(dm_star_main, dm_star_ind)),
+                "DM_zstar_richardson_rel": float(
+                    rel_error(dm_star_ind, dm_star_ind_2n)
+                ),
+                "theta_fixed_abs": abs(bg.theta_star("fixed") - theta_fixed_ind),
+                "chi2_CMB_fixed_abs": abs(
+                    chi2(bg.cmb_vector("fixed"), CMB_MU, CMB_ICOV)
+                    - chi2(cmb_ind, CMB_MU, CMB_ICOV)
+                ),
+            }
+    metrics["I8_independent_path"] = independent
+
+    # -- I9 : tests adversariaux (fautes injectées, garde désignée) ------
+    # Une faute non détectée par sa garde invalide la garde, pas la faute.
+    adv_values = profiles["signed_crossing"]
+    adv_nodes = np.concatenate(([1.0], np.asarray(adv_values, float)))
+    x_ok = manual_spline(NODES["M2a"], adv_nodes, "natural")
+    p_ok = XZProfile("M2a", adv_values, "natural")
+    bg_ok = XZBackground(ref, p_ok)
+
+    def h_ok(z):
+        zz = np.asarray(z, dtype=float)
+        href = np.asarray(ref.hubble(zz), dtype=float)
+        return np.sqrt(href * href + h0sq_ox * (x_ok(zz) - 1.0))
+
+    adversarial: dict[str, Any] = {}
+    z_grid = np.linspace(0.05, 2.9, 500)
+
+    # F1 — signe inversé dans la correction de H² ; garde : I8-H.
+    href_g = np.asarray(ref.hubble(z_grid), dtype=float)
+    h_f1 = np.sqrt(np.maximum(href_g**2 - h0sq_ox * (x_ok(z_grid) - 1.0), 1.0))
+    dev_f1 = float(np.max(rel_error(h_f1, h_ok(z_grid))))
+    wit_f1 = float(np.max(rel_error(bg_ok.hubble(z_grid), h_ok(z_grid))))
+    adversarial["F1_signe_H2"] = {
+        "garde": "I8_H_rel_max",
+        "deviation_faute": dev_f1,
+        "temoin_correct": wit_f1,
+        "detecte": bool(dev_f1 > 1e-6 and dev_f1 > 1e3 * max(wit_f1, 1e-300)),
+        "aveuglement_documente": "l'identité I1 (X=1) est aveugle à cette "
+        "faute : la correction s'annule quel que soit son signe.",
+    }
+
+    # F2 — facteur de changement de variable omis dans D_M ; garde : I8-DM.
+    def dm_f2(z_end):
+        u_end = 1.0 / np.sqrt(1.0 + z_end)
+
+        def bad(u):
+            u = np.asarray(u, dtype=float)
+            zz = 1.0 / (u * u) - 1.0
+            return 2.0 * C_KM_S / np.asarray(h_ok(zz), dtype=float)
+
+        return simpson_fixed(bad, u_end, 1.0, 20000)
+
+    dev_f2 = float(rel_error(dm_f2(2.33), dm_independent(h_ok, 2.33)))
+    wit_f2 = float(rel_error(float(bg_ok.dm(2.33)), dm_independent(h_ok, 2.33)))
+    adversarial["F2_facteur_variable_DM"] = {
+        "garde": "I8_DM_bao_rel_max",
+        "deviation_faute": dev_f2,
+        "temoin_correct": wit_f2,
+        "detecte": bool(dev_f2 > 1e-6 and dev_f2 > 1e3 * max(wit_f2, 1e-300)),
+    }
+
+    # F3 — nœud déplacé (1/3 -> 0.35) ; garde : I8-X sur points sondes.
+    nodes_moved = NODES["M2a"].copy()
+    nodes_moved[1] = 0.35
+    x_f3 = manual_spline(nodes_moved, adv_nodes, "natural")
+    dev_f3 = float(np.max(np.abs(x_f3(probe) - x_ok(probe))))
+    wit_f3 = float(np.max(np.abs(p_ok(probe) - x_ok(probe))))
+    adversarial["F3_noeud_deplace"] = {
+        "garde": "I8_X_scipy_vs_manuel_abs_max",
+        "deviation_faute": dev_f3,
+        "temoin_correct": wit_f3,
+        "detecte": bool(dev_f3 > 1e-6 and dev_f3 > 1e3 * max(wit_f3, 1e-300)),
+        "aveuglement_documente": "le test I2 évalué aux nœuds du profil "
+        "fautif passerait : il ne garde pas la position des nœuds.",
+    }
+
+    # F4 — raccord constant supprimé après z=2.33 ; garde : contrôle I3.
+    x_f4 = manual_spline(NODES["M2a"], adv_nodes, "natural", constant_tail=False)
+    z_tail = np.linspace(2.33, 3.0, 200)
+    dev_f4 = float(np.max(np.abs(x_f4(z_tail) - adv_nodes[-1])))
+    wit_f4 = float(np.max(np.abs(x_ok(z_tail) - adv_nodes[-1])))
+    adversarial["F4_raccord_supprime"] = {
+        "garde": "I3_constant_extension_abs_max",
+        "deviation_faute": dev_f4,
+        "temoin_correct": wit_f4,
+        "detecte": bool(dev_f4 > 1e-6 and wit_f4 == 0.0),
+    }
+
+    # F5 — mauvaise valeur de Omega_X,0 (x1.05) ; garde : I8-H.
+    h_f5 = np.sqrt(href_g**2 + 1.05 * h0sq_ox * (x_ok(z_grid) - 1.0))
+    dev_f5 = float(np.max(rel_error(h_f5, h_ok(z_grid))))
+    adversarial["F5_omega_x0_faux"] = {
+        "garde": "I8_H_rel_max",
+        "deviation_faute": dev_f5,
+        "temoin_correct": wit_f1,
+        "detecte": bool(dev_f5 > 1e-6 and dev_f5 > 1e3 * max(wit_f1, 1e-300)),
+        "aveuglement_documente": "l'identité I1 (X=1) est aveugle à cette "
+        "faute : Omega_X,0 multiplie (X-1)=0.",
+    }
+
+    adversarial["toutes_fautes_detectees"] = bool(
+        all(v["detecte"] for k, v in adversarial.items() if k.startswith("F"))
+    )
+    metrics["I9_adversarial"] = adversarial
     return metrics
 
 

@@ -279,7 +279,10 @@ class XZBackground:
             epsabs=self.epsabs,
             epsrel=self.epsrel,
             limit=self.quad_limit,
-            points=[p for p in self.profile.nodes[1:-1] if 0.0 < p < key],
+            # Tous les nœuds strictement intérieurs sont transmis à quad, y
+            # compris z=2.33 dès que l'intervalle le dépasse (G2.1d) : une
+            # rupture de dérivée y est admise par la continuation constante.
+            points=[p for p in self.profile.nodes[1:] if 0.0 < p < key],
         )
         result = float(value)
         if len(self._dm_cache) >= 2048:

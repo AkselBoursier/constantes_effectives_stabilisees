@@ -23,6 +23,16 @@ exécutée DEUX FOIS : sorties strictement identiques (diff vide) —
 déterminisme bit à bit établi.
 ```
 
+Complément G2.1d intégré : (i) `_dm_scalar` transmet désormais à `quad`
+tous les nœuds strictement intérieurs à l'intervalle, y compris z = 2,33
+pour les intégrales allant jusqu'à z_star (la rupture de dérivée admise y
+est signalée au quadrateur) ; (ii) I6 mesure la stabilité default/tight de
+`D_M(z_star)`, `theta_star` et `chi2_CMB` pour des profils non constants,
+sous les deux conventions. Le passage --full a été ré-exécuté deux fois
+après ces modifications : diff vide entre les deux sorties. Seuls les
+planchers CMB de l'identité I1 changent (ils s'améliorent, §3.1) ; les
+blocs BAO, I4 et I5 sont inchangés au bit près.
+
 ## 1. Périmètre implémenté
 
 ```text
@@ -141,16 +151,19 @@ grandeur                          plancher mesuré (max sur tout)
   (D_V, D_M, D_H sur r_drag : couvertes par le vecteur BAO)
 |Delta r_drag|                    0 (exact)
 |Delta r_star|                    0 (exact)
-|Delta theta_star| (absolu)       4.49e-12   (~4.3e-10 relatif)
+|Delta theta_star| (absolu)       1.22e-13   (~1.2e-11 relatif)
 |Delta chi2_BAO|                  4.58e-13
-|Delta chi2_CMB|                  2.72e-6
+|Delta chi2_CMB|                  7.40e-8
 ```
 
-Le plancher `chi2_CMB` est entièrement expliqué par l’amplification de
-l’écart `theta_star` (~1.7e-6 sigma_theta) par la covariance CMB inverse ;
-il ne traduit aucun défaut supplémentaire. L’identité est indépendante de
-la convention de spline et du traitement acoustique, comme attendu pour
-`X ≡ 1`.
+Avant le complément G2.1d, les planchers `theta_star` et `chi2_CMB`
+valaient 4.49e-12 et 2.72e-6 : l'exclusion de z = 2,33 des points de
+quadrature pour l'intégrale jusqu'à z_star en était la source dominante
+(amélioration d'un facteur ~37 après correction). Le plancher `chi2_CMB`
+résiduel reste entièrement expliqué par l'amplification de l'écart
+`theta_star` par la covariance CMB inverse ; il ne traduit aucun défaut
+supplémentaire. L'identité est indépendante de la convention de spline et
+du traitement acoustique, comme attendu pour `X ≡ 1`.
 
 ### 3.2 Sensibilité à la convention de spline (I5, profils fixés a priori)
 
@@ -198,6 +211,94 @@ reproductibilité : deux passages complets bit à bit identiques.
 La borne haute acoustique `zmax = 1e7` est convergée (sa variation vers
 `1e8` est au niveau 1e-12 Mpc) ; `1e6` est insuffisante (1e-9 Mpc).
 
+### 3.5 Stabilité CMB default/tight pour profils non constants (G2.1d)
+
+Pour `signed_crossing` et `oscillatory`, sous `natural` et `not-a-knot`,
+modes `fixed` et `corrected` :
+
+```text
+grandeur                              plancher mesuré (max)
+D_M(z_star) default vs tight (rel)    1.86e-10
+theta_star default vs tight (abs)     1.92e-12
+chi2_CMB default vs tight (abs)       2.34e-4
+```
+
+Le plancher `chi2_CMB` est proportionnel au résidu CMB standardisé du
+profil de stress (très grand pour ces profils) ; au voisinage des données
+(résidus d'ordre 1), l'effet attendu est d'ordre 1e-6. Les valeurs
+`fixed` et `corrected` de ces stabilités coïncident à ~1e-16 près.
+
+### 3.6 Voie de calcul indépendante (I8) — validation R3
+
+Vérificateur construit sans aucune méthode de `XZBackground` ni
+`scipy.interpolate` : spline cubique par résolution directe du système
+des moments (`numpy.linalg.solve`, conditions `natural` et `not-a-knot`
+explicites) ; `D_M` par Simpson composite en variable `u = sqrt(a)`,
+`a = 1/(1+z)`, avec césure explicite à z = 2,33 ; grille fixe et contrôle
+de Richardson. Dépendances partagées, déclarées : valeurs nodales du
+profil ; objet `H_ref` (CAMB) ; constantes physiques.
+
+```text
+étalonnage du vérificateur sur solution analytique exacte (EdS,
+  D_M = (2c/H0)(1 - 1/sqrt(1+z))) : erreur <= 3.6e-16 ;
+
+accord voie principale / voie indépendante (max sur les 2 profils
+de stress x 2 conventions) :
+  X(z) (scipy vs système des moments)      <= 8.9e-15
+  H_X(z)                                   <= 5.2e-16
+  D_M aux 6 z BAO (quad-z vs Simpson-u)    <= 5.7e-16
+  D_M(z_star)                              <= 1.85e-10
+    (Richardson du vérificateur : 1.8e-13 — le plancher 1.85e-10 est
+     attribuable à la tolérance quad de la voie principale, non au
+     vérificateur)
+  theta_star (fixed)                       <= 1.92e-12
+  chi2_CMB (fixed)                         <= 2.33e-4  (même origine)
+```
+
+### 3.7 Tests adversariaux (I9) — fautes injectées et gardes
+
+Chaque faute est injectée dans une variante volontairement défectueuse ;
+la garde désignée doit la détecter, le témoin correct restant sous le
+seuil. Profil `signed_crossing`, M2a, `natural`.
+
+```text
+faute                                garde                   déviation   témoin      détectée
+F1 signe inversé dans corr. de H²    I8-H                    5.4e-1      2.0e-16     OUI
+F2 facteur de variable omis (D_M)    I8-D_M                  5.3e-1      2.9e-16     OUI
+F3 nœud déplacé (1/3 -> 0.35)        I8-X (points sondes)    4.2e-2      8.9e-16     OUI
+F4 raccord z=2.33 supprimé           I3 (continuation)       6.4e-1      0           OUI
+F5 Omega_X,0 faux (x1.05)            I8-H                    1.7e-2      2.0e-16     OUI
+toutes fautes détectées : OUI
+```
+
+Aveuglements documentés (et pris en charge par les gardes I8) :
+l'identité I1 (X = 1) est **aveugle** à F1 et F5, car la correction
+s'annule à X = 1 quel que soit son signe ou son échelle ; le test I2
+évalué aux nœuds du profil fautif serait aveugle à F3.
+
+### 3.8 Classification épistémique R1 / R2 / R3 de chaque test
+
+Règle appliquée : un test ne compte comme confirmation externe (R3) que
+si sa référence ne dépend ni du même objet logiciel, ni de la même
+discrétisation, ni du même chemin algébrique que la quantité testée.
+
+| test | quantité testée | référence | dépendances partagées | statut | démontre | ne démontre pas |
+|---|---|---|---|---|---|---|
+| double exécution `--full` | sortie complète | seconde exécution | tout | **R1** | déterminisme | justesse |
+| I1 : H, r_drag, r_star (X=1) | branchement X=1 | valeurs CAMB | même objet CAMB ; identité par construction | **R2** | câblage correct du cas X=1 | signe/échelle de la correction (aveugle à F1, F5) |
+| I1 : D_M, theta, chi2 (X=1) | quadrature en z | distance interne CAMB | même H (CAMB) ; intégrateurs distincts | **R2** (+R3 limité à l'étape d'intégration) | quad-z reproduit l'intégration CAMB | indépendance de la source H |
+| I2 : valeurs aux nœuds | interpolant | valeurs imposées | même spline | **R2** | interpolation exacte | position des nœuds (aveugle à F3) |
+| I2 : polynômes P<=3 | interpolant | forme analytique exacte | aucune | **R3** (sous-espace P<=3) | justesse sur P<=3 | comportement hors P<=3 |
+| I3 : continuation | X(z>=2.33) | valeur nodale | même profil | **R2** | règle appliquée | pertinence physique du raccord |
+| I4 : domaine signé / rejet | H_X² | règle déclarée | même objet | **R2** | conformité à la règle | — |
+| I5 : sensibilité spline | X, H, D_M, chi2 | autre convention | tout partagé | **caractérisation** (ni R1/R2/R3) | ampleur de la convention | aucune justesse |
+| I6 : default/tight, zmax | D_M, BAO, θ★, χ² | mêmes méthodes, tolérances resserrées | même intégrateur et discrétisation | **R2** (stabilité) | insensibilité aux tolérances | justesse (même chemin) |
+| I8 : X manuel | X(z) | système des moments (numpy.linalg.solve) | valeurs nodales seulement | **R3** | justesse de l'interpolation principale | — |
+| I8 : H_X | H_X(z) | reconstruction algébrique indépendante | H_ref (CAMB) | **R3** (chemin algébrique) | câblage correct de la correction | justesse de H_ref |
+| I8 : D_M | D_M | Simpson en u=sqrt(a), césure 2.33, grille fixe | source H | **R3** (variable + intégrateur + discrétisation) | justesse de la quadrature principale | justesse du H partagé |
+| I8 : étalonnage EdS | vérificateur D_M | solution analytique exacte | aucune | **R3** | fiabilité du vérificateur | — |
+| I9 : F1–F5 | les gardes elles-mêmes | fautes injectées | — | **méta-validation** | les gardes détectent leurs fautes | exhaustivité des fautes |
+
 ## 4. Tolérances T8–T12 — proposition fondée sur les planchers mesurés
 
 Marges d’un facteur >= 100 sur chaque plancher, sauf mention. Soumises à
@@ -227,12 +328,25 @@ T10 — frontière z = 2.33 :
      continuation ratifiée : rapportée (ex. -4.49 natural, -20.67
      not-a-knot sur profil test), jamais lissée silencieusement.
 
-T11 — stabilité quadrature / borne acoustique :
+T11 — stabilité quadrature / borne acoustique (COMPLÉTÉ G2.1d) :
      quadrature par défaut vs resserrée : BAO  <= 1e-12 (mesuré <= 9.8e-15) ;
      D_M quad adaptative vs trapèzes           <= 1e-8  (mesuré 6.6e-11) ;
      borne acoustique : zmax = 1e7 retenue ; contrôle 1e7 vs 1e8
        <= 1e-10 Mpc (mesuré 1.4e-12) ; zmax = 1e6 interdite (1.3e-9) ;
-     déterminisme : deux passages complets bit à bit identiques exigés.
+     déterminisme : deux passages complets bit à bit identiques exigés ;
+     -- planchers CMB ajoutés (profils non constants, 2 conventions) :
+     D_M(z_star) default vs tight (rel)        <= 1e-8  (mesuré <= 1.9e-10) ;
+     theta_star default vs tight (abs)         <= 1e-10 (mesuré <= 2.0e-12) ;
+     chi2_CMB default vs tight (abs), profils
+       de stress                               <= 2e-2  (mesuré <= 2.4e-4 ;
+       plancher proportionnel au résidu CMB standardisé du profil) ;
+     -- voie indépendante et gardes (règle épistémique) :
+     à chaque modification de l'instrument, ré-exécuter I8 et I9 :
+       X (scipy vs moments)      <= 1e-12 (mesuré <= 8.9e-15) ;
+       H_X                       <= 1e-13 (mesuré <= 5.2e-16) ;
+       D_M aux z BAO             <= 1e-13 (mesuré <= 5.7e-16) ;
+       étalonnage EdS            <= 1e-13 (mesuré <= 3.6e-16) ;
+       fautes F1-F5              toutes détectées, sans exception.
 
 T12 — convention de spline et traitement acoustique :
      (a) spline : natural et not-a-knot sont deux VARIANTES SCIENTIFIQUES
@@ -245,34 +359,67 @@ T12 — convention de spline et traitement acoustique :
          |Delta chi2_BAO| <= 1e-8 (mesuré <= 3.3e-10) et
          |Delta r_drag,star| <= 1e-10 Mpc (mesuré <= 2.2e-12) ;
          toute rupture d'équivalence est un signalement obligatoire.
+         RÉÉVALUATION G2.1d : conclusion inchangée — l'équivalence
+         fixed/corrected persiste dans le secteur CMB pour les profils
+         non constants (stabilités theta/chi2 identiques aux deux modes
+         à ~1e-16 près) ; aucun résultat contradictoire.
 ```
 
-## 5. Verdict final de G2.1
+T8, T9, T10 et T12(a) : inchangés, conformément à G2.1d (aucun résultat
+contradictoire ; les marges de T8 sur theta_star et chi2_CMB se sont
+élargies d'un facteur ~37 après la correction du point de quadrature).
+
+## 5. Verdict final de G2.1 — séparé par niveau épistémique
+
+Conformément à la règle transversale, « validé » n'est jamais employé ici
+sans précision du niveau acquis.
 
 ```text
-instrument structurel : cohérent (analytique + directeur, deux
-  environnements Python concordants) ;
-identité CAMB X_i=1 ≡ LambdaCDM : établie aux deux points G1,
-  8 combinaisons par point, planchers 1e-16 à 1e-12 (chi2_CMB 2.8e-6,
-  expliqué) ;
-étalon acoustique : fixed ≡ corrected sous continuation constante,
-  aux planchers mesurés, sur les profils testés ;
-convention de spline : scientifiquement active — deux variantes
-  déclarées à porter séparément (T12a) ;
-stabilité : quadratures convergées, zmax=1e7 convergée,
-  déterminisme bit à bit établi (deux passages identiques) ;
-tolérances T8–T12 : proposées (§4), à ratifier ;
-MCMC / minimisation / priors X_i : absents, conformes à l'interdit ;
+reproductibilité R1 :
+  ACQUISE — deux exécutions complètes bit à bit identiques, répétées
+  après chaque modification de l'instrument (G2.1c, G2.1d) ;
 
-verdict proposé : VALIDÉ — G2.1 clôturable après ratification humaine
-  de T8–T12 ; G2.2 / G2.3 : fermées jusqu'à cette décision.
+cohérence interne R2 :
+  ACQUISE — identité X=1 (planchers 1e-16 à 1e-13 ; chi2_CMB 7.4e-8,
+  expliqué), valeurs aux nœuds, continuation constante, domaine signé
+  et rejets, stabilité default/tight (BAO et CMB), borne acoustique
+  convergée ;
+
+validation indépendante R3 :
+  ACQUISE POUR LES QUANTITÉS CENTRALES, avec dépendances partagées
+  déclarées :
+    - interpolation X(z) : spline par système des moments,
+      accord <= 8.9e-15 ;
+    - H_X(z) : reconstruction algébrique indépendante,
+      accord <= 5.2e-16 ;
+    - D_M : Simpson en u=sqrt(a) avec césure z=2.33, étalonné sur
+      solution analytique EdS exacte (3.6e-16),
+      accord <= 5.7e-16 (z BAO) et <= 1.85e-10 (z_star, borné par la
+      tolérance quad de la voie principale) ;
+    - interpolant sur P<=3 : référence analytique exacte ;
+  et méta-validation des gardes : fautes F1-F5 toutes détectées ;
+
+limites restantes :
+  - H_ref (CAMB 1.5.4) demeure une dépendance partagée de toutes les
+    voies : aucune validation R3 de CAMB lui-même n'est revendiquée ;
+  - r_star, r_drag et la correction acoustique reposent sur les étalons
+    CAMB et le sound_speed partagés : leur statut est R2 + stabilité,
+    pas R3 ;
+  - chi2_CMB hérite du plancher 1.85e-10 de D_M(z_star) : ~2.3e-4 sur
+    profils de stress, ~1e-6 attendu au voisinage des données ;
+  - la liste de fautes F1-F5 n'est pas exhaustive ;
+  - I5 est une caractérisation de convention, pas une validation.
+
+MCMC / minimisation / posterior / priors X_i : absents, conformes ;
+G2.1 : clôturable sur la base R1 + R2 + R3 ci-dessus, sous ratification
+humaine de T8-T12 ; G2.2 / G2.3 : fermées jusqu'à cette décision.
 ```
 
-## Annexe — sortie brute du passage directeur (identique sur les deux exécutions)
+## Annexe — sortie brute du passage directeur final (identique sur les deux exécutions, complément G2.1d inclus)
 
-# Sortie brute G2.1 � mesures I1�I7
+# Sortie brute G2.1 — mesures I1–I7
 
-Cette sortie ne constitue ni un posterior ni une pr�f�rence de mod�le.
+Cette sortie ne constitue ni un posterior ni une préférence de modèle.
 
 ```json
 {
@@ -340,174 +487,174 @@ Cette sortie ne constitue ni un posterior ni une pr�f�rence de mod�le.
   "camb_full": {
     "I1_CAMB_identity": {
       "g1_lcdm_map_M2a_natural": {
-        "BAO_corrected_rel_max": 3.266024952578764e-16,
-        "BAO_fixed_rel_max": 3.266024952578764e-16,
-        "CMB_corrected_abs_max": 3.1112994125503945e-12,
-        "CMB_fixed_abs_max": 3.1112994125503945e-12,
+        "BAO_corrected_rel_max": 4.899037428868147e-16,
+        "BAO_fixed_rel_max": 4.899037428868147e-16,
+        "CMB_corrected_abs_max": 1.6323747908941755e-14,
+        "CMB_fixed_abs_max": 1.6323747908941755e-14,
         "DM_rel_max": 4.2438814862380456e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 1.474376176702208e-13,
-        "chi2_BAO_fixed_abs": 1.474376176702208e-13,
-        "chi2_CMB_corrected_abs": 7.103578005818179e-07,
-        "chi2_CMB_fixed_abs": 7.103578005818179e-07,
+        "chi2_BAO_corrected_abs": 1.900701818158268e-13,
+        "chi2_BAO_fixed_abs": 1.900701818158268e-13,
+        "chi2_CMB_corrected_abs": 3.726955188909642e-09,
+        "chi2_CMB_fixed_abs": 3.726955188909642e-09,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 3.1112994125503945e-12,
-        "theta_fixed_abs": 3.1112994125503945e-12
+        "theta_corrected_abs": 1.6323747908941755e-14,
+        "theta_fixed_abs": 1.6323747908941755e-14
       },
       "g1_lcdm_map_M2a_not-a-knot": {
-        "BAO_corrected_rel_max": 3.266024952578764e-16,
-        "BAO_fixed_rel_max": 3.266024952578764e-16,
-        "CMB_corrected_abs_max": 3.1112994125503945e-12,
-        "CMB_fixed_abs_max": 3.1112994125503945e-12,
+        "BAO_corrected_rel_max": 4.899037428868147e-16,
+        "BAO_fixed_rel_max": 4.899037428868147e-16,
+        "CMB_corrected_abs_max": 1.6323747908941755e-14,
+        "CMB_fixed_abs_max": 1.6323747908941755e-14,
         "DM_rel_max": 4.2438814862380456e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 1.474376176702208e-13,
-        "chi2_BAO_fixed_abs": 1.474376176702208e-13,
-        "chi2_CMB_corrected_abs": 7.103578005818179e-07,
-        "chi2_CMB_fixed_abs": 7.103578005818179e-07,
+        "chi2_BAO_corrected_abs": 1.900701818158268e-13,
+        "chi2_BAO_fixed_abs": 1.900701818158268e-13,
+        "chi2_CMB_corrected_abs": 3.726955188909642e-09,
+        "chi2_CMB_fixed_abs": 3.726955188909642e-09,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 3.1112994125503945e-12,
-        "theta_fixed_abs": 3.1112994125503945e-12
+        "theta_corrected_abs": 1.6323747908941755e-14,
+        "theta_fixed_abs": 1.6323747908941755e-14
       },
       "g1_lcdm_map_M2b_natural": {
-        "BAO_corrected_rel_max": 3.266024952578764e-16,
-        "BAO_fixed_rel_max": 3.266024952578764e-16,
-        "CMB_corrected_abs_max": 2.195238782420894e-12,
-        "CMB_fixed_abs_max": 2.195238782420894e-12,
+        "BAO_corrected_rel_max": 4.899037428868147e-16,
+        "BAO_fixed_rel_max": 4.899037428868147e-16,
+        "CMB_corrected_abs_max": 1.6323747908941755e-14,
+        "CMB_fixed_abs_max": 1.6323747908941755e-14,
         "DM_rel_max": 4.2438814862380456e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 1.474376176702208e-13,
-        "chi2_BAO_fixed_abs": 1.474376176702208e-13,
-        "chi2_CMB_corrected_abs": 5.01206618874761e-07,
-        "chi2_CMB_fixed_abs": 5.01206618874761e-07,
+        "chi2_BAO_corrected_abs": 1.900701818158268e-13,
+        "chi2_BAO_fixed_abs": 1.900701818158268e-13,
+        "chi2_CMB_corrected_abs": 3.726955188909642e-09,
+        "chi2_CMB_fixed_abs": 3.726955188909642e-09,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 2.195238782420894e-12,
-        "theta_fixed_abs": 2.195238782420894e-12
+        "theta_corrected_abs": 1.6323747908941755e-14,
+        "theta_fixed_abs": 1.6323747908941755e-14
       },
       "g1_lcdm_map_M2b_not-a-knot": {
-        "BAO_corrected_rel_max": 3.266024952578764e-16,
-        "BAO_fixed_rel_max": 3.266024952578764e-16,
-        "CMB_corrected_abs_max": 2.195238782420894e-12,
-        "CMB_fixed_abs_max": 2.195238782420894e-12,
+        "BAO_corrected_rel_max": 4.899037428868147e-16,
+        "BAO_fixed_rel_max": 4.899037428868147e-16,
+        "CMB_corrected_abs_max": 1.6323747908941755e-14,
+        "CMB_fixed_abs_max": 1.6323747908941755e-14,
         "DM_rel_max": 4.2438814862380456e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 1.474376176702208e-13,
-        "chi2_BAO_fixed_abs": 1.474376176702208e-13,
-        "chi2_CMB_corrected_abs": 5.01206618874761e-07,
-        "chi2_CMB_fixed_abs": 5.01206618874761e-07,
+        "chi2_BAO_corrected_abs": 1.900701818158268e-13,
+        "chi2_BAO_fixed_abs": 1.900701818158268e-13,
+        "chi2_CMB_corrected_abs": 3.726955188909642e-09,
+        "chi2_CMB_fixed_abs": 3.726955188909642e-09,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 2.195238782420894e-12,
-        "theta_fixed_abs": 2.195238782420894e-12
+        "theta_corrected_abs": 1.6323747908941755e-14,
+        "theta_fixed_abs": 1.6323747908941755e-14
       },
       "g1_reference_M2a_natural": {
-        "BAO_corrected_rel_max": 4.409610555329086e-16,
-        "BAO_fixed_rel_max": 4.409610555329086e-16,
-        "CMB_corrected_abs_max": 3.1528720606521787e-12,
-        "CMB_fixed_abs_max": 3.1528720606521787e-12,
+        "BAO_corrected_rel_max": 4.409610555329156e-16,
+        "BAO_fixed_rel_max": 4.409610555329156e-16,
+        "CMB_corrected_abs_max": 1.221852480304264e-13,
+        "CMB_fixed_abs_max": 1.221852480304264e-13,
         "DM_rel_max": 2.8111216401697903e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 4.583000645652646e-13,
-        "chi2_BAO_fixed_abs": 4.583000645652646e-13,
-        "chi2_CMB_corrected_abs": 1.9106926760770193e-06,
-        "chi2_CMB_fixed_abs": 1.9106926760770193e-06,
+        "chi2_BAO_corrected_abs": 4.476419235288631e-13,
+        "chi2_BAO_fixed_abs": 4.476419235288631e-13,
+        "chi2_CMB_corrected_abs": 7.404621626960761e-08,
+        "chi2_CMB_fixed_abs": 7.404621626960761e-08,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 3.1528720606521787e-12,
-        "theta_fixed_abs": 3.1528720606521787e-12
+        "theta_corrected_abs": 1.221852480304264e-13,
+        "theta_fixed_abs": 1.221852480304264e-13
       },
       "g1_reference_M2a_not-a-knot": {
-        "BAO_corrected_rel_max": 4.409610555329086e-16,
-        "BAO_fixed_rel_max": 4.409610555329086e-16,
-        "CMB_corrected_abs_max": 3.1528720606521787e-12,
-        "CMB_fixed_abs_max": 3.1528720606521787e-12,
+        "BAO_corrected_rel_max": 4.409610555329156e-16,
+        "BAO_fixed_rel_max": 4.409610555329156e-16,
+        "CMB_corrected_abs_max": 1.221852480304264e-13,
+        "CMB_fixed_abs_max": 1.221852480304264e-13,
         "DM_rel_max": 2.8111216401697903e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 4.583000645652646e-13,
-        "chi2_BAO_fixed_abs": 4.583000645652646e-13,
-        "chi2_CMB_corrected_abs": 1.9106926760770193e-06,
-        "chi2_CMB_fixed_abs": 1.9106926760770193e-06,
+        "chi2_BAO_corrected_abs": 4.476419235288631e-13,
+        "chi2_BAO_fixed_abs": 4.476419235288631e-13,
+        "chi2_CMB_corrected_abs": 7.404621626960761e-08,
+        "chi2_CMB_fixed_abs": 7.404621626960761e-08,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 3.1528720606521787e-12,
-        "theta_fixed_abs": 3.1528720606521787e-12
+        "theta_corrected_abs": 1.221852480304264e-13,
+        "theta_fixed_abs": 1.221852480304264e-13
       },
       "g1_reference_M2b_natural": {
-        "BAO_corrected_rel_max": 4.409610555329086e-16,
-        "BAO_fixed_rel_max": 4.409610555329086e-16,
-        "CMB_corrected_abs_max": 4.493320646115073e-12,
-        "CMB_fixed_abs_max": 4.493320646115073e-12,
+        "BAO_corrected_rel_max": 4.409610555329156e-16,
+        "BAO_fixed_rel_max": 4.409610555329156e-16,
+        "CMB_corrected_abs_max": 1.2218177858347445e-13,
+        "CMB_fixed_abs_max": 1.2218177858347445e-13,
         "DM_rel_max": 2.8111216401697903e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 4.476419235288631e-13,
-        "chi2_BAO_fixed_abs": 4.476419235288631e-13,
-        "chi2_CMB_corrected_abs": 2.7230278081269432e-06,
-        "chi2_CMB_fixed_abs": 2.7230278081269432e-06,
+        "chi2_BAO_corrected_abs": 4.369837824924616e-13,
+        "chi2_BAO_fixed_abs": 4.369837824924616e-13,
+        "chi2_CMB_corrected_abs": 7.404411350719897e-08,
+        "chi2_CMB_fixed_abs": 7.404411350719897e-08,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 4.493320646115073e-12,
-        "theta_fixed_abs": 4.493320646115073e-12
+        "theta_corrected_abs": 1.2218177858347445e-13,
+        "theta_fixed_abs": 1.2218177858347445e-13
       },
       "g1_reference_M2b_not-a-knot": {
-        "BAO_corrected_rel_max": 4.409610555329086e-16,
-        "BAO_fixed_rel_max": 4.409610555329086e-16,
-        "CMB_corrected_abs_max": 4.493320646115073e-12,
-        "CMB_fixed_abs_max": 4.493320646115073e-12,
+        "BAO_corrected_rel_max": 4.409610555329156e-16,
+        "BAO_fixed_rel_max": 4.409610555329156e-16,
+        "CMB_corrected_abs_max": 1.2218177858347445e-13,
+        "CMB_fixed_abs_max": 1.2218177858347445e-13,
         "DM_rel_max": 2.8111216401697903e-16,
         "H_rel_max": 0.0,
-        "chi2_BAO_corrected_abs": 4.476419235288631e-13,
-        "chi2_BAO_fixed_abs": 4.476419235288631e-13,
-        "chi2_CMB_corrected_abs": 2.7230278081269432e-06,
-        "chi2_CMB_fixed_abs": 2.7230278081269432e-06,
+        "chi2_BAO_corrected_abs": 4.369837824924616e-13,
+        "chi2_BAO_fixed_abs": 4.369837824924616e-13,
+        "chi2_CMB_corrected_abs": 7.404411350719897e-08,
+        "chi2_CMB_fixed_abs": 7.404411350719897e-08,
         "rdrag_corrected_abs": 0.0,
         "rdrag_fixed_abs": 0.0,
         "rstar_corrected_abs": 0.0,
         "rstar_fixed_abs": 0.0,
-        "theta_corrected_abs": 4.493320646115073e-12,
-        "theta_fixed_abs": 4.493320646115073e-12
+        "theta_corrected_abs": 1.2218177858347445e-13,
+        "theta_fixed_abs": 1.2218177858347445e-13
       }
     },
     "I4_I5_acoustic_and_spline_sensitivity": {
       "oscillatory": {
-        "BAO_nat_nak_rel_max": 0.06870677309924239,
+        "BAO_nat_nak_rel_max": 0.0687067730992424,
         "X_nak_min": -4.014169823509499,
         "X_nat_min": -0.7420852901228724,
         "X_nat_nak_abs_max": 3.7325974330938902,
-        "chi2_BAO_nat_minus_nak": -174.78741100164183,
-        "natural_BAO_corrected_vs_fixed_rel_max": 1.4527529408734504e-14,
-        "natural_chi2_BAO_corrected_minus_fixed": 1.1141310096718371e-11,
+        "chi2_BAO_nat_minus_nak": -174.78741100164257,
+        "natural_BAO_corrected_vs_fixed_rel_max": 1.4527529408734507e-14,
+        "natural_chi2_BAO_corrected_minus_fixed": 1.1368683772161603e-11,
         "natural_rdrag_corrected_minus_fixed": -2.1316282072803006e-12,
         "natural_rstar_corrected_minus_fixed": -2.1032064978498966e-12,
-        "natural_theta_corrected_minus_fixed": -1.5092094240998222e-16,
-        "not-a-knot_BAO_corrected_vs_fixed_rel_max": 1.451930203175972e-14,
-        "not-a-knot_chi2_BAO_corrected_minus_fixed": -1.7564616427989677e-11,
+        "natural_theta_corrected_minus_fixed": -1.491862189340054e-16,
+        "not-a-knot_BAO_corrected_vs_fixed_rel_max": 1.4519302031759727e-14,
+        "not-a-knot_chi2_BAO_corrected_minus_fixed": -1.7394086171407253e-11,
         "not-a-knot_rdrag_corrected_minus_fixed": -2.1316282072803006e-12,
         "not-a-knot_rstar_corrected_minus_fixed": -2.1032064978498966e-12,
         "not-a-knot_theta_corrected_minus_fixed": -1.474514954580286e-16
       },
       "positive_gentle": {
-        "BAO_nat_nak_rel_max": 0.0022444218967308145,
+        "BAO_nat_nak_rel_max": 0.0022444218967308154,
         "X_nak_min": 0.799899747636211,
         "X_nat_min": 0.7995201594126987,
         "X_nat_nak_abs_max": 0.15522946677287952,
-        "chi2_BAO_nat_minus_nak": 3.9867364276772292,
+        "chi2_BAO_nat_minus_nak": 3.9867364276775703,
         "natural_BAO_corrected_vs_fixed_rel_max": 0.0,
         "natural_chi2_BAO_corrected_minus_fixed": 0.0,
         "natural_rdrag_corrected_minus_fixed": 0.0,
@@ -520,31 +667,139 @@ Cette sortie ne constitue ni un posterior ni une pr�f�rence de mod�le.
         "not-a-knot_theta_corrected_minus_fixed": 0.0
       },
       "signed_crossing": {
-        "BAO_nat_nak_rel_max": 0.025070127837649354,
+        "BAO_nat_nak_rel_max": 0.025070127837649364,
         "X_nak_min": -0.20321357877328486,
         "X_nat_min": -0.20756469747680747,
         "X_nat_nak_abs_max": 0.3396422085447146,
-        "chi2_BAO_nat_minus_nak": 188.71686685296072,
-        "natural_BAO_corrected_vs_fixed_rel_max": 9.738516380009375e-15,
-        "natural_chi2_BAO_corrected_minus_fixed": -3.2741809263825417e-10,
+        "chi2_BAO_nat_minus_nak": 188.7168668529598,
+        "natural_BAO_corrected_vs_fixed_rel_max": 9.811587615290697e-15,
+        "natural_chi2_BAO_corrected_minus_fixed": -3.2605385058559477e-10,
         "natural_rdrag_corrected_minus_fixed": 1.4210854715202004e-12,
         "natural_rstar_corrected_minus_fixed": 1.4210854715202004e-12,
         "natural_theta_corrected_minus_fixed": 9.8879238130678e-17,
-        "not-a-knot_BAO_corrected_vs_fixed_rel_max": 9.714599081866318e-15,
-        "not-a-knot_chi2_BAO_corrected_minus_fixed": -3.042259777430445e-10,
+        "not-a-knot_BAO_corrected_vs_fixed_rel_max": 9.811587615290697e-15,
+        "not-a-knot_chi2_BAO_corrected_minus_fixed": -3.0377123039215803e-10,
         "not-a-knot_rdrag_corrected_minus_fixed": 1.4210854715202004e-12,
         "not-a-knot_rstar_corrected_minus_fixed": 1.4210854715202004e-12,
         "not-a-knot_theta_corrected_minus_fixed": 9.8879238130678e-17
       }
     },
     "I6_numerical_stability": {
-      "BAO_default_vs_tight_rel_max": 9.714599081866318e-15,
+      "BAO_default_vs_tight_rel_max": 9.811587615290697e-15,
+      "CMB_default_vs_tight": {
+        "oscillatory_natural": {
+          "DM_zstar_rel": 1.8502327829625374e-10,
+          "chi2_CMB_corrected_abs": 4.508283052473416e-05,
+          "chi2_CMB_fixed_abs": 4.507931737407489e-05,
+          "theta_corrected_abs": 1.914605626818222e-12,
+          "theta_fixed_abs": 1.914456440599288e-12
+        },
+        "oscillatory_not-a-knot": {
+          "DM_zstar_rel": 1.825739998129624e-10,
+          "chi2_CMB_corrected_abs": 0.00013660925378644606,
+          "chi2_CMB_fixed_abs": 0.0001365984498988837,
+          "theta_corrected_abs": 1.8642535432045193e-12,
+          "theta_fixed_abs": 1.8641060917090613e-12
+        },
+        "signed_crossing_natural": {
+          "DM_zstar_rel": 1.8163685390822352e-10,
+          "chi2_CMB_corrected_abs": 0.00023340053303400055,
+          "chi2_CMB_fixed_abs": 0.00023341316045843996,
+          "theta_corrected_abs": 1.8271946455872268e-12,
+          "theta_fixed_abs": 1.8272935248253575e-12
+        },
+        "signed_crossing_not-a-knot": {
+          "DM_zstar_rel": 1.8218932474487737e-10,
+          "chi2_CMB_corrected_abs": 0.00021439436750370078,
+          "chi2_CMB_fixed_abs": 0.00021440589989651926,
+          "theta_corrected_abs": 1.838328100856046e-12,
+          "theta_fixed_abs": 1.8384269800941766e-12
+        }
+      },
       "DM_default_vs_tight_rel_max": 0.0,
       "H_default_vs_tight_rel_max": 0.0,
       "rdrag_zmax_1e6_minus_1e7": 1.3376109109231038e-09,
       "rdrag_zmax_1e7_minus_1e8": 1.4210854715202004e-12,
       "rstar_zmax_1e6_minus_1e7": 1.2491625511756865e-09,
       "rstar_zmax_1e7_minus_1e8": 1.4210854715202004e-12
+    },
+    "I8_independent_path": {
+      "eds_calibration": {
+        "z1089.0_rel": 2.189955273610818e-16,
+        "z2.33_rel": 3.523685146060914e-16
+      },
+      "oscillatory_natural": {
+        "DM_bao_rel_max": 5.670103170711733e-16,
+        "DM_zstar_rel": 1.8461792032578391e-10,
+        "DM_zstar_richardson_rel": 1.755037868621818e-13,
+        "H_rel_max": 2.1997840575663356e-16,
+        "X_scipy_vs_manuel_abs_max": 1.5543122344752192e-15,
+        "chi2_CMB_fixed_abs": 4.498054886425962e-05,
+        "theta_fixed_abs": 1.910261879234376e-12
+      },
+      "oscillatory_not-a-knot": {
+        "DM_bao_rel_max": 5.646256181840648e-16,
+        "DM_zstar_rel": 1.8217400784056816e-10,
+        "DM_zstar_richardson_rel": 1.7318052433621293e-13,
+        "H_rel_max": 5.130432518293426e-16,
+        "X_scipy_vs_manuel_abs_max": 8.881784197001252e-15,
+        "chi2_CMB_fixed_abs": 0.00013629921431856928,
+        "theta_fixed_abs": 1.860022552646612e-12
+      },
+      "signed_crossing_natural": {
+        "DM_bao_rel_max": 3.9394700618789315e-16,
+        "DM_zstar_rel": 1.8124273801474716e-10,
+        "DM_zstar_richardson_rel": 1.6975359760732635e-13,
+        "H_rel_max": 2.1035056369274808e-16,
+        "X_scipy_vs_manuel_abs_max": 8.881784197001252e-16,
+        "chi2_CMB_fixed_abs": 0.0002329066082893405,
+        "theta_fixed_abs": 1.8233279469592745e-12
+      },
+      "signed_crossing_not-a-knot": {
+        "DM_bao_rel_max": 4.974095439247051e-16,
+        "DM_zstar_rel": 1.8179400982494397e-10,
+        "DM_zstar_richardson_rel": 1.7027004228272272e-13,
+        "H_rel_max": 2.1767788957177584e-16,
+        "X_scipy_vs_manuel_abs_max": 1.5543122344752192e-15,
+        "chi2_CMB_fixed_abs": 0.0002139407879440114,
+        "theta_fixed_abs": 1.834438850822906e-12
+      }
+    },
+    "I9_adversarial": {
+      "F1_signe_H2": {
+        "aveuglement_documente": "l'identité I1 (X=1) est aveugle à cette faute : la correction s'annule quel que soit son signe.",
+        "detecte": true,
+        "deviation_faute": 0.5407883261662035,
+        "garde": "I8_H_rel_max",
+        "temoin_correct": 2.015872465342384e-16
+      },
+      "F2_facteur_variable_DM": {
+        "detecte": true,
+        "deviation_faute": 0.5308370565639866,
+        "garde": "I8_DM_bao_rel_max",
+        "temoin_correct": 2.917319130001695e-16
+      },
+      "F3_noeud_deplace": {
+        "aveuglement_documente": "le test I2 évalué aux nœuds du profil fautif passerait : il ne garde pas la position des nœuds.",
+        "detecte": true,
+        "deviation_faute": 0.04244438989289562,
+        "garde": "I8_X_scipy_vs_manuel_abs_max",
+        "temoin_correct": 8.881784197001252e-16
+      },
+      "F4_raccord_supprime": {
+        "detecte": true,
+        "deviation_faute": 0.6448472080390781,
+        "garde": "I3_constant_extension_abs_max",
+        "temoin_correct": 0.0
+      },
+      "F5_omega_x0_faux": {
+        "aveuglement_documente": "l'identité I1 (X=1) est aveugle à cette faute : Omega_X,0 multiplie (X-1)=0.",
+        "detecte": true,
+        "deviation_faute": 0.017325443827536195,
+        "garde": "I8_H_rel_max",
+        "temoin_correct": 2.015872465342384e-16
+      },
+      "toutes_fautes_detectees": true
     }
   }
 }
