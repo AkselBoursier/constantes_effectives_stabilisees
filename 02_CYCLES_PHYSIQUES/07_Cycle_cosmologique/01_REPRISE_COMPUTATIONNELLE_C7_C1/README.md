@@ -12,9 +12,13 @@ provenance       : #60 — D9 ; #61 — A0–A5 ; #62 — P29 ;
 archivage        : décision séparée #64 (rien d'initialisé ici) ;
 branche          : comp/c7-c1-comparaison-commune ;
 base             : origin/main = 5e088d1 (vérifié G1.0) ;
-porte courante   : G1.2 — qualification de la vraisemblance commune.
-                   AUCUN échantillonnage.
+état G1          : G1.0, G1.2 et G1.3 validées ;
+porte suivante   : G2.1 — validation de l'instrument numérique X(z),
+                   ouverte dans #63 sur une branche distincte après merge.
 ```
+
+Les huit chaînes G1.3 ont été produites hors Git. Elles ne sont ni suivies
+ni distribuées dans cette PR.
 
 ## Portes (résumé de #63)
 
@@ -25,20 +29,24 @@ porte courante   : G1.2 — qualification de la vraisemblance commune.
   (commentaire G1.4 de #63 ; corrections documentaires en `1ee2b4c`) ;
 - G1.3 — reproductions LambdaCDM et CPL sous la vraisemblance commune
   (8 chaînes convergées, T7 passé, minimisations multi-départs,
-  contraste) : **exécutée, rapport soumis à validation humaine**
-  (`reports/rapport_G1_3.md`) ;
-- G2 — validation de X(z) ; G3 — comparaison commune ; G4 — verdict.
+  contraste) : **validée** (commentaire G1.6 de #63 ;
+  `reports/rapport_G1_3.md`) ;
+- G2.0 — spécification de `X(z)` : **ratifiée** ;
+- G2.1 — invariants et stabilité de `X(z)` : **ouverte pour tests seulement** ;
+- G2.2 — pré-enregistrement des priors ; G2.3 — première inférence ;
+- G3 — comparaison commune ; G4 — verdict.
 
 ## Interdits actifs
 
 ```text
-aucune chaîne MCMC avant validation humaine du rapport G1.0 ;
 données, chaînes, caches, environnements : hors Git ;
 data_external : lecture seule, jamais suivi par Git ;
 aucun chemin absolu local, secret ou jeton dans les fichiers suivis ;
 aucune substitution de fichier voisin à un produit demandé ;
 pas de qualification d'un meilleur point de profil de vraisemblance ;
-pas de Wilks automatique pour le modèle spline.
+pas de Wilks automatique pour le modèle spline ;
+aucun MCMC X(z), aucune minimisation X(z et aucune inférence avant
+validation humaine de G2.1 puis pré-enregistrement G2.2.
 ```
 
 ## Contenu
@@ -47,9 +55,11 @@ pas de Wilks automatique pour le modèle spline.
 configs/     — transcriptions LambdaCDM et CPL (+ copies officielles de
                référence dans configs/references/) ;
 manifests/   — provenance, versions, tailles, SHA-256 ;
-scripts/     — vraisemblances transcrites, acquisition vérifiée des
-               octets BAO, tests de point G1.0 ;
-reports/     — comptes rendus légers (jamais de chaînes brutes) ;
+scripts/     — vraisemblances transcrites, acquisition et tests G1.0,
+               contrôle BAO et repondération G1.2,
+               analyse_g1_3.py, run_mcmc_g1_3.py et minimize_g1_3.py ;
+reports/     — rapports G1.0, G1.2 et rapport_G1_3.md,
+               jamais de chaînes brutes ;
 requirements-c7c1.txt — gel de l'environnement isolé.
 ```
 
