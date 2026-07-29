@@ -45,7 +45,7 @@ aucun chemin absolu local, secret ou jeton dans les fichiers suivis ;
 aucune substitution de fichier voisin à un produit demandé ;
 pas de qualification d'un meilleur point de profil de vraisemblance ;
 pas de Wilks automatique pour le modèle spline ;
-aucun MCMC X(z), aucune minimisation X(z et aucune inférence avant
+aucun MCMC X(z), aucune minimisation X(z) et aucune inférence avant
 validation humaine de G2.1 puis pré-enregistrement G2.2.
 ```
 
