@@ -1,4 +1,4 @@
-"""Tests I1–I7 de la porte G2.1 — instrument numérique X(z).
+"""Tests I1–I9 de la porte G2.1 — instrument numérique X(z).
 
 Aucun MCMC, aucune minimisation, aucun posterior et aucun choix de prior ne
 sont réalisés.
@@ -608,7 +608,7 @@ def main() -> None:
     metrics: dict[str, Any] = {"analytic": analytic_tests()}
     if args.full:
         metrics["camb_full"] = full_camb_tests()
-    print("# Sortie brute G2.1 — mesures I1–I7\n")
+    print("# Sortie brute G2.1 — mesures I1–I9\n")
     print("Cette sortie ne constitue ni un posterior ni une préférence de modèle.\n")
     print("```json")
     print(json.dumps(metrics, indent=2, sort_keys=True, ensure_ascii=False))

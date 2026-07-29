@@ -47,7 +47,7 @@ scripts/xz_background_g2_1.py
   - theta_star et vecteurs BAO/CMB.
 
 scripts/test_xz_g2_1.py
-  - tests I1–I7 ;
+  - tests I1–I9 ;
   - mode analytique sans CAMB ;
   - mode complet sous CAMB 1.5.4 et octets BAO G1 ;
   - sortie JSON/Markdown dans le terminal, sans produit volumineux.
@@ -301,8 +301,9 @@ discrétisation, ni du même chemin algébrique que la quantité testée.
 
 ## 4. Tolérances T8–T12 — proposition fondée sur les planchers mesurés
 
-Marges d’un facteur >= 100 sur chaque plancher, sauf mention. Soumises à
-ratification humaine.
+Les seuils sont ratifiés individuellement selon leur fonction de détection
+et les planchers mesurés ; aucune marge multiplicative uniforme n’est
+imposée.
 
 ```text
 T8 — identité LambdaCDM des observables de fond (à ré-exécuter à chaque
@@ -310,9 +311,9 @@ T8 — identité LambdaCDM des observables de fond (à ré-exécuter à chaque
      |H_X/H_ref - 1| et |D_M/D_M_ref - 1|   <= 1e-13  (mesuré <= 4.3e-16) ;
      13 prédictions BAO (relatif)           <= 1e-13  (mesuré <= 4.5e-16) ;
      |Delta r_drag|, |Delta r_star|         <= 1e-10 Mpc (mesuré 0) ;
-     |Delta theta_star| (absolu)            <= 1e-9   (mesuré <= 4.5e-12) ;
+     |Delta theta_star| (absolu)            <= 1e-9   (mesuré <= 1.22e-13) ;
      |Delta chi2_BAO|                       <= 1e-10  (mesuré <= 4.6e-13) ;
-     |Delta chi2_CMB|                       <= 1e-3   (mesuré <= 2.8e-6 ;
+     |Delta chi2_CMB|                       <= 1e-3   (mesuré <= 7.40e-8 ;
        plancher dominé par l'amplification C^-1 de theta_star).
 
 T9 — interpolation et nœuds :
@@ -417,7 +418,7 @@ humaine de T8-T12 ; G2.2 / G2.3 : fermées jusqu'à cette décision.
 
 ## Annexe — sortie brute du passage directeur final (identique sur les deux exécutions, complément G2.1d inclus)
 
-# Sortie brute G2.1 — mesures I1–I7
+# Sortie brute G2.1 — mesures I1–I9
 
 Cette sortie ne constitue ni un posterior ni une préférence de modèle.
 
