@@ -1,0 +1,48 @@
+# C7-C1 — G2.3a : configuration déclarative M2a-N (grille M2a, spline natural).
+# Pré-enregistrement directeur : reports/rapport_G2_2a_preregistration.md (D3-A..H).
+# Aucune inférence n'est autorisée par ce fichier (garde : inference.autorisee).
+lot: c7-c1-g2_3
+variante: M2a-N
+grille: M2a
+convention_spline: natural
+noeuds: [0.0, 0.3333333333333333, 0.6666666666666666, 1.0, 1.3333333333333333, 2.33]
+x0_fixe: 1.0
+parametres_x:
+  - nom: X1
+    noeud: 0.3333333333333333
+    prior: {famille: P_WS, dist: uniform, min: -2.0, max: 4.0}
+  - nom: X2
+    noeud: 0.6666666666666666
+    prior: {famille: P_WS, dist: uniform, min: -2.0, max: 4.0}
+  - nom: X3
+    noeud: 1.0
+    prior: {famille: P_WS, dist: uniform, min: -2.0, max: 4.0}
+  - nom: X4
+    noeud: 1.3333333333333333
+    prior: {famille: P_WS, dist: uniform, min: -2.0, max: 4.0}
+  - nom: X5
+    noeud: 2.33
+    prior: {famille: P_WS, dist: uniform, min: -2.0, max: 4.0}
+priors_fond:
+  H0: {dist: uniform, min: 20.0, max: 100.0}
+  ombh2: {dist: uniform, min: 0.005, max: 0.1}
+  omm: {dist: uniform, min: 0.01, max: 0.99}
+parametres_fixes:
+  mnu: 0.06
+  nnu: 3.044
+  tau: 0.0544
+  ns: 0.9649
+  logA: 3.036
+contraintes_dures:
+  - "omch2 > 0"
+  - "H_X^2 fini et > 0 sur tout le domaine requis"
+traitement_acoustique: corrected
+continuation: "X(z >= 2.33) = X(2.33)"
+graine: 6301
+sorties:
+  regle: hors_git
+  variable_environnement: C7C1_XZ_OUT_DIR
+  note: "tout préfixe de sortie doit être refusé si un ancêtre contient un dépôt Git"
+inference:
+  autorisee: false
+  note: "G2.3a : qualification seulement ; toute MCMC/minimisation exige une décision humaine distincte"
