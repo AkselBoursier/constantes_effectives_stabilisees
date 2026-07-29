@@ -64,6 +64,10 @@ T8 = {
     "theta_abs": 1e-9,
     "chi2_BAO_abs": 1e-10,
     "chi2_CMB_abs": 1e-3,
+    "H_rel": 1e-13,
+    "DM_rel": 1e-13,
+    "rdrag_abs": 1e-10,
+    "rstar_abs": 1e-10,
 }
 # Seuils T9-T12 ratifiés, appliqués à la sortie I1-I9.
 T9_T12 = {
@@ -73,6 +77,7 @@ T9_T12 = {
     "T11_BAO_default_tight": 1e-12,
     "T11_DM_quad_trapezes": 1e-8,
     "T11_rdrag_zmax": 1e-10,
+    "T11_rstar_zmax": 1e-10,
     "T11_DM_zstar": 1e-8,
     "T11_theta": 1e-10,
     "T11_chi2_CMB_stress": 2e-2,
@@ -82,6 +87,7 @@ T9_T12 = {
     "T11_I8_eds": 1e-13,
     "T12_chi2_BAO_corr_fixed": 1e-8,
     "T12_rdrag_corr_fixed": 1e-10,
+    "T12_rstar_corr_fixed": 1e-10,
 }
 
 
@@ -262,6 +268,16 @@ def main() -> None:
         "T8_chi2_CMB_abs": max(v["chi2_CMB_corrected_abs"] for v in ident.values()),
         "T8_BAO_rel": max(v["BAO_corrected_rel_max"] for v in ident.values()),
         "T8_chi2_BAO_abs": max(v["chi2_BAO_corrected_abs"] for v in ident.values()),
+        "T8_H_rel": max(v["H_rel_max"] for v in ident.values()),
+        "T8_DM_rel": max(v["DM_rel_max"] for v in ident.values()),
+        "T8_rdrag_abs": max(
+            max(v["rdrag_fixed_abs"], v["rdrag_corrected_abs"])
+            for v in ident.values()
+        ),
+        "T8_rstar_abs": max(
+            max(v["rstar_fixed_abs"], v["rstar_corrected_abs"])
+            for v in ident.values()
+        ),
         "T9_noeuds": max(
             v["node_abs_max"]
             for k, v in i19["analytic"]["I2_interpolation"].items()
@@ -275,7 +291,11 @@ def main() -> None:
             v["constant_extension_abs_max"] for v in borne.values()
         ),
         "T11_BAO_default_tight": stab["BAO_default_vs_tight_rel_max"],
+        "T11_DM_quad_trapezes": i19["analytic"][
+            "I1_I6_analytic_identity_stability"
+        ]["DM_quad_vs_trapezoid_rel_max"],
         "T11_rdrag_zmax": abs(stab["rdrag_zmax_1e7_minus_1e8"]),
+        "T11_rstar_zmax": abs(stab["rstar_zmax_1e7_minus_1e8"]),
         "T11_DM_zstar": max(
             v["DM_zstar_rel"] for v in stab["CMB_default_vs_tight"].values()
         ),
@@ -310,6 +330,13 @@ def main() -> None:
             )
             for v in sens.values()
         ),
+        "T12_rstar_corr_fixed": max(
+            max(
+                abs(v["natural_rstar_corrected_minus_fixed"]),
+                abs(v["not-a-knot_rstar_corrected_minus_fixed"]),
+            )
+            for v in sens.values()
+        ),
         "I9_toutes_fautes_detectees": adv["toutes_fautes_detectees"],
     }
     seuils_ok = {
@@ -318,6 +345,10 @@ def main() -> None:
             and mesures_t["T8_chi2_CMB_abs"] <= T8["chi2_CMB_abs"]
             and mesures_t["T8_BAO_rel"] <= T8["BAO_rel"]
             and mesures_t["T8_chi2_BAO_abs"] <= T8["chi2_BAO_abs"]
+            and mesures_t["T8_H_rel"] <= T8["H_rel"]
+            and mesures_t["T8_DM_rel"] <= T8["DM_rel"]
+            and mesures_t["T8_rdrag_abs"] <= T8["rdrag_abs"]
+            and mesures_t["T8_rstar_abs"] <= T8["rstar_abs"]
         ),
         "T9": bool(
             mesures_t["T9_noeuds"] <= T9_T12["T9_noeuds"]
@@ -326,7 +357,9 @@ def main() -> None:
         "T10": bool(mesures_t["T10_continuation"] <= T9_T12["T10_continuation"]),
         "T11": bool(
             mesures_t["T11_BAO_default_tight"] <= T9_T12["T11_BAO_default_tight"]
+            and mesures_t["T11_DM_quad_trapezes"] <= T9_T12["T11_DM_quad_trapezes"]
             and mesures_t["T11_rdrag_zmax"] <= T9_T12["T11_rdrag_zmax"]
+            and mesures_t["T11_rstar_zmax"] <= T9_T12["T11_rstar_zmax"]
             and mesures_t["T11_DM_zstar"] <= T9_T12["T11_DM_zstar"]
             and mesures_t["T11_theta"] <= T9_T12["T11_theta"]
             and mesures_t["T11_chi2_CMB_stress"] <= T9_T12["T11_chi2_CMB_stress"]
@@ -339,6 +372,7 @@ def main() -> None:
         "T12": bool(
             mesures_t["T12_chi2_BAO_corr_fixed"] <= T9_T12["T12_chi2_BAO_corr_fixed"]
             and mesures_t["T12_rdrag_corr_fixed"] <= T9_T12["T12_rdrag_corr_fixed"]
+            and mesures_t["T12_rstar_corr_fixed"] <= T9_T12["T12_rstar_corr_fixed"]
         ),
     }
     resultat["C5_T8_T12"] = {"mesures": mesures_t, "verdicts": seuils_ok}

@@ -131,13 +131,44 @@ T8 = 1e-3) ; BAO rel <= 4.4e-16 (seuil 1e-13) ; theta_star <= 1.7e-14
 
 ### C5 — ré-exécution complète de T8–T12 (suite I1–I9)
 
+Couverture complète G2.3f : chaque mesure ci-dessous est branchée dans
+le verdict bloquant correspondant (une seule fausse => SystemExit(1)).
+
 ```text
-T8  : PASSE   T9 : PASSE   T10 : PASSE   T11 : PASSE   T12 : PASSE
-I9 (fautes G2.1 F1–F5) : toutes détectées.
+T8 (identité X=1, max sur toutes les entrées I1) :
+  H_rel        0.0        <= 1e-13   PASSE
+  DM_rel       4.24e-16   <= 1e-13   PASSE
+  BAO_rel      4.41e-16   <= 1e-13   PASSE
+  theta_abs    1.22e-13   <= 1e-9    PASSE
+  rdrag_abs    0.0        <= 1e-10   PASSE
+  rstar_abs    0.0        <= 1e-10   PASSE
+  chi2_BAO     4.58e-13   <= 1e-10   PASSE
+  chi2_CMB     7.40e-8    <= 1e-3    PASSE
+
+T9  : nœuds 0.0 <= 1e-14 ; polynômes 6.7e-16 <= 1e-13        PASSE
+T10 : continuation 0.0 <= 1e-14                              PASSE
+
+T11 :
+  BAO default/tight       9.71e-15   <= 1e-12   PASSE
+  DM quad vs trapèzes     6.59e-11   <= 1e-8    PASSE
+  rdrag zmax 1e7 vs 1e8   1.42e-12   <= 1e-10   PASSE
+  rstar zmax 1e7 vs 1e8   1.42e-12   <= 1e-10   PASSE
+  DM(z_star) def/tight    1.85e-10   <= 1e-8    PASSE
+  theta def/tight         1.91e-12   <= 1e-10   PASSE
+  chi2_CMB stress         2.33e-4    <= 2e-2    PASSE
+  I8 : X 8.9e-15 <= 1e-12 ; H 5.2e-16 <= 1e-13 ;
+       DM_bao 5.7e-16 <= 1e-13 ; EdS 3.6e-16 <= 1e-13        PASSE
+  I9 : toutes fautes F1-F5 détectées                          PASSE
+
+T12 :
+  chi2_BAO corr-fixed     3.27e-10   <= 1e-8    PASSE
+  rdrag corr-fixed        2.13e-12   <= 1e-10   PASSE
+  rstar corr-fixed        2.10e-12   <= 1e-10   PASSE
 ```
 
-Mesures maximales contrôlées contre les seuils ratifiés (détail dans la
-sortie JSON) — aucune régression par rapport à G2.1.
+Aucune régression par rapport à G2.1. Un verdict faux dans le JSON de la
+suite I1–I9 est traité comme un échec bloquant, même si le sous-processus
+retourne un code nul.
 
 ### C6 — assemblage indépendant (sans bao_vector / cmb_vector)
 
