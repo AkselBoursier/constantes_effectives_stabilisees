@@ -18,6 +18,12 @@ Contrôles exécutés (G2.3b) :
 Sortie : JSON trié sur stdout, sans horodatage ni aléa — deux exécutions
 doivent être bit à bit identiques.
 
+PORTE AUTO-BLOQUANTE (G2.3d) : si un seul contrôle échoue, la commande
+se termine avec un code de sortie NON NUL après impression du JSON — un
+`false` inscrit dans la sortie ne suffit jamais. Auto-test du chemin
+d'échec : `C7C1_QUALIF_TEST_ECHEC=1` injecte un échec synthétique et doit
+produire un code non nul (hors passes nominales).
+
 Usage depuis la racine C7-C1 :
     python scripts/qualify_xz_configs_g2_3.py
 """
@@ -29,7 +35,6 @@ import math
 import os
 import subprocess
 import sys
-from pathlib import Path
 
 import numpy as np
 
@@ -93,32 +98,38 @@ def refuser_options_interdites() -> None:
         raise SystemExit(2)
 
 
-def sous_ancetre_git(path: str | Path) -> bool:
-    d = Path(path).resolve()
-    for parent in [d, *d.parents]:
-        if (parent / ".git").exists():
-            return True
-    return False
+# Tolérances d'ingénierie du contrôle d'assemblage C6 (G2.3d §4).
+# Gardes d'assemblage, pas des seuils scientifiques.
+TOL_C6_BAO_ABS = 1e-12
+TOL_C6_CMB_ABS = 1e-14
+
+VARIANTES_ATTENDUES = {"M2a-N", "M2a-K", "M2b-N", "M2b-K"}
 
 
 def main() -> None:
     refuser_options_interdites()
+
+    import copy
 
     from xz_likelihood_g2_3 import (
         CMB_ICOV,
         CMB_MU,
         BAO_KINDS,
         BAO_REDSHIFTS,
+        GRAINES_ATTENDUES,
         ConfigError,
+        SortieSousGitError,
         XZEvaluator,
         load_bao_data,
         load_config,
+        refuser_sortie_sous_git,
         validate_config,
     )
     from test_xz_g2_1 import reference_bao_vector
     from xz_background_g2_1 import CambReference, XZBackground, XZProfile
 
     resultat: dict = {}
+    echecs: list[str] = []
     bao_mean, bao_icov = load_bao_data()
 
     # C1/C2 — schéma strict et ordre exact.
@@ -138,6 +149,13 @@ def main() -> None:
     graines = [cfg["graine"] for cfg in configs.values()]
     schema["graines_distinctes"] = len(set(graines)) == len(graines)
     resultat["C1_C2_schema"] = schema
+    if set(configs.keys()) != VARIANTES_ATTENDUES or len(CONFIGS) != 4:
+        echecs.append("C1: les quatre variantes exactes ne sont pas présentes une fois chacune")
+    if not schema["graines_distinctes"]:
+        echecs.append("C1: graines non distinctes")
+    for variante, cfg in configs.items():
+        if cfg["graine"] != GRAINES_ATTENDUES[variante]:
+            echecs.append(f"C1: graine inexacte pour {variante}")
 
     # C3 — points fixes et sondes de support.
     evaluations: dict = {}
@@ -177,6 +195,12 @@ def main() -> None:
                 "contraintes": out["contraintes"],
             }
         evaluations[variante] = sortie_points
+        for nom_point in ("P0", "P1", "P2", "P3"):
+            if sortie_points[nom_point]["logprior"] != 0.0:
+                echecs.append(f"C3: logprior({nom_point}) != 0.0 pour {variante}")
+        for nom_sonde in sondes:
+            if sortie_points[nom_sonde]["logprior"] != -math.inf:
+                echecs.append(f"C3: logprior({nom_sonde}) != -inf pour {variante}")
 
         # C4 — identité P0/P1 avec LambdaCDM aux seuils T8.
         idv = {}
@@ -213,6 +237,9 @@ def main() -> None:
                 ),
             }
         identites[variante] = idv
+        for nom_point, item in idv.items():
+            if not item["T8_passe"]:
+                echecs.append(f"C4: identité T8 échouée ({variante}, {nom_point})")
     resultat["C3_points_fixes"] = evaluations
     resultat["C4_identite_T8"] = identites
 
@@ -315,6 +342,11 @@ def main() -> None:
         ),
     }
     resultat["C5_T8_T12"] = {"mesures": mesures_t, "verdicts": seuils_ok}
+    for nom_t, ok in seuils_ok.items():
+        if not ok:
+            echecs.append(f"C5: {nom_t} FAUX dans la ré-exécution I1-I9")
+    if not mesures_t["I9_toutes_fautes_detectees"]:
+        echecs.append("C5: fautes I9 non toutes détectées")
 
     # C6 — assemblage indépendant d'un vecteur BAO et du vecteur CMB
     # (sans bao_vector ni cmb_vector), à P0 et P2 sous M2a-N.
@@ -350,14 +382,23 @@ def main() -> None:
             ref.ombh2,
             ref.ombh2 + ref.omch2,
         ]
+        bao_abs = float(
+            np.max(np.abs(np.array(assemblage) - np.array(out["vecteur_BAO"])))
+        )
+        cmb_abs = float(
+            np.max(np.abs(np.array(cmb_assemblage) - np.array(out["vecteur_CMB"])))
+        )
         controle_assemblage[nom_point] = {
-            "BAO_abs_max": float(
-                np.max(np.abs(np.array(assemblage) - np.array(out["vecteur_BAO"])))
-            ),
-            "CMB_abs_max": float(
-                np.max(np.abs(np.array(cmb_assemblage) - np.array(out["vecteur_CMB"])))
+            "BAO_abs_max": bao_abs,
+            "BAO_tolerance": TOL_C6_BAO_ABS,
+            "CMB_abs_max": cmb_abs,
+            "CMB_tolerance": TOL_C6_CMB_ABS,
+            "dans_tolerances": bool(
+                bao_abs <= TOL_C6_BAO_ABS and cmb_abs <= TOL_C6_CMB_ABS
             ),
         }
+        if not controle_assemblage[nom_point]["dans_tolerances"]:
+            echecs.append(f"C6: assemblage hors tolérances ({nom_point})")
     resultat["C6_assemblage_independant"] = controle_assemblage
 
     # C7 — fautes injectées.
@@ -394,15 +435,54 @@ def main() -> None:
         "chi2_CMB_correct": chi2_ok,
         "detectee": bool(abs(chi2_faute - chi2_ok) > T8["chi2_CMB_abs"]),
     }
+    # FQ3 : continuation altérée — validate_config doit rejeter.
+    brut_fq3 = copy.deepcopy(load_config(CONFIGS[0]))
+    brut_fq3["continuation"] = "X(z >= 2.33) = extrapolation cubique"
+    try:
+        validate_config(brut_fq3)
+        fautes["FQ3_continuation_alteree"] = {"detectee": False}
+    except ConfigError as exc:
+        fautes["FQ3_continuation_alteree"] = {
+            "detectee": True,
+            "garde": "validation stricte du contrat YAML",
+            "message": str(exc),
+        }
+    # FQ4 : variable de sortie altérée — validate_config doit rejeter.
+    brut_fq4 = copy.deepcopy(load_config(CONFIGS[0]))
+    brut_fq4["sorties"]["variable_environnement"] = "TMPDIR"
+    try:
+        validate_config(brut_fq4)
+        fautes["FQ4_variable_sortie_alteree"] = {"detectee": False}
+    except ConfigError as exc:
+        fautes["FQ4_variable_sortie_alteree"] = {
+            "detectee": True,
+            "garde": "validation stricte du contrat YAML",
+            "message": str(exc),
+        }
     resultat["C7_fautes_injectees"] = fautes
+    for nom_faute, item in fautes.items():
+        if not item["detectee"]:
+            echecs.append(f"C7: {nom_faute} NON détectée")
 
-    # C8 — refus de toute sortie sous un ancêtre Git.
+    # C8 — refus de toute sortie sous un ancêtre Git (par exception).
+    try:
+        refuser_sortie_sous_git(".")
+        racine_refusee = False
+    except SortieSousGitError:
+        racine_refusee = True
+    try:
+        refuser_sortie_sous_git(os.environ["C7C1_DATA_DIR"])
+        externe_accepte = True
+    except SortieSousGitError:
+        externe_accepte = False
     resultat["C8_sorties_hors_git"] = {
-        "racine_depot_refusee": sous_ancetre_git("."),
-        "repertoire_donnees_accepte": not sous_ancetre_git(
-            os.environ["C7C1_DATA_DIR"]
-        ),
+        "racine_depot_refusee_par_exception": racine_refusee,
+        "repertoire_externe_accepte": externe_accepte,
     }
+    if not racine_refusee:
+        echecs.append("C8: la racine du dépôt n'a pas levé SortieSousGitError")
+    if not externe_accepte:
+        echecs.append("C8: le répertoire externe a été refusé à tort")
 
     resultat["environnement"] = {
         "python": sys.version.split()[0],
@@ -415,10 +495,19 @@ def main() -> None:
         "options interdites refusées à l'entrée"
     )
 
+    # Auto-test du chemin d'échec (hors passes nominales) : un échec
+    # synthétique doit produire un code de sortie non nul.
+    if os.environ.get("C7C1_QUALIF_TEST_ECHEC"):
+        echecs.append("TEST: échec synthétique injecté (C7C1_QUALIF_TEST_ECHEC)")
+
+    resultat["porte"] = {"passe": not echecs, "echecs": sorted(echecs)}
+
     print("# Qualification G2.3a — sortie déterministe")
     print("```json")
     print(json.dumps(resultat, indent=2, sort_keys=True, ensure_ascii=False))
     print("```")
+    if echecs:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

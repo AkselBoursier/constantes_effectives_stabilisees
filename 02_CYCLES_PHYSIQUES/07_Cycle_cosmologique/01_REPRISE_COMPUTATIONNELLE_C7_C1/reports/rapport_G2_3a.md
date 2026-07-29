@@ -43,6 +43,32 @@ Le qualificateur ne possède qu'un mode. Les options `--mcmc`, `--sample`,
 variantes) sont refusées à l'entrée avec arrêt explicite ; aucun code
 d'échantillonnage ou d'optimisation n'existe dans le module.
 
+### Durcissement G2.3d — porte auto-bloquante et contrat YAML intégral
+
+`validate_config` vérifie désormais TOUTE la configuration : `lot`,
+`contraintes_dures` (liste exacte), `continuation` (chaîne exacte),
+structure exacte des blocs `parametres_x` (clés nom/noeud/prior),
+`prior`, `priors_fond`, `sorties` (`regle == hors_git`,
+`variable_environnement == C7C1_XZ_OUT_DIR`, note non vide) et
+`inference` (`autorisee is false`, note non vide) — sans clé manquante ni
+supplémentaire — et la graine attendue par variante (M2a-N 6301,
+M2a-K 6302, M2b-N 6303, M2b-K 6304).
+
+La garde de répertoire de sortie `refuser_sortie_sous_git` LÈVE
+`SortieSousGitError` pour tout chemin sous un ancêtre Git.
+
+La qualification est une PORTE AUTO-BLOQUANTE : chaque condition
+échouée est accumulée et la commande se termine par un code de sortie
+NON NUL (`SystemExit(1)`) après impression du JSON — un `false` inscrit
+dans la sortie ne suffit jamais. Conditions bloquantes : quatre
+variantes exactes présentes une fois chacune ; graines exactes et
+distinctes ; `logprior == 0.0` sur P0–P3 ; `logprior == -inf` sur
+toutes les sondes invalides ; huit identités P0/P1 aux seuils T8 ;
+T8–T12 tous vrais dans la ré-exécution I1–I9 (un verdict faux dans le
+JSON du sous-processus est un échec même à code retour nul) ; C6 dans
+ses tolérances ; FQ1–FQ4 détectées ; racine Git rejetée par exception ;
+chemin externe accepté.
+
 ## 2. Environnement directeur et commandes
 
 ```text
@@ -115,12 +141,15 @@ sortie JSON) — aucune régression par rapport à G2.1.
 
 ### C6 — assemblage indépendant (sans bao_vector / cmb_vector)
 
+Tolérances d'ingénierie fixées avant exécution (gardes d'assemblage,
+pas des seuils scientifiques) : BAO abs <= 1e-12 ; CMB abs <= 1e-14.
+
 ```text
-P0 : BAO abs max 1.8e-15 ; CMB abs max 0.0 ;
-P2 : BAO abs max 3.6e-15 ; CMB abs max 0.0.
+P0 : BAO abs max 1.8e-15 ; CMB abs max 0.0 — dans les tolérances ;
+P2 : BAO abs max 3.6e-15 ; CMB abs max 0.0 — dans les tolérances.
 ```
 
-### C7 — fautes injectées (2/2 détectées)
+### C7 — fautes injectées (4/4 détectées)
 
 ```text
 FQ1 — nœuds 1/3 et 2/3 permutés dans une configuration en mémoire :
@@ -128,15 +157,31 @@ FQ1 — nœuds 1/3 et 2/3 permutés dans une configuration en mémoire :
       au verrou / non croissants) — détectée ;
 FQ2 — suppression de la division thetastar/100 dans le vecteur CMB :
       chi2_CMB passe de 2.20 à 1.93e11 — écart >> seuil T8 (1e-3) —
-      détectée.
+      détectée ;
+FQ3 — continuation altérée (« extrapolation cubique ») :
+      REJETÉE par validate_config — détectée ;
+FQ4 — variable de sortie altérée (TMPDIR) :
+      REJETÉE par validate_config — détectée.
 ```
 
-### C8 — sorties hors Git
+### C8 — sorties hors Git (par exception)
 
 ```text
-racine du dépôt : REFUSÉE (ancêtre .git détecté) ;
-répertoire de données hors Git : ACCEPTÉ.
+racine du dépôt : SortieSousGitError levée — REFUSÉE ;
+répertoire externe hors Git : accepté sans exception.
 ```
+
+### Preuve du chemin d'échec (code de sortie non nul)
+
+```text
+passes nominales (deux)                    : exit 0, sorties identiques ;
+échec synthétique (C7C1_QUALIF_TEST_ECHEC) : exit 1,
+  porte.passe = false, échec listé dans porte.echecs ;
+option interdite (--mcmc)                  : exit 2, arrêt explicite.
+```
+
+Une régression de n'importe quelle condition bloquante produit donc un
+code non nul, pas seulement un `false` dans le JSON.
 
 ## 5. Classification épistémique
 
@@ -156,16 +201,19 @@ R2 — cohérence interne et stabilité :
 R3 — validation indépendante :
   HÉRITÉE DE G2.1 pour l'instrument (voie indépendante I8, étalonnage
   analytique EdS, fautes F1–F5), ré-exécutée ici via C5 ;
-  APPORT PROPRE de cette porte : détection des fautes FQ1/FQ2 (C7) —
-  méta-validation des gardes de configuration ; l'assemblage C6
-  partage les briques dm/dh/rdrag de l'instrument : il est classé R2
-  (contrôle d'assemblage), pas R3 ;
+  APPORT PROPRE de cette porte : détection des fautes FQ1–FQ4 (C7) et
+  preuve du chemin d'échec à code non nul — méta-validation des gardes
+  de configuration et de la porte elle-même ; l'assemblage C6 partage
+  les briques dm/dh/rdrag de l'instrument : il est classé R2
+  (contrôle d'assemblage sous tolérances d'ingénierie), pas R3 ;
 
 limites restantes :
   - les chi2 aux points P2/P3 ne sont validés par aucune voie
     indépendante complète (seuls leurs ingrédients le sont via I8) ;
-  - la liste de fautes FQ1/FQ2 n'est pas exhaustive ;
+  - la liste de fautes FQ1–FQ4 n'est pas exhaustive ;
   - H_ref (CAMB 1.5.4) demeure partagé par toutes les voies ;
+  - l'auto-test du chemin d'échec repose sur un échec synthétique :
+    il prouve le mécanisme de blocage, pas l'exhaustivité des causes ;
   - aucune qualification de performance (temps d'évaluation par point)
     n'est fournie : hors périmètre G2.3a.
 ```
@@ -173,9 +221,12 @@ limites restantes :
 ## 6. État et suite
 
 ```text
-G2.3a : contrôles C1–C8 exécutés, tous PASSÉS ;
+G2.3a : contrôles C1–C8 exécutés, tous PASSÉS ; porte auto-bloquante
+  en place (G2.3d) : toute régression produit un code de sortie non
+  nul ; passes nominales : exit 0, deux sorties bit à bit identiques ;
 PR : brouillon, aucun merge ;
 première inférence réelle (MCMC/minimisation) : FERMÉE — exige une
 nouvelle validation humaine explicite ;
-G2.2a : gel inchangé ; aucune clause amendée.
+G2.2a : gel inchangé ; aucune clause amendée (aucune valeur
+  scientifique, prior ou point P0–P3 modifié par G2.3d).
 ```

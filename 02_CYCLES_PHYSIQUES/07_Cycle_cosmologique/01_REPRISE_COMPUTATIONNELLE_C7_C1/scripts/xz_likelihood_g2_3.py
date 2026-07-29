@@ -74,10 +74,38 @@ CLES_REQUISES = {
     "parametres_x", "priors_fond", "parametres_fixes", "contraintes_dures",
     "traitement_acoustique", "continuation", "graine", "sorties", "inference",
 }
+LOT = "c7-c1-g2_3"
+CONTRAINTES_DURES = [
+    "omch2 > 0",
+    "H_X^2 fini et > 0 sur tout le domaine requis",
+]
+CONTINUATION = "X(z >= 2.33) = X(2.33)"
+GRAINES_ATTENDUES = {"M2a-N": 6301, "M2a-K": 6302, "M2b-N": 6303, "M2b-K": 6304}
+CLES_PARAM_X = {"nom", "noeud", "prior"}
+CLES_SORTIES = {"regle", "variable_environnement", "note"}
+CLES_INFERENCE = {"autorisee", "note"}
+VARIABLE_SORTIE = "C7C1_XZ_OUT_DIR"
 
 
 class ConfigError(ValueError):
     """Configuration G2.3 non conforme au schéma strict."""
+
+
+class SortieSousGitError(RuntimeError):
+    """Chemin de sortie refusé : un ancêtre contient un dépôt Git."""
+
+
+def refuser_sortie_sous_git(path: str | Path) -> Path:
+    """Garde de répertoire de sortie : lève SortieSousGitError si `path`
+    (résolu) possède un ancêtre contenant `.git`. Retourne le chemin
+    résolu si — et seulement si — il est hors de tout dépôt Git."""
+    d = Path(path).resolve()
+    for parent in [d, *d.parents]:
+        if (parent / ".git").exists():
+            raise SortieSousGitError(
+                f"sortie refusée : {d} est sous le dépôt Git de {parent}"
+            )
+    return d
 
 
 def load_bao_data() -> tuple[np.ndarray, np.ndarray]:
@@ -111,6 +139,30 @@ def validate_config(raw: dict[str, Any]) -> dict[str, Any]:
         manquantes = CLES_REQUISES - set(raw.keys())
         en_trop = set(raw.keys()) - CLES_REQUISES
         raise ConfigError(f"clés manquantes {sorted(manquantes)}, en trop {sorted(en_trop)}")
+    if raw["lot"] != LOT:
+        raise ConfigError(f"lot {raw['lot']!r} différent de {LOT!r}")
+    if raw["contraintes_dures"] != CONTRAINTES_DURES:
+        raise ConfigError("contraintes_dures non conformes au contrat exact")
+    if raw["continuation"] != CONTINUATION:
+        raise ConfigError(f"continuation {raw['continuation']!r} non conforme")
+    sorties = raw["sorties"]
+    if not isinstance(sorties, dict) or set(sorties.keys()) != CLES_SORTIES:
+        raise ConfigError("bloc sorties : clés manquantes ou supplémentaires")
+    if sorties["regle"] != "hors_git":
+        raise ConfigError("sorties.regle doit valoir 'hors_git'")
+    if sorties["variable_environnement"] != VARIABLE_SORTIE:
+        raise ConfigError(
+            f"sorties.variable_environnement doit valoir {VARIABLE_SORTIE!r}"
+        )
+    if not isinstance(sorties["note"], str) or not sorties["note"]:
+        raise ConfigError("sorties.note doit être une chaîne non vide")
+    inference = raw["inference"]
+    if not isinstance(inference, dict) or set(inference.keys()) != CLES_INFERENCE:
+        raise ConfigError("bloc inference : clés manquantes ou supplémentaires")
+    if inference["autorisee"] is not False:
+        raise ConfigError("inference.autorisee doit être exactement false")
+    if not isinstance(inference["note"], str) or not inference["note"]:
+        raise ConfigError("inference.note doit être une chaîne non vide")
     variante = raw["variante"]
     if variante not in VARIANTES:
         raise ConfigError(f"variante inconnue : {variante}")
@@ -132,6 +184,10 @@ def validate_config(raw: dict[str, Any]) -> dict[str, Any]:
     if len(px) != len(noeuds) - 1:
         raise ConfigError(f"{len(noeuds) - 1} amplitudes libres attendues, {len(px)} déclarées")
     for i, item in enumerate(px, start=1):
+        if not isinstance(item, dict) or set(item.keys()) != CLES_PARAM_X:
+            raise ConfigError(
+                f"amplitude {i} : clés manquantes ou supplémentaires"
+            )
         if item["nom"] != f"X{i}":
             raise ConfigError(f"nom d'amplitude inattendu : {item['nom']} (attendu X{i})")
         if float(item["noeud"]) != float(noeuds[i]):
@@ -148,10 +204,11 @@ def validate_config(raw: dict[str, Any]) -> dict[str, Any]:
         raise ConfigError("traitement acoustique directeur non 'corrected'")
     if not isinstance(raw["graine"], int):
         raise ConfigError("graine non entière")
-    if raw["sorties"].get("regle") != "hors_git":
-        raise ConfigError("règle de sorties hors Git absente")
-    if raw["inference"].get("autorisee") is not False:
-        raise ConfigError("garde d'inférence absente : inference.autorisee doit être false")
+    if raw["graine"] != GRAINES_ATTENDUES[variante]:
+        raise ConfigError(
+            f"graine {raw['graine']} différente de la graine attendue "
+            f"{GRAINES_ATTENDUES[variante]} pour {variante}"
+        )
     return raw
 
 
