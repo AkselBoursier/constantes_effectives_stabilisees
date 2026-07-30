@@ -302,6 +302,28 @@ def construire_ensemble(variante, config, oracle):
 SEUIL_CROISE_PRINCIPAL = 1e-11  # rel, D_M aux z BAO
 SEUIL_CROISE_QUEUE = 1e-8       # rel à D_M(z_star), segment [2.33, z_star]
 
+# Concordance BLOQUANTE entre la référence resserrée (quad en z) et le
+# contrôle indépendant Gauss-Legendre (u = 1/sqrt(1+z)), exigée pour
+# CHAQUE correction (r_drag ET r_star). Seuil déclaré avant exécution,
+# fondé sur les planchers observés en G2.4c-ii-a — maxima mesurés sur
+# les 16 points de la sortie conservée de la passe 1 : concordance
+# resserrée-GL512 2.333e-15 Mpc (point M2a-K:P3), convergence GL
+# 512/1024 7.027e-16 Mpc (r_drag) ; fixé ~43x au-dessus, GLOBAL :
+# identique pour les deux corrections et tous les points, aucun
+# ajustement point par point. Les maxima de concordance et de
+# convergence sont publiés dans la sortie normalisée
+# (concordance_GL_max, convergence_GL_max) : planchers traçables.
+SEUIL_CONCORDANCE_GL = 1e-13    # abs (Mpc)
+
+# Seuils de contrôle T12(b) du lot, pour la PUBLICATION des rapports du
+# diagnostic acoustique (aucune interprétation cosmologique) :
+SEUILS_T12B = {
+    "correction_resserree_abs": 1e-10,
+    "delta_chi2_BAO_abs": 1e-8,
+    "delta_chi2_CMB_abs": 1e-3,
+    "delta_theta_star_abs": 1e-9,
+}
+
 
 def _croisements_point(rapide, replicats, point, noms):
     """Écarts Simpson-vs-réplique pour un point valide (None sinon).
@@ -681,13 +703,17 @@ def qualification() -> int:
                 f"équivalence : {k} = {pires[k]['valeur']:.3e} > {SEUILS[k]:.0e} "
                 f"({pires[k]['point']})")
 
-    # ---- diagnostic acoustique NON PRODUCTIF (G2.4c-ii-a) --------------
+    # ---- diagnostic acoustique NON PRODUCTIF (G2.4c-ii-a/-b) -----------
     # N'altère ni l'oracle ni la candidate. Règle numérique fixée avant
     # exécution : resserrée = scipy.quad en variable z, bornes
     # [z_depart, 1e7], epsabs=1e-15, epsrel=1e-13, limit=800 ; contrôle
     # indépendant = Gauss-Legendre en u = 1/sqrt(1+z), segments
     # [z_depart, zstar], [zstar, 1e4], [1e4, 1e6], [1e6, 1e7], 512 points
     # par segment ; contrôle de convergence : 1024 points (écart publié).
+    # G2.4c-ii-b : le contrôle GL est appliqué SÉPARÉMENT aux deux
+    # corrections, avec une règle IDENTIQUE hormis la borne initiale
+    # (zdrag pour r_drag, zstar pour r_star) ; la concordance
+    # resserrée-GL512 est BLOQUANTE pour chacune (SEUIL_CONCORDANCE_GL).
     # Aucune valeur n'est interprétée cosmologiquement.
     from scipy.integrate import quad as _quad
 
@@ -752,8 +778,24 @@ def qualification() -> int:
                 reference, delta, reference.zdrag)
             corr_r_star, _ = _corr_resserree(
                 reference, delta, reference.zstar)
-            gl_512 = _corr_gl(integrande, reference, reference.zdrag, 512)
-            gl_1024 = _corr_gl(integrande, reference, reference.zdrag, 1024)
+            gl512_drag = _corr_gl(integrande, reference,
+                                  reference.zdrag, 512)
+            gl1024_drag = _corr_gl(integrande, reference,
+                                   reference.zdrag, 1024)
+            gl512_star = _corr_gl(integrande, reference,
+                                  reference.zstar, 512)
+            gl1024_star = _corr_gl(integrande, reference,
+                                   reference.zstar, 1024)
+            concordance_drag = abs(corr_r_drag - gl512_drag)
+            concordance_star = abs(corr_r_star - gl512_star)
+            if concordance_drag > SEUIL_CONCORDANCE_GL:
+                echecs.append(
+                    f"concordance GL r_drag : {variante}:{nom_point} — "
+                    f"{concordance_drag:.3e} > {SEUIL_CONCORDANCE_GL:.0e}")
+            if concordance_star > SEUIL_CONCORDANCE_GL:
+                echecs.append(
+                    f"concordance GL r_star : {variante}:{nom_point} — "
+                    f"{concordance_star:.3e} > {SEUIL_CONCORDANCE_GL:.0e}")
             dm_star_o = float(fond_o.dm(reference.zstar))
             rd_o = reference.rdrag + corr_o_drag
             d_drag = corr_r_drag - corr_o_drag
@@ -774,8 +816,14 @@ def qualification() -> int:
                 "corr_rstar_oracle": corr_o_star,
                 "corr_rdrag_resserree": corr_r_drag,
                 "corr_rstar_resserree": corr_r_star,
-                "controle_GL512": gl_512,
-                "convergence_GL_512_vs_1024": abs(gl_512 - gl_1024),
+                "controle_GL512_rdrag": gl512_drag,
+                "controle_GL1024_rdrag": gl1024_drag,
+                "convergence_GL_rdrag": abs(gl512_drag - gl1024_drag),
+                "controle_GL512_rstar": gl512_star,
+                "controle_GL1024_rstar": gl1024_star,
+                "convergence_GL_rstar": abs(gl512_star - gl1024_star),
+                "concordance_GL_rdrag": concordance_drag,
+                "concordance_GL_rstar": concordance_star,
                 "ecart_oracle_resserre_rdrag": d_drag,
                 "ecart_oracle_resserre_rstar": d_star,
                 "delta_theta_star": d_star / dm_star_o,
@@ -786,7 +834,50 @@ def qualification() -> int:
                 "delta_chi2_CMB": float(
                     r_c @ icov_cmb @ r_c) - o["chi2_CMB"],
             }
-    resultat["diagnostic_acoustique"] = diagnostic_ac
+    # Garantie de compte : les 16 points (4 variantes x P0-P3) doivent
+    # TOUS entrer au diagnostic — un point sauté (oracle-invalide)
+    # soustrairait sa condition bloquante de concordance sans signal.
+    if len(diagnostic_ac) != 4 * len(CONFIGS):
+        echecs.append(
+            f"diagnostic acoustique : {len(diagnostic_ac)} points au lieu "
+            f"de {4 * len(CONFIGS)} — point P0-P3 absent du diagnostic")
+    _pts = list(diagnostic_ac.values())
+    if _pts:
+        _maxima_t12b = {
+            "correction_resserree_abs": max(
+                max(abs(p["corr_rdrag_resserree"]),
+                    abs(p["corr_rstar_resserree"])) for p in _pts),
+            "delta_chi2_BAO_abs": max(
+                abs(p["delta_chi2_BAO"]) for p in _pts),
+            "delta_chi2_CMB_abs": max(
+                abs(p["delta_chi2_CMB"]) for p in _pts),
+            "delta_theta_star_abs": max(
+                abs(p["delta_theta_star"]) for p in _pts),
+        }
+        resultat["diagnostic_acoustique"] = {
+            "points": diagnostic_ac,
+            "seuil_concordance_GL_abs": SEUIL_CONCORDANCE_GL,
+            "concordance_GL_max": {
+                "rdrag": max(p["concordance_GL_rdrag"] for p in _pts),
+                "rstar": max(p["concordance_GL_rstar"] for p in _pts),
+            },
+            "convergence_GL_max": {
+                "rdrag": max(p["convergence_GL_rdrag"] for p in _pts),
+                "rstar": max(p["convergence_GL_rstar"] for p in _pts),
+            },
+            "rapports_seuils_T12b": {
+                cle: {"max_abs": _maxima_t12b[cle],
+                      "seuil_T12b": SEUILS_T12B[cle],
+                      "rapport": _maxima_t12b[cle] / SEUILS_T12B[cle]}
+                for cle in SEUILS_T12B
+            },
+        }
+    else:
+        # échec de porte propre plutôt qu'un traceback sur max() vide
+        resultat["diagnostic_acoustique"] = {
+            "points": {},
+            "seuil_concordance_GL_abs": SEUIL_CONCORDANCE_GL,
+        }
 
     # ---- égalité bitwise de l'évaluation de spline scalaire ------------
     from xz_background_g2_1 import XZProfile

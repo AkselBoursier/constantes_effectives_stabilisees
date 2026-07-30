@@ -58,9 +58,9 @@ C1 — corrections acoustiques : quad(epsabs=1e-8) SOUS-RÉSOUT ces
   oracle = 1.364e-12 ; référence resserrée = 3.549541e-9 (quad
   epsabs=1e-15/epsrel=1e-13, erreur estimée 8.7e-16, corroborée par
   une quadrature indépendante Gauss-Legendre concordante à 3e-16).
-  L'écart est physiquement négligeable (< 1e-8 Mpc) mais interdit
+  L'écart est petit en valeur absolue (< 1e-8 Mpc) mais interdit
   toute équivalence à 1e-10 Mpc contre l'oracle par une quadrature
-  propre ;
+  propre (son évaluation aux seuils T12(b) : voir §8 bis) ;
 C2 — D_M : le bruit propre des quads adaptatifs de l'oracle vaut
   ~5.7e-13 rel aux z BAO et ~4.8e-10 rel sur l'annulation
   D_M(z_star)-D_M(2.33), INDÉPENDANT de l'ordre Simpson opposé —
@@ -194,7 +194,7 @@ point à point (chi2_BAO/CMB/total) : PASSE.
 séquence représentative (4 cycles x [1 lent + 25 rapides],
   facteur de suréchantillonnage prédéclaré 5) :
   5.95 ms par évaluation ; 4 appels CAMB pour 104 évaluations ;
-  speedup représentatif : 12.0x à 13.2x selon les passes vs oracle
+  speedup représentatif : 12.0x à 13.6x selon les passes vs oracle
   réchauffé — mesure CONSERVATRICE : contre le coût de production
   mesuré en G2.4b (~0.38 s/éval, CAMB froid à chaque pas dans le bloc
   unique), le même mélange vaut ~64x ;
@@ -243,7 +243,7 @@ la comparaison (C7C1_TEST_RETRAIT_POINT) produit exit 1 — VÉRIFIÉ.
   seuils depuis la réplique (écarts 0.0).
 ```
 
-## 8 bis. Diagnostic acoustique non productif (G2.4c-ii-a)
+## 8 bis. Diagnostic acoustique non productif (G2.4c-ii-a/-b)
 
 Sans modification de l'oracle ni de la candidate de production. Règle
 numérique fixée avant exécution et appliquée aux quatre variantes sur
@@ -255,9 +255,27 @@ resserrée : scipy.quad, variable z, bornes [z_depart, 1e7],
 contrôle indépendant : Gauss-Legendre, variable u = 1/sqrt(1+z),
   segments [z_depart, z_star], [z_star, 1e4], [1e4, 1e6], [1e6, 1e7],
   512 points par segment ; contrôle de convergence : 1024 points ;
-grandeurs publiées par point : corrections r_drag / r_star de l'oracle
-  courant et resserrées, contrôle indépendant, écart oracle–resserré,
-  Δtheta_star, écart max du vecteur BAO, Δchi2_BAO, Δchi2_CMB.
+  appliqué SÉPARÉMENT aux deux corrections, règle IDENTIQUE hormis la
+  borne initiale (z_drag pour r_drag, z_star pour r_star) ;
+concordance BLOQUANTE resserrée vs GL512, pour CHACUNE des deux
+  corrections : seuil 1e-13 Mpc (absolu), déclaré avant exécution,
+  fondé sur les planchers observés en G2.4c-ii-a, maxima mesurés sur
+  les 16 points de la sortie conservée de la passe 1 : concordance
+  resserrée-GL512 2.333e-15 Mpc (point M2a-K:P3), convergence GL
+  512/1024 7.027e-16 Mpc ; seuil fixé ~43x au-dessus, GLOBAL —
+  identique pour les deux corrections et tous les points, sans
+  ajustement point par point ; les maxima de concordance et de
+  convergence sont désormais PUBLIÉS dans la sortie normalisée
+  (concordance_GL_max, convergence_GL_max), rendant les planchers
+  traçables dans le dépôt ;
+garantie de compte : les 16 points (4 variantes x P0-P3) doivent tous
+  entrer au diagnostic — tout point manquant est un échec bloquant ;
+grandeurs publiées par point : corr_rdrag_resserree,
+  corr_rstar_resserree, controle_GL512_rdrag, controle_GL1024_rdrag,
+  convergence_GL_rdrag, controle_GL512_rstar, controle_GL1024_rstar,
+  convergence_GL_rstar, concordances resserrée-GL, corrections de
+  l'oracle courant, écart oracle–resserré, Δtheta_star, écart max du
+  vecteur BAO, Δchi2_BAO, Δchi2_CMB.
 ```
 
 Résultats (aucune interprétation cosmologique ; valeurs complètes dans
@@ -265,27 +283,41 @@ la sortie normalisée de la qualification) :
 
 ```text
 exemple (M2a-N : P2) :
-  corr r_drag oracle 1.364242e-12 ; resserrée 3.549540e-9 ;
-  contrôle GL512 3.549542e-9 ; convergence GL 512 vs 1024 : 1.1e-16 ;
-  écart oracle-resserré (r_drag) 3.548e-9 ; (r_star) 3.194e-9 ;
+  corr r_drag : oracle 1.364242e-12 ; resserrée 3.549540e-9 ;
+    GL512 3.549542e-9 ; GL1024 3.549542e-9 ;
+    convergence GL 1.13e-16 ; concordance resserrée-GL 1.80e-15 ;
+  corr r_star : oracle 1.335820e-12 ; resserrée 3.195187e-9 ;
+    GL512 3.195188e-9 ; GL1024 3.195188e-9 ;
+    convergence GL 1.01e-16 ; concordance resserrée-GL 5.83e-16 ;
+  écart oracle-resserré : 3.548e-9 (r_drag) / 3.194e-9 (r_star) ;
   Δtheta_star 2.23e-13 ; écart BAO max 1.02e-9 ;
   Δchi2_BAO -8.4e-7 ; Δchi2_CMB -2.7e-5 ;
 
 maxima absolus sur les 16 points (4 variantes x P0-P3) :
-  corr oracle             <= 2.02e-12 Mpc ;
-  corr resserrée          <= 5.32e-9 Mpc ;
-  écart oracle-resserré   <= 5.32e-9 Mpc (r_drag) / 4.79e-9 (r_star) ;
-  convergence GL 512/1024 <= 7.0e-16 (contrôle indépendant concordant) ;
-  Δtheta_star             <= 3.6e-13 ;
-  écart vecteur BAO       <= 1.5e-9 (absolu) ;
-  Δchi2_BAO               <= 8.5e-7 ;  Δchi2_CMB <= 4.4e-5.
+  corr oracle                 <= 2.02e-12 Mpc (r_drag et r_star) ;
+  corr resserrée              <= 5.32e-9 (r_drag) / 4.79e-9 (r_star) ;
+  écart oracle-resserré       <= 5.32e-9 (r_drag) / 4.79e-9 (r_star) ;
+  concordance resserrée-GL512 : 2.33e-15 (r_drag) / 7.34e-16 (r_star)
+    — BLOQUANTE, seuil 1e-13 : PASSÉE pour les deux corrections ;
+  convergence GL 512/1024     : 7.03e-16 (r_drag) / 6.96e-16 (r_star) ;
+  Δtheta_star                 <= 3.57e-13 ;
+  écart vecteur BAO           <= 1.48e-9 (absolu) ;
+  Δchi2_BAO                   <= 8.47e-7 ;  Δchi2_CMB <= 4.45e-5.
 ```
 
-Lecture strictement numérique : l'effet du défaut sur les observables
-reste partout inférieur d'au moins quatre ordres de grandeur aux seuils
-scientifiques du lot — le défaut numérique du mode « corrected » est
-réel, son effet est vraisemblablement négligeable ; les deux constats
-coexistent sans contradiction.
+Rapports aux seuils de contrôle T12(b), publiés tels quels :
+
+```text
+max |correction resserrée| / 1e-10 : 5.324313e-9  / 1e-10 = 53.24 ;
+max |Δchi2_BAO|            / 1e-8  : 8.463585e-7  / 1e-8  = 84.64 ;
+max |Δchi2_CMB|            / 1e-3  : 4.447887e-5  / 1e-3  = 0.04448 ;
+max |Δtheta_star|          / 1e-9  : 3.566753e-13 / 1e-9  = 3.567e-4.
+```
+
+Les effets restent petits en valeur absolue, mais la correction
+acoustique et Δchi2_BAO dépassent les seuils de contrôle T12(b).
+Cette rupture impose un amendement explicite ; aucune conclusion
+cosmologique n'est tirée.
 
 ## 8 ter. Proposition d'amendement D3-H (PROPOSÉE, NON APPLIQUÉE)
 
@@ -304,22 +336,30 @@ anomalie démontrée : sur des intégrales de correction d'ordre
   1e-12..1e-8 Mpc, epsabs=1e-8 autorise un arrêt prématuré ; valeurs
   rendues non convergées (ex. 1.364e-12 rendu contre 3.549541e-9 en
   référence resserrée corroborée indépendamment) — défaut numérique
-  RÉEL du mode corrected, d'effet vraisemblablement négligeable
-  scientifiquement (voir diagnostic §8 bis), les deux qualités n'étant
-  pas contradictoires ;
+  RÉEL du mode corrected ; les effets mesurés restent petits en valeur
+  absolue, mais la correction acoustique et Δchi2_BAO dépassent les
+  seuils de contrôle T12(b) (voir §8 bis) — cette rupture impose le
+  présent amendement explicite ; aucune conclusion cosmologique n'est
+  tirée ;
 
 résultats déjà visibles avant amendement : G2.1 (I1-I9, T8-T12),
   G2.3a (C1-C8), G2.4b (banc, aucune chaîne), G2.4c-i/ii (profilage,
   qualification, diagnostic §8 bis) — AUCUNE chaîne MCMC X(z) n'a été
   produite ; aucun posterior n'existe ;
 
-nouvelle règle candidate pour « corrected » :
-  quad en z, bornes inchangées, epsabs=1e-15, epsrel=1e-13, limit=800
-  (la règle du diagnostic §8 bis), OU quadrature u-substituée fixe
-  qualifiée — au choix de l'audit ;
+règle candidate UNIQUE (A1) :
+  corrected-v1.1 :
+    scipy.quad en variable z ;
+    bornes inchangées ;
+    epsabs = 1e-15 ;
+    epsrel = 1e-13 ;
+    limit = 800.
+  la quadrature Gauss-Legendre en u = 1/sqrt(1+z) reste EXCLUSIVEMENT
+  un contrôle indépendant (jamais une règle de production candidate) ;
 
-maintien du mode historique : « corrected-legacy » conservé à des fins
-  de régression et de traçabilité (aucune suppression) ;
+maintien du mode historique : l'ancienne règle est conservée sous
+  « corrected-legacy » à des fins de régression et de traçabilité
+  (aucune suppression) ;
 
 fichiers affectés si ratifié : scripts/xz_background_g2_1.py (oracle),
   scripts/xz_fast_g2_4c.py (réplique alignée), rapports G2.1/G2.4c ;
@@ -330,6 +370,9 @@ contrôles à rejouer : suite I1-I9 complète, T8-T12, qualification
 modèles/sensibilités à réexécuter : aucun résultat d'inférence
   n'existe ; T12(b) devra être re-ratifiée ; S5 (corrected vs fixed)
   reste la sensibilité de contrôle au moment de la production ;
+
+statut de l'amendement : PROPOSÉ ; NON APPLIQUÉ ; soumis à validation
+  humaine explicite ;
 
 condition de validation : décision humaine explicite dans #63, datée
   et versionnée conformément à D3-H — la présente section est une
@@ -342,8 +385,8 @@ condition de validation : décision humaine explicite dans #63, datée
 équivalence : bit-identique sur l'ensemble gelé, classification
   incluse ; seuils T8-T12 : tous respectés sans relâchement ;
 fautes : 14/14 détectées + ordre historique ;
-speedup représentatif : 12.0x >= 10x (cible atteinte ;
-  ~64x vs coût de production G2.4b) ;
+speedup représentatif : 12.0x à 13.6x selon les passes, >= 10x
+  (cible atteinte ; ~64x vs coût de production G2.4b) ;
 évaluation lente : 0.68x l'oracle (critère <= 1.10x) ;
 
 VERDICT : la porte recommande l'ouverture de G2.4c-iii (raccord au
