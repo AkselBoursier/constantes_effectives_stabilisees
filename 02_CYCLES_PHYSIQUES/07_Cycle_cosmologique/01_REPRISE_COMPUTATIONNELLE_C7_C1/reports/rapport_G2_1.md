@@ -370,6 +370,51 @@ T8, T9, T10 et T12(a) : inchangés, conformément à G2.1d (aucun résultat
 contradictoire ; les marges de T8 sur theta_star et chi2_CMB se sont
 élargies d'un facteur ~37 après la correction du point de quadrature).
 
+### Addendum §4-A1 — amendement A1 du mode « corrected » (G2.4c-iii)
+
+Ratification humaine du 30 juillet 2026 (#63, porte G2.4c-iii),
+conformément à D3-H, après signalement obligatoire de la rupture
+d'équivalence prévu par T12(b) (diagnostic G2.4c-ii-a/-b).
+
+```text
+clause ancienne (implémentation au moment de la ratification de T8-T12) :
+  correction acoustique par quad(integrand, z_depart, 1e7,
+  epsabs=1e-8, epsrel=1e-10, limit=300) — tolérances partagées avec les
+  quadratures de distance ;
+
+clause nouvelle (A1) — mode directeur « corrected-v1.1 » :
+  scipy.quad en variable z ; bornes inchangées ;
+  epsabs = 1e-15 ; epsrel = 1e-13 ; limit = 800 ;
+  tolérances acoustiques PROPRES au mode, découplées des distances ;
+
+compatibilité de nom :
+  corrected        -> corrected-v1.1 (alias explicite, testé) ;
+  corrected-legacy -> reproduction bit à bit de l'ancienne règle ;
+  la quadrature Gauss-Legendre en u = 1/sqrt(1+z) reste exclusivement
+  un contrôle indépendant ;
+
+traçabilité des résultats de CE rapport :
+  toutes les valeurs « corrected » publiées ci-dessus (I1-I9, §3.3,
+  planchers T8-T12) ont été mesurées sous l'ancienne règle : elles se
+  lisent désormais comme « corrected-legacy » et ne sont PAS
+  réétiquetées ni recalculées ici ;
+
+T12(b) — mise à jour (les écarts corrected-fixed sont désormais
+RÉSOLUS au lieu de sous-résolus) :
+  |Delta chi2_BAO|      <= 1e-5  (ancien seuil 1e-8, mesuré <= 3.3e-10
+                                  sous legacy) ;
+  |Delta r_drag,star|   <= 1e-7 Mpc (ancien seuil 1e-10, mesuré
+                                  <= 2.2e-12 sous legacy) ;
+  fondation : maxima publiés du diagnostic G2.4c-ii-b sous la règle A1
+  (|corr r_drag| <= 5.33e-9, |corr r_star| <= 4.80e-9,
+  |Delta chi2_BAO| <= 8.5e-7) ; seuils globaux, déclarés avant
+  réexécution, sans ajustement point par point ;
+  l'exigence de signalement de toute rupture d'équivalence demeure.
+
+Résultats de la réexécution complète (I1-I9, T8-T12 sous l'oracle
+amendé) : rapport G2.4c-iii (reports/rapport_G2_4c_iii_amendement_A1.md).
+```
+
 ## 5. Verdict final de G2.1 — séparé par niveau épistémique
 
 Conformément à la règle transversale, « validé » n'est jamais employé ici

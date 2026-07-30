@@ -70,6 +70,24 @@ T8 = {
     "rstar_abs": 1e-10,
 }
 # Seuils T9-T12 ratifiés, appliqués à la sortie I1-I9.
+#
+# MISE À JOUR DOCUMENTAIRE T12(b) — amendement A1 (D3-H), ratifié
+# humainement le 30 juillet 2026 (#63, porte G2.4c-iii). Le mode
+# directeur « corrected » désigne désormais corrected-v1.1 (quadrature
+# acoustique resserrée) ; les écarts corrected-fixed sont donc RÉSOLUS
+# au lieu d'être sous-résolus par l'ancienne règle (corrected-legacy).
+# Anciennes valeurs, ratifiées en G2.1 sous corrected-legacy (elles y
+# restent valides et traçables, jamais réétiquetées) :
+#     T12_chi2_BAO_corr_fixed : 1e-8  (mesuré <= 3.3e-10 en legacy) ;
+#     T12_rdrag_corr_fixed    : 1e-10 (mesuré <= 2.2e-12 en legacy) ;
+#     T12_rstar_corr_fixed    : 1e-10 (idem).
+# Nouvelles valeurs sous corrected-v1.1, déclarées AVANT réexécution,
+# fondées sur les maxima publiés du diagnostic G2.4c-ii-b (16 points
+# P0-P3, 4 variantes) : |corr r_drag| <= 5.33e-9, |corr r_star|
+# <= 4.80e-9, |Delta chi2_BAO| <= 8.5e-7 — seuils fixés ~12x à ~21x
+# au-dessus, globaux, sans ajustement point par point. La rupture
+# d'équivalence corrected/fixed constatée en ii-b a été SIGNALÉE comme
+# l'exigeait T12(b) et a conduit à l'amendement ratifié.
 T9_T12 = {
     "T9_noeuds": 1e-14,
     "T9_polynomes": 1e-13,
@@ -85,9 +103,9 @@ T9_T12 = {
     "T11_I8_H": 1e-13,
     "T11_I8_DM_bao": 1e-13,
     "T11_I8_eds": 1e-13,
-    "T12_chi2_BAO_corr_fixed": 1e-8,
-    "T12_rdrag_corr_fixed": 1e-10,
-    "T12_rstar_corr_fixed": 1e-10,
+    "T12_chi2_BAO_corr_fixed": 1e-5,
+    "T12_rdrag_corr_fixed": 1e-7,
+    "T12_rstar_corr_fixed": 1e-7,
 }
 
 

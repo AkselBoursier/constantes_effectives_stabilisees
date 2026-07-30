@@ -1,7 +1,10 @@
-"""Qualification de l'implémentation optimisée O1+O3 — porte G2.4c-ii.
+"""Qualification de l'implémentation optimisée O1+O3 — portes G2.4c-ii
+et G2.4c-iii (amendement A1 appliqué).
 
-Oracle : XZEvaluator (G2.1/G2.3) + XZBackground, intouchés. Candidate :
-xz_fast_g2_4c. PORTE AUTO-BLOQUANTE : toute condition échouée conduit à
+Oracle : XZEvaluator (G2.1/G2.3) + XZBackground — AMENDÉ par A1 en
+G2.4c-iii (mode directeur corrected-v1.1 ; alias « corrected » ;
+corrected-legacy conservé). Candidate : xz_fast_g2_4c, alignée sur
+corrected-v1.1. PORTE AUTO-BLOQUANTE : toute condition échouée conduit à
 SystemExit(1) après impression du JSON normalisé. Les temps et mesures
 mémoire sont imprimés dans une section séparée, exclue du contrôle de
 déterminisme. AUCUNE MCMC, minimisation ou posterior ; aucun chi2
@@ -302,27 +305,156 @@ def construire_ensemble(variante, config, oracle):
 SEUIL_CROISE_PRINCIPAL = 1e-11  # rel, D_M aux z BAO
 SEUIL_CROISE_QUEUE = 1e-8       # rel à D_M(z_star), segment [2.33, z_star]
 
-# Concordance BLOQUANTE entre la référence resserrée (quad en z) et le
-# contrôle indépendant Gauss-Legendre (u = 1/sqrt(1+z)), exigée pour
+# Concordance BLOQUANTE entre la correction sous la règle A1 (quad en z,
+# corrected-v1.1 — depuis G2.4c-iii c'est l'ORACLE AMENDÉ lui-même) et
+# le contrôle indépendant Gauss-Legendre (u = 1/sqrt(1+z)), exigée pour
 # CHAQUE correction (r_drag ET r_star). Seuil déclaré avant exécution,
-# fondé sur les planchers observés en G2.4c-ii-a — maxima mesurés sur
-# les 16 points de la sortie conservée de la passe 1 : concordance
-# resserrée-GL512 2.333e-15 Mpc (point M2a-K:P3), convergence GL
-# 512/1024 7.027e-16 Mpc (r_drag) ; fixé ~43x au-dessus, GLOBAL :
-# identique pour les deux corrections et tous les points, aucun
-# ajustement point par point. Les maxima de concordance et de
-# convergence sont publiés dans la sortie normalisée
+# fondé sur les planchers observés en G2.4c-ii-a/-b sous la MÊME règle
+# de quadrature — maxima mesurés sur les 16 points des sorties
+# conservées : concordance règle-A1-vs-GL512 2.333e-15 Mpc (point
+# M2a-K:P3), convergence GL 512/1024 7.027e-16 Mpc ; fixé ~43x
+# au-dessus, GLOBAL : identique pour les deux corrections et tous les
+# points, aucun ajustement point par point. Les maxima de concordance et
+# de convergence sont publiés dans la sortie normalisée
 # (concordance_GL_max, convergence_GL_max) : planchers traçables.
 SEUIL_CONCORDANCE_GL = 1e-13    # abs (Mpc)
 
-# Seuils de contrôle T12(b) du lot, pour la PUBLICATION des rapports du
-# diagnostic acoustique (aucune interprétation cosmologique) :
+# Seuils de contrôle T12(b) HISTORIQUES (ii-b), conservés comme
+# dénominateurs de PUBLICATION des rapports du contrôle acoustique
+# (continuité de lecture avec G2.4c-ii-b ; aucune interprétation
+# cosmologique). Les seuils de PORTE T12(b) re-ratifiés sous
+# corrected-v1.1 vivent dans qualify_xz_configs_g2_3.T9_T12.
 SEUILS_T12B = {
     "correction_resserree_abs": 1e-10,
     "delta_chi2_BAO_abs": 1e-8,
     "delta_chi2_CMB_abs": 1e-3,
     "delta_theta_star_abs": 1e-9,
 }
+
+# ---- amendement A1 (G2.4c-iii) : aides de contrôle acoustique ---------
+
+# Clés exigées pour CHAQUE point du contrôle acoustique A1 — la garde de
+# complétude échoue si une seule manque (ex. contrôle GL omis pour
+# r_star) ; utilisée aussi par la faute injectée correspondante.
+CLES_CONTROLE_AC = frozenset({
+    "corr_rdrag_v11", "corr_rstar_v11",
+    "corr_rdrag_legacy", "corr_rstar_legacy",
+    "controle_GL512_rdrag", "controle_GL1024_rdrag", "convergence_GL_rdrag",
+    "controle_GL512_rstar", "controle_GL1024_rstar", "convergence_GL_rstar",
+    "concordance_GL_rdrag", "concordance_GL_rstar",
+    "alias_exact", "legacy_bit_identique",
+})
+
+
+def cles_manquantes_controle_ac(point_dict: dict) -> list[str]:
+    """Garde de complétude du contrôle acoustique par point."""
+    return sorted(CLES_CONTROLE_AC - set(point_dict))
+
+
+def _integrande_correction(reference, delta):
+    """Intégrande de correction acoustique (forme delta = c0·(x5-1)),
+    identique en valeurs à celle de l'oracle pour z >= 2.33 — support du
+    contrôle indépendant Gauss-Legendre."""
+    ratio0 = reference.baryon_photon_ratio0
+
+    def integrande(z):
+        ratio = ratio0 / (1.0 + z)
+        cs = 299792.458 / math.sqrt(3.0 * (1.0 + 0.75 * ratio))
+        href = float(reference.hubble(z))
+        hx = math.sqrt(href * href + delta)
+        return cs * (1.0 / hx - 1.0 / href)
+
+    return integrande
+
+
+def _corr_gl(integrande, reference, z_depart, n):
+    """Contrôle INDÉPENDANT Gauss-Legendre en u = 1/sqrt(1+z) —
+    exclusivement un contrôle, jamais une règle de production. Règle
+    IDENTIQUE pour les deux corrections hormis la borne initiale
+    (zdrag pour r_drag, zstar pour r_star)."""
+    total = 0.0
+    bornes = [z_depart, reference.zstar, 1.0e4, 1.0e6, 1.0e7]
+    bornes = [b for b in bornes if b >= z_depart]
+    if bornes[0] != z_depart:
+        bornes.insert(0, z_depart)
+    for a, b in zip(bornes[:-1], bornes[1:]):
+        if b <= a:
+            continue
+        ua, ub = 1.0 / math.sqrt(1.0 + b), 1.0 / math.sqrt(1.0 + a)
+        x_gl, w_gl = np.polynomial.legendre.leggauss(n)
+        u = 0.5 * (ua + ub) + 0.5 * (ub - ua) * x_gl
+        w = 0.5 * (ub - ua) * w_gl
+        z = 1.0 / (u * u) - 1.0
+        f = np.array([integrande(float(zz)) for zz in z])
+        total += float(np.sum(w * 2.0 / u**3 * f))
+    return total
+
+
+def correction_regle_ancienne(fond_bg, z_start):
+    """Reconstruction VERBATIM de l'ancienne règle « corrected » de
+    l'oracle (code d'avant l'amendement, base 77e6b30 :
+    quad(integrand, z_start, acoustic_zmax, epsabs=self.epsabs=1e-8,
+    epsrel=self.epsrel=1e-10, limit=self.quad_limit=300), intégrande
+    construite sur les mêmes méthodes) — preuve bit à bit que
+    « corrected-legacy » reproduit l'ancien oracle sur les instances de
+    production (tolérances de distance par défaut)."""
+    from scipy.integrate import quad as _q
+
+    def integrand(z):
+        cs = float(fond_bg.sound_speed(z))
+        return cs * (
+            1.0 / float(fond_bg.hubble(z))
+            - 1.0 / float(fond_bg.reference.hubble(z))
+        )
+
+    valeur, _ = _q(integrand, float(z_start), float(fond_bg.acoustic_zmax),
+                   epsabs=1e-8, epsrel=1e-10, limit=300)
+    return float(valeur)
+
+
+def auditer_regles_acoustiques() -> list[str]:
+    """Garde BLOQUANTE : les règles acoustiques déclarées doivent être
+    EXACTEMENT celles de l'amendement A1 ratifié (aucune altération de
+    epsabs/epsrel/limit, alias unique, ensemble de modes fermé, refus
+    des modes inconnus)."""
+    import xz_background_g2_1 as bg
+    import xz_fast_g2_4c as fast
+
+    violations: list[str] = []
+    if bg.ACOUSTIC_RULES.get("corrected-v1.1") != {
+            "epsabs": 1e-15, "epsrel": 1e-13, "limit": 800}:
+        violations.append("règle corrected-v1.1 != règle A1 ratifiée "
+                          "(epsabs=1e-15, epsrel=1e-13, limit=800)")
+    if bg.ACOUSTIC_RULES.get("corrected-legacy") != {
+            "epsabs": 1e-8, "epsrel": 1e-10, "limit": 300}:
+        violations.append("règle corrected-legacy != ancienne règle "
+                          "(epsabs=1e-8, epsrel=1e-10, limit=300)")
+    if set(bg.ACOUSTIC_RULES) != {"corrected-v1.1", "corrected-legacy"}:
+        violations.append("ensemble de règles acoustiques non fermé")
+    if bg.ACOUSTIC_ALIAS != {"corrected": "corrected-v1.1"}:
+        violations.append("alias : corrected doit pointer UNIQUEMENT "
+                          "vers corrected-v1.1")
+    if tuple(bg.ACOUSTIC_MODES) != (
+            "fixed", "corrected-legacy", "corrected-v1.1"):
+        violations.append("modes implémentés != "
+                          "(fixed, corrected-legacy, corrected-v1.1)")
+    if fast.MODE_ACOUSTIQUE_DIRECTEUR != "corrected-v1.1":
+        violations.append("mode directeur du chemin rapide != corrected-v1.1")
+    try:
+        bg.resolve_acoustic_mode("mode-inexistant")
+        violations.append("mode inconnu accepté silencieusement")
+    except ValueError:
+        pass
+    for nom_mode, attendu in (("corrected", "corrected-v1.1"),
+                              ("fixed", "fixed"),
+                              ("corrected-legacy", "corrected-legacy"),
+                              ("corrected-v1.1", "corrected-v1.1")):
+        try:
+            if bg.resolve_acoustic_mode(nom_mode) != attendu:
+                violations.append(f"résolution {nom_mode} != {attendu}")
+        except ValueError:
+            violations.append(f"résolution {nom_mode} : refus inattendu")
+    return violations
 
 
 def _croisements_point(rapide, replicats, point, noms):
@@ -564,6 +696,122 @@ def executer_faute(nom: str) -> int:
         rapide.evaluate({**POINT_FOND_P0,
                          **dict(zip(noms, (0.7, -0.2, 0.4, 1.2, 0.8)))})
         return 1 if compteur["appels"] > avant else 0
+    # ---- fautes de l'amendement A1 (G2.4c-iii) -------------------------
+    if nom in ("v11_avec_tolerances_legacy", "legacy_avec_tolerances_v11",
+               "alias_corrected_vers_legacy", "mode_inconnu_accepte",
+               "limit_v11_altere", "epsabs_epsrel_altere",
+               "controle_GL_rstar_omis", "resultat_historique_reetiquete_v11",
+               "cache_partage_modes_acoustiques"):
+        import xz_background_g2_1 as bg
+        from xz_background_g2_1 import XZBackground, XZProfile
+
+        reference = CambReference.from_g1(
+            h0=POINT_FOND_P0["H0"], ombh2=POINT_FOND_P0["ombh2"],
+            omegam=POINT_FOND_P0["omm"])
+        profil = XZProfile("M2a", p2, "natural")
+        fond_bg = XZBackground(reference, profil)
+        delta = reference.h0**2 * reference.omega_x0 * (float(p2[-1]) - 1.0)
+
+        if nom == "v11_avec_tolerances_legacy":
+            # corrected-v1.1 exécuté avec les tolérances legacy ; garde :
+            # concordance GL indépendante (la valeur sous-résolue
+            # ~1e-12 s'écarte de GL ~3.5e-9 de bien plus que 1e-13).
+            bg.ACOUSTIC_RULES["corrected-v1.1"] = {
+                "epsabs": 1e-8, "epsrel": 1e-10, "limit": 300}
+            corr = fond_bg.rdrag("corrected-v1.1") - reference.rdrag
+            gl = _corr_gl(_integrande_correction(reference, delta),
+                          reference, reference.zdrag, 512)
+            return 1 if abs(corr - gl) > SEUIL_CONCORDANCE_GL else 0
+        if nom == "legacy_avec_tolerances_v11":
+            # corrected-legacy exécuté avec les tolérances v1.1 ; garde :
+            # bit-identité avec la reconstruction de l'ancienne règle,
+            # au niveau de la valeur publiée r_ref + correction.
+            bg.ACOUSTIC_RULES["corrected-legacy"] = {
+                "epsabs": 1e-15, "epsrel": 1e-13, "limit": 800}
+            publie = fond_bg.rdrag("corrected-legacy")
+            attendu = (reference.rdrag
+                       + correction_regle_ancienne(fond_bg, reference.zdrag))
+            return 1 if publie != attendu else 0
+        if nom == "alias_corrected_vers_legacy":
+            # l'alias nu pointe vers legacy ; garde : égalité EXACTE
+            # corrected == corrected-v1.1 exigée par le contrôle A1.
+            bg.ACOUSTIC_ALIAS["corrected"] = "corrected-legacy"
+            egal = (fond_bg.rdrag("corrected")
+                    == fond_bg.rdrag("corrected-v1.1"))
+            return 0 if egal else 1
+        if nom == "mode_inconnu_accepte":
+            # résolution laxiste (mode inconnu -> fixed, silencieux) ;
+            # garde : un mode inconnu DOIT lever ValueError.
+            def resolution_laxiste(mode):
+                mode = bg.ACOUSTIC_ALIAS.get(mode, mode)
+                return mode if mode in bg.ACOUSTIC_MODES else "fixed"
+            bg.resolve_acoustic_mode = resolution_laxiste
+            try:
+                fond_bg.rdrag("corrected-v9.9")
+                return 1  # aucun refus : faute détectée par la garde
+            except ValueError:
+                return 0
+        if nom == "limit_v11_altere":
+            # limit != 800 pour v1.1 ; garde DÉSIGNÉE : audit déclaratif
+            # des règles (la garde numérique peut être aveugle si quad
+            # n'atteint pas la limite — aveuglement documenté).
+            bg.ACOUSTIC_RULES["corrected-v1.1"] = {
+                "epsabs": 1e-15, "epsrel": 1e-13, "limit": 400}
+            return 1 if auditer_regles_acoustiques() else 0
+        if nom == "epsabs_epsrel_altere":
+            # epsabs/epsrel altérés ; gardes : audit déclaratif ET
+            # concordance GL (tolérances grossières -> sous-résolution).
+            bg.ACOUSTIC_RULES["corrected-v1.1"] = {
+                "epsabs": 1e-6, "epsrel": 1e-3, "limit": 800}
+            audit = bool(auditer_regles_acoustiques())
+            corr = fond_bg.rdrag("corrected-v1.1") - reference.rdrag
+            gl = _corr_gl(_integrande_correction(reference, delta),
+                          reference, reference.zdrag, 512)
+            numerique = abs(corr - gl) > SEUIL_CONCORDANCE_GL
+            return 1 if (audit or numerique) else 0
+        if nom == "controle_GL_rstar_omis":
+            # le contrôle GL de r_star est omis du contrôle par point ;
+            # garde : complétude des clés exigées (CLES_CONTROLE_AC).
+            entree_fautive = {
+                cle: 0.0 for cle in CLES_CONTROLE_AC
+                if not cle.endswith("_rstar")
+            }
+            return 1 if cles_manquantes_controle_ac(entree_fautive) else 0
+        if nom == "resultat_historique_reetiquete_v11":
+            # une valeur calculée sous l'ancienne règle est présentée
+            # comme « corrected-v1.1 » ; garde : revalidation GL de toute
+            # valeur revendiquant v1.1.
+            valeur_legacy = fond_bg.rdrag("corrected-legacy") - reference.rdrag
+            pretendu = {"mode": "corrected-v1.1",
+                        "correction_rdrag": valeur_legacy}
+            gl = _corr_gl(_integrande_correction(reference, delta),
+                          reference, reference.zdrag, 512)
+            ecart = abs(pretendu["correction_rdrag"] - gl)
+            return 1 if ecart > SEUIL_CONCORDANCE_GL else 0
+        if nom == "cache_partage_modes_acoustiques":
+            # cache de corrections partagé entre modes (clé sans mode) :
+            # l'évaluateur legacy relit la valeur v1.1 ; garde :
+            # régression bit à bit legacy vs ancienne règle.
+            cache_partage: dict = {}
+            originale = EvaluateurRapide._correction_acoustique
+
+            def avec_cache_sans_mode(self, etat, x5):
+                cle = (etat.empreinte, float(x5))  # FAUTE : mode absent
+                if cle not in cache_partage:
+                    cache_partage[cle] = originale(self, etat, x5)
+                return cache_partage[cle]
+
+            EvaluateurRapide._correction_acoustique = avec_cache_sans_mode
+            fabrique = FabriqueEtatsLents()
+            ev_v11 = EvaluateurRapide(cfg_n, bao_mean, bao_icov, fabrique)
+            ev_leg = EvaluateurRapide(cfg_n, bao_mean, bao_icov, fabrique,
+                                      mode_acoustique="corrected-legacy")
+            point = {**POINT_FOND_P0, **dict(zip(noms, p2))}
+            ev_v11.evaluate(point)
+            r_leg = ev_leg.evaluate(point)
+            attendu = correction_regle_ancienne(fond_bg, reference.zdrag)
+            ecart = abs(r_leg["_interne"]["corr_drag"] - attendu)
+            return 1 if ecart > SEUILS["corr_acoustique_abs"] else 0
     raise SystemExit(f"faute inconnue : {nom}")
 
 
@@ -597,6 +845,22 @@ def qualification() -> int:
     resultat: dict = {}
     temps: dict = {}
     compteur = _instrumenter_from_g1()
+
+    # ---- audit BLOQUANT des règles acoustiques (amendement A1) ---------
+    violations_regles = auditer_regles_acoustiques()
+    resultat["audit_regles_acoustiques"] = {
+        "violations": violations_regles,
+        "conforme": not violations_regles,
+        "regles_declarees": {
+            "corrected-v1.1": {"epsabs": 1e-15, "epsrel": 1e-13,
+                               "limit": 800},
+            "corrected-legacy": {"epsabs": 1e-8, "epsrel": 1e-10,
+                                 "limit": 300},
+            "alias": {"corrected": "corrected-v1.1"},
+        },
+    }
+    for v in violations_regles:
+        echecs.append(f"règles acoustiques : {v}")
 
     # ---- ensembles d'équivalence et oracle ----------------------------
     oracles, ensembles, configs = {}, {}, {}
@@ -703,55 +967,45 @@ def qualification() -> int:
                 f"équivalence : {k} = {pires[k]['valeur']:.3e} > {SEUILS[k]:.0e} "
                 f"({pires[k]['point']})")
 
-    # ---- diagnostic acoustique NON PRODUCTIF (G2.4c-ii-a/-b) -----------
-    # N'altère ni l'oracle ni la candidate. Règle numérique fixée avant
-    # exécution : resserrée = scipy.quad en variable z, bornes
-    # [z_depart, 1e7], epsabs=1e-15, epsrel=1e-13, limit=800 ; contrôle
-    # indépendant = Gauss-Legendre en u = 1/sqrt(1+z), segments
-    # [z_depart, zstar], [zstar, 1e4], [1e4, 1e6], [1e6, 1e7], 512 points
-    # par segment ; contrôle de convergence : 1024 points (écart publié).
-    # G2.4c-ii-b : le contrôle GL est appliqué SÉPARÉMENT aux deux
-    # corrections, avec une règle IDENTIQUE hormis la borne initiale
-    # (zdrag pour r_drag, zstar pour r_star) ; la concordance
-    # resserrée-GL512 est BLOQUANTE pour chacune (SEUIL_CONCORDANCE_GL).
+    # ---- contrôle acoustique A1 (G2.4c-iii) ----------------------------
+    # L'amendement A1 étant ratifié et APPLIQUÉ, « corrected » désigne
+    # corrected-v1.1 : le contrôle porte désormais directement sur
+    # l'oracle amendé. Par point (16 = 4 variantes x P0-P3, garde de
+    # compte bloquante) :
+    #   - trois modes testés séparément (fixed, corrected-legacy,
+    #     corrected-v1.1) + alias « corrected » ;
+    #   - alias : corrected == corrected-v1.1 EXACTEMENT (bloquant) ;
+    #   - legacy : bit-identique à la reconstruction verbatim de
+    #     l'ancienne règle de l'oracle (bloquant) ;
+    #   - concordance corrected-v1.1 vs contrôle GL indépendant,
+    #     SÉPARÉMENT pour r_drag et r_star (bloquant,
+    #     SEUIL_CONCORDANCE_GL) ; convergence GL 512/1024 publiée ;
+    #   - comparaisons v1.1-legacy / v1.1-fixed / legacy-fixed sur
+    #     r_drag, r_star, theta_star, vecteurs BAO/CMB, chi2_BAO,
+    #     chi2_CMB, chi2_total — maxima publiés, rapports aux seuils de
+    #     contrôle T12(b) historiques (dénominateurs ii-b) ;
+    #   - complétude des clés par point (garde : aucun contrôle GL omis).
     # Aucune valeur n'est interprétée cosmologiquement.
-    from scipy.integrate import quad as _quad
-
     from xz_background_g2_1 import XZBackground, XZProfile
+    from xz_likelihood_g2_3 import (
+        BAO_KINDS as _KINDS,
+        BAO_REDSHIFTS as _ZBAO,
+        CMB_ICOV as _ICOV_CMB,
+        CMB_MU as _MU_CMB,
+    )
 
-    def _corr_resserree(reference, delta, z_depart):
-        ratio0 = reference.baryon_photon_ratio0
-
-        def integrande(z):
-            ratio = ratio0 / (1.0 + z)
-            cs = 299792.458 / math.sqrt(3.0 * (1.0 + 0.75 * ratio))
-            href = float(reference.hubble(z))
-            hx = math.sqrt(href * href + delta)
-            return cs * (1.0 / hx - 1.0 / href)
-
-        valeur, _ = _quad(integrande, float(z_depart), 1.0e7,
-                          epsabs=1e-15, epsrel=1e-13, limit=800)
-        return float(valeur), integrande
-
-    def _corr_gl(integrande, reference, z_depart, n):
-        total = 0.0
-        bornes = [z_depart, reference.zstar, 1.0e4, 1.0e6, 1.0e7]
-        bornes = [b for b in bornes if b >= z_depart]
-        if bornes[0] != z_depart:
-            bornes.insert(0, z_depart)
-        for a, b in zip(bornes[:-1], bornes[1:]):
-            if b <= a:
-                continue
-            ua, ub = 1.0 / math.sqrt(1.0 + b), 1.0 / math.sqrt(1.0 + a)
-            x_gl, w_gl = np.polynomial.legendre.leggauss(n)
-            u = 0.5 * (ua + ub) + 0.5 * (ub - ua) * x_gl
-            w = 0.5 * (ub - ua) * w_gl
-            z = 1.0 / (u * u) - 1.0
-            f = np.array([integrande(float(zz)) for zz in z])
-            total += float(np.sum(w * 2.0 / u**3 * f))
-        return total
-
-    diagnostic_ac: dict = {}
+    MODES_AC = ("fixed", "corrected-legacy", "corrected-v1.1")
+    PAIRES_AC = (("corrected-v1.1", "corrected-legacy"),
+                 ("corrected-v1.1", "fixed"),
+                 ("corrected-legacy", "fixed"))
+    QUANTITES_AC = ("rdrag", "rstar", "theta_star", "vecteur_BAO",
+                    "vecteur_CMB", "chi2_BAO", "chi2_CMB", "chi2_total")
+    controle_ac: dict = {}
+    comparaisons_ac: dict = {
+        f"{a} - {b}": {q: {"max_abs": 0.0, "point": None}
+                       for q in QUANTITES_AC}
+        for a, b in PAIRES_AC
+    }
     for variante in CONFIGS:
         noms_v = [item["nom"] for item in configs[variante]["parametres_x"]]
         grille_v = configs[variante]["grille"]
@@ -771,51 +1025,131 @@ def qualification() -> int:
                 fond["H0"], fond["ombh2"], fond["omm"])
             fond_o = XZBackground(
                 reference, XZProfile(grille_v, xs, convention_v))
-            corr_o_drag = fond_o.rdrag("corrected") - reference.rdrag
-            corr_o_star = fond_o.rstar("corrected") - reference.rstar
+            # -- modes séparés + alias (oracle amendé) ------------------
+            # r_drag/r_star : UN appel oracle par mode ; vecteurs et chi2
+            # assemblés avec l'arithmétique EXACTE de bao_vector /
+            # cmb_vector puis de XZEvaluator (mêmes opérations, mêmes
+            # valeurs D_M/D_H partagées entre modes — elles n'en
+            # dépendent pas). La fidélité de l'assemblage — vecteurs ET
+            # chi2 — est verrouillée par la garde bloquante
+            # « evaluateur_v11_exact » ci-dessous (égalités EXACTES avec
+            # la sortie publiée de l'oracle en mode directeur).
+            dm_pt = np.asarray(fond_o.dm(_ZBAO), dtype=float)
+            dh_pt = np.asarray(fond_o.dh(_ZBAO), dtype=float)
+            dv_pt = np.cbrt(_ZBAO * dm_pt * dm_pt * dh_pt)
+            dm_star_pt = float(fond_o.dm(reference.zstar))
+            par_mode: dict = {}
+            for mode in MODES_AC:
+                rd_m = fond_o.rdrag(mode)
+                rs_m = fond_o.rstar(mode)
+                bao_m = np.empty(len(_ZBAO))
+                for i, kind in enumerate(_KINDS):
+                    if kind == "DV_over_rs":
+                        bao_m[i] = dv_pt[i] / rd_m
+                    elif kind == "DM_over_rs":
+                        bao_m[i] = dm_pt[i] / rd_m
+                    else:
+                        bao_m[i] = dh_pt[i] / rd_m
+                theta_m = rs_m / dm_star_pt
+                cmb_m = np.array(
+                    [theta_m, reference.ombh2,
+                     reference.ombh2 + reference.omch2], dtype=float)
+                r_b = bao_m - bao_mean
+                r_c = cmb_m - _MU_CMB
+                chi2_b = float(r_b @ bao_icov @ r_b)
+                chi2_c = float(r_c @ _ICOV_CMB @ r_c)
+                par_mode[mode] = {
+                    "rdrag": rd_m,
+                    "rstar": rs_m,
+                    "theta_star": theta_m,
+                    "vecteur_BAO": bao_m,
+                    "vecteur_CMB": cmb_m,
+                    "chi2_BAO": chi2_b,
+                    "chi2_CMB": chi2_c,
+                    "chi2_total": chi2_b + chi2_c,
+                }
+            corr_v11_drag = par_mode["corrected-v1.1"]["rdrag"] - reference.rdrag
+            corr_v11_star = par_mode["corrected-v1.1"]["rstar"] - reference.rstar
+            corr_leg_drag = par_mode["corrected-legacy"]["rdrag"] - reference.rdrag
+            corr_leg_star = par_mode["corrected-legacy"]["rstar"] - reference.rstar
+            # alias « corrected » : exactement corrected-v1.1 (bloquant)
+            alias_exact = bool(
+                fond_o.rdrag("corrected") == par_mode["corrected-v1.1"]["rdrag"]
+                and fond_o.rstar("corrected") == par_mode["corrected-v1.1"]["rstar"]
+            )
+            if not alias_exact:
+                echecs.append(
+                    f"alias corrected != corrected-v1.1 : {variante}:{nom_point}")
+            # cohérence : l'évaluateur oracle (nom nu « corrected »)
+            # publie exactement les vecteurs ET les chi2 du mode
+            # directeur (bloquant) — la formule chi2 assemblée ci-dessus
+            # est ainsi verrouillée à l'exécution, pas par inspection.
+            evaluateur_v11_exact = bool(
+                np.array_equal(np.asarray(o["vecteur_BAO"], dtype=float),
+                               par_mode["corrected-v1.1"]["vecteur_BAO"])
+                and np.array_equal(np.asarray(o["vecteur_CMB"], dtype=float),
+                                   par_mode["corrected-v1.1"]["vecteur_CMB"])
+                and o["chi2_BAO"] == par_mode["corrected-v1.1"]["chi2_BAO"]
+                and o["chi2_CMB"] == par_mode["corrected-v1.1"]["chi2_CMB"]
+                and o["chi2_total"] == par_mode["corrected-v1.1"]["chi2_total"]
+            )
+            if not evaluateur_v11_exact:
+                echecs.append(
+                    f"évaluateur oracle != corrected-v1.1 : {variante}:{nom_point}")
+            # legacy : bit-identique à l'ancienne règle reconstruite, au
+            # niveau des VALEURS PUBLIÉES (même ordre d'opérations que
+            # l'oracle : r_ref + correction). NB : la soustraction
+            # r(mode) - r_ref requantifie la correction à l'ulp de r
+            # (~1.4e-14 pour r ~ 147 Mpc) — comparer les corrections
+            # extraites par soustraction serait comparer deux
+            # quantifications, pas les valeurs publiées.
+            anc_drag = correction_regle_ancienne(fond_o, reference.zdrag)
+            anc_star = correction_regle_ancienne(fond_o, reference.zstar)
+            legacy_bit = bool(
+                par_mode["corrected-legacy"]["rdrag"]
+                == reference.rdrag + anc_drag
+                and par_mode["corrected-legacy"]["rstar"]
+                == reference.rstar + anc_star)
+            if not legacy_bit:
+                echecs.append(
+                    f"corrected-legacy non bit-identique à l'ancien oracle : "
+                    f"{variante}:{nom_point}")
+            # contrôle GL indépendant, séparé r_drag / r_star (bloquant)
             delta = reference.h0**2 * reference.omega_x0 * (float(xs[-1]) - 1.0)
-            corr_r_drag, integrande = _corr_resserree(
-                reference, delta, reference.zdrag)
-            corr_r_star, _ = _corr_resserree(
-                reference, delta, reference.zstar)
-            gl512_drag = _corr_gl(integrande, reference,
-                                  reference.zdrag, 512)
-            gl1024_drag = _corr_gl(integrande, reference,
-                                   reference.zdrag, 1024)
-            gl512_star = _corr_gl(integrande, reference,
-                                  reference.zstar, 512)
-            gl1024_star = _corr_gl(integrande, reference,
-                                   reference.zstar, 1024)
-            concordance_drag = abs(corr_r_drag - gl512_drag)
-            concordance_star = abs(corr_r_star - gl512_star)
+            integrande = _integrande_correction(reference, delta)
+            gl512_drag = _corr_gl(integrande, reference, reference.zdrag, 512)
+            gl1024_drag = _corr_gl(integrande, reference, reference.zdrag, 1024)
+            gl512_star = _corr_gl(integrande, reference, reference.zstar, 512)
+            gl1024_star = _corr_gl(integrande, reference, reference.zstar, 1024)
+            concordance_drag = abs(corr_v11_drag - gl512_drag)
+            concordance_star = abs(corr_v11_star - gl512_star)
             if concordance_drag > SEUIL_CONCORDANCE_GL:
                 echecs.append(
-                    f"concordance GL r_drag : {variante}:{nom_point} — "
-                    f"{concordance_drag:.3e} > {SEUIL_CONCORDANCE_GL:.0e}")
+                    f"concordance GL r_drag (corrected-v1.1) : "
+                    f"{variante}:{nom_point} — {concordance_drag:.3e} > "
+                    f"{SEUIL_CONCORDANCE_GL:.0e}")
             if concordance_star > SEUIL_CONCORDANCE_GL:
                 echecs.append(
-                    f"concordance GL r_star : {variante}:{nom_point} — "
-                    f"{concordance_star:.3e} > {SEUIL_CONCORDANCE_GL:.0e}")
-            dm_star_o = float(fond_o.dm(reference.zstar))
-            rd_o = reference.rdrag + corr_o_drag
-            d_drag = corr_r_drag - corr_o_drag
-            d_star = corr_r_star - corr_o_star
-            bao_o = np.asarray(o["vecteur_BAO"], dtype=float)
-            bao_corrige = bao_o * (rd_o / (rd_o + d_drag))
-            cmb_o = np.asarray(o["vecteur_CMB"], dtype=float)
-            cmb_corrige = cmb_o.copy()
-            cmb_corrige[0] = cmb_o[0] + d_star / dm_star_o
-            r_b = bao_corrige - bao_mean
-            r_c = cmb_corrige - np.array([0.01041, 0.02223, 0.14208])
-            icov_cmb = np.linalg.inv(1e-9 * np.array(
-                [[0.006621, 0.12444, -1.1929],
-                 [0.12444, 21.344, -94.001],
-                 [-1.1929, -94.001, 1488.4]]))
-            diagnostic_ac[f"{variante}:{nom_point}"] = {
-                "corr_rdrag_oracle": corr_o_drag,
-                "corr_rstar_oracle": corr_o_star,
-                "corr_rdrag_resserree": corr_r_drag,
-                "corr_rstar_resserree": corr_r_star,
+                    f"concordance GL r_star (corrected-v1.1) : "
+                    f"{variante}:{nom_point} — {concordance_star:.3e} > "
+                    f"{SEUIL_CONCORDANCE_GL:.0e}")
+            # comparaisons de modes (maxima accumulés sur les 16 points)
+            etiquette_pt = f"{variante}:{nom_point}"
+            for a, b in PAIRES_AC:
+                cible = comparaisons_ac[f"{a} - {b}"]
+                for q in QUANTITES_AC:
+                    va, vb = par_mode[a][q], par_mode[b][q]
+                    if q in ("vecteur_BAO", "vecteur_CMB"):
+                        ecart_q = float(np.max(np.abs(va - vb)))
+                    else:
+                        ecart_q = abs(va - vb)
+                    if ecart_q > cible[q]["max_abs"]:
+                        cible[q] = {"max_abs": ecart_q, "point": etiquette_pt}
+            entree = {
+                "corr_rdrag_v11": corr_v11_drag,
+                "corr_rstar_v11": corr_v11_star,
+                "corr_rdrag_legacy": corr_leg_drag,
+                "corr_rstar_legacy": corr_leg_star,
                 "controle_GL512_rdrag": gl512_drag,
                 "controle_GL1024_rdrag": gl1024_drag,
                 "convergence_GL_rdrag": abs(gl512_drag - gl1024_drag),
@@ -824,38 +1158,39 @@ def qualification() -> int:
                 "convergence_GL_rstar": abs(gl512_star - gl1024_star),
                 "concordance_GL_rdrag": concordance_drag,
                 "concordance_GL_rstar": concordance_star,
-                "ecart_oracle_resserre_rdrag": d_drag,
-                "ecart_oracle_resserre_rstar": d_star,
-                "delta_theta_star": d_star / dm_star_o,
-                "ecart_vecteur_BAO_abs_max": float(
-                    np.max(np.abs(bao_corrige - bao_o))),
-                "delta_chi2_BAO": float(
-                    r_b @ bao_icov @ r_b) - o["chi2_BAO"],
-                "delta_chi2_CMB": float(
-                    r_c @ icov_cmb @ r_c) - o["chi2_CMB"],
+                "alias_exact": alias_exact,
+                "legacy_bit_identique": legacy_bit,
+                "evaluateur_v11_exact": evaluateur_v11_exact,
+                "theta_star_v11": par_mode["corrected-v1.1"]["theta_star"],
+                "theta_star_legacy": par_mode["corrected-legacy"]["theta_star"],
+                "theta_star_fixed": par_mode["fixed"]["theta_star"],
             }
+            manquantes = cles_manquantes_controle_ac(entree)
+            if manquantes:
+                echecs.append(
+                    f"contrôle acoustique incomplet ({etiquette_pt}) : "
+                    f"clés manquantes {manquantes}")
+            controle_ac[etiquette_pt] = entree
     # Garantie de compte : les 16 points (4 variantes x P0-P3) doivent
-    # TOUS entrer au diagnostic — un point sauté (oracle-invalide)
-    # soustrairait sa condition bloquante de concordance sans signal.
-    if len(diagnostic_ac) != 4 * len(CONFIGS):
+    # TOUS entrer au contrôle — un point sauté soustrairait ses
+    # conditions bloquantes sans signal.
+    if len(controle_ac) != 4 * len(CONFIGS):
         echecs.append(
-            f"diagnostic acoustique : {len(diagnostic_ac)} points au lieu "
-            f"de {4 * len(CONFIGS)} — point P0-P3 absent du diagnostic")
-    _pts = list(diagnostic_ac.values())
+            f"contrôle acoustique : {len(controle_ac)} points au lieu "
+            f"de {4 * len(CONFIGS)} — point P0-P3 absent du contrôle")
+    _pts = list(controle_ac.values())
     if _pts:
+        _diff_v11_leg = comparaisons_ac["corrected-v1.1 - corrected-legacy"]
         _maxima_t12b = {
             "correction_resserree_abs": max(
-                max(abs(p["corr_rdrag_resserree"]),
-                    abs(p["corr_rstar_resserree"])) for p in _pts),
-            "delta_chi2_BAO_abs": max(
-                abs(p["delta_chi2_BAO"]) for p in _pts),
-            "delta_chi2_CMB_abs": max(
-                abs(p["delta_chi2_CMB"]) for p in _pts),
-            "delta_theta_star_abs": max(
-                abs(p["delta_theta_star"]) for p in _pts),
+                max(abs(p["corr_rdrag_v11"]), abs(p["corr_rstar_v11"]))
+                for p in _pts),
+            "delta_chi2_BAO_abs": _diff_v11_leg["chi2_BAO"]["max_abs"],
+            "delta_chi2_CMB_abs": _diff_v11_leg["chi2_CMB"]["max_abs"],
+            "delta_theta_star_abs": _diff_v11_leg["theta_star"]["max_abs"],
         }
-        resultat["diagnostic_acoustique"] = {
-            "points": diagnostic_ac,
+        resultat["controle_acoustique_A1"] = {
+            "points": controle_ac,
             "seuil_concordance_GL_abs": SEUIL_CONCORDANCE_GL,
             "concordance_GL_max": {
                 "rdrag": max(p["concordance_GL_rdrag"] for p in _pts),
@@ -865,7 +1200,11 @@ def qualification() -> int:
                 "rdrag": max(p["convergence_GL_rdrag"] for p in _pts),
                 "rstar": max(p["convergence_GL_rstar"] for p in _pts),
             },
-            "rapports_seuils_T12b": {
+            "alias_exact_partout": all(p["alias_exact"] for p in _pts),
+            "legacy_bit_identique_partout": all(
+                p["legacy_bit_identique"] for p in _pts),
+            "comparaisons_modes": comparaisons_ac,
+            "rapports_seuils_T12b_historiques": {
                 cle: {"max_abs": _maxima_t12b[cle],
                       "seuil_T12b": SEUILS_T12B[cle],
                       "rapport": _maxima_t12b[cle] / SEUILS_T12B[cle]}
@@ -874,10 +1213,101 @@ def qualification() -> int:
         }
     else:
         # échec de porte propre plutôt qu'un traceback sur max() vide
-        resultat["diagnostic_acoustique"] = {
+        resultat["controle_acoustique_A1"] = {
             "points": {},
             "seuil_concordance_GL_abs": SEUIL_CONCORDANCE_GL,
         }
+
+    # ---- régression bit à bit : chemin rapide en mode corrected-legacy -
+    # Les anciens tests bit à bit contre corrected-legacy restent
+    # disponibles comme tests de régression SÉPARÉS : l'évaluateur rapide
+    # en mode legacy doit reproduire l'oracle legacy aux mêmes seuils que
+    # l'équivalence historique (SEUILS), sur les 16 points P0-P3.
+    pires_leg: dict = {k: {"valeur": 0.0, "point": None}
+                       for k in ("rdrag_abs", "rstar_abs", "theta_abs",
+                                 "BAO_rel", "chi2_BAO_abs", "chi2_CMB_abs",
+                                 "corr_acoustique_abs")}
+    n_regression = 0
+    for variante in CONFIGS:
+        noms_v = [item["nom"] for item in configs[variante]["parametres_x"]]
+        grille_v = configs[variante]["grille"]
+        convention_v = configs[variante]["convention_spline"]
+        rapide_leg = EvaluateurRapide(
+            configs[variante], bao_mean, bao_icov, FabriqueEtatsLents(),
+            mode_acoustique="corrected-legacy")
+        jeux = {
+            "P0": ({**POINT_FOND_P0}, tuple([1.0] * len(noms_v))),
+            "P1": ({**POINT_FOND_P1}, tuple([1.0] * len(noms_v))),
+            "P2": ({**POINT_FOND_P0}, P2_VALUES[grille_v]),
+            "P3": ({**POINT_FOND_P0}, P3_VALUES[grille_v]),
+        }
+        for nom_point, (fond, xs) in jeux.items():
+            point = {**fond, **dict(zip(noms_v, xs))}
+            r_leg = rapide_leg.evaluate(point)
+            if r_leg["logprior"] != 0.0:
+                echecs.append(
+                    f"régression legacy : point invalide inattendu "
+                    f"{variante}:{nom_point}")
+                continue
+            n_regression += 1
+            reference = oracles[variante]._reference(
+                fond["H0"], fond["ombh2"], fond["omm"])
+            fond_o = XZBackground(
+                reference, XZProfile(grille_v, xs, convention_v))
+            bao_leg = np.asarray(
+                fond_o.bao_vector(_ZBAO, _KINDS, "corrected-legacy"),
+                dtype=float)
+            cmb_leg = np.asarray(
+                fond_o.cmb_vector("corrected-legacy"), dtype=float)
+            r_b = bao_leg - bao_mean
+            r_c = cmb_leg - _MU_CMB
+            interne = r_leg["_interne"]
+            ecarts_leg = {
+                "rdrag_abs": abs(interne["rdrag"]
+                                 - fond_o.rdrag("corrected-legacy")),
+                "rstar_abs": abs(interne["rstar"]
+                                 - fond_o.rstar("corrected-legacy")),
+                "theta_abs": abs(r_leg["vecteur_CMB"][0] - cmb_leg[0]),
+                "BAO_rel": float(np.max(
+                    np.abs(np.asarray(r_leg["vecteur_BAO"]) - bao_leg)
+                    / np.abs(bao_leg))),
+                "chi2_BAO_abs": abs(r_leg["chi2_BAO"]
+                                    - float(r_b @ bao_icov @ r_b)),
+                "chi2_CMB_abs": abs(r_leg["chi2_CMB"]
+                                    - float(r_c @ _ICOV_CMB @ r_c)),
+                "corr_acoustique_abs": abs(
+                    interne["corr_drag"]
+                    - (fond_o.rdrag("corrected-legacy") - reference.rdrag)),
+            }
+            for k, v in ecarts_leg.items():
+                if v > pires_leg[k]["valeur"]:
+                    pires_leg[k] = {"valeur": v,
+                                    "point": f"{variante}:{nom_point}"}
+    SEUILS_REGRESSION_LEG = {
+        "rdrag_abs": SEUILS["rdrag_abs"], "rstar_abs": SEUILS["rstar_abs"],
+        "theta_abs": SEUILS["theta_abs"], "BAO_rel": SEUILS["BAO_rel"],
+        "chi2_BAO_abs": SEUILS["chi2_BAO_abs"],
+        "chi2_CMB_abs": SEUILS["chi2_CMB_abs"],
+        "corr_acoustique_abs": SEUILS["corr_acoustique_abs"],
+    }
+    resultat["regression_legacy_rapide"] = {
+        "points_compares": n_regression,
+        "pires_ecarts": {
+            k: {"valeur": pires_leg[k]["valeur"],
+                "seuil": SEUILS_REGRESSION_LEG[k],
+                "point": pires_leg[k]["point"]}
+            for k in pires_leg
+        },
+    }
+    if n_regression != 4 * len(CONFIGS):
+        echecs.append(
+            f"régression legacy : {n_regression} points au lieu de "
+            f"{4 * len(CONFIGS)}")
+    for k in pires_leg:
+        if pires_leg[k]["valeur"] > SEUILS_REGRESSION_LEG[k]:
+            echecs.append(
+                f"régression legacy : {k} = {pires_leg[k]['valeur']:.3e} > "
+                f"{SEUILS_REGRESSION_LEG[k]:.0e} ({pires_leg[k]['point']})")
 
     # ---- égalité bitwise de l'évaluation de spline scalaire ------------
     from xz_background_g2_1 import XZProfile
@@ -939,6 +1369,12 @@ def qualification() -> int:
         "construction_echouee", "segment_2p33_omis", "queue_dm_omise",
         "queue_acoustique_omise", "ordre_insuffisant",
         "classification_sans_grille", "graphe_un_bloc", "camb_sur_xi",
+        # fautes de l'amendement A1 (G2.4c-iii)
+        "v11_avec_tolerances_legacy", "legacy_avec_tolerances_v11",
+        "alias_corrected_vers_legacy", "mode_inconnu_accepte",
+        "limit_v11_altere", "epsabs_epsrel_altere",
+        "controle_GL_rstar_omis", "resultat_historique_reetiquete_v11",
+        "cache_partage_modes_acoustiques",
     ]
     resultat["fautes"] = {}
     for nom in fautes:
@@ -1021,6 +1457,28 @@ def qualification() -> int:
     camb_sequence = compteur["appels"] - avant
     n_evals_seq = n_cycles * (1 + f * len(noms))
     speedup_representatif = (n_evals_seq * t_oracle) / t_sequence
+    # Différence de coût corrected-v1.1 vs corrected-legacy (paire de
+    # corrections acoustiques), SANS modification des critères
+    # scientifiques — mesure indicative, hors diff déterministe.
+    ev_perf_leg = EvaluateurRapide(
+        configs["M2a-N"], bao_mean, bao_icov, fab_perf,
+        mode_acoustique="corrected-legacy")
+    etat_cout = fab_perf.obtenir("M2a-N", 67.0, 0.0223, 0.32)
+    x5_cout = float(xs_perf[0][-1])
+    t0 = time.perf_counter()
+    for _ in range(5):
+        ev_perf._correction_acoustique(etat_cout, x5_cout)
+    t_corr_v11 = (time.perf_counter() - t0) / 5
+    t0 = time.perf_counter()
+    for _ in range(5):
+        ev_perf_leg._correction_acoustique(etat_cout, x5_cout)
+    t_corr_leg = (time.perf_counter() - t0) / 5
+    temps["cout_acoustique"] = {
+        "v11_s_par_paire": round(t_corr_v11, 5),
+        "legacy_s_par_paire": round(t_corr_leg, 5),
+        "rapport_v11_sur_legacy": round(
+            t_corr_v11 / max(t_corr_leg, 1e-12), 2),
+    }
     temps["performance"] = {
         "etat_lent_neuf_s": round(t_lent_neuf, 4),
         "etat_lent_cache_s": round(t_lent_cache, 6),

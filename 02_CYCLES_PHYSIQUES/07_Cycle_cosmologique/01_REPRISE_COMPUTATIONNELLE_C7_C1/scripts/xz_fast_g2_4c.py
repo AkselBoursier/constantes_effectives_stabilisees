@@ -44,10 +44,12 @@ from typing import Any
 import numpy as np
 
 from xz_background_g2_1 import (
+    ACOUSTIC_RULES,
     C_KM_S,
     NODES,
     CambReference,
     XZProfile,
+    resolve_acoustic_mode,
 )
 from xz_likelihood_g2_3 import (
     BAO_KINDS,
@@ -72,12 +74,13 @@ ORDRES_RETENUS = {"principal": 2048, "queue": 2048}
 
 # Corrections acoustiques : PAS de nouvelle quadrature — réutilisation
 # bit à bit de la méthode de l'oracle (scipy.integrate.quad, mêmes
-# tolérances et même intégrande scalaire). Constat consigné : sur ces
-# intégrales minuscules (~1e-12..1e-8), quad à epsabs=1e-8 sous-résout
-# la valeur vraie (voir rapport §constat oracle) ; l'équivalence exacte
-# avec l'oracle prime ici, et la valeur vraie reste physiquement
-# négligeable aux seuils T12.
-QUAD_ACOUSTIQUE = {"epsabs": 1e-8, "epsrel": 1e-10, "limit": 300}
+# tolérances et même intégrande scalaire), sous les règles de mode de
+# l'amendement A1 (ACOUSTIC_RULES de xz_background_g2_1, source unique).
+# Mode directeur aligné sur l'oracle : « corrected » -> corrected-v1.1
+# (epsabs=1e-15, epsrel=1e-13, limit=800). Le mode corrected-legacy
+# reste sélectionnable EXCLUSIVEMENT pour les tests de régression bit à
+# bit contre l'ancien oracle — jamais par les composants Cobaya.
+MODE_ACOUSTIQUE_DIRECTEUR = "corrected-v1.1"
 Z_MAX_ACOUSTIQUE = 1.0e7
 Z_RACCORD = 2.33
 
@@ -326,7 +329,8 @@ class EvaluateurRapide:
 
     def __init__(self, config: dict[str, Any], bao_mean: np.ndarray,
                  bao_icov: np.ndarray, fabrique: FabriqueEtatsLents,
-                 sabotage: frozenset = frozenset()):
+                 sabotage: frozenset = frozenset(),
+                 mode_acoustique: str = MODE_ACOUSTIQUE_DIRECTEUR):
         self.config = config
         self.variante = config["variante"]
         self.grille, self.convention = VARIANTES[self.variante]
@@ -335,6 +339,16 @@ class EvaluateurRapide:
         self.bao_icov = bao_icov
         self.fabrique = fabrique
         self.sabotage = sabotage
+        # Mode acoustique RÉSOLU (amendement A1) : corrected-v1.1 par
+        # défaut (directeur) ; corrected-legacy réservé aux tests de
+        # régression bit à bit ; « fixed » n'est pas un mode de ce
+        # pipeline (l'oracle XZEvaluator évalue en « corrected »).
+        self.mode_acoustique = resolve_acoustic_mode(mode_acoustique)
+        if self.mode_acoustique == "fixed":
+            raise ValueError(
+                "EvaluateurRapide réplique le pipeline « corrected » de "
+                "l'oracle ; le mode fixed n'y est pas défini."
+            )
 
     # ---- chemin rapide (dépend des X_i, état lent fourni) -------------
     def _dm_bao_replique_oracle(self, etat: EtatLent,
@@ -435,15 +449,18 @@ class EvaluateurRapide:
         """(correction_rdrag, correction_rstar).
 
         Réplique BIT À BIT la méthode de l'oracle
-        (XZBackground._sound_horizon_correction) : même scipy.quad, mêmes
-        tolérances, même intégrande scalaire — pour z >= 2.33,
-        X(z) = X(2.33) rend l'intégrande identique à celle de l'oracle
-        avec H_X² = H_ref² + c0·(x5-1). Aucune nouvelle quadrature ici.
+        (XZBackground._sound_horizon_correction) : même scipy.quad, même
+        intégrande scalaire, et les tolérances du MODE ACOUSTIQUE RÉSOLU
+        de l'évaluateur (ACOUSTIC_RULES — amendement A1 ; source unique
+        partagée avec l'oracle). Pour z >= 2.33, X(z) = X(2.33) rend
+        l'intégrande identique à celle de l'oracle avec
+        H_X² = H_ref² + c0·(x5-1). Aucune nouvelle quadrature ici.
         """
         if "queue_acoustique_omise" in self.sabotage:
             return 0.0, 0.0
         from scipy.integrate import quad
 
+        regle = ACOUSTIC_RULES[self.mode_acoustique]
         reference = etat.reference
         ratio0 = reference.baryon_photon_ratio0
         delta = etat.c0 * (x5 - 1.0)
@@ -464,7 +481,8 @@ class EvaluateurRapide:
         for z_depart in (reference.zdrag, reference.zstar):
             valeur, _ = quad(
                 integrande, float(z_depart), Z_MAX_ACOUSTIQUE,
-                **QUAD_ACOUSTIQUE,
+                epsabs=regle["epsabs"], epsrel=regle["epsrel"],
+                limit=int(regle["limit"]),
             )
             corrections.append(float(valeur))
         return corrections[0], corrections[1]
