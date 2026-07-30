@@ -55,8 +55,9 @@ déterminants pour l'architecture retenue :
 ```text
 C1 — corrections acoustiques : quad(epsabs=1e-8) SOUS-RÉSOUT ces
   intégrales minuscules. Exemple mesuré (profil P2, M2a-N) :
-  oracle = 1.364e-12 ; valeur vraie = 3.549541e-9 (quad resserré,
-  erreur estimée 8.7e-16 ; GL indépendante concordante à 3e-16).
+  oracle = 1.364e-12 ; référence resserrée = 3.549541e-9 (quad
+  epsabs=1e-15/epsrel=1e-13, erreur estimée 8.7e-16, corroborée par
+  une quadrature indépendante Gauss-Legendre concordante à 3e-16).
   L'écart est physiquement négligeable (< 1e-8 Mpc) mais interdit
   toute équivalence à 1e-10 Mpc contre l'oracle par une quadrature
   propre ;
@@ -117,8 +118,27 @@ une faute d'ordre volontairement insuffisant (8) dépasse les seuils
 
 ## 4. Ensemble d'équivalence gelé et résultats
 
+Couverture G2.4c-ii-a : TOUT point oracle-valide entre dans les
+comparaisons numériques, sans exclusion (ni étiquette de couche
+frontière, ni boîte de fonds, ni taille de résidu CMB, ni proximité de
+H_X² = 0) ; les points oracle-invalides sont contrôlés en
+classification. Condition bloquante : nombre numériquement comparé ==
+nombre oracle-valide (un auto-test de retrait d'un point oracle-valide
+produit un code non nul).
+
 ```text
-par variante (4 variantes, 331 points au total, 280 valides comparés) :
+COMPTES DE COUVERTURE (par variante : total / oracle-valide /
+oracle-invalide / numériquement comparé / classification-only) :
+  M2a-N :  82 / 77 / 5 / 77 / 5
+  M2a-K :  85 / 79 / 6 / 79 / 6
+  M2b-N :  81 / 74 / 7 / 74 / 7
+  M2b-K :  83 / 76 / 7 / 76 / 7
+  TOTAL : 331 / 306 / 25 / 306 / 25
+condition nominale : numériquement comparé == oracle-valide : VÉRIFIÉE
+  (306 == 306) ; auto-test : le retrait artificiel d'un point
+  oracle-valide (C7C1_TEST_RETRAIT_POINT) produit exit 1 — VÉRIFIÉ.
+
+composition par variante (331 points au total sur quatre variantes) :
   P0, P1 (X_i = 1) ; P2 signé ; P3 oscillatoire ;
   bords exacts de P_WS (tous X = 4 ; alternance -2/4) ;
   voisinage H_X² -> 0+ (bissection déterministe sur le statut oracle,
@@ -174,7 +194,7 @@ point à point (chi2_BAO/CMB/total) : PASSE.
 séquence représentative (4 cycles x [1 lent + 25 rapides],
   facteur de suréchantillonnage prédéclaré 5) :
   5.95 ms par évaluation ; 4 appels CAMB pour 104 évaluations ;
-  speedup représentatif : 12.0x / 12.1x (deux passes) vs oracle
+  speedup représentatif : 12.0x à 13.2x selon les passes vs oracle
   réchauffé — mesure CONSERVATRICE : contre le coût de production
   mesuré en G2.4b (~0.38 s/éval, CAMB froid à chaque pas dans le bloc
   unique), le même mélange vaut ~64x ;
@@ -192,19 +212,23 @@ Le lot passe de semaines-mois à heures-jours sur la machine locale.
 
 ```text
 qualification complète exécutée DEUX FOIS : exit 0 et exit 0 ;
-sorties normalisées bit à bit identiques (diff vide) ;
+sorties normalisées bit à bit identiques (diff vide) — couverture
+  complète et diagnostic acoustique inclus dans la sortie normalisée ;
 temps/mémoire et verdicts chronométrés : section séparée, exclue du
 diff déterministe (les comptages d'appels CAMB, déterministes, restent
-dans la sortie normalisée).
+dans la sortie normalisée) ;
+auto-test d'échec : un point oracle-valide artificiellement retiré de
+la comparaison (C7C1_TEST_RETRAIT_POINT) produit exit 1 — VÉRIFIÉ.
 ```
 
 ## 8. Limites
 
 ```text
 - l'équivalence bit à bit est démontrée sur l'ensemble gelé (331
-  points x 4 variantes) et garantie par construction (mêmes quadratures,
-  intégrandes aux valeurs identiques, égalité bitwise de la spline
-  vérifiée) — elle n'est pas un théorème sur tout le prior continu ;
+  points au total sur quatre variantes, tous les points oracle-valides
+  comparés) et étayée par construction (mêmes quadratures, intégrandes
+  aux valeurs identiques, égalité bitwise de la spline vérifiée) —
+  elle n'est pas un théorème sur tout le prior continu ;
 - les constats C1/C2 documentent un bruit numérique PROPRE À L'ORACLE
   (sous-résolution des corrections acoustiques ; ~5e-13/5e-10 rel sur
   D_M) : hérité tel quel par la réplique, par fidélité — tout
@@ -217,6 +241,99 @@ dans la sortie normalisée).
 - couche frontière H_X²->0+ et sondes plein-priors : classification
   strictement identique vérifiée ; devenues non contraignantes pour les
   seuils depuis la réplique (écarts 0.0).
+```
+
+## 8 bis. Diagnostic acoustique non productif (G2.4c-ii-a)
+
+Sans modification de l'oracle ni de la candidate de production. Règle
+numérique fixée avant exécution et appliquée aux quatre variantes sur
+P0–P3 :
+
+```text
+resserrée : scipy.quad, variable z, bornes [z_depart, 1e7],
+  epsabs = 1e-15, epsrel = 1e-13, limit = 800 ;
+contrôle indépendant : Gauss-Legendre, variable u = 1/sqrt(1+z),
+  segments [z_depart, z_star], [z_star, 1e4], [1e4, 1e6], [1e6, 1e7],
+  512 points par segment ; contrôle de convergence : 1024 points ;
+grandeurs publiées par point : corrections r_drag / r_star de l'oracle
+  courant et resserrées, contrôle indépendant, écart oracle–resserré,
+  Δtheta_star, écart max du vecteur BAO, Δchi2_BAO, Δchi2_CMB.
+```
+
+Résultats (aucune interprétation cosmologique ; valeurs complètes dans
+la sortie normalisée de la qualification) :
+
+```text
+exemple (M2a-N : P2) :
+  corr r_drag oracle 1.364242e-12 ; resserrée 3.549540e-9 ;
+  contrôle GL512 3.549542e-9 ; convergence GL 512 vs 1024 : 1.1e-16 ;
+  écart oracle-resserré (r_drag) 3.548e-9 ; (r_star) 3.194e-9 ;
+  Δtheta_star 2.23e-13 ; écart BAO max 1.02e-9 ;
+  Δchi2_BAO -8.4e-7 ; Δchi2_CMB -2.7e-5 ;
+
+maxima absolus sur les 16 points (4 variantes x P0-P3) :
+  corr oracle             <= 2.02e-12 Mpc ;
+  corr resserrée          <= 5.32e-9 Mpc ;
+  écart oracle-resserré   <= 5.32e-9 Mpc (r_drag) / 4.79e-9 (r_star) ;
+  convergence GL 512/1024 <= 7.0e-16 (contrôle indépendant concordant) ;
+  Δtheta_star             <= 3.6e-13 ;
+  écart vecteur BAO       <= 1.5e-9 (absolu) ;
+  Δchi2_BAO               <= 8.5e-7 ;  Δchi2_CMB <= 4.4e-5.
+```
+
+Lecture strictement numérique : l'effet du défaut sur les observables
+reste partout inférieur d'au moins quatre ordres de grandeur aux seuils
+scientifiques du lot — le défaut numérique du mode « corrected » est
+réel, son effet est vraisemblablement négligeable ; les deux constats
+coexistent sans contradiction.
+
+## 8 ter. Proposition d'amendement D3-H (PROPOSÉE, NON APPLIQUÉE)
+
+```text
+date proposée      : 30 juillet 2026 ;
+version proposée   : amendement A1 du mode « corrected » (v1.1) ;
+
+clause ancienne exacte (implémentation actuelle de l'oracle,
+xz_background_g2_1.XZBackground._sound_horizon_correction) :
+  quad(integrande, z_depart, acoustic_zmax,
+       epsabs=self.epsabs=1e-8, epsrel=self.epsrel=1e-10,
+       limit=self.quad_limit=300)
+  — le mode « corrected » ratifié en T12(b) repose sur cette règle ;
+
+anomalie démontrée : sur des intégrales de correction d'ordre
+  1e-12..1e-8 Mpc, epsabs=1e-8 autorise un arrêt prématuré ; valeurs
+  rendues non convergées (ex. 1.364e-12 rendu contre 3.549541e-9 en
+  référence resserrée corroborée indépendamment) — défaut numérique
+  RÉEL du mode corrected, d'effet vraisemblablement négligeable
+  scientifiquement (voir diagnostic §8 bis), les deux qualités n'étant
+  pas contradictoires ;
+
+résultats déjà visibles avant amendement : G2.1 (I1-I9, T8-T12),
+  G2.3a (C1-C8), G2.4b (banc, aucune chaîne), G2.4c-i/ii (profilage,
+  qualification, diagnostic §8 bis) — AUCUNE chaîne MCMC X(z) n'a été
+  produite ; aucun posterior n'existe ;
+
+nouvelle règle candidate pour « corrected » :
+  quad en z, bornes inchangées, epsabs=1e-15, epsrel=1e-13, limit=800
+  (la règle du diagnostic §8 bis), OU quadrature u-substituée fixe
+  qualifiée — au choix de l'audit ;
+
+maintien du mode historique : « corrected-legacy » conservé à des fins
+  de régression et de traçabilité (aucune suppression) ;
+
+fichiers affectés si ratifié : scripts/xz_background_g2_1.py (oracle),
+  scripts/xz_fast_g2_4c.py (réplique alignée), rapports G2.1/G2.4c ;
+
+contrôles à rejouer : suite I1-I9 complète, T8-T12, qualification
+  G2.3a (C1-C8), qualification G2.4c-ii (double passe) ;
+
+modèles/sensibilités à réexécuter : aucun résultat d'inférence
+  n'existe ; T12(b) devra être re-ratifiée ; S5 (corrected vs fixed)
+  reste la sensibilité de contrôle au moment de la production ;
+
+condition de validation : décision humaine explicite dans #63, datée
+  et versionnée conformément à D3-H — la présente section est une
+  PROPOSITION ; aucune clause D3-A..H n'est modifiée par ce commit.
 ```
 
 ## 9. Verdict sur G2.4c-iii

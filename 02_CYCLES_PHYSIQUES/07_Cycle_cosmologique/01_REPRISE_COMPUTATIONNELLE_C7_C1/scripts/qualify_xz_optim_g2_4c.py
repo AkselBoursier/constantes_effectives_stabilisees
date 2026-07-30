@@ -618,17 +618,22 @@ def qualification() -> int:
     if not doublement_ok:
         echecs.append("convergence : le doublement de l'ordre retenu échoue")
 
-    # ---- équivalence complète aux ordres retenus -----------------------
+    # ---- équivalence : COUVERTURE NUMÉRIQUE COMPLÈTE (G2.4c-ii-a) ------
+    # Tout point oracle-valide entre dans les comparaisons numériques,
+    # sans exclusion (ni étiquette frontiere_*, ni boîte de fonds, ni
+    # taille de résidu, ni proximité de H_X²=0). Les points
+    # oracle-invalides sont contrôlés en classification seulement.
     pires: dict = {k: {"valeur": 0.0, "point": None} for k in SEUILS}
-    n_points = 0
-    n_valides = 0
     classif_ok = True
+    couverture: dict = {}
     fabriques = {v: FabriqueEtatsLents() for v in CONFIGS}
     rapides = {v: EvaluateurRapide(configs[v], bao_mean, bao_icov,
                                    fabriques[v]) for v in CONFIGS}
     for variante in CONFIGS:
+        compte = {"total": 0, "oracle_valide": 0, "oracle_invalide": 0,
+                  "numeriquement_compare": 0, "classification_only": 0}
         for etiquette, point in ensembles[variante].items():
-            n_points += 1
+            compte["total"] += 1
             concorde, ecarts = comparer_point(
                 oracles[variante], rapides[variante], memos[variante], point,
                 f"{variante}:{etiquette}")
@@ -638,17 +643,30 @@ def qualification() -> int:
                     f"classification divergente : {variante}:{etiquette}")
                 continue
             if ecarts is None:
+                compte["oracle_invalide"] += 1
+                compte["classification_only"] += 1
                 continue
-            if etiquette.startswith("frontiere_"):
-                continue  # couche frontière : classification seulement
-            n_valides += 1
+            compte["oracle_valide"] += 1
+            if (os.environ.get("C7C1_TEST_RETRAIT_POINT")
+                    and etiquette == "P2"):
+                continue  # auto-test : point oracle-valide retiré
+            compte["numeriquement_compare"] += 1
             for k in SEUILS:
                 if ecarts[k] > pires[k]["valeur"]:
                     pires[k] = {"valeur": ecarts[k],
                                 "point": ecarts["etiquette"]}
+        couverture[variante] = compte
+        if compte["numeriquement_compare"] != compte["oracle_valide"]:
+            echecs.append(
+                f"couverture : {variante} — {compte['numeriquement_compare']} "
+                f"comparés != {compte['oracle_valide']} oracle-valides")
+    couverture["total"] = {
+        cle: sum(couverture[v][cle] for v in CONFIGS)
+        for cle in ("total", "oracle_valide", "oracle_invalide",
+                    "numeriquement_compare", "classification_only")
+    }
     resultat["equivalence"] = {
-        "points_testes": n_points,
-        "points_valides_compares": n_valides,
+        "couverture": couverture,
         "classification_identique": classif_ok,
         "pires_ecarts": {
             k: {"valeur": pires[k]["valeur"], "seuil": SEUILS[k],
@@ -662,6 +680,113 @@ def qualification() -> int:
             echecs.append(
                 f"équivalence : {k} = {pires[k]['valeur']:.3e} > {SEUILS[k]:.0e} "
                 f"({pires[k]['point']})")
+
+    # ---- diagnostic acoustique NON PRODUCTIF (G2.4c-ii-a) --------------
+    # N'altère ni l'oracle ni la candidate. Règle numérique fixée avant
+    # exécution : resserrée = scipy.quad en variable z, bornes
+    # [z_depart, 1e7], epsabs=1e-15, epsrel=1e-13, limit=800 ; contrôle
+    # indépendant = Gauss-Legendre en u = 1/sqrt(1+z), segments
+    # [z_depart, zstar], [zstar, 1e4], [1e4, 1e6], [1e6, 1e7], 512 points
+    # par segment ; contrôle de convergence : 1024 points (écart publié).
+    # Aucune valeur n'est interprétée cosmologiquement.
+    from scipy.integrate import quad as _quad
+
+    from xz_background_g2_1 import XZBackground, XZProfile
+
+    def _corr_resserree(reference, delta, z_depart):
+        ratio0 = reference.baryon_photon_ratio0
+
+        def integrande(z):
+            ratio = ratio0 / (1.0 + z)
+            cs = 299792.458 / math.sqrt(3.0 * (1.0 + 0.75 * ratio))
+            href = float(reference.hubble(z))
+            hx = math.sqrt(href * href + delta)
+            return cs * (1.0 / hx - 1.0 / href)
+
+        valeur, _ = _quad(integrande, float(z_depart), 1.0e7,
+                          epsabs=1e-15, epsrel=1e-13, limit=800)
+        return float(valeur), integrande
+
+    def _corr_gl(integrande, reference, z_depart, n):
+        total = 0.0
+        bornes = [z_depart, reference.zstar, 1.0e4, 1.0e6, 1.0e7]
+        bornes = [b for b in bornes if b >= z_depart]
+        if bornes[0] != z_depart:
+            bornes.insert(0, z_depart)
+        for a, b in zip(bornes[:-1], bornes[1:]):
+            if b <= a:
+                continue
+            ua, ub = 1.0 / math.sqrt(1.0 + b), 1.0 / math.sqrt(1.0 + a)
+            x_gl, w_gl = np.polynomial.legendre.leggauss(n)
+            u = 0.5 * (ua + ub) + 0.5 * (ub - ua) * x_gl
+            w = 0.5 * (ub - ua) * w_gl
+            z = 1.0 / (u * u) - 1.0
+            f = np.array([integrande(float(zz)) for zz in z])
+            total += float(np.sum(w * 2.0 / u**3 * f))
+        return total
+
+    diagnostic_ac: dict = {}
+    for variante in CONFIGS:
+        noms_v = [item["nom"] for item in configs[variante]["parametres_x"]]
+        grille_v = configs[variante]["grille"]
+        convention_v = configs[variante]["convention_spline"]
+        jeux = {
+            "P0": ({**POINT_FOND_P0}, tuple([1.0] * len(noms_v))),
+            "P1": ({**POINT_FOND_P1}, tuple([1.0] * len(noms_v))),
+            "P2": ({**POINT_FOND_P0}, P2_VALUES[grille_v]),
+            "P3": ({**POINT_FOND_P0}, P3_VALUES[grille_v]),
+        }
+        for nom_point, (fond, xs) in jeux.items():
+            point = {**fond, **dict(zip(noms_v, xs))}
+            o = oracles[variante].evaluate(point)
+            if o["logprior"] != 0.0:
+                continue
+            reference = oracles[variante]._reference(
+                fond["H0"], fond["ombh2"], fond["omm"])
+            fond_o = XZBackground(
+                reference, XZProfile(grille_v, xs, convention_v))
+            corr_o_drag = fond_o.rdrag("corrected") - reference.rdrag
+            corr_o_star = fond_o.rstar("corrected") - reference.rstar
+            delta = reference.h0**2 * reference.omega_x0 * (float(xs[-1]) - 1.0)
+            corr_r_drag, integrande = _corr_resserree(
+                reference, delta, reference.zdrag)
+            corr_r_star, _ = _corr_resserree(
+                reference, delta, reference.zstar)
+            gl_512 = _corr_gl(integrande, reference, reference.zdrag, 512)
+            gl_1024 = _corr_gl(integrande, reference, reference.zdrag, 1024)
+            dm_star_o = float(fond_o.dm(reference.zstar))
+            rd_o = reference.rdrag + corr_o_drag
+            d_drag = corr_r_drag - corr_o_drag
+            d_star = corr_r_star - corr_o_star
+            bao_o = np.asarray(o["vecteur_BAO"], dtype=float)
+            bao_corrige = bao_o * (rd_o / (rd_o + d_drag))
+            cmb_o = np.asarray(o["vecteur_CMB"], dtype=float)
+            cmb_corrige = cmb_o.copy()
+            cmb_corrige[0] = cmb_o[0] + d_star / dm_star_o
+            r_b = bao_corrige - bao_mean
+            r_c = cmb_corrige - np.array([0.01041, 0.02223, 0.14208])
+            icov_cmb = np.linalg.inv(1e-9 * np.array(
+                [[0.006621, 0.12444, -1.1929],
+                 [0.12444, 21.344, -94.001],
+                 [-1.1929, -94.001, 1488.4]]))
+            diagnostic_ac[f"{variante}:{nom_point}"] = {
+                "corr_rdrag_oracle": corr_o_drag,
+                "corr_rstar_oracle": corr_o_star,
+                "corr_rdrag_resserree": corr_r_drag,
+                "corr_rstar_resserree": corr_r_star,
+                "controle_GL512": gl_512,
+                "convergence_GL_512_vs_1024": abs(gl_512 - gl_1024),
+                "ecart_oracle_resserre_rdrag": d_drag,
+                "ecart_oracle_resserre_rstar": d_star,
+                "delta_theta_star": d_star / dm_star_o,
+                "ecart_vecteur_BAO_abs_max": float(
+                    np.max(np.abs(bao_corrige - bao_o))),
+                "delta_chi2_BAO": float(
+                    r_b @ bao_icov @ r_b) - o["chi2_BAO"],
+                "delta_chi2_CMB": float(
+                    r_c @ icov_cmb @ r_c) - o["chi2_CMB"],
+            }
+    resultat["diagnostic_acoustique"] = diagnostic_ac
 
     # ---- égalité bitwise de l'évaluation de spline scalaire ------------
     from xz_background_g2_1 import XZProfile
