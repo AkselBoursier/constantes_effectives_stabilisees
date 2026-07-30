@@ -69,33 +69,54 @@ T8 = {
     "rdrag_abs": 1e-10,
     "rstar_abs": 1e-10,
 }
-# Seuils T9-T12 ratifiés, appliqués à la sortie I1-I9.
+# Seuils T9-T12 appliqués à la sortie I1-I9.
 #
-# MISE À JOUR DOCUMENTAIRE T12(b) — amendement A1 (D3-H), ratifié
-# humainement le 30 juillet 2026 (#63, porte G2.4c-iii). Le mode
-# directeur « corrected » désigne désormais corrected-v1.1 (quadrature
-# acoustique resserrée) ; les écarts corrected-fixed sont donc RÉSOLUS
-# au lieu d'être sous-résolus par l'ancienne règle (corrected-legacy).
-# Anciennes valeurs, ratifiées en G2.1 sous corrected-legacy (elles y
-# restent valides et traçables, jamais réétiquetées) :
-#     T12_chi2_BAO_corr_fixed : 1e-8  (mesuré <= 3.3e-10 en legacy) ;
-#     T12_rdrag_corr_fixed    : 1e-10 (mesuré <= 2.2e-12 en legacy) ;
-#     T12_rstar_corr_fixed    : 1e-10 (idem).
-# Nouvelles valeurs sous corrected-v1.1, déclarées AVANT réexécution,
-# fondées sur les maxima publiés du diagnostic G2.4c-ii-b (16 points
-# P0-P3, 4 variantes) : |corr r_drag| <= 5.33e-9, |corr r_star|
-# <= 4.80e-9, |Delta chi2_BAO| <= 8.5e-7 — seuils fixés ~12x à ~21x
-# au-dessus, globaux, sans ajustement point par point. La rupture
-# d'équivalence corrected/fixed constatée en ii-b a été SIGNALÉE comme
-# l'exigeait T12(b) et a conduit à l'amendement ratifié.
+# G2.4c-iii-a (correctif B1 + séparation T12/S5, conformément au
+# commentaire directeur #63 et à l'audit de la PR #79) :
+#
+# T11 — re-ratification PROPOSÉE des contrôles touchés par B1, seuils
+# PRÉ-DÉCLARÉS avant le rejeu (aucun ajustement après lecture) :
+#   remplacés : T11_BAO_default_tight (l'instance « tight » historique
+#     mêlait tolérances de distance ET borne acoustique 1e8),
+#     T11_rdrag_zmax et T11_rstar_zmax (quadrature directe
+#     quad(z_depart, 1e8) numériquement VIDE — constat B1 ; l'échec
+#     historique du 30 juillet 2026 reste consigné au rapport
+#     G2.4c-iii, jamais réétiqueté) ;
+#   par :
+#     T11_BAO_distance_default_tight <= 1e-12 (INCHANGÉ en valeur ;
+#       instances default/tight_distance ne différant QUE par les
+#       tolérances de distance, borne acoustique 1e7 des deux côtés) ;
+#     T11_rdrag/rstar_v11_vs_GL <= 1e-13 Mpc (concordance
+#       corrected-v1.1 vs voie GL indépendante, par correction) ;
+#     T11_rdrag/rstar_GL_convergence <= 1e-13 Mpc (GL512 vs GL1024) ;
+#     T11_rdrag/rstar_tail_1e7_1e8 <= 1e-18 Mpc (queue par GL
+#       indépendante ET majoration analytique — la mesure gate le max
+#       des deux : un flottant exactement nul ne prouve rien seul).
+#
+# T12 — SÉPARÉ en deux objets de verdict + une publication S5 :
+#   T12-legacy-régression : corrected-legacy reproduit l'ancien oracle ;
+#     anciens seuils conservés (rdrag/rstar corr-fixed <= 1e-10 Mpc,
+#     chi2_BAO <= 1e-8 — valeurs historiques G2.1 : 2.2e-12 / 3.3e-10) ;
+#   T12-A1-numérique : corrected-v1.1 vs GL (<= 1e-13 Mpc par
+#     correction) + alias corrected == corrected-v1.1 EXACT ;
+#     l'équivalence oracle amendé == chemin rapide est portée par
+#     qualify_xz_optim_g2_4c.py (double passe exigée) ;
+#   S5-sensibilité : écarts v1.1/legacy/fixed PUBLIÉS SANS VERDICT
+#     (bloc S5_sensibilite) ; les enveloppes 1e-7 Mpc (corrections) et
+#     1e-5 (chi2_BAO) sont des NIVEAUX D'ALERTE PROPOSÉS POUR S5, NON
+#     RATIFIÉS — elles ne contribuent à AUCUN verdict automatique.
 T9_T12 = {
     "T9_noeuds": 1e-14,
     "T9_polynomes": 1e-13,
     "T10_continuation": 1e-14,
-    "T11_BAO_default_tight": 1e-12,
+    "T11_BAO_distance_default_tight": 1e-12,
     "T11_DM_quad_trapezes": 1e-8,
-    "T11_rdrag_zmax": 1e-10,
-    "T11_rstar_zmax": 1e-10,
+    "T11_rdrag_v11_vs_GL": 1e-13,
+    "T11_rstar_v11_vs_GL": 1e-13,
+    "T11_rdrag_GL_convergence": 1e-13,
+    "T11_rstar_GL_convergence": 1e-13,
+    "T11_rdrag_tail_1e7_1e8": 1e-18,
+    "T11_rstar_tail_1e7_1e8": 1e-18,
     "T11_DM_zstar": 1e-8,
     "T11_theta": 1e-10,
     "T11_chi2_CMB_stress": 2e-2,
@@ -103,9 +124,18 @@ T9_T12 = {
     "T11_I8_H": 1e-13,
     "T11_I8_DM_bao": 1e-13,
     "T11_I8_eds": 1e-13,
-    "T12_chi2_BAO_corr_fixed": 1e-5,
-    "T12_rdrag_corr_fixed": 1e-7,
-    "T12_rstar_corr_fixed": 1e-7,
+    "T12_legacy_rdrag_corr_fixed": 1e-10,
+    "T12_legacy_rstar_corr_fixed": 1e-10,
+    "T12_legacy_chi2_BAO_corr_fixed": 1e-8,
+    "T12_A1_rdrag_v11_vs_GL": 1e-13,
+    "T12_A1_rstar_v11_vs_GL": 1e-13,
+}
+
+# Niveaux d'alerte PROPOSÉS pour S5 — NON RATIFIÉS ; publication
+# seulement, jamais un verdict.
+S5_ALERTES_PROPOSEES_NON_RATIFIEES = {
+    "correction_acoustique_abs": 1e-7,
+    "delta_chi2_BAO_abs": 1e-5,
 }
 
 
@@ -278,6 +308,7 @@ def main() -> None:
     stab = i19["camb_full"]["I6_numerical_stability"]
     sens = i19["camb_full"]["I4_I5_acoustic_and_spline_sensitivity"]
     ind = i19["camb_full"]["I8_independent_path"]
+    ind_ac = i19["camb_full"]["I6_A1_acoustic_independent"]
     adv = i19["camb_full"]["I9_adversarial"]
     poly = i19["analytic"]["I2_interpolation"]["polynomials_abs_max"]
     borne = i19["analytic"]["I3_boundary"]
@@ -308,12 +339,24 @@ def main() -> None:
         "T10_continuation": max(
             v["constant_extension_abs_max"] for v in borne.values()
         ),
-        "T11_BAO_default_tight": stab["BAO_default_vs_tight_rel_max"],
+        "T11_BAO_distance_default_tight": stab[
+            "BAO_distance_default_vs_tight_rel_max"],
         "T11_DM_quad_trapezes": i19["analytic"][
             "I1_I6_analytic_identity_stability"
         ]["DM_quad_vs_trapezoid_rel_max"],
-        "T11_rdrag_zmax": abs(stab["rdrag_zmax_1e7_minus_1e8"]),
-        "T11_rstar_zmax": abs(stab["rstar_zmax_1e7_minus_1e8"]),
+        # contrôles B1 : concordance v1.1 vs voie GL indépendante et
+        # queue [1e7,1e8] — la mesure de queue gate le MAX(GL,
+        # majoration analytique) : un zéro flottant seul ne prouve rien.
+        "T11_rdrag_v11_vs_GL": ind_ac["rdrag_v11_vs_GL_abs"],
+        "T11_rstar_v11_vs_GL": ind_ac["rstar_v11_vs_GL_abs"],
+        "T11_rdrag_GL_convergence": ind_ac["rdrag_GL_512_vs_1024_abs"],
+        "T11_rstar_GL_convergence": ind_ac["rstar_GL_512_vs_1024_abs"],
+        "T11_rdrag_tail_1e7_1e8": max(
+            ind_ac["rdrag_tail_1e7_1e8_abs"],
+            ind_ac["tail_majoration_analytique_abs"]),
+        "T11_rstar_tail_1e7_1e8": max(
+            ind_ac["rstar_tail_1e7_1e8_abs"],
+            ind_ac["tail_majoration_analytique_abs"]),
         "T11_DM_zstar": max(
             v["DM_zstar_rel"] for v in stab["CMB_default_vs_tight"].values()
         ),
@@ -334,27 +377,30 @@ def main() -> None:
             v["DM_bao_rel_max"] for k, v in ind.items() if k != "eds_calibration"
         ),
         "T11_I8_eds": max(ind["eds_calibration"].values()),
-        "T12_chi2_BAO_corr_fixed": max(
+        "T12_legacy_chi2_BAO_corr_fixed": max(
             max(
-                abs(v["natural_chi2_BAO_corrected_minus_fixed"]),
-                abs(v["not-a-knot_chi2_BAO_corrected_minus_fixed"]),
+                abs(v["natural_chi2_BAO_legacy_minus_fixed"]),
+                abs(v["not-a-knot_chi2_BAO_legacy_minus_fixed"]),
             )
             for v in sens.values()
         ),
-        "T12_rdrag_corr_fixed": max(
+        "T12_legacy_rdrag_corr_fixed": max(
             max(
-                abs(v["natural_rdrag_corrected_minus_fixed"]),
-                abs(v["not-a-knot_rdrag_corrected_minus_fixed"]),
+                abs(v["natural_rdrag_legacy_minus_fixed"]),
+                abs(v["not-a-knot_rdrag_legacy_minus_fixed"]),
             )
             for v in sens.values()
         ),
-        "T12_rstar_corr_fixed": max(
+        "T12_legacy_rstar_corr_fixed": max(
             max(
-                abs(v["natural_rstar_corrected_minus_fixed"]),
-                abs(v["not-a-knot_rstar_corrected_minus_fixed"]),
+                abs(v["natural_rstar_legacy_minus_fixed"]),
+                abs(v["not-a-knot_rstar_legacy_minus_fixed"]),
             )
             for v in sens.values()
         ),
+        "T12_A1_rdrag_v11_vs_GL": ind_ac["rdrag_v11_vs_GL_abs"],
+        "T12_A1_rstar_v11_vs_GL": ind_ac["rstar_v11_vs_GL_abs"],
+        "T12_A1_alias_corrected_exact": ind_ac["alias_corrected_exact"],
         "I9_toutes_fautes_detectees": adv["toutes_fautes_detectees"],
     }
     seuils_ok = {
@@ -374,10 +420,19 @@ def main() -> None:
         ),
         "T10": bool(mesures_t["T10_continuation"] <= T9_T12["T10_continuation"]),
         "T11": bool(
-            mesures_t["T11_BAO_default_tight"] <= T9_T12["T11_BAO_default_tight"]
+            mesures_t["T11_BAO_distance_default_tight"]
+            <= T9_T12["T11_BAO_distance_default_tight"]
             and mesures_t["T11_DM_quad_trapezes"] <= T9_T12["T11_DM_quad_trapezes"]
-            and mesures_t["T11_rdrag_zmax"] <= T9_T12["T11_rdrag_zmax"]
-            and mesures_t["T11_rstar_zmax"] <= T9_T12["T11_rstar_zmax"]
+            and mesures_t["T11_rdrag_v11_vs_GL"] <= T9_T12["T11_rdrag_v11_vs_GL"]
+            and mesures_t["T11_rstar_v11_vs_GL"] <= T9_T12["T11_rstar_v11_vs_GL"]
+            and mesures_t["T11_rdrag_GL_convergence"]
+            <= T9_T12["T11_rdrag_GL_convergence"]
+            and mesures_t["T11_rstar_GL_convergence"]
+            <= T9_T12["T11_rstar_GL_convergence"]
+            and mesures_t["T11_rdrag_tail_1e7_1e8"]
+            <= T9_T12["T11_rdrag_tail_1e7_1e8"]
+            and mesures_t["T11_rstar_tail_1e7_1e8"]
+            <= T9_T12["T11_rstar_tail_1e7_1e8"]
             and mesures_t["T11_DM_zstar"] <= T9_T12["T11_DM_zstar"]
             and mesures_t["T11_theta"] <= T9_T12["T11_theta"]
             and mesures_t["T11_chi2_CMB_stress"] <= T9_T12["T11_chi2_CMB_stress"]
@@ -387,18 +442,78 @@ def main() -> None:
             and mesures_t["T11_I8_eds"] <= T9_T12["T11_I8_eds"]
             and mesures_t["I9_toutes_fautes_detectees"]
         ),
-        "T12": bool(
-            mesures_t["T12_chi2_BAO_corr_fixed"] <= T9_T12["T12_chi2_BAO_corr_fixed"]
-            and mesures_t["T12_rdrag_corr_fixed"] <= T9_T12["T12_rdrag_corr_fixed"]
-            and mesures_t["T12_rstar_corr_fixed"] <= T9_T12["T12_rstar_corr_fixed"]
+        # T12 séparé (G2.4c-iii-a) : deux objets de verdict distincts ;
+        # les enveloppes S5 (1e-7 / 1e-5) n'y contribuent PAS.
+        "T12_legacy_regression": bool(
+            mesures_t["T12_legacy_chi2_BAO_corr_fixed"]
+            <= T9_T12["T12_legacy_chi2_BAO_corr_fixed"]
+            and mesures_t["T12_legacy_rdrag_corr_fixed"]
+            <= T9_T12["T12_legacy_rdrag_corr_fixed"]
+            and mesures_t["T12_legacy_rstar_corr_fixed"]
+            <= T9_T12["T12_legacy_rstar_corr_fixed"]
+        ),
+        "T12_A1_numerique": bool(
+            mesures_t["T12_A1_rdrag_v11_vs_GL"]
+            <= T9_T12["T12_A1_rdrag_v11_vs_GL"]
+            and mesures_t["T12_A1_rstar_v11_vs_GL"]
+            <= T9_T12["T12_A1_rstar_v11_vs_GL"]
+            and mesures_t["T12_A1_alias_corrected_exact"] is True
         ),
     }
+    seuils_ok["T12"] = bool(
+        seuils_ok["T12_legacy_regression"] and seuils_ok["T12_A1_numerique"]
+    )
     resultat["C5_T8_T12"] = {"mesures": mesures_t, "verdicts": seuils_ok}
     for nom_t, ok in seuils_ok.items():
         if not ok:
             echecs.append(f"C5: {nom_t} FAUX dans la ré-exécution I1-I9")
     if not mesures_t["I9_toutes_fautes_detectees"]:
         echecs.append("C5: fautes I9 non toutes détectées")
+
+    # S5 — sensibilité : PUBLICATION SANS VERDICT (G2.4c-iii-a). Les
+    # écarts entre corrected-v1.1 (primaire), corrected-legacy (contrôle
+    # historique) et fixed (contrôle physique simplifié) sont publiés
+    # tels quels — jamais qualifiés d'erreur numérique ni d'équivalence.
+    # NB : les clés « corrected » de I4/I5 valent corrected-v1.1 par
+    # l'alias A1 (égalité exacte vérifiée en T12-A1) ; aucun résultat
+    # n'est réétiqueté. theta_star est la seule composante variable du
+    # vecteur CMB (ombh2 et ombh2+omch2 sont fixés par le fond).
+    def _max_sens(suffixe: str) -> float:
+        return max(
+            max(abs(v[f"natural_{suffixe}"]), abs(v[f"not-a-knot_{suffixe}"]))
+            for v in sens.values()
+        )
+
+    resultat["S5_sensibilite"] = {
+        "definition": {
+            "primaire": "corrected-v1.1",
+            "controle_historique": "corrected-legacy",
+            "controle_physique_simplifie": "fixed",
+        },
+        "mesures_I4_I5_max_abs": {
+            "rdrag_v11_minus_fixed": _max_sens("rdrag_corrected_minus_fixed"),
+            "rdrag_legacy_minus_fixed": _max_sens("rdrag_legacy_minus_fixed"),
+            "rstar_v11_minus_fixed": _max_sens("rstar_corrected_minus_fixed"),
+            "rstar_legacy_minus_fixed": _max_sens("rstar_legacy_minus_fixed"),
+            "theta_v11_minus_fixed": _max_sens("theta_corrected_minus_fixed"),
+            "theta_legacy_minus_fixed": _max_sens("theta_legacy_minus_fixed"),
+            "BAO_v11_vs_fixed_rel": _max_sens("BAO_corrected_vs_fixed_rel_max"),
+            "BAO_legacy_vs_fixed_rel": _max_sens("BAO_legacy_vs_fixed_rel_max"),
+            "chi2_BAO_v11_minus_fixed": _max_sens(
+                "chi2_BAO_corrected_minus_fixed"),
+            "chi2_BAO_legacy_minus_fixed": _max_sens(
+                "chi2_BAO_legacy_minus_fixed"),
+        },
+        "niveaux_alerte_proposes_NON_RATIFIES": {
+            **S5_ALERTES_PROPOSEES_NON_RATIFIEES,
+            "statut": "niveaux d'alerte proposés pour S5, non ratifiés — "
+                      "hors de tout verdict automatique",
+        },
+        "table_complete_3_paires_8_grandeurs": (
+            "qualify_xz_optim_g2_4c.py : controle_acoustique_A1"
+            ".comparaisons_modes (16 points P0-P3, 4 variantes)"
+        ),
+    }
 
     # C6 — assemblage indépendant d'un vecteur BAO et du vecteur CMB
     # (sans bao_vector ni cmb_vector), à P0 et P2 sous M2a-N.

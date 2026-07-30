@@ -98,6 +98,11 @@ La ratification ne dépend d'aucun résultat cosmologique.
 
 ### 6.1 G2.3a C1-C8 (inclut la ré-exécution I1-I9 et T8-T12 en C5)
 
+#### 6.1.a Rejeu du 30 juillet 2026 — PRÉ-correctif B1 (HISTORIQUE)
+
+Résultat conservé tel quel, sous les anciens contrôles T11 (jamais
+réétiqueté) :
+
 ```text
 double exécution : exit 1 / exit 1 ; sorties stdout bit à bit
   identiques ; auto-test d'échec (C7C1_QUALIF_TEST_ECHEC) : exit 1 ;
@@ -167,32 +172,107 @@ la CONCLUSION scientifique du contrôle (zmax = 1e7 convergée) reste
   legacy de 1.3e-9, relevait du même artefact de sous-résolution).
 ```
 
-PROPOSITION B1 (PROPOSÉE, NON APPLIQUÉE — décision humaine requise ;
-ni test_xz_g2_1.py ni les seuils T11 ne sont dans le périmètre autorisé
-de la présente porte) :
+Le diagnostic B1 a été CONFIRMÉ par l'audit de la PR #79 (30 juillet
+2026), qui a retenu l'option d'amendement du contrôle I6 et l'a bornée
+à la porte G2.4c-iii-a (commentaire directeur #63).
+
+#### 6.1.b Correctif B1 appliqué (G2.4c-iii-a)
+
+Nouvelle construction I6 (`test_xz_g2_1.py`), conforme au commentaire
+directeur et à l'audit :
 
 ```text
-option privilégiée (i) : amender le contrôle I6 dans une porte
-  documentaire distincte — remplacer la variante d'instance
-  acoustic_zmax=1e8 par le contrôle de queue GL/borne d'intégrande
-  ([1e7, 1e8] < 1e-20), puis re-ratifier T11_BAO_default_tight,
-  T11_rdrag_zmax, T11_rstar_zmax sous A1 sur planchers re-mesurés ;
-option écartée (ii) : relever les trois seuils T11 aux niveaux mesurés
-  (~1e-8) — écartée car l'écart mesuré ÉGALE la correction entière :
-  le seuil ainsi relevé ne contrôlerait plus rien ;
-dans l'attente : la porte G2.4c-iii publie l'échec T11 tel quel
-  (exit 1 de G2.3a, cause unique documentée), sans relèvement
-  silencieux d'aucun seuil.
+découplage : instances « default » (epsabs=1e-8, epsrel=1e-10,
+  quad_limit=300, acoustic_zmax=1e7) et « tight_distance »
+  (epsabs=1e-10, epsrel=1e-12, quad_limit=500, acoustic_zmax=1e7) —
+  la borne acoustique est IDENTIQUE (1e7) des deux côtés : le contrôle
+  BAO_distance_default_vs_tight (corrected-v1.1 des deux côtés) ne
+  teste plus que les quadratures de DISTANCE ;
+retrait de la porte : quad(z_depart, 1e8) et les métriques
+  rdrag/rstar_zmax_1e7_minus_1e8 ne servent plus ni de référence ni de
+  seuil ; la quadrature 1e8 subsiste uniquement comme démonstration
+  adversariale historique de la vacuité (B1_adversarial_quad_1e8) ;
+  l'instance CMB resserrée passe aussi à acoustic_zmax=1e7 (aucune
+  quadrature directe 1e8 dans aucun contrôle d'acceptation) ;
+voie acoustique INDÉPENDANTE (distincte de
+  _sound_horizon_correction) : u = 1/sqrt(1+z), Gauss-Legendre
+  512 points par segment, convergence contrôlée à 1024, segments
+  explicites [z_depart, zstar], [zstar, 1e4], [1e4, 1e6], [1e6, 1e7] ;
+  r_drag et r_star séparés ; produit rdrag/rstar_v11_vs_GL_abs et
+  rdrag/rstar_GL_512_vs_1024_abs ;
+queue [1e7, 1e8] évaluée séparément par correction (même changement
+  de variable indépendant) : rdrag/rstar_tail_1e7_1e8_abs ; MAJORATION
+  analytique conservatrice documentée et publiée :
+  |intégrande(z)| <= (c/sqrt(3))·|delta| / (2·h_min(z)^3), décroissante
+  en z ; borne = valeur en 1e7 x largeur, calculée par l'expression
+  analytique (jamais par la différence catastrophiquement annulée) —
+  un flottant exactement nul ne suffit pas, à lui seul, comme preuve ;
+  la mesure de porte gate le MAX(queue GL, majoration) ;
+seuils PRÉ-DÉCLARÉS avant rejeu (aucun ajustement après lecture) :
+  corrected-v1.1 vs GL <= 1e-13 Mpc ; GL512 vs GL1024 <= 1e-13 Mpc ;
+  queue <= 1e-18 Mpc ; BAO distance <= 1e-12 (INCHANGÉ, aucune hausse).
 ```
 
-Mise à jour documentaire T12(b) appliquée (déclarée avant
-réexécution) : `T12_rdrag_corr_fixed` et `T12_rstar_corr_fixed`
-1e-10 -> 1e-7 ; `T12_chi2_BAO_corr_fixed` 1e-8 -> 1e-5 — fondée sur les
-maxima publiés du diagnostic G2.4c-ii-b sous la règle A1 (5.33e-9 /
-4.80e-9 / 8.5e-7), seuils globaux, sans ajustement point par point.
-Les autres seuils T8-T11 et T12(a) sont INCHANGÉS. Anciennes valeurs
-conservées et traçables sous corrected-legacy (rapport G2.1, addendum
-§4-A1).
+Rejeu G2.3a post-correctif (nouvelle porte T11, double passe) :
+
+```text
+double exécution : exit 0 / exit 0 ; sorties stdout bit à bit
+  identiques ; auto-test d'échec (C7C1_QUALIF_TEST_ECHEC) : exit 1 ;
+C1-C8 : PASSENT ; I1-I9 : PASSENT ; porte : PASSE (echecs vides) ;
+T8  PASSE (rdrag/rstar_abs 0.0 ; BAO_rel 4.41e-16 ; theta 1.22e-13) ;
+T9  PASSE (0.0 ; 6.66e-16) ;  T10 PASSE (0.0) ;
+T11 PASSE — nouvelles entrées (seuils pré-déclarés) :
+  BAO_distance_default_tight : 0.0           <= 1e-12 (INCHANGÉ) ;
+  rdrag_v11_vs_GL            : 1.022296e-14  <= 1e-13 ;
+  rstar_v11_vs_GL            : 1.181600e-14  <= 1e-13 ;
+  rdrag_GL_convergence       : 3.964915e-16  <= 1e-13 ;
+  rstar_GL_convergence       : 3.906756e-16  <= 1e-13 ;
+  rdrag_tail_1e7_1e8         : 1.880802e-26  <= 1e-18 ;
+  rstar_tail_1e7_1e8         : 1.880802e-26  <= 1e-18
+  (queue = max(GL indépendante, majoration analytique) — la valeur
+  publiée EST la majoration analytique, le flottant GL valant 0.0) ;
+  entrées distances inchangées : DM_quad_trapezes 6.59e-11 ;
+  DM_zstar 1.85e-10 ; theta 1.91e-12 ; chi2_CMB_stress 2.33e-4 ;
+  I8 : X 8.88e-15, H 5.13e-16, D_M 5.67e-16, EdS 3.52e-16 ; I9 5/5 ;
+T12 PASSE, séparé :
+  T12-legacy-régression : rdrag 2.131628e-12 <= 1e-10 ;
+    rstar 2.103206e-12 <= 1e-10 ; chi2_BAO 3.274181e-10 <= 1e-8 ;
+  T12-A1-numérique : rdrag_v11_vs_GL 1.022296e-14 <= 1e-13 ;
+    rstar_v11_vs_GL 1.181600e-14 <= 1e-13 ; alias corrected EXACT.
+```
+
+#### 6.1.c Séparation T12 / S5 (G2.4c-iii-a)
+
+La présentation initiale de G2.4c-iii (seuils 1e-7 Mpc et 1e-5
+« T12(b) mis à jour ») était TROP FORTE : la ratification humaine
+portait sur A1, pas sur ces valeurs (audit PR #79). Elle est remplacée
+par trois objets distincts :
+
+```text
+T12-legacy-régression (verdict) : corrected-legacy reproduit l'ancien
+  oracle ; anciens seuils conservés :
+  |Delta r_drag| <= 1e-10 (mesuré 2.131628e-12) ;
+  |Delta r_star| <= 1e-10 (mesuré 2.103206e-12) ;
+  |Delta chi2_BAO| <= 1e-8 (mesuré 3.274181e-10) ;
+
+T12-A1-numérique (verdict) :
+  corrected-v1.1 vs GL : r_drag <= 1e-13 (mesuré 1.022296e-14) ;
+                         r_star <= 1e-13 (mesuré 1.181600e-14) ;
+  alias corrected == corrected-v1.1 : EXACT ;
+  oracle amendé == chemin rapide : porté par la double passe de
+  qualify_xz_optim_g2_4c.py (§6.2, §7) ;
+
+S5-sensibilité (PUBLICATION SANS VERDICT) :
+  primaire corrected-v1.1 ; contrôle historique corrected-legacy ;
+  contrôle physique simplifié fixed ; écarts rdrag, rstar, theta_star,
+  BAO, CMB, chi2 publiés (§8) ; les enveloppes 1e-7 Mpc (corrections)
+  et 1e-5 (chi2_BAO) sont des NIVEAUX D'ALERTE PROPOSÉS POUR S5, NON
+  RATIFIÉS — elles ne contribuent à AUCUN verdict automatique.
+```
+
+Les autres seuils T8-T10, T11 (hors entrées B1 re-proposées ci-dessus)
+et T12(a) sont INCHANGÉS. Anciennes valeurs legacy conservées et
+traçables (rapport G2.1, addendum §4-A1).
 
 ### 6.2 G2.4c-ii (qualification de l'optimisation, double passe)
 
@@ -204,6 +284,22 @@ audit des règles acoustiques : CONFORME (aucune violation) ;
 étude de convergence : retenus principal 2048 / queue 2048 ;
   doublement : PASSE (0.048) ; ordre historique : identique ;
 spline scalaire : bitwise identique ; porte : PASSE (echecs vides).
+```
+
+REJEU G2.4c-iii-a (code de l'optimisation INCHANGÉ par le correctif —
+xz_background_g2_1.py, xz_fast_g2_4c.py et qualify_xz_optim_g2_4c.py
+non modifiés en iii-a ; la double passe est rejouée pour attester que
+le correctif du contrôle I6 ne perturbe rien) :
+
+```text
+double passe : exit 0 / exit 0 ; diff normalisé VIDE ;
+auto-test de retrait : exit 1 ; porte : PASSE (echecs vides) ;
+couverture 331/306/25 inchangée ; classification 331/331 identique ;
+contrôle acoustique A1 : 16/16 points, alias exact partout,
+  legacy bit-identique partout ; concordance GL max r_drag 1.345e-14 /
+  r_star 9.313e-15 ; convergence GL 7.027e-16 / 6.957e-16 ;
+fautes : 23/23 détectées ; convergence 2048/2048, doublement 0.048 ;
+Cobaya : 0 / 1 / 0 et deux blocs — inchangés.
 ```
 
 ## 7. Équivalence oracle amendé / chemin rapide
@@ -248,10 +344,11 @@ graphe de blocs                  : [H0, ombh2, omm] + [X1..X5] — deux
                                    blocs Cobaya distincts, exacts.
 ```
 
-## 8. Comparaison corrected-v1.1 / corrected-legacy / fixed
+## 8. S5-sensibilité — comparaison corrected-v1.1 / corrected-legacy / fixed
 
-Maxima absolus sur les 16 points P0-P3 (4 variantes), sans
-interprétation cosmologique :
+PUBLICATION SANS VERDICT (G2.4c-iii-a) : aucun de ces écarts n'est
+qualifié d'erreur numérique ni d'équivalence. Maxima absolus sur les
+16 points P0-P3 (4 variantes), sans interprétation cosmologique :
 
 ```text
 grandeur        v1.1 - legacy   v1.1 - fixed    legacy - fixed
@@ -284,7 +381,10 @@ Redéfinition de la sensibilité S5 (documentaire) :
 ```text
 S5 : primaire                     : corrected-v1.1 ;
      contrôle historique          : corrected-legacy ;
-     contrôle physique simplifié  : fixed.
+     contrôle physique simplifié  : fixed ;
+     niveaux d'alerte PROPOSÉS, NON RATIFIÉS (hors de tout verdict
+     automatique) : correction acoustique <= 1e-7 Mpc ;
+                    |Delta chi2_BAO| <= 1e-5.
 ```
 
 ## 9. Contrôles GL indépendants (r_drag et r_star séparés)
@@ -346,7 +446,11 @@ concordance est mesurée sur la correction requantifiée
 ## 11. Déterminisme
 
 ```text
-qualification optimisation : DEUX passes complètes, exit 0 / exit 0 ;
+G2.4c-iii-a : G2.3a DEUX exécutions exit 0 / exit 0, sorties stdout
+  bit à bit identiques (auto-test d'échec : exit 1) ; optimisation
+  DEUX passes exit 0 / exit 0, diff normalisé vide, auto-test de
+  retrait exit 1 ;
+qualification optimisation (G2.4c-iii) : DEUX passes complètes, exit 0 / exit 0 ;
   sorties normalisées bit à bit identiques (diff vide) — audit des
   règles, couverture, contrôle acoustique A1, comparaisons de modes,
   régression legacy et comptages CAMB inclus au diff ; temps/mémoire
@@ -377,6 +481,18 @@ mesures indicatives (hors diff déterministe) de cette passe :
 conséquence déclarée : le coût ABSOLU par évaluation rapide est ~9x
   celui mesuré en G2.4c-ii — les projections de capacité G2.4b-i
   devront être relues à la porte de raccord (hors périmètre présent).
+
+rejeu G2.4c-iii-a (machine chargée : agents de vérification et
+  seconde qualification concurrents — les valeurs ABSOLUES sont donc
+  dilatées d'un facteur ~3 par rapport au rejeu iii ci-dessus ; seuls
+  les RAPPORTS sont comparables, et les comptages d'appels CAMB,
+  déterministes, sont inchangés) :
+  coût acoustique par paire : v1.1 207.08 ms vs legacy 3.65 ms —
+    rapport 56.7x (56.7x à 60.9x selon la charge) ;
+  éval rapide complète 132.4 ms ; oracle réchauffé 3.350 s/éval ;
+  éval lente 0.081x l'oracle (critère <= 1.10x) ;
+  SPEEDUP REPRÉSENTATIF : 22.9x (obligatoire >= 5x : ATTEINT ;
+    cible >= 10x : ATTEINTE).
 ```
 
 ## 13. Limites
@@ -411,4 +527,18 @@ lanceur). Le raccord du chemin optimisé au lanceur reste une porte
 distincte ; le premier lancement réel demeure soumis au manifeste à
 deux clés et à une décision humaine distincte. PR : brouillon, aucun
 merge.
+
+Statut après le correctif G2.4c-iii-a :
+  A1 : implémenté, pré-validé par l'audit (PR #79) — intouché par le
+    correctif (xz_background_g2_1.py, xz_fast_g2_4c.py,
+    qualify_xz_optim_g2_4c.py non modifiés en iii-a) ;
+  B1 : diagnostic confirmé ; correctif appliqué (nouvelle construction
+    I6, nouveaux contrôles T11 pré-déclarés) ; échec historique
+    conservé en §6.1.a ;
+  T12 : séparé (legacy-régression / A1-numérique / S5 publication) ;
+    enveloppes S5 explicitement NON RATIFIÉES ;
+  PR #79 : brouillon, NON marquée prête, NON fusionnée ;
+  production / manifeste / MCMC : FERMÉS ;
+  clôture de G2.4c-iii : soumise à la décision humaine sur la base du
+    présent rapport et des doubles passes publiées dans #63.
 ```
