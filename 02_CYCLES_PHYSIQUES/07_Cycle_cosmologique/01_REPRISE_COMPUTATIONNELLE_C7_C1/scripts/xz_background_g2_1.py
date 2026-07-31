@@ -9,11 +9,22 @@ Architecture ratifiée G2.0 :
     H_X(z)^2 = H_ref(z)^2 + H0^2 * Omega_X,0 * (X(z) - 1)
 
 Le fond de référence est LambdaCDM calculé par CAMB 1.5.4 sous les conventions
-G1. Les distances tardives sont recalculées directement avec H_X. Deux
-traitements de l'étalon acoustique sont exposés :
+G1. Les distances tardives sont recalculées directement avec H_X. Trois
+traitements de l'étalon acoustique sont exposés (amendement A1 de D3-H,
+ratifié humainement le 30 juillet 2026, #63, porte G2.4c-iii) :
 
 - ``fixed`` : r_star et r_drag CAMB conservés ;
-- ``corrected`` : correction différentielle de leurs intégrales par H_X.
+- ``corrected-v1.1`` : correction différentielle de leurs intégrales par
+  H_X, quadrature resserrée (règle A1) — MODE DIRECTEUR ;
+- ``corrected-legacy`` : l'ancienne règle « corrected » (reproduction bit
+  à bit), conservée pour la régression et la traçabilité des sorties
+  antérieures à l'amendement (jamais réétiquetées).
+
+Le nom nu ``corrected`` est un ALIAS EXPLICITE de ``corrected-v1.1``
+(redirection documentée et testée). Les tolérances acoustiques sont
+PROPRES aux modes (``ACOUSTIC_RULES``) et indépendantes des tolérances
+de quadrature des distances (champs d'instance epsabs/epsrel/quad_limit,
+qui ne gouvernent plus que D_M).
 
 Les valeurs négatives de X sont admises pendant les tests. Un profil n'est
 rejeté que si une valeur non finie apparaît ou si H_X^2 <= 0 sur un point
@@ -34,7 +45,45 @@ Z_MAX_NODE = 2.33
 
 Variant = Literal["M2a", "M2b"]
 SplineConvention = Literal["natural", "not-a-knot"]
-AcousticMode = Literal["fixed", "corrected"]
+AcousticMode = Literal[
+    "fixed", "corrected", "corrected-legacy", "corrected-v1.1"
+]
+
+# --- Amendement A1 (D3-H), ratifié humainement le 30 juillet 2026 (#63,
+# porte G2.4c-iii). Règles de quadrature PROPRES aux corrections
+# acoustiques — indépendantes des tolérances de distance de l'instance
+# XZBackground (epsabs/epsrel/quad_limit, réservées à D_M) :
+#   corrected-v1.1  (RÈGLE A1, mode directeur) :
+#       scipy.quad en variable z ; bornes inchangées ;
+#       epsabs = 1e-15 ; epsrel = 1e-13 ; limit = 800 ;
+#   corrected-legacy (ancienne règle « corrected », reproduite bit à
+#       bit) : epsabs = 1e-8 ; epsrel = 1e-10 ; limit = 300.
+# La quadrature Gauss-Legendre en u = 1/sqrt(1+z) reste EXCLUSIVEMENT un
+# contrôle indépendant de qualification — jamais une règle de production.
+ACOUSTIC_RULES: dict[str, dict[str, float]] = {
+    "corrected-v1.1": {"epsabs": 1e-15, "epsrel": 1e-13, "limit": 800},
+    "corrected-legacy": {"epsabs": 1e-8, "epsrel": 1e-10, "limit": 300},
+}
+# Compatibilité de nom (règle explicite et unique, documentée et testée) :
+# le nom nu « corrected » désigne le mode directeur après amendement.
+# Les sorties antérieures à l'amendement restent décrites comme
+# « corrected-legacy » ; aucun résultat historique n'est réétiqueté.
+ACOUSTIC_ALIAS: dict[str, str] = {"corrected": "corrected-v1.1"}
+ACOUSTIC_MODES: tuple[str, ...] = (
+    "fixed", "corrected-legacy", "corrected-v1.1"
+)
+
+
+def resolve_acoustic_mode(mode: str) -> str:
+    """Résolution stricte du mode acoustique (amendement A1).
+
+    « corrected » -> « corrected-v1.1 » ; tout nom hors des trois modes
+    implémentés est refusé par ValueError (aucune acceptation
+    silencieuse)."""
+    mode = ACOUSTIC_ALIAS.get(mode, mode)
+    if mode not in ACOUSTIC_MODES:
+        raise ValueError(f"Mode acoustique inconnu : {mode}")
+    return mode
 
 NODES: dict[Variant, np.ndarray] = {
     "M2a": np.array([0.0, 1.0 / 3.0, 2.0 / 3.0, 1.0, 4.0 / 3.0, 2.33]),
@@ -240,6 +289,9 @@ class XZBackground:
 
     reference: ReferenceBackground
     profile: XZProfile
+    # Tolérances des quadratures de DISTANCE (D_M) uniquement — depuis
+    # l'amendement A1, les corrections acoustiques suivent leurs règles
+    # propres (ACOUSTIC_RULES), indépendantes de ces champs.
     epsabs: float = 1e-8
     epsrel: float = 1e-10
     quad_limit: int = 300
@@ -315,9 +367,14 @@ class XZBackground:
         out = C_KM_S / np.sqrt(3.0 * (1.0 + 0.75 * ratio))
         return float(out) if arr.ndim == 0 else out
 
-    def _sound_horizon_correction(self, z_start: float) -> float:
+    def _sound_horizon_correction(self, z_start: float, mode: str) -> float:
+        """Correction différentielle de l'horizon sonore sous la règle de
+        quadrature du mode RÉSOLU (« corrected-v1.1 » ou
+        « corrected-legacy ») — amendement A1 : les tolérances
+        acoustiques ne dépendent pas des tolérances de distance."""
         if self.acoustic_zmax <= z_start:
             raise ValueError("acoustic_zmax doit dépasser le redshift de départ.")
+        regle = ACOUSTIC_RULES[mode]
 
         def integrand(z: float) -> float:
             cs = float(self.sound_speed(z))
@@ -329,25 +386,27 @@ class XZBackground:
             integrand,
             float(z_start),
             float(self.acoustic_zmax),
-            epsabs=self.epsabs,
-            epsrel=self.epsrel,
-            limit=self.quad_limit,
+            epsabs=regle["epsabs"],
+            epsrel=regle["epsrel"],
+            limit=int(regle["limit"]),
         )
         return float(value)
 
     def rstar(self, mode: AcousticMode = "fixed") -> float:
-        if mode == "fixed":
+        m = resolve_acoustic_mode(mode)
+        if m == "fixed":
             return self.reference.rstar
-        if mode == "corrected":
-            return self.reference.rstar + self._sound_horizon_correction(self.reference.zstar)
-        raise ValueError(f"Mode acoustique inconnu : {mode}")
+        return self.reference.rstar + self._sound_horizon_correction(
+            self.reference.zstar, m
+        )
 
     def rdrag(self, mode: AcousticMode = "fixed") -> float:
-        if mode == "fixed":
+        m = resolve_acoustic_mode(mode)
+        if m == "fixed":
             return self.reference.rdrag
-        if mode == "corrected":
-            return self.reference.rdrag + self._sound_horizon_correction(self.reference.zdrag)
-        raise ValueError(f"Mode acoustique inconnu : {mode}")
+        return self.reference.rdrag + self._sound_horizon_correction(
+            self.reference.zdrag, m
+        )
 
     def theta_star(self, mode: AcousticMode = "fixed") -> float:
         return self.rstar(mode) / float(self.dm(self.reference.zstar))
