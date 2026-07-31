@@ -11,3 +11,17 @@ __pycache__/
 # Fichiers temporaires locaux.
 *.tmp
 *.temp
+
+# Contrats et manifestes LOCAUX PRIVÉS : exclusions ciblées, jamais
+# génériques — un motif global sur « manifeste_*.json » masquerait de
+# futurs manifestes scientifiques publics, citables ou destinés à Zenodo.
+99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/contrat_local.json
+99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/contrat_local.*.json
+!99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/contrat_local.example.json
+99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/manifestes_locaux/
+
+# Secrets et espaces privés.
+**/private/
+*.private.*
+.env
+.env.*
