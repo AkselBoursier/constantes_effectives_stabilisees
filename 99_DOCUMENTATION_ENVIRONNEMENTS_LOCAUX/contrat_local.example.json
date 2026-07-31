@@ -50,7 +50,10 @@
     "systeme_fichiers": "NTFS",
     "gelee_pour_le_lot": true,
     "migration_pendant_chaine_ou_reprise": false,
-    "seuil_minimal_Gio": 40,
+    "garde_technique_minimale_Gio": 40,
+    "budget_production_requis_Gio": null,
+    "budget_production_statut": "NON_ETABLI",
+    "regle_capacite": "La garde technique minimale ne constitue pas une autorisation de production. Le budget de production doit être établi séparément et comparé à l'espace libre mesuré sur le répertoire cible.",
     "statut": "PRETE, NON OUVERTE A LA PRODUCTION"
   },
   "interdits_en_vigueur": [
