@@ -11,3 +11,14 @@ __pycache__/
 # Fichiers temporaires locaux.
 *.tmp
 *.temp
+
+# Contrats locaux privés, manifestes locaux et secrets : jamais versionnés.
+# (n'affecte aucun résultat scientifique déjà suivi)
+contrat_local*.json
+!99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/contrat_local.example.json
+*.private.*
+private/
+.env
+.env.*
+manifeste_*.json
+manifestes_locaux/

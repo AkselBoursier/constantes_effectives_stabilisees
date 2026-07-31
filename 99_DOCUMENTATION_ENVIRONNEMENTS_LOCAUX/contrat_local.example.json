@@ -1,0 +1,64 @@
+{
+  "_commentaire": "MODÈLE PUBLIC — aucune valeur locale réelle. Copier hors du dépôt, remplir avec les chemins réels, et ne JAMAIS versionner la copie remplie (voir .gitignore).",
+  "contrat": "c7-c1-local",
+  "version": "1.0.0",
+  "date_utc": "AAAA-MM-JJTHH:MM:SS+00:00",
+  "statut": "PREPARATION_ONLY",
+  "confidentialite": "PRIVE — contient des chemins locaux reels ; jamais dans le depot public",
+  "chemins_reels": {
+    "depot_directeur": "<REPO>",
+    "environnement": "<ENV>",
+    "python_directeur": "<ENV>/Scripts/python.exe",
+    "env_secondaire_gele": "<ENV_SECONDAIRE>",
+    "donnees": "<DATA>",
+    "runs": "<RUNS>",
+    "temp_scientifique": "<TEMP>",
+    "caches": "<CACHE>",
+    "archives_runs_anterieurs": "<ARCHIVES>",
+    "restauration": "<RESTAURATION>",
+    "manifestes": "<MANIFESTES>"
+  },
+  "environnement": {
+    "python": "3.12.0",
+    "cobaya": "3.5",
+    "camb": "1.5.4",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "getdist": "1.7.7",
+    "n_paquets": 35,
+    "empreinte_sha256_inventaire_normalise": "<SHA256_INVENTAIRE>",
+    "contrainte": "numpy < 2 obligatoire (camb 1.5.4)",
+    "wsl_class": "environnement distinct, NON substituable, hors autorite C7-C1"
+  },
+  "donnees": {
+    "<FICHIER_BAO_MOYENNE>": "<SHA256>",
+    "<FICHIER_BAO_COVARIANCE>": "<SHA256>",
+    "manifeste": "<MANIFESTES>/manifeste_donnees.json"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "NUMEXPR_NUM_THREADS": 1,
+    "PYTHONNOUSERSITE": 1,
+    "regle": "injectes par l'enveloppe au processus ; jamais persistes"
+  },
+  "racine_runs": {
+    "chemin": "<RUNS>",
+    "hors_git": true,
+    "hors_synchronisation_cloud": true,
+    "systeme_fichiers": "NTFS",
+    "gelee_pour_le_lot": true,
+    "migration_pendant_chaine_ou_reprise": false,
+    "seuil_minimal_Gio": 40,
+    "statut": "PRETE, NON OUVERTE A LA PRODUCTION"
+  },
+  "interdits_en_vigueur": [
+    "raccord au lanceur",
+    "manifestes reels de production",
+    "MCMC",
+    "minimisation",
+    "posterior",
+    "reecriture d'historique Git"
+  ]
+}
