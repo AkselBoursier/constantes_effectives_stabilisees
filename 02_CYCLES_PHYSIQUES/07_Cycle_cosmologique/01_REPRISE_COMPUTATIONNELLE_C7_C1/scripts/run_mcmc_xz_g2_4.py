@@ -48,6 +48,20 @@ GIO = 1024**3
 GARDE_CAPACITE_GIO = 40
 SEUIL_ALERTE_GIO = 15
 
+# ------------------------------------------------ verrou dur G2.4d
+# Tant que ce verrou vaut True, AUCUNE écriture réelle et AUCUN
+# cobaya.run ne peuvent être atteints : le refus intervient AVANT
+# mkdir, open en écriture, os.replace, manifest.json et préfixe Cobaya.
+VERROU_PRODUCTION_G2_4D = True
+
+# Schéma du contrat local privé consommé par le lanceur (INFRA-1a).
+VERSION_CONTRAT_LOCAL = "1.1.0"
+CLES_THREADS = (
+    "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
+    "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS",
+)
+SCHEMA_MANIFESTE_RUN = "c7c1-run-manifest-1"
+
 MATRICE = {
     "M2a-N": tuple(range(630101, 630109)),
     "M2a-K": tuple(range(630201, 630209)),
@@ -73,10 +87,19 @@ ENV_DIRECTEUR = {
     "numpy": "1.26.4",
     "scipy": "1.13.1",
 }
+# Schéma d'autorisation ÉTENDU (G2.4d) : le SHA du chemin rapide, la
+# version du contrat local, l'empreinte d'environnement et le budget de
+# production ratifié deviennent obligatoires. Une autorisation ne peut
+# donc plus valider un ancien adaptateur, un chemin rapide modifié, un
+# contrat d'une autre version, un budget absent, un HEAD différent, une
+# autre racine de runs ni une autre empreinte d'environnement.
 CLES_MANIFESTE = {
     "type", "cle_humaine_1", "cle_humaine_2", "sha256_lanceur",
-    "sha256_adaptateur", "sha256_descripteurs", "sha256_preenregistrement",
-    "sha256_donnees", "head_autorise", "variantes_graines_autorisees",
+    "sha256_adaptateur", "sha256_chemin_rapide", "sha256_descripteurs",
+    "sha256_preenregistrement", "sha256_donnees", "empreinte_environnement",
+    "version_contrat_local", "head_autorise", "racine_runs_canonique",
+    "variantes_graines_autorisees", "budget_production_requis_Gio",
+    "budget_production_ratification",
 }
 POINT_FOND_P0 = {"H0": 67.36, "ombh2": 0.02237, "omm": 0.3152}
 POINT_FOND_P1 = {"H0": 68.3526, "ombh2": 0.022410, "omm": 0.300539}
@@ -196,11 +219,29 @@ def garde_reprise(prefixe: str | Path, identite: dict) -> None:
             )
 
 
+def _cible_mesurable(cible: str | Path) -> Path:
+    """Répertoire cible réel, ou son plus proche parent EXISTANT.
+
+    Jamais l'ancre du volume, jamais une racine abstraite : la mesure de
+    capacité doit porter sur le point de montage qui portera réellement
+    les écritures (correction du défaut P1 relevé en INFRA-0).
+    """
+    p = Path(cible).resolve()
+    while not p.exists():
+        parent = p.parent
+        if parent == p:
+            raise GardeErreur(
+                f"aucun parent existant pour la cible de capacité : {cible}"
+            )
+        p = parent
+    return p
+
+
 def espace_libre_gio(cible: str | Path) -> float:
     forge = os.environ.get("C7C1_TEST_ESPACE_LIBRE_GIO")
     if forge is not None:
         return float(forge)  # injection de test uniquement — jamais en prod
-    usage = shutil.disk_usage(Path(cible).anchor or str(cible))
+    usage = shutil.disk_usage(_cible_mesurable(cible))
     return usage.free / GIO
 
 
@@ -219,6 +260,308 @@ def garde_capacite(cible: str | Path) -> dict:
             f"{GARDE_CAPACITE_GIO} Gio — arrêt sans création ni reprise."
         )
     return etat
+
+
+def garde_budget_production(contrat: dict, cible: str | Path) -> dict:
+    """Contrôle SÉPARÉ du budget de production (jamais la garde technique).
+
+    La garde technique (>= 40 Gio) autorise seulement la poursuite des
+    tests et de la préparation. La production exige en plus un budget
+    ratifié, non nul, positif, et inférieur ou égal à l'espace libre
+    MESURÉ SUR LA CIBLE. Le statut NON_ETABLI bloque toute production.
+    Aucun budget n'est inventé ici.
+    """
+    rr = contrat.get("racine_runs", {})
+    statut = rr.get("budget_production_statut")
+    requis = rr.get("budget_production_requis_Gio")
+    etat = {"budget_production_statut": statut,
+            "budget_production_requis_Gio": requis}
+    if statut != "RATIFIE":
+        raise GardeErreur(
+            f"budget de production non ratifié (statut {statut!r}) : "
+            "production refusée — aucun budget n'est supposé par défaut"
+        )
+    if not isinstance(requis, (int, float)) or isinstance(requis, bool):
+        raise GardeErreur("budget de production absent ou non numérique")
+    if requis <= 0:
+        raise GardeErreur(f"budget de production non positif : {requis}")
+    libre = espace_libre_gio(cible)
+    etat["libre_cible_gio"] = round(libre, 2)
+    if libre < float(requis):
+        raise GardeErreur(
+            f"espace libre sur la cible {libre:.2f} Gio < budget requis "
+            f"{float(requis):.2f} Gio : production refusée"
+        )
+    return etat
+
+
+def _canonique(chemin: str | Path) -> str:
+    """Forme canonique comparable d'un chemin Windows.
+
+    Résolution des liens et de la casse via os.path.realpath + normcase :
+    deux chemins DISTINCTS ne doivent jamais devenir égaux (aucune
+    troncature, aucun repli sur le parent).
+    """
+    return os.path.normcase(os.path.realpath(str(chemin)))
+
+
+def _memes_chemins(a: str | Path, b: str | Path) -> bool:
+    return _canonique(a) == _canonique(b)
+
+
+def garde_contrat_local() -> dict:
+    """Consomme le contrat local privé et vérifie sa conformité.
+
+    Aucune valeur du contrat n'est publiée : seules des conclusions
+    booléennes et la version de schéma sortent de cette fonction.
+    """
+    chemin = os.environ.get("C7C1_CONTRAT_LOCAL")
+    if not chemin:
+        raise GardeErreur("C7C1_CONTRAT_LOCAL absent")
+    p = Path(chemin)
+    if not p.is_file():
+        raise GardeErreur("contrat local introuvable")
+    try:
+        contrat = json.loads(p.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(f"contrat local : JSON invalide ({exc.msg})") from exc
+    if contrat.get("version") != VERSION_CONTRAT_LOCAL:
+        raise GardeErreur(
+            f"version de contrat local {contrat.get('version')!r} != "
+            f"{VERSION_CONTRAT_LOCAL!r}"
+        )
+    if contrat.get("statut") != "PREPARATION_ONLY":
+        raise GardeErreur(
+            f"statut de contrat {contrat.get('statut')!r} != PREPARATION_ONLY"
+        )
+    rr = contrat.get("racine_runs", {})
+    if "seuil_minimal_Gio" in rr:
+        raise GardeErreur(
+            "contrat local au schéma périmé : « seuil_minimal_Gio » — "
+            "la garde technique et le budget de production doivent être "
+            "distincts (INFRA-1a)"
+        )
+    for cle in ("garde_technique_minimale_Gio", "budget_production_requis_Gio",
+                "budget_production_statut"):
+        if cle not in rr:
+            raise GardeErreur(f"contrat local : champ requis absent ({cle})")
+
+    chemins = contrat.get("chemins_reels", {})
+    py_contrat = chemins.get("python_directeur")
+    if not py_contrat or not _memes_chemins(py_contrat, sys.executable):
+        raise GardeErreur(
+            "python_directeur du contrat != interpréteur courant "
+            "(comparaison canonique insensible à la casse)"
+        )
+    for cle_env, cle_contrat in (("C7C1_DATA_DIR", "donnees"),
+                                 ("C7C1_XZ_OUT_DIR", "runs")):
+        valeur_env = os.environ.get(cle_env)
+        if not valeur_env:
+            raise GardeErreur(f"{cle_env} absent")
+        if not _memes_chemins(valeur_env, chemins.get(cle_contrat, "")):
+            raise GardeErreur(
+                f"{cle_env} diffère du contrat local (champ {cle_contrat})"
+            )
+    env_contrat = contrat.get("environnement", {})
+    empreinte = env_contrat.get("empreinte_sha256_inventaire_normalise")
+    if not empreinte or empreinte != empreinte_environnement():
+        raise GardeErreur("empreinte d'environnement non conforme au contrat")
+    donnees_contrat = {
+        k: v for k, v in contrat.get("donnees", {}).items() if k in SHA_BAO
+    }
+    if donnees_contrat != SHA_BAO:
+        raise GardeErreur("SHA BAO du contrat non conformes aux valeurs épinglées")
+    return {
+        "version_contrat_local": contrat["version"],
+        "statut": contrat["statut"],
+        "budget_production_statut": rr["budget_production_statut"],
+        "garde_technique_minimale_Gio": rr["garde_technique_minimale_Gio"],
+        "python_directeur_conforme": True,
+        "empreinte_environnement_conforme": True,
+        "_contrat": contrat,  # usage interne ; jamais publié
+    }
+
+
+def empreinte_environnement() -> str:
+    """SHA-256 de l'inventaire normalisé des paquets (nom==version, trié)."""
+    forge = os.environ.get("C7C1_TEST_EMPREINTE_ENV")
+    if forge:
+        return forge  # injection de test uniquement
+    sortie = subprocess.run(
+        [sys.executable, "-m", "pip", "list", "--format=json"],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    paquets = json.loads(sortie)
+    norm = "\n".join(
+        sorted(f"{p['name'].lower()}=={p['version']}" for p in paquets)
+    ) + "\n"
+    return hashlib.sha256(norm.encode()).hexdigest()
+
+
+def garde_threads_et_interpreteur() -> dict:
+    """Plafonds de threads et hygiène de l'interpréteur — bloquants.
+
+    Les quatre variables doivent EXISTER et valoir exactement « 1 » :
+    une valeur vide, 0, 2, « auto », un espace ou une absence échoue.
+    """
+    etat: dict = {}
+    for cle in CLES_THREADS:
+        valeur = os.environ.get(cle)
+        if valeur is None:
+            raise GardeErreur(f"plafond de threads absent : {cle}")
+        if valeur != "1":
+            raise GardeErreur(
+                f"plafond de threads non conforme : {cle}={valeur!r} != '1'"
+            )
+        etat[cle] = valeur
+    nousersite = os.environ.get("PYTHONNOUSERSITE")
+    if nousersite != "1":
+        raise GardeErreur(
+            f"PYTHONNOUSERSITE={nousersite!r} != '1' : site utilisateur "
+            "non désactivé"
+        )
+    if sys.maxsize <= 2**32:
+        raise GardeErreur("interpréteur non 64 bits")
+    if sys.prefix == sys.base_prefix:
+        raise GardeErreur(
+            "sys.prefix == sys.base_prefix : l'interpréteur n'est pas "
+            "l'environnement virtuel directeur"
+        )
+    import site as _site
+
+    if getattr(_site, "ENABLE_USER_SITE", False):
+        raise GardeErreur("site utilisateur actif : refus")
+    etat.update({
+        "PYTHONNOUSERSITE": nousersite, "bits64": True,
+        "venv_distinct_de_la_base": True, "site_utilisateur": "desactive",
+        "empreinte_environnement": empreinte_environnement(),
+    })
+    return etat
+
+
+def garde_chemins(out_dir: str | Path, data_dir: str | Path,
+                  racine_depot: str | Path) -> dict:
+    """Frontières de chemins : Git, synchronisation, disjonction des rôles."""
+    from xz_likelihood_g2_3 import refuser_sortie_sous_git
+
+    out_p, data_p = Path(out_dir), Path(data_dir)
+    if not out_p.exists() or not out_p.is_dir():
+        raise GardeErreur("C7C1_XZ_OUT_DIR inexistant ou n'est pas un répertoire")
+    refuser_sortie_sous_git(out_p)  # aucun ancêtre .git, même vide
+    for nom, chemin in (("racine du dépôt", racine_depot),
+                        ("racine de runs", out_p), ("données", data_p)):
+        if "onedrive" in _canonique(chemin):
+            raise GardeErreur(f"{nom} sous OneDrive : refus")
+    if _memes_chemins(data_p, out_p):
+        raise GardeErreur("C7C1_DATA_DIR identique à C7C1_XZ_OUT_DIR : refus")
+    for cle in ("TEMP", "TMP"):
+        valeur = os.environ.get(cle)
+        if valeur and (_memes_chemins(valeur, data_p)
+                       or _memes_chemins(valeur, out_p)):
+            raise GardeErreur(f"{cle} confondu avec DATA ou RUNS : refus")
+    return {
+        "runs_hors_git": True, "runs_hors_onedrive": True,
+        "data_distinct_de_runs": True, "temp_distinct": True,
+    }
+
+
+def garde_depot_directeur(contrat: dict) -> dict:
+    """Le dépôt courant doit être le dépôt directeur déclaré au contrat."""
+    toplevel = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True, text=True, check=True,
+    ).stdout.strip()
+    attendu = contrat.get("chemins_reels", {}).get("depot_directeur", "")
+    if not attendu or not _memes_chemins(toplevel, attendu):
+        raise GardeErreur(
+            "le dépôt courant n'est pas le dépôt directeur du contrat "
+            "(le checkout historique est interdit comme base de calcul)"
+        )
+    if "onedrive" in _canonique(toplevel):
+        raise GardeErreur("dépôt courant sous OneDrive : refus")
+    return {"depot_directeur": True, "hors_onedrive": True}
+
+
+def ecrire_manifeste_atomique(chemin: str | Path, contenu: dict) -> None:
+    """Écriture ATOMIQUE d'un manifeste JSON canonique.
+
+    Temporaire frère -> flush -> fsync -> os.replace -> fsync du
+    répertoire quand la plate-forme le permet. Ne laisse jamais de
+    manifest.json partiel ; nettoie le temporaire en cas d'échec ;
+    refuse d'écraser un manifeste EXISTANT NON IDENTIQUE.
+    """
+    cible = Path(chemin)
+    corps = json.dumps(contenu, indent=2, sort_keys=True,
+                       ensure_ascii=False) + "\n"
+    if cible.exists():
+        try:
+            existant = json.loads(cible.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            raise GardeErreur(
+                "manifeste existant illisible : écrasement refusé"
+            ) from None
+        if existant != contenu:
+            raise GardeErreur(
+                "manifeste existant non identique : écrasement refusé"
+            )
+        return  # déjà écrit à l'identique : rien à faire
+    tmp = cible.with_name(cible.name + f".tmp{os.getpid()}")
+    try:
+        with open(tmp, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(corps)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp, cible)
+    except BaseException:
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
+        raise
+    try:  # fsync du répertoire : indisponible sur certaines plates-formes
+        fd = os.open(str(cible.parent), os.O_RDONLY)
+        try:
+            os.fsync(fd)
+        finally:
+            os.close(fd)
+    except (OSError, AttributeError):
+        pass
+
+
+def identite_run(variante: str, graine: int, head: str, contrat: dict,
+                 versions: dict, sha_descripteur: str,
+                 sha_donnees: dict, budget: dict | None) -> dict:
+    """Identité complète nécessaire à une reprise EXACTE."""
+    ici = Path(__file__).parent
+    return {
+        "schema": SCHEMA_MANIFESTE_RUN,
+        "variante": variante,
+        "graine": int(graine),
+        "backend": "optimized",
+        "mode_acoustique": "corrected-v1.1",
+        "head": head,
+        "sha256_lanceur": sha256_fichier(__file__),
+        "sha256_adaptateur": sha256_fichier(ici / "xz_cobaya_g2_4.py"),
+        "sha256_chemin_rapide": sha256_fichier(ici / "xz_fast_g2_4c.py"),
+        "sha256_descripteur": sha_descripteur,
+        "sha256_donnees": dict(sha_donnees),
+        "versions": dict(versions),
+        "empreinte_environnement": empreinte_environnement(),
+        "version_contrat_local": contrat["version_contrat_local"],
+        "racine_runs_canonique": _canonique(os.environ["C7C1_XZ_OUT_DIR"]),
+        "sampler": SAMPLER_GELE_POUR_MANIFESTE(graine),
+        "budget_production": budget,
+        "statut_run": "PLANIFIE_NON_LANCE",
+    }
+
+
+def SAMPLER_GELE_POUR_MANIFESTE(graine: int) -> dict:
+    from xz_cobaya_g2_4 import SAMPLER_G1
+
+    bloc = json.loads(json.dumps(SAMPLER_G1))
+    bloc["mcmc"]["seed"] = int(graine)
+    return bloc
 
 
 def garde_git() -> dict:
@@ -250,6 +593,27 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
     adaptateur = Path(__file__).parent / "xz_cobaya_g2_4.py"
     if manifeste["sha256_adaptateur"] != sha256_fichier(adaptateur):
         raise GardeErreur("autorisation factice : SHA adaptateur non conforme")
+    # SHA du chemin rapide : OBLIGATOIRE depuis G2.4d — une autorisation
+    # ne doit jamais valider un chemin rapide modifié.
+    rapide = Path(__file__).parent / "xz_fast_g2_4c.py"
+    if manifeste.get("sha256_chemin_rapide") != sha256_fichier(rapide):
+        raise GardeErreur(
+            "autorisation factice : SHA du chemin rapide absent ou non conforme"
+        )
+    if manifeste.get("version_contrat_local") != VERSION_CONTRAT_LOCAL:
+        raise GardeErreur("autorisation : version de contrat local non conforme")
+    if manifeste.get("empreinte_environnement") != empreinte_environnement():
+        raise GardeErreur("autorisation : empreinte d'environnement non conforme")
+    racine_autorisee = manifeste.get("racine_runs_canonique")
+    if not racine_autorisee or not _memes_chemins(
+            racine_autorisee, os.environ.get("C7C1_XZ_OUT_DIR", "")):
+        raise GardeErreur("autorisation : racine de runs non autorisée")
+    budget = manifeste.get("budget_production_requis_Gio")
+    if not isinstance(budget, (int, float)) or isinstance(budget, bool) \
+            or budget <= 0:
+        raise GardeErreur("autorisation : budget de production absent ou nul")
+    if not str(manifeste.get("budget_production_ratification", "")).strip():
+        raise GardeErreur("autorisation : ratification du budget absente")
     for var, chemin_desc in DESCRIPTEURS.items():
         if manifeste["sha256_descripteurs"].get(var) != sha256_fichier(chemin_desc):
             raise GardeErreur(
@@ -291,18 +655,40 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
     rapport["sha256_descripteur"] = garde_descripteur(variante, descripteur_test)
     rapport["sha256_donnees"] = garde_donnees()
     rapport["versions"] = garde_environnement()
+    rapport["threads_interpreteur"] = garde_threads_et_interpreteur()
+    contrat = garde_contrat_local()
+    contrat_brut = contrat.pop("_contrat")
+    rapport["contrat_local"] = contrat
     out_dir = os.environ.get("C7C1_XZ_OUT_DIR")
     if not out_dir:
         raise GardeErreur("C7C1_XZ_OUT_DIR absent")
+    racine_depot = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True, text=True, check=True,
+    ).stdout.strip()
+    rapport["depot"] = garde_depot_directeur(contrat_brut)
+    rapport["chemins"] = garde_chemins(
+        out_dir, os.environ["C7C1_DATA_DIR"], racine_depot)
     prefixe_effectif = prefixe or str(
         Path(out_dir) / "g2_4" / "P_WS" / variante / f"s{graine}" / "chain"
     )
     garde_prefixe(prefixe_effectif)
     garde_collision(prefixe_effectif)
     rapport["prefixe"] = "hors Git, sans collision"
+    # Garde TECHNIQUE seulement : elle n'autorise que la poursuite des
+    # tests et de la préparation, jamais la production.
     rapport["capacite"] = garde_capacite(out_dir)
+    rapport["capacite"]["mesure_sur"] = "repertoire cible (pas l'ancre)"
     rapport["git"] = garde_git()  # rapporté ; bloquant en production
-    rapport["verdict"] = "PREFLIGHT OK — aucune production effectuée"
+    statut_budget = contrat["budget_production_statut"]
+    rapport["budget_production"] = {
+        "statut": statut_budget,
+        "production_autorisable": statut_budget == "RATIFIE",
+    }
+    if statut_budget == "RATIFIE":
+        rapport["verdict"] = "PREFLIGHT OK — production autorisable ailleurs"
+    else:
+        rapport["verdict"] = "PREPARATION OK — PRODUCTION NON AUTORISABLE"
     return rapport
 
 
@@ -315,7 +701,9 @@ def produire(args: list[str]) -> None:
     un refus avant cobaya.run.
     """
 
+    # 1. refus des injections de test
     refuser_injections_en_production()
+    # 2. confirmation explicite
     if "--je-confirme-la-production" not in args:
         raise GardeErreur(
             "production refusée : confirmation explicite absente "
@@ -325,15 +713,44 @@ def produire(args: list[str]) -> None:
         raise GardeErreur("autorisation absente")
     variante, graine = args[0], int(args[1])
     chemin_autorisation = args[args.index("--autorisation") + 1]
+    # 3. contrat, environnement, données, threads et chemins (via preflight)
     rapport = preflight(variante, graine)
+    # 4. HEAD et arbre propre
     etat_git = rapport["git"]
     if not etat_git["arbre_propre"]:
         raise GardeErreur("arbre Git non propre : production refusée")
+    # 5. autorisation à deux clés (schéma étendu G2.4d)
     garde_autorisation(chemin_autorisation, variante, graine, etat_git["head"])
-    # Point jamais atteint en G2.4b : le vrai manifeste est interdit.
-    raise GardeErreur(
-        "verrou G2.4b : le lancement réel exige une validation humaine "
-        "postérieure à la qualification — production refusée."
+    # 6. budget de production ratifié, comparé à l'espace libre de la CIBLE
+    contrat = garde_contrat_local()
+    contrat_brut = contrat.pop("_contrat")
+    rapport["budget"] = garde_budget_production(
+        contrat_brut, os.environ["C7C1_XZ_OUT_DIR"])
+    # 7. construction PURE du plan de production (aucune écriture)
+    plan = identite_run(
+        variante, graine, etat_git["head"], contrat, rapport["versions"],
+        rapport["sha256_descripteur"], rapport["sha256_donnees"],
+        rapport["budget"],
+    )
+    plan["prefixe"] = str(
+        Path(os.environ["C7C1_XZ_OUT_DIR"]) / "g2_4" / "P_WS" / variante
+        / f"s{graine}" / "chain"
+    )
+    # 8. VERROU DUR — placé AVANT toute création de répertoire, toute
+    #    ouverture en écriture, tout os.replace, tout manifest.json et
+    #    tout cobaya.run. Le code de l'étape 9 est préparé mais ne
+    #    s'exécute pas tant que ce verrou tient.
+    if VERROU_PRODUCTION_G2_4D:
+        raise GardeErreur(
+            "VERROU G2.4d : raccord qualifié SANS production — le lancement "
+            "réel exige une porte ultérieure et une décision humaine "
+            "distincte. Aucun répertoire créé, aucun manifeste écrit, "
+            "aucun cobaya.run atteint."
+        )
+    # 9. porte future seulement : création du répertoire, écriture
+    #    atomique du manifeste, puis cobaya.run. Jamais exécuté ici.
+    raise GardeErreur(  # pragma: no cover - inatteignable sous verrou
+        "chemin de production non ouvert"
     )
 
 
