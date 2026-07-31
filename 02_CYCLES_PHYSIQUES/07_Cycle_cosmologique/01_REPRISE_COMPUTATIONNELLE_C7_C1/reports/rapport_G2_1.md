@@ -370,6 +370,84 @@ T8, T9, T10 et T12(a) : inchangés, conformément à G2.1d (aucun résultat
 contradictoire ; les marges de T8 sur theta_star et chi2_CMB se sont
 élargies d'un facteur ~37 après la correction du point de quadrature).
 
+### Addendum §4-A1 — amendement A1 du mode « corrected » (G2.4c-iii)
+
+Ratification humaine du 30 juillet 2026 (#63, porte G2.4c-iii),
+conformément à D3-H, après signalement obligatoire de la rupture
+d'équivalence prévu par T12(b) (diagnostic G2.4c-ii-a/-b).
+
+```text
+clause ancienne (implémentation au moment de la ratification de T8-T12) :
+  correction acoustique par quad(integrand, z_depart, 1e7,
+  epsabs=1e-8, epsrel=1e-10, limit=300) — tolérances partagées avec les
+  quadratures de distance ;
+
+clause nouvelle (A1) — mode directeur « corrected-v1.1 » :
+  scipy.quad en variable z ; bornes inchangées ;
+  epsabs = 1e-15 ; epsrel = 1e-13 ; limit = 800 ;
+  tolérances acoustiques PROPRES au mode, découplées des distances ;
+
+compatibilité de nom :
+  corrected        -> corrected-v1.1 (alias explicite, testé) ;
+  corrected-legacy -> reproduction bit à bit de l'ancienne règle ;
+  la quadrature Gauss-Legendre en u = 1/sqrt(1+z) reste exclusivement
+  un contrôle indépendant ;
+
+traçabilité des résultats de CE rapport :
+  toutes les valeurs « corrected » publiées ci-dessus (I1-I9, §3.3,
+  planchers T8-T12) ont été mesurées sous l'ancienne règle : elles se
+  lisent désormais comme « corrected-legacy » et ne sont PAS
+  réétiquetées ni recalculées ici ;
+
+T12(b) — SÉPARATION (G2.4c-iii-a, conformément à l'audit de PR #79 :
+la ratification humaine portait sur A1, pas sur de nouveaux seuils —
+les valeurs 1e-7/1e-5 un temps inscrites comme « T12(b) ratifié » en
+G2.4c-iii étaient trop fortes et sont RETIRÉES de ce statut) :
+
+  T12-legacy-régression : corrected-legacy reproduit l'ancien oracle ;
+    anciens seuils et valeurs conservés historiquement :
+    |Delta r_drag,star| <= 1e-10 Mpc (mesuré 2.13e-12 / 2.10e-12) ;
+    |Delta chi2_BAO| <= 1e-8 (mesuré 3.27e-10) ;
+
+  T12-A1-numérique : corrected-v1.1 vs contrôle GL indépendant
+    (r_drag et r_star, séparés) <= 1e-13 Mpc ; alias
+    corrected == corrected-v1.1 EXACT ; équivalence oracle amendé ==
+    chemin rapide portée par qualify_xz_optim_g2_4c.py ;
+
+  S5-sensibilité : écarts corrected-v1.1 / corrected-legacy / fixed
+    PUBLIÉS SANS VERDICT (primaire : corrected-v1.1 ; contrôle
+    historique : corrected-legacy ; contrôle physique simplifié :
+    fixed) ; les enveloppes 1e-7 Mpc (corrections) et 1e-5 (chi2_BAO)
+    sont des NIVEAUX D'ALERTE PROPOSÉS POUR S5, NON RATIFIÉS — hors de
+    tout verdict automatique ;
+
+  l'exigence de signalement de toute rupture demeure.
+
+T11 — re-ratification PROPOSÉE des contrôles touchés par le constat B1
+(G2.4c-iii-a ; l'échec historique du rejeu du 30 juillet 2026 sous les
+anciens contrôles reste consigné au rapport G2.4c-iii, jamais
+réétiqueté) :
+  retirés : T11_BAO_default_tight (instance « tight » mêlant
+    tolérances de distance et borne acoustique 1e8),
+    T11_rdrag/rstar_zmax (quadrature directe quad(z_depart, 1e8)
+    numériquement VIDE — les nœuds initiaux de Gauss-Kronrod tombent
+    où l'intégrande s'arrondit à 0.0 ; conservée uniquement comme
+    démonstration adversariale historique, ni référence ni seuil) ;
+  remplacés par (seuils PRÉ-DÉCLARÉS avant rejeu) :
+    T11_BAO_distance_default_tight <= 1e-12 (valeur INCHANGÉE ;
+      default et tight_distance ne diffèrent que par les tolérances de
+      distance, borne acoustique 1e7 des deux côtés) ;
+    T11_rdrag/rstar_v11_vs_GL <= 1e-13 Mpc (voie GL indépendante en
+      u = 1/sqrt(1+z), 512 points/segment, segments explicites) ;
+    T11_rdrag/rstar_GL_convergence <= 1e-13 Mpc (GL512 vs GL1024) ;
+    T11_rdrag/rstar_tail_1e7_1e8 <= 1e-18 Mpc (queue évaluée par GL
+      indépendante ET bornée par majoration analytique conservatrice —
+      un flottant exactement nul ne suffit pas seul).
+
+Résultats de la réexécution complète (I1-I9, T8-T12 sous l'oracle
+amendé) : rapport G2.4c-iii (reports/rapport_G2_4c_iii_amendement_A1.md).
+```
+
 ## 5. Verdict final de G2.1 — séparé par niveau épistémique
 
 Conformément à la règle transversale, « validé » n'est jamais employé ici

@@ -379,6 +379,18 @@ condition de validation : décision humaine explicite dans #63, datée
   PROPOSITION ; aucune clause D3-A..H n'est modifiée par ce commit.
 ```
 
+### Addendum §8 ter-A1 — statut postérieur (G2.4c-iii)
+
+La condition de validation ci-dessus a été satisfaite : **l'amendement
+A1 a été ratifié humainement le 30 juillet 2026** (#63, ouverture de la
+porte G2.4c-iii) puis **appliqué explicitement** en G2.4c-iii — modes
+`corrected-v1.1` (directeur, alias du nom nu `corrected`) et
+`corrected-legacy` (ancienne règle, bit à bit), chemin rapide aligné,
+suites I1-I9 / T8-T12 / C1-C8 / G2.4c-ii rejouées. Le texte des §8 bis
+et §8 ter ci-dessus est conservé tel quel à titre de trace : les
+valeurs « oracle » y sont désormais à lire comme `corrected-legacy`.
+Résultats complets : `reports/rapport_G2_4c_iii_amendement_A1.md`.
+
 ## 9. Verdict sur G2.4c-iii
 
 ```text

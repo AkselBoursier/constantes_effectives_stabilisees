@@ -409,26 +409,144 @@ def full_camb_tests() -> dict[str, Any]:
             item[f"{convention}_theta_corrected_minus_fixed"] = bg.theta_star("corrected") - bg.theta_star("fixed")
             item[f"{convention}_BAO_corrected_vs_fixed_rel_max"] = float(np.max(rel_error(corrected, fixed)))
             item[f"{convention}_chi2_BAO_corrected_minus_fixed"] = chi2(corrected, bao_mean, bao_icov) - chi2(fixed, bao_mean, bao_icov)
+            # G2.4c-iii-a : mesures corrected-legacy vs fixed — support
+            # de T12-legacy-régression (anciens seuils) et de la
+            # publication S5 (le nom nu « corrected » ci-dessus vaut
+            # corrected-v1.1 par l'alias A1 ; rien n'est réétiqueté).
+            legacy_bao = bg.bao_vector(BAO_REDSHIFTS, BAO_KINDS,
+                                       "corrected-legacy")
+            item[f"{convention}_rdrag_legacy_minus_fixed"] = (
+                bg.rdrag("corrected-legacy") - bg.rdrag("fixed"))
+            item[f"{convention}_rstar_legacy_minus_fixed"] = (
+                bg.rstar("corrected-legacy") - bg.rstar("fixed"))
+            item[f"{convention}_theta_legacy_minus_fixed"] = (
+                bg.theta_star("corrected-legacy") - bg.theta_star("fixed"))
+            item[f"{convention}_BAO_legacy_vs_fixed_rel_max"] = float(
+                np.max(rel_error(legacy_bao, fixed)))
+            item[f"{convention}_chi2_BAO_legacy_minus_fixed"] = (
+                chi2(legacy_bao, bao_mean, bao_icov)
+                - chi2(fixed, bao_mean, bao_icov))
         sensitivity[name] = item
     metrics["I4_I5_acoustic_and_spline_sensitivity"] = sensitivity
 
     profile = XZProfile("M2a", profiles["signed_crossing"], "not-a-knot")
-    default = XZBackground(ref, profile, epsabs=1e-8, epsrel=1e-10, acoustic_zmax=1e7)
-    tight = XZBackground(ref, profile, epsabs=1e-10, epsrel=1e-12, quad_limit=500, acoustic_zmax=1e8)
+    # G2.4c-iii-a (correctif B1) : les instances « default » et
+    # « tight_distance » ne diffèrent QUE par les tolérances de
+    # quadrature de DISTANCE — la borne acoustique reste 1e7 dans les
+    # DEUX instances (aucun changement de borne acoustique dans ce
+    # contrôle) : le contrôle default vs tight_distance ne teste plus
+    # que les distances. La quadrature directe quad(z_depart, 1e8) est
+    # RETIRÉE de la porte (contrôle numériquement VIDE, constat B1) et
+    # ne subsiste que comme démonstration adversariale historique
+    # ci-dessous — jamais comme référence ni seuil.
+    default = XZBackground(ref, profile, epsabs=1e-8, epsrel=1e-10,
+                           acoustic_zmax=1e7)
+    tight_distance = XZBackground(ref, profile, epsabs=1e-10, epsrel=1e-12,
+                                  quad_limit=500, acoustic_zmax=1e7)
     low_tail = XZBackground(ref, profile, acoustic_zmax=1e6)
     z = np.unique(BAO_REDSHIFTS)
     metrics["I6_numerical_stability"] = {
-        "H_default_vs_tight_rel_max": float(np.max(rel_error(default.hubble(z), tight.hubble(z)))),
-        "DM_default_vs_tight_rel_max": float(np.max(rel_error(default.dm(z), tight.dm(z)))),
-        "BAO_default_vs_tight_rel_max": float(np.max(rel_error(
-            default.bao_vector(BAO_REDSHIFTS, BAO_KINDS, "corrected"),
-            tight.bao_vector(BAO_REDSHIFTS, BAO_KINDS, "corrected"),
+        "H_default_vs_tight_rel_max": float(np.max(rel_error(
+            default.hubble(z), tight_distance.hubble(z)))),
+        "DM_default_vs_tight_rel_max": float(np.max(rel_error(
+            default.dm(z), tight_distance.dm(z)))),
+        "BAO_distance_default_vs_tight_rel_max": float(np.max(rel_error(
+            default.bao_vector(BAO_REDSHIFTS, BAO_KINDS, "corrected-v1.1"),
+            tight_distance.bao_vector(BAO_REDSHIFTS, BAO_KINDS,
+                                      "corrected-v1.1"),
         ))),
-        "rdrag_zmax_1e6_minus_1e7": low_tail.rdrag("corrected") - default.rdrag("corrected"),
-        "rdrag_zmax_1e7_minus_1e8": default.rdrag("corrected") - tight.rdrag("corrected"),
-        "rstar_zmax_1e6_minus_1e7": low_tail.rstar("corrected") - default.rstar("corrected"),
-        "rstar_zmax_1e7_minus_1e8": default.rstar("corrected") - tight.rstar("corrected"),
+        "rdrag_zmax_1e6_minus_1e7": low_tail.rdrag("corrected-v1.1")
+        - default.rdrag("corrected-v1.1"),
+        "rstar_zmax_1e6_minus_1e7": low_tail.rstar("corrected-v1.1")
+        - default.rstar("corrected-v1.1"),
     }
+    # Démonstration adversariale HISTORIQUE de la vacuité (constat B1) :
+    # sur [z_depart, 1e8], les nœuds initiaux de Gauss-Kronrod tombent
+    # tous là où l'intégrande s'arrondit exactement à 0.0 — la
+    # quadrature « converge » immédiatement vers 0. Publiée à titre de
+    # trace ; NE SERT NI DE RÉFÉRENCE NI DE SEUIL.
+    adversarial_1e8 = XZBackground(ref, profile, acoustic_zmax=1e8)
+    metrics["I6_numerical_stability"]["B1_adversarial_quad_1e8"] = {
+        "rdrag_corr_quad_zdrag_1e8": adversarial_1e8.rdrag("corrected-v1.1")
+        - ref.rdrag,
+        "rdrag_corr_quad_zdrag_1e7": default.rdrag("corrected-v1.1")
+        - ref.rdrag,
+        "statut": "demonstration historique B1 — hors porte, ni "
+                  "reference ni seuil",
+    }
+
+    # -- contrôle acoustique INDÉPENDANT (G2.4c-iii-a, B1) ---------------
+    # Voie indépendante de XZBackground._sound_horizon_correction :
+    # variable u = 1/sqrt(1+z), Gauss-Legendre 512 points par segment
+    # (contrôle de convergence à 1024), segments explicites
+    # [z_depart, zstar], [zstar, 1e4], [1e4, 1e6], [1e6, 1e7] ;
+    # r_drag et r_star traités séparément. Seuils pré-déclarés :
+    #   |corrected-v1.1 - GL| <= 1e-13 Mpc ;
+    #   |GL512 - GL1024|      <= 1e-13 Mpc ;
+    #   queue [1e7, 1e8]      <= 1e-18 Mpc (GL indépendante ET
+    #   majoration analytique — un flottant exactement nul ne suffit
+    #   pas, à lui seul, comme preuve).
+    x_tail = float(profile.last_value)  # X(z >= 2.33) = X(2.33)
+    delta_ac = ref.h0**2 * ref.omega_x0 * (x_tail - 1.0)
+    ratio0_ac = ref.baryon_photon_ratio0
+
+    def acoustic_integrand_z(zz: float) -> float:
+        ratio = ratio0_ac / (1.0 + zz)
+        cs = C_KM_S / np.sqrt(3.0 * (1.0 + 0.75 * ratio))
+        href = float(ref.hubble(zz))
+        return float(cs * (1.0 / np.sqrt(href * href + delta_ac)
+                           - 1.0 / href))
+
+    def acoustic_gl(z_start: float, bornes_hautes, n: int) -> float:
+        total = 0.0
+        bornes = [float(z_start)] + [float(b) for b in bornes_hautes
+                                     if float(b) > float(z_start)]
+        for a, b in zip(bornes[:-1], bornes[1:]):
+            xg, wg = np.polynomial.legendre.leggauss(n)
+            ua, ub = 1.0 / np.sqrt(1.0 + b), 1.0 / np.sqrt(1.0 + a)
+            u = 0.5 * (ua + ub) + 0.5 * (ub - ua) * xg
+            w = 0.5 * (ub - ua) * wg
+            zz = 1.0 / (u * u) - 1.0
+            vals = np.array([acoustic_integrand_z(float(z_)) for z_ in zz])
+            total += float(np.sum(w * 2.0 / u**3 * vals))
+        return total
+
+    segments_ac = [float(ref.zstar), 1.0e4, 1.0e6, 1.0e7]
+    acoustic_independent: dict[str, Any] = {}
+    for nom_r, z_start, corr_publiee in (
+        ("rdrag", float(ref.zdrag),
+         default.rdrag("corrected-v1.1") - ref.rdrag),
+        ("rstar", float(ref.zstar),
+         default.rstar("corrected-v1.1") - ref.rstar),
+    ):
+        gl512 = acoustic_gl(z_start, segments_ac, 512)
+        gl1024 = acoustic_gl(z_start, segments_ac, 1024)
+        acoustic_independent[f"{nom_r}_v11_vs_GL_abs"] = abs(
+            corr_publiee - gl512)
+        acoustic_independent[f"{nom_r}_GL_512_vs_1024_abs"] = abs(
+            gl512 - gl1024)
+        # queue [1e7, 1e8], évaluée séparément par correction avec le
+        # même changement de variable indépendant
+        acoustic_independent[f"{nom_r}_tail_1e7_1e8_abs"] = abs(
+            acoustic_gl(1.0e7, [1.0e8], 512))
+    # Majoration analytique CONSERVATRICE de la queue : pour z >= 1e7,
+    # |intégrande(z)| = cs(z)·|delta| / (h_X·h_ref·(h_X+h_ref))
+    #                <= (c/sqrt(3))·|delta| / (2·h_min(z)^3),
+    # décroissante en z (H croît) ; borne : valeur en z=1e7 x largeur.
+    # Calculée par l'EXPRESSION analytique (jamais par la différence
+    # 1/h_X - 1/h_ref, catastrophiquement annulée en double précision).
+    href7 = float(ref.hubble(1.0e7))
+    h_min7 = float(np.sqrt(min(href7 * href7 + delta_ac, href7 * href7)))
+    majoration_queue = float(
+        (C_KM_S / np.sqrt(3.0)) * abs(delta_ac) / (2.0 * h_min7**3)
+        * (1.0e8 - 1.0e7)
+    )
+    acoustic_independent["tail_majoration_analytique_abs"] = majoration_queue
+    # alias : le nom nu « corrected » == corrected-v1.1 EXACTEMENT
+    acoustic_independent["alias_corrected_exact"] = bool(
+        default.rdrag("corrected") == default.rdrag("corrected-v1.1")
+        and default.rstar("corrected") == default.rstar("corrected-v1.1"))
+    metrics["I6_A1_acoustic_independent"] = acoustic_independent
 
     # Complément G2.1d : stabilité default/tight des grandeurs CMB pour des
     # profils X(z) non constants, sous les deux conventions de spline.
@@ -437,9 +555,12 @@ def full_camb_tests() -> dict[str, Any]:
         for convention in ("natural", "not-a-knot"):
             prof = XZProfile("M2a", profiles[name], convention)
             d_bg = XZBackground(ref, prof)
+            # G2.4c-iii-a (B1) : borne acoustique 1e7 dans l'instance
+            # resserrée aussi — aucune quadrature directe jusqu'à 1e8
+            # ne participe à un contrôle d'acceptation.
             t_bg = XZBackground(
                 ref, prof, epsabs=1e-10, epsrel=1e-12, quad_limit=500,
-                acoustic_zmax=1e8,
+                acoustic_zmax=1e7,
             )
             dm_d = float(d_bg.dm(ref.zstar))
             dm_t = float(t_bg.dm(ref.zstar))
