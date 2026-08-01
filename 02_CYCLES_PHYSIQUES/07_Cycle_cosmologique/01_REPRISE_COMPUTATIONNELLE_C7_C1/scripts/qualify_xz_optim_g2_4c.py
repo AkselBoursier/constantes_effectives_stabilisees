@@ -679,10 +679,14 @@ def executer_faute(nom: str) -> int:
         depasse = any(ecarts[k] > SEUILS[k] for k in SEUILS)
         return 1 if depasse else 0
     if nom == "graphe_un_bloc":
+        # G2.4d : « build_cobaya_info » désigne désormais l'architecture
+        # directrice à deux blocs ; l'architecture MONOBLOC dont cette
+        # faute doit prouver la détection porte maintenant le nom
+        # explicite « build_cobaya_info_legacy ». Intention inchangée.
         from cobaya.model import get_model
-        from xz_cobaya_g2_4 import build_cobaya_info, info_pour_cobaya
+        from xz_cobaya_g2_4 import build_cobaya_info_legacy, info_pour_cobaya
 
-        info = info_pour_cobaya(build_cobaya_info(CONFIGS["M2a-N"], 0))
+        info = info_pour_cobaya(build_cobaya_info_legacy(CONFIGS["M2a-N"], 0))
         info.pop("sampler")
         modele = get_model(info)
         blocs, _ = modele.get_param_blocking_for_sampler(oversample_power=0.4)
