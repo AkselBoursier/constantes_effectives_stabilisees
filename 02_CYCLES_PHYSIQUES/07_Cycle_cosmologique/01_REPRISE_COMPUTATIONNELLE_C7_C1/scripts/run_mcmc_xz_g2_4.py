@@ -716,25 +716,46 @@ def garde_git() -> dict:
     return {"head": head, "arbre_propre": statut == ""}
 
 
-def garde_autorisation(chemin: str | Path, variante: str, graine: int,
-                       head: str, budget_contrat=None,
-                       ratification_contrat=None) -> str:
-    """Garde d'autorisation RÉELLE. Retourne le SHA-256 du fichier.
+# Groupes de contrôles du validateur d'autorisation. Le contrôle
+# statique du qualificateur exige que le chemin NOMINAL les traverse
+# tous : aucune validation ne doit se trouver après un retour.
+GROUPES_CONTROLE_AUTORISATION = (
+    "cles", "type", "usage", "cles_humaines", "sha_lanceur",
+    "sha_adaptateur", "sha_chemin_rapide", "version_contrat",
+    "empreinte_environnement", "racine_runs", "budget", "ratification",
+    "liaison_budget_contrat", "liaison_ratification_contrat",
+    "sha_descripteurs", "sha_preenregistrement", "sha_donnees",
+    "head_autorise", "matrice_variante_graine",
+)
 
-    Refuse systématiquement un manifeste d'usage autre que PRODUCTION :
-    un fichier éphémère de qualification ne peut JAMAIS servir
-    d'autorisation réelle. Lorsque le budget du contrat est fourni,
-    exige son égalité numérique exacte avec celui de l'autorisation,
-    ainsi que l'identité de la référence de ratification.
+
+def _valider_contenu_autorisation(manifeste: dict, variante: str,
+                                  graine: int, head: str,
+                                  budget_contrat=None,
+                                  ratification_contrat=None) -> list[str]:
+    """VALIDATEUR PUR du contenu d'une autorisation (aucun fichier).
+
+    Lève ``GardeErreur`` au PREMIER manquement, avec un message dont le
+    fragment identifie sans ambiguïté le champ fautif. Retourne, quand
+    tout passe, la liste ORDONNÉE des groupes de contrôles traversés :
+    le qualificateur exige que cette liste soit complète, ce qui rend
+    impossible un retour prématuré masquant des contrôles aval.
+
+    Séparé de la lecture du fichier pour que la qualification puisse
+    éprouver chaque champ profond SANS jamais écrire une autorisation
+    réelle sur le disque.
     """
-    if not Path(chemin).is_file():
-        raise GardeErreur("autorisation absente")
-    with open(chemin, encoding="utf-8") as handle:
-        manifeste = json.load(handle)
+    traverses: list[str] = []
+
+    def franchi(nom: str) -> None:
+        traverses.append(nom)
+
     if set(manifeste.keys()) != CLES_MANIFESTE:
         raise GardeErreur("autorisation non conforme : clés inexactes")
+    franchi("cles")
     if manifeste["type"] != "autorisation_production_c7c1_g2_4":
         raise GardeErreur("autorisation non conforme : type inexact")
+    franchi("type")
     if manifeste.get("usage") != USAGE_AUTORISATION_PRODUCTION:
         raise GardeErreur(
             f"autorisation d'usage {manifeste.get('usage')!r} refusée : "
@@ -742,14 +763,18 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
             "production — un manifeste de qualification n'est jamais "
             "une autorisation réelle"
         )
+    franchi("usage")
     for cle in ("cle_humaine_1", "cle_humaine_2"):
         if not isinstance(manifeste[cle], str) or not manifeste[cle].strip():
             raise GardeErreur(f"autorisation non conforme : {cle} vide")
+    franchi("cles_humaines")
     if manifeste["sha256_lanceur"] != sha256_fichier(__file__):
         raise GardeErreur("autorisation factice : SHA du lanceur non conforme")
+    franchi("sha_lanceur")
     adaptateur = Path(__file__).parent / "xz_cobaya_g2_4.py"
     if manifeste["sha256_adaptateur"] != sha256_fichier(adaptateur):
         raise GardeErreur("autorisation factice : SHA adaptateur non conforme")
+    franchi("sha_adaptateur")
     # SHA du chemin rapide : OBLIGATOIRE depuis G2.4d — une autorisation
     # ne doit jamais valider un chemin rapide modifié.
     rapide = Path(__file__).parent / "xz_fast_g2_4c.py"
@@ -757,21 +782,27 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
         raise GardeErreur(
             "autorisation factice : SHA du chemin rapide absent ou non conforme"
         )
+    franchi("sha_chemin_rapide")
     if manifeste.get("version_contrat_local") != VERSION_CONTRAT_LOCAL:
         raise GardeErreur("autorisation : version de contrat local non conforme")
+    franchi("version_contrat")
     if manifeste.get("empreinte_environnement") != empreinte_environnement():
         raise GardeErreur("autorisation : empreinte d'environnement non conforme")
+    franchi("empreinte_environnement")
     racine_autorisee = manifeste.get("racine_runs_canonique")
     if not racine_autorisee or not _memes_chemins(
             racine_autorisee, os.environ.get("C7C1_XZ_OUT_DIR", "")):
         raise GardeErreur("autorisation : racine de runs non autorisée")
+    franchi("racine_runs")
     budget = manifeste.get("budget_production_requis_Gio")
     if not isinstance(budget, (int, float)) or isinstance(budget, bool) \
             or budget <= 0:
         raise GardeErreur("autorisation : budget de production absent ou nul")
+    franchi("budget")
     ratification = manifeste.get("budget_production_ratification")
     if not str(ratification or "").strip():
         raise GardeErreur("autorisation : ratification du budget absente")
+    franchi("ratification")
     # Liaison EXACTE contrat <-> autorisation : une autorisation à 50 Gio
     # et un contrat ratifié à 80 Gio doivent être refusés ensemble, même
     # si l'espace libre dépasse 80 Gio.
@@ -784,32 +815,74 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
                 f"budget de l'autorisation ({budget}) != budget du contrat "
                 f"({budget_contrat}) : refus"
             )
+    franchi("liaison_budget_contrat")
     if ratification_contrat is not None:
         if str(ratification) != str(ratification_contrat):
             raise GardeErreur(
                 "référence de ratification du budget différente entre "
                 "l'autorisation et le contrat : refus"
             )
-    return sha256_fichier(chemin)
+    franchi("liaison_ratification_contrat")
+    # --- contrôles historiques : rendus de nouveau ATTEIGNABLES --------
     for var, chemin_desc in DESCRIPTEURS.items():
         if manifeste["sha256_descripteurs"].get(var) != sha256_fichier(chemin_desc):
             raise GardeErreur(
                 f"autorisation factice : SHA descripteur {var} non conforme"
             )
+    franchi("sha_descripteurs")
     prereg = "reports/rapport_G2_2a_preregistration.md"
     if manifeste["sha256_preenregistrement"] != sha256_fichier(prereg):
         raise GardeErreur(
             "autorisation factice : SHA pré-enregistrement non conforme"
         )
+    franchi("sha_preenregistrement")
     if manifeste["sha256_donnees"] != SHA_BAO:
         raise GardeErreur("autorisation factice : SHA données non conformes")
+    franchi("sha_donnees")
     if manifeste["head_autorise"] != head:
         raise GardeErreur("autorisation factice : HEAD non autorisé")
+    franchi("head_autorise")
     autorisees = manifeste["variantes_graines_autorisees"]
     if str(graine) not in [str(g) for g in autorisees.get(variante, [])]:
         raise GardeErreur(
-            f"autorisation ne couvre pas ({variante}, {graine})"
+            f"autorisation ne couvre pas ({variante}, {graine}) : "
+            "variantes_graines_autorisees"
         )
+    franchi("matrice_variante_graine")
+    manquants = [g for g in GROUPES_CONTROLE_AUTORISATION
+                 if g not in traverses]
+    if manquants:
+        raise GardeErreur(
+            f"validateur d'autorisation incomplet : groupes non traversés "
+            f"{manquants}"
+        )
+    return traverses
+
+
+def garde_autorisation(chemin: str | Path, variante: str, graine: int,
+                       head: str, budget_contrat=None,
+                       ratification_contrat=None) -> str:
+    """Garde d'autorisation RÉELLE sur FICHIER.
+
+    Lit le fichier, délègue au validateur pur, et ne retourne le SHA-256
+    du fichier QU'APRÈS que tous les groupes de contrôles ont été
+    traversés. Aucune validation ne subsiste après le retour.
+
+    Refuse systématiquement un manifeste d'usage autre que PRODUCTION :
+    un fichier éphémère de qualification ne peut JAMAIS servir
+    d'autorisation réelle.
+    """
+    if not Path(chemin).is_file():
+        raise GardeErreur("autorisation absente")
+    with open(chemin, encoding="utf-8") as handle:
+        manifeste = json.load(handle)
+    _valider_contenu_autorisation(
+        manifeste, variante, graine, head,
+        budget_contrat=budget_contrat,
+        ratification_contrat=ratification_contrat,
+    )
+    return sha256_fichier(chemin)
+
 
 
 def refuser_injections_en_production() -> None:

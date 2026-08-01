@@ -50,6 +50,42 @@ DERIVES_RUNTIME_EXIGES = ("omch2", "chi2_BAO", "chi2_CMB", "chi2_total")
 # production devra générer la sienne une seule fois et la propager.
 DATE_QUALIFICATION_UTC = "2026-08-01T00:00:00Z"
 
+# Fautes d'autorisation éprouvées sur le VALIDATEUR PUR, en mémoire :
+# nom de faute -> (champ altéré, fragment de message attendu).
+# La détection n'est probante que si l'échec est attribué à ce champ.
+_FAUTES_AUTORISATION_CONTENU = {
+    "autorisation_sha_descripteur_faux":
+        ("sha256_descripteurs", "SHA descripteur"),
+    "autorisation_sha_preenregistrement_faux":
+        ("sha256_preenregistrement", "pré-enregistrement"),
+    "autorisation_sha_donnees_faux":
+        ("sha256_donnees", "SHA données"),
+    "autorisation_head_different":
+        ("head_autorise", "HEAD non autorisé"),
+    "autorisation_variante_non_autorisee":
+        ("variante_non_autorisee", "variantes_graines_autorisees"),
+    "autorisation_graine_non_autorisee":
+        ("graine_non_autorisee", "variantes_graines_autorisees"),
+    "autorisation_sha_rapide_faux":
+        ("sha256_chemin_rapide", "chemin rapide"),
+    "autorisation_ancien_adaptateur":
+        ("sha256_adaptateur", "SHA adaptateur"),
+    "autorisation_contrat_autre_version":
+        ("version_contrat_local", "version de contrat local"),
+    "autorisation_empreinte_env_fausse":
+        ("empreinte_environnement", "empreinte d'environnement"),
+    "autorisation_autre_racine_runs":
+        ("racine_runs_canonique", "racine de runs"),
+    "autorisation_budget_absent":
+        ("budget_absent", "budget de production absent ou nul"),
+    "autorisation_budget_different_du_contrat":
+        ("budget_different", "!= budget du contrat"),
+    "autorisation_ratification_differente":
+        ("ratification_differente", "référence de ratification"),
+    "autorisation_sha_lanceur_faux":
+        ("sha256_lanceur", "SHA du lanceur"),
+}
+
 # Seuils DÉJÀ QUALIFIÉS (G2.1 T8, G2.4c) — aucun relâchement.
 SEUILS_LEGACY = {
     "chi2_BAO_abs": 1e-10, "chi2_CMB_abs": 1e-3,
@@ -108,6 +144,56 @@ def executer_faute(nom: str) -> int:
             return 0
         except exceptions:
             return 1
+
+    def _detecte_message(fn, fragment_attendu: str) -> int:
+        """Détection par CAUSE EXACTE (fautes d'autorisation).
+
+        Ne rend 1 que si une GardeErreur est levée ET si son message
+        contient le fragment attendu : une exception provenant d'une
+        autre garde, ou une absence d'exception, valent 0. Une faute
+        portant sur un champ aval ne peut donc plus être « prouvée »
+        par un rejet en amont.
+        """
+        try:
+            fn()
+            return 0
+        except GardeErreur as exc:
+            return 1 if fragment_attendu in str(exc) else 0
+        except Exception:  # noqa: BLE001 - autre garde : non probant
+            return 0
+
+    def _manifeste_nominal(variante="M2a-N", graine=630101):
+        """Autorisation NOMINALE construite EN MÉMOIRE (jamais sur disque).
+
+        usage = PRODUCTION : permet d'éprouver les champs profonds sans
+        produire le moindre fichier d'autorisation réelle.
+        """
+        ici = Path(lanceur.__file__).parent
+        return {
+            "type": "autorisation_production_c7c1_g2_4",
+            "usage": "PRODUCTION",
+            "cle_humaine_1": "CONTROLE_MEMOIRE_1",
+            "cle_humaine_2": "CONTROLE_MEMOIRE_2",
+            "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
+            "sha256_adaptateur": lanceur.sha256_fichier(
+                ici / "xz_cobaya_g2_4.py"),
+            "sha256_chemin_rapide": lanceur.sha256_fichier(
+                ici / "xz_fast_g2_4c.py"),
+            "sha256_descripteurs": {
+                v: lanceur.sha256_fichier(c)
+                for v, c in lanceur.DESCRIPTEURS.items()},
+            "sha256_preenregistrement": lanceur.sha256_fichier(
+                "reports/rapport_G2_2a_preregistration.md"),
+            "sha256_donnees": dict(lanceur.SHA_BAO),
+            "empreinte_environnement": lanceur.empreinte_environnement(),
+            "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
+            "head_autorise": lanceur.garde_git()["head"],
+            "racine_runs_canonique": lanceur._canonique(
+                os.environ["C7C1_XZ_OUT_DIR"]),
+            "variantes_graines_autorisees": {variante: [graine]},
+            "budget_production_requis_Gio": 50,
+            "budget_production_ratification": "REF_CONTROLE",
+        }
 
     # --- graphe et mode directeur ---------------------------------------
     if nom == "directeur_retourne_legacy":
@@ -311,14 +397,48 @@ def executer_faute(nom: str) -> int:
         return _detecte(lambda: lanceur.garde_budget_production(
             contrat, os.environ["C7C1_XZ_OUT_DIR"]))
 
-    # --- autorisation -----------------------------------------------------
-    if nom.startswith("autorisation_"):
+    # --- autorisation : validateur PUR, par CAUSE EXACTE ------------------
+    # Chaque faute part d'un manifeste NOMINAL en mémoire (usage
+    # PRODUCTION) : tous les autres champs restent conformes, seule la
+    # valeur visée est altérée, et l'échec doit être attribué à ce champ.
+    if nom in _FAUTES_AUTORISATION_CONTENU:
+        champ, fragment = _FAUTES_AUTORISATION_CONTENU[nom]
+        m = _manifeste_nominal()
+        variante_t, graine_t = "M2a-N", 630101
+        head = lanceur.garde_git()["head"]
+        budget_c, ratif_c = 50, "REF_CONTROLE"
+        if champ == "sha256_descripteurs":
+            m["sha256_descripteurs"]["M2b-K"] = "0" * 64
+        elif champ == "head_autorise":
+            octets = list(m["head_autorise"])
+            octets[-1] = "0" if octets[-1] != "0" else "1"
+            m["head_autorise"] = "".join(octets)  # un seul caractère changé
+        elif champ == "variante_non_autorisee":
+            m["variantes_graines_autorisees"] = {"M2b-K": [graine_t]}
+        elif champ == "graine_non_autorisee":
+            m["variantes_graines_autorisees"] = {variante_t: [630108]}
+        elif champ == "budget_absent":
+            m["budget_production_requis_Gio"] = None
+        elif champ == "budget_different":
+            m["budget_production_requis_Gio"] = 80
+        elif champ == "ratification_differente":
+            m["budget_production_ratification"] = "AUTRE"
+        else:
+            m[champ] = "0" * 64
+        return _detecte_message(
+            lambda: lanceur._valider_contenu_autorisation(
+                m, variante_t, graine_t, head,
+                budget_contrat=budget_c, ratification_contrat=ratif_c),
+            fragment)
+    if nom == "autorisation_qualification_only_acceptee":
+        # Reste un test sur FICHIER : la vraie garde doit refuser sur usage.
         with tempfile.TemporaryDirectory() as tmp:
-            chemin = _autorisation_qualification(Path(tmp), variante="M2a-N",
-                                                 graine=630101, defaut=nom)
+            chemin = _autorisation_qualification(
+                Path(tmp), "M2a-N", 630101, "aucun")
             head = lanceur.garde_git()["head"]
-            return _detecte(lambda: lanceur.garde_autorisation(
-                chemin, "M2a-N", 630101, head))
+            return _detecte_message(
+                lambda: lanceur.garde_autorisation(
+                    chemin, "M2a-N", 630101, head), "usage")
 
     # --- identité de run et encodage scientifique (G2.4d-a) --------------
     if nom.startswith("identite_"):
@@ -692,12 +812,13 @@ FAUTES = (
     "identite_params_absents", "identite_prior_joint_absent",
     "identite_empreinte_scientifique_fausse", "identite_sampler_altere",
     "derive_runtime_omch2_omis", "derive_runtime_chi2_bao_omis",
-    "budget_autorisation_different_du_contrat",
-    "ratification_budget_differente", "contrat_ratifie_sans_valeur",
+    "contrat_ratifie_sans_valeur",
     "autorisation_qualification_only_acceptee",
     "contrat_version_paquet_fausse", "contrat_garde_technique_autre",
     "contrat_cache_egal_data", "contrat_cache_egal_runs",
     "contrat_cache_sous_git", "contrat_cache_absent",
+    # G2.4d-b : contrôles profonds de l'autorisation, par cause exacte
+    *sorted(_FAUTES_AUTORISATION_CONTENU),
     # G2.4d
     "parite_latex_derive_perdu", "parite_prior_altere",
     "parite_proposal_altere",
@@ -712,11 +833,7 @@ FAUTES = (
     "pythonnousersite_absent", "runs_sous_git", "runs_sous_onedrive",
     "data_egal_runs", "capacite_mesuree_sur_ancre",
     "budget_non_etabli_accepte", "budget_superieur_a_l_espace",
-    "budget_nul_ou_negatif", "autorisation_sha_rapide_absent",
-    "autorisation_sha_rapide_faux", "autorisation_ancien_adaptateur",
-    "autorisation_contrat_autre_version", "autorisation_budget_absent",
-    "autorisation_head_different", "autorisation_autre_racine_runs",
-    "autorisation_empreinte_env_fausse", "manifeste_ecrasement_non_identique",
+    "budget_nul_ou_negatif", "manifeste_ecrasement_non_identique",
     "manifeste_temporaire_conserve", "reprise_sans_manifeste",
     "reprise_identite_partielle", "verrou_cobaya_run_atteint",
     "verrou_ecriture_atteinte",
@@ -1057,6 +1174,86 @@ def qualification() -> int:
             f"identité de reprise incomplète : {manquantes or implicites}")
     if not resultat["identite_reprise"]["cles_humaines_absentes"]:
         echecs.append("le manifeste reproduit une clé humaine : refus")
+
+    # ---- 8 bis. validateur d'autorisation : contrôle POSITIF ----------
+    # Un contenu nominal entièrement cohérent doit passer ET traverser
+    # TOUS les groupes de contrôles : c'est ce qui rend impossible un
+    # retour prématuré masquant des validations aval (régression G2.4d-b).
+    ici_scripts = Path(lanceur.__file__).parent
+    head_courant = lanceur.garde_git()["head"]
+    nominal = {
+        "type": "autorisation_production_c7c1_g2_4",
+        "usage": "PRODUCTION",
+        "cle_humaine_1": "CONTROLE_POSITIF_1",
+        "cle_humaine_2": "CONTROLE_POSITIF_2",
+        "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
+        "sha256_adaptateur": lanceur.sha256_fichier(
+            ici_scripts / "xz_cobaya_g2_4.py"),
+        "sha256_chemin_rapide": lanceur.sha256_fichier(
+            ici_scripts / "xz_fast_g2_4c.py"),
+        "sha256_descripteurs": {
+            v: lanceur.sha256_fichier(c)
+            for v, c in lanceur.DESCRIPTEURS.items()},
+        "sha256_preenregistrement": lanceur.sha256_fichier(
+            "reports/rapport_G2_2a_preregistration.md"),
+        "sha256_donnees": dict(lanceur.SHA_BAO),
+        "empreinte_environnement": lanceur.empreinte_environnement(),
+        "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
+        "head_autorise": head_courant,
+        "racine_runs_canonique": lanceur._canonique(
+            os.environ["C7C1_XZ_OUT_DIR"]),
+        "variantes_graines_autorisees": {"M2a-N": [630101]},
+        "budget_production_requis_Gio": 50,
+        "budget_production_ratification": "REF_CONTROLE_POSITIF",
+    }
+    traverses = lanceur._valider_contenu_autorisation(
+        nominal, "M2a-N", 630101, head_courant,
+        budget_contrat=50, ratification_contrat="REF_CONTROLE_POSITIF")
+    groupes_manquants = [g for g in lanceur.GROUPES_CONTROLE_AUTORISATION
+                         if g not in traverses]
+    # paires de mutation sur les deux gardes historiquement masquées
+    def _echoue_sur(mutation, fragment):
+        m = json.loads(json.dumps(nominal))
+        mutation(m)
+        try:
+            lanceur._valider_contenu_autorisation(
+                m, "M2a-N", 630101, head_courant,
+                budget_contrat=50,
+                ratification_contrat="REF_CONTROLE_POSITIF")
+            return False
+        except Exception as exc:  # noqa: BLE001
+            return fragment in str(exc)
+
+    def _muter_head(m):
+        c = list(m["head_autorise"])
+        c[-1] = "0" if c[-1] != "0" else "1"
+        m["head_autorise"] = "".join(c)
+
+    validateur = {
+        "nominal_valide": True,
+        "groupes_traverses": traverses,
+        "groupes_manquants": groupes_manquants,
+        "n_groupes": len(lanceur.GROUPES_CONTROLE_AUTORISATION),
+        "mutation_head_un_caractere_echoue":
+            _echoue_sur(_muter_head, "HEAD non autorisé"),
+        "mutation_graine_hors_matrice_echoue": _echoue_sur(
+            lambda m: m["variantes_graines_autorisees"].update(
+                {"M2a-N": [630108]}), "variantes_graines_autorisees"),
+        "mutation_variante_autre_echoue": _echoue_sur(
+            lambda m: m.__setitem__(
+                "variantes_graines_autorisees", {"M2b-K": [630101]}),
+            "variantes_graines_autorisees"),
+    }
+    resultat["validateur_autorisation"] = validateur
+    if groupes_manquants:
+        echecs.append(
+            f"validateur d'autorisation : groupes non traversés par le "
+            f"chemin nominal {groupes_manquants}")
+    for cle in ("mutation_head_un_caractere_echoue",
+                "mutation_graine_hors_matrice_echoue",
+                "mutation_variante_autre_echoue"):
+        if not validateur[cle]:
+            echecs.append(f"validateur d'autorisation : {cle} non vérifié")
 
     # ---- 9. verrou dur : preuve dynamique ------------------------------
     # `produire` est exécuté avec des sentinelles sur mkdir, makedirs,

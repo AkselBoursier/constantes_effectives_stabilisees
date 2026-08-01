@@ -228,6 +228,65 @@ un ancien adaptateur, un chemin rapide modifié ou absent, un contrat d'une
 autre version, un budget absent, un HEAD différent, une autre racine de runs
 ni une autre empreinte d'environnement.
 
+### 9 bis. Régression G2.4d-b — `return` prématuré dans la garde
+
+**Découverte.** Le correctif G2.4d-a avait inséré son bloc de liaison
+budget/ratification en terminant par `return sha256_fichier(chemin)`, placé
+**avant** cinq contrôles historiques. Le code suivant était donc inatteignable :
+
+```text
+sha256_descripteurs ; sha256_preenregistrement ; sha256_donnees ;
+head_autorise ; variantes_graines_autorisees
+```
+
+**Conséquence.** Une autorisation pouvait passer avec des SHA de
+descripteurs, de pré-enregistrement ou de données faux, un HEAD différent,
+ou une variante/graine hors matrice — cinq gardes parmi les plus critiques
+étaient neutralisées.
+
+**Pourquoi « 62/62 » ne l'a pas détectée.** Les fautes d'autorisation
+partaient toutes d'un fichier éphémère portant `usage = QUALIFICATION_ONLY`.
+La garde le rejetait dès le contrôle d'usage, très en amont : l'exception
+survenait donc systématiquement, quelle que soit la validité du champ
+prétendument testé. Le harnais comptait « n'importe quelle exception »
+comme preuve de détection — des fautes portant sur des champs aval étaient
+ainsi validées par un rejet qui n'avait aucun rapport avec elles. Les tests
+étaient **vacants**, et le comptage 62/62 masquait la régression.
+
+**Correction.** Quatre mesures :
+
+```text
+1. le retour du SHA est déplacé APRÈS tous les contrôles ; aucun code de
+   validation ne subsiste après un return ni dans une branche morte
+   (l'ancien corps résiduel a été supprimé) ;
+2. un VALIDATEUR PUR, _valider_contenu_autorisation, sépare la lecture du
+   fichier, la validation du contenu et le calcul du SHA ; il retourne la
+   liste ORDONNÉE des 19 groupes de contrôles traversés et refuse de
+   conclure si l'un manque ;
+3. les fautes d'autorisation sont éprouvées PAR CAUSE EXACTE : un helper
+   _detecte_message n'accepte la détection que si une GardeErreur est
+   levée ET si son message contient le fragment attendu — une exception
+   venant d'une autre garde vaut zéro ;
+4. un contrôle POSITIF non vacant : un contenu nominal entièrement
+   cohérent, construit EN MÉMOIRE avec usage = PRODUCTION, doit passer et
+   traverser les 19 groupes. Aucune autorisation réelle n'est écrite.
+```
+
+**Tests de mutation sur les deux gardes historiquement masquées :**
+
+```text
+contenu nominal + HEAD courant            -> validateur PASSE
+même contenu, un seul caractère du HEAD   -> échec « HEAD non autorisé »
+variante/graine gelée                     -> validateur PASSE
+même manifeste, graine hors matrice       -> échec sur
+                                             variantes_graines_autorisees
+même manifeste, autre variante            -> même échec ciblé
+```
+
+Le fichier éphémère écrit sous `%TEMP%` continue de porter
+`usage = QUALIFICATION_ONLY`, et la vraie garde de fichier continue de le
+refuser sur ce champ — ce test reste séparé des contrôles de contenu.
+
 Fermeture G2.4d-a — trois verrous supplémentaires :
 
 ```text
@@ -394,16 +453,28 @@ python scripts/qualify_xz_optim_g2_4c.py  : exit 0 (après le correctif
 
 ## 15. Fautes adversariales
 
-**62 fautes injectées, 62 détectées** (code non nul), en sous-processus :
+**67 fautes injectées, 67 détectées** (code non nul), en sous-processus.
+Les quinze fautes d'autorisation sont désormais attribuées à leur **cause
+exacte** (fragment de message vérifié) et non plus à « n'importe quelle
+exception » :
 
 ```text
+autorisation par cause exacte (G2.4d-b, validateur pur en mémoire) :
+  SHA lanceur faux ; SHA adaptateur (ancien) ; SHA chemin rapide faux ;
+  SHA d'un descripteur faux ; SHA pré-enregistrement faux ; SHA données
+  faux ; version de contrat différente ; empreinte d'environnement
+  fausse ; autre racine de runs ; budget absent ; budget != contrat ;
+  ratification != contrat ; HEAD différent (un seul caractère) ;
+  variante non autorisée ; graine hors matrice ;
+autorisation sur fichier : QUALIFICATION_ONLY présenté en production —
+  refusé sur le champ « usage » (test séparé, conservé) ;
 identité de run (G2.4d-a) : date absente ; date mal formée ; params
   absents ; prior joint absent ; empreinte scientifique fausse ;
   sampler altéré ;
 dérivés runtime (G2.4d-a) : omch2 omis ; chi2_BAO omis ;
-liaison budget (G2.4d-a) : budget autorisation != contrat ; ratification
-  différente ; contrat RATIFIE sans valeur de ratification ;
-usage (G2.4d-a) : autorisation QUALIFICATION_ONLY présentée en production ;
+liaison budget (G2.4d-a) : contrat RATIFIE sans valeur de ratification
+  (les deux fautes de liaison budget/ratification sont désormais
+   éprouvées par cause exacte, ci-dessus) ;
 contrat étendu (G2.4d-a) : version de paquet déclarée fausse ; garde
   technique != 40 ; CACHE == DATA ; CACHE == RUNS ; CACHE sous Git ;
   CACHE non déclaré ;
