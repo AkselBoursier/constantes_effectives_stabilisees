@@ -54,8 +54,14 @@ SEUIL_ALERTE_GIO = 15
 # mkdir, open en écriture, os.replace, manifest.json et préfixe Cobaya.
 VERROU_PRODUCTION_G2_4D = True
 
-# Schéma du contrat local privé consommé par le lanceur (INFRA-1a).
-VERSION_CONTRAT_LOCAL = "1.1.0"
+# Schéma du contrat local privé consommé par le lanceur (INFRA-1a,
+# étendu en G2.4d-a : chemin de cache et référence de ratification).
+VERSION_CONTRAT_LOCAL = "1.2.0"
+# Format imposé de la date de création du manifeste de run.
+FORMAT_DATE_UTC = "%Y-%m-%dT%H:%M:%SZ"
+# Usage exigé d'une autorisation RÉELLE. Un manifeste de qualification
+# porte « QUALIFICATION_ONLY » et doit être refusé sans exception.
+USAGE_AUTORISATION_PRODUCTION = "PRODUCTION"
 CLES_THREADS = (
     "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
     "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS",
@@ -94,13 +100,27 @@ ENV_DIRECTEUR = {
 # contrat d'une autre version, un budget absent, un HEAD différent, une
 # autre racine de runs ni une autre empreinte d'environnement.
 CLES_MANIFESTE = {
-    "type", "cle_humaine_1", "cle_humaine_2", "sha256_lanceur",
+    "type", "usage", "cle_humaine_1", "cle_humaine_2", "sha256_lanceur",
     "sha256_adaptateur", "sha256_chemin_rapide", "sha256_descripteurs",
     "sha256_preenregistrement", "sha256_donnees", "empreinte_environnement",
     "version_contrat_local", "head_autorise", "racine_runs_canonique",
     "variantes_graines_autorisees", "budget_production_requis_Gio",
     "budget_production_ratification",
 }
+
+# Champs OBLIGATOIRES du manifeste de run : aucun ne peut être absent ni
+# remplacé par une valeur implicite.
+CHAMPS_MANIFESTE_RUN = (
+    "schema", "variante", "graine", "backend", "mode_acoustique",
+    "date_creation_utc", "head", "sha256_lanceur", "sha256_adaptateur",
+    "sha256_chemin_rapide", "sha256_descripteur", "sha256_donnees",
+    "sha256_autorisation", "versions", "empreinte_environnement",
+    "version_contrat_local", "racine_runs_canonique", "params",
+    "prior_joint", "sampler", "ordre_parametres_echantillonnes",
+    "ordre_parametres_derives", "meta_variante_grille_convention",
+    "sha256_encodage_scientifique", "budget_production_requis_Gio",
+    "reference_ratification_budget", "statut_run",
+)
 POINT_FOND_P0 = {"H0": 67.36, "ombh2": 0.02237, "omm": 0.3152}
 POINT_FOND_P1 = {"H0": 68.3526, "ombh2": 0.022410, "omm": 0.300539}
 P2_VALUES = {"M2a": (0.6, -0.2, 0.4, 1.2, 0.8), "M2b": (0.6, -0.2, 0.4, 0.8)}
@@ -275,7 +295,14 @@ def garde_budget_production(contrat: dict, cible: str | Path) -> dict:
     statut = rr.get("budget_production_statut")
     requis = rr.get("budget_production_requis_Gio")
     etat = {"budget_production_statut": statut,
-            "budget_production_requis_Gio": requis}
+            "budget_production_requis_Gio": requis,
+            "reference_ratification_budget":
+                rr.get("reference_ratification_budget")}
+    if statut == "RATIFIE" and not str(
+            rr.get("reference_ratification_budget") or "").strip():
+        raise GardeErreur(
+            "contrat RATIFIE sans référence de ratification : refus"
+        )
     if statut != "RATIFIE":
         raise GardeErreur(
             f"budget de production non ratifié (statut {statut!r}) : "
@@ -342,9 +369,15 @@ def garde_contrat_local() -> dict:
             "distincts (INFRA-1a)"
         )
     for cle in ("garde_technique_minimale_Gio", "budget_production_requis_Gio",
-                "budget_production_statut"):
+                "budget_production_statut", "reference_ratification_budget"):
         if cle not in rr:
             raise GardeErreur(f"contrat local : champ requis absent ({cle})")
+    # cohérence de la garde technique contrat <-> code
+    if rr["garde_technique_minimale_Gio"] != GARDE_CAPACITE_GIO:
+        raise GardeErreur(
+            f"garde technique du contrat {rr['garde_technique_minimale_Gio']} "
+            f"!= constante qualifiée {GARDE_CAPACITE_GIO}"
+        )
 
     chemins = contrat.get("chemins_reels", {})
     py_contrat = chemins.get("python_directeur")
@@ -366,6 +399,43 @@ def garde_contrat_local() -> dict:
     empreinte = env_contrat.get("empreinte_sha256_inventaire_normalise")
     if not empreinte or empreinte != empreinte_environnement():
         raise GardeErreur("empreinte d'environnement non conforme au contrat")
+    # L'empreinte globale ne remplace PAS la comparaison explicite des
+    # versions déclarées : chacune est confrontée à la version chargée.
+    chargees = versions_effectives()
+    chargees["getdist"] = _version_getdist()
+    for paquet in ("python", "cobaya", "camb", "numpy", "scipy", "getdist"):
+        declaree = env_contrat.get(paquet)
+        if declaree is None:
+            if paquet == "getdist":
+                continue  # getdist n'est vérifié que s'il est déclaré
+            raise GardeErreur(f"contrat local : version {paquet} non déclarée")
+        if str(declaree) != str(chargees.get(paquet)):
+            raise GardeErreur(
+                f"version déclarée au contrat ({paquet} {declaree}) != "
+                f"version chargée ({chargees.get(paquet)})"
+            )
+    # <CACHE> : distinct de DATA, RUNS, TEMP et TMP ; hors Git, hors
+    # OneDrive. Aucun cache n'est créé ni déplacé par cette porte.
+    cache = chemins.get("caches")
+    if not cache:
+        raise GardeErreur("contrat local : chemin de cache non déclaré")
+    cache_c = _canonique(cache)
+    for etiquette, autre in (
+        ("C7C1_DATA_DIR", os.environ.get("C7C1_DATA_DIR")),
+        ("C7C1_XZ_OUT_DIR", os.environ.get("C7C1_XZ_OUT_DIR")),
+        ("TEMP", os.environ.get("TEMP")), ("TMP", os.environ.get("TMP")),
+    ):
+        if autre and cache_c == _canonique(autre):
+            raise GardeErreur(f"CACHE confondu avec {etiquette} : refus")
+    if "onedrive" in cache_c:
+        raise GardeErreur("CACHE sous OneDrive : refus")
+    p = Path(cache)
+    while True:
+        if (p / ".git").exists():
+            raise GardeErreur("CACHE sous Git : refus")
+        if p.parent == p:
+            break
+        p = p.parent
     donnees_contrat = {
         k: v for k, v in contrat.get("donnees", {}).items() if k in SHA_BAO
     }
@@ -375,11 +445,24 @@ def garde_contrat_local() -> dict:
         "version_contrat_local": contrat["version"],
         "statut": contrat["statut"],
         "budget_production_statut": rr["budget_production_statut"],
+        "budget_production_requis_Gio": rr["budget_production_requis_Gio"],
+        "reference_ratification_budget": rr["reference_ratification_budget"],
         "garde_technique_minimale_Gio": rr["garde_technique_minimale_Gio"],
         "python_directeur_conforme": True,
         "empreinte_environnement_conforme": True,
+        "versions_declarees_conformes": True,
+        "cache_distinct_et_hors_git": True,
         "_contrat": contrat,  # usage interne ; jamais publié
     }
+
+
+def _version_getdist() -> str:
+    forge = os.environ.get("C7C1_TEST_VERSION_GETDIST")
+    if forge:
+        return forge
+    import getdist
+
+    return getdist.__version__
 
 
 def empreinte_environnement() -> str:
@@ -529,39 +612,97 @@ def ecrire_manifeste_atomique(chemin: str | Path, contenu: dict) -> None:
         pass
 
 
+def encodage_scientifique_gele(variante: str, graine: int) -> dict:
+    """Encodage scientifique gelé, extrait du CONSTRUCTEUR DIRECTEUR.
+
+    Le graphe externe (theory/likelihood, qui porte des classes) et le
+    bloc interne ``_xz_meta`` sont retirés : ne subsistent que des
+    valeurs entièrement sérialisables en JSON canonique.
+    """
+    from xz_cobaya_g2_4 import build_cobaya_info
+
+    info = build_cobaya_info(DESCRIPTEURS[variante], graine)
+    meta = info["_xz_meta"]
+    params = info["params"]
+    echantillonnes = [n for n, b in params.items() if "prior" in b]
+    derives = [n for n, b in params.items() if "derived" in b]
+    encodage = {
+        "params": json.loads(json.dumps(params, sort_keys=True)),
+        "prior_joint": info["prior"],
+        "sampler": json.loads(json.dumps(info["sampler"], sort_keys=True)),
+        "ordre_parametres_echantillonnes": echantillonnes,
+        "ordre_parametres_derives": derives,
+        "meta_variante_grille_convention": {
+            "variante": meta["variante"], "grille": meta["grille"],
+            "convention": meta["convention"],
+        },
+    }
+    canonique = json.dumps(encodage, indent=None, sort_keys=True,
+                           separators=(",", ":"), ensure_ascii=False)
+    encodage["sha256_encodage_scientifique"] = hashlib.sha256(
+        canonique.encode("utf-8")).hexdigest()
+    return encodage
+
+
+def valider_date_utc(date_utc: str) -> str:
+    """Exige exactement AAAA-MM-JJTHH:MM:SSZ (jamais fabriquée ici)."""
+    import datetime
+
+    if not isinstance(date_utc, str) or not date_utc:
+        raise GardeErreur("date_creation_utc absente")
+    try:
+        datetime.datetime.strptime(date_utc, FORMAT_DATE_UTC)
+    except ValueError as exc:
+        raise GardeErreur(
+            f"date_creation_utc au format invalide : {date_utc!r} "
+            f"(attendu {FORMAT_DATE_UTC})"
+        ) from exc
+    return date_utc
+
+
 def identite_run(variante: str, graine: int, head: str, contrat: dict,
-                 versions: dict, sha_descripteur: str,
-                 sha_donnees: dict, budget: dict | None) -> dict:
-    """Identité complète nécessaire à une reprise EXACTE."""
+                 versions: dict, sha_descripteur: str, sha_donnees: dict,
+                 date_creation_utc: str, sha256_autorisation: str,
+                 budget_requis_gio, reference_ratification_budget) -> dict:
+    """Identité COMPLÈTE nécessaire à une reprise exacte.
+
+    La date de création est TRANSMISE explicitement — jamais fabriquée
+    ici : la production devra la générer une seule fois et la propager
+    au plan comme au manifeste ; la qualification en fournit une valeur
+    fixe prédéclarée, pour préserver le déterminisme.
+
+    Les deux clés humaines de l'autorisation ne sont JAMAIS reproduites :
+    seul le SHA-256 du fichier d'autorisation est consigné.
+    """
     ici = Path(__file__).parent
-    return {
+    encodage = encodage_scientifique_gele(variante, graine)
+    identite = {
         "schema": SCHEMA_MANIFESTE_RUN,
         "variante": variante,
         "graine": int(graine),
         "backend": "optimized",
         "mode_acoustique": "corrected-v1.1",
+        "date_creation_utc": valider_date_utc(date_creation_utc),
         "head": head,
         "sha256_lanceur": sha256_fichier(__file__),
         "sha256_adaptateur": sha256_fichier(ici / "xz_cobaya_g2_4.py"),
         "sha256_chemin_rapide": sha256_fichier(ici / "xz_fast_g2_4c.py"),
         "sha256_descripteur": sha_descripteur,
         "sha256_donnees": dict(sha_donnees),
+        "sha256_autorisation": sha256_autorisation,
         "versions": dict(versions),
         "empreinte_environnement": empreinte_environnement(),
         "version_contrat_local": contrat["version_contrat_local"],
         "racine_runs_canonique": _canonique(os.environ["C7C1_XZ_OUT_DIR"]),
-        "sampler": SAMPLER_GELE_POUR_MANIFESTE(graine),
-        "budget_production": budget,
+        "budget_production_requis_Gio": budget_requis_gio,
+        "reference_ratification_budget": reference_ratification_budget,
         "statut_run": "PLANIFIE_NON_LANCE",
     }
-
-
-def SAMPLER_GELE_POUR_MANIFESTE(graine: int) -> dict:
-    from xz_cobaya_g2_4 import SAMPLER_G1
-
-    bloc = json.loads(json.dumps(SAMPLER_G1))
-    bloc["mcmc"]["seed"] = int(graine)
-    return bloc
+    identite.update(encodage)
+    manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in identite]
+    if manquants:
+        raise GardeErreur(f"manifeste de run incomplet : {manquants}")
+    return identite
 
 
 def garde_git() -> dict:
@@ -576,7 +717,16 @@ def garde_git() -> dict:
 
 
 def garde_autorisation(chemin: str | Path, variante: str, graine: int,
-                       head: str) -> None:
+                       head: str, budget_contrat=None,
+                       ratification_contrat=None) -> str:
+    """Garde d'autorisation RÉELLE. Retourne le SHA-256 du fichier.
+
+    Refuse systématiquement un manifeste d'usage autre que PRODUCTION :
+    un fichier éphémère de qualification ne peut JAMAIS servir
+    d'autorisation réelle. Lorsque le budget du contrat est fourni,
+    exige son égalité numérique exacte avec celui de l'autorisation,
+    ainsi que l'identité de la référence de ratification.
+    """
     if not Path(chemin).is_file():
         raise GardeErreur("autorisation absente")
     with open(chemin, encoding="utf-8") as handle:
@@ -585,6 +735,13 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
         raise GardeErreur("autorisation non conforme : clés inexactes")
     if manifeste["type"] != "autorisation_production_c7c1_g2_4":
         raise GardeErreur("autorisation non conforme : type inexact")
+    if manifeste.get("usage") != USAGE_AUTORISATION_PRODUCTION:
+        raise GardeErreur(
+            f"autorisation d'usage {manifeste.get('usage')!r} refusée : "
+            f"seul {USAGE_AUTORISATION_PRODUCTION!r} autorise une "
+            "production — un manifeste de qualification n'est jamais "
+            "une autorisation réelle"
+        )
     for cle in ("cle_humaine_1", "cle_humaine_2"):
         if not isinstance(manifeste[cle], str) or not manifeste[cle].strip():
             raise GardeErreur(f"autorisation non conforme : {cle} vide")
@@ -612,8 +769,28 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
     if not isinstance(budget, (int, float)) or isinstance(budget, bool) \
             or budget <= 0:
         raise GardeErreur("autorisation : budget de production absent ou nul")
-    if not str(manifeste.get("budget_production_ratification", "")).strip():
+    ratification = manifeste.get("budget_production_ratification")
+    if not str(ratification or "").strip():
         raise GardeErreur("autorisation : ratification du budget absente")
+    # Liaison EXACTE contrat <-> autorisation : une autorisation à 50 Gio
+    # et un contrat ratifié à 80 Gio doivent être refusés ensemble, même
+    # si l'espace libre dépasse 80 Gio.
+    if budget_contrat is not None:
+        if not isinstance(budget_contrat, (int, float)) \
+                or isinstance(budget_contrat, bool):
+            raise GardeErreur("budget du contrat absent ou non numérique")
+        if float(budget) != float(budget_contrat):
+            raise GardeErreur(
+                f"budget de l'autorisation ({budget}) != budget du contrat "
+                f"({budget_contrat}) : refus"
+            )
+    if ratification_contrat is not None:
+        if str(ratification) != str(ratification_contrat):
+            raise GardeErreur(
+                "référence de ratification du budget différente entre "
+                "l'autorisation et le contrat : refus"
+            )
+    return sha256_fichier(chemin)
     for var, chemin_desc in DESCRIPTEURS.items():
         if manifeste["sha256_descripteurs"].get(var) != sha256_fichier(chemin_desc):
             raise GardeErreur(
@@ -680,15 +857,28 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
     rapport["capacite"] = garde_capacite(out_dir)
     rapport["capacite"]["mesure_sur"] = "repertoire cible (pas l'ancre)"
     rapport["git"] = garde_git()  # rapporté ; bloquant en production
+    # Le seul mot « RATIFIE » n'autorise rien : sous ce statut, la
+    # validation NUMÉRIQUE du budget est réellement exécutée avant
+    # d'annoncer que la production serait autorisable.
     statut_budget = contrat["budget_production_statut"]
-    rapport["budget_production"] = {
-        "statut": statut_budget,
-        "production_autorisable": statut_budget == "RATIFIE",
-    }
     if statut_budget == "RATIFIE":
-        rapport["verdict"] = "PREFLIGHT OK — production autorisable ailleurs"
+        try:
+            etat_budget = garde_budget_production(contrat_brut, out_dir)
+            autorisable, motif = True, "budget validé numériquement"
+        except GardeErreur as exc:
+            etat_budget, autorisable, motif = (
+                {"budget_production_statut": statut_budget}, False, str(exc))
     else:
-        rapport["verdict"] = "PREPARATION OK — PRODUCTION NON AUTORISABLE"
+        etat_budget, autorisable = (
+            {"budget_production_statut": statut_budget}, False)
+        motif = "budget non établi"
+    rapport["budget_production"] = {
+        **etat_budget, "production_autorisable": autorisable, "motif": motif,
+    }
+    rapport["verdict"] = (
+        "PREFLIGHT OK — production autorisable ailleurs" if autorisable
+        else "PREPARATION OK — PRODUCTION NON AUTORISABLE"
+    )
     return rapport
 
 
@@ -719,18 +909,32 @@ def produire(args: list[str]) -> None:
     etat_git = rapport["git"]
     if not etat_git["arbre_propre"]:
         raise GardeErreur("arbre Git non propre : production refusée")
-    # 5. autorisation à deux clés (schéma étendu G2.4d)
-    garde_autorisation(chemin_autorisation, variante, graine, etat_git["head"])
-    # 6. budget de production ratifié, comparé à l'espace libre de la CIBLE
+    # 5. autorisation à deux clés (schéma étendu, usage PRODUCTION exigé,
+    #    budget et ratification liés au contrat)
     contrat = garde_contrat_local()
     contrat_brut = contrat.pop("_contrat")
+    sha_autorisation = garde_autorisation(
+        chemin_autorisation, variante, graine, etat_git["head"],
+        budget_contrat=contrat["budget_production_requis_Gio"],
+        ratification_contrat=contrat["reference_ratification_budget"],
+    )
+    # 6. budget de production ratifié, comparé à l'espace libre de la CIBLE
     rapport["budget"] = garde_budget_production(
         contrat_brut, os.environ["C7C1_XZ_OUT_DIR"])
-    # 7. construction PURE du plan de production (aucune écriture)
+    # 7. construction PURE du plan de production (aucune écriture).
+    #    La date de création est générée UNE SEULE FOIS ici puis
+    #    transmise au plan — et, en porte future, au manifeste.
+    import datetime
+
+    date_creation = datetime.datetime.now(
+        datetime.timezone.utc).strftime(FORMAT_DATE_UTC)
     plan = identite_run(
         variante, graine, etat_git["head"], contrat, rapport["versions"],
         rapport["sha256_descripteur"], rapport["sha256_donnees"],
-        rapport["budget"],
+        date_creation_utc=date_creation,
+        sha256_autorisation=sha_autorisation,
+        budget_requis_gio=rapport["budget"]["budget_production_requis_Gio"],
+        reference_ratification_budget=contrat["reference_ratification_budget"],
     )
     plan["prefixe"] = str(
         Path(os.environ["C7C1_XZ_OUT_DIR"]) / "g2_4" / "P_WS" / variante

@@ -128,11 +128,24 @@ repli, aucune variable implicite ne peut ramener l'ancien chemin.
 ## 5. Contrat local privé consommé par le lanceur
 
 `garde_contrat_local` exige : variable `C7C1_CONTRAT_LOCAL` présente ; JSON
-valide ; version de schéma `1.1.0` ; statut `PREPARATION_ONLY` ;
+valide ; version de schéma `1.2.0` ; statut `PREPARATION_ONLY` ;
 `python_directeur` égal à `sys.executable` après résolution canonique ;
 environnement, données et runs identiques aux variables du processus ;
 empreinte d'environnement conforme ; SHA BAO conformes. Le schéma périmé ne
 contenant que `seuil_minimal_Gio` est **explicitement refusé**.
+
+Fermeture G2.4d-a — l'empreinte globale des paquets ne remplace plus les
+comparaisons explicites :
+
+```text
+versions déclarées au contrat confrontées une à une aux versions CHARGÉES :
+  python, cobaya, camb, numpy, scipy, et getdist lorsqu'il est déclaré ;
+garde_technique_minimale_Gio du contrat == constante qualifiée (40 Gio) —
+  toute divergence contrat/code échoue ;
+<CACHE> déclaré par le contrat : canoniquement distinct de DATA, RUNS,
+  TEMP et TMP ; hors Git (aucun ancêtre .git) ; hors dossier synchronisé.
+  Aucun cache n'est créé ni déplacé par cette porte.
+```
 
 Les comparaisons de chemins Windows utilisent `os.path.realpath` puis
 `normcase` : insensibles à la casse et aux liens, sans jamais rendre égaux
@@ -215,9 +228,25 @@ un ancien adaptateur, un chemin rapide modifié ou absent, un contrat d'une
 autre version, un budget absent, un HEAD différent, une autre racine de runs
 ni une autre empreinte d'environnement.
 
+Fermeture G2.4d-a — trois verrous supplémentaires :
+
+```text
+usage : la garde RÉELLE n'accepte que « PRODUCTION ». Les manifestes de
+  qualification portent « QUALIFICATION_ONLY » et sont REJETÉS
+  systématiquement — un fichier éphémère ne peut jamais servir
+  d'autorisation réelle ;
+budget : égalité NUMÉRIQUE EXACTE entre le budget de l'autorisation et
+  celui du contrat, après validation du type. Une autorisation à 50 Gio
+  et un contrat à 80 Gio sont refusés ensemble, même si l'espace libre
+  dépasse 80 Gio ;
+ratification : la référence de ratification doit être identique entre le
+  contrat, l'autorisation et le manifeste de run.
+```
+
 Les manifestes de qualification sont **éphémères**, sous `%TEMP%`, marqués
-`QUALIFICATION_ONLY`, puis supprimés. Aucun manifeste réel d'autorisation n'a
-été créé.
+`QUALIFICATION_ONLY` par leur champ `usage`, puis supprimés. **Aucune
+autorisation réelle n'existe** : aucune n'a été créée, et la garde réelle
+refuse par construction tout fichier de qualification.
 
 ## 10. Écriture atomique et identité de reprise
 
@@ -227,19 +256,48 @@ plate-forme le permet ; nettoyage du temporaire en cas d'échec ; refus
 d'écraser un manifeste existant non identique ; réécriture à l'identique
 tolérée.
 
+Éprouvée avec une **identité complète** (les 27 champs), et non plus avec un
+manifeste réduit :
+
 ```text
-écrit : True | relu identique : True | réécriture identique tolérée : True
-temporaires résiduels : aucun
-sur échec de os.replace : aucun partiel, aucun temporaire résiduel
-testé EXCLUSIVEMENT sous %TEMP% ; aucun manifest.json dans la racine réelle
+écriture initiale            : OK
+relecture identique          : OK
+réécriture identique tolérée : OK
+refus d'une identité différente : OK
+échec avant os.replace       : aucun partiel, aucun temporaire résiduel
+date_creation_utc conservée exactement       : OK
+sha256_encodage_scientifique conservé exactement : OK
+tous les champs obligatoires présents après relecture : OK
+testé EXCLUSIVEMENT sous %TEMP% ; aucun manifest.json dans <RUNS>
 ```
 
-Identité de reprise — 18 champs : schéma, variante, graine, backend
-`optimized`, mode `corrected-v1.1`, HEAD, SHA du lanceur, de l'adaptateur, du
-chemin rapide, du descripteur et des données, versions et empreinte
-d'environnement, version du contrat local, identité canonique de la racine de
-runs, sampler gelé, budget, date implicite par le HEAD, statut du run
-(`PLANIFIE_NON_LANCE`).
+### 10 bis. Identité de reprise — fermeture G2.4d-a
+
+L'identité de reprise compte désormais **27 champs obligatoires**, tous
+présents et aucun remplacé par une valeur implicite :
+
+```text
+schema ; variante ; graine ; backend optimized ; mode corrected-v1.1 ;
+date_creation_utc (AAAA-MM-JJTHH:MM:SSZ, TRANSMISE explicitement — jamais
+  fabriquée par identite_run ; valeur fixe en qualification, générée une
+  seule fois puis propagée en production) ;
+head ; sha256_lanceur ; sha256_adaptateur ; sha256_chemin_rapide ;
+sha256_descripteur ; sha256_donnees ; sha256_autorisation ;
+versions ; empreinte_environnement ; version_contrat_local ;
+racine_runs_canonique ;
+params ; prior_joint ; sampler ; ordre_parametres_echantillonnes ;
+ordre_parametres_derives ; meta_variante_grille_convention ;
+sha256_encodage_scientifique ;
+budget_production_requis_Gio ; reference_ratification_budget ;
+statut_run = PLANIFIE_NON_LANCE.
+```
+
+L'encodage scientifique gelé (`params`, prior joint, sampler, ordres,
+métadonnées) provient du **constructeur directeur**, après retrait du graphe
+externe et du bloc `_xz_meta` non publiable ; il est entièrement sérialisable
+et son empreinte `sha256_encodage_scientifique` porte sur son JSON canonique.
+Les deux clés humaines de l'autorisation **ne sont jamais reproduites** : seul
+le SHA-256 du fichier d'autorisation est consigné.
 
 ## 11. Verrou dur de production
 
@@ -248,6 +306,14 @@ injections de test → confirmation explicite → contrat, environnement, donné
 threads et chemins → HEAD et arbre propre → autorisation à deux clés → budget
 ratifié → construction **pure** du plan → **VERROU** → (porte future
 seulement : création du répertoire, écriture atomique, `cobaya.run`).
+
+Préalable exigé par G2.4d-a : la **vraie garde** est d'abord confrontée à un
+manifeste de qualification et doit le **rejeter** sur son champ `usage`. Ce
+n'est qu'ensuite, et dans le seul scénario « amont satisfait », que la garde
+d'autorisation est remplacée par une fonction du harnais — les gardes de
+contrat, de chemins, d'environnement et de threads restant les vraies — la
+substitution étant restaurée dans un `finally`. Aucun fichier éphémère de
+qualification n'est donc jamais accepté comme autorisation réelle.
 
 Preuve dynamique, en **deux scénarios**, avec sentinelles installées sur
 `Path.mkdir`, `os.makedirs`, `os.replace`, `open` en écriture et `cobaya.run`.
@@ -262,6 +328,7 @@ réellement à l'étape 8, et l'on **exige** que l'exception levée soit celle d
 verrou.
 
 ```text
+QUALIFICATION_ONLY rejeté par la vraie garde : True (sur le champ usage)
 amont satisfait : arrêt = « GardeErreur: VERROU G2.4d : raccord qualifié
                   SANS production … »   -> verrou_atteint = True
                   sentinelles atteintes : AUCUNE
@@ -292,10 +359,17 @@ historique A,B,C,A vs C,A,B,A    : identique point à point
 
 ## 13. Comparaisons numériques (P0–P3, quatre variantes)
 
+Fermeture G2.4d-a — les quatre dérivés runtime `omch2`, `chi2_BAO`,
+`chi2_CMB` et `chi2_total` sont **exigés présents** : plus aucun test
+conditionnel sur leur existence, plus aucun repli sur une valeur de secours.
+Leur absence est une faute de porte, prouvée par deux fautes injectées.
+
 ```text
 classification valide/invalide : 16/16 identiques entre les trois voies
+dérivés runtime présents       : 4/4 sur tous les points évalués
 Cobaya optimisé vs EvaluateurRapide : IDENTITÉ BIT À BIT
-  (logp et les trois dérivés chi2 comparés par égalité exacte)
+  (omch2, chi2_BAO, chi2_CMB, chi2_total, et logp == -0.5*chi2_total,
+   tous comparés par égalité exacte)
 contre l'oracle legacy, seuils déjà qualifiés, aucun relâchement :
   chi2_BAO   0.0  (seuil 1e-10)     chi2_CMB   0.0 (seuil 1e-3)
   chi2_total 0.0  (seuil 1e-3)      logp       0.0 (seuil 5e-4)
@@ -320,9 +394,19 @@ python scripts/qualify_xz_optim_g2_4c.py  : exit 0 (après le correctif
 
 ## 15. Fautes adversariales
 
-**44 fautes injectées, 44 détectées** (code non nul), en sous-processus :
+**62 fautes injectées, 62 détectées** (code non nul), en sous-processus :
 
 ```text
+identité de run (G2.4d-a) : date absente ; date mal formée ; params
+  absents ; prior joint absent ; empreinte scientifique fausse ;
+  sampler altéré ;
+dérivés runtime (G2.4d-a) : omch2 omis ; chi2_BAO omis ;
+liaison budget (G2.4d-a) : budget autorisation != contrat ; ratification
+  différente ; contrat RATIFIE sans valeur de ratification ;
+usage (G2.4d-a) : autorisation QUALIFICATION_ONLY présentée en production ;
+contrat étendu (G2.4d-a) : version de paquet déclarée fausse ; garde
+  technique != 40 ; CACHE == DATA ; CACHE == RUNS ; CACHE sous Git ;
+  CACHE non déclaré ;
 parité : latex d'un dérivé perdu ; prior altéré ; proposition altérée
   (ces trois-là qualifient le comparateur de parité lui-même) ;
 graphe et mode : directeur retournant le legacy ; mode corrected-legacy ;

@@ -43,6 +43,13 @@ POINT_FOND_P1 = {"H0": 68.3526, "ombh2": 0.022410, "omm": 0.300539}
 P2_VALUES = {"M2a": (0.6, -0.2, 0.4, 1.2, 0.8), "M2b": (0.6, -0.2, 0.4, 0.8)}
 P3_VALUES = {"M2a": (1.4, 0.2, 1.6, 0.1, 1.3), "M2b": (1.4, 0.2, 1.6, 1.3)}
 
+# Dérivés runtime EXIGÉS de Cobaya : leur absence est une faute de porte,
+# jamais un cas toléré ni remplacé par une valeur de secours.
+DERIVES_RUNTIME_EXIGES = ("omch2", "chi2_BAO", "chi2_CMB", "chi2_total")
+# Date fixe PRÉDÉCLARÉE pour la qualification (déterminisme). La
+# production devra générer la sienne une seule fois et la propager.
+DATE_QUALIFICATION_UTC = "2026-08-01T00:00:00Z"
+
 # Seuils DÉJÀ QUALIFIÉS (G2.1 T8, G2.4c) — aucun relâchement.
 SEUILS_LEGACY = {
     "chi2_BAO_abs": 1e-10, "chi2_CMB_abs": 1e-3,
@@ -313,6 +320,112 @@ def executer_faute(nom: str) -> int:
             return _detecte(lambda: lanceur.garde_autorisation(
                 chemin, "M2a-N", 630101, head))
 
+    # --- identité de run et encodage scientifique (G2.4d-a) --------------
+    if nom.startswith("identite_"):
+        contrat = lanceur.garde_contrat_local(); contrat.pop("_contrat")
+        commun = dict(
+            variante="M2a-N", graine=630101,
+            head=lanceur.garde_git()["head"], contrat=contrat,
+            versions=lanceur.garde_environnement(),
+            sha_descripteur=lanceur.garde_descripteur("M2a-N"),
+            sha_donnees=lanceur.garde_donnees(),
+            sha256_autorisation="0" * 64, budget_requis_gio=None,
+            reference_ratification_budget=None)
+        if nom == "identite_date_absente":
+            return _detecte(lambda: lanceur.identite_run(
+                **{**commun, "date_creation_utc": None}))
+        if nom == "identite_date_mal_formee":
+            return _detecte(lambda: lanceur.identite_run(
+                **{**commun, "date_creation_utc": "01/08/2026 00:00"}))
+        base = lanceur.identite_run(
+            **commun, date_creation_utc="2026-08-01T00:00:00Z")
+        if nom == "identite_params_absents":
+            ampute = {k: v for k, v in base.items() if k != "params"}
+            return 1 if [c for c in lanceur.CHAMPS_MANIFESTE_RUN
+                         if c not in ampute] else 0
+        if nom == "identite_prior_joint_absent":
+            ampute = {k: v for k, v in base.items() if k != "prior_joint"}
+            return 1 if [c for c in lanceur.CHAMPS_MANIFESTE_RUN
+                         if c not in ampute] else 0
+        if nom == "identite_empreinte_scientifique_fausse":
+            falsifie = {**base, "sha256_encodage_scientifique": "0" * 64}
+            vrai = lanceur.encodage_scientifique_gele("M2a-N", 630101)
+            return 1 if (falsifie["sha256_encodage_scientifique"]
+                         != vrai["sha256_encodage_scientifique"]) else 0
+        if nom == "identite_sampler_altere":
+            vrai = lanceur.encodage_scientifique_gele("M2a-N", 630101)
+            altere = json.loads(json.dumps(vrai))
+            altere["sampler"]["mcmc"]["proposal_scale"] = 2.5
+            canonique = json.dumps(
+                {k: altere[k] for k in vrai if k != "sha256_encodage_scientifique"},
+                sort_keys=True, separators=(",", ":"), ensure_ascii=False)
+            return 1 if hashlib.sha256(canonique.encode()).hexdigest() \
+                != vrai["sha256_encodage_scientifique"] else 0
+
+    # --- dérivés runtime exigés -------------------------------------------
+    if nom.startswith("derive_runtime_"):
+        cle = {"derive_runtime_omch2_omis": "omch2",
+               "derive_runtime_chi2_bao_omis": "chi2_BAO"}[nom]
+        # simulation : le dictionnaire de dérivés perd la clé exigée ;
+        # le contrôle de présence doit s'en apercevoir.
+        derives = {c: 1.0 for c in DERIVES_RUNTIME_EXIGES if c != cle}
+        manquants = [c for c in DERIVES_RUNTIME_EXIGES if c not in derives]
+        return 1 if manquants else 0
+
+    # --- liaison contrat / autorisation ----------------------------------
+    if nom in ("budget_autorisation_different_du_contrat",
+               "ratification_budget_differente",
+               "contrat_ratifie_sans_valeur",
+               "autorisation_qualification_only_acceptee"):
+        with tempfile.TemporaryDirectory() as tmp:
+            head = lanceur.garde_git()["head"]
+            if nom == "autorisation_qualification_only_acceptee":
+                chemin = _autorisation_qualification(
+                    Path(tmp), "M2a-N", 630101, "aucun")  # usage QUALIF
+                return _detecte(lambda: lanceur.garde_autorisation(
+                    chemin, "M2a-N", 630101, head))
+            if nom == "contrat_ratifie_sans_valeur":
+                contrat = json.loads(Path(
+                    os.environ["C7C1_CONTRAT_LOCAL"]).read_text(encoding="utf-8"))
+                contrat["racine_runs"]["budget_production_statut"] = "RATIFIE"
+                contrat["racine_runs"]["reference_ratification_budget"] = None
+                return _detecte(lambda: lanceur.garde_budget_production(
+                    contrat, os.environ["C7C1_XZ_OUT_DIR"]))
+            defaut = ("autorisation_budget_different_du_contrat"
+                      if nom == "budget_autorisation_different_du_contrat"
+                      else "autorisation_ratification_differente")
+            chemin = _autorisation_qualification(
+                Path(tmp), "M2a-N", 630101, defaut)
+            return _detecte(lambda: lanceur.garde_autorisation(
+                chemin, "M2a-N", 630101, head,
+                budget_contrat=80, ratification_contrat="REF_CONTRAT"))
+
+    # --- contrat : versions, garde technique, cache ----------------------
+    if nom in ("contrat_version_paquet_fausse", "contrat_garde_technique_autre",
+               "contrat_cache_egal_data", "contrat_cache_egal_runs",
+               "contrat_cache_sous_git", "contrat_cache_absent"):
+        base = json.loads(Path(
+            os.environ["C7C1_CONTRAT_LOCAL"]).read_text(encoding="utf-8"))
+        if nom == "contrat_version_paquet_fausse":
+            base["environnement"]["camb"] = "9.9.9"
+        elif nom == "contrat_garde_technique_autre":
+            base["racine_runs"]["garde_technique_minimale_Gio"] = 10
+        elif nom == "contrat_cache_egal_data":
+            base["chemins_reels"]["caches"] = os.environ["C7C1_DATA_DIR"]
+        elif nom == "contrat_cache_egal_runs":
+            base["chemins_reels"]["caches"] = os.environ["C7C1_XZ_OUT_DIR"]
+        elif nom == "contrat_cache_sous_git":
+            base["chemins_reels"]["caches"] = subprocess.run(
+                ["git", "rev-parse", "--show-toplevel"], capture_output=True,
+                text=True, check=True).stdout.strip()
+        else:
+            base["chemins_reels"].pop("caches", None)
+        with tempfile.TemporaryDirectory() as tmp:
+            faux = Path(tmp) / "contrat.json"
+            faux.write_text(json.dumps(base), encoding="utf-8")
+            os.environ["C7C1_CONTRAT_LOCAL"] = str(faux)
+            return _detecte(lanceur.garde_contrat_local)
+
     # --- manifeste et reprise --------------------------------------------
     if nom == "manifeste_ecrasement_non_identique":
         with tempfile.TemporaryDirectory() as tmp:
@@ -363,6 +476,9 @@ def _autorisation_qualification(prep: Path, variante: str, graine: int,
     ici = Path(lanceur.__file__).parent
     manifeste = {
         "type": "autorisation_production_c7c1_g2_4",
+        # Usage QUALIFICATION_ONLY : ce fichier n'est JAMAIS une
+        # autorisation réelle et la vraie garde doit le refuser.
+        "usage": "QUALIFICATION_ONLY",
         "cle_humaine_1": "QUALIFICATION_ONLY",
         "cle_humaine_2": "QUALIFICATION_ONLY",
         "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
@@ -382,6 +498,14 @@ def _autorisation_qualification(prep: Path, variante: str, graine: int,
         "budget_production_requis_Gio": 50,
         "budget_production_ratification": "QUALIFICATION_ONLY",
     }
+    if defaut == "autorisation_usage_production":
+        manifeste["usage"] = "PRODUCTION"  # utilisé par les fautes de liaison
+    if defaut == "autorisation_budget_different_du_contrat":
+        manifeste["usage"] = "PRODUCTION"
+        manifeste["budget_production_requis_Gio"] = 50
+    if defaut == "autorisation_ratification_differente":
+        manifeste["usage"] = "PRODUCTION"
+        manifeste["budget_production_ratification"] = "AUTRE_REFERENCE"
     if defaut == "autorisation_sha_rapide_absent":
         manifeste.pop("sha256_chemin_rapide")
     elif defaut == "autorisation_sha_rapide_faux":
@@ -470,19 +594,41 @@ def _verrou_nominal() -> dict:
 
     resultats: dict = {}
 
+    # -- préalable : la VRAIE garde doit refuser QUALIFICATION_ONLY -----
+    prep0 = Path(tempfile.mkdtemp(prefix="c7c1_usage_"))
+    try:
+        faux = _autorisation_qualification(
+            prep0, variante="M2a-N", graine=630101, defaut="aucun")
+        try:
+            lanceur.garde_autorisation(
+                faux, "M2a-N", 630101, lanceur.garde_git()["head"])
+            resultats["qualification_only_rejetee"] = False
+        except Exception as exc:  # noqa: BLE001
+            resultats["qualification_only_rejetee"] = "usage" in str(exc)
+    finally:
+        shutil.rmtree(prep0, ignore_errors=True)
+
     # -- scénario 1 : gardes amont satisfaites -> le verrou DOIT mordre --
+    # L'autorisation réelle étant impossible ici (aucune ne doit exister),
+    # SEULE la garde d'autorisation est remplacée par une fonction du
+    # harnais ; contrat, chemins, environnement et threads restent les
+    # vraies gardes. La substitution est restaurée dans un finally.
     prep = Path(tempfile.mkdtemp(prefix="c7c1_verrou_"))
     try:
-        autorisation = _autorisation_qualification(
-            prep, variante="M2a-N", graine=630101, defaut="aucun")
         head_reel = lanceur.garde_git()["head"]
         vrai_git = lanceur.garde_git
         vrai_budget = lanceur.garde_budget_production
+        vraie_autorisation = lanceur.garde_autorisation
         lanceur.garde_git = lambda: {"head": head_reel, "arbre_propre": True}
         lanceur.garde_budget_production = lambda contrat, cible: {
             "budget_production_statut": "RATIFIE_SIMULE_QUALIFICATION",
+            "budget_production_requis_Gio": 50,
+            "reference_ratification_budget": "SIMULEE_QUALIFICATION",
             "libre_cible_gio": None,
         }
+        lanceur.garde_autorisation = (
+            lambda *a, **k: "0" * 64)  # substitution du harnais
+        autorisation = "substituee_par_le_harnais"
         try:
             with _sentinelles() as appels:
                 message = ""
@@ -501,6 +647,7 @@ def _verrou_nominal() -> dict:
         finally:
             lanceur.garde_git = vrai_git
             lanceur.garde_budget_production = vrai_budget
+            lanceur.garde_autorisation = vraie_autorisation
     finally:
         shutil.rmtree(prep, ignore_errors=True)
 
@@ -540,6 +687,18 @@ def _preuve_verrou(nom: str) -> int:
 
 
 FAUTES = (
+    # G2.4d-a : identité de run, dérivés runtime, liaison budget, usage
+    "identite_date_absente", "identite_date_mal_formee",
+    "identite_params_absents", "identite_prior_joint_absent",
+    "identite_empreinte_scientifique_fausse", "identite_sampler_altere",
+    "derive_runtime_omch2_omis", "derive_runtime_chi2_bao_omis",
+    "budget_autorisation_different_du_contrat",
+    "ratification_budget_differente", "contrat_ratifie_sans_valeur",
+    "autorisation_qualification_only_acceptee",
+    "contrat_version_paquet_fausse", "contrat_garde_technique_autre",
+    "contrat_cache_egal_data", "contrat_cache_egal_runs",
+    "contrat_cache_sous_git", "contrat_cache_absent",
+    # G2.4d
     "parite_latex_derive_perdu", "parite_prior_altere",
     "parite_proposal_altere",
     "directeur_retourne_legacy", "mode_directeur_corrected_legacy",
@@ -669,7 +828,10 @@ def qualification() -> int:
     resultat["structure_modele"] = structures
 
     # ---- 5. comparaisons numériques aux points fixes ------------------
-    comparaisons = {"bit_a_bit_optimise_vs_rapide": True, "pires_ecarts_legacy": {}}
+    comparaisons = {"bit_a_bit_optimise_vs_rapide": True,
+                    "derives_runtime_complets": True,
+                    "derives_runtime_exiges": list(DERIVES_RUNTIME_EXIGES),
+                    "pires_ecarts_legacy": {}}
     pires = {k: {"valeur": 0.0, "point": None} for k in SEUILS_LEGACY}
     classif = {"identique": 0, "total": 0}
     for variante in VARIANTES_ORDRE:
@@ -689,6 +851,14 @@ def qualification() -> int:
             derives = modele.logposterior(point).derived
             noms_derives = list(modele.parameterization.derived_params())
             d = dict(zip(noms_derives, derives))
+            # Les quatre dérivés runtime sont EXIGÉS : aucune tolérance à
+            # l'absence, aucun repli sur une valeur de secours.
+            manquants = [c for c in DERIVES_RUNTIME_EXIGES if c not in d]
+            if manquants:
+                echecs.append(
+                    f"dérivés runtime absents {manquants} ({etiquette})")
+                comparaisons["derives_runtime_complets"] = False
+                continue
             classif["total"] += 1
             valide_c = math.isfinite(float(logp_cobaya))
             valide_r = r["logprior"] == 0.0
@@ -700,15 +870,17 @@ def qualification() -> int:
                 continue
             if not valide_r:
                 continue
-            # identité BIT À BIT : Cobaya optimisé vs EvaluateurRapide
+            # identité BIT À BIT : Cobaya optimisé vs EvaluateurRapide,
+            # sur les quatre dérivés ET sur logp = -0.5 * chi2_total.
             attendu = -0.5 * r["chi2_total"]
             if float(logp_cobaya) != attendu:
                 comparaisons["bit_a_bit_optimise_vs_rapide"] = False
-                echecs.append(f"logp Cobaya != EvaluateurRapide ({etiquette})")
-            for cle, ref in (("chi2_BAO", r["chi2_BAO"]),
+                echecs.append(f"logp Cobaya != -0.5*chi2_total ({etiquette})")
+            for cle, ref in (("omch2", r["omch2"]),
+                             ("chi2_BAO", r["chi2_BAO"]),
                              ("chi2_CMB", r["chi2_CMB"]),
                              ("chi2_total", r["chi2_total"])):
-                if cle in d and float(d[cle]) != float(ref):
+                if float(d[cle]) != float(ref):
                     comparaisons["bit_a_bit_optimise_vs_rapide"] = False
                     echecs.append(f"dérivé {cle} != rapide ({etiquette})")
             # contre le legacy : seuils déjà qualifiés
@@ -717,7 +889,7 @@ def qualification() -> int:
                 "chi2_CMB_abs": abs(r["chi2_CMB"] - o["chi2_CMB"]),
                 "chi2_total_abs": abs(r["chi2_total"] - o["chi2_total"]),
                 "logp_abs": abs(float(logp_cobaya) + 0.5 * o["chi2_total"]),
-                "omch2_abs": abs(float(d.get("omch2", r["omch2"])) - o["omch2"]),
+                "omch2_abs": abs(float(d["omch2"]) - o["omch2"]),
             }
             for cle, val in ecarts.items():
                 if val > pires[cle]["valeur"]:
@@ -789,10 +961,17 @@ def qualification() -> int:
         echecs.append("cache partagé entre variantes")
 
     # ---- 7. manifeste atomique (ÉPHÉMÈRE, sous %TEMP% uniquement) -----
+    contrat_id = lanceur.garde_contrat_local()
+    contrat_id.pop("_contrat")
+    identite_complete = lanceur.identite_run(
+        "M2a-N", 630101, lanceur.garde_git()["head"], contrat_id,
+        lanceur.garde_environnement(), lanceur.garde_descripteur("M2a-N"),
+        lanceur.garde_donnees(), date_creation_utc=DATE_QUALIFICATION_UTC,
+        sha256_autorisation="0" * 64, budget_requis_gio=None,
+        reference_ratification_budget=None)
     with tempfile.TemporaryDirectory(prefix="c7c1_g2_4d_") as tmp:
         cible = Path(tmp) / "manifest.json"
-        contenu = {"_QUALIFICATION_ONLY": True, "schema": lanceur.SCHEMA_MANIFESTE_RUN,
-                   "variante": "M2a-N", "graine": 630101}
+        contenu = {**identite_complete, "_QUALIFICATION_ONLY": True}
         lanceur.ecrire_manifeste_atomique(cible, contenu)
         relu = json.loads(cible.read_text(encoding="utf-8"))
         idempotent = True
@@ -818,18 +997,34 @@ def qualification() -> int:
             os.replace = reel_replace
         residus_echec = [p.name for p in Path(tmp).iterdir()
                          if ".tmp" in p.name]
+        # refus d'une identité DIFFÉRENTE
+        refus_identite_differente = False
+        try:
+            lanceur.ecrire_manifeste_atomique(
+                cible, {**contenu, "graine": 630102})
+        except Exception:  # noqa: BLE001
+            refus_identite_differente = True
         atomique = {
             "ecrit": cible.is_file(), "relu_identique": relu == contenu,
             "reecriture_identique_toleree": idempotent,
+            "refus_identite_differente": refus_identite_differente,
             "temporaires_residuels": residus,
             "sur_echec_aucun_partiel": not cible2.exists(),
             "sur_echec_aucun_temporaire": not residus_echec,
+            "date_conservee":
+                relu.get("date_creation_utc") == DATE_QUALIFICATION_UTC,
+            "encodage_conserve":
+                relu.get("sha256_encodage_scientifique")
+                == identite_complete["sha256_encodage_scientifique"],
+            "champs_complets": [c for c in lanceur.CHAMPS_MANIFESTE_RUN
+                                if c not in relu] == [],
             "sous_temp": True, "marque_qualification_only": True,
         }
-        if not (atomique["ecrit"] and atomique["relu_identique"]
-                and idempotent and not residus
-                and atomique["sur_echec_aucun_partiel"]
-                and atomique["sur_echec_aucun_temporaire"]):
+        if not all(atomique[k] for k in (
+                "ecrit", "relu_identique", "reecriture_identique_toleree",
+                "refus_identite_differente", "sur_echec_aucun_partiel",
+                "sur_echec_aucun_temporaire", "date_conservee",
+                "encodage_conserve", "champs_complets")) or residus:
             echecs.append("écriture atomique du manifeste non conforme")
     resultat["manifeste_atomique"] = atomique
     resultat["manifeste_ephemere_supprime"] = not Path(tmp).exists()
@@ -837,27 +1032,31 @@ def qualification() -> int:
         echecs.append("manifeste éphémère non supprimé")
 
     # ---- 8. identité de reprise ---------------------------------------
-    contrat = lanceur.garde_contrat_local()
-    contrat.pop("_contrat")
-    identite = lanceur.identite_run(
-        "M2a-N", 630101, lanceur.garde_git()["head"], contrat,
-        lanceur.garde_environnement(),
-        lanceur.garde_descripteur("M2a-N"), lanceur.garde_donnees(), None)
-    cles_attendues = {
-        "schema", "variante", "graine", "backend", "mode_acoustique", "head",
-        "sha256_lanceur", "sha256_adaptateur", "sha256_chemin_rapide",
-        "sha256_descripteur", "sha256_donnees", "versions",
-        "empreinte_environnement", "version_contrat_local",
-        "racine_runs_canonique", "sampler", "budget_production", "statut_run",
-    }
-    manquantes = sorted(cles_attendues - set(identite))
+    identite = identite_complete
+    manquantes = sorted(set(lanceur.CHAMPS_MANIFESTE_RUN) - set(identite))
+    implicites = [c for c in lanceur.CHAMPS_MANIFESTE_RUN
+                  if identite.get(c, "__absent__") == "__absent__"]
     resultat["identite_reprise"] = {
-        "cles": sorted(identite), "manquantes": manquantes,
+        "cles": sorted(identite), "n_champs_exiges":
+            len(lanceur.CHAMPS_MANIFESTE_RUN), "manquantes": manquantes,
+        "champs_implicites": implicites,
         "backend": identite["backend"], "mode": identite["mode_acoustique"],
+        "date_creation_utc": identite["date_creation_utc"],
+        "sha256_encodage_scientifique":
+            identite["sha256_encodage_scientifique"],
+        "ordre_parametres_echantillonnes":
+            identite["ordre_parametres_echantillonnes"],
+        "ordre_parametres_derives": identite["ordre_parametres_derives"],
+        "meta": identite["meta_variante_grille_convention"],
+        "cles_humaines_absentes": not any(
+            "cle_humaine" in c for c in identite),
         "statut_run": identite["statut_run"],
     }
-    if manquantes:
-        echecs.append(f"identité de reprise incomplète : {manquantes}")
+    if manquantes or implicites:
+        echecs.append(
+            f"identité de reprise incomplète : {manquantes or implicites}")
+    if not resultat["identite_reprise"]["cles_humaines_absentes"]:
+        echecs.append("le manifeste reproduit une clé humaine : refus")
 
     # ---- 9. verrou dur : preuve dynamique ------------------------------
     # `produire` est exécuté avec des sentinelles sur mkdir, makedirs,
@@ -895,7 +1094,13 @@ def qualification() -> int:
         "aucune_ecriture_ni_cobaya_run": not atteintes,
         "preuve_amont_satisfait": preuve["amont_satisfait"],
         "preuve_amont_reel": preuve["amont_reel"],
+        "qualification_only_rejetee_par_la_vraie_garde":
+            preuve["qualification_only_rejetee"],
     }
+    if preuve["qualification_only_rejetee"] is not True:
+        echecs.append(
+            "la vraie garde d'autorisation n'a pas rejeté un manifeste "
+            "QUALIFICATION_ONLY")
     resultat["mesure_capacite"] = {
         "argument_observe_est_la_cible": mesure_ok,
         "argument_observe_est_l_ancre": bool(vus)
