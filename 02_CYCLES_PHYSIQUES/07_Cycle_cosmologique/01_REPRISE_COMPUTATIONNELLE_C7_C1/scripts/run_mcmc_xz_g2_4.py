@@ -25,12 +25,23 @@ Gardes de production (G2.4a §7-8, G2.4b-ii) :
     aucune reprise, aucun fichier modifié ; sous 15 Gio : alerte technique,
     tout lancement ou reprise interdits. Aucune libération automatique.
 
+Politique de capacité CAP-1 (issue #90, ratification humaine du 2 août
+2026) : le budget de production, les réserves et le support actif sont
+désormais matérialisés et BLOQUANTS. L'admission d'un nouveau run ne se
+réduit plus à « libre >= budget » : elle exige
+    libre >= budget_restant_alloue + allocation_run_actif
+             + reserve_reprise + reserve_volume.
+La ratification du budget NE VAUT PAS autorisation de production :
+VERROU_PRODUCTION_G2_4D reste True.
+
 Injections de test (C7C1_TEST_*) : autorisées seulement hors production ;
 leur présence en mode --produire est une faute et entraîne un refus.
 """
 
 from __future__ import annotations
 
+import copy
+import ctypes
 import hashlib
 import json
 import math
@@ -40,6 +51,7 @@ import subprocess
 import sys
 import time
 import tracemalloc
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
 import numpy as np
@@ -47,6 +59,68 @@ import numpy as np
 GIO = 1024**3
 GARDE_CAPACITE_GIO = 40
 SEUIL_ALERTE_GIO = 15
+
+# ============================================================ CAP-1
+# Décision humaine RATIFIÉE — issue #90, commentaire du 2 août 2026.
+# CAP-1 ne réévalue PAS ces valeurs : elle les matérialise et vérifie
+# qu'elles produisent les gardes attendues.
+POLITIQUE_CAPACITE_VERSION = "cap1-1.1.0"
+BUDGET_TOTAL_RATIFIE_GIO = 20
+RESERVE_REPRISE_RATIFIEE_GIO = 1.15
+RESERVE_VOLUME_RATIFIEE_GIO = 40
+REFERENCE_RATIFICATION_BUDGET = "CAP0-2026-08-02-issue90-rat1"
+
+# SOURCE NORMATIVE UNIQUE du support actif (CAP-1a). La décision humaine
+# porte sur le volume C:, PAS sur « le volume système quel qu'il soit ».
+# %SystemDrive% ne définit JAMAIS la ratification : il n'est lu que comme
+# fait système supplémentaire, sans valeur normative. Déplacer <RUNS> vers
+# un autre volume exigera une nouvelle ratification humaine et une
+# nouvelle version de politique de capacité.
+SUPPORT_ACTIF_VOLUME_RATIFIE = "C"
+
+# Constantes de MESURE publiées en CAP-0 (issue #90). Les allocations S8
+# sont RECALCULÉES à partir d'elles ci-dessous — jamais recopiées.
+#   N_G1_max = 219 400 lignes (pire run G1 convergé, cpl/s201)
+#   S8       = 8 × N_G1_max
+#   borne empirique d'octets par ligne (densité maximale G1, 18,36 o par
+#   colonne) : M2a 349, M2b 331 — plus conservatrice de 9 % que la
+#   largeur exacte mesurée (319 / 303)
+#   pire ratio auxiliaire mesuré (checkpoint, progress, covmat, YAML,
+#   journaux) : 0,845 %
+N_G1_MAX_LIGNES = 219_400
+FACTEUR_SCENARIO_S8 = 8
+LIGNES_S8_PAR_RUN = FACTEUR_SCENARIO_S8 * N_G1_MAX_LIGNES  # 1 755 200
+OCTETS_PAR_LIGNE_BORNE = {"M2a": 349, "M2b": 331}
+RATIO_AUXILIAIRE_MAX = 0.00845
+
+# Fréquence d'observation de la capacité (opérationnelle, JAMAIS
+# scientifique — voir garde_injection_observateur). Justification au §8
+# du rapport CAP-1 : entre deux observations, une chaîne de poids 1
+# écrivant à chaque itération produit au plus
+#   1000 × 349 o = 349 000 o ≈ 0,000325 Gio,
+# soit 0,03 % de la réserve de reprise ratifiée (1,15 Gio) ; le facteur
+# de sécurité 4 couvre une observation manquée et les vidages
+# auxiliaires. Le plancher couvre ce que le RESTE du système peut
+# consommer sur le volume système dans la même fenêtre.
+CALLBACK_EVERY_ITERATIONS = 1000
+FACTEUR_SECURITE_ANTICIPATION = 4
+MARGE_ANTICIPATION_PLANCHER_GIO = 0.25
+
+# La requête au sous-système de stockage (média, bus, santé) est
+# transitoirement indisponible sous charge. On réessaie un nombre BORNÉ de
+# fois puis on REFUSE : jamais de supposition, mais pas de refus sur un
+# unique aléa non plus.
+TENTATIVES_QUALIFICATION_MATERIELLE = 3
+
+# Sous-arbres de <RUNS> explicitement reconnus comme temporaires : ils ne
+# sont JAMAIS comptés comme production. Comparaison sur le PREMIER
+# composant relatif, exacte — « _tmpfoo » n'est pas « _tmp ».
+SOUS_ARBRES_TEMPORAIRES_RECONNUS = ("_tmp", "g2_4_qualification")
+
+STATUT_RUN_PLANIFIE = "PLANIFIE_NON_LANCE"
+STATUT_RUN_INTERROMPU_CAPACITE = "NON_CONVERGE_INTERRUPTION_CAPACITE"
+STATUT_RUN_CONVERGE = "CONVERGE"
+SCHEMAS_MANIFESTE_RECONNUS = ("c7c1-run-manifest-1", "c7c1-run-manifest-2")
 
 # ------------------------------------------------ verrou dur G2.4d
 # Tant que ce verrou vaut True, AUCUNE écriture réelle et AUCUN
@@ -56,7 +130,7 @@ VERROU_PRODUCTION_G2_4D = True
 
 # Schéma du contrat local privé consommé par le lanceur (INFRA-1a,
 # étendu en G2.4d-a : chemin de cache et référence de ratification).
-VERSION_CONTRAT_LOCAL = "1.2.0"
+VERSION_CONTRAT_LOCAL = "1.3.0"
 # Format imposé de la date de création du manifeste de run.
 FORMAT_DATE_UTC = "%Y-%m-%dT%H:%M:%SZ"
 # Usage exigé d'une autorisation RÉELLE. Un manifeste de qualification
@@ -66,7 +140,7 @@ CLES_THREADS = (
     "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS",
     "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS",
 )
-SCHEMA_MANIFESTE_RUN = "c7c1-run-manifest-1"
+SCHEMA_MANIFESTE_RUN = "c7c1-run-manifest-2"
 
 MATRICE = {
     "M2a-N": tuple(range(630101, 630109)),
@@ -99,17 +173,27 @@ ENV_DIRECTEUR = {
 # donc plus valider un ancien adaptateur, un chemin rapide modifié, un
 # contrat d'une autre version, un budget absent, un HEAD différent, une
 # autre racine de runs ni une autre empreinte d'environnement.
+#
+# CAP-1 étend encore ce schéma : réserves ratifiées, version de politique
+# de capacité et identité expurgée du support deviennent obligatoires.
+# Une autorisation ne peut donc plus valider un autre budget, une autre
+# réserve, une autre référence, une autre politique ni un autre support.
 CLES_MANIFESTE = {
     "type", "usage", "cle_humaine_1", "cle_humaine_2", "sha256_lanceur",
     "sha256_adaptateur", "sha256_chemin_rapide", "sha256_descripteurs",
     "sha256_preenregistrement", "sha256_donnees", "empreinte_environnement",
     "version_contrat_local", "head_autorise", "racine_runs_canonique",
     "variantes_graines_autorisees", "budget_production_requis_Gio",
-    "budget_production_ratification",
+    "budget_production_ratification", "reserve_reprise_Gio",
+    "reserve_volume_minimale_Gio", "politique_capacite_version",
+    "support_actif_identite_expurgee",
 }
 
 # Champs OBLIGATOIRES du manifeste de run : aucun ne peut être absent ni
-# remplacé par une valeur implicite.
+# remplacé par une valeur implicite. Les sept derniers sont ajoutés par
+# CAP-1 et font PARTIE DE L'IDENTITÉ DE REPRISE : une reprise sous une
+# autre politique de capacité, un autre budget, une autre réserve, une
+# autre fréquence d'observation ou un autre support est refusée.
 CHAMPS_MANIFESTE_RUN = (
     "schema", "variante", "graine", "backend", "mode_acoustique",
     "date_creation_utc", "head", "sha256_lanceur", "sha256_adaptateur",
@@ -120,6 +204,18 @@ CHAMPS_MANIFESTE_RUN = (
     "ordre_parametres_derives", "meta_variante_grille_convention",
     "sha256_encodage_scientifique", "budget_production_requis_Gio",
     "reference_ratification_budget", "statut_run",
+    "budget_total_Gio", "reserve_reprise_Gio",
+    "reserve_volume_minimale_Gio", "allocation_run_actif_Gio",
+    "politique_capacite_version", "callback_every",
+    "support_actif_identite_expurgee",
+)
+# Champs de l'identité de reprise qui décrivent la POLITIQUE DE CAPACITÉ.
+# Une reprise exige qu'ils soient identiques, en plus du reste.
+CHAMPS_POLITIQUE_CAPACITE = (
+    "budget_total_Gio", "reserve_reprise_Gio", "reserve_volume_minimale_Gio",
+    "allocation_run_actif_Gio", "politique_capacite_version",
+    "callback_every", "support_actif_identite_expurgee",
+    "reference_ratification_budget",
 )
 POINT_FOND_P0 = {"H0": 67.36, "ombh2": 0.02237, "omm": 0.3152}
 POINT_FOND_P1 = {"H0": 68.3526, "ombh2": 0.022410, "omm": 0.300539}
@@ -129,6 +225,23 @@ P3_VALUES = {"M2a": (1.4, 0.2, 1.6, 0.1, 1.3), "M2b": (1.4, 0.2, 1.6, 1.3)}
 
 class GardeErreur(RuntimeError):
     """Une garde de pré-vol a échoué."""
+
+
+class ArretCapaciteC7C1(RuntimeError):
+    """Interruption de capacité d'un run en cours — JAMAIS une convergence.
+
+    Levée par l'observateur de capacité (callback Cobaya) quand la
+    haute-eau est franchie, ou quand la capacité n'est plus OBSERVABLE.
+    Le statut associé est toujours
+    ``NON_CONVERGE_INTERRUPTION_CAPACITE`` : positionner
+    ``sampler.converged = True`` est interdit, car cela ferait passer une
+    interruption de capacité pour une convergence scientifique.
+    """
+
+    def __init__(self, message: str, etat: dict | None = None):
+        super().__init__(message)
+        self.etat = dict(etat or {})
+        self.statut_run = STATUT_RUN_INTERROMPU_CAPACITE
 
 
 def sha256_fichier(path: str | Path) -> str:
@@ -282,6 +395,558 @@ def garde_capacite(cible: str | Path) -> dict:
     return etat
 
 
+# ============================================ CAP-1 : politique de capacité
+
+def _valeur_ratifiee(valeur, attendu, etiquette: str) -> float:
+    """Égalité EXACTE à une valeur ratifiée — aucune tolérance flottante.
+
+    La comparaison passe par ``Decimal(str(x))`` : elle reflète la
+    décision humaine telle qu'elle est écrite, accepte 20 comme 20.0, et
+    refuse 19.999 comme 20.001. Aucun epsilon n'est introduit.
+    """
+    if isinstance(valeur, bool) or not isinstance(valeur, (int, float)):
+        raise GardeErreur(
+            f"{etiquette} : valeur absente ou non numérique ({valeur!r})")
+    if not math.isfinite(float(valeur)):
+        raise GardeErreur(f"{etiquette} : valeur non finie ({valeur!r})")
+    try:
+        lue = Decimal(str(valeur))
+    except InvalidOperation as exc:  # pragma: no cover - défensif
+        raise GardeErreur(f"{etiquette} : valeur illisible ({valeur!r})") from exc
+    if lue != Decimal(str(attendu)):
+        raise GardeErreur(
+            f"{etiquette} : {valeur!r} != valeur ratifiée {attendu!r} "
+            "(comparaison exacte, aucune tolérance)")
+    return float(valeur)
+
+
+def _grille_de(variante: str) -> str:
+    grille = str(variante).split("-")[0]
+    if grille not in OCTETS_PAR_LIGNE_BORNE:
+        raise GardeErreur(
+            f"grille inconnue pour la variante {variante!r} : aucune "
+            "allocation S8 n'est définie — refus plutôt que supposition")
+    return grille
+
+
+def allocation_run_actif_gio(variante: str) -> float:
+    """Enveloppe S8 conservatrice d'UN run de la variante donnée.
+
+    RECALCULÉE à partir des constantes CAP-0 publiées :
+        lignes  = 8 × 219 400 = 1 755 200
+        octets  = lignes × borne empirique (M2a 349 | M2b 331)
+        + enveloppe auxiliaire au pire ratio mesuré (0,845 %)
+    Contrôle croisé du rapport CAP-0 : 16 runs M2a + 16 runs M2b donnent
+    B_chain(S8) = 17,785 Gio et B_actif(S8) = 18,94 Gio.
+    """
+    octets_chaine = LIGNES_S8_PAR_RUN * OCTETS_PAR_LIGNE_BORNE[_grille_de(variante)]
+    return (octets_chaine * (1.0 + RATIO_AUXILIAIRE_MAX)) / GIO
+
+
+def marge_anticipation_gio() -> float:
+    """Zone d'anticipation : l'arrêt doit précéder la saturation."""
+    octets_max = max(OCTETS_PAR_LIGNE_BORNE.values())
+    entre_observations = (
+        CALLBACK_EVERY_ITERATIONS * octets_max * FACTEUR_SECURITE_ANTICIPATION
+    ) / GIO
+    return max(MARGE_ANTICIPATION_PLANCHER_GIO, entre_observations)
+
+
+# ------------------------------------------------- support actif ratifié
+
+_CACHE_MATERIEL: dict | None = None
+
+
+def _lettre_volume(cible: str | Path) -> str:
+    """Lettre de volume portant un chemin — sans aucun appel système."""
+    lettre = os.path.splitdrive(os.path.realpath(str(cible)))[0].rstrip(":")
+    lettre = os.environ.get("C7C1_TEST_LETTRE_RUNS", lettre).upper()
+    if not lettre:
+        raise GardeErreur("chemin sans lettre de volume : refus")
+    return lettre
+
+
+def _fait_systeme_volume_systeme(lettre: str) -> bool:
+    """Fait système SUPPLÉMENTAIRE : ce volume est-il %SystemDrive% ?
+
+    Purement informatif. Cette valeur n'entre dans AUCUNE décision et ne
+    fait pas partie de l'identité de reprise : %SystemDrive% peut changer
+    sans que la ratification humaine change.
+    """
+    return lettre == os.environ.get("SystemDrive", "").rstrip(":").upper()
+
+
+def _garde_volume_ratifie(cible: str | Path) -> str:
+    """La lettre du volume DOIT être celle du support RATIFIÉ.
+
+    Comparée à ``SUPPORT_ACTIF_VOLUME_RATIFIE``, source normative unique.
+    %SystemDrive% n'est pas consulté ici : que le volume système soit C:,
+    D: ou autre, le support ratifié reste C:. Un <RUNS> sur D: est refusé
+    même si D: est devenu le volume système ; un <RUNS> sur C: reste
+    accepté même si C: ne l'est plus.
+
+    Contrôlée AVANT toute interrogation d'API, pour que le refus soit
+    attribuable à la bonne cause plutôt qu'à l'échec d'une requête sur un
+    volume inexistant.
+    """
+    lettre = _lettre_volume(cible)
+    if lettre != SUPPORT_ACTIF_VOLUME_RATIFIE:
+        raise GardeErreur(
+            f"support actif non ratifié : chemin sur le volume {lettre}: "
+            f"alors que le support ratifié par décision humaine est "
+            f"{SUPPORT_ACTIF_VOLUME_RATIFIE}: — un changement de volume "
+            "exige une nouvelle ratification, pas un changement de "
+            "%SystemDrive%")
+    return lettre
+
+
+def _infos_volume(cible: str | Path) -> dict:
+    """Faits de volume lus par API système — jamais supposés."""
+    lettre = _lettre_volume(cible)
+    racine_volume = f"{lettre}:\\"
+    if os.name != "nt":  # pragma: no cover - le lot est Windows-only
+        raise GardeErreur(
+            "qualification du support indisponible hors Windows : refus "
+            "plutôt que supposition")
+    try:
+        k32 = ctypes.WinDLL("kernel32", use_last_error=True)
+        type_lecteur = int(k32.GetDriveTypeW(ctypes.c_wchar_p(racine_volume)))
+        nom = ctypes.create_unicode_buffer(261)
+        sysfic = ctypes.create_unicode_buffer(261)
+        serie = ctypes.c_ulong()
+        maxlen = ctypes.c_ulong()
+        drapeaux = ctypes.c_ulong()
+        ok = k32.GetVolumeInformationW(
+            ctypes.c_wchar_p(racine_volume), nom, 261, ctypes.byref(serie),
+            ctypes.byref(maxlen), ctypes.byref(drapeaux), sysfic, 261)
+        if not ok:
+            raise OSError(ctypes.get_last_error(), "GetVolumeInformationW")
+        secteurs = ctypes.c_ulong()
+        octets_secteur = ctypes.c_ulong()
+        libres = ctypes.c_ulong()
+        total = ctypes.c_ulong()
+        ok2 = k32.GetDiskFreeSpaceW(
+            ctypes.c_wchar_p(racine_volume), ctypes.byref(secteurs),
+            ctypes.byref(octets_secteur), ctypes.byref(libres),
+            ctypes.byref(total))
+        cluster = int(secteurs.value * octets_secteur.value) if ok2 else 0
+    except OSError as exc:
+        raise GardeErreur(
+            f"qualification du volume indisponible ({exc}) : refus plutôt "
+            "que supposition") from exc
+    return {
+        "lettre_volume": lettre,
+        "type_lecteur_code": int(os.environ.get(
+            "C7C1_TEST_TYPE_LECTEUR", type_lecteur)),
+        "systeme_fichiers": os.environ.get(
+            "C7C1_TEST_SYSTEME_FICHIERS", sysfic.value),
+        "empreinte_volume": hashlib.sha256(
+            f"{lettre}:{serie.value:08x}".encode()).hexdigest()[:16],
+        "taille_cluster_octets": cluster,
+    }
+
+
+def _infos_materiel(lettre: str) -> dict:
+    """Type de média et bus du disque physique portant le volume.
+
+    Détection locale par API système (Storage/MSFT_PhysicalDisk). Aucun
+    modèle ni numéro de série n'est lu ni publié : seuls MediaType,
+    BusType et HealthStatus sortent d'ici. Une indisponibilité est un
+    REFUS, jamais une supposition.
+    """
+    global _CACHE_MATERIEL
+
+    if os.environ.get("C7C1_TEST_SUPPORT_INDISPONIBLE") == "1":
+        raise GardeErreur(
+            "qualification matérielle du support indisponible : refus "
+            "plutôt que supposition")
+    forge = {c: os.environ.get(f"C7C1_TEST_SUPPORT_{c.upper()}")
+             for c in ("media", "bus", "sante")}
+    if _CACHE_MATERIEL is None:
+        commande = (
+            "$ErrorActionPreference='Stop';"
+            f"$p = Get-Partition -DriveLetter {lettre};"
+            "$d = Get-PhysicalDisk -DeviceNumber $p.DiskNumber;"
+            "[pscustomobject]@{MediaType=$d.MediaType;BusType=$d.BusType;"
+            "HealthStatus=$d.HealthStatus} | ConvertTo-Json -Compress")
+        # La requête au sous-système de stockage est parfois lente ou
+        # transitoirement indisponible sous charge. On réessaie un nombre
+        # BORNÉ de fois ; passé ce nombre, on refuse — on ne suppose jamais.
+        derniere = "aucune tentative"
+        for tentative in range(TENTATIVES_QUALIFICATION_MATERIELLE):
+            try:
+                proc = subprocess.run(
+                    ["powershell", "-NoProfile", "-NonInteractive",
+                     "-Command", commande],
+                    capture_output=True, text=True, timeout=120)
+            except (OSError, subprocess.SubprocessError) as exc:
+                derniere = f"exception {exc}"
+            else:
+                if proc.returncode == 0 and proc.stdout.strip():
+                    try:
+                        _CACHE_MATERIEL = json.loads(proc.stdout)
+                        break
+                    except json.JSONDecodeError as exc:
+                        derniere = f"réponse illisible ({exc.msg})"
+                else:
+                    derniere = (f"code {proc.returncode} / "
+                                f"{(proc.stderr or '').strip()[:120]}")
+            if tentative + 1 < TENTATIVES_QUALIFICATION_MATERIELLE:
+                time.sleep(1.0 + tentative)
+        if _CACHE_MATERIEL is None:
+            raise GardeErreur(
+                "qualification matérielle du support indisponible après "
+                f"{TENTATIVES_QUALIFICATION_MATERIELLE} tentatives "
+                f"({derniere}) : refus plutôt que supposition")
+    brut = dict(_CACHE_MATERIEL)
+    return {
+        "media": forge["media"] or str(brut.get("MediaType", "")),
+        "bus": forge["bus"] or str(brut.get("BusType", "")),
+        "sante": forge["sante"] or str(brut.get("HealthStatus", "")),
+    }
+
+
+def garde_support_actif(cible: str | Path) -> dict:
+    """Preuve DYNAMIQUE que <RUNS> est sur le support ratifié.
+
+    Volume RATIFIÉ (constante, jamais %SystemDrive%), SSD, bus NVMe,
+    lecteur fixe, NTFS, hors Git, hors synchronisation. Rend une identité
+    EXPURGÉE (aucun chemin, aucun modèle, aucun numéro de série)
+    utilisable dans le manifeste et dans l'autorisation. Toute
+    qualification indisponible est un refus.
+
+    L'identité porte l'empreinte RÉELLE du volume : elle empêche une
+    substitution silencieuse. Elle reste strictement locale — voir
+    ``identite_support_publiable`` pour la forme diffusable.
+    """
+    from xz_likelihood_g2_3 import refuser_sortie_sous_git
+
+    lettre = _garde_volume_ratifie(cible)  # avant toute API : cause exacte
+    volume = _infos_volume(cible)
+    if volume["type_lecteur_code"] != 3:  # DRIVE_FIXED
+        raise GardeErreur(
+            f"support actif non ratifié : type de lecteur "
+            f"{volume['type_lecteur_code']} != FIXE (3)")
+    if volume["systeme_fichiers"].upper() != "NTFS":
+        raise GardeErreur(
+            f"support actif non ratifié : système de fichiers "
+            f"{volume['systeme_fichiers']!r} != NTFS")
+    materiel = _infos_materiel(lettre)
+    if materiel["media"].upper() != "SSD":
+        raise GardeErreur(
+            f"support actif non ratifié : média {materiel['media']!r} != SSD")
+    if materiel["bus"].upper() != "NVME":
+        raise GardeErreur(
+            f"support actif non ratifié : bus {materiel['bus']!r} != NVMe")
+    if materiel["sante"].upper() != "HEALTHY":
+        raise GardeErreur(
+            f"support actif non ratifié : santé {materiel['sante']!r} "
+            "!= Healthy")
+    refuser_sortie_sous_git(Path(cible))
+    canonique = _canonique(cible)
+    if "onedrive" in canonique:
+        raise GardeErreur("support actif sous OneDrive : refus")
+    identite = {
+        "volume_ratifie": SUPPORT_ACTIF_VOLUME_RATIFIE,
+        "lettre_volume": lettre,
+        "type_lecteur": "FIXE",
+        "systeme_fichiers": "NTFS",
+        "media": "SSD",
+        "bus": "NVMe",
+        "empreinte_volume": volume["empreinte_volume"],
+        "hors_git": True,
+        "hors_synchronisation": True,
+    }
+    return {
+        "identite_expurgee": identite,
+        "sante": materiel["sante"],
+        "taille_cluster_octets": volume["taille_cluster_octets"],
+        "qualification_materielle_disponible": True,
+        # Fait système supplémentaire, SANS valeur normative et HORS de
+        # l'identité de reprise : %SystemDrive% peut changer sans que la
+        # ratification humaine change.
+        "fait_systeme_volume_systeme": _fait_systeme_volume_systeme(lettre),
+    }
+
+
+# Champ de l'identité de support dont la valeur est STRICTEMENT LOCALE.
+# Obligatoire en interne (contrat, manifeste, autorisation, reprise) :
+# c'est lui qui empêche une substitution silencieuse de volume. Jamais
+# publié : sur toute surface diffusable, seule sa présence et sa
+# conformité sortent.
+CHAMP_SUPPORT_PRIVE = "empreinte_volume"
+MARQUE_VALEUR_PRIVEE = "<EMPREINTE_VOLUME_PRIVEE>"
+
+
+def identite_support_publiable(identite: dict) -> dict:
+    """Forme DIFFUSABLE d'une identité de support.
+
+    La valeur réelle de l'empreinte est remplacée par une marque ; sa
+    présence et sa conformité restent vérifiables. N'affaiblit rien :
+    l'identité interne, elle, conserve la valeur réelle.
+    """
+    publiable = {c: v for c, v in identite.items() if c != CHAMP_SUPPORT_PRIVE}
+    reelle = identite.get(CHAMP_SUPPORT_PRIVE)
+    publiable[CHAMP_SUPPORT_PRIVE] = MARQUE_VALEUR_PRIVEE
+    publiable["empreinte_volume_presente"] = bool(reelle)
+    publiable["empreinte_volume_conforme"] = (
+        isinstance(reelle, str) and len(reelle) == 16
+        and all(c in "0123456789abcdef" for c in reelle))
+    return publiable
+
+
+def identite_support_expurgee(cible: str | Path) -> dict:
+    return garde_support_actif(cible)["identite_expurgee"]
+
+
+# ------------------------------------- occupation du lot : mesure sûre
+
+def _taille_brute(entree) -> int:
+    """Taille logique d'une entrée. Point d'injection des fautes."""
+    return entree.stat(follow_symlinks=False).st_size
+
+
+def _arrondi_cluster(octets: int, cluster: int) -> int:
+    if cluster > 0:
+        return -(-int(octets) // cluster) * cluster
+    return int(octets)
+
+
+def _sous_racine(canonique: str, racine_canonique: str) -> bool:
+    return (canonique == racine_canonique
+            or canonique.startswith(racine_canonique + os.sep))
+
+
+def _est_lien(entree) -> bool:
+    if entree.is_symlink():
+        return True
+    verifier = getattr(entree, "is_junction", None)
+    try:
+        return bool(verifier()) if verifier else False
+    except OSError:  # pragma: no cover - défensif
+        return False
+
+
+def _inventorier_occupation(racine: Path, cluster: int):
+    """Parcours SANS suivi de lien, strictement borné à <RUNS>.
+
+    Retourne (inventaire {parties relatives -> octets alloués}, liens non
+    suivis). N'efface rien, ne modifie rien, n'ouvre aucun fichier en
+    écriture.
+    """
+    racine_c = _canonique(racine)
+    inventaire: dict[tuple, int] = {}
+    liens: list[str] = []
+    pile = [Path(racine)]
+    while pile:
+        courant = pile.pop()
+        try:
+            entrees = list(os.scandir(courant))
+        except FileNotFoundError:
+            continue  # disparu pendant le parcours : non compté
+        except PermissionError as exc:
+            raise GardeErreur(
+                f"occupation illisible sous la racine de runs ({exc.errno}) "
+                ": refus plutôt que sous-estimation") from exc
+        for entree in entrees:
+            relatif = tuple(Path(entree.path).relative_to(racine).parts)
+            if not _sous_racine(_canonique(entree.path), racine_c):
+                raise GardeErreur(
+                    "identité canonique hors de la racine de runs : refus "
+                    f"({'/'.join(relatif)})")
+            if _est_lien(entree):
+                liens.append("/".join(relatif))
+                continue  # jamais suivi
+            try:
+                repertoire = entree.is_dir(follow_symlinks=False)
+            except OSError:
+                continue
+            if repertoire:
+                pile.append(Path(entree.path))
+                continue
+            try:
+                taille = _taille_brute(entree)
+            except FileNotFoundError:
+                continue
+            if isinstance(taille, bool) or not isinstance(taille, int):
+                raise GardeErreur(
+                    f"taille forgée ou non entière pour {'/'.join(relatif)} "
+                    f": {taille!r}")
+            if taille < 0:
+                raise GardeErreur(
+                    f"taille négative pour {'/'.join(relatif)} : {taille}")
+            inventaire[relatif] = _arrondi_cluster(taille, cluster)
+    return inventaire, sorted(liens)
+
+
+def _repertoires_de_production(inventaire: dict, racine: Path) -> set[tuple]:
+    """Répertoires de run ATTRIBUÉS à la production par leur manifeste.
+
+    Un répertoire est de la production s'il porte un ``manifest.json``
+    lisible, au schéma reconnu, non marqué ``_QUALIFICATION_ONLY``.
+    """
+    repertoires: set[tuple] = set()
+    for parties in inventaire:
+        if parties[-1] != "manifest.json":
+            continue
+        try:
+            contenu = json.loads(
+                (Path(racine).joinpath(*parties)).read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if not isinstance(contenu, dict):
+            continue
+        if contenu.get("_QUALIFICATION_ONLY"):
+            continue
+        if contenu.get("schema") in SCHEMAS_MANIFESTE_RECONNUS:
+            repertoires.add(parties[:-1])
+    return repertoires
+
+
+def mesurer_occupation_lot(cible: str | Path,
+                           verifier_stabilite: bool = True) -> dict:
+    """Occupation C7-C1 réellement allouée sous <RUNS>.
+
+    Reste strictement sous la racine canonique ; ne suit aucun lien ni
+    point d'analyse ; refuse toute identité canonique qui en sort ;
+    n'efface rien, ne modifie rien. Les sous-arbres temporaires reconnus
+    et les produits non attribués à un manifeste de run ne sont JAMAIS
+    comptés comme production : en l'absence de run réel, le budget
+    consommé vaut zéro.
+
+    ``verifier_stabilite`` effectue DEUX parcours et refuse si l'état a
+    changé entre les deux (fichier apparaissant pendant la mesure). Il
+    est désactivé pour l'observateur périodique, dont la mesure est
+    intrinsèquement instantanée et bornée par une marge d'anticipation.
+
+    Le contrôle de stabilité porte sur ce qui est BUDGÉTÉ, c'est-à-dire
+    hors sous-arbres temporaires reconnus : le répertoire temporaire
+    scientifique vit sous la racine et son activité est attendue ; la
+    faire échouer la mesure du budget serait un faux positif permanent.
+    """
+    racine = Path(cible)
+    if not racine.is_dir():
+        raise GardeErreur("racine de runs inexistante : mesure impossible")
+    cluster = _infos_volume(racine)["taille_cluster_octets"]
+
+    def _budgetable(inv: dict) -> dict:
+        return {p: t for p, t in inv.items()
+                if p[0] not in SOUS_ARBRES_TEMPORAIRES_RECONNUS}
+
+    inventaire, liens = _inventorier_occupation(racine, cluster)
+    if verifier_stabilite:
+        second, liens2 = _inventorier_occupation(racine, cluster)
+        a, b = _budgetable(inventaire), _budgetable(second)
+        if a != b or liens2 != liens:
+            apparus = sorted("/".join(p) for p in set(b) - set(a))
+            disparus = sorted("/".join(p) for p in set(a) - set(b))
+            raise GardeErreur(
+                "occupation instable pendant la mesure (apparus="
+                f"{apparus[:5]}, disparus={disparus[:5]}) : refus")
+    production_dirs = _repertoires_de_production(inventaire, racine)
+    octets = {"production": 0, "temporaires_reconnus": 0, "non_attribues": 0}
+    par_run: dict[str, int] = {}
+    for parties, taille in inventaire.items():
+        if parties[0] in SOUS_ARBRES_TEMPORAIRES_RECONNUS:
+            octets["temporaires_reconnus"] += taille
+            continue
+        appartenance = next(
+            (d for d in production_dirs if parties[:len(d)] == d), None)
+        if appartenance is None:
+            octets["non_attribues"] += taille
+            continue
+        octets["production"] += taille
+        cle = "/".join(appartenance)
+        par_run[cle] = par_run.get(cle, 0) + taille
+    for valeur in octets.values():
+        if not math.isfinite(float(valeur)) or valeur < 0:
+            raise GardeErreur(f"occupation mesurée invalide : {octets}")
+    return {
+        "octets_production": octets["production"],
+        "octets_temporaires_reconnus": octets["temporaires_reconnus"],
+        "octets_non_attribues": octets["non_attribues"],
+        "gio_production": octets["production"] / GIO,
+        "gio_temporaires_reconnus": octets["temporaires_reconnus"] / GIO,
+        "gio_non_attribues": octets["non_attribues"] / GIO,
+        "runs_production": dict(sorted(par_run.items())),
+        "n_fichiers": len(inventaire),
+        "liens_non_suivis": liens,
+        "taille_cluster_octets": cluster,
+        "stabilite_verifiee": bool(verifier_stabilite),
+    }
+
+
+# --------------------------------------- garde de capacité de production
+
+def garde_capacite_production(cible: str | Path, variante: str,
+                              occupation: dict | None = None,
+                              support: dict | None = None) -> dict:
+    """Règle d'ADMISSION d'un NOUVEAU run — remplace « libre >= budget ».
+
+    Ne double compte jamais l'allocation du run à admettre :
+    ``budget_restant_alloue`` est ce qui reste du budget total UNE FOIS
+    le run courant provisionné ; le seuil le ré-ajoute explicitement.
+    Au début du lot (rien de consommé), le seuil vaut donc
+    ``budget_total + reserve_reprise + reserve_volume`` = 61,15 Gio.
+    """
+    budget_total = float(BUDGET_TOTAL_RATIFIE_GIO)
+    reserve_reprise = float(RESERVE_REPRISE_RATIFIEE_GIO)
+    reserve_volume = float(RESERVE_VOLUME_RATIFIEE_GIO)
+    allocation = allocation_run_actif_gio(variante)
+    if support is None:
+        support = garde_support_actif(cible)  # refuse si non ratifié
+    if occupation is None:
+        occupation = mesurer_occupation_lot(cible, verifier_stabilite=True)
+    consomme = float(occupation["gio_production"])
+    libre = float(espace_libre_gio(cible))
+    for etiquette, valeur in (("espace libre", libre),
+                              ("budget consommé", consomme),
+                              ("allocation du run actif", allocation)):
+        if not math.isfinite(valeur):
+            raise GardeErreur(
+                f"données de capacité non finies : {etiquette} = {valeur!r}")
+    restant = max(0.0, budget_total - consomme - allocation)
+    seuil = restant + allocation + reserve_reprise + reserve_volume
+    etat = {
+        "libre_gio": libre,
+        "budget_total_gio": budget_total,
+        "budget_consomme_gio": consomme,
+        "allocation_run_actif_gio": allocation,
+        "budget_restant_alloue_gio": restant,
+        "reserve_reprise_gio": reserve_reprise,
+        "reserve_volume_gio": reserve_volume,
+        "seuil_admission_gio": seuil,
+        "marge_apres_admission_gio": libre - seuil,
+        "politique_capacite_version": POLITIQUE_CAPACITE_VERSION,
+        "reference_ratification_budget": REFERENCE_RATIFICATION_BUDGET,
+        # État RAPPORTÉ : forme diffusable. L'identité réelle, elle, part
+        # au manifeste et à l'autorisation sans être passée par ici.
+        "support_actif_identite_expurgee": identite_support_publiable(
+            support["identite_expurgee"]),
+        "occupation": {
+            k: occupation[k] for k in
+            ("octets_production", "octets_temporaires_reconnus",
+             "octets_non_attribues", "runs_production", "liens_non_suivis",
+             "stabilite_verifiee")},
+    }
+    if consomme > budget_total:
+        raise GardeErreur(
+            f"budget déjà dépassé : {consomme:.4f} Gio consommés > budget "
+            f"ratifié {budget_total:.2f} Gio — admission refusée")
+    if libre < seuil:
+        raise GardeErreur(
+            f"admission refusée : espace libre {libre:.4f} Gio < seuil "
+            f"{seuil:.4f} Gio (restant alloué {restant:.4f} + allocation "
+            f"{allocation:.4f} + reprise {reserve_reprise:.2f} + volume "
+            f"{reserve_volume:.2f})")
+    if libre - allocation < reserve_volume:
+        raise GardeErreur(
+            f"admission refusée : après allocation du run "
+            f"({allocation:.4f} Gio), il resterait {libre - allocation:.4f} "
+            f"Gio < réserve de volume ratifiée {reserve_volume:.2f} Gio")
+    return etat
+
+
 def garde_budget_production(contrat: dict, cible: str | Path) -> dict:
     """Contrôle SÉPARÉ du budget de production (jamais la garde technique).
 
@@ -290,6 +955,12 @@ def garde_budget_production(contrat: dict, cible: str | Path) -> dict:
     ratifié, non nul, positif, et inférieur ou égal à l'espace libre
     MESURÉ SUR LA CIBLE. Le statut NON_ETABLI bloque toute production.
     Aucun budget n'est inventé ici.
+
+    CAP-1 : « libre >= budget » n'est PLUS le critère d'admission. Cette
+    comparaison survit comme condition nécessaire subsumée — 45 Gio
+    libres pour un budget de 20 Gio la satisfont encore — et
+    ``garde_capacite_production`` est désormais seule à décider de
+    l'admission d'un run.
     """
     rr = contrat.get("racine_runs", {})
     statut = rr.get("budget_production_statut")
@@ -320,6 +991,242 @@ def garde_budget_production(contrat: dict, cible: str | Path) -> dict:
             f"{float(requis):.2f} Gio : production refusée"
         )
     return etat
+
+
+# ------------------------------- observateur de capacité (haute-eau)
+
+def _lignes_en_memoire(sampler) -> int:
+    """Nombre de points ACCEPTÉS déjà en mémoire — lecture pure.
+
+    La chaîne sur disque retarde sur la collection en mémoire
+    (``output_every`` vaut 60 s par défaut). Lire la longueur de la
+    collection supprime ce décalage sans rien interpréter. Si la capacité
+    n'est plus OBSERVABLE, on refuse : on n'estime pas.
+    """
+    collection = getattr(sampler, "collection", None)
+    if collection is None:
+        raise ArretCapaciteC7C1(
+            "observabilité perdue : la collection du sampler est illisible "
+            "— arrêt plutôt que supposition")
+    try:
+        n = len(collection)
+    except (TypeError, AttributeError) as exc:
+        raise ArretCapaciteC7C1(
+            "observabilité perdue : longueur de collection illisible "
+            "— arrêt plutôt que supposition") from exc
+    if isinstance(n, bool) or not isinstance(n, int) or n < 0:
+        raise ArretCapaciteC7C1(
+            f"observabilité perdue : longueur de collection invalide ({n!r})")
+    return n
+
+
+def creer_observateur_capacite(cible: str | Path, variante: str,
+                               repertoire_run: str):
+    """Fabrique l'observateur de capacité passé à Cobaya en callback.
+
+    OBSERVATEUR PUR. Il lit l'espace libre, l'occupation du lot, celle du
+    run courant et les réserves ratifiées. Il n'écrit AUCUN attribut du
+    sampler : ni ``params``, ni priors, ni propositions, ni
+    ``Rminus1_stop``, ni ``Rminus1_cl_stop``, ni poids, ni samples, ni
+    ``converged``. Positionner ``converged`` est explicitement interdit :
+    cela déguiserait une interruption de capacité en convergence.
+
+    Rend (observateur, etat) ; ``etat`` accumule la haute-eau observée.
+    """
+    octets_ligne = OCTETS_PAR_LIGNE_BORNE[_grille_de(variante)]
+    marge = marge_anticipation_gio()
+    plafond_lot = (float(BUDGET_TOTAL_RATIFIE_GIO)
+                   + float(RESERVE_REPRISE_RATIFIEE_GIO))
+    plancher_libre = float(RESERVE_VOLUME_RATIFIEE_GIO)
+    etat = {
+        "appels": 0,
+        "haute_eau_lot_gio": 0.0,
+        "haute_eau_run_gio": 0.0,
+        "libre_minimal_gio": None,
+        "dernier_releve": None,
+        "marge_anticipation_gio": marge,
+        "plafond_lot_gio": plafond_lot,
+        "plancher_libre_gio": plancher_libre,
+        "callback_every": CALLBACK_EVERY_ITERATIONS,
+        "politique_capacite_version": POLITIQUE_CAPACITE_VERSION,
+    }
+
+    def observateur(sampler):
+        etat["appels"] += 1
+        lignes = _lignes_en_memoire(sampler)
+        # Toute défaillance de MESURE pendant un run est elle aussi une
+        # perte d'observabilité : elle doit sortir par l'exception dédiée,
+        # qui porte le statut NON_CONVERGE_INTERRUPTION_CAPACITE. Sinon un
+        # run interrompu pour cause de mesure impossible ne serait pas
+        # marqué comme tel.
+        try:
+            libre = float(espace_libre_gio(cible))
+            occupation = mesurer_occupation_lot(cible, verifier_stabilite=False)
+        except (GardeErreur, OSError, ValueError) as exc:
+            raise ArretCapaciteC7C1(
+                f"observabilité perdue : capacité non mesurable pendant le "
+                f"run ({exc}) — arrêt plutôt que supposition",
+                {"appel": etat["appels"]}) from exc
+        sur_disque = occupation["runs_production"].get(repertoire_run, 0)
+        projete = (octets_ligne * (1 + lignes)) * (1.0 + RATIO_AUXILIAIRE_MAX)
+        run_gio = max(sur_disque / GIO, projete / GIO)
+        lot_gio = occupation["gio_production"] - sur_disque / GIO + run_gio
+        releve = {
+            "appel": etat["appels"], "lignes_en_memoire": lignes,
+            "libre_gio": libre, "run_gio": run_gio, "lot_gio": lot_gio,
+        }
+        etat["dernier_releve"] = releve
+        etat["haute_eau_lot_gio"] = max(etat["haute_eau_lot_gio"], lot_gio)
+        etat["haute_eau_run_gio"] = max(etat["haute_eau_run_gio"], run_gio)
+        etat["libre_minimal_gio"] = (
+            libre if etat["libre_minimal_gio"] is None
+            else min(etat["libre_minimal_gio"], libre))
+        if not all(math.isfinite(v) for v in (libre, run_gio, lot_gio)):
+            raise ArretCapaciteC7C1(
+                "données de capacité non finies pendant le run", releve)
+        if libre < plancher_libre + marge:
+            raise ArretCapaciteC7C1(
+                f"haute-eau franchie : espace libre {libre:.4f} Gio < "
+                f"réserve de volume {plancher_libre:.2f} + anticipation "
+                f"{marge:.2f} Gio — run interrompu NON CONVERGÉ", releve)
+        if lot_gio > plafond_lot - marge:
+            raise ArretCapaciteC7C1(
+                f"haute-eau franchie : occupation du lot {lot_gio:.4f} Gio > "
+                f"budget {BUDGET_TOTAL_RATIFIE_GIO} + reprise "
+                f"{RESERVE_REPRISE_RATIFIEE_GIO} - anticipation {marge:.2f} "
+                "Gio — run interrompu NON CONVERGÉ", releve)
+        return None
+
+    return observateur, etat
+
+
+def injecter_observateur_capacite(info: dict, observateur) -> dict:
+    """Copie de ``info`` où SEULS deux champs opérationnels changent.
+
+    ``callback_function`` et ``callback_every`` ne sont PAS scientifiques
+    et n'entrent donc jamais dans ``sha256_encodage_scientifique`` : ils
+    sont injectés ici, après le gel de l'encodage, et consignés séparément
+    dans le manifeste comme part de l'identité de reprise.
+    """
+    copie = dict(info)
+    copie["sampler"] = copy.deepcopy(info["sampler"])
+    copie["sampler"]["mcmc"]["callback_function"] = observateur
+    copie["sampler"]["mcmc"]["callback_every"] = CALLBACK_EVERY_ITERATIONS
+    return copie
+
+
+def differences_injection(avant: dict, apres: dict) -> list[str]:
+    """Chemins pointés modifiés entre deux blocs d'information."""
+
+    def parcourir(a, b, prefixe: str, sortie: list[str]) -> None:
+        if isinstance(a, dict) and isinstance(b, dict):
+            for cle in sorted(set(a) | set(b)):
+                chemin = f"{prefixe}.{cle}" if prefixe else str(cle)
+                if cle not in a or cle not in b:
+                    sortie.append(chemin)
+                else:
+                    parcourir(a[cle], b[cle], chemin, sortie)
+            return
+        try:
+            identiques = bool(a == b)
+        except Exception:  # noqa: BLE001 - objets non comparables
+            identiques = a is b
+        if not identiques:
+            sortie.append(prefixe)
+
+    differences: list[str] = []
+    parcourir(avant, apres, "", differences)
+    return sorted(differences)
+
+
+def garde_injection_observateur(info: dict, observateur) -> dict:
+    """Prouve que l'injection ne touche QUE les deux champs opérationnels."""
+    apres = injecter_observateur_capacite(info, observateur)
+    attendu = {"sampler.mcmc.callback_function", "sampler.mcmc.callback_every"}
+    obtenu = set(differences_injection(info, apres))
+    if obtenu != attendu:
+        raise GardeErreur(
+            f"l'injection de l'observateur modifie {sorted(obtenu)} au lieu "
+            f"de {sorted(attendu)} : refus")
+    return apres
+
+
+# ------------------------------- reprise après interruption de capacité
+
+def garde_reprise_apres_capacite(prefixe: str | Path, identite_attendue: dict,
+                                 cible: str | Path, variante: str) -> dict:
+    """Conditions CUMULATIVES d'une reprise après arrêt de capacité.
+
+    Manifeste identique ; checkpoint Cobaya présent ET lisible ; HEAD,
+    environnement, données et sampler identiques (portés par le
+    manifeste) ; politique de capacité identique ; nouvelle admission de
+    capacité réussie. Un statut CONVERGE interdit la reprise : un run
+    interrompu pour capacité ne peut pas avoir convergé.
+
+    LIMITE BLOQUANTE documentée : dans Cobaya 3.5,
+    ``write_checkpoint`` n'est appelé qu'au cycle d'apprentissage
+    (``learn_every``) et une fois à l'initialisation ; il n'existe pas de
+    ``checkpoint_every``. Rien ne garantit donc qu'un checkpoint RÉCENT
+    existe au moment où le callback lève l'exception. Cette garde le
+    constate et refuse — elle ne fabrique jamais de checkpoint.
+    """
+    chemin_prefixe = Path(prefixe)
+    manifeste_path = chemin_prefixe.parent / "manifest.json"
+    if not manifeste_path.is_file():
+        raise GardeErreur("reprise refusée : manifest.json absent")
+    try:
+        existant = json.loads(manifeste_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"reprise refusée : manifest.json illisible ({exc.msg})") from exc
+    if existant.get("statut_run") == STATUT_RUN_CONVERGE:
+        raise GardeErreur(
+            "reprise refusée : le manifeste déclare CONVERGE — une "
+            "interruption de capacité n'est jamais une convergence")
+    for cle, valeur in identite_attendue.items():
+        if cle == "statut_run":
+            continue
+        if existant.get(cle) != valeur:
+            raise GardeErreur(
+                f"reprise refusée : champ {cle!r} non identique "
+                f"({existant.get(cle)!r} != {valeur!r})")
+    manquants = [c for c in CHAMPS_POLITIQUE_CAPACITE if c not in existant]
+    if manquants:
+        raise GardeErreur(
+            f"reprise refusée : politique de capacité absente du manifeste "
+            f"{manquants}")
+    checkpoint = chemin_prefixe.with_name(chemin_prefixe.name + ".checkpoint")
+    if not checkpoint.is_file():
+        raise GardeErreur(
+            "reprise refusée : checkpoint Cobaya absent — dans Cobaya 3.5 le "
+            "checkpoint n'est écrit qu'au cycle learn_every, donc un arrêt de "
+            "capacité peut survenir sans checkpoint ; aucun checkpoint n'est "
+            "fabriqué (LIMITE BLOQUANTE de la reprise automatique)")
+    try:
+        octets = checkpoint.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise GardeErreur(
+            f"reprise refusée : checkpoint illisible ({exc})") from exc
+    if not octets.strip():
+        raise GardeErreur("reprise refusée : checkpoint vide")
+    try:
+        import yaml
+
+        contenu_cp = yaml.safe_load(octets)
+    except Exception as exc:  # noqa: BLE001
+        raise GardeErreur(
+            f"reprise refusée : checkpoint non analysable ({exc})") from exc
+    if not isinstance(contenu_cp, dict) or "sampler" not in contenu_cp:
+        raise GardeErreur(
+            "reprise refusée : checkpoint sans bloc sampler exploitable")
+    admission = garde_capacite_production(cible, variante)
+    return {
+        "manifeste_identique": True,
+        "checkpoint_present_et_lisible": True,
+        "politique_capacite_identique": True,
+        "statut_run_repris": existant.get("statut_run"),
+        "nouvelle_admission": admission,
+    }
 
 
 def _canonique(chemin: str | Path) -> str:
@@ -369,7 +1276,8 @@ def garde_contrat_local() -> dict:
             "distincts (INFRA-1a)"
         )
     for cle in ("garde_technique_minimale_Gio", "budget_production_requis_Gio",
-                "budget_production_statut", "reference_ratification_budget"):
+                "budget_production_statut", "reference_ratification_budget",
+                "reserve_reprise_Gio", "reserve_volume_minimale_Gio"):
         if cle not in rr:
             raise GardeErreur(f"contrat local : champ requis absent ({cle})")
     # cohérence de la garde technique contrat <-> code
@@ -378,6 +1286,48 @@ def garde_contrat_local() -> dict:
             f"garde technique du contrat {rr['garde_technique_minimale_Gio']} "
             f"!= constante qualifiée {GARDE_CAPACITE_GIO}"
         )
+    # CAP-1 : la décision humaine ratifiée doit être inscrite EXACTEMENT.
+    # Aucune tolérance : 19.999 et 20.001 sont refusés comme 19 et 21.
+    if rr["budget_production_statut"] != "RATIFIE":
+        raise GardeErreur(
+            f"contrat local : budget_production_statut "
+            f"{rr['budget_production_statut']!r} != 'RATIFIE' — la politique "
+            "de capacité CAP-1 exige un budget ratifié")
+    _valeur_ratifiee(rr["budget_production_requis_Gio"],
+                     BUDGET_TOTAL_RATIFIE_GIO,
+                     "contrat local : budget de production")
+    _valeur_ratifiee(rr["reserve_reprise_Gio"], RESERVE_REPRISE_RATIFIEE_GIO,
+                     "contrat local : réserve de reprise")
+    _valeur_ratifiee(rr["reserve_volume_minimale_Gio"],
+                     RESERVE_VOLUME_RATIFIEE_GIO,
+                     "contrat local : réserve de volume")
+    if rr["reference_ratification_budget"] != REFERENCE_RATIFICATION_BUDGET:
+        raise GardeErreur(
+            "contrat local : référence de ratification "
+            f"{rr['reference_ratification_budget']!r} != "
+            f"{REFERENCE_RATIFICATION_BUDGET!r}")
+    if rr.get("politique_capacite_version") != POLITIQUE_CAPACITE_VERSION:
+        raise GardeErreur(
+            "contrat local : version de politique de capacité "
+            f"{rr.get('politique_capacite_version')!r} != "
+            f"{POLITIQUE_CAPACITE_VERSION!r}")
+    # La racine de runs du contrat doit être sur le volume ratifié.
+    # Contrôles bon marché ici (lettre, type de lecteur, système de
+    # fichiers) ; la qualification MATÉRIELLE, plus coûteuse, appartient
+    # au pré-vol de production (garde_support_actif).
+    # Le contrat doit DÉCLARER le volume ratifié, et le déclarer
+    # exactement : « C ». Une déclaration absente ou divergente est un
+    # refus — la ratification ne se déduit d'aucun fait système.
+    if rr.get("volume_ratifie") != SUPPORT_ACTIF_VOLUME_RATIFIE:
+        raise GardeErreur(
+            f"contrat local : volume ratifié déclaré "
+            f"{rr.get('volume_ratifie')!r} != {SUPPORT_ACTIF_VOLUME_RATIFIE!r}")
+    _garde_volume_ratifie(rr["chemin"])
+    volume_runs = _infos_volume(rr["chemin"])
+    if volume_runs["type_lecteur_code"] != 3:
+        raise GardeErreur("contrat local : racine de runs sur un lecteur non fixe")
+    if volume_runs["systeme_fichiers"].upper() != "NTFS":
+        raise GardeErreur("contrat local : racine de runs non NTFS")
 
     chemins = contrat.get("chemins_reels", {})
     py_contrat = chemins.get("python_directeur")
@@ -448,6 +1398,12 @@ def garde_contrat_local() -> dict:
         "budget_production_requis_Gio": rr["budget_production_requis_Gio"],
         "reference_ratification_budget": rr["reference_ratification_budget"],
         "garde_technique_minimale_Gio": rr["garde_technique_minimale_Gio"],
+        "reserve_reprise_Gio": rr["reserve_reprise_Gio"],
+        "reserve_volume_minimale_Gio": rr["reserve_volume_minimale_Gio"],
+        "politique_capacite_version": rr["politique_capacite_version"],
+        "volume_ratifie": rr["volume_ratifie"],
+        "valeurs_ratifiees_exactes": True,
+        "racine_runs_sur_volume_ratifie": True,
         "python_directeur_conforme": True,
         "empreinte_environnement_conforme": True,
         "versions_declarees_conformes": True,
@@ -663,7 +1619,8 @@ def valider_date_utc(date_utc: str) -> str:
 def identite_run(variante: str, graine: int, head: str, contrat: dict,
                  versions: dict, sha_descripteur: str, sha_donnees: dict,
                  date_creation_utc: str, sha256_autorisation: str,
-                 budget_requis_gio, reference_ratification_budget) -> dict:
+                 budget_requis_gio, reference_ratification_budget,
+                 support_actif_identite_expurgee: dict) -> dict:
     """Identité COMPLÈTE nécessaire à une reprise exacte.
 
     La date de création est TRANSMISE explicitement — jamais fabriquée
@@ -696,8 +1653,25 @@ def identite_run(variante: str, graine: int, head: str, contrat: dict,
         "racine_runs_canonique": _canonique(os.environ["C7C1_XZ_OUT_DIR"]),
         "budget_production_requis_Gio": budget_requis_gio,
         "reference_ratification_budget": reference_ratification_budget,
-        "statut_run": "PLANIFIE_NON_LANCE",
+        "statut_run": STATUT_RUN_PLANIFIE,
+        # --- politique de capacité CAP-1 : part de l'identité de reprise
+        "budget_total_Gio": BUDGET_TOTAL_RATIFIE_GIO,
+        "reserve_reprise_Gio": RESERVE_REPRISE_RATIFIEE_GIO,
+        "reserve_volume_minimale_Gio": RESERVE_VOLUME_RATIFIEE_GIO,
+        "allocation_run_actif_Gio": allocation_run_actif_gio(variante),
+        "politique_capacite_version": POLITIQUE_CAPACITE_VERSION,
+        "callback_every": CALLBACK_EVERY_ITERATIONS,
+        "support_actif_identite_expurgee": dict(
+            support_actif_identite_expurgee),
     }
+    if not support_actif_identite_expurgee:
+        raise GardeErreur(
+            "identité de run : identité expurgée du support absente")
+    if (budget_requis_gio is not None
+            and float(budget_requis_gio) != float(BUDGET_TOTAL_RATIFIE_GIO)):
+        raise GardeErreur(
+            f"identité de run : budget du contrat {budget_requis_gio} != "
+            f"budget ratifié {BUDGET_TOTAL_RATIFIE_GIO}")
     identite.update(encodage)
     manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in identite]
     if manquants:
@@ -722,7 +1696,9 @@ def garde_git() -> dict:
 GROUPES_CONTROLE_AUTORISATION = (
     "cles", "type", "usage", "cles_humaines", "sha_lanceur",
     "sha_adaptateur", "sha_chemin_rapide", "version_contrat",
-    "empreinte_environnement", "racine_runs", "budget", "ratification",
+    "empreinte_environnement", "racine_runs", "budget", "budget_ratifie",
+    "reserve_reprise", "reserve_volume", "politique_capacite",
+    "support_actif", "ratification",
     "liaison_budget_contrat", "liaison_ratification_contrat",
     "sha_descripteurs", "sha_preenregistrement", "sha_donnees",
     "head_autorise", "matrice_variante_graine",
@@ -732,7 +1708,8 @@ GROUPES_CONTROLE_AUTORISATION = (
 def _valider_contenu_autorisation(manifeste: dict, variante: str,
                                   graine: int, head: str,
                                   budget_contrat=None,
-                                  ratification_contrat=None) -> list[str]:
+                                  ratification_contrat=None,
+                                  support_attendu: dict | None = None) -> list[str]:
     """VALIDATEUR PUR du contenu d'une autorisation (aucun fichier).
 
     Lève ``GardeErreur`` au PREMIER manquement, avec un message dont le
@@ -799,9 +1776,40 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
             or budget <= 0:
         raise GardeErreur("autorisation : budget de production absent ou nul")
     franchi("budget")
+    # --- CAP-1 : une autorisation ne peut valider ni un autre budget, ni
+    # une autre réserve, ni une autre politique, ni un autre support.
+    _valeur_ratifiee(budget, BUDGET_TOTAL_RATIFIE_GIO,
+                     "autorisation : budget de production")
+    franchi("budget_ratifie")
+    _valeur_ratifiee(manifeste.get("reserve_reprise_Gio"),
+                     RESERVE_REPRISE_RATIFIEE_GIO,
+                     "autorisation : réserve de reprise")
+    franchi("reserve_reprise")
+    _valeur_ratifiee(manifeste.get("reserve_volume_minimale_Gio"),
+                     RESERVE_VOLUME_RATIFIEE_GIO,
+                     "autorisation : réserve de volume")
+    franchi("reserve_volume")
+    if manifeste.get("politique_capacite_version") != POLITIQUE_CAPACITE_VERSION:
+        raise GardeErreur(
+            "autorisation : version de politique de capacité "
+            f"{manifeste.get('politique_capacite_version')!r} != "
+            f"{POLITIQUE_CAPACITE_VERSION!r}")
+    franchi("politique_capacite")
+    attendu_support = (support_attendu if support_attendu is not None
+                       else identite_support_expurgee(
+                           os.environ.get("C7C1_XZ_OUT_DIR", "")))
+    if manifeste.get("support_actif_identite_expurgee") != attendu_support:
+        raise GardeErreur(
+            "autorisation : support actif non conforme au support ratifié "
+            "et mesuré")
+    franchi("support_actif")
     ratification = manifeste.get("budget_production_ratification")
     if not str(ratification or "").strip():
         raise GardeErreur("autorisation : ratification du budget absente")
+    if str(ratification) != REFERENCE_RATIFICATION_BUDGET:
+        raise GardeErreur(
+            "autorisation : référence de ratification du budget "
+            f"{ratification!r} != {REFERENCE_RATIFICATION_BUDGET!r}")
     franchi("ratification")
     # Liaison EXACTE contrat <-> autorisation : une autorisation à 50 Gio
     # et un contrat ratifié à 80 Gio doivent être refusés ensemble, même
@@ -861,7 +1869,8 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
 
 def garde_autorisation(chemin: str | Path, variante: str, graine: int,
                        head: str, budget_contrat=None,
-                       ratification_contrat=None) -> str:
+                       ratification_contrat=None,
+                       support_attendu: dict | None = None) -> str:
     """Garde d'autorisation RÉELLE sur FICHIER.
 
     Lit le fichier, délègue au validateur pur, et ne retourne le SHA-256
@@ -880,6 +1889,7 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
         manifeste, variante, graine, head,
         budget_contrat=budget_contrat,
         ratification_contrat=ratification_contrat,
+        support_attendu=support_attendu,
     )
     return sha256_fichier(chemin)
 
@@ -948,8 +1958,52 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
     rapport["budget_production"] = {
         **etat_budget, "production_autorisable": autorisable, "motif": motif,
     }
+    # ---- CAP-1 : annonces de politique de capacité (aucune autorisation)
+    annonces: dict = {}
+    try:
+        support = garde_support_actif(out_dir)
+        annonces["SUPPORT QUALIFIE"] = True
+        annonces["support_actif_identite_expurgee"] = (
+            identite_support_publiable(support["identite_expurgee"]))
+        annonces["fait_systeme_volume_systeme"] = support[
+            "fait_systeme_volume_systeme"]
+    except GardeErreur as exc:
+        support = None
+        annonces["SUPPORT QUALIFIE"] = False
+        annonces["motif_support"] = str(exc)
+    annonces["BUDGET RATIFIE"] = (
+        contrat["budget_production_statut"] == "RATIFIE"
+        and contrat["reference_ratification_budget"]
+        == REFERENCE_RATIFICATION_BUDGET)
+    try:
+        etat_capacite = garde_capacite_production(out_dir, variante,
+                                                  support=support)
+        annonces["POLITIQUE DE CAPACITE QUALIFIEE"] = True
+    except GardeErreur as exc:
+        etat_capacite = {"refus": str(exc)}
+        annonces["POLITIQUE DE CAPACITE QUALIFIEE"] = False
+    annonces["PRODUCTION TOUJOURS VERROUILLEE"] = bool(VERROU_PRODUCTION_G2_4D)
+    rapport["capacite_production"] = {
+        **etat_capacite,
+        "marge_anticipation_gio": marge_anticipation_gio(),
+        "callback_every": CALLBACK_EVERY_ITERATIONS,
+        "annonces": annonces,
+    }
+    # Le verrou dur prime sur toute autre annonce : tant qu'il tient,
+    # aucune production n'est autorisable, même budget ratifié, support
+    # qualifié et capacité suffisante.
+    if VERROU_PRODUCTION_G2_4D:
+        autorisable = False
+        motif = (motif + " ; " if motif else "") + \
+            "VERROU_PRODUCTION_G2_4D actif"
+        rapport["budget_production"]["production_autorisable"] = False
+        rapport["budget_production"]["motif"] = motif
     rapport["verdict"] = (
-        "PREFLIGHT OK — production autorisable ailleurs" if autorisable
+        "PREPARATION OK — BUDGET RATIFIE, SUPPORT QUALIFIE, POLITIQUE DE "
+        "CAPACITE QUALIFIEE, PRODUCTION TOUJOURS VERROUILLEE"
+        if all(annonces.get(c) for c in (
+            "BUDGET RATIFIE", "SUPPORT QUALIFIE",
+            "POLITIQUE DE CAPACITE QUALIFIEE"))
         else "PREPARATION OK — PRODUCTION NON AUTORISABLE"
     )
     return rapport
@@ -986,14 +2040,19 @@ def produire(args: list[str]) -> None:
     #    budget et ratification liés au contrat)
     contrat = garde_contrat_local()
     contrat_brut = contrat.pop("_contrat")
+    cible = os.environ["C7C1_XZ_OUT_DIR"]
+    support = garde_support_actif(cible)  # refuse si le support a changé
     sha_autorisation = garde_autorisation(
         chemin_autorisation, variante, graine, etat_git["head"],
         budget_contrat=contrat["budget_production_requis_Gio"],
         ratification_contrat=contrat["reference_ratification_budget"],
+        support_attendu=support["identite_expurgee"],
     )
-    # 6. budget de production ratifié, comparé à l'espace libre de la CIBLE
-    rapport["budget"] = garde_budget_production(
-        contrat_brut, os.environ["C7C1_XZ_OUT_DIR"])
+    # 6. budget ratifié (condition subsumée) PUIS admission de capacité —
+    #    c'est l'admission, et non « libre >= budget », qui décide.
+    rapport["budget"] = garde_budget_production(contrat_brut, cible)
+    rapport["capacite_admission"] = garde_capacite_production(
+        cible, variante, support=support)
     # 7. construction PURE du plan de production (aucune écriture).
     #    La date de création est générée UNE SEULE FOIS ici puis
     #    transmise au plan — et, en porte future, au manifeste.
@@ -1008,11 +2067,24 @@ def produire(args: list[str]) -> None:
         sha256_autorisation=sha_autorisation,
         budget_requis_gio=rapport["budget"]["budget_production_requis_Gio"],
         reference_ratification_budget=contrat["reference_ratification_budget"],
+        support_actif_identite_expurgee=support["identite_expurgee"],
     )
-    plan["prefixe"] = str(
-        Path(os.environ["C7C1_XZ_OUT_DIR"]) / "g2_4" / "P_WS" / variante
-        / f"s{graine}" / "chain"
-    )
+    repertoire_run = f"g2_4/P_WS/{variante}/s{graine}"
+    plan["prefixe"] = str(Path(cible) / "g2_4" / "P_WS" / variante
+                          / f"s{graine}" / "chain")
+    # 7 bis. observateur de capacité : construit et VÉRIFIÉ (l'injection ne
+    #        doit toucher que callback_function et callback_every), jamais
+    #        exécuté ici — aucun run n'existe.
+    from xz_cobaya_g2_4 import build_cobaya_info
+
+    observateur, etat_observateur = creer_observateur_capacite(
+        cible, variante, repertoire_run)
+    garde_injection_observateur(
+        build_cobaya_info(DESCRIPTEURS[variante], graine), observateur)
+    plan["observateur_capacite"] = {
+        k: etat_observateur[k] for k in
+        ("callback_every", "marge_anticipation_gio", "plafond_lot_gio",
+         "plancher_libre_gio", "politique_capacite_version")}
     # 8. VERROU DUR — placé AVANT toute création de répertoire, toute
     #    ouverture en écriture, tout os.replace, tout manifest.json et
     #    tout cobaya.run. Le code de l'étape 9 est préparé mais ne

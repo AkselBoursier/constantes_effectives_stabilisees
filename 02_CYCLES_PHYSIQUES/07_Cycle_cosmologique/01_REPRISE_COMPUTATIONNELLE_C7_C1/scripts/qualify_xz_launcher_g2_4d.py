@@ -101,6 +101,51 @@ def _preparer():
     return ici
 
 
+def _support_mesure(lanceur):
+    """Identité expurgée du support ratifié, mesurée localement."""
+    return lanceur.identite_support_expurgee(os.environ["C7C1_XZ_OUT_DIR"])
+
+
+def _autorisation_nominale_memoire(lanceur, variante="M2a-N", graine=630101,
+                                   cles_humaines=("CONTROLE_MEMOIRE_1",
+                                                  "CONTROLE_MEMOIRE_2")):
+    """Contenu d'autorisation NOMINAL, entièrement conforme, en mémoire.
+
+    Source unique du contrôle positif et des fautes de contenu : toute
+    faute part de ce dictionnaire et n'altère QUE le champ visé. Les
+    valeurs de capacité sont celles ratifiées en CAP-0 (issue #90).
+    """
+    ici = Path(lanceur.__file__).parent
+    return {
+        "type": "autorisation_production_c7c1_g2_4",
+        "usage": "PRODUCTION",
+        "cle_humaine_1": cles_humaines[0],
+        "cle_humaine_2": cles_humaines[1],
+        "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
+        "sha256_adaptateur": lanceur.sha256_fichier(ici / "xz_cobaya_g2_4.py"),
+        "sha256_chemin_rapide": lanceur.sha256_fichier(
+            ici / "xz_fast_g2_4c.py"),
+        "sha256_descripteurs": {
+            v: lanceur.sha256_fichier(c)
+            for v, c in lanceur.DESCRIPTEURS.items()},
+        "sha256_preenregistrement": lanceur.sha256_fichier(
+            "reports/rapport_G2_2a_preregistration.md"),
+        "sha256_donnees": dict(lanceur.SHA_BAO),
+        "empreinte_environnement": lanceur.empreinte_environnement(),
+        "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
+        "head_autorise": lanceur.garde_git()["head"],
+        "racine_runs_canonique": lanceur._canonique(
+            os.environ["C7C1_XZ_OUT_DIR"]),
+        "variantes_graines_autorisees": {variante: [graine]},
+        "budget_production_requis_Gio": lanceur.BUDGET_TOTAL_RATIFIE_GIO,
+        "budget_production_ratification": lanceur.REFERENCE_RATIFICATION_BUDGET,
+        "reserve_reprise_Gio": lanceur.RESERVE_REPRISE_RATIFIEE_GIO,
+        "reserve_volume_minimale_Gio": lanceur.RESERVE_VOLUME_RATIFIEE_GIO,
+        "politique_capacite_version": lanceur.POLITIQUE_CAPACITE_VERSION,
+        "support_actif_identite_expurgee": _support_mesure(lanceur),
+    }
+
+
 def _instrumenter_camb():
     from xz_background_g2_1 import CambReference
 
@@ -166,34 +211,12 @@ def executer_faute(nom: str) -> int:
         """Autorisation NOMINALE construite EN MÉMOIRE (jamais sur disque).
 
         usage = PRODUCTION : permet d'éprouver les champs profonds sans
-        produire le moindre fichier d'autorisation réelle.
+        produire le moindre fichier d'autorisation réelle. Depuis CAP-1,
+        les valeurs de capacité doivent être celles RATIFIÉES : une
+        autorisation portant un autre budget ou une autre réserve est
+        refusée par construction.
         """
-        ici = Path(lanceur.__file__).parent
-        return {
-            "type": "autorisation_production_c7c1_g2_4",
-            "usage": "PRODUCTION",
-            "cle_humaine_1": "CONTROLE_MEMOIRE_1",
-            "cle_humaine_2": "CONTROLE_MEMOIRE_2",
-            "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
-            "sha256_adaptateur": lanceur.sha256_fichier(
-                ici / "xz_cobaya_g2_4.py"),
-            "sha256_chemin_rapide": lanceur.sha256_fichier(
-                ici / "xz_fast_g2_4c.py"),
-            "sha256_descripteurs": {
-                v: lanceur.sha256_fichier(c)
-                for v, c in lanceur.DESCRIPTEURS.items()},
-            "sha256_preenregistrement": lanceur.sha256_fichier(
-                "reports/rapport_G2_2a_preregistration.md"),
-            "sha256_donnees": dict(lanceur.SHA_BAO),
-            "empreinte_environnement": lanceur.empreinte_environnement(),
-            "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
-            "head_autorise": lanceur.garde_git()["head"],
-            "racine_runs_canonique": lanceur._canonique(
-                os.environ["C7C1_XZ_OUT_DIR"]),
-            "variantes_graines_autorisees": {variante: [graine]},
-            "budget_production_requis_Gio": 50,
-            "budget_production_ratification": "REF_CONTROLE",
-        }
+        return _autorisation_nominale_memoire(lanceur, variante, graine)
 
     # --- graphe et mode directeur ---------------------------------------
     if nom == "directeur_retourne_legacy":
@@ -378,8 +401,14 @@ def executer_faute(nom: str) -> int:
         mesure_sur_ancre = bool(vus) and os.path.normcase(vus[0]) == ancre
         return 1 if mesure_sur_ancre else 0
     if nom == "budget_non_etabli_accepte":
+        # Depuis CAP-1 le contrat RÉEL est ratifié : la faute injecte donc
+        # explicitement l'ancien statut NON_ETABLI, qui doit rester
+        # bloquant. Aucune garde n'est détendue pour faire passer ce test.
         contrat = json.loads(
             Path(os.environ["C7C1_CONTRAT_LOCAL"]).read_text(encoding="utf-8"))
+        contrat["racine_runs"]["budget_production_statut"] = "NON_ETABLI"
+        contrat["racine_runs"]["budget_production_requis_Gio"] = None
+        contrat["racine_runs"]["reference_ratification_budget"] = None
         return _detecte(lambda: lanceur.garde_budget_production(
             contrat, os.environ["C7C1_XZ_OUT_DIR"]))
     if nom == "budget_superieur_a_l_espace":
@@ -406,7 +435,18 @@ def executer_faute(nom: str) -> int:
         m = _manifeste_nominal()
         variante_t, graine_t = "M2a-N", 630101
         head = lanceur.garde_git()["head"]
-        budget_c, ratif_c = 50, "REF_CONTROLE"
+        support_t = _support_mesure(lanceur)
+        budget_c = lanceur.BUDGET_TOTAL_RATIFIE_GIO
+        ratif_c = lanceur.REFERENCE_RATIFICATION_BUDGET
+        if champ == "budget_different":
+            # L'autorisation reste au budget RATIFIÉ ; c'est le CONTRAT qui
+            # diverge. La faute éprouve donc bien la liaison contrat <->
+            # autorisation, et non le contrôle de valeur ratifiée.
+            budget_c = 80
+        elif champ == "ratification_differente":
+            # Idem : l'autorisation porte la référence ratifiée, le contrat
+            # en porte une autre. C'est la LIAISON qui doit mordre.
+            ratif_c = "AUTRE_REFERENCE_CONTRAT"
         if champ == "sha256_descripteurs":
             m["sha256_descripteurs"]["M2b-K"] = "0" * 64
         elif champ == "head_autorise":
@@ -419,16 +459,15 @@ def executer_faute(nom: str) -> int:
             m["variantes_graines_autorisees"] = {variante_t: [630108]}
         elif champ == "budget_absent":
             m["budget_production_requis_Gio"] = None
-        elif champ == "budget_different":
-            m["budget_production_requis_Gio"] = 80
-        elif champ == "ratification_differente":
-            m["budget_production_ratification"] = "AUTRE"
+        elif champ in ("budget_different", "ratification_differente"):
+            pass  # déjà appliqué ci-dessus
         else:
             m[champ] = "0" * 64
         return _detecte_message(
             lambda: lanceur._valider_contenu_autorisation(
                 m, variante_t, graine_t, head,
-                budget_contrat=budget_c, ratification_contrat=ratif_c),
+                budget_contrat=budget_c, ratification_contrat=ratif_c,
+                support_attendu=support_t),
             fragment)
     if nom == "autorisation_qualification_only_acceptee":
         # Reste un test sur FICHIER : la vraie garde doit refuser sur usage.
@@ -450,7 +489,8 @@ def executer_faute(nom: str) -> int:
             sha_descripteur=lanceur.garde_descripteur("M2a-N"),
             sha_donnees=lanceur.garde_donnees(),
             sha256_autorisation="0" * 64, budget_requis_gio=None,
-            reference_ratification_budget=None)
+            reference_ratification_budget=None,
+            support_actif_identite_expurgee=_support_mesure(lanceur))
         if nom == "identite_date_absente":
             return _detecte(lambda: lanceur.identite_run(
                 **{**commun, "date_creation_utc": None}))
@@ -593,36 +633,16 @@ def _autorisation_qualification(prep: Path, variante: str, graine: int,
     réelle : marquée QUALIFICATION_ONLY et volontairement défectueuse."""
     import run_mcmc_xz_g2_4 as lanceur
 
-    ici = Path(lanceur.__file__).parent
-    manifeste = {
-        "type": "autorisation_production_c7c1_g2_4",
-        # Usage QUALIFICATION_ONLY : ce fichier n'est JAMAIS une
-        # autorisation réelle et la vraie garde doit le refuser.
-        "usage": "QUALIFICATION_ONLY",
-        "cle_humaine_1": "QUALIFICATION_ONLY",
-        "cle_humaine_2": "QUALIFICATION_ONLY",
-        "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
-        "sha256_adaptateur": lanceur.sha256_fichier(ici / "xz_cobaya_g2_4.py"),
-        "sha256_chemin_rapide": lanceur.sha256_fichier(ici / "xz_fast_g2_4c.py"),
-        "sha256_descripteurs": {
-            v: lanceur.sha256_fichier(c) for v, c in lanceur.DESCRIPTEURS.items()},
-        "sha256_preenregistrement": lanceur.sha256_fichier(
-            "reports/rapport_G2_2a_preregistration.md"),
-        "sha256_donnees": dict(lanceur.SHA_BAO),
-        "empreinte_environnement": lanceur.empreinte_environnement(),
-        "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
-        "head_autorise": lanceur.garde_git()["head"],
-        "racine_runs_canonique": lanceur._canonique(
-            os.environ["C7C1_XZ_OUT_DIR"]),
-        "variantes_graines_autorisees": {variante: [graine]},
-        "budget_production_requis_Gio": 50,
-        "budget_production_ratification": "QUALIFICATION_ONLY",
-    }
+    manifeste = _autorisation_nominale_memoire(
+        lanceur, variante, graine,
+        cles_humaines=("QUALIFICATION_ONLY", "QUALIFICATION_ONLY"))
+    # Usage QUALIFICATION_ONLY : ce fichier n'est JAMAIS une autorisation
+    # réelle et la vraie garde doit le refuser.
+    manifeste["usage"] = "QUALIFICATION_ONLY"
     if defaut == "autorisation_usage_production":
         manifeste["usage"] = "PRODUCTION"  # utilisé par les fautes de liaison
     if defaut == "autorisation_budget_different_du_contrat":
         manifeste["usage"] = "PRODUCTION"
-        manifeste["budget_production_requis_Gio"] = 50
     if defaut == "autorisation_ratification_differente":
         manifeste["usage"] = "PRODUCTION"
         manifeste["budget_production_ratification"] = "AUTRE_REFERENCE"
@@ -740,10 +760,15 @@ def _verrou_nominal() -> dict:
         vrai_budget = lanceur.garde_budget_production
         vraie_autorisation = lanceur.garde_autorisation
         lanceur.garde_git = lambda: {"head": head_reel, "arbre_propre": True}
+        # Le budget simulé doit être le budget RATIFIÉ : la preuve du verrou
+        # n'a de valeur que si l'exécution atteint l'étape verrouillée avec
+        # une politique de capacité cohérente, non avec un budget fantaisiste
+        # qu'une garde amont rejetterait pour une autre raison.
         lanceur.garde_budget_production = lambda contrat, cible: {
             "budget_production_statut": "RATIFIE_SIMULE_QUALIFICATION",
-            "budget_production_requis_Gio": 50,
-            "reference_ratification_budget": "SIMULEE_QUALIFICATION",
+            "budget_production_requis_Gio": lanceur.BUDGET_TOTAL_RATIFIE_GIO,
+            "reference_ratification_budget":
+                lanceur.REFERENCE_RATIFICATION_BUDGET,
             "libre_cible_gio": None,
         }
         lanceur.garde_autorisation = (
@@ -1085,7 +1110,8 @@ def qualification() -> int:
         lanceur.garde_environnement(), lanceur.garde_descripteur("M2a-N"),
         lanceur.garde_donnees(), date_creation_utc=DATE_QUALIFICATION_UTC,
         sha256_autorisation="0" * 64, budget_requis_gio=None,
-        reference_ratification_budget=None)
+        reference_ratification_budget=None,
+        support_actif_identite_expurgee=_support_mesure(lanceur))
     with tempfile.TemporaryDirectory(prefix="c7c1_g2_4d_") as tmp:
         cible = Path(tmp) / "manifest.json"
         contenu = {**identite_complete, "_QUALIFICATION_ONLY": True}
@@ -1179,36 +1205,17 @@ def qualification() -> int:
     # Un contenu nominal entièrement cohérent doit passer ET traverser
     # TOUS les groupes de contrôles : c'est ce qui rend impossible un
     # retour prématuré masquant des validations aval (régression G2.4d-b).
-    ici_scripts = Path(lanceur.__file__).parent
     head_courant = lanceur.garde_git()["head"]
-    nominal = {
-        "type": "autorisation_production_c7c1_g2_4",
-        "usage": "PRODUCTION",
-        "cle_humaine_1": "CONTROLE_POSITIF_1",
-        "cle_humaine_2": "CONTROLE_POSITIF_2",
-        "sha256_lanceur": lanceur.sha256_fichier(lanceur.__file__),
-        "sha256_adaptateur": lanceur.sha256_fichier(
-            ici_scripts / "xz_cobaya_g2_4.py"),
-        "sha256_chemin_rapide": lanceur.sha256_fichier(
-            ici_scripts / "xz_fast_g2_4c.py"),
-        "sha256_descripteurs": {
-            v: lanceur.sha256_fichier(c)
-            for v, c in lanceur.DESCRIPTEURS.items()},
-        "sha256_preenregistrement": lanceur.sha256_fichier(
-            "reports/rapport_G2_2a_preregistration.md"),
-        "sha256_donnees": dict(lanceur.SHA_BAO),
-        "empreinte_environnement": lanceur.empreinte_environnement(),
-        "version_contrat_local": lanceur.VERSION_CONTRAT_LOCAL,
-        "head_autorise": head_courant,
-        "racine_runs_canonique": lanceur._canonique(
-            os.environ["C7C1_XZ_OUT_DIR"]),
-        "variantes_graines_autorisees": {"M2a-N": [630101]},
-        "budget_production_requis_Gio": 50,
-        "budget_production_ratification": "REF_CONTROLE_POSITIF",
-    }
+    support_courant = _support_mesure(lanceur)
+    nominal = _autorisation_nominale_memoire(
+        lanceur, "M2a-N", 630101,
+        cles_humaines=("CONTROLE_POSITIF_1", "CONTROLE_POSITIF_2"))
+    budget_ratifie = lanceur.BUDGET_TOTAL_RATIFIE_GIO
+    ref_ratifiee = lanceur.REFERENCE_RATIFICATION_BUDGET
     traverses = lanceur._valider_contenu_autorisation(
         nominal, "M2a-N", 630101, head_courant,
-        budget_contrat=50, ratification_contrat="REF_CONTROLE_POSITIF")
+        budget_contrat=budget_ratifie, ratification_contrat=ref_ratifiee,
+        support_attendu=support_courant)
     groupes_manquants = [g for g in lanceur.GROUPES_CONTROLE_AUTORISATION
                          if g not in traverses]
     # paires de mutation sur les deux gardes historiquement masquées
@@ -1218,8 +1225,9 @@ def qualification() -> int:
         try:
             lanceur._valider_contenu_autorisation(
                 m, "M2a-N", 630101, head_courant,
-                budget_contrat=50,
-                ratification_contrat="REF_CONTROLE_POSITIF")
+                budget_contrat=budget_ratifie,
+                ratification_contrat=ref_ratifiee,
+                support_attendu=support_courant)
             return False
         except Exception as exc:  # noqa: BLE001
             return fragment in str(exc)
