@@ -120,7 +120,35 @@ SOUS_ARBRES_TEMPORAIRES_RECONNUS = ("_tmp", "g2_4_qualification")
 STATUT_RUN_PLANIFIE = "PLANIFIE_NON_LANCE"
 STATUT_RUN_INTERROMPU_CAPACITE = "NON_CONVERGE_INTERRUPTION_CAPACITE"
 STATUT_RUN_CONVERGE = "CONVERGE"
+# SENT-0A : statuts de sortie supplémentaires, strictement séparés.
+#   ECHEC_TECHNIQUE      : toute exception hors capacité — jamais reclassée ;
+#   FIN_SANS_CONVERGENCE : Cobaya rend la main normalement SANS déclarer
+#                          sampler.converged is True. Un simple retour sans
+#                          exception ne vaut JAMAIS convergence.
+STATUT_RUN_ECHEC_TECHNIQUE = "NON_CONVERGE_ECHEC_TECHNIQUE"
+STATUT_RUN_FIN_SANS_CONVERGENCE = "FIN_SANS_CONVERGENCE"
+STATUTS_RUN_FINALS = (
+    STATUT_RUN_CONVERGE, STATUT_RUN_INTERROMPU_CAPACITE,
+    STATUT_RUN_ECHEC_TECHNIQUE, STATUT_RUN_FIN_SANS_CONVERGENCE,
+)
+# Champs qu'une mise à jour RUNTIME du manifeste a le droit de toucher.
+# Tout autre champ — identité, science, capacité — est inviolable après
+# l'écriture initiale.
+CHAMPS_RUNTIME_AUTORISES = (
+    "statut_run", "date_fin_utc", "detail_fin", "converged_cobaya",
+)
 SCHEMAS_MANIFESTE_RECONNUS = ("c7c1-run-manifest-1", "c7c1-run-manifest-2")
+
+# ------------------------------------------------ SENT-0 : périmètre
+# Couple sentinelle PROPOSÉ en #94 — PAS ENCORE AUTORISÉ à tourner.
+# Tant que la porte SENT-0 n'est pas close, seul ce couple peut atteindre
+# l'étape de production future ; les 31 autres sont refusés en 4 bis.
+# Ce confinement est purement OPÉRATOIRE : il n'accorde AUCUN privilège
+# scientifique à M2a-N — les quatre variantes restent co-primaires
+# (G2.2a) ; le couple est simplement le premier de la matrice gelée et le
+# cas nominal des qualifications du lanceur, choisi ex ante en #94.
+SENTINELLE_SENT0_VARIANTE = "M2a-N"
+SENTINELLE_SENT0_GRAINE = 630101
 
 # ------------------------------------------------ verrou dur G2.4d
 # Tant que ce verrou vaut True, AUCUNE écriture réelle et AUCUN
@@ -260,6 +288,27 @@ def garde_matrice(variante: str, graine: int) -> None:
     if graine not in MATRICE[variante]:
         raise GardeErreur(
             f"graine {graine} hors de la matrice gelée pour {variante}"
+        )
+
+
+def garde_perimetre_sentinelle(variante: str, graine: int) -> None:
+    """SENT-0A (4 bis) : confinement de la PRODUCTION au couple sentinelle.
+
+    S'applique au mode ``produire`` UNIQUEMENT — le pré-vol des quatre
+    variantes reste ouvert. Les 31 autres couples de la matrice sont
+    refusés ici sur la cause exacte « hors périmètre sentinelle », même si
+    toutes les autres gardes étaient satisfaites. Aucun privilège
+    scientifique n'est accordé à M2a-N : ce confinement disparaîtra avec
+    la clôture de SENT-0, et les quatre variantes restent co-primaires.
+    """
+    if (variante, int(graine)) != (SENTINELLE_SENT0_VARIANTE,
+                                   SENTINELLE_SENT0_GRAINE):
+        raise GardeErreur(
+            f"hors périmètre sentinelle : ({variante}, {graine}) — tant que "
+            f"SENT-0 n'est pas close, seule la production du couple "
+            f"({SENTINELLE_SENT0_VARIANTE}, {SENTINELLE_SENT0_GRAINE}) peut "
+            "être envisagée ; les 31 autres couples exigent l'audit du "
+            "sentinelle puis une décision humaine distincte"
         )
 
 
@@ -1568,6 +1617,112 @@ def ecrire_manifeste_atomique(chemin: str | Path, contenu: dict) -> None:
         pass
 
 
+def _ecrire_atomique_brut(cible: Path, contenu: dict) -> None:
+    """Écriture atomique SANS règle d'écrasement — usage interne du seul
+    ``mettre_a_jour_manifeste_runtime``, qui a déjà validé la transition.
+    ``ecrire_manifeste_atomique`` n'est PAS détendue : elle reste la seule
+    voie de création, et refuse toujours un écrasement non identique."""
+    corps = json.dumps(contenu, indent=2, sort_keys=True,
+                       ensure_ascii=False) + "\n"
+    tmp = cible.with_name(cible.name + f".tmp{os.getpid()}")
+    try:
+        with open(tmp, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(corps)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(tmp, cible)
+    except BaseException:
+        if tmp.exists():
+            try:
+                tmp.unlink()
+            except OSError:
+                pass
+        raise
+    try:
+        fd = os.open(str(cible.parent), os.O_RDONLY)
+        try:
+            os.fsync(fd)
+        finally:
+            os.close(fd)
+    except (OSError, AttributeError):
+        pass
+
+
+def mettre_a_jour_manifeste_runtime(chemin: str | Path,
+                                    mises_a_jour: dict) -> dict:
+    """Mise à jour ATOMIQUE du manifeste, limitée aux champs runtime.
+
+    Règles, toutes bloquantes (SENT-0A §4.6) :
+      - seuls les champs de ``CHAMPS_RUNTIME_AUTORISES`` peuvent changer —
+        l'identité et la science sont inviolables après l'écriture
+        initiale ;
+      - le manifeste existant doit être lisible ET conforme (schéma
+        reconnu, tous les champs d'identité présents) : un manifeste
+        corrompu ou étranger n'est jamais écrasé ;
+      - transitions de statut : depuis PLANIFIE_NON_LANCE vers un statut
+        FINAL uniquement ; un statut final n'est jamais réécrit ;
+      - CONVERGE exige ``converged_cobaya is True`` dans la même mise à
+        jour : aucun chemin ne peut déclarer une convergence sans le
+        drapeau explicite du sampler ;
+      - une interruption de capacité ne devient jamais une convergence.
+
+    Rend le manifeste mis à jour (relu depuis le disque).
+    """
+    cible = Path(chemin)
+    if not cible.is_file():
+        raise GardeErreur("mise à jour runtime : manifest.json absent")
+    try:
+        existant = json.loads(cible.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"mise à jour runtime : manifeste corrompu ({exc.msg}) — "
+            "aucun écrasement") from exc
+    if not isinstance(existant, dict) \
+            or existant.get("schema") not in SCHEMAS_MANIFESTE_RECONNUS:
+        raise GardeErreur(
+            "mise à jour runtime : manifeste non conforme (schéma) — refus")
+    manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in existant]
+    if manquants:
+        raise GardeErreur(
+            f"mise à jour runtime : manifeste non conforme, champs "
+            f"d'identité absents {manquants} — refus")
+    interdits = sorted(set(mises_a_jour) - set(CHAMPS_RUNTIME_AUTORISES))
+    if interdits:
+        raise GardeErreur(
+            f"mise à jour runtime : champs non runtime refusés {interdits} "
+            f"— seuls {list(CHAMPS_RUNTIME_AUTORISES)} sont modifiables")
+    statut_avant = existant.get("statut_run")
+    statut_apres = mises_a_jour.get("statut_run", statut_avant)
+    if statut_apres not in (STATUT_RUN_PLANIFIE, *STATUTS_RUN_FINALS):
+        raise GardeErreur(
+            f"mise à jour runtime : statut inconnu {statut_apres!r}")
+    if statut_avant in STATUTS_RUN_FINALS and statut_apres != statut_avant:
+        raise GardeErreur(
+            f"mise à jour runtime : statut final {statut_avant!r} jamais "
+            f"réécrit (demandé : {statut_apres!r}) — une interruption ne "
+            "devient pas une convergence")
+    if statut_apres == STATUT_RUN_CONVERGE:
+        if mises_a_jour.get("converged_cobaya") is not True:
+            raise GardeErreur(
+                "mise à jour runtime : CONVERGE exige converged_cobaya is "
+                "True — un retour sans exception ne vaut jamais convergence")
+        if statut_avant == STATUT_RUN_INTERROMPU_CAPACITE:
+            raise GardeErreur(
+                "mise à jour runtime : une interruption de capacité ne "
+                "devient jamais une convergence")
+    nouveau = {**existant, **mises_a_jour}
+    # Défense en profondeur : l'identité doit être VÉRIFIÉE inchangée,
+    # pas seulement supposée inchangée par construction.
+    for cle in existant:
+        if cle in CHAMPS_RUNTIME_AUTORISES:
+            continue
+        if nouveau[cle] != existant[cle]:
+            raise GardeErreur(
+                f"mise à jour runtime : champ non runtime altéré ({cle})")
+    _ecrire_atomique_brut(cible, nouveau)
+    return json.loads(cible.read_text(encoding="utf-8"))
+
+
 def encodage_scientifique_gele(variante: str, graine: int) -> dict:
     """Encodage scientifique gelé, extrait du CONSTRUCTEUR DIRECTEUR.
 
@@ -2009,13 +2164,131 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
     return rapport
 
 
+# --------------------------------------- SENT-0A : chemin réel (étape 9)
+
+def _lancer_cobaya_production(info_cobaya: dict):
+    """Point d'appel UNIQUE de Cobaya pour la production.
+
+    Convention G1 ratifiée et conservée telle quelle : ``run(info,
+    resume=True)`` — sous la garde de collision, le répertoire est
+    toujours neuf, donc ``resume=True`` est inerte au premier lancement ;
+    aucune nouvelle sémantique de reprise n'est inventée ici (REC-1
+    inchangée). L'import est local : sous le verrou, ce module n'est
+    jamais chargé par le chemin de production. La qualification SENT-0B
+    substitue cette fonction par un substitut contrôlé — jamais une vraie
+    MCMC.
+    """
+    from cobaya.run import run as cobaya_run
+
+    return cobaya_run(info_cobaya, resume=True)
+
+
+def _date_utc_fin() -> str:
+    """Date de fin de run. Injectable UNIQUEMENT hors production
+    (les injections C7C1_TEST_* sont refusées en mode --produire)."""
+    forge = os.environ.get("C7C1_TEST_DATE_FIN_UTC")
+    if forge:
+        return valider_date_utc(forge)
+    import datetime
+
+    return datetime.datetime.now(
+        datetime.timezone.utc).strftime(FORMAT_DATE_UTC)
+
+
+def executer_production_sentinelle(manifeste_initial: dict,
+                                   info_cobaya: dict,
+                                   prefixe: str | Path) -> dict:
+    """Étape 9 RÉELLE du chemin de production (SENT-0A).
+
+    N'est atteinte par ``produire`` qu'après les gardes 1–8, donc jamais
+    tant que ``VERROU_PRODUCTION_G2_4D`` vaut True. La qualification
+    SENT-0B l'éprouve directement, sous %TEMP% hors Git, avec un
+    substitut de Cobaya.
+
+    Séquence :
+      9.1 re-contrôle de collision puis création du répertoire du run —
+          jamais d'écrasement ni de déplacement silencieux ;
+      9.2 écriture ATOMIQUE du manifeste initial (PLANIFIE_NON_LANCE) par
+          la seule voie de création, qui refuse un existant non identique;
+      9.3 appel Cobaya par le point unique ``_lancer_cobaya_production`` ;
+      9.4 classement STRICT de la sortie :
+            sampler.converged is True             -> CONVERGE
+            retour normal sans ce drapeau exact   -> FIN_SANS_CONVERGENCE
+            ArretCapaciteC7C1                     -> NON_CONVERGE_INTERRUPTION_CAPACITE
+            toute autre exception                 -> NON_CONVERGE_ECHEC_TECHNIQUE
+          Aucune exception ne peut écrire CONVERGE ; un booléen non
+          canonique (numpy, chaîne, entier) ne vaut PAS convergence —
+          direction conservatrice assumée ;
+      9.5 mise à jour runtime ATOMIQUE du manifeste, identité inviolée.
+
+    En cas d'échec APRÈS création du répertoire, les traces (répertoire,
+    manifeste, sorties partielles de Cobaya) sont CONSERVÉES pour audit —
+    jamais supprimées automatiquement. Aucun checkpoint n'est écrit ni
+    fabriqué ici : seuls ceux de Cobaya existent (REC-1). Aucune deuxième
+    graine ni variante n'est lancée automatiquement.
+    """
+    chemin_prefixe = Path(prefixe)
+    repertoire = chemin_prefixe.parent
+    # 9.1 — le temps a pu passer depuis le pré-vol : re-contrôler ici.
+    garde_prefixe(chemin_prefixe)
+    garde_collision(chemin_prefixe)
+    repertoire.mkdir(parents=True, exist_ok=True)
+    manifeste_path = repertoire / "manifest.json"
+    # 9.2 — création par la voie stricte (refus d'un existant différent).
+    if manifeste_initial.get("statut_run") != STATUT_RUN_PLANIFIE:
+        raise GardeErreur(
+            f"étape 9 : statut initial {manifeste_initial.get('statut_run')!r}"
+            f" != {STATUT_RUN_PLANIFIE!r}")
+    ecrire_manifeste_atomique(manifeste_path, manifeste_initial)
+    # 9.3 / 9.4 — l'exécution. Les traces restent sur échec.
+    try:
+        _, sampler = _lancer_cobaya_production(info_cobaya)
+    except ArretCapaciteC7C1 as exc:
+        mettre_a_jour_manifeste_runtime(manifeste_path, {
+            "statut_run": STATUT_RUN_INTERROMPU_CAPACITE,
+            "date_fin_utc": _date_utc_fin(),
+            "detail_fin": f"ArretCapaciteC7C1: {exc}"[:400],
+            "converged_cobaya": False,
+        })
+        raise
+    except BaseException as exc:
+        mettre_a_jour_manifeste_runtime(manifeste_path, {
+            "statut_run": STATUT_RUN_ECHEC_TECHNIQUE,
+            "date_fin_utc": _date_utc_fin(),
+            "detail_fin": f"{type(exc).__name__}: {exc}"[:400],
+            "converged_cobaya": False,
+        })
+        raise
+    converged_brut = getattr(sampler, "converged", None)
+    est_converge = converged_brut is True  # exigence EXPLICITE et exacte
+    statut_final = (STATUT_RUN_CONVERGE if est_converge
+                    else STATUT_RUN_FIN_SANS_CONVERGENCE)
+    mise_a_jour = {
+        "statut_run": statut_final,
+        "date_fin_utc": _date_utc_fin(),
+        "detail_fin": ("convergence declaree par le sampler" if est_converge
+                       else "retour normal sans sampler.converged is True "
+                            f"(valeur brute : {converged_brut!r})"),
+        "converged_cobaya": est_converge,
+    }
+    manifeste_final = mettre_a_jour_manifeste_runtime(
+        manifeste_path, mise_a_jour)
+    return {
+        "statut_run": manifeste_final["statut_run"],
+        "converged_cobaya": manifeste_final["converged_cobaya"],
+        "manifeste": str(manifeste_path),
+        "prefixe": str(chemin_prefixe),
+    }
+
+
 def produire(args: list[str]) -> None:
     """Mode production : verrouillé tant que G2.4b n'est pas validée.
 
     Toutes les gardes sont bloquantes, y compris l'arbre Git propre et
     l'autorisation à deux clés. AUCUNE MCMC n'est lancée dans cette porte :
     le vrai manifeste est interdit, donc ce chemin se termine toujours par
-    un refus avant cobaya.run.
+    un refus avant cobaya.run. Depuis SENT-0A, l'étape 9 est réellement
+    implémentée mais reste matériellement inatteignable sous le verrou.
     """
 
     # 1. refus des injections de test
@@ -2036,6 +2309,10 @@ def produire(args: list[str]) -> None:
     etat_git = rapport["git"]
     if not etat_git["arbre_propre"]:
         raise GardeErreur("arbre Git non propre : production refusée")
+    # 4 bis. confinement sentinelle (SENT-0A) : la PRODUCTION est bornée
+    #        au seul couple proposé en #94 ; le pré-vol, lui, reste ouvert
+    #        aux quatre variantes. Aucun privilège scientifique.
+    garde_perimetre_sentinelle(variante, graine)
     # 5. autorisation à deux clés (schéma étendu, usage PRODUCTION exigé,
     #    budget et ratification liés au contrat)
     contrat = garde_contrat_local()
@@ -2087,8 +2364,8 @@ def produire(args: list[str]) -> None:
          "plancher_libre_gio", "politique_capacite_version")}
     # 8. VERROU DUR — placé AVANT toute création de répertoire, toute
     #    ouverture en écriture, tout os.replace, tout manifest.json et
-    #    tout cobaya.run. Le code de l'étape 9 est préparé mais ne
-    #    s'exécute pas tant que ce verrou tient.
+    #    tout cobaya.run. Le code de l'étape 9 est réellement implémenté
+    #    (SENT-0A) mais ne s'exécute pas tant que ce verrou tient.
     if VERROU_PRODUCTION_G2_4D:
         raise GardeErreur(
             "VERROU G2.4d : raccord qualifié SANS production — le lancement "
@@ -2096,11 +2373,22 @@ def produire(args: list[str]) -> None:
             "distincte. Aucun répertoire créé, aucun manifeste écrit, "
             "aucun cobaya.run atteint."
         )
-    # 9. porte future seulement : création du répertoire, écriture
-    #    atomique du manifeste, puis cobaya.run. Jamais exécuté ici.
-    raise GardeErreur(  # pragma: no cover - inatteignable sous verrou
-        "chemin de production non ouvert"
-    )
+    # 9. CHEMIN RÉEL (SENT-0A) — matériellement inatteignable tant que le
+    #    verrou vaut True. L'information Cobaya vient EXCLUSIVEMENT du
+    #    constructeur directeur ; l'observateur est injecté par le seul
+    #    mécanisme qualifié (les deux champs callback, rien d'autre) ; le
+    #    préfixe de sortie est le seul ajout opérationnel, postérieur au
+    #    gel de l'encodage scientifique, qu'il ne modifie donc pas.
+    from xz_cobaya_g2_4 import info_pour_cobaya
+
+    info_execution = info_pour_cobaya(garde_injection_observateur(
+        build_cobaya_info(DESCRIPTEURS[variante], graine), observateur))
+    info_execution["output"] = plan["prefixe"]
+    resultat = executer_production_sentinelle(  # pragma: no cover - sous verrou
+        plan, info_execution, plan["prefixe"])
+    print(json.dumps({k: resultat[k] for k in
+                      ("statut_run", "converged_cobaya")},
+                     indent=2, sort_keys=True, ensure_ascii=False))
 
 
 # ------------------------------------------------- banc de performance
