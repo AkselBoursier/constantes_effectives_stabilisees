@@ -1,7 +1,14 @@
 # CAP-1 — matérialisation et qualification de la politique de capacité
 
-**Porte CAP-1 — issues #90 et #63 — 2 août 2026**
+**Portes CAP-1 (2 août 2026) et CAP-1a (3 août 2026) — issues #90 et #63**
 **Branche `comp/c7-c1-capacity-policy`, base `ef0623b8`**
+
+CAP-1a ferme les deux constats de l'audit de PR #92 : le support ratifié est
+lié **explicitement au volume C** (constante normative, jamais
+`%SystemDrive%`), et la valeur réelle de l'empreinte de volume est retirée de
+toute surface publique — présence et conformité seules restent publiées. La
+politique de capacité passe en version `cap1-1.1.0` ; les valeurs ratifiées
+20 / 1,15 / 40 / `CAP0-2026-08-02-issue90-rat1` sont strictement inchangées.
 
 CAP-0 a **mesuré**. La ratification humaine du 2 août 2026 a **décidé**. CAP-1
 **matérialise** cette décision et vérifie qu'elle produit les gardes attendues.
@@ -29,17 +36,20 @@ budget_production_statut      : RATIFIE
 reference_ratification_budget : CAP0-2026-08-02-issue90-rat1
 reserve_reprise_Gio           : 1.15
 reserve_volume_minimale_Gio   : 40
-politique_capacite_version    : cap1-1.0.0
+politique_capacite_version    : cap1-1.1.0
+volume_ratifie                : C                              (CAP-1a)
 ```
 
 Le statut **global** reste `PREPARATION_ONLY`. La ratification du budget ne
 vaut donc pas autorisation de production : elle borne une enveloppe de
 stockage, rien de plus.
 
-La racine `runs` du contrat est vérifiée sur le volume ratifié — lettre du
-volume système, lecteur fixe, NTFS — à chaque appel de `garde_contrat_local`.
-La qualification **matérielle**, plus coûteuse, appartient au pré-vol
-(`garde_support_actif`), conformément au §6 de la directive.
+La racine `runs` du contrat est vérifiée sur le volume ratifié — lettre
+comparée à la constante `C`, lecteur fixe, NTFS — à chaque appel de
+`garde_contrat_local`, qui exige en outre que le contrat **déclare**
+`volume_ratifie = "C"`. La qualification **matérielle**, plus coûteuse,
+appartient au pré-vol (`garde_support_actif`), conformément au §6 de la
+directive.
 
 Aucun chemin privé n'est publié. L'enveloppe locale privée a été mise à
 niveau en conséquence : elle exige à son tour `1.3.0`, `RATIFIE`, et les
@@ -160,7 +170,7 @@ d'anticipation.
 ## 4. Garde de contrat — comparaison exacte
 
 `garde_contrat_local` exige exactement `1.3.0`, `20`, `RATIFIE`,
-`CAP0-2026-08-02-issue90-rat1`, `1.15`, `40`, `cap1-1.0.0`.
+`CAP0-2026-08-02-issue90-rat1`, `1.15`, `40`, `cap1-1.1.0`.
 
 La comparaison passe par `Decimal(str(valeur))`. Ce n'est pas une tolérance :
 c'est l'égalité de la valeur **telle qu'elle est écrite**. `20` et `20.0`
@@ -194,7 +204,8 @@ l'ancienne paire et sont désormais refusés.
 Preuve dynamique, à chaque pré-vol :
 
 ```text
-volume système (lettre comparée à %SystemDrive%)   API : splitdrive + env
+volume RATIFIÉ (lettre comparée à la constante « C »)
+                                                   source normative unique
 lecteur FIXE (DRIVE_FIXED = 3)                     API : GetDriveTypeW
 NTFS                                               API : GetVolumeInformationW
 média SSD, bus NVMe, état sain                     API : MSFT_PhysicalDisk
@@ -207,16 +218,73 @@ pré-vol et **retourne une preuve booléenne expurgée**. Si elle devient
 indisponible — pilote muet, requête en échec, réponse illisible — le lancement
 est **refusé**, jamais supposé.
 
-Identité expurgée consignée (aucun modèle, aucun numéro de série ; l'empreinte
-de volume est un SHA-256 tronqué de l'identifiant de système de fichiers, pas
-un identifiant de matériel) :
+### Le support ratifié est **C:**, pas « le volume système » (CAP-1a)
+
+La source normative est une constante unique :
+
+```python
+SUPPORT_ACTIF_VOLUME_RATIFIE = "C"
+```
+
+`%SystemDrive%` **ne définit jamais** la ratification. Il n'est lu que comme
+fait système supplémentaire, hors de toute décision et hors de l'identité de
+reprise. Conséquences, toutes éprouvées :
+
+```text
+SystemDrive = D:  et  <RUNS> = C:   -> C reste le support ratifié : ACCEPTÉ
+SystemDrive = D:  et  <RUNS> = D:   -> REFUSÉ : D n'est pas ratifié
+SystemDrive = C:  et  <RUNS> = D:   -> REFUSÉ : D n'est pas ratifié
+%SystemDrive% absent                -> décision inchangée
+```
+
+Déplacer `<RUNS>` vers un autre volume exigera une **nouvelle ratification
+humaine** et une nouvelle version de politique de capacité. Le contrat privé
+déclare `volume_ratifie = "C"`, vérifié exactement ; une déclaration absente
+ou divergente est un refus.
+
+### Identité du support — publique et privée séparées
+
+L'identité porte l'empreinte **réelle** du volume : c'est elle qui empêche une
+substitution silencieuse. Elle est **obligatoire en interne** (contrat privé,
+manifeste de run, autorisation, garde de reprise) et **jamais publiée**.
+
+Forme diffusable, la seule qui sorte sur une surface publique :
 
 ```json
-{"lettre_volume": "C", "est_volume_systeme": true, "type_lecteur": "FIXE",
+{"volume_ratifie": "C", "lettre_volume": "C", "type_lecteur": "FIXE",
  "systeme_fichiers": "NTFS", "media": "SSD", "bus": "NVMe",
- "empreinte_volume": "94bdbf24bb33cdde", "hors_git": true,
- "hors_synchronisation": true}
+ "empreinte_volume": "<EMPREINTE_VOLUME_PRIVEE>",
+ "empreinte_volume_presente": true, "empreinte_volume_conforme": true,
+ "hors_git": true, "hors_synchronisation": true}
 ```
+
+Aucun modèle, aucun numéro de série, aucun chemin. Un harnais de
+confidentialité (§13) bloque la porte si la valeur réelle de l'empreinte — ou
+un nom de machine, un nom d'utilisateur, un chemin utilisateur absolu, un UUID
+de session ou un numéro de série — apparaît dans l'un des six fichiers publics
+du périmètre.
+
+### Rectification des surfaces déjà publiées (CAP-1a)
+
+La valeur réelle de l'empreinte a été recherchée — par sa **valeur exacte**,
+pas seulement par mots-clés — sur toutes les surfaces publiées :
+
+```text
+fichiers suivis de la branche : 1 occurrence (ce rapport, §6) -> EXPURGÉE
+corps de la PR #92            : 0 occurrence
+commentaires de la PR #92     : 0 occurrence
+issue #90 (corps+commentaires): 0 occurrence
+issue #63 (corps+commentaires): 0 occurrence
+```
+
+Surfaces rectifiées : **1** (le présent rapport). Aucun commentaire GitHub à
+éditer : la valeur n'y a jamais figuré.
+
+Point laissé explicite : la valeur reste lisible dans l'**historique Git** de
+la branche (commit `034d105`, antérieur à cette rectification). Conformément
+à la politique de secrets du contrat public (§4), l'expurgation de la version
+visible et la réécriture éventuelle de l'historique sont **deux décisions
+distinctes** ; aucune réécriture d'historique n'est faite dans cette porte.
 
 ## 7. Observateur de capacité
 
@@ -455,14 +523,14 @@ reprise sous une autre politique    : REFUSÉE
 ```text
 schéma            : c7c1-run-manifest-2, 34 champs, aucun manquant
 politique portée  : budget 20 | reprise 1,15 | volume 40 | allocation
-                    0,5753161130100489 | cap1-1.0.0 | callback_every 1000 |
+                    0,5753161130100489 | cap1-1.1.0 | callback_every 1000 |
                     identité expurgée du support | référence CAP-0
 autorisation      : 24 groupes traversés, 0 manquant, dont les cinq
                     nouveaux (budget_ratifie, reserve_reprise,
                     reserve_volume, politique_capacite, support_actif)
 ```
 
-### Fautes adversariales — 50 sur 50 détectées
+### Fautes adversariales — 57 sur 57 détectées
 
 ```text
 ancienne_regle_acceptait_45_gio        anticipation_absente_laisse_saturer
@@ -491,7 +559,24 @@ support_sante_degradee                 support_sous_git
 support_sous_onedrive                  taille_forgee
 taille_negative                        temporaire_qualification_compte_comme_production
 verrou_retire
+--- CAP-1a : support ratifié C et confidentialité ---
+systemdrive_D_redefinit_la_ratification
+systemdrive_D_runs_D_accepte_par_ancienne_regle
+runs_D_systemdrive_C_refuse            constante_ratifiee_mutee_C_vers_D
+contrat_volume_ratifie_absent          contrat_volume_ratifie_D
+empreinte_publiee_en_clair
 ```
+
+Les quatre fautes `systemdrive_*`/`constante_*` prouvent le sens de la
+liaison : `SystemDrive=D:` avec `<RUNS>` sur C: reste **accepté** (l'ancienne
+règle, réinjectée, refusait) ; `SystemDrive=D:` avec `<RUNS>` sur D: est
+**refusé** (l'ancienne règle acceptait) ; `<RUNS>` sur D: avec
+`SystemDrive=C:` est refusé sur la cause exacte ; et la mutation de la
+constante `C -> D` fait basculer la décision, ce qui prouve qu'elle est bien
+la source normative unique — la valeur nominale lue dans la source restant
+« C ». Un contrôle statique AST vérifie de plus que `_garde_volume_ratifie`
+compare à la constante et ne lit jamais `%SystemDrive%`, dont la lecture est
+confinée au fait système informatif.
 
 ### Trois défauts trouvés et corrigés pendant la porte
 
@@ -665,10 +750,14 @@ CAPACITE`, jamais en convergence.
 
 ```text
 double passe CAP-1        : exit 0 / exit 0, diff normalisé vide
-fautes adversariales      : 50 / 50 détectées
+fautes adversariales      : 57 / 57 détectées
 rejeux                    : G2.4d 0 (67/67) | G2.3a 0 | G2.4c 0
 verdicts scientifiques    : inchangés, écarts au legacy exactement nuls
 VERROU_PRODUCTION_G2_4D   : True — atteint, jamais franchi
+support ratifié           : C, par constante normative — %SystemDrive%
+                            sans aucun pouvoir de redéfinition
+confidentialité           : aucune valeur locale réelle sur les surfaces
+                            publiques (harnais bloquant, 7 motifs)
 autorisation réelle       : AUCUNE
 manifeste de run réel     : AUCUN
 chaîne créée              : AUCUNE

@@ -183,6 +183,8 @@ def _contrat_modifie(lanceur, tmp: Path, **remplacements) -> str:
     for cle, valeur in remplacements.items():
         if cle == "version":
             base["version"] = valeur
+        elif valeur is None:
+            base["racine_runs"].pop(cle, None)  # champ ABSENT
         else:
             base["racine_runs"][cle] = valeur
     faux = tmp / "contrat_cap1_faute.json"
@@ -272,6 +274,79 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
             return _detecte_message(
                 lambda: lanceur.garde_support_actif(cible),
                 "support" if nom != "support_indisponible" else "indisponible")
+    # ---- CAP-1a : le support ratifié est C, jamais %SystemDrive% -------
+    if nom == "systemdrive_D_redefinit_la_ratification":
+        # INJECTION : on rétablit l'ANCIENNE règle (comparer la lettre de
+        # <RUNS> à %SystemDrive%). Avec SystemDrive=D: et <RUNS> sur C:,
+        # elle REFUSE le support pourtant ratifié. La règle CAP-1a, elle,
+        # accepte. Le défaut est détecté si l'ancienne refuse ET la
+        # nouvelle accepte.
+        with _env(SystemDrive="D:"):
+            lettre = lanceur._lettre_volume(cible)
+            ancienne_refuse = (
+                lettre != os.environ["SystemDrive"].rstrip(":").upper())
+            nouvelle_accepte = True
+            try:
+                lanceur._garde_volume_ratifie(cible)
+            except GardeErreur:
+                nouvelle_accepte = False
+        return 1 if (ancienne_refuse and nouvelle_accepte) else 0
+    if nom == "systemdrive_D_runs_D_accepte_par_ancienne_regle":
+        # Cas dangereux : le volume système DEVIENT D: et <RUNS> aussi.
+        # L'ancienne règle acceptait (D == D) ; la nouvelle refuse, car D
+        # n'est pas le volume ratifié.
+        with _env(SystemDrive="D:", C7C1_TEST_LETTRE_RUNS="D"):
+            lettre = lanceur._lettre_volume(cible)
+            ancienne_accepte = (
+                lettre == os.environ["SystemDrive"].rstrip(":").upper())
+            nouvelle_refuse = _detecte_message(
+                lambda: lanceur._garde_volume_ratifie(cible),
+                "support actif non ratifié")
+        return 1 if (ancienne_accepte and nouvelle_refuse == 1) else 0
+    if nom == "runs_D_systemdrive_C_refuse":
+        with _env(SystemDrive="C:", C7C1_TEST_LETTRE_RUNS="D"):
+            return _detecte_message(
+                lambda: lanceur._garde_volume_ratifie(cible),
+                "support actif non ratifié")
+    if nom == "constante_ratifiee_mutee_C_vers_D":
+        # INJECTION : la constante normative est mutée en « D ». La
+        # décision doit BASCULER (C refusé, D accepté), ce qui prouve
+        # qu'elle est bien la source unique ; et la source NOMINALE lue
+        # dans le fichier doit rester « C ».
+        source = Path("scripts/run_mcmc_xz_g2_4.py").read_text(encoding="utf-8")
+        nominale = _constante_ratifiee_declaree(source)
+        lanceur.SUPPORT_ACTIF_VOLUME_RATIFIE = "D"
+        c_refuse = _detecte_message(
+            lambda: lanceur._garde_volume_ratifie(cible),
+            "support actif non ratifié")
+        with _env(C7C1_TEST_LETTRE_RUNS="D"):
+            d_accepte = True
+            try:
+                lanceur._garde_volume_ratifie(cible)
+            except GardeErreur:
+                d_accepte = False
+        return 1 if (nominale == "C" and c_refuse == 1 and d_accepte) else 0
+    if nom == "contrat_volume_ratifie_absent":
+        with tempfile.TemporaryDirectory() as tmp:
+            faux = _contrat_modifie(lanceur, Path(tmp), volume_ratifie=None)
+            with _env(C7C1_CONTRAT_LOCAL=faux):
+                return _detecte_message(lanceur.garde_contrat_local,
+                                        "volume ratifié déclaré")
+    if nom == "contrat_volume_ratifie_D":
+        with tempfile.TemporaryDirectory() as tmp:
+            faux = _contrat_modifie(lanceur, Path(tmp), volume_ratifie="D")
+            with _env(C7C1_CONTRAT_LOCAL=faux):
+                return _detecte_message(lanceur.garde_contrat_local,
+                                        "volume ratifié déclaré")
+    if nom == "empreinte_publiee_en_clair":
+        # INJECTION : on publie l'identité BRUTE au lieu de sa forme
+        # diffusable. Le contrôle de confidentialité doit s'en apercevoir.
+        identite = lanceur.identite_support_expurgee(cible)
+        brute = json.dumps(identite, ensure_ascii=False)
+        publiable = json.dumps(lanceur.identite_support_publiable(identite),
+                               ensure_ascii=False)
+        reelle = identite[lanceur.CHAMP_SUPPORT_PRIVE]
+        return 1 if (reelle in brute and reelle not in publiable) else 0
     if nom == "support_sous_git":
         depot = subprocess.run(["git", "rev-parse", "--show-toplevel"],
                                capture_output=True, text=True,
@@ -607,6 +682,12 @@ FAUTES = (
     *sorted(FAUTES_CONTRAT),
     *sorted(FAUTES_SUPPORT),
     "support_sous_git", "support_sous_onedrive",
+    # CAP-1a : liaison explicite du support ratifié à C
+    "systemdrive_D_redefinit_la_ratification",
+    "systemdrive_D_runs_D_accepte_par_ancienne_regle",
+    "runs_D_systemdrive_C_refuse", "constante_ratifiee_mutee_C_vers_D",
+    "contrat_volume_ratifie_absent", "contrat_volume_ratifie_D",
+    "empreinte_publiee_en_clair",
     "taille_negative", "taille_forgee", "fichier_apparait_pendant_le_scan",
     "identite_canonique_hors_racine", "point_analyse_sortant",
     "lien_interne_suivi_double_compte",
@@ -632,6 +713,83 @@ def _seuil_admission(lanceur, cible) -> float:
     with _env(C7C1_TEST_ESPACE_LIBRE_GIO="1000000"):
         return lanceur.garde_capacite_production(
             cible, VARIANTE_TEST)["seuil_admission_gio"]
+
+
+def _constante_ratifiee_declaree(source: str):
+    """Valeur littérale de SUPPORT_ACTIF_VOLUME_RATIFIE dans une source."""
+    for noeud in ast.parse(source).body:
+        if isinstance(noeud, ast.Assign):
+            for cible in noeud.targets:
+                if (isinstance(cible, ast.Name)
+                        and cible.id == "SUPPORT_ACTIF_VOLUME_RATIFIE"):
+                    return ast.literal_eval(noeud.value)
+    return None
+
+
+def _source_normative_du_support(source: str) -> dict:
+    """Contrôle STATIQUE de la source normative du support ratifié.
+
+    Exige que ``_garde_volume_ratifie`` compare à la constante ratifiée et
+    ne consulte JAMAIS %SystemDrive%. Le fait système reste lisible
+    ailleurs (``_fait_systeme_volume_systeme``), sans valeur normative.
+    """
+    arbre = ast.parse(source)
+    garde = next(
+        (n for n in ast.walk(arbre)
+         if isinstance(n, ast.FunctionDef) and n.name == "_garde_volume_ratifie"),
+        None)
+    if garde is None:
+        return {"garde_trouvee": False}
+    litteraux = [n.value for n in ast.walk(garde)
+                 if isinstance(n, ast.Constant) and isinstance(n.value, str)]
+    noms = [n.id for n in ast.walk(garde) if isinstance(n, ast.Name)]
+    # Fonctions autorisées à lire %SystemDrive% : le fait système seul.
+    lecteurs_systemdrive = sorted({
+        n.name for n in ast.walk(arbre) if isinstance(n, ast.FunctionDef)
+        and any(isinstance(c, ast.Constant) and c.value == "SystemDrive"
+                for c in ast.walk(n))})
+    return {
+        "garde_trouvee": True,
+        "compare_a_la_constante_ratifiee":
+            "SUPPORT_ACTIF_VOLUME_RATIFIE" in noms,
+        "ne_lit_pas_systemdrive": "SystemDrive" not in litteraux,
+        "lecteurs_systemdrive": lecteurs_systemdrive,
+        "systemdrive_confine_au_fait_systeme":
+            lecteurs_systemdrive == ["_fait_systeme_volume_systeme"],
+    }
+
+
+# Motifs interdits sur toute surface publique versionnée. Le mot
+# « empreinte_volume » est licite ; seule sa VALEUR locale est proscrite.
+def _motifs_confidentiels(lanceur, cible) -> dict:
+    import getpass
+    import platform
+    import re
+
+    identite = lanceur.identite_support_expurgee(cible)
+    motifs = {
+        "empreinte_volume_reelle":
+            re.escape(identite[lanceur.CHAMP_SUPPORT_PRIVE]),
+        "nom_de_machine": re.escape(platform.node()),
+        "nom_utilisateur": r"\b" + re.escape(getpass.getuser()) + r"\b",
+        "chemin_utilisateur_absolu": r"[A-Za-z]:\\Users\\",
+        "racine_privee_absolue": r"[A-Za-z]:\\Recherche",
+        "uuid_de_session":
+            r"\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}"
+            r"-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\b",
+        "numero_de_serie_de_volume": r"\bserial\s*[:=]\s*0x[0-9a-fA-F]+",
+    }
+    return {nom: re.compile(motif) for nom, motif in motifs.items()}
+
+
+FICHIERS_PUBLICS_SURVEILLES = (
+    "scripts/run_mcmc_xz_g2_4.py",
+    "scripts/qualify_xz_capacity_cap1.py",
+    "scripts/qualify_xz_launcher_g2_4d.py",
+    "reports/rapport_CAP1_capacite.md",
+    "../../../99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/CONTRAT_PUBLIC_C7_C1.md",
+    "../../../99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/contrat_local.example.json",
+)
 
 
 def _verrou_declare(source: str):
@@ -876,10 +1034,32 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
     if abs(seuil - 61.15) > 1e-9:
         echecs.append(f"seuil initial {seuil} != 61,15 Gio ratifiés")
 
-    # ---- 5. support actif ----------------------------------------------
+    # ---- 5. support actif : ratifié à C, jamais via %SystemDrive% ------
     support = lanceur.garde_support_actif(cible)
+    source_lanceur_brut = Path("scripts/run_mcmc_xz_g2_4.py").read_text(
+        encoding="utf-8")
+    normatif = _source_normative_du_support(source_lanceur_brut)
+    # Le support ratifié ne dépend PAS de %SystemDrive% : on le prouve en
+    # faisant varier la variable et en exigeant une décision inchangée.
+    decisions_systemdrive = {}
+    for valeur in ("C:", "D:", ""):
+        with _env(SystemDrive=valeur or None):
+            try:
+                lanceur._garde_volume_ratifie(cible)
+                decisions_systemdrive[valeur or "<absent>"] = "accepte"
+            except GardeErreur:
+                decisions_systemdrive[valeur or "<absent>"] = "refuse"
     resultat["support_actif"] = {
-        "identite_expurgee": support["identite_expurgee"],
+        # Forme DIFFUSABLE : la valeur réelle de l'empreinte ne sort pas.
+        "identite_publiable": lanceur.identite_support_publiable(
+            support["identite_expurgee"]),
+        "volume_ratifie_constante": lanceur.SUPPORT_ACTIF_VOLUME_RATIFIE,
+        "volume_ratifie_declare_dans_la_source":
+            _constante_ratifiee_declaree(source_lanceur_brut),
+        "volume_ratifie_du_contrat": contrat["volume_ratifie"],
+        "source_normative": normatif,
+        "decision_selon_systemdrive": decisions_systemdrive,
+        "fait_systeme_volume_systeme": support["fait_systeme_volume_systeme"],
         "qualification_materielle_disponible":
             support["qualification_materielle_disponible"],
         "aucun_modele_ni_numero_de_serie": not any(
@@ -888,6 +1068,47 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
     }
     if not resultat["support_actif"]["aucun_modele_ni_numero_de_serie"]:
         echecs.append("l'identité du support publie un modèle ou un numéro")
+    for cle in ("compare_a_la_constante_ratifiee", "ne_lit_pas_systemdrive",
+                "systemdrive_confine_au_fait_systeme"):
+        if normatif.get(cle) is not True:
+            echecs.append(
+                f"source normative du support : {cle} non vérifié ({normatif})")
+    if _constante_ratifiee_declaree(source_lanceur_brut) != "C":
+        echecs.append("la constante ratifiée déclarée dans la source n'est pas 'C'")
+    if contrat["volume_ratifie"] != lanceur.SUPPORT_ACTIF_VOLUME_RATIFIE:
+        echecs.append("le contrat déclare un autre volume ratifié")
+    if set(decisions_systemdrive.values()) != {"accepte"}:
+        echecs.append(
+            f"la décision de support varie avec %SystemDrive% : "
+            f"{decisions_systemdrive}")
+
+    # ---- 5 bis. confidentialité des surfaces publiques -----------------
+    motifs = _motifs_confidentiels(lanceur, cible)
+    fuites: dict = {}
+    fichiers_lus = []
+    for relatif in FICHIERS_PUBLICS_SURVEILLES:
+        chemin = Path(relatif)
+        if not chemin.is_file():
+            echecs.append(f"fichier public surveillé introuvable : {relatif}")
+            continue
+        fichiers_lus.append(chemin.name)
+        texte = chemin.read_text(encoding="utf-8", errors="replace")
+        for nom_motif, motif in motifs.items():
+            for numero, ligne in enumerate(texte.splitlines(), 1):
+                if motif.search(ligne):
+                    fuites.setdefault(nom_motif, []).append(
+                        f"{chemin.name}:{numero}")
+    resultat["confidentialite"] = {
+        "fichiers_publics_controles": sorted(fichiers_lus),
+        "motifs_controles": sorted(motifs),
+        "fuites": {k: v[:5] for k, v in sorted(fuites.items())},
+        "aucune_fuite": not fuites,
+        "note": ("le mot « empreinte_volume » est licite ; seule sa valeur "
+                 "locale réelle est proscrite sur les surfaces publiques"),
+    }
+    if fuites:
+        echecs.append(
+            f"fuite de donnée locale dans un fichier public : {sorted(fuites)}")
 
     # ---- 6. observateur : lecture pure, haute-eau -----------------------
     source_lanceur = Path("scripts/run_mcmc_xz_g2_4.py").read_text(
@@ -1035,13 +1256,26 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
         "schema": identite["schema"],
         "champs_manquants": manquants,
         "n_champs": len(lanceur.CHAMPS_MANIFESTE_RUN),
+        # Le manifeste porte l'identité RÉELLE (c'est ce qui empêche une
+        # substitution de volume) ; ce qui est PUBLIÉ ici est sa forme
+        # diffusable. L'identité privée n'est pas affaiblie.
         "champs_politique_capacite": {
-            c: identite[c] for c in lanceur.CHAMPS_POLITIQUE_CAPACITE},
+            c: (lanceur.identite_support_publiable(identite[c])
+                if c == "support_actif_identite_expurgee" else identite[c])
+            for c in lanceur.CHAMPS_POLITIQUE_CAPACITE},
+        "support_dans_le_manifeste_porte_l_empreinte_reelle":
+            bool(identite["support_actif_identite_expurgee"].get(
+                lanceur.CHAMP_SUPPORT_PRIVE)),
         "statut_run": identite["statut_run"],
         "aucun_manifeste_reel_ecrit": True,
     }
     if manquants:
         echecs.append(f"manifeste de run : champs manquants {manquants}")
+    if not resultat["manifeste_run"][
+            "support_dans_le_manifeste_porte_l_empreinte_reelle"]:
+        echecs.append(
+            "l'identité privée a été affaiblie : le manifeste ne porte plus "
+            "l'empreinte réelle du volume")
     if identite["schema"] != "c7c1-run-manifest-2":
         echecs.append(f"schéma de manifeste non bumpé : {identite['schema']}")
 

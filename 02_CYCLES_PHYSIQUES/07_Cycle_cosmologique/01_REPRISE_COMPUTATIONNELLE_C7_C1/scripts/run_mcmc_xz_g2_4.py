@@ -64,11 +64,19 @@ SEUIL_ALERTE_GIO = 15
 # Décision humaine RATIFIÉE — issue #90, commentaire du 2 août 2026.
 # CAP-1 ne réévalue PAS ces valeurs : elle les matérialise et vérifie
 # qu'elles produisent les gardes attendues.
-POLITIQUE_CAPACITE_VERSION = "cap1-1.0.0"
+POLITIQUE_CAPACITE_VERSION = "cap1-1.1.0"
 BUDGET_TOTAL_RATIFIE_GIO = 20
 RESERVE_REPRISE_RATIFIEE_GIO = 1.15
 RESERVE_VOLUME_RATIFIEE_GIO = 40
 REFERENCE_RATIFICATION_BUDGET = "CAP0-2026-08-02-issue90-rat1"
+
+# SOURCE NORMATIVE UNIQUE du support actif (CAP-1a). La décision humaine
+# porte sur le volume C:, PAS sur « le volume système quel qu'il soit ».
+# %SystemDrive% ne définit JAMAIS la ratification : il n'est lu que comme
+# fait système supplémentaire, sans valeur normative. Déplacer <RUNS> vers
+# un autre volume exigera une nouvelle ratification humaine et une
+# nouvelle version de politique de capacité.
+SUPPORT_ACTIF_VOLUME_RATIFIE = "C"
 
 # Constantes de MESURE publiées en CAP-0 (issue #90). Les allocations S8
 # sont RECALCULÉES à partir d'elles ci-dessous — jamais recopiées.
@@ -458,20 +466,37 @@ def _lettre_volume(cible: str | Path) -> str:
     return lettre
 
 
+def _fait_systeme_volume_systeme(lettre: str) -> bool:
+    """Fait système SUPPLÉMENTAIRE : ce volume est-il %SystemDrive% ?
+
+    Purement informatif. Cette valeur n'entre dans AUCUNE décision et ne
+    fait pas partie de l'identité de reprise : %SystemDrive% peut changer
+    sans que la ratification humaine change.
+    """
+    return lettre == os.environ.get("SystemDrive", "").rstrip(":").upper()
+
+
 def _garde_volume_ratifie(cible: str | Path) -> str:
-    """La lettre du volume DOIT être celle du support ratifié.
+    """La lettre du volume DOIT être celle du support RATIFIÉ.
+
+    Comparée à ``SUPPORT_ACTIF_VOLUME_RATIFIE``, source normative unique.
+    %SystemDrive% n'est pas consulté ici : que le volume système soit C:,
+    D: ou autre, le support ratifié reste C:. Un <RUNS> sur D: est refusé
+    même si D: est devenu le volume système ; un <RUNS> sur C: reste
+    accepté même si C: ne l'est plus.
 
     Contrôlée AVANT toute interrogation d'API, pour que le refus soit
     attribuable à la bonne cause plutôt qu'à l'échec d'une requête sur un
     volume inexistant.
     """
     lettre = _lettre_volume(cible)
-    lettre_systeme = os.environ.get("SystemDrive", "C:").rstrip(":").upper()
-    if lettre != lettre_systeme:
+    if lettre != SUPPORT_ACTIF_VOLUME_RATIFIE:
         raise GardeErreur(
             f"support actif non ratifié : chemin sur le volume {lettre}: "
-            f"alors que le support ratifié est le volume système "
-            f"{lettre_systeme}:")
+            f"alors que le support ratifié par décision humaine est "
+            f"{SUPPORT_ACTIF_VOLUME_RATIFIE}: — un changement de volume "
+            "exige une nouvelle ratification, pas un changement de "
+            "%SystemDrive%")
     return lettre
 
 
@@ -584,10 +609,15 @@ def _infos_materiel(lettre: str) -> dict:
 def garde_support_actif(cible: str | Path) -> dict:
     """Preuve DYNAMIQUE que <RUNS> est sur le support ratifié.
 
-    Volume système, SSD, bus NVMe, lecteur fixe, NTFS, hors Git, hors
-    synchronisation. Rend une identité EXPURGÉE (aucun chemin, aucun
-    modèle, aucun numéro de série) utilisable dans le manifeste et dans
-    l'autorisation. Toute qualification indisponible est un refus.
+    Volume RATIFIÉ (constante, jamais %SystemDrive%), SSD, bus NVMe,
+    lecteur fixe, NTFS, hors Git, hors synchronisation. Rend une identité
+    EXPURGÉE (aucun chemin, aucun modèle, aucun numéro de série)
+    utilisable dans le manifeste et dans l'autorisation. Toute
+    qualification indisponible est un refus.
+
+    L'identité porte l'empreinte RÉELLE du volume : elle empêche une
+    substitution silencieuse. Elle reste strictement locale — voir
+    ``identite_support_publiable`` pour la forme diffusable.
     """
     from xz_likelihood_g2_3 import refuser_sortie_sous_git
 
@@ -617,8 +647,8 @@ def garde_support_actif(cible: str | Path) -> dict:
     if "onedrive" in canonique:
         raise GardeErreur("support actif sous OneDrive : refus")
     identite = {
+        "volume_ratifie": SUPPORT_ACTIF_VOLUME_RATIFIE,
         "lettre_volume": lettre,
-        "est_volume_systeme": True,
         "type_lecteur": "FIXE",
         "systeme_fichiers": "NTFS",
         "media": "SSD",
@@ -632,7 +662,37 @@ def garde_support_actif(cible: str | Path) -> dict:
         "sante": materiel["sante"],
         "taille_cluster_octets": volume["taille_cluster_octets"],
         "qualification_materielle_disponible": True,
+        # Fait système supplémentaire, SANS valeur normative et HORS de
+        # l'identité de reprise : %SystemDrive% peut changer sans que la
+        # ratification humaine change.
+        "fait_systeme_volume_systeme": _fait_systeme_volume_systeme(lettre),
     }
+
+
+# Champ de l'identité de support dont la valeur est STRICTEMENT LOCALE.
+# Obligatoire en interne (contrat, manifeste, autorisation, reprise) :
+# c'est lui qui empêche une substitution silencieuse de volume. Jamais
+# publié : sur toute surface diffusable, seule sa présence et sa
+# conformité sortent.
+CHAMP_SUPPORT_PRIVE = "empreinte_volume"
+MARQUE_VALEUR_PRIVEE = "<EMPREINTE_VOLUME_PRIVEE>"
+
+
+def identite_support_publiable(identite: dict) -> dict:
+    """Forme DIFFUSABLE d'une identité de support.
+
+    La valeur réelle de l'empreinte est remplacée par une marque ; sa
+    présence et sa conformité restent vérifiables. N'affaiblit rien :
+    l'identité interne, elle, conserve la valeur réelle.
+    """
+    publiable = {c: v for c, v in identite.items() if c != CHAMP_SUPPORT_PRIVE}
+    reelle = identite.get(CHAMP_SUPPORT_PRIVE)
+    publiable[CHAMP_SUPPORT_PRIVE] = MARQUE_VALEUR_PRIVEE
+    publiable["empreinte_volume_presente"] = bool(reelle)
+    publiable["empreinte_volume_conforme"] = (
+        isinstance(reelle, str) and len(reelle) == 16
+        and all(c in "0123456789abcdef" for c in reelle))
+    return publiable
 
 
 def identite_support_expurgee(cible: str | Path) -> dict:
@@ -859,7 +919,10 @@ def garde_capacite_production(cible: str | Path, variante: str,
         "marge_apres_admission_gio": libre - seuil,
         "politique_capacite_version": POLITIQUE_CAPACITE_VERSION,
         "reference_ratification_budget": REFERENCE_RATIFICATION_BUDGET,
-        "support_actif_identite_expurgee": support["identite_expurgee"],
+        # État RAPPORTÉ : forme diffusable. L'identité réelle, elle, part
+        # au manifeste et à l'autorisation sans être passée par ici.
+        "support_actif_identite_expurgee": identite_support_publiable(
+            support["identite_expurgee"]),
         "occupation": {
             k: occupation[k] for k in
             ("octets_production", "octets_temporaires_reconnus",
@@ -1252,6 +1315,13 @@ def garde_contrat_local() -> dict:
     # Contrôles bon marché ici (lettre, type de lecteur, système de
     # fichiers) ; la qualification MATÉRIELLE, plus coûteuse, appartient
     # au pré-vol de production (garde_support_actif).
+    # Le contrat doit DÉCLARER le volume ratifié, et le déclarer
+    # exactement : « C ». Une déclaration absente ou divergente est un
+    # refus — la ratification ne se déduit d'aucun fait système.
+    if rr.get("volume_ratifie") != SUPPORT_ACTIF_VOLUME_RATIFIE:
+        raise GardeErreur(
+            f"contrat local : volume ratifié déclaré "
+            f"{rr.get('volume_ratifie')!r} != {SUPPORT_ACTIF_VOLUME_RATIFIE!r}")
     _garde_volume_ratifie(rr["chemin"])
     volume_runs = _infos_volume(rr["chemin"])
     if volume_runs["type_lecteur_code"] != 3:
@@ -1331,6 +1401,7 @@ def garde_contrat_local() -> dict:
         "reserve_reprise_Gio": rr["reserve_reprise_Gio"],
         "reserve_volume_minimale_Gio": rr["reserve_volume_minimale_Gio"],
         "politique_capacite_version": rr["politique_capacite_version"],
+        "volume_ratifie": rr["volume_ratifie"],
         "valeurs_ratifiees_exactes": True,
         "racine_runs_sur_volume_ratifie": True,
         "python_directeur_conforme": True,
@@ -1892,7 +1963,10 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
     try:
         support = garde_support_actif(out_dir)
         annonces["SUPPORT QUALIFIE"] = True
-        annonces["support_actif_identite_expurgee"] = support["identite_expurgee"]
+        annonces["support_actif_identite_expurgee"] = (
+            identite_support_publiable(support["identite_expurgee"]))
+        annonces["fait_systeme_volume_systeme"] = support[
+            "fait_systeme_volume_systeme"]
     except GardeErreur as exc:
         support = None
         annonces["SUPPORT QUALIFIE"] = False

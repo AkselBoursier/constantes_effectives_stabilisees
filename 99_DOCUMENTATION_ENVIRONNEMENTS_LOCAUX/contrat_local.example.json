@@ -58,8 +58,9 @@
     "reference_ratification_budget": "CAP0-2026-08-02-issue90-rat1",
     "reserve_reprise_Gio": 1.15,
     "reserve_volume_minimale_Gio": 40,
-    "politique_capacite_version": "cap1-1.0.0",
-    "volume_ratifie": "volume système portant <RUNS> : fixe, NTFS, SSD NVMe interne"
+    "politique_capacite_version": "cap1-1.1.0",
+    "volume_ratifie": "C",
+    "_note_volume_ratifie": "Lettre du volume ratifie par decision humaine. Source NORMATIVE unique du support actif : elle n'est jamais deduite de %SystemDrive%. Deplacer <RUNS> vers un autre volume exige une nouvelle ratification humaine et une nouvelle version de politique de capacite."
   },
   "interdits_en_vigueur": [
     "raccord au lanceur",

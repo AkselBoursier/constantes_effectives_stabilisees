@@ -1,6 +1,6 @@
 # Contrat public d'environnement et de chemins — lot C7-C1
 
-**Version 1.1 — 2 août 2026 — portes INFRA-1 (issue #80) et CAP-1 (issue #90)**
+**Version 1.2 — 3 août 2026 — portes INFRA-1 (issue #80), CAP-1 et CAP-1a (issue #90)**
 **Propriétaire : mainteneur du lot C7-C1. Révision : à chaque changement
 d'environnement directeur, de racine de calcul ou de politique de secrets.**
 
@@ -149,7 +149,7 @@ budget_production_requis_Gio  = 20     (enveloppe de capacité du lot de 32 runs
 reserve_reprise_Gio           = 1.15   (croissance d'un run en cours + reprise)
 reserve_volume_minimale_Gio   = 40     (doit rester libre sur le support actif)
 reference_ratification_budget = CAP0-2026-08-02-issue90-rat1
-politique_capacite_version    = cap1-1.0.0
+politique_capacite_version    = cap1-1.1.0
 ```
 
 Ces valeurs sont comparées **exactement** : 19,999 et 20,001 sont refusés
@@ -206,13 +206,45 @@ au moment d'une interruption de capacité : la reprise automatique peut être
 impossible. La garde de reprise le constate et refuse — aucun checkpoint n'est
 fabriqué.
 
-### Support actif
+### Support actif — le volume **C**, ratifié explicitement
 
-Le support actif est qualifié **dynamiquement** avant tout calcul : volume
-système, lecteur fixe, NTFS, média SSD, bus NVMe, état sain, hors Git, hors
-synchronisation. Seule une identité expurgée est publiée ou consignée — aucun
-modèle, aucun numéro de série. Si la qualification matérielle devient
-indisponible, le lancement est **refusé** plutôt que supposé.
+La décision humaine porte sur un volume nommé, pas sur une propriété système :
+
+```text
+volume_ratifie = "C"
+```
+
+C'est la **source normative unique**. `%SystemDrive%` ne définit jamais la
+ratification : il est lu comme fait système supplémentaire, hors de toute
+décision et hors de l'identité de reprise. Si le volume système devient `D:`,
+`C:` reste le support ratifié ; si `<RUNS>` se retrouve sur `D:`, le lancement
+est refusé, que `D:` soit devenu le volume système ou non. **Déplacer `<RUNS>`
+vers un autre volume exige une nouvelle ratification humaine et une nouvelle
+version de politique de capacité.**
+
+Le support est en outre qualifié **dynamiquement** avant tout calcul : lecteur
+fixe, NTFS, média SSD, bus NVMe, état sain, hors Git, hors synchronisation. Si
+la qualification matérielle devient indisponible, le lancement est **refusé**
+plutôt que supposé.
+
+### Identité du support — privée et publique séparées
+
+L'identité du support porte une **empreinte de volume** : un condensat tronqué
+de l'identifiant de système de fichiers, qui empêche une substitution
+silencieuse du volume entre deux runs. Ce n'est ni un modèle, ni un numéro de
+série de matériel, mais c'est un identifiant local stable.
+
+```text
+interne (contrat privé, manifeste de run, autorisation, garde de reprise) :
+  valeur réelle OBLIGATOIRE ;
+public (rapports, documents, corps de PR, commentaires d'issue) :
+  présence et conformité seulement — la valeur est remplacée par une marque.
+```
+
+Un contrôle de confidentialité bloque la porte si la valeur réelle de cette
+empreinte, un nom de machine, un nom d'utilisateur, un chemin utilisateur
+absolu, un UUID de session ou un numéro de série apparaît dans un fichier
+public versionné.
 
 Le support d'**archive indépendant** reste `NON SATISFAIT` : un seul support
 physique existe, et deux répertoires du même disque ne constituent pas deux
