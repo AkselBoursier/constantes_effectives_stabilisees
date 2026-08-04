@@ -150,6 +150,21 @@ SCHEMAS_MANIFESTE_RECONNUS = ("c7c1-run-manifest-1", "c7c1-run-manifest-2")
 SENTINELLE_SENT0_VARIANTE = "M2a-N"
 SENTINELLE_SENT0_GRAINE = 630101
 
+# ------------------------------------ SENT-0D : franchissement ratifié
+# Référence PUBLIQUE de la ratification humaine du franchissement
+# technique (issue #94). Elle matérialise l'INTENTION OPÉRATOIRE au CLI ;
+# ce n'est pas un secret — la véritable seconde protection reste
+# l'autorisation privée à deux clés, liée au HEAD et au périmètre exact.
+# Le verrou VERROU_PRODUCTION_G2_4D reste True : SENT-0D n'ouvre qu'un
+# franchissement étroit — couple sentinelle codé + autorisation privée au
+# périmètre EXACT + intention CLI explicite — et rien d'autre.
+REFERENCE_RATIFICATION_SENTINELLE = "SENT0D-2026-08-04-issue94-rat1"
+# Périmètre EXACT que l'autorisation privée doit déclarer pour un
+# franchissement SENT-0D : le couple sentinelle, seul, sans extension.
+PERIMETRE_EXACT_SENTINELLE = {
+    SENTINELLE_SENT0_VARIANTE: [SENTINELLE_SENT0_GRAINE],
+}
+
 # ------------------------------------------------ verrou dur G2.4d
 # Tant que ce verrou vaut True, AUCUNE écriture réelle et AUCUN
 # cobaya.run ne peuvent être atteints : le refus intervient AVANT
@@ -216,6 +231,11 @@ CLES_MANIFESTE = {
     "reserve_volume_minimale_Gio", "politique_capacite_version",
     "support_actif_identite_expurgee",
 }
+# Clés OPTIONNELLES de l'autorisation : le champ SENT-0D n'est exigé que
+# pour un franchissement — l'admettre sans l'exiger préserve la
+# qualification générale G2.4d telle quelle. Toute AUTRE clé étrangère
+# reste refusée.
+CLES_MANIFESTE_OPTIONNELLES = {"reference_ratification_sentinelle"}
 
 # Champs OBLIGATOIRES du manifeste de run : aucun ne peut être absent ni
 # remplacé par une valeur implicite. Les sept derniers sont ajoutés par
@@ -1894,7 +1914,10 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
                                   graine: int, head: str,
                                   budget_contrat=None,
                                   ratification_contrat=None,
-                                  support_attendu: dict | None = None) -> list[str]:
+                                  support_attendu: dict | None = None,
+                                  perimetre_exact_attendu: dict | None = None,
+                                  reference_sentinelle_attendue: str | None = None,
+                                  ) -> list[str]:
     """VALIDATEUR PUR du contenu d'une autorisation (aucun fichier).
 
     Lève ``GardeErreur`` au PREMIER manquement, avec un message dont le
@@ -1906,13 +1929,20 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
     Séparé de la lecture du fichier pour que la qualification puisse
     éprouver chaque champ profond SANS jamais écrire une autorisation
     réelle sur le disque.
+
+    SENT-0D : les deux contraintes optionnelles — périmètre EXACT et
+    référence de ratification sentinelle — sont validées DANS LA MÊME
+    lecture que le reste (aucune fenêtre TOCTOU entre deux lectures du
+    fichier). Absentes (None), le comportement historique est inchangé.
     """
     traverses: list[str] = []
 
     def franchi(nom: str) -> None:
         traverses.append(nom)
 
-    if set(manifeste.keys()) != CLES_MANIFESTE:
+    cles = set(manifeste.keys())
+    if not (CLES_MANIFESTE <= cles
+            and cles - CLES_MANIFESTE <= CLES_MANIFESTE_OPTIONNELLES):
         raise GardeErreur("autorisation non conforme : clés inexactes")
     franchi("cles")
     if manifeste["type"] != "autorisation_production_c7c1_g2_4":
@@ -2042,6 +2072,29 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
             "variantes_graines_autorisees"
         )
     franchi("matrice_variante_graine")
+    # --- SENT-0D : contraintes OPTIONNELLES du franchissement ----------
+    # Validées ici, dans la MÊME lecture du manifeste (pas de TOCTOU).
+    # Groupes supplémentaires hors GROUPES_CONTROLE_AUTORISATION : la
+    # qualification générale G2.4d, qui n'exige pas le franchissement,
+    # reste intacte.
+    if perimetre_exact_attendu is not None:
+        def _normaliser(perimetre: dict) -> dict:
+            return {str(v): sorted(str(g) for g in gs)
+                    for v, gs in perimetre.items()}
+
+        if _normaliser(autorisees) != _normaliser(perimetre_exact_attendu):
+            raise GardeErreur(
+                "franchissement SENT-0D : périmètre de l'autorisation non "
+                "exact — seul le couple sentinelle ratifié est admis, sans "
+                "aucune autre variante ni graine : refus")
+        franchi("perimetre_sentinelle")
+    if reference_sentinelle_attendue is not None:
+        if manifeste.get("reference_ratification_sentinelle") \
+                != reference_sentinelle_attendue:
+            raise GardeErreur(
+                "franchissement SENT-0D : reference_ratification_sentinelle "
+                "absente ou non conforme : refus")
+        franchi("reference_sentinelle")
     manquants = [g for g in GROUPES_CONTROLE_AUTORISATION
                  if g not in traverses]
     if manquants:
@@ -2055,28 +2108,50 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
 def garde_autorisation(chemin: str | Path, variante: str, graine: int,
                        head: str, budget_contrat=None,
                        ratification_contrat=None,
-                       support_attendu: dict | None = None) -> str:
-    """Garde d'autorisation RÉELLE sur FICHIER.
+                       support_attendu: dict | None = None,
+                       perimetre_exact_attendu: dict | None = None,
+                       reference_sentinelle_attendue: str | None = None) -> str:
+    """Garde d'autorisation RÉELLE sur FICHIER — LECTURE UNIQUE (B3).
 
-    Lit le fichier, délègue au validateur pur, et ne retourne le SHA-256
-    du fichier QU'APRÈS que tous les groupes de contrôles ont été
-    traversés. Aucune validation ne subsiste après le retour.
+    L'identité retournée provient d'une UNIQUE lecture des octets : les
+    octets sont lus une fois, leur SHA-256 est calculé, puis CES MÊMES
+    octets sont décodés, parsés et validés. Aucune relecture du chemin
+    après validation — une mutation concurrente du fichier entre
+    validation et empreinte ne peut donc plus produire « contenu A
+    validé, SHA de contenu B enregistré » (audit PR #96, B3).
 
     Refuse systématiquement un manifeste d'usage autre que PRODUCTION :
     un fichier éphémère de qualification ne peut JAMAIS servir
     d'autorisation réelle.
     """
-    if not Path(chemin).is_file():
+    p = Path(chemin)
+    if not p.is_file():
         raise GardeErreur("autorisation absente")
-    with open(chemin, encoding="utf-8") as handle:
-        manifeste = json.load(handle)
+    try:
+        octets = p.read_bytes()  # UNIQUE lecture des octets
+    except OSError as exc:
+        raise GardeErreur(
+            f"autorisation illisible ({type(exc).__name__})") from exc
+    sha_octets_valides = hashlib.sha256(octets).hexdigest()
+    try:
+        texte = octets.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise GardeErreur(
+            "autorisation : encodage UTF-8 invalide") from exc
+    try:
+        manifeste = json.loads(texte)
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"autorisation : JSON invalide ({exc.msg})") from exc
     _valider_contenu_autorisation(
         manifeste, variante, graine, head,
         budget_contrat=budget_contrat,
         ratification_contrat=ratification_contrat,
         support_attendu=support_attendu,
+        perimetre_exact_attendu=perimetre_exact_attendu,
+        reference_sentinelle_attendue=reference_sentinelle_attendue,
     )
-    return sha256_fichier(chemin)
+    return sha_octets_valides  # jamais une seconde lecture du chemin
 
 
 
@@ -2192,6 +2267,71 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
         else "PREPARATION OK — PRODUCTION NON AUTORISABLE"
     )
     return rapport
+
+
+# ------------------------------- SENT-0D : franchissement ratifié
+
+def _extraire_flag_franchissement(args: list[str]) -> str | None:
+    """Analyse STRICTE du flag ``--franchissement-sent0d`` (SENT-0D §C).
+
+    Rend None si le flag est ABSENT — le verrou historique s'applique
+    alors intégralement. Rend la référence quand elle est EXACTE. Refuse,
+    sur cause précise : flag dupliqué ; valeur absente (fin d'arguments
+    ou autre option à sa place) ; référence vide ; référence incorrecte.
+    Aucune variable d'environnement, aucun fichier « unlock », aucune
+    dépendance à l'heure : la seule intention admise est ce flag public,
+    et la seconde protection reste l'autorisation privée.
+    """
+    positions = [i for i, a in enumerate(args)
+                 if a == "--franchissement-sent0d"]
+    if not positions:
+        return None
+    if len(positions) > 1:
+        raise GardeErreur(
+            "franchissement SENT-0D refusé : flag dupliqué — une seule "
+            "occurrence est admise")
+    i = positions[0]
+    if i + 1 >= len(args) or args[i + 1].startswith("--"):
+        raise GardeErreur(
+            "franchissement SENT-0D refusé : référence absente après le flag")
+    valeur = args[i + 1]
+    if not valeur.strip():
+        raise GardeErreur(
+            "franchissement SENT-0D refusé : référence vide")
+    if valeur != REFERENCE_RATIFICATION_SENTINELLE:
+        raise GardeErreur(
+            "franchissement SENT-0D refusé : référence incorrecte "
+            f"(attendue : {REFERENCE_RATIFICATION_SENTINELLE})")
+    return valeur
+
+
+def garde_franchissement_sent0d(reference: str | None, variante: str,
+                                graine: int) -> None:
+    """Étape 8 : le verrou reste True ; seul le cas ratifié passe.
+
+    Sans franchissement demandé (référence None), le REFUS HISTORIQUE du
+    verrou G2.4d s'applique à l'identique — même cause, même message.
+    Avec franchissement, le triple confinement doit être réuni : couple
+    sentinelle codé (la garde 4 bis a déjà bloqué le reste, ceci est une
+    défense en profondeur), référence publique exacte, et — validées en
+    amont dans la MÊME lecture de l'autorisation — le périmètre privé
+    exact et la référence de ratification sentinelle.
+    """
+    if reference is None:
+        raise GardeErreur(
+            "VERROU G2.4d : raccord qualifié SANS production — le lancement "
+            "réel exige une porte ultérieure et une décision humaine "
+            "distincte. Aucun répertoire créé, aucun manifeste écrit, "
+            "aucun cobaya.run atteint."
+        )
+    if reference != REFERENCE_RATIFICATION_SENTINELLE:
+        raise GardeErreur(
+            "franchissement SENT-0D refusé : référence incorrecte")
+    if (variante, int(graine)) != (SENTINELLE_SENT0_VARIANTE,
+                                   SENTINELLE_SENT0_GRAINE):
+        raise GardeErreur(
+            f"franchissement SENT-0D refusé : ({variante}, {graine}) hors "
+            "périmètre sentinelle — seul le couple ratifié peut franchir")
 
 
 # --------------------------------------- SENT-0A : chemin réel (étape 9)
@@ -2361,6 +2501,10 @@ def produire(args: list[str]) -> None:
         raise GardeErreur("autorisation absente")
     variante, graine = args[0], int(args[1])
     chemin_autorisation = args[args.index("--autorisation") + 1]
+    # 2 bis. intention SENT-0D : analysée TÔT pour que tout flag défectueux
+    #        soit refusé sur sa cause exacte, pas par une garde fortuite.
+    #        Absent -> None : le verrou historique s'appliquera tel quel.
+    reference_franchissement = _extraire_flag_franchissement(args)
     # 3. contrat, environnement, données, threads et chemins (via preflight)
     rapport = preflight(variante, graine)
     # 4. HEAD et arbre propre
@@ -2377,11 +2521,19 @@ def produire(args: list[str]) -> None:
     contrat_brut = contrat.pop("_contrat")
     cible = os.environ["C7C1_XZ_OUT_DIR"]
     support = garde_support_actif(cible)  # refuse si le support a changé
+    #    SENT-0D : quand un franchissement est demandé, le périmètre EXACT
+    #    et la référence de ratification sentinelle sont validés dans la
+    #    MÊME lecture de l'autorisation (aucune fenêtre TOCTOU).
     sha_autorisation = garde_autorisation(
         chemin_autorisation, variante, graine, etat_git["head"],
         budget_contrat=contrat["budget_production_requis_Gio"],
         ratification_contrat=contrat["reference_ratification_budget"],
         support_attendu=support["identite_expurgee"],
+        perimetre_exact_attendu=(
+            PERIMETRE_EXACT_SENTINELLE if reference_franchissement else None),
+        reference_sentinelle_attendue=(
+            REFERENCE_RATIFICATION_SENTINELLE if reference_franchissement
+            else None),
     )
     # 6. budget ratifié (condition subsumée) PUIS admission de capacité —
     #    c'est l'admission, et non « libre >= budget », qui décide.
@@ -2422,15 +2574,14 @@ def produire(args: list[str]) -> None:
          "plancher_libre_gio", "politique_capacite_version")}
     # 8. VERROU DUR — placé AVANT toute création de répertoire, toute
     #    ouverture en écriture, tout os.replace, tout manifest.json et
-    #    tout cobaya.run. Le code de l'étape 9 est réellement implémenté
-    #    (SENT-0A) mais ne s'exécute pas tant que ce verrou tient.
+    #    tout cobaya.run. La constante RESTE True : SENT-0D n'y substitue
+    #    pas un False global, il n'ouvre qu'un franchissement étroit —
+    #    sans flag, le refus HISTORIQUE s'applique à l'identique ; avec un
+    #    flag défectueux, refus SENT-0D ; seul le cas ratifié (couple
+    #    sentinelle + autorisation privée au périmètre exact + référence
+    #    publique exacte) atteint l'étape 9.
     if VERROU_PRODUCTION_G2_4D:
-        raise GardeErreur(
-            "VERROU G2.4d : raccord qualifié SANS production — le lancement "
-            "réel exige une porte ultérieure et une décision humaine "
-            "distincte. Aucun répertoire créé, aucun manifeste écrit, "
-            "aucun cobaya.run atteint."
-        )
+        garde_franchissement_sent0d(reference_franchissement, variante, graine)
     # 9. CHEMIN RÉEL (SENT-0A) — matériellement inatteignable tant que le
     #    verrou vaut True. L'information Cobaya vient EXCLUSIVEMENT du
     #    constructeur directeur ; l'observateur est injecté par le seul
