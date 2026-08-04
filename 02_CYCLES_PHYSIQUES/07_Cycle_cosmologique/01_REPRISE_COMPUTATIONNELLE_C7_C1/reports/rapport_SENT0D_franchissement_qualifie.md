@@ -103,9 +103,14 @@ Le franchissement positif est prouvé PAR SENTINELLES (celles de G2.4d :
 gardes amont satisfaites par le harnais minimal (arbre Git, budget déclaré,
 autorisation substituée — les gardes réelles de contrat, environnement,
 données, threads, chemins, support et admission de capacité restant
-actives), le chemin **franchit réellement l'étape 8** et la PREMIÈRE
-opération post-verrou — l'acquisition exclusive du répertoire (`Path.mkdir`)
-— est **interceptée avant toute écriture réelle** :
+actives), le chemin **franchit réellement l'étape 8** et la première
+opération filesystem post-verrou est interceptée par la sentinelle
+`Path.mkdir` — **cela prouve le franchissement de l'étape 8 avant toute
+écriture réelle**. Dans `_acquerir_repertoire_run`, ce premier appel peut
+être celui du parent (`exist_ok=True`) ; **l'acquisition exclusive du
+répertoire final demeure l'appel ultérieur `exist_ok=False`, déjà qualifié
+par SENT-0B/B1** — la preuve de franchissement n'en dépend pas et B1 n'est
+en rien affaibli.
 
 ```text
 franchissement de contrôle : PROUVÉ   (sentinelle atteinte : [Path.mkdir],
@@ -130,7 +135,9 @@ statique      : VERROU=True (AST + module) ; référence et périmètre exacts
                 déclarés ; l'étape 8 appelle bien la garde (contrôle AST) ;
 verrou hist.  : sans flag -> arrêt exact « VERROU G2.4d », zéro sentinelle ;
 franchissement: avec flag exact -> étape 8 franchie, première opération
-                post-verrou interceptée = exactement [Path.mkdir] ;
+                filesystem post-verrou interceptée = exactement
+                [Path.mkdir] (le parent, exist_ok=True — l'acquisition
+                exclusive finale reste l'appel exist_ok=False, B1) ;
 flag erroné   : refus « référence incorrecte », zéro sentinelle ;
 autorisation  : nominale sentinelle admissible (groupes perimetre_sentinelle
                 et reference_sentinelle traversés) ; le MÊME manifeste reste
@@ -138,7 +145,7 @@ autorisation  : nominale sentinelle admissible (groupes perimetre_sentinelle
                 optionnelle — rétro-compatibilité G2.4d prouvée.
 ```
 
-### Fautes — 16, toutes détectées
+### Fautes — 19, toutes détectées
 
 ```text
 flag_errone_accepte                     flag_sans_valeur_accepte
@@ -150,7 +157,36 @@ perimetre_autre_variante_seule_acceptee reference_sentinelle_absente_acceptee
 reference_sentinelle_erronee_acceptee   perimetre_exact_neutralise
 cle_etrangere_acceptee                  verrou_retire
 etape8_sans_garde_franchissement
+--- B3, correction après audit de PR #96 ---
+autorisation_sha_seconde_lecture        autorisation_utf8_invalide_acceptee
+autorisation_json_invalide_acceptee
 ```
+
+### B3 — identité de l'autorisation liée aux octets validés (audit #96)
+
+L'audit a identifié un bloqueur d'intégrité : `garde_autorisation` validait
+le contenu parsé puis retournait `sha256_fichier(chemin)` — une **seconde
+lecture**. Une mutation concurrente entre les deux pouvait produire
+« contenu A validé, SHA de contenu B enregistré », cassant la provenance
+que `sha256_autorisation` est censé attester.
+
+Corrigé par **lecture unique** : les octets sont lus une fois, leur SHA-256
+est calculé sur ces octets, puis ces mêmes octets sont décodés (UTF-8),
+parsés (JSON) et validés — le SHA retourné est celui des octets
+effectivement consommés et validés, sans aucune relecture du chemin.
+Fichier absent, erreur de lecture, UTF-8 invalide et JSON invalide sont
+refusés sur cause exacte.
+
+L'épreuve `autorisation_sha_seconde_lecture` est non vacante : un fichier A
+est écrit sous `%TEMP%` (marqué QUALIFICATION_ONLY — la validation profonde
+est substituée par un espion précisément pour ne jamais produire une
+autorisation réelle ; la chaîne lecture → SHA → décodage → parsing → appel
+du validateur → retour du SHA reste la vraie, et `sha256_fichier` n'est pas
+mocké). L'espion vérifie que l'objet validé est exactement celui parsé des
+octets A, puis remplace le fichier par un contenu B **avant** le retour.
+Attendus vérifiés : SHA retourné = SHA(A) ≠ SHA(B), fichier sur disque = B.
+L'ancienne implémentation à double lecture aurait retourné SHA(B) : la
+faute échouerait.
 
 **Non-vacuité.** `garde_franchissement_neutralisee` neutralise la garde :
 SANS flag, le chemin atteint alors la sentinelle post-verrou — preuve que la

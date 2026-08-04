@@ -12,9 +12,12 @@ ratification sentinelle + intention CLI explicite
 ``--franchissement-sent0d SENT0D-2026-08-04-issue94-rat1``.
 
 Le franchissement positif est prouvé PAR SENTINELLES : le chemin
-traverse réellement l'étape 8 et la PREMIÈRE opération post-verrou
-(l'acquisition exclusive du répertoire, ``Path.mkdir``) est interceptée
-AVANT toute écriture réelle.
+traverse réellement l'étape 8 et la PREMIÈRE opération filesystem
+post-verrou est interceptée par la sentinelle ``Path.mkdir`` AVANT toute
+écriture réelle. Dans ``_acquerir_repertoire_run``, ce premier appel
+peut être celui du PARENT (``exist_ok=True``) ; l'acquisition exclusive
+du répertoire final demeure l'appel ultérieur ``exist_ok=False``, déjà
+qualifié par SENT-0B/B1 — la preuve de FRANCHISSEMENT n'en dépend pas.
 
 PORTE AUTO-BLOQUANTE : toute attente non satisfaite conduit à
 SystemExit(1) après impression du JSON normalisé.
@@ -261,6 +264,76 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
         return _detecte_message(
             lambda: _valider_sentinelle(lanceur, m), "clés inexactes")
 
+    # ---- B3 : liaison SHA <-> octets validés -----------------------------
+    if nom == "autorisation_sha_seconde_lecture":
+        # Épreuve NON VACANTE de la lecture unique (B3, audit PR #96).
+        # Un fichier A structurellement valide est écrit sous %TEMP% —
+        # marqué QUALIFICATION_ONLY : pour ne jamais produire une
+        # autorisation réelle, la validation PROFONDE est substituée par
+        # un espion ; la chaîne éprouvée reste la VRAIE chaîne de
+        # garde_autorisation (lecture des octets -> SHA -> décodage ->
+        # parsing -> appel du validateur -> retour du SHA), et
+        # sha256_fichier n'est PAS mocké. L'espion (1) vérifie que
+        # l'objet reçu est exactement celui parsé des octets A — la
+        # validation porte bien sur les octets lus — puis (2) remplace le
+        # fichier sur disque par un contenu B AVANT que garde_autorisation
+        # ne retourne. Attendus : SHA retourné == SHA(A) != SHA(B) et
+        # fichier sur disque == B. L'ancienne implémentation à double
+        # lecture (sha256_fichier(chemin) après validation) rendrait
+        # SHA(B) : la faute échouerait.
+        import hashlib
+
+        with tempfile.TemporaryDirectory(prefix="c7c1_sent0d_") as tmp:
+            manifeste_a = _autorisation_sentinelle_memoire(lanceur)
+            manifeste_a["usage"] = "QUALIFICATION_ONLY"
+            manifeste_a["cle_humaine_1"] = "QUALIFICATION_ONLY"
+            manifeste_a["cle_humaine_2"] = "QUALIFICATION_ONLY"
+            chemin = Path(tmp) / "autorisation_qualification_only.json"
+            octets_a = json.dumps(manifeste_a, sort_keys=True,
+                                  ensure_ascii=False).encode("utf-8")
+            chemin.write_bytes(octets_a)
+            sha_a = hashlib.sha256(octets_a).hexdigest()
+            octets_b = json.dumps({"schema": "contenu_B_substitue"},
+                                  sort_keys=True).encode("utf-8")
+            sha_b = hashlib.sha256(octets_b).hexdigest()
+            objet_a = json.loads(octets_a.decode("utf-8"))
+            vrai_validateur = lanceur._valider_contenu_autorisation
+            temoin = {"objet_recu_est_A": False}
+
+            def espion(manifeste, *a, **k):
+                temoin["objet_recu_est_A"] = (manifeste == objet_a)
+                chemin.write_bytes(octets_b)  # mutation APRÈS validation
+                return []
+
+            lanceur._valider_contenu_autorisation = espion
+            try:
+                sha_retourne = lanceur.garde_autorisation(
+                    chemin, VARIANTE_SENTINELLE, GRAINE_SENTINELLE,
+                    lanceur.garde_git()["head"])
+            finally:
+                lanceur._valider_contenu_autorisation = vrai_validateur
+            disque_apres = chemin.read_bytes()
+        return 1 if (temoin["objet_recu_est_A"]
+                     and sha_retourne == sha_a
+                     and sha_retourne != sha_b
+                     and disque_apres == octets_b) else 0
+    if nom == "autorisation_utf8_invalide_acceptee":
+        with tempfile.TemporaryDirectory(prefix="c7c1_sent0d_") as tmp:
+            chemin = Path(tmp) / "autorisation.bin"
+            chemin.write_bytes(b'{"type": "\xff\xfe invalide"}')
+            return _detecte_message(
+                lambda: lanceur.garde_autorisation(
+                    chemin, VARIANTE_SENTINELLE, GRAINE_SENTINELLE, "0" * 40),
+                "UTF-8 invalide")
+    if nom == "autorisation_json_invalide_acceptee":
+        with tempfile.TemporaryDirectory(prefix="c7c1_sent0d_") as tmp:
+            chemin = Path(tmp) / "autorisation.json"
+            chemin.write_text("{ ceci n'est pas du JSON", encoding="utf-8")
+            return _detecte_message(
+                lambda: lanceur.garde_autorisation(
+                    chemin, VARIANTE_SENTINELLE, GRAINE_SENTINELLE, "0" * 40),
+                "JSON invalide")
+
     # ---- verrou ----------------------------------------------------------
     if nom == "verrou_retire":
         source = Path("scripts/run_mcmc_xz_g2_4.py").read_text(
@@ -296,6 +369,10 @@ FAUTES = (
     "reference_sentinelle_absente_acceptee",
     "reference_sentinelle_erronee_acceptee",
     "perimetre_exact_neutralise", "cle_etrangere_acceptee",
+    # B3 — liaison SHA <-> octets validés (audit PR #96)
+    "autorisation_sha_seconde_lecture",
+    "autorisation_utf8_invalide_acceptee",
+    "autorisation_json_invalide_acceptee",
     "verrou_retire", "etape8_sans_garde_franchissement",
 )
 
@@ -398,7 +475,8 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
     if appels_franchi != ["Path.mkdir"]:
         echecs.append(
             f"première opération post-verrou inattendue : {appels_franchi} "
-            "(attendu : exactement [Path.mkdir], l'acquisition exclusive)")
+            "(attendu : exactement [Path.mkdir], première opération "
+            "filesystem de _acquerir_repertoire_run)")
     if "cobaya.run" in appels_franchi:
         echecs.append("cobaya.run atteint : interdit dans cette passe")
 

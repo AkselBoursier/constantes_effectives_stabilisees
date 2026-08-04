@@ -2111,20 +2111,38 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
                        support_attendu: dict | None = None,
                        perimetre_exact_attendu: dict | None = None,
                        reference_sentinelle_attendue: str | None = None) -> str:
-    """Garde d'autorisation RÉELLE sur FICHIER.
+    """Garde d'autorisation RÉELLE sur FICHIER — LECTURE UNIQUE (B3).
 
-    Lit le fichier, délègue au validateur pur, et ne retourne le SHA-256
-    du fichier QU'APRÈS que tous les groupes de contrôles ont été
-    traversés. Aucune validation ne subsiste après le retour.
+    L'identité retournée provient d'une UNIQUE lecture des octets : les
+    octets sont lus une fois, leur SHA-256 est calculé, puis CES MÊMES
+    octets sont décodés, parsés et validés. Aucune relecture du chemin
+    après validation — une mutation concurrente du fichier entre
+    validation et empreinte ne peut donc plus produire « contenu A
+    validé, SHA de contenu B enregistré » (audit PR #96, B3).
 
     Refuse systématiquement un manifeste d'usage autre que PRODUCTION :
     un fichier éphémère de qualification ne peut JAMAIS servir
     d'autorisation réelle.
     """
-    if not Path(chemin).is_file():
+    p = Path(chemin)
+    if not p.is_file():
         raise GardeErreur("autorisation absente")
-    with open(chemin, encoding="utf-8") as handle:
-        manifeste = json.load(handle)
+    try:
+        octets = p.read_bytes()  # UNIQUE lecture des octets
+    except OSError as exc:
+        raise GardeErreur(
+            f"autorisation illisible ({type(exc).__name__})") from exc
+    sha_octets_valides = hashlib.sha256(octets).hexdigest()
+    try:
+        texte = octets.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise GardeErreur(
+            "autorisation : encodage UTF-8 invalide") from exc
+    try:
+        manifeste = json.loads(texte)
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"autorisation : JSON invalide ({exc.msg})") from exc
     _valider_contenu_autorisation(
         manifeste, variante, graine, head,
         budget_contrat=budget_contrat,
@@ -2133,7 +2151,7 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
         perimetre_exact_attendu=perimetre_exact_attendu,
         reference_sentinelle_attendue=reference_sentinelle_attendue,
     )
-    return sha256_fichier(chemin)
+    return sha_octets_valides  # jamais une seconde lecture du chemin
 
 
 
