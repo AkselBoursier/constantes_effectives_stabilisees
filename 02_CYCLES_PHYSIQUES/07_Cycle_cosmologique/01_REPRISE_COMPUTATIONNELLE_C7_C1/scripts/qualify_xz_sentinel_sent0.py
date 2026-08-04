@@ -291,7 +291,11 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
     if nom in ("converge_sans_drapeau_explicite", "interruption_reclassee",
                "champ_scientifique_modifie", "champ_runtime_inconnu",
                "manifeste_corrompu_mis_a_jour",
-               "manifeste_non_conforme_mis_a_jour", "statut_final_reecrase"):
+               "manifeste_non_conforme_mis_a_jour", "statut_final_reecrase",
+               "planifie_vers_planifie_accepte",
+               "statut_final_identique_reecrit",
+               "nonconverge_avec_converged_true",
+               "date_fin_invalide_acceptee", "detail_fin_vide_accepte"):
         with tempfile.TemporaryDirectory(prefix="c7c1_sent0_") as tmp:
             chemin = Path(tmp) / "manifest.json"
             manifeste = _manifeste_qualification(lanceur)
@@ -312,9 +316,14 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
                     "non conforme")
             lanceur.ecrire_manifeste_atomique(chemin, manifeste)
             if nom == "converge_sans_drapeau_explicite":
+                # Ensemble complet fourni, mais drapeau à False : le refus
+                # doit venir de l'INVARIANT, pas d'un champ manquant.
                 return _detecte_message(
                     lambda: lanceur.mettre_a_jour_manifeste_runtime(
-                        chemin, {"statut_run": lanceur.STATUT_RUN_CONVERGE}),
+                        chemin, {"statut_run": lanceur.STATUT_RUN_CONVERGE,
+                                 "converged_cobaya": False,
+                                 "date_fin_utc": DATE_FIN_QUALIFICATION_UTC,
+                                 "detail_fin": "convergence non prouvee"}),
                     "converged_cobaya is True")
             if nom == "interruption_reclassee":
                 lanceur.mettre_a_jour_manifeste_runtime(chemin, {
@@ -350,6 +359,56 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
                         chemin, {"statut_run":
                                  lanceur.STATUT_RUN_FIN_SANS_CONVERGENCE}),
                     "jamais réécrit")
+            if nom == "planifie_vers_planifie_accepte":
+                # Ensemble complet, mais statut NON final : refusé.
+                return _detecte_message(
+                    lambda: lanceur.mettre_a_jour_manifeste_runtime(
+                        chemin, {"statut_run": lanceur.STATUT_RUN_PLANIFIE,
+                                 "converged_cobaya": False,
+                                 "date_fin_utc": DATE_FIN_QUALIFICATION_UTC,
+                                 "detail_fin": "pseudo finalisation"}),
+                    "statut final explicite")
+            if nom == "statut_final_identique_reecrit":
+                # Une seconde finalisation IDENTIQUE doit être refusée :
+                # après finalisation, aucune modification runtime, même à
+                # statut inchangé.
+                finalisation = {
+                    "statut_run": lanceur.STATUT_RUN_ECHEC_TECHNIQUE,
+                    "converged_cobaya": False,
+                    "date_fin_utc": DATE_FIN_QUALIFICATION_UTC,
+                    "detail_fin": "echec simule"}
+                lanceur.mettre_a_jour_manifeste_runtime(chemin, finalisation)
+                return _detecte_message(
+                    lambda: lanceur.mettre_a_jour_manifeste_runtime(
+                        chemin, dict(finalisation)),
+                    "jamais réécrit")
+            if nom == "nonconverge_avec_converged_true":
+                return _detecte_message(
+                    lambda: lanceur.mettre_a_jour_manifeste_runtime(
+                        chemin, {"statut_run":
+                                 lanceur.STATUT_RUN_ECHEC_TECHNIQUE,
+                                 "converged_cobaya": True,
+                                 "date_fin_utc": DATE_FIN_QUALIFICATION_UTC,
+                                 "detail_fin": "drapeau contradictoire"}),
+                    "converged_cobaya is False")
+            if nom == "date_fin_invalide_acceptee":
+                return _detecte_message(
+                    lambda: lanceur.mettre_a_jour_manifeste_runtime(
+                        chemin, {"statut_run":
+                                 lanceur.STATUT_RUN_ECHEC_TECHNIQUE,
+                                 "converged_cobaya": False,
+                                 "date_fin_utc": "04/08/2026 00:00",
+                                 "detail_fin": "date mal formee"}),
+                    "format invalide")
+            if nom == "detail_fin_vide_accepte":
+                return _detecte_message(
+                    lambda: lanceur.mettre_a_jour_manifeste_runtime(
+                        chemin, {"statut_run":
+                                 lanceur.STATUT_RUN_ECHEC_TECHNIQUE,
+                                 "converged_cobaya": False,
+                                 "date_fin_utc": DATE_FIN_QUALIFICATION_UTC,
+                                 "detail_fin": "   "}),
+                    "detail_fin")
     if nom == "collision_prefixe_etape9":
         with tempfile.TemporaryDirectory(prefix="c7c1_sent0_") as tmp:
             occupant = (Path(tmp) / "g2_4_qualification" / "sent0" / "run")
@@ -366,15 +425,19 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
         return 1 if (detecte and intact) else 0
     if nom == "manifeste_existant_non_identique_etape9":
         # Un manifest.json étranger DANS le répertoire du run doit bloquer
-        # l'étape 9 — d'abord par la collision, et, si celle-ci était
-        # neutralisée, par le refus d'écrasement d'ecrire_manifeste_atomique.
+        # l'étape 9. Défense en profondeur : la collision ET l'acquisition
+        # exclusive sont neutralisées, pour prouver que le DERNIER rempart
+        # — le refus d'écrasement d'ecrire_manifeste_atomique — tient seul.
         with tempfile.TemporaryDirectory(prefix="c7c1_sent0_") as tmp:
             repertoire = Path(tmp) / "g2_4_qualification" / "sent0" / "run"
             repertoire.mkdir(parents=True)
             (repertoire / "manifest.json").write_text(
                 json.dumps({"schema": "etranger"}), encoding="utf-8")
             vraie_collision = lanceur.garde_collision
+            vraie_acquisition = lanceur._acquerir_repertoire_run
             lanceur.garde_collision = lambda prefixe: None  # neutralisée
+            lanceur._acquerir_repertoire_run = (  # neutralisée (ancienne règle)
+                lambda prefixe: Path(prefixe).parent)
             try:
                 try:
                     _executer_simule(lanceur, Path(tmp), "nominal")
@@ -385,7 +448,55 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
                                       .read_text(encoding="utf-8"))
             finally:
                 lanceur.garde_collision = vraie_collision
+                lanceur._acquerir_repertoire_run = vraie_acquisition
         return 1 if (detecte and etranger == {"schema": "etranger"}) else 0
+    if nom == "repertoire_final_vide_preexistant_accepte":
+        # B1 : un répertoire final PRÉEXISTANT MAIS VIDE passe l'ancienne
+        # garde_collision — l'acquisition exclusive doit le refuser, sans
+        # le supprimer et sans rien écrire dedans.
+        with tempfile.TemporaryDirectory(prefix="c7c1_sent0_") as tmp:
+            repertoire = Path(tmp) / "g2_4_qualification" / "sent0" / "run"
+            repertoire.mkdir(parents=True)  # vide
+            try:
+                _executer_simule(lanceur, Path(tmp), "nominal")
+                detecte = 0
+            except GardeErreur as exc:
+                detecte = 1 if "acquisition exclusive refusée" in str(exc) \
+                    else 0
+            conserve = repertoire.is_dir()
+            vide = not any(repertoire.iterdir())
+        return 1 if (detecte and conserve and vide) else 0
+    if nom == "acquisition_exclusive_neutralisee":
+        # MUTATION B1 : on rétablit l'ANCIENNE création (exist_ok=True).
+        # Le refus du répertoire vide préexistant doit DISPARAÎTRE — preuve
+        # que le test ci-dessus mord sur l'acquisition réelle, et que la
+        # qualification échouerait si elle était neutralisée.
+        def _refus_sur_vide() -> int:
+            with tempfile.TemporaryDirectory(prefix="c7c1_sent0_") as tmp:
+                repertoire = (Path(tmp) / "g2_4_qualification" / "sent0"
+                              / "run")
+                repertoire.mkdir(parents=True)  # vide
+                try:
+                    _executer_simule(lanceur, Path(tmp), "nominal")
+                    return 0
+                except GardeErreur as exc:
+                    return 1 if "acquisition exclusive refusée" in str(exc) \
+                        else 0
+
+        avant = _refus_sur_vide()
+        vraie = lanceur._acquerir_repertoire_run
+
+        def ancienne(prefixe):
+            repertoire = Path(prefixe).parent
+            repertoire.mkdir(parents=True, exist_ok=True)  # ANCIENNE règle
+            return repertoire
+
+        lanceur._acquerir_repertoire_run = ancienne
+        try:
+            apres = _refus_sur_vide()
+        finally:
+            lanceur._acquerir_repertoire_run = vraie
+        return 1 if (avant == 1 and apres == 0) else 0
 
     # ---- verrou et écritures --------------------------------------------
     if nom == "verrou_retire":
@@ -436,6 +547,12 @@ FAUTES = (
     "statut_final_reecrase", "collision_prefixe_etape9",
     "manifeste_existant_non_identique_etape9",
     "verrou_retire", "cobaya_reel_appele", "ecriture_sous_verrou_atteinte",
+    # B1/B2 — corrections après audit indépendant de PR #95
+    "repertoire_final_vide_preexistant_accepte",
+    "acquisition_exclusive_neutralisee",
+    "planifie_vers_planifie_accepte", "statut_final_identique_reecrit",
+    "nonconverge_avec_converged_true", "date_fin_invalide_acceptee",
+    "detail_fin_vide_accepte",
 )
 
 

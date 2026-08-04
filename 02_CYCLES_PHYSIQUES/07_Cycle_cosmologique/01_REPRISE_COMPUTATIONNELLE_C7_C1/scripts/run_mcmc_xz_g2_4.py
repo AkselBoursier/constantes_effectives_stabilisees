@@ -1650,66 +1650,96 @@ def _ecrire_atomique_brut(cible: Path, contenu: dict) -> None:
 
 def mettre_a_jour_manifeste_runtime(chemin: str | Path,
                                     mises_a_jour: dict) -> dict:
-    """Mise à jour ATOMIQUE du manifeste, limitée aux champs runtime.
+    """FINALISATION monotone et UNIQUE du manifeste (B2, audit #95).
 
-    Règles, toutes bloquantes (SENT-0A §4.6) :
-      - seuls les champs de ``CHAMPS_RUNTIME_AUTORISES`` peuvent changer —
-        l'identité et la science sont inviolables après l'écriture
-        initiale ;
+    Ce n'est pas une mise à jour générique : c'est l'unique transition
+
+        PLANIFIE_NON_LANCE  ->  un statut de STATUTS_RUN_FINALS
+
+    exécutée en un seul appel portant l'ensemble COMPLET des champs de
+    finalisation (``CHAMPS_RUNTIME_AUTORISES``, ni plus ni moins).
+
+    Règles, toutes bloquantes :
       - le manifeste existant doit être lisible ET conforme (schéma
-        reconnu, tous les champs d'identité présents) : un manifeste
-        corrompu ou étranger n'est jamais écrasé ;
-      - transitions de statut : depuis PLANIFIE_NON_LANCE vers un statut
-        FINAL uniquement ; un statut final n'est jamais réécrit ;
-      - CONVERGE exige ``converged_cobaya is True`` dans la même mise à
-        jour : aucun chemin ne peut déclarer une convergence sans le
-        drapeau explicite du sampler ;
-      - une interruption de capacité ne devient jamais une convergence.
+        reconnu, identité complète) : un manifeste corrompu ou étranger
+        n'est jamais écrasé ;
+      - état d'entrée EXACTEMENT ``PLANIFIE_NON_LANCE`` : un manifeste
+        déjà finalisé refuse TOUTE nouvelle modification runtime, même à
+        statut identique — un statut final n'est jamais réécrit, et une
+        interruption ne devient jamais une convergence ;
+      - ``statut_run`` doit être fourni et FINAL : la « finalisation »
+        vers PLANIFIE_NON_LANCE est un non-sens refusé ;
+      - invariant strict :
+            CONVERGE            <=> converged_cobaya is True
+            tout autre final    <=> converged_cobaya is False
+      - ``date_fin_utc`` passe par ``valider_date_utc`` ; ``detail_fin``
+        est une chaîne non vide d'au plus 400 caractères ;
+      - l'identité (tout champ hors runtime) est VÉRIFIÉE inchangée.
 
-    Rend le manifeste mis à jour (relu depuis le disque).
+    Rend le manifeste finalisé (relu depuis le disque).
     """
     cible = Path(chemin)
     if not cible.is_file():
-        raise GardeErreur("mise à jour runtime : manifest.json absent")
+        raise GardeErreur("finalisation runtime : manifest.json absent")
     try:
         existant = json.loads(cible.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise GardeErreur(
-            f"mise à jour runtime : manifeste corrompu ({exc.msg}) — "
+            f"finalisation runtime : manifeste corrompu ({exc.msg}) — "
             "aucun écrasement") from exc
     if not isinstance(existant, dict) \
             or existant.get("schema") not in SCHEMAS_MANIFESTE_RECONNUS:
         raise GardeErreur(
-            "mise à jour runtime : manifeste non conforme (schéma) — refus")
+            "finalisation runtime : manifeste non conforme (schéma) — refus")
     manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in existant]
     if manquants:
         raise GardeErreur(
-            f"mise à jour runtime : manifeste non conforme, champs "
+            f"finalisation runtime : manifeste non conforme, champs "
             f"d'identité absents {manquants} — refus")
     interdits = sorted(set(mises_a_jour) - set(CHAMPS_RUNTIME_AUTORISES))
     if interdits:
         raise GardeErreur(
-            f"mise à jour runtime : champs non runtime refusés {interdits} "
+            f"finalisation runtime : champs non runtime refusés {interdits} "
             f"— seuls {list(CHAMPS_RUNTIME_AUTORISES)} sont modifiables")
+    # État d'entrée : STRICTEMENT l'état initial. Toute autre valeur —
+    # y compris un statut final identique à celui demandé — est un refus.
     statut_avant = existant.get("statut_run")
-    statut_apres = mises_a_jour.get("statut_run", statut_avant)
-    if statut_apres not in (STATUT_RUN_PLANIFIE, *STATUTS_RUN_FINALS):
+    if statut_avant != STATUT_RUN_PLANIFIE:
         raise GardeErreur(
-            f"mise à jour runtime : statut inconnu {statut_apres!r}")
-    if statut_avant in STATUTS_RUN_FINALS and statut_apres != statut_avant:
+            f"finalisation runtime : manifeste déjà finalisé "
+            f"(statut {statut_avant!r}) — un statut final n'est jamais "
+            "réécrit et aucune seconde modification runtime n'est permise ; "
+            "une interruption ne devient jamais une convergence")
+    # Ensemble COMPLET des champs de finalisation, exigé d'un coup.
+    absents = sorted(set(CHAMPS_RUNTIME_AUTORISES) - set(mises_a_jour))
+    if absents:
         raise GardeErreur(
-            f"mise à jour runtime : statut final {statut_avant!r} jamais "
-            f"réécrit (demandé : {statut_apres!r}) — une interruption ne "
-            "devient pas une convergence")
+            f"finalisation runtime : champs de finalisation absents "
+            f"{absents} — l'ensemble complet est requis en un seul appel")
+    statut_apres = mises_a_jour["statut_run"]
+    if statut_apres not in STATUTS_RUN_FINALS:
+        raise GardeErreur(
+            f"finalisation runtime : statut {statut_apres!r} non final — "
+            "la finalisation exige un statut final explicite "
+            "(PLANIFIE -> PLANIFIE est refusé)")
+    converged = mises_a_jour["converged_cobaya"]
     if statut_apres == STATUT_RUN_CONVERGE:
-        if mises_a_jour.get("converged_cobaya") is not True:
+        if converged is not True:
             raise GardeErreur(
-                "mise à jour runtime : CONVERGE exige converged_cobaya is "
+                "finalisation runtime : CONVERGE exige converged_cobaya is "
                 "True — un retour sans exception ne vaut jamais convergence")
-        if statut_avant == STATUT_RUN_INTERROMPU_CAPACITE:
+    else:
+        if converged is not False:
             raise GardeErreur(
-                "mise à jour runtime : une interruption de capacité ne "
-                "devient jamais une convergence")
+                f"finalisation runtime : statut {statut_apres!r} exige "
+                "converged_cobaya is False — un statut non convergé ne "
+                "porte jamais un drapeau de convergence")
+    valider_date_utc(mises_a_jour["date_fin_utc"])
+    detail = mises_a_jour["detail_fin"]
+    if not isinstance(detail, str) or not detail.strip() or len(detail) > 400:
+        raise GardeErreur(
+            "finalisation runtime : detail_fin doit être une chaîne non "
+            "vide d'au plus 400 caractères")
     nouveau = {**existant, **mises_a_jour}
     # Défense en profondeur : l'identité doit être VÉRIFIÉE inchangée,
     # pas seulement supposée inchangée par construction.
@@ -1718,7 +1748,7 @@ def mettre_a_jour_manifeste_runtime(chemin: str | Path,
             continue
         if nouveau[cle] != existant[cle]:
             raise GardeErreur(
-                f"mise à jour runtime : champ non runtime altéré ({cle})")
+                f"finalisation runtime : champ non runtime altéré ({cle})")
     _ecrire_atomique_brut(cible, nouveau)
     return json.loads(cible.read_text(encoding="utf-8"))
 
@@ -2166,6 +2196,32 @@ def preflight(variante: str, graine: int, descripteur_test: str | None = None,
 
 # --------------------------------------- SENT-0A : chemin réel (étape 9)
 
+def _acquerir_repertoire_run(prefixe: str | Path) -> Path:
+    """ACQUISITION EXCLUSIVE du répertoire FINAL du run (B1, audit #95).
+
+    ``garde_collision`` puis ``mkdir(exist_ok=True)`` laissaient une
+    fenêtre TOCTOU : deux processus pouvaient tous deux constater
+    l'absence puis tous deux « réussir » la création. Ici, seuls les
+    PARENTS sont créés avec ``exist_ok=True`` ; le répertoire final est
+    créé avec ``exist_ok=False`` — c'est l'appel atomique du système de
+    fichiers qui départage : au plus UN processus acquiert le run. Un
+    répertoire final déjà existant, MÊME VIDE, bloque. Rien n'est
+    supprimé : un répertoire acquis ou des traces d'échec restent en
+    place pour audit.
+    """
+    repertoire = Path(prefixe).parent
+    repertoire.parent.mkdir(parents=True, exist_ok=True)  # parents seuls
+    try:
+        repertoire.mkdir(exist_ok=False)  # acquisition exclusive
+    except FileExistsError as exc:
+        raise GardeErreur(
+            f"collision/concurrence : le répertoire final du run existe "
+            f"déjà (même vide, il bloque) — acquisition exclusive refusée, "
+            f"aucun écrasement ({repertoire.name})"
+        ) from exc
+    return repertoire
+
+
 def _lancer_cobaya_production(info_cobaya: dict):
     """Point d'appel UNIQUE de Cobaya pour la production.
 
@@ -2206,8 +2262,10 @@ def executer_production_sentinelle(manifeste_initial: dict,
     substitut de Cobaya.
 
     Séquence :
-      9.1 re-contrôle de collision puis création du répertoire du run —
-          jamais d'écrasement ni de déplacement silencieux ;
+      9.1 défense amont (garde_prefixe, garde_collision) puis ACQUISITION
+          EXCLUSIVE du répertoire final (mkdir exist_ok=False) — au plus
+          un processus acquiert le run ; un répertoire final existant,
+          même vide, bloque ; jamais d'écrasement ni de déplacement ;
       9.2 écriture ATOMIQUE du manifeste initial (PLANIFIE_NON_LANCE) par
           la seule voie de création, qui refuse un existant non identique;
       9.3 appel Cobaya par le point unique ``_lancer_cobaya_production`` ;
@@ -2228,11 +2286,11 @@ def executer_production_sentinelle(manifeste_initial: dict,
     graine ni variante n'est lancée automatiquement.
     """
     chemin_prefixe = Path(prefixe)
-    repertoire = chemin_prefixe.parent
-    # 9.1 — le temps a pu passer depuis le pré-vol : re-contrôler ici.
+    # 9.1 — défense amont (le temps a pu passer depuis le pré-vol), puis
+    #       ACQUISITION EXCLUSIVE du répertoire final (B1, audit PR #95).
     garde_prefixe(chemin_prefixe)
-    garde_collision(chemin_prefixe)
-    repertoire.mkdir(parents=True, exist_ok=True)
+    garde_collision(chemin_prefixe)  # défense amont, PAS l'acquisition
+    repertoire = _acquerir_repertoire_run(chemin_prefixe)
     manifeste_path = repertoire / "manifest.json"
     # 9.2 — création par la voie stricte (refus d'un existant différent).
     if manifeste_initial.get("statut_run") != STATUT_RUN_PLANIFIE:

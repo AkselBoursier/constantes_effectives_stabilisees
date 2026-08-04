@@ -73,13 +73,18 @@ Le squelette « chemin de production non ouvert » est remplacé par
 qui reste **matériellement inatteignable** tant que le verrou vaut `True`
 (le `raise` de l'étape 8 précède l'appel).
 
-### 9.1 Répertoire
+### 9.1 Répertoire — acquisition exclusive (corrigé après audit, B1)
 
 Re-contrôle de `garde_prefixe` et `garde_collision` au moment de l'exécution
-(le temps a pu passer depuis le pré-vol), puis création. Jamais d'écrasement
-ni de déplacement silencieux. **Sur échec après création, les traces —
-répertoire, manifeste, sorties partielles — sont conservées pour audit,
-jamais supprimées automatiquement.**
+en **défense amont**, puis **acquisition exclusive** du répertoire final par
+`_acquerir_repertoire_run` : seuls les parents sont créés avec
+`exist_ok=True` ; le répertoire final est créé avec `exist_ok=False`, si bien
+que c'est l'appel atomique du système de fichiers qui départage — au plus un
+processus acquiert le run, `FileExistsError` est converti en `GardeErreur` de
+collision/concurrence, et **un répertoire final préexistant, même vide,
+bloque**. Jamais d'écrasement ni de déplacement silencieux. **Sur échec après
+création, les traces — répertoire, manifeste, sorties partielles — sont
+conservées pour audit, jamais supprimées automatiquement.**
 
 ### 9.2 Manifeste initial
 
@@ -132,24 +137,34 @@ direction conservatrice assumée et documentée. Aucune exception ne peut
 écrire `CONVERGE` ; une exception non-capacité reste un échec technique
 distinct, jamais reclassée.
 
-### 9.6 Mise à jour atomique du manifeste
+### 9.6 Finalisation monotone du manifeste (corrigé après audit, B2)
 
-Nouvelle fonction dédiée `mettre_a_jour_manifeste_runtime`, limitée à :
+`mettre_a_jour_manifeste_runtime` est une **finalisation monotone et
+unique**, pas une mise à jour générique :
 
-```python
-CHAMPS_RUNTIME_AUTORISES = ("statut_run", "date_fin_utc",
-                            "detail_fin", "converged_cobaya")
+```text
+état avant : exactement PLANIFIE_NON_LANCE
+état après : obligatoirement l'un des STATUTS_RUN_FINALS
+appel      : l'ensemble COMPLET des champs de finalisation, d'un coup —
+             (statut_run, date_fin_utc, detail_fin, converged_cobaya)
 ```
 
-Règles bloquantes : manifeste existant lisible ET conforme (schéma reconnu,
-identité complète) sinon refus ; transitions uniquement de
-`PLANIFIE_NON_LANCE` vers un statut final ; un statut final n'est jamais
-réécrit — une interruption ne devient donc jamais une convergence ;
-`CONVERGE` exige `converged_cobaya is True` dans la même mise à jour ;
-défense en profondeur : chaque champ non runtime est **vérifié** inchangé
-avant écriture. L'écriture est atomique (temporaire frère, fsync,
-`os.replace`, fsync du répertoire). `ecrire_manifeste_atomique` n'est pas
-détendue : l'écriture brute interne est privée au seul chemin déjà validé.
+Interdits, tous éprouvés : `PLANIFIE -> PLANIFIE` ; `final -> même final`
+(aucune seconde modification runtime après finalisation, même à statut
+identique) ; `final -> autre final` ; finalisation sans statut final
+explicite. Invariant strict :
+
+```text
+statut_run == CONVERGE      <=>  converged_cobaya is True
+tout autre statut final     <=>  converged_cobaya is False
+```
+
+`date_fin_utc` passe par `valider_date_utc` ; `detail_fin` est une chaîne non
+vide d'au plus 400 caractères ; manifeste corrompu ou non conforme jamais
+écrasé ; chaque champ non runtime **vérifié** inchangé avant écriture.
+L'écriture est atomique (temporaire frère, fsync, `os.replace`, fsync du
+répertoire). `ecrire_manifeste_atomique` n'est pas détendue : l'écriture
+brute interne est privée au seul chemin déjà validé.
 
 ### 9.7 Checkpoints
 
@@ -192,7 +207,7 @@ confidentialité : aucune fuite (motifs CAP-1a réutilisés) sur les trois
              fichiers SENT-0.
 ```
 
-### Fautes adversariales — 23, toutes détectées
+### Fautes adversariales — 30, toutes détectées
 
 ```text
 sentinelle_630102_acceptee            sentinelle_m2ak_acceptee
@@ -207,6 +222,11 @@ manifeste_non_conforme_mis_a_jour     statut_final_reecrase
 collision_prefixe_etape9              manifeste_existant_non_identique_etape9
 verrou_retire                         cobaya_reel_appele
 ecriture_sous_verrou_atteinte
+--- B1/B2, corrections après audit de PR #95 ---
+repertoire_final_vide_preexistant_accepte
+acquisition_exclusive_neutralisee     planifie_vers_planifie_accepte
+statut_final_identique_reecrit        nonconverge_avec_converged_true
+date_fin_invalide_acceptee            detail_fin_vide_accepte
 ```
 
 `garde_sentinelle_vacante` est la mutation exigée : la garde neutralisée fait
@@ -215,6 +235,39 @@ prouve que les tests de confinement mordent sur la garde réelle et ne sont
 pas vacants. `cobaya_reel_appele` prouve que le point d'appel réel est bien
 intercepté par les sentinelles — la preuve « aucun cobaya.run » n'est pas
 vacante non plus.
+
+### Deux bloqueurs trouvés par l'audit indépendant de PR #95 — corrigés
+
+L'audit du HEAD `6d3a7e6` a confirmé le périmètre et le verrou, et identifié
+**deux défauts opérationnels bloquants**, consignés ici et corrigés sans rien
+rouvrir de scientifique :
+
+**B1 — acquisition du répertoire non atomique.** `garde_collision` puis
+`mkdir(..., exist_ok=True)` laissait une fenêtre TOCTOU : deux processus du
+même sentinelle pouvaient tous deux constater l'absence puis tous deux
+« réussir » la création et écrire sur le même préfixe. Corrigé par
+`_acquerir_repertoire_run` : parents seuls en `exist_ok=True`, répertoire
+final en `exist_ok=False` — l'appel atomique du système de fichiers
+départage ; `FileExistsError` devient un refus explicite de
+collision/concurrence ; un répertoire final préexistant **même vide** bloque
+(l'ancien test ne couvrait qu'un répertoire non vide) ; rien n'est supprimé.
+Fautes : `repertoire_final_vide_preexistant_accepte` et la mutation
+`acquisition_exclusive_neutralisee`, qui rétablit l'ancienne règle et prouve
+que le refus disparaît alors — la qualification échoue si l'acquisition est
+neutralisée.
+
+**B2 — machine d'état runtime plus permissive que le rapport.** Le code
+autorisait `PLANIFIE -> PLANIFIE`, la réécriture des champs runtime d'un état
+final à statut identique, et `converged_cobaya=True` sur un statut final non
+convergé. `mettre_a_jour_manifeste_runtime` est devenue une **finalisation
+monotone unique** : entrée exactement `PLANIFIE_NON_LANCE`, sortie
+obligatoirement finale, ensemble complet des champs exigé d'un coup, aucune
+seconde modification après finalisation même à statut identique, invariant
+`CONVERGE <=> converged_cobaya is True` (et `is False` pour tout autre
+final), `date_fin_utc` validée, `detail_fin` non vide et borné. Fautes :
+`planifie_vers_planifie_accepte`, `statut_final_identique_reecrit`,
+`nonconverge_avec_converged_true`, `date_fin_invalide_acceptee`,
+`detail_fin_vide_accepte`.
 
 ### Défaut de harnais trouvé et corrigé pendant la porte
 
