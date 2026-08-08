@@ -131,13 +131,34 @@ STATUTS_RUN_FINALS = (
     STATUT_RUN_CONVERGE, STATUT_RUN_INTERROMPU_CAPACITE,
     STATUT_RUN_ECHEC_TECHNIQUE, STATUT_RUN_FIN_SANS_CONVERGENCE,
 )
+# REC-1 : état transitoire d'une reprise en cours, et états REPRENABLES.
+#   PLANIFIE_NON_LANCE : kill externe — aucun handler n'a pu finaliser
+#     (cas empiriques attempt1/attempt2 de SENT-0) ;
+#   NON_CONVERGE_INTERRUPTION_CAPACITE : arrêt propre par l'observateur.
+# CONVERGE n'est JAMAIS repris ; ECHEC_TECHNIQUE et FIN_SANS_CONVERGENCE
+# exigent un audit humain préalable — refusés ici sur cause exacte.
+STATUT_RUN_EN_REPRISE = "EN_REPRISE"
+STATUTS_RUN_REPRENABLES = (STATUT_RUN_PLANIFIE,
+                           STATUT_RUN_INTERROMPU_CAPACITE)
 # Champs qu'une mise à jour RUNTIME du manifeste a le droit de toucher.
 # Tout autre champ — identité, science, capacité — est inviolable après
 # l'écriture initiale.
 CHAMPS_RUNTIME_AUTORISES = (
     "statut_run", "date_fin_utc", "detail_fin", "converged_cobaya",
 )
-SCHEMAS_MANIFESTE_RECONNUS = ("c7c1-run-manifest-1", "c7c1-run-manifest-2")
+# REC-1 : le schéma -3 = schéma -2 + historique_reprises (append-only) +
+# statut EN_REPRISE possible. La CRÉATION d'un run reste au schéma -2 ;
+# c'est la première reprise qui promeut le manifeste en -3. Les archives
+# -2 (attempt1/2) restent valides et ne sont jamais réécrites.
+SCHEMA_MANIFESTE_REPRISE = "c7c1-run-manifest-3"
+SCHEMAS_MANIFESTE_RECONNUS = ("c7c1-run-manifest-1", "c7c1-run-manifest-2",
+                              "c7c1-run-manifest-3")
+# Champs EXACTS d'un événement de reprise (historique_reprises).
+CHAMPS_EVENEMENT_REPRISE = (
+    "date_utc", "head_origine", "head_reprise",
+    "reference_ratification_reprise", "sha256_autorisation_reprise",
+    "sha256_checkpoint_au_moment_de_la_reprise",
+)
 
 # ------------------------------------------------ SENT-0 : périmètre
 # Couple sentinelle PROPOSÉ en #94 — PAS ENCORE AUTORISÉ à tourner.
@@ -232,10 +253,13 @@ CLES_MANIFESTE = {
     "support_actif_identite_expurgee",
 }
 # Clés OPTIONNELLES de l'autorisation : le champ SENT-0D n'est exigé que
-# pour un franchissement — l'admettre sans l'exiger préserve la
-# qualification générale G2.4d telle quelle. Toute AUTRE clé étrangère
-# reste refusée.
-CLES_MANIFESTE_OPTIONNELLES = {"reference_ratification_sentinelle"}
+# pour un franchissement, et les deux champs REC-1 que pour une REPRISE —
+# les admettre sans les exiger préserve les qualifications antérieures
+# telles quelles. Toute AUTRE clé étrangère reste refusée.
+CLES_MANIFESTE_OPTIONNELLES = {
+    "reference_ratification_sentinelle",
+    "reference_ratification_reprise", "transitions_head_autorisees",
+}
 
 # Champs OBLIGATOIRES du manifeste de run : aucun ne peut être absent ni
 # remplacé par une valeur implicite. Les sept derniers sont ajoutés par
@@ -1721,10 +1745,12 @@ def mettre_a_jour_manifeste_runtime(chemin: str | Path,
         raise GardeErreur(
             f"finalisation runtime : champs non runtime refusés {interdits} "
             f"— seuls {list(CHAMPS_RUNTIME_AUTORISES)} sont modifiables")
-    # État d'entrée : STRICTEMENT l'état initial. Toute autre valeur —
-    # y compris un statut final identique à celui demandé — est un refus.
+    # État d'entrée : STRICTEMENT un état pré-final — l'état initial, ou
+    # EN_REPRISE (REC-1, posé par la seule fonction dédiée
+    # enregistrer_reprise). Toute autre valeur — y compris un statut final
+    # identique à celui demandé — est un refus.
     statut_avant = existant.get("statut_run")
-    if statut_avant != STATUT_RUN_PLANIFIE:
+    if statut_avant not in (STATUT_RUN_PLANIFIE, STATUT_RUN_EN_REPRISE):
         raise GardeErreur(
             f"finalisation runtime : manifeste déjà finalisé "
             f"(statut {statut_avant!r}) — un statut final n'est jamais "
@@ -1917,6 +1943,8 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
                                   support_attendu: dict | None = None,
                                   perimetre_exact_attendu: dict | None = None,
                                   reference_sentinelle_attendue: str | None = None,
+                                  reference_reprise_attendue: str | None = None,
+                                  transition_head_attendue: dict | None = None,
                                   ) -> list[str]:
     """VALIDATEUR PUR du contenu d'une autorisation (aucun fichier).
 
@@ -2095,6 +2123,34 @@ def _valider_contenu_autorisation(manifeste: dict, variante: str,
                 "franchissement SENT-0D : reference_ratification_sentinelle "
                 "absente ou non conforme : refus")
         franchi("reference_sentinelle")
+    # --- REC-1 : contraintes OPTIONNELLES d'une REPRISE ----------------
+    # Mêmes principes : validées dans la même lecture, groupes hors
+    # GROUPES_CONTROLE_AUTORISATION, comportement historique inchangé
+    # quand elles sont absentes (None).
+    if reference_reprise_attendue is not None:
+        if manifeste.get("reference_ratification_reprise") \
+                != reference_reprise_attendue:
+            raise GardeErreur(
+                "reprise REC-1 : reference_ratification_reprise absente ou "
+                "non conforme : refus")
+        franchi("reference_reprise")
+    if transition_head_attendue is not None:
+        # Reprise d'un run créé sous un AUTRE HEAD : la transition exacte
+        # doit avoir été ratifiée humainement dans l'autorisation.
+        transitions = manifeste.get("transitions_head_autorisees")
+        attendu_t = {"origine": str(transition_head_attendue["origine"]),
+                     "reprise": str(transition_head_attendue["reprise"])}
+        conformes = isinstance(transitions, list) and any(
+            isinstance(t, dict)
+            and str(t.get("origine")) == attendu_t["origine"]
+            and str(t.get("reprise")) == attendu_t["reprise"]
+            for t in transitions)
+        if not conformes:
+            raise GardeErreur(
+                "reprise REC-1 : transition de HEAD non ratifiée — la "
+                "reprise d'un run créé sous un autre HEAD exige une entrée "
+                "exacte dans transitions_head_autorisees : refus")
+        franchi("transition_head")
     manquants = [g for g in GROUPES_CONTROLE_AUTORISATION
                  if g not in traverses]
     if manquants:
@@ -2110,7 +2166,9 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
                        ratification_contrat=None,
                        support_attendu: dict | None = None,
                        perimetre_exact_attendu: dict | None = None,
-                       reference_sentinelle_attendue: str | None = None) -> str:
+                       reference_sentinelle_attendue: str | None = None,
+                       reference_reprise_attendue: str | None = None,
+                       transition_head_attendue: dict | None = None) -> str:
     """Garde d'autorisation RÉELLE sur FICHIER — LECTURE UNIQUE (B3).
 
     L'identité retournée provient d'une UNIQUE lecture des octets : les
@@ -2150,6 +2208,8 @@ def garde_autorisation(chemin: str | Path, variante: str, graine: int,
         support_attendu=support_attendu,
         perimetre_exact_attendu=perimetre_exact_attendu,
         reference_sentinelle_attendue=reference_sentinelle_attendue,
+        reference_reprise_attendue=reference_reprise_attendue,
+        transition_head_attendue=transition_head_attendue,
     )
     return sha_octets_valides  # jamais une seconde lecture du chemin
 
@@ -2477,6 +2537,379 @@ def executer_production_sentinelle(manifeste_initial: dict,
         "manifeste": str(manifeste_path),
         "prefixe": str(chemin_prefixe),
     }
+
+
+# ------------------------------------------- REC-1 : reprise qualifiée
+
+def _extraire_flag_ratification_reprise(args: list[str]) -> str:
+    """Analyse STRICTE de ``--ratification-reprise`` — OBLIGATOIRE en
+    reprise : la reprise est toujours une commande humaine explicite."""
+    positions = [i for i, a in enumerate(args)
+                 if a == "--ratification-reprise"]
+    if not positions:
+        raise GardeErreur(
+            "reprise refusée : ratification de reprise absente "
+            "(--ratification-reprise <référence>)")
+    if len(positions) > 1:
+        raise GardeErreur("reprise refusée : flag de ratification dupliqué")
+    i = positions[0]
+    if i + 1 >= len(args) or args[i + 1].startswith("--") \
+            or not args[i + 1].strip():
+        raise GardeErreur(
+            "reprise refusée : référence de ratification absente ou vide")
+    return args[i + 1]
+
+
+def _acquerir_verrou_reprise(repertoire: str | Path) -> Path:
+    """Acquisition EXCLUSIVE d'une reprise (même primitive que B1).
+
+    Le répertoire ``.reprise.actif`` est créé avec ``exist_ok=False`` :
+    deux processus ne peuvent jamais reprendre le même run. Un verrou
+    résiduel (reprise tuée sans clôture) BLOQUE — fail-closed : il n'est
+    jamais supprimé automatiquement ; sa levée est une décision humaine
+    après audit des traces.
+    """
+    verrou = Path(repertoire) / ".reprise.actif"
+    try:
+        verrou.mkdir(exist_ok=False)
+    except FileExistsError as exc:
+        raise GardeErreur(
+            "reprise concurrente ou verrou de reprise non clos : "
+            "acquisition exclusive refusée — aucune suppression "
+            "automatique, audit humain requis") from exc
+    return verrou
+
+
+def _cloturer_verrou_reprise(verrou: Path, numero: int) -> None:
+    """Clôture par RENOMMAGE (trace conservée, jamais de suppression)."""
+    os.replace(verrou, verrou.with_name(f".reprise.{numero:03d}.clos"))
+
+
+def garde_reprise_rec1(prefixe: str | Path, head_courant: str) -> dict:
+    """Gardes CUMULATIVES d'une reprise (REC-1 §3-4). LECTURE SEULE.
+
+    Rend {"manifeste", "sha256_checkpoint", "transition_requise"}. La
+    partie autorisation (référence de reprise, transition ratifiée) est
+    validée séparément par la garde d'autorisation, dans la même lecture
+    que le reste du fichier d'autorisation.
+    """
+    chemin_prefixe = Path(prefixe)
+    repertoire = chemin_prefixe.parent
+    manifeste_path = repertoire / "manifest.json"
+    if not manifeste_path.is_file():
+        raise GardeErreur("reprise refusée : manifest.json absent")
+    try:
+        manifeste = json.loads(manifeste_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"reprise refusée : manifeste corrompu ({exc.msg})") from exc
+    if not isinstance(manifeste, dict) \
+            or manifeste.get("schema") not in SCHEMAS_MANIFESTE_RECONNUS:
+        raise GardeErreur("reprise refusée : manifeste non conforme (schéma)")
+    manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in manifeste]
+    if manquants:
+        raise GardeErreur(
+            f"reprise refusée : manifeste non conforme, champs absents "
+            f"{manquants}")
+    statut = manifeste.get("statut_run")
+    if statut == STATUT_RUN_CONVERGE:
+        raise GardeErreur(
+            "reprise refusée : statut CONVERGE — un run convergé n'est "
+            "JAMAIS repris")
+    if statut == STATUT_RUN_ECHEC_TECHNIQUE:
+        raise GardeErreur(
+            "reprise refusée : statut NON_CONVERGE_ECHEC_TECHNIQUE — un "
+            "audit humain préalable est obligatoire")
+    if statut == STATUT_RUN_FIN_SANS_CONVERGENCE:
+        raise GardeErreur(
+            "reprise refusée : statut FIN_SANS_CONVERGENCE — un audit "
+            "humain préalable est obligatoire")
+    if statut == STATUT_RUN_EN_REPRISE:
+        raise GardeErreur(
+            "reprise refusée : statut EN_REPRISE — reprise déjà en cours "
+            "ou non clôturée, audit humain requis")
+    if statut not in STATUTS_RUN_REPRENABLES:
+        raise GardeErreur(f"reprise refusée : statut inconnu {statut!r}")
+    # checkpoint Cobaya : présent, non vide, analysable — JAMAIS fabriqué.
+    checkpoint = chemin_prefixe.with_name(chemin_prefixe.name + ".checkpoint")
+    if not checkpoint.is_file():
+        raise GardeErreur(
+            "reprise refusée : checkpoint Cobaya absent — aucun checkpoint "
+            "n'est fabriqué")
+    octets_cp = checkpoint.read_bytes()
+    if not octets_cp.strip():
+        raise GardeErreur("reprise refusée : checkpoint vide")
+    try:
+        import yaml
+
+        contenu_cp = yaml.safe_load(octets_cp.decode("utf-8"))
+    except Exception as exc:  # noqa: BLE001
+        raise GardeErreur(
+            f"reprise refusée : checkpoint non analysable ({exc})") from exc
+    if not isinstance(contenu_cp, dict) or "sampler" not in contenu_cp:
+        raise GardeErreur(
+            "reprise refusée : checkpoint sans bloc sampler exploitable")
+    # identité SCIENTIFIQUE stricte : recalculée, jamais crue sur parole.
+    variante, graine = manifeste["variante"], int(manifeste["graine"])
+    encodage = encodage_scientifique_gele(variante, graine)
+    if manifeste["sha256_encodage_scientifique"] \
+            != encodage["sha256_encodage_scientifique"]:
+        raise GardeErreur(
+            "reprise refusée : identité scientifique différente — "
+            "l'encodage recalculé ne correspond pas au manifeste")
+    if manifeste["sha256_descripteur"] != garde_descripteur(variante):
+        raise GardeErreur(
+            "reprise refusée : descripteur différent du manifeste")
+    if manifeste["sha256_donnees"] != garde_donnees():
+        raise GardeErreur("reprise refusée : données différentes du manifeste")
+    if manifeste["empreinte_environnement"] != empreinte_environnement():
+        raise GardeErreur(
+            "reprise refusée : environnement différent du manifeste")
+    if not _memes_chemins(manifeste["racine_runs_canonique"],
+                          os.environ.get("C7C1_XZ_OUT_DIR", "")):
+        raise GardeErreur("reprise refusée : racine de runs différente")
+    # politique de capacité : identique aux valeurs RATIFIÉES courantes.
+    _valeur_ratifiee(manifeste["budget_total_Gio"], BUDGET_TOTAL_RATIFIE_GIO,
+                     "reprise : budget total du manifeste")
+    _valeur_ratifiee(manifeste["reserve_reprise_Gio"],
+                     RESERVE_REPRISE_RATIFIEE_GIO,
+                     "reprise : réserve de reprise du manifeste")
+    _valeur_ratifiee(manifeste["reserve_volume_minimale_Gio"],
+                     RESERVE_VOLUME_RATIFIEE_GIO,
+                     "reprise : réserve de volume du manifeste")
+    if manifeste["politique_capacite_version"] != POLITIQUE_CAPACITE_VERSION:
+        raise GardeErreur(
+            "reprise refusée : politique de capacité du manifeste "
+            f"{manifeste['politique_capacite_version']!r} != "
+            f"{POLITIQUE_CAPACITE_VERSION!r}")
+    if manifeste["reference_ratification_budget"] \
+            != REFERENCE_RATIFICATION_BUDGET:
+        raise GardeErreur(
+            "reprise refusée : référence de ratification du budget "
+            "différente")
+    # admission CAP-1 rejouée À L'INSTANT de la reprise.
+    garde_capacite_production(os.environ["C7C1_XZ_OUT_DIR"], variante)
+    return {
+        "manifeste": manifeste,
+        "sha256_checkpoint": hashlib.sha256(octets_cp).hexdigest(),
+        "transition_requise": manifeste["head"] != head_courant,
+    }
+
+
+def enregistrer_reprise(chemin: str | Path, evenement: dict) -> dict:
+    """Transition ATOMIQUE vers EN_REPRISE — seule voie d'entrée en
+    reprise, distincte de la finalisation B2 (non détendue).
+
+    Promeut le schéma en c7c1-run-manifest-3 et AJOUTE l'événement à
+    ``historique_reprises`` (append-only). Aucun champ scientifique ni
+    d'identité n'est modifiable ; tout est vérifié champ par champ.
+    """
+    cible = Path(chemin)
+    if not cible.is_file():
+        raise GardeErreur("enregistrement de reprise : manifest.json absent")
+    try:
+        existant = json.loads(cible.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise GardeErreur(
+            f"enregistrement de reprise : manifeste corrompu ({exc.msg}) — "
+            "aucun écrasement") from exc
+    if existant.get("schema") not in SCHEMAS_MANIFESTE_RECONNUS:
+        raise GardeErreur("enregistrement de reprise : schéma non reconnu")
+    manquants = [c for c in CHAMPS_MANIFESTE_RUN if c not in existant]
+    if manquants:
+        raise GardeErreur(
+            f"enregistrement de reprise : manifeste non conforme "
+            f"{manquants}")
+    if existant.get("statut_run") not in STATUTS_RUN_REPRENABLES:
+        raise GardeErreur(
+            f"enregistrement de reprise : statut "
+            f"{existant.get('statut_run')!r} non reprenable")
+    if sorted(evenement) != sorted(CHAMPS_EVENEMENT_REPRISE):
+        raise GardeErreur(
+            "enregistrement de reprise : événement de reprise incomplet ou "
+            f"étranger — champs exacts requis {list(CHAMPS_EVENEMENT_REPRISE)}")
+    valider_date_utc(evenement["date_utc"])
+    for cle in ("head_origine", "head_reprise"):
+        v = evenement[cle]
+        if not isinstance(v, str) or len(v) != 40:
+            raise GardeErreur(
+                f"enregistrement de reprise : {cle} invalide")
+    if evenement["head_origine"] != existant["head"]:
+        raise GardeErreur(
+            "enregistrement de reprise : head_origine != head du manifeste")
+    if not str(evenement["reference_ratification_reprise"]).strip():
+        raise GardeErreur(
+            "enregistrement de reprise : référence de ratification vide")
+    historique = existant.get("historique_reprises", [])
+    if not isinstance(historique, list):
+        raise GardeErreur(
+            "enregistrement de reprise : historique_reprises non conforme")
+    nouveau = {**existant,
+               "schema": SCHEMA_MANIFESTE_REPRISE,
+               "statut_run": STATUT_RUN_EN_REPRISE,
+               "historique_reprises": [*historique, dict(evenement)]}
+    # Vérification champ par champ : SEULS schema, statut_run et
+    # historique_reprises changent ; l'historique existant est un PRÉFIXE
+    # intact du nouveau (append-only prouvé, pas supposé).
+    for cle in existant:
+        if cle in ("schema", "statut_run", "historique_reprises"):
+            continue
+        if nouveau[cle] != existant[cle]:
+            raise GardeErreur(
+                f"enregistrement de reprise : champ non autorisé altéré "
+                f"({cle})")
+    if nouveau["historique_reprises"][:len(historique)] != historique:
+        raise GardeErreur(
+            "enregistrement de reprise : historique_reprises non append-only")
+    _ecrire_atomique_brut(cible, nouveau)
+    return json.loads(cible.read_text(encoding="utf-8"))
+
+
+def executer_reprise_sentinelle(prefixe: str | Path, info_cobaya: dict,
+                                evenement: dict) -> dict:
+    """Étape 9R : exécution RÉELLE d'une reprise, après toutes les gardes.
+
+    Acquisition exclusive -> enregistrement EN_REPRISE (atomique) ->
+    Cobaya par le point d'appel unique (resume=True sur le préfixe
+    EXISTANT — convention G1 inchangée) -> classification STRICTE
+    identique à la production -> finalisation monotone B2 -> clôture du
+    verrou par renommage. Sur échec, traces et verrou restent en place.
+    """
+    chemin_prefixe = Path(prefixe)
+    repertoire = chemin_prefixe.parent
+    manifeste_path = repertoire / "manifest.json"
+    verrou = _acquerir_verrou_reprise(repertoire)
+    manifeste = enregistrer_reprise(manifeste_path, evenement)
+    numero = len(manifeste["historique_reprises"])
+    try:
+        _, sampler = _lancer_cobaya_production(info_cobaya)
+    except ArretCapaciteC7C1 as exc:
+        mettre_a_jour_manifeste_runtime(manifeste_path, {
+            "statut_run": STATUT_RUN_INTERROMPU_CAPACITE,
+            "date_fin_utc": _date_utc_fin(),
+            "detail_fin": f"ArretCapaciteC7C1 (reprise {numero}): {exc}"[:400],
+            "converged_cobaya": False,
+        })
+        _cloturer_verrou_reprise(verrou, numero)
+        raise
+    except BaseException as exc:
+        mettre_a_jour_manifeste_runtime(manifeste_path, {
+            "statut_run": STATUT_RUN_ECHEC_TECHNIQUE,
+            "date_fin_utc": _date_utc_fin(),
+            "detail_fin": (f"{type(exc).__name__} (reprise {numero}): "
+                           f"{exc}")[:400],
+            "converged_cobaya": False,
+        })
+        _cloturer_verrou_reprise(verrou, numero)
+        raise
+    converged_brut = getattr(sampler, "converged", None)
+    est_converge = converged_brut is True
+    manifeste_final = mettre_a_jour_manifeste_runtime(manifeste_path, {
+        "statut_run": (STATUT_RUN_CONVERGE if est_converge
+                       else STATUT_RUN_FIN_SANS_CONVERGENCE),
+        "date_fin_utc": _date_utc_fin(),
+        "detail_fin": (f"reprise {numero} : convergence declaree par le "
+                       "sampler" if est_converge else
+                       f"reprise {numero} : retour normal sans "
+                       f"sampler.converged is True ({converged_brut!r})"),
+        "converged_cobaya": est_converge,
+    })
+    _cloturer_verrou_reprise(verrou, numero)
+    return {
+        "statut_run": manifeste_final["statut_run"],
+        "converged_cobaya": manifeste_final["converged_cobaya"],
+        "reprises": numero,
+    }
+
+
+def reprendre(args: list[str]) -> None:
+    """Mode reprise REC-1 : mêmes verrous et confinements que la
+    production, MOINS la garde de collision (le préfixe DOIT exister),
+    PLUS les gardes de reprise. ``--produire`` sur préfixe occupé reste
+    refusé : seule cette commande accepte un run existant."""
+
+    # 1. injections ; 2. confirmations et flags explicites
+    refuser_injections_en_production()
+    if "--je-confirme-la-reprise" not in args:
+        raise GardeErreur(
+            "reprise refusée : confirmation explicite absente "
+            "(--je-confirme-la-reprise)")
+    if "--autorisation" not in args:
+        raise GardeErreur("autorisation absente")
+    variante, graine = args[0], int(args[1])
+    chemin_autorisation = args[args.index("--autorisation") + 1]
+    reference_franchissement = _extraire_flag_franchissement(args)
+    reference_reprise = _extraire_flag_ratification_reprise(args)
+    # 3. gardes générales (sans collision : le préfixe doit exister)
+    garde_matrice(variante, graine)
+    sha_descripteur = garde_descripteur(variante)
+    garde_donnees()
+    versions = garde_environnement()
+    garde_threads_et_interpreteur()
+    contrat = garde_contrat_local()
+    contrat_brut = contrat.pop("_contrat")
+    racine_depot = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"],
+        capture_output=True, text=True, check=True).stdout.strip()
+    garde_depot_directeur(contrat_brut)
+    cible = os.environ["C7C1_XZ_OUT_DIR"]
+    garde_chemins(cible, os.environ["C7C1_DATA_DIR"], racine_depot)
+    support = garde_support_actif(cible)
+    etat_git = garde_git()
+    if not etat_git["arbre_propre"]:
+        raise GardeErreur("arbre Git non propre : reprise refusée")
+    # 4 bis. confinement sentinelle (tant que SENT-0 n'est pas close)
+    garde_perimetre_sentinelle(variante, graine)
+    prefixe = str(Path(cible) / "g2_4" / "P_WS" / variante
+                  / f"s{graine}" / "chain")
+    garde_prefixe(prefixe)  # hors Git — la collision, elle, est requise
+    # 5. gardes de reprise (manifeste, checkpoint, identité, admission)
+    etat_reprise = garde_reprise_rec1(prefixe, etat_git["head"])
+    manifeste = etat_reprise["manifeste"]
+    transition = ({"origine": manifeste["head"],
+                   "reprise": etat_git["head"]}
+                  if etat_reprise["transition_requise"] else None)
+    # 6. autorisation : périmètre exact + référence sentinelle + référence
+    #    de reprise + transition de HEAD, DANS LA MÊME LECTURE
+    sha_autorisation = garde_autorisation(
+        chemin_autorisation, variante, graine, etat_git["head"],
+        budget_contrat=contrat["budget_production_requis_Gio"],
+        ratification_contrat=contrat["reference_ratification_budget"],
+        support_attendu=support["identite_expurgee"],
+        perimetre_exact_attendu=PERIMETRE_EXACT_SENTINELLE,
+        reference_sentinelle_attendue=REFERENCE_RATIFICATION_SENTINELLE,
+        reference_reprise_attendue=reference_reprise,
+        transition_head_attendue=transition,
+    )
+    # 7. observateur (mécanisme qualifié, injection minimale vérifiée)
+    from xz_cobaya_g2_4 import build_cobaya_info, info_pour_cobaya
+
+    repertoire_run = f"g2_4/P_WS/{variante}/s{graine}"
+    observateur, _ = creer_observateur_capacite(cible, variante,
+                                                repertoire_run)
+    info_execution = info_pour_cobaya(garde_injection_observateur(
+        build_cobaya_info(DESCRIPTEURS[variante], graine), observateur))
+    info_execution["output"] = prefixe
+    # 8. VERROU : inchangé — seul le franchissement ratifié passe
+    if VERROU_PRODUCTION_G2_4D:
+        garde_franchissement_sent0d(reference_franchissement, variante, graine)
+    # 9R. exécution de la reprise
+    import datetime
+
+    evenement = {
+        "date_utc": datetime.datetime.now(
+            datetime.timezone.utc).strftime(FORMAT_DATE_UTC),
+        "head_origine": manifeste["head"],
+        "head_reprise": etat_git["head"],
+        "reference_ratification_reprise": reference_reprise,
+        "sha256_autorisation_reprise": sha_autorisation,
+        "sha256_checkpoint_au_moment_de_la_reprise":
+            etat_reprise["sha256_checkpoint"],
+    }
+    resultat = executer_reprise_sentinelle(prefixe, info_execution, evenement)
+    print(json.dumps({k: resultat[k] for k in
+                      ("statut_run", "converged_cobaya", "reprises")},
+                     indent=2, sort_keys=True, ensure_ascii=False))
 
 
 def produire(args: list[str]) -> None:
@@ -2905,6 +3338,9 @@ def main() -> None:
         if args[0] == "--produire":
             produire(args[1:])
             raise SystemExit(0)  # jamais atteint en G2.4b
+        if args[0] == "--reprendre":
+            reprendre(args[1:])
+            raise SystemExit(0)
         if args[0] == "--verifier-sampler":
             from xz_cobaya_g2_4 import verifier_bloc_sampler
 
