@@ -1093,12 +1093,24 @@ def creer_observateur_capacite(cible: str | Path, variante: str,
                                repertoire_run: str):
     """Fabrique l'observateur de capacité passé à Cobaya en callback.
 
-    OBSERVATEUR PUR. Il lit l'espace libre, l'occupation du lot, celle du
-    run courant et les réserves ratifiées. Il n'écrit AUCUN attribut du
-    sampler : ni ``params``, ni priors, ni propositions, ni
-    ``Rminus1_stop``, ni ``Rminus1_cl_stop``, ni poids, ni samples, ni
-    ``converged``. Positionner ``converged`` est explicitement interdit :
-    cela déguiserait une interruption de capacité en convergence.
+    NON-MUTANT VIS-À-VIS DU SAMPLER SCIENTIFIQUE. Il lit l'espace libre,
+    l'occupation du lot, celle du run courant et les réserves ratifiées.
+    Il n'écrit AUCUN attribut du sampler : ni ``params``, ni priors, ni
+    propositions, ni ``Rminus1_stop``, ni ``Rminus1_cl_stop``, ni poids,
+    ni samples, ni ``converged``. Positionner ``converged`` est
+    explicitement interdit : cela déguiserait une interruption de capacité
+    en convergence.
+
+    BATTEMENT DE VIE (REJ-1, #94) : à chaque appel, une ligne horodatée
+    UTC est ajoutée (append seulement) à ``observateur.heartbeat`` dans
+    le répertoire du run — trace opérationnelle observable de
+    l'extérieur, motivée par le gel console d'attempt3 (SENT-0F §4 : un
+    battement périmé signale un processus figé sans toucher à sa fenêtre).
+    Cette activité I/O signifie que l'observateur n'est PAS pur au sens
+    opérationnel, même s'il reste non-mutant pour le sampler. Un ``OSError``
+    d'ouverture/écriture est avalé et n'interrompt pas la chaîne ; les
+    autres erreurs de programmation ne sont pas masquées et pourraient se
+    propager comme pour tout callback.
 
     Rend (observateur, etat) ; ``etat`` accumule la haute-eau observée.
     """
@@ -1150,6 +1162,18 @@ def creer_observateur_capacite(cible: str | Path, variante: str,
         etat["libre_minimal_gio"] = (
             libre if etat["libre_minimal_gio"] is None
             else min(etat["libre_minimal_gio"], libre))
+        try:  # battement de vie : append seul, jamais bloquant (REJ-1)
+            import datetime
+
+            with open(Path(cible) / repertoire_run / "observateur.heartbeat",
+                      "a", encoding="utf-8") as battement:
+                battement.write(
+                    f"{datetime.datetime.now(datetime.timezone.utc).strftime(FORMAT_DATE_UTC)}"
+                    f" appel={etat['appels']} lignes={lignes}"
+                    f" libre_gio={libre:.4f} run_gio={run_gio:.6f}"
+                    f" lot_gio={lot_gio:.6f}\n")
+        except OSError:
+            pass
         if not all(math.isfinite(v) for v in (libre, run_gio, lot_gio)):
             raise ArretCapaciteC7C1(
                 "données de capacité non finies pendant le run", releve)

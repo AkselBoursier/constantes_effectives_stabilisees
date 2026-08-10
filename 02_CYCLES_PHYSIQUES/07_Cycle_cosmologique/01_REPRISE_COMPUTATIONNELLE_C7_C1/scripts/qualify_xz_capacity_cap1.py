@@ -49,6 +49,22 @@ def _preparer():
     return ici
 
 
+def _monde_observateur_synthetique():
+    """Racine éphémère réservée aux appels dynamiques du callback.
+
+    REJ-1 : depuis que l'observateur émet un heartbeat, l'exercer contre
+    ``C7C1_XZ_OUT_DIR`` n'est plus une lecture pure et contaminerait un run
+    réel gelé. Tous les appels dynamiques de CAP-1 passent donc par ce monde
+    synthétique ; les mesures de capacité du monde réel restent, elles,
+    exécutées séparément par la porte nominale.
+    """
+    monde = tempfile.TemporaryDirectory(prefix="c7c1_cap1_obs_")
+    cible = monde.name
+    relatif = f"g2_4/P_WS/{VARIANTE_TEST}/s{GRAINE_TEST}"
+    (Path(cible) / relatif).mkdir(parents=True)
+    return monde, cible, relatif
+
+
 # ------------------------------------------------------------- doublures
 
 class CollectionDoublure:
@@ -64,8 +80,9 @@ class CollectionDoublure:
 class SamplerEspion:
     """Doublure de sampler qui ENREGISTRE toute écriture d'attribut.
 
-    L'observateur de capacité doit être un pur lecteur : la liste des
-    écritures doit rester vide, et aucune valeur ne doit changer. Les
+    L'observateur doit être strictement NON-MUTANT pour le sampler : la
+    liste des écritures d'attribut doit rester vide et aucune valeur ne doit
+    changer. Son I/O de heartbeat est qualifié séparément par REJ-1. Les
     attributs reproduits sont ceux qu'il serait le plus grave de muter.
     """
 
@@ -243,6 +260,9 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
     from run_mcmc_xz_g2_4 import ArretCapaciteC7C1, GardeErreur
 
     cible = os.environ["C7C1_XZ_OUT_DIR"]
+    # Le callback écrit désormais un heartbeat : même les fautes injectées
+    # doivent l'exercer exclusivement sous %TEMP%, jamais sur le run gelé.
+    monde_observateur, cible_observateur, _ = _monde_observateur_synthetique()
 
     def _detecte(fn, exceptions=(GardeErreur, ArretCapaciteC7C1, ValueError,
                                  OSError, KeyError, TypeError)):
@@ -536,11 +556,11 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
         # RÉEL doit s'arrêter, l'observateur sans anticipation non. C'est
         # exactement le défaut que la marge ferme.
         reel, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
         lanceur.MARGE_ANTICIPATION_PLANCHER_GIO = 0.0
         lanceur.FACTEUR_SECURITE_ANTICIPATION = 0
         sans_marge, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
         with _env(C7C1_TEST_ESPACE_LIBRE_GIO="40.1"):
             reel_arrete = False
             try:
@@ -555,14 +575,14 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
         return 1 if (reel_arrete and defaut_laisse_passer) else 0
     if nom == "callback_sous_haute_eau_sans_arret":
         observateur, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
         espion = SamplerEspion(lignes=10)
         with _env(C7C1_TEST_ESPACE_LIBRE_GIO="39"):
             return _detecte_message(lambda: observateur(espion),
                                     "haute-eau franchie")
     if nom == "callback_lot_au_dela_du_plafond":
         observateur, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
         # 65 M lignes x 349 o ≈ 21,1 Gio : au-delà de 20 + 1,15 − 0,25.
         espion = SamplerEspion(lignes=65_000_000)
         with _env(C7C1_TEST_ESPACE_LIBRE_GIO="99"):
@@ -574,7 +594,7 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
         # d'interruption — et non par une GardeErreur nue qui laisserait le
         # run sans statut de capacité.
         observateur, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
 
         def mesure_ko(_cible, verifier_stabilite=True):
             raise lanceur.GardeErreur("volume illisible (simulé)")
@@ -590,7 +610,7 @@ def executer_faute(nom: str) -> int:  # noqa: C901 - table de fautes
             return 0  # exception NON dédiée : le défaut subsiste
     if nom == "callback_observabilite_perdue":
         observateur, _ = lanceur.creer_observateur_capacite(
-            cible, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
+            cible_observateur, VARIANTE_TEST, "g2_4/P_WS/M2a-N/s630101")
 
         class SansCollection:
             pass
@@ -713,6 +733,47 @@ def _seuil_admission(lanceur, cible) -> float:
     with _env(C7C1_TEST_ESPACE_LIBRE_GIO="1000000"):
         return lanceur.garde_capacite_production(
             cible, VARIANTE_TEST)["seuil_admission_gio"]
+
+
+def _manifestes_production_reels(lanceur, cible) -> list[str]:
+    """Manifestes de production sous la racine, hors temporaires reconnus.
+
+    REJ-1 (#94) : c'est la présence RÉELLE d'un manifeste de production
+    qui atteste qu'un monde occupé est légitime. Chemins RELATIFS à la
+    racine, comme ``runs_production`` — publiables.
+    """
+    racine = Path(cible)
+    exclus = set(lanceur.SOUS_ARBRES_TEMPORAIRES_RECONNUS)
+    trouves = []
+    for chemin in racine.rglob("manifest.json"):
+        relatif = chemin.relative_to(racine)
+        if relatif.parts and relatif.parts[0] in exclus:
+            continue
+        trouves.append(relatif.as_posix())
+    return sorted(trouves)
+
+
+def _verdict_occupation_monde(occupation: dict,
+                              manifestes_production: list[str]) -> list[str]:
+    """REJ-1 : « occupation nulle » conditionnée à l'absence RÉELLE de
+    manifeste de production.
+
+    L'assertion inconditionnelle « zéro » datait d'un monde sans
+    production ; depuis SENT-0E un monde occupé par un run ratifié est
+    légitime. L'incohérence reste une faute DANS LES DEUX SENS : une
+    mesure qui invente de la production (octets sans manifeste) ou qui
+    en perd (manifeste sans octets).
+    """
+    echecs: list[str] = []
+    if not manifestes_production and occupation["octets_production"] != 0:
+        echecs.append(
+            "budget consommé non nul alors qu'aucun manifeste de "
+            f"production n'existe : {occupation['octets_production']} octets")
+    if manifestes_production and occupation["octets_production"] == 0:
+        echecs.append(
+            "manifeste(s) de production présents mais occupation mesurée "
+            "nulle : la mesure perd de la production")
+    return echecs
 
 
 def _constante_ratifiee_declaree(source: str):
@@ -904,14 +965,22 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
             echecs.append(f"contrat privé : {cle} non conforme")
 
     # ---- 3. occupation du lot : mesure sûre ---------------------------
+    # REJ-1 (#94) : le monde peut légitimement porter de la production
+    # ratifiée (run sentinelle gelé, archives d'incidents). L'assertion
+    # « zéro » d'origine devient une COHÉRENCE occupation <-> manifestes,
+    # et reste éprouvée telle quelle sur une racine synthétique VIDE.
     occupation = lanceur.mesurer_occupation_lot(cible, verifier_stabilite=True)
+    manifestes_production = _manifestes_production_reels(lanceur, cible)
     resultat["occupation_lot"] = {
         "octets_production": occupation["octets_production"],
         "octets_non_attribues": occupation["octets_non_attribues"],
         "runs_production": occupation["runs_production"],
         "liens_non_suivis": occupation["liens_non_suivis"],
         "stabilite_verifiee": occupation["stabilite_verifiee"],
-        "zero_en_absence_de_run": occupation["octets_production"] == 0,
+        "manifestes_production": manifestes_production,
+        "zero_ssi_aucun_manifeste":
+            (occupation["octets_production"] == 0)
+            == (not manifestes_production),
         "temporaires_reconnus_declares":
             list(lanceur.SOUS_ARBRES_TEMPORAIRES_RECONNUS),
     }
@@ -920,10 +989,15 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
     # hors de la section soumise au contrôle de déterminisme.
     volatil["octets_temporaires_reconnus"] = \
         occupation["octets_temporaires_reconnus"]
-    if occupation["octets_production"] != 0:
-        echecs.append(
-            "budget consommé non nul alors qu'aucun run réel n'existe : "
-            f"{occupation['octets_production']} octets")
+    echecs.extend(_verdict_occupation_monde(occupation, manifestes_production))
+    with tempfile.TemporaryDirectory(prefix="c7c1_cap1_vide_") as tmp_vide:
+        vide = lanceur.mesurer_occupation_lot(tmp_vide)
+        resultat["occupation_lot"]["zero_sur_racine_vide"] = (
+            vide["octets_production"] == 0
+            and not vide["runs_production"])
+    if resultat["occupation_lot"]["zero_sur_racine_vide"] is not True:
+        echecs.append("occupation de production non nulle sur une racine "
+                      "synthétique vide")
     # attribution sur arborescence SYNTHÉTIQUE (jamais dans <RUNS> réel)
     with tempfile.TemporaryDirectory(prefix="c7c1_cap1_occ_") as tmp:
         _arbre_synthetique(Path(tmp), production=True, octets=4096)
@@ -1031,8 +1105,23 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
         if admission.get(cle) is not attendu:
             echecs.append(f"admission : {cle} = {admission.get(cle)} "
                           f"(attendu {attendu})")
-    if abs(seuil - 61.15) > 1e-9:
-        echecs.append(f"seuil initial {seuil} != 61,15 Gio ratifiés")
+    # REJ-1 (#94) : le seuil courant intègre l'occupation de production
+    # légitime (budget restant = budget ratifié - consommé). L'identité
+    # est vérifiée exactement, et la valeur RATIFIÉE initiale (61,15 Gio)
+    # reste éprouvée telle quelle sur une racine synthétique vide.
+    occupation_gio_reelle = occupation["octets_production"] / lanceur.GIO
+    admission["seuil_initial_ratifie_gio"] = 61.15
+    admission["occupation_imputee_gio"] = occupation_gio_reelle
+    if abs(seuil - (61.15 - occupation_gio_reelle)) > 1e-9:
+        echecs.append(
+            f"seuil courant {seuil} != 61,15 Gio ratifiés moins "
+            f"l'occupation de production mesurée "
+            f"({occupation_gio_reelle} Gio)")
+    with tempfile.TemporaryDirectory(prefix="c7c1_cap1_seuil_") as tmp_vide:
+        seuil_vide = _seuil_admission(lanceur, tmp_vide)
+    admission["seuil_initial_sur_racine_vide_gio"] = seuil_vide
+    if abs(seuil_vide - 61.15) > 1e-9:
+        echecs.append(f"seuil initial {seuil_vide} != 61,15 Gio ratifiés")
 
     # ---- 5. support actif : ratifié à C, jamais via %SystemDrive% ------
     support = lanceur.garde_support_actif(cible)
@@ -1110,12 +1199,14 @@ def qualification() -> int:  # noqa: C901 - porte de qualification
         echecs.append(
             f"fuite de donnée locale dans un fichier public : {sorted(fuites)}")
 
-    # ---- 6. observateur : lecture pure, haute-eau -----------------------
+    # ---- 6. observateur : sampler non-muté, I/O confinée, haute-eau -----
     source_lanceur = Path("scripts/run_mcmc_xz_g2_4.py").read_text(
         encoding="utf-8")
     statique = _aucune_ecriture_sampler(source_lanceur)
+    monde_observateur, cible_observateur, repertoire_observateur = (
+        _monde_observateur_synthetique())
     observateur, etat_obs = lanceur.creer_observateur_capacite(
-        cible, VARIANTE_TEST, f"g2_4/P_WS/{VARIANTE_TEST}/s{GRAINE_TEST}")
+        cible_observateur, VARIANTE_TEST, repertoire_observateur)
     espion = SamplerEspion(lignes=12_345)
     # Contrôle POSITIF : bien au-dessus de la haute-eau, l'observateur doit
     # rendre la main sans exception ET sans mutation.

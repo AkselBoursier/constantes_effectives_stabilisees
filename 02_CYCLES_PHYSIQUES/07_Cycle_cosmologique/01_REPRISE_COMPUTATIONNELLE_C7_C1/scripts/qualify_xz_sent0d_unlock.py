@@ -96,6 +96,17 @@ def _produire_sous_sentinelles(lanceur, args_produire):
     contrat, environnement, données, threads, chemins, support et
     admission de capacité restent les VRAIES gardes. Rend (sentinelles
     atteintes, message d'arrêt).
+
+    REJ-1 (#94) : depuis SENT-0E le préfixe sentinelle réel est
+    légitimement occupé par un run ratifié — ``garde_collision``
+    mordrait avant l'étape 8 et rendrait ces preuves vacantes. Une
+    racine synthétique est impossible (le contrat local épingle la
+    racine de runs, garde conservée) : ``garde_collision`` rejoint donc
+    la famille des gardes substituées par ce harnais, restaurée dans le
+    même ``finally``. La garde réelle reste qualifiée par SENT-0B
+    (collision_prefixe_etape9, acquisition exclusive B1) et par le
+    contrôle unitaire de REJ-1 ; les sentinelles filesystem interdisent
+    de toute façon TOUTE écriture réelle.
     """
     from qualify_xz_launcher_g2_4d import _sentinelles
 
@@ -103,6 +114,8 @@ def _produire_sous_sentinelles(lanceur, args_produire):
     vrai_git = lanceur.garde_git
     vrai_budget = lanceur.garde_budget_production
     vraie_autorisation = lanceur.garde_autorisation
+    vraie_collision = lanceur.garde_collision
+    lanceur.garde_collision = lambda prefixe: None  # monde occupé (REJ-1)
     lanceur.garde_git = lambda: {"head": head_reel, "arbre_propre": True}
     lanceur.garde_budget_production = lambda contrat, cible: {
         "budget_production_statut": "RATIFIE_SIMULE_QUALIFICATION",
@@ -124,6 +137,7 @@ def _produire_sous_sentinelles(lanceur, args_produire):
         lanceur.garde_git = vrai_git
         lanceur.garde_budget_production = vrai_budget
         lanceur.garde_autorisation = vraie_autorisation
+        lanceur.garde_collision = vraie_collision
 
 
 ARGS_SANS_FLAG = (VARIANTE_SENTINELLE, str(GRAINE_SENTINELLE),

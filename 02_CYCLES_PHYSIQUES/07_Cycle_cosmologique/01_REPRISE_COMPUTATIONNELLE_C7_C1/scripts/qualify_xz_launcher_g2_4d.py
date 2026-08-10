@@ -726,13 +726,31 @@ def _verrou_nominal() -> dict:
     ratifié — afin que l'exécution parvienne RÉELLEMENT à l'étape 8, et
     l'on exige que l'exception levée soit celle du VERROU.
 
+    REJ-1 (#94) : depuis SENT-0E le préfixe sentinelle réel est
+    légitimement occupé par un run ratifié, et ``garde_collision``
+    mordrait avant l'étape 8. Une racine synthétique est IMPOSSIBLE :
+    le contrat local épingle la racine de runs (« C7C1_XZ_OUT_DIR
+    diffère du contrat local ») et cette garde ne doit pas être
+    affaiblie. ``garde_collision`` rejoint donc, pour le SEUL scénario 1,
+    la famille des gardes que la qualification ne peut pas satisfaire
+    réellement (arbre propre, budget, autorisation) : substituée dans ce
+    harnais, restaurée dans le même ``finally``. La garde réelle reste
+    qualifiée par SENT-0B (collision_prefixe_etape9, acquisition
+    exclusive) et le scénario 2 ci-dessous l'exerce TELLE QUELLE.
+
     Deux scénarios sont mesurés :
       - « amont_satisfait » : doit s'arrêter sur le VERROU, sans écriture ;
-      - « amont_reel »      : refus plus précoce, sans écriture non plus.
+      - « amont_reel »      : refus plus précoce (aujourd'hui : la vraie
+        ``garde_collision`` sur le monde occupé), sans écriture non plus.
     """
     import run_mcmc_xz_g2_4 as lanceur
 
-    resultats: dict = {}
+    resultats: dict = {
+        "monde": {
+            "collision_substituee_scenario_1": True,
+            "collision_reelle_scenario_2": True,
+        }
+    }
 
     # -- préalable : la VRAIE garde doit refuser QUALIFICATION_ONLY -----
     prep0 = Path(tempfile.mkdtemp(prefix="c7c1_usage_"))
@@ -759,6 +777,8 @@ def _verrou_nominal() -> dict:
         vrai_git = lanceur.garde_git
         vrai_budget = lanceur.garde_budget_production
         vraie_autorisation = lanceur.garde_autorisation
+        vraie_collision = lanceur.garde_collision
+        lanceur.garde_collision = lambda prefixe: None  # monde occupé (REJ-1)
         lanceur.garde_git = lambda: {"head": head_reel, "arbre_propre": True}
         # Le budget simulé doit être le budget RATIFIÉ : la preuve du verrou
         # n'a de valeur que si l'exécution atteint l'étape verrouillée avec
@@ -793,6 +813,7 @@ def _verrou_nominal() -> dict:
             lanceur.garde_git = vrai_git
             lanceur.garde_budget_production = vrai_budget
             lanceur.garde_autorisation = vraie_autorisation
+            lanceur.garde_collision = vraie_collision
     finally:
         shutil.rmtree(prep, ignore_errors=True)
 
