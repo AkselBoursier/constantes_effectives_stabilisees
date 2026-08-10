@@ -271,7 +271,7 @@ rejeux (ordre chronologique des portes) :
   CAP-1    (capacité)      : exit 0, 57/57 fautes
   SENT-0B  (sentinelle)    : exit 0, 30/30 fautes
   SENT-0D  (franchissement): exit 0, 19/19 fautes
-  REC-1    (branche #100)  : replay directeur à consigner séparément
+  REC-1    (branche #100)  : exit 0, 27/27 fautes (replay directeur)
 confidentialité     : aucune fuite (motifs CAP-1a, 3 fichiers REJ-1)
 ```
 
