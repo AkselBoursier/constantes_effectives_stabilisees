@@ -67,6 +67,52 @@ réparation : hors périmètre de ce journal (relève de l'hébergement du dép�
              consigné comme limite du mécanisme de vérification.
 ```
 
+### 15 août 2026 — Deux documents Decision_* sans référence d'issue ni registre (P29)
+
+```text
+règle : P29 (traçabilité des instructions par issues) ;
+écart : deux documents Decision_* du corpus actif ne référencent ni une issue
+        (#n) ni le registre des arbitrages ; leur généalogie n'est pas
+        reconstructible depuis le document seul ;
+preuve : audit/audit_ecarts_regles.py::check_decisions_traced signale
+         01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md
+         et 05_CARTES_ET_SYNTHESES/Decision_statut_fixite_dynamique_v0_1.md
+         (constat le 15 août 2026, 0 erreur, 2 avertissements) ;
+constat par : exécution locale du détecteur, à l'occasion du test du template
+              d'application des règles au workflow ;
+réparation : proposée (R1) dans audit/TEMPLATE_application_regles_workflow.md —
+             ajouter une référence au registre des arbitrages
+             (92_ARCHIVES_CONVERSATIONNELLES/Registre_court_arbitrages_v0_1.md)
+             ou à l'issue motivante ; soumise à arbitrage humain R1–R6 avant
+             application.
+```
+
+---
+
+## Arbitrage ouvert — R1 à R6 (15 août 2026)
+
+Le test du workflow et du template a produit six propositions de réparation,
+consignées dans `audit/TEMPLATE_application_regles_workflow.md` (§5). Elles sont
+**proposées, non appliquées**. L'arbitrage humain décide, pour chacune, de
+l'appliquer, de l'amender ou de l'écarter :
+
+```text
+R1 (P29) : réparer les deux Decision_* ci-dessus (référence registre/issue) ;
+R2 (I1)  : corriger audit_liens.sh (compteur perdu en sous-shell) ou déclarer
+           l'étape redondante avec audit_structure_corpus.py et la passer en
+           informatif ;
+R3 (I2)  : aligner audit_placeholders.sh et le workflow — inventaire informatif
+           (recommandé) ou règle bloquante (retirer continue-on-error) ;
+R4 (I3)  : déclarer les doublons de titres comme détection sans blocage ;
+R5 (I4)  : calibrer check_empty_headings (ignorer les titres suivis d'un bloc
+           de statut en texte brut) pour réduire le bruit (1865 avertissements) ;
+R6       : ne pas automatiser P24/P25/P27 (règles de verdict) ; P23/P26 seulement
+           en signaux faibles si le besoin est établi (P28).
+```
+
+Statut : **ouvert**, en attente de décision humaine. R2–R5 sont testées sur une
+branche jetable séparée avant toute application à la branche de revue.
+
 ---
 
 ## Seuil d'inscription
