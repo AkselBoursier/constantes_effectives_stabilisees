@@ -107,6 +107,15 @@ P28 amendé : exploration autorisée, ratification requise pour faire autorité.
 
 Ces contrôles ne forment pas un formulaire identique imposé à tous les cas.
 
+Depuis le 15 août 2026, l'écart entre règles déclarées et règles suivies est
+instrumenté : le [registre des règles actives](../audit/regles_actives.md) déclare,
+par règle, l'incident daté, la violation observable et le mécanisme de détection ;
+le [journal des écarts](../audit/Journal_ecarts_gouvernance.md) consigne les écarts
+constatés comme données ; `audit/audit_ecarts_regles.py` (exécuté dans
+`audit-corpus.yml`) signale une règle nommée sans date d'instauration, une couche
+versionnée sans remplacement déclaré et une décision sans référence d'issue. Une
+règle non instrumentée est une résolution, non une règle.
+
 ## 5. Exploration, ratification et granularité
 
 Un support provisoire peut être créé lorsqu’il rend une question, une distinction ou un conflit inspectable. Balisage minimal :
