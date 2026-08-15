@@ -175,14 +175,38 @@ def check_versioned_maps_replacement(root: Path, files: list[Path]) -> list[Find
     for family, paths in maps.items():
         versions = sorted(paths, key=lambda p: p.name)
         for path in versions:
+            match = VERSIONED_MAP_RE.match(path.name)
+            own_version = match.group(1) if match else ""
             try:
-                head = "\n".join(path.read_text(encoding="utf-8").splitlines()[:30])
+                text = path.read_text(encoding="utf-8")
             except UnicodeDecodeError:
                 continue
+            # Le statut de remplacement est declare dans le bloc de statut en tete,
+            # mais on lit le texte complet : une reference au predecesseur plus bas
+            # dans le document compte aussi comme declaration explicite.
             names_others = [p.name for p in versions if p != path]
-            declares = any(other.split(".md")[0] in head for other in names_others) or bool(
-                re.search(r"remplace|conserve la v|etat anterieur|supersede", head, re.I)
+            declares = any(
+                other.split(".md")[0] in text for other in names_others
+            ) or bool(
+                re.search(
+                    r"remplace|conserve la v|etat anterieur|supersede", text, re.I
+                )
             )
+            # Une reference a une autre version de la famille compte comme
+            # declaration de filiation : le corpus ecrit indifferemment v0.8 et
+            # v0_8, et le predecesseur n'est pas toujours un fichier present.
+            # On cherche donc toute mention d'une version vX distincte de la
+            # sienne, dans les deux notations, plutot que de se limiter aux
+            # fichiers co-existants.
+            if not declares and own_version:
+                own_forms = {own_version, own_version.replace("_", ".")}
+                for m in re.finditer(r"\bv(\d+(?:[._]\d+)*)\b", text):
+                    found = m.group(1)
+                    if found not in own_forms and found.replace("_", ".") not in {
+                        f.replace("_", ".") for f in own_forms
+                    }:
+                        declares = True
+                        break
             if not declares:
                 findings.append(
                     Finding(
@@ -200,7 +224,7 @@ def check_versioned_maps_replacement(root: Path, files: list[Path]) -> list[Find
 
 
 def check_decisions_traced(root: Path, files: list[Path]) -> list[Finding]:
-    """Un document Decision_* doit referenceer une issue ou le registre.
+    """Un document Decision_* doit referencer une issue ou le registre.
 
     P29 exige que les arbitrages soient consignes. Une decision isolee, sans
     lien vers une issue ou le registre des arbitrages, est une decision dont la
@@ -320,7 +344,7 @@ def main() -> int:
     print(
         f"Audit des ecarts de regles : {len(files)} fichiers, "
         f"{len(occurrences)} regle(s) nommee(s), "
-        f"{errors} erreur(s), {warnings} ecart(s) signale(s)."
+        f"{len(findings)} ecart(s) signale(s) dont {errors} erreur(s)."
     )
 
     if errors:
