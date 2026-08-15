@@ -36,6 +36,9 @@ jobs:
       - name: Vérifier l'assainissement des archives conversationnelles
         run: node audit/sanitize_conversation_exports.mjs
 
+      - name: Détecter les écarts entre règles déclarées et règles suivies
+        run: python audit/audit_ecarts_regles.py
+
       - name: Vérifier les données externes et PDF éditeurs
         shell: bash
         run: |
