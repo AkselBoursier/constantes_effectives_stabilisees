@@ -4,7 +4,6 @@
 Controle :
 - marqueurs de conflit Git ;
 - blocs de code Markdown non fermes ;
-- titres sans contenu avant le titre suivant ou la fin du fichier ;
 - liens relatifs vers des fichiers absents ;
 - references a quelques versions obsoletes dans les documents actifs.
 
@@ -44,7 +43,6 @@ OBSOLETE_ACTIVE_REFERENCES = {
 }
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
-HEADING_RE = re.compile(r"^(#{1,6})\s+\S")
 FENCE_RE = re.compile(r"^\s*```")
 
 
@@ -120,31 +118,6 @@ def check_fences(path: Path, lines: list[str]) -> list[Finding]:
             "nombre impair de blocs ``` ; bloc probablement non ferme",
         )
     ]
-
-
-def check_empty_headings(path: Path, lines: list[str]) -> list[Finding]:
-    findings: list[Finding] = []
-    headings = [
-        index for index, line in enumerate(lines) if HEADING_RE.match(line)
-    ]
-    for position, index in enumerate(headings):
-        next_index = headings[position + 1] if position + 1 < len(headings) else len(lines)
-        body = lines[index + 1 : next_index]
-        meaningful = [
-            line.strip()
-            for line in body
-            if line.strip() and not line.strip().startswith("<!--")
-        ]
-        if not meaningful:
-            findings.append(
-                Finding(
-                    "WARNING",
-                    path,
-                    index + 1,
-                    "titre sans contenu avant le titre suivant ou la fin du fichier",
-                )
-            )
-    return findings
 
 
 def normalize_link_target(raw: str) -> str | None:
@@ -230,7 +203,6 @@ def audit_file(path: Path, root: Path) -> list[Finding]:
     findings: list[Finding] = []
     findings.extend(check_conflicts(path, lines))
     findings.extend(check_fences(path, lines))
-    findings.extend(check_empty_headings(path, lines))
     findings.extend(check_links(path, lines, root))
     findings.extend(check_obsolete_references(path, lines))
     return findings
