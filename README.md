@@ -1,258 +1,98 @@
 # constantes_effectives_stabilisees
 
-Corpus de recherche sur ce que la physique appelle des constantes, sur les différences
-que ce terme commun recouvre et sur les régimes, architectures, accès et opérations
-par lesquels certains maintiens deviennent opératoires ou affirmables.
+Corpus de recherche consacré à ce que les sciences peuvent effectivement soutenir lorsqu’elles qualifient de constante une grandeur, une relation, une valeur ou une structure.
 
-> **Nom historique.** `constantes_effectives_stabilisees` conserve la formulation
-> exploratoire qui a initié le projet. Le nom du dépôt est un identifiant technique et
-> généalogique ; il ne désigne plus une classe générale et n’impose pas le vocabulaire
-> d’une publication.
+> **Nom historique.** `constantes_effectives_stabilisees` conserve la formulation exploratoire qui a lancé le projet. Le nom du dépôt est désormais un identifiant technique et généalogique ; il ne désigne pas une classe générale et n’impose pas le vocabulaire des travaux futurs.
 
-> **Statut condensé au 27 juillet 2026.** Les décisions méthodologiques `P23–P28`
-> sont validées, appliquées et amendées pour distinguer exploration et ratification.
-> Le premier périmètre du cycle 1 est clos ; le cycle est suspendu et réouvrable sous
-> conditions. La dette autonome `m_e` a été transférée vers Saveur–Higgs, instruite par
-> S1–S3 puis localement résolue. Le cycle 5 conserve son pont architectural et intègre
-> désormais un premier réseau probatoire électronique. `T2` reste parallèle et `Q3`
-> demeure un contrôle interne.
+## Entrer dans le dépôt
 
-## Point d’entrée humain
+Le dépôt est un environnement de recherche évolutif. Il contient des résultats, des programmes encore ouverts, des états historiques, des expériences méthodologiques et des pièces computationnelles. Leur présence dans `main` ne leur donne pas automatiquement le même rang.
 
-Lire d’abord :
+Pour comprendre le projet, commencer par les deux questions ci-dessous, puis entrer directement dans le volet utile :
 
-1. la [note méthodologique v1.8](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_8.md), pour la méthode de recherche, le soutien probatoire, l’exploration, la ratification, le gouvernement du corpus et les contraintes des grands modèles de langage (LLM) ;
-2. le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md), pour le critère indexé et les statuts de constance ;
-3. la [décision de rang](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md), pour distinguer cible, accès et constitution ;
-4. le [glossaire](GLOSSAIRE.md), pour la terminologie active ;
-5. l’[accueil central des cycles](02_CYCLES_PHYSIQUES/README.md), pour les résultats et dettes locales ;
-6. l’[index raisonné v2.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_3.md), pour l’état détaillé, la navigation et le rang des documents.
+- **Physique** — [accueil des dix cycles](02_CYCLES_PHYSIQUES/README.md). Chaque cycle conserve ses objets, ses méthodes et son vocabulaire propres.
+- **Méthodologie** — [guide d’amorçage pour agents](AGENTS.md), puis seulement si nécessaire le [cadre canonique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md) et les documents méthodologiques spécialisés.
+- **Computation** — partir du cycle scientifique concerné et de ses issues de travail. Les diagnostics mouvants, runs, benchmarks et décisions opérationnelles restent dans leurs dossiers computationnels ; ils ne sont pas recopiés ici.
+- **Philosophie** — [volet philosophique](06_PHILOSOPHIE/README.md). Ce volet conserve une valeur exploratoire et généalogique, mais doit être resynchronisé avant toute nouvelle autorité sur la physique actuelle.
 
-Pour le cycle 1, lire d’abord la [synthèse active de clôture du premier périmètre v0.5](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md), puis la [synthèse scientifique détaillée v0.4](02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md). Les synthèses v0.3, v0.2 et v0.1 restent des états antérieurs.
+Le [glossaire](GLOSSAIRE.md) sert lorsqu’un terme stratégique doit être interprété ou modifié. L’[index raisonné v2.3](05_CARTES_ET_SYNTHESES/Index_raisonne_du_corpus_v2_3.md) reste une carte détaillée de l’état hérité du corpus ; il n’est plus un passage obligatoire avant d’entrer dans un cycle.
 
-Pour le cycle 5, lire d’abord la [synthèse active Saveur–Higgs v0.2](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_active_cycle_5_Saveur_Higgs_apres_S1_S3_v0_2.md). S1, S2 et S3 demeurent les preuves locales ; la [note de dette requalifiée](02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Dette_active_masse_electron_Yukawa_v0_1.md) conserve la provenance du transfert D6.
-
-Le README reste une entrée humaine condensée. L’index raisonné porte l’état détaillé
-du programme ; `AGENTS.md` porte l’amorçage opérationnel. Aucun fichier supplémentaire
-`STATUTS_ACTIFS.md` ou `ENTREE_SESSION.md` n’est requis.
-
-## Objet général
-
-Le projet ne cherche principalement ni à dresser un catalogue des constantes ni à
-produire une taxonomie universelle. Il examine ce que le terme commun `constante`
-comprime lorsqu’il est appliqué à des grandeurs, relations, observables, coefficients,
-bornes, paramètres d’état et valeurs définissantes hétérogènes.
-
-Deux questions publiques organisent le travail :
+## Deux questions publiques
 
 1. **Frontière** — Comment les sciences établissent-elles, utilisent-elles et déplacent-elles la frontière entre ce qui varie et ce qui tient ?
 2. **Détermination et enquête** — Par quelles structures, opérations et chemins de détermination un maintien devient-il opératoire ou affirmable dans un régime, et que change cette reconstruction pour l’enquête scientifique ?
 
-La question de portée physique, épistémologique ou ontologique (`Q3`) reste un
-contrôle interne obligatoire et non public.
+Ces questions n’imposent ni une réponse dynamique à chaque objet ni une taxonomie universelle. Elles demandent d’identifier ce qui est réellement testé, comment on y accède, dans quel régime et avec quelle portée.
 
-## Critère de constance
+La question de portée physique, épistémologique ou ontologique historiquement notée `Q3` reste un contrôle interne ; elle n’est pas une troisième question publique.
 
-```text
-constance : attribution conditionnée d’un maintien à une cible identifiée ;
-stabilisation : établissement, consolidation ou maintien des conditions dans
-                 lesquelles ce maintien devient opératoire ou affirmable.
-```
+## Quelques distinctions qui protègent l’enquête
 
-Contrôle minimal :
+Avant de conclure, distinguer au minimum :
 
 ```text
-porteur du test : quelle cible reçoit, refuse ou suspend l’attribution ?
-transformation : relativement à quoi ?
-régime : dans quel domaine ?
-échelle, schéma ou modèle : lesquels ?
-tolérance : avec quelle résolution ou approximation ?
-rupture : quelle observation ou condition défait l’attribution ?
+propriété de la cible
+≠ stabilisation d'un accès ou d'une estimation
+≠ mode de constitution ou d'organisation
+
+résultat
+≠ soutien probatoire
+≠ verdict
+
+calcul
+≠ résultat computationnel
+≠ qualification technique
+≠ interprétation scientifique
+≠ conséquence philosophique
 ```
 
-Le `porteur du test` est une fonction analytique relative à l’énoncé, non un
-substrat ni une catégorie ontologique.
+Employer d’abord le vocabulaire du domaine étudié. Une catégorie interne au projet ne doit pas remplacer un terme plus précis de la physique, de la métrologie ou de la statistique.
 
-## Dimensions et statuts
+Une conclusion doit rester bornée par sa transformation, son régime, son modèle ou schéma, sa tolérance et sa condition de rupture. Les refus, résultats négatifs, suspensions et non-pertinences sont des sorties légitimes.
 
-Le corpus distingue :
+## Où vit l’information
+
+Le dépôt sépare désormais davantage l’état présent de son histoire :
 
 ```text
-constance de la cible
-≠ stabilisation de l’accès ou de l’estimation
-≠ mode de constitution ou d’organisation.
+document vivant
+= ce qu'il faut comprendre maintenant
+
+Git / commits / PR
+= comment ce document a changé
+
+issue
+= instruction bornée, décisions, validations et généalogie du travail
+
+pièce probatoire figée
+= protocole exécuté, extraction, résultat, pré-enregistrement ou décision située
 ```
 
-Les dimensions de l’enquête sont :
+Une action ordinaire ne justifie pas une mise à jour de la cartographie. Une ouverture d’instruction, une suspension, un remplacement, une réouverture, une clôture ou un changement de verdict peuvent en revanche modifier l’état courant.
 
-```text
-objet / constitution / accès.
-```
+Les domaines **physique**, **computation**, **méthodologie** et **philosophie** sont des voies de navigation, pas des boîtes exclusives. Un passage entre eux est explicité lorsqu’une question, un résultat ou une dette exige réellement plusieurs compétences. Aucune propagation d’un volet vers un autre n’est automatique.
 
-La portée de l’énoncé est :
+## Documents vivants, versions et généalogie
 
-```text
-physique / épistémologique / ontologique / non engagée.
-```
+Le dépôt porte la trace d’une période où les versions successives de fichiers servaient aussi de mémoire externe pour les agents. Git et les issues remplissent désormais une grande partie de cette fonction.
 
-Les sorties de T0 restent :
+Pour les nouveaux travaux :
 
-```text
-admission / refus / suspension / qualification non pertinente.
-```
+- un document réellement vivant est mis à jour sous un nom stable par défaut ;
+- un numéro `v0.x` n’est conservé que s’il possède une fonction réelle de version, de publication, de format ou d’identité probatoire ;
+- une pièce scientifique ou computationnelle qui doit rester comparable à son état d’exécution demeure figée ;
+- les anciens fichiers versionnés ne sont pas renommés ou supprimés en masse : leur reclassement demande d’abord de vérifier leurs dépendances et leur contenu unique.
 
-Les statuts disponibles restent :
+Heuristique d’ablation pour une couche héritée : si elle n’avait pas été nécessaire pour maintenir le contexte d’un agent à l’époque, aurait-elle tout de même été créée pour une raison scientifique, probatoire, opérationnelle ou généalogique indépendante ? Une réponse négative en fait un candidat au déclassement, jamais à l’effacement automatique.
 
-```text
-constance physique ;
-constance effective d’un énoncé indexé ;
-constance métrologique ;
-usage historique ou disciplinaire du mot constante.
-```
+## Exploration et ratification
 
-Aucune catégorie `constance contestée`, `constance bornée` ou équivalente n’est ajoutée.
-Les termes `clos` et `suspendu` employés pour un cycle qualifient l’état d’un programme
-de travail, non une forme de constance.
+L’exploration peut produire des notes, matrices, analogies, prototypes et branches temporaires. Ces supports n’acquièrent pas d’autorité durable par leur seule utilité locale.
 
-## Accès et soutien probatoire
+Une promotion durable exige un gain net : la nouvelle couche doit protéger une fonction identifiable et réduire ou remplacer au moins autant de complexité qu’elle en ajoute. La granularité n’augmente que si elle change un verdict, un rang probatoire, une cible ou une décision scientifique suivante.
 
-P27 distingue :
-
-```text
-résultat quantitatif
-≠ mode de soutien probatoire
-≠ verdict de constance.
-```
-
-Une borne sur la valeur ne produit pas une valeur positive. Une borne sur une
-variation peut soutenir une attribution relative de constance lorsque le test aurait
-été capable de détecter la famille de variations déclarée.
-
-Une non-détection ne vaut donc comme soutien que si la transformation, la famille de
-variations, la sensibilité, le modèle de conversion, les systématiques, le domaine et
-la tolérance sont explicités.
-
-En cas de désaccord entre accès, comparer leur commensurabilité et leur qualité
-probatoire. L’identification d’un biais dans une route produit une repondération
-asymétrique, non automatiquement une nouvelle catégorie de constance.
-
-L’absence d’un incident déjà formalisé ne démontre pas l’inutilité d’un support
-exploratoire lorsque le dispositif existant n’avait pas la puissance nécessaire pour
-rendre le besoin observable.
-
-## Discipline sur `constante effective`
-
-`Constante effective` n’est plus le nom d’une classe transversale propre au projet.
-Les usages disciplinaires locaux restent premiers : constante de Fermi, constante de
-basse énergie, constante de couplage, coefficient de Wilson, etc.
-
-`Constance effective` peut qualifier un énoncé lorsqu’une cible est traitée comme
-maintenue dans une approximation contrôlée, à un ordre et une tolérance déclarés,
-avec corrections et condition de rupture explicites.
-
-Ordre de rédaction :
-
-```text
-vocabulaire disciplinaire local
-→ description du cas
-→ conditions du test
-→ verdict analytique éventuel.
-```
-
-## Lecture temporelle et normative
-
-Tout document est interprété depuis sa situation propre. Distinguer :
-
-```text
-date de rédaction ;
-date de dernière modification ;
-autorité normative actuelle ;
-état d’application documentaire.
-```
-
-Un document ancien peut conserver un résultat local valide. Une décision plus récente
-peut requalifier son vocabulaire sans l’annuler ni le réécrire. La qualité éditoriale,
-la longueur ou la répétition ne confèrent pas une autorité canonique.
-
-## Exploration, ratification et appareil de rigueur
-
-L’exploration autorise des formulations, matrices, notes et regroupements provisoires
-lorsqu’ils rendent l’enquête possible. Ils doivent indiquer leur statut exploratoire,
-leur fonction, leur absence d’autorité normative et leur condition de sortie.
-
-La ratification soumet les termes ou supports destinés à la couche active à des tests
-de nécessité, d’ablation, de voisinage, de rang, de gain discriminant et de coût de
-maintenance, puis à une validation humaine et à une application documentaire distincte.
-
-> **Règle P28 amendée.** L’appareil de rigueur ne doit pas devenir un second projet dont
-> la croissance concurrence la recherche qu’il doit protéger.
-
-> **Formule active.** L’exploration peut créer ; seule la ratification autorise à
-> conserver durablement et à faire autorité.
-
-Le dossier `alpha` a servi de banc d’essai méthodologique à haute résolution. Les lots
-`m_p/m_e` et `m_e / y_e / v` confirment qu’une structure compacte suffit lorsque les
-distinctions acquises sont réutilisées par référence et que seules les subdivisions
-qui changent le verdict, le rang, la cible ou la décision scientifique sont conservées.
-
-D7 ajoute une règle de sortie : une dette transférée vers son cycle d’accueil ne doit
-pas maintenir artificiellement ouvert son cycle d’origine.
-
-La règle de remplacement d’une couche existante s’applique à la promotion durable,
-non à la naissance d’un support exploratoire temporaire.
-
-## Résultats locaux actifs
-
-```text
-QCD–T1 :
-  reproduction aval ALPHA ;
-  comparabilité conditionnelle des chaînes alpha_s ;
-  équivalence refusée ;
-  compatibilité globale suspendue ;
-
-alpha :
-  référence de basse énergie ajustée et conditionnelle ;
-  chaînes comparables, discordantes et non équivalentes ;
-  running avec Q² positivement soutenu ;
-  deux familles temporelles contraintes sans signal significatif ;
-  prétention spatiale historique repondérée ;
-  non-détection ESPRESSO locale ;
-  statut spatial global suspendu ;
-
-m_p/m_e :
-  valeur CODATA ajustée et composite ;
-  résultat H2+ 2025 compatible et postérieur ;
-  dérive locale, modulation annuelle et différences astrophysiques
-  contraintes dans des domaines déclarés ;
-  constitution QCD / secteur électrofaible ;
-  séparation des variations de m_p et m_e refusée sans modèle ;
-
-premier périmètre du cycle 1 :
-  clos ;
-
-cycle 1 :
-  suspendu et réouvrable sous conditions ;
-
-m_e / y_e / v :
-  lot S1–S3 validé, localement clos et propagé ;
-  M_e déterminée ;
-  y_e standard inféré sous cadre et conventions déclarés ;
-  accès indirects dépendants de modèles de passage ;
-  H → e+e− directement borné sans observation significative ;
-  origine et hiérarchie non expliquées ;
-
-cycle 5 :
-  ouvert ;
-  pont architectural conservé ;
-  premier réseau probatoire électronique intégré ;
-
-prochaine décision :
-  arbitrer la prochaine dette scientifique sans priorité automatique.
-```
+> L’exploration peut créer ; seule la ratification permet de faire durablement autorité.
 
 ## Les cycles physiques
 
-Les dix cycles sont organisés par contrastes physiques, métrologiques, inférentiels et
-constitutifs. Leur vocabulaire local et leurs preuves propres précèdent toute
-qualification transversale du cadre. Consulter leur
-[accueil central](02_CYCLES_PHYSIQUES/README.md) pour les points d’entrée et les dettes.
+Les dix cycles restent le lieu principal où les questions sont éprouvées sur des objets scientifiques concrets. Ils ne suivent pas un formulaire universel et n’ont pas tous le même degré de maturité documentaire. Leur [accueil central](02_CYCLES_PHYSIQUES/README.md) indique pour chacun le meilleur point d’entrée courant, y compris lorsqu’il s’agit encore d’une récupération ou d’un cadrage plutôt que d’une synthèse active.
