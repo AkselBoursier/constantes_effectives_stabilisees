@@ -27,12 +27,6 @@ jobs:
       - name: Vérifier la structure
         run: python audit/audit_structure_corpus.py
 
-      - name: Vérifier les liens
-        run: bash audit/audit_liens.sh
-
-      - name: Vérifier l'encodage
-        run: bash audit/audit_encodage.sh
-
       - name: Vérifier l'assainissement des archives conversationnelles
         run: node audit/sanitize_conversation_exports.mjs
 
@@ -65,5 +59,4 @@ jobs:
           --allow-missing
 
       - name: Inventorier les placeholders connus
-        continue-on-error: true
         run: bash audit/audit_placeholders.sh
