@@ -126,7 +126,7 @@ g_z_FIELD(R,phi,z)
 
 Un produit ne doit pas devenir `g_R_FIELD(R,z)` par simple omission de `phi`.
 
-## 5. Sorties : du champ vers une réduction circulaire seulement si elle est explicitée
+## 5. Sorties : distinguer champ local, réduction et diagnostic circulaire
 
 ### 5.1 Sortie primaire
 
@@ -141,32 +141,48 @@ Le produit scientifique primaire est le champ vectoriel local, accompagné de :
 - paramètres du solveur nécessaires à la reproductibilité ;
 - statut de validité et erreurs numériques bornées.
 
-### 5.2 Réduction azimutale
+### 5.2 Réduction azimutale ou sectorielle
 
-Une réduction en profil radial est un opérateur d'analyse distinct. L'opérateur doit être déclaré : moyenne, médiane, secteur, harmonique ou autre choix justifié.
+Toute réduction de `phi` est un opérateur d'analyse distinct et doit être nommé. On note génériquement :
 
-Avant promotion d'un profil radial, conserver au minimum :
+```text
+g_R,red(R,z ; O_phi) = O_phi[g_R(R,phi,z)]
+```
+
+où `O_phi` peut être une moyenne azimutale, une médiane, un secteur, une composante harmonique ou un autre opérateur justifié.
+
+Avant promotion d'un profil réduit, conserver au minimum :
 
 - `g_phi` ;
 - la variation azimutale de `g_R` et `g_z` ;
 - un diagnostic de non-axisymétrie choisi avant le résidu cible ;
-- la trace de l'opérateur de réduction.
+- la définition exacte de `O_phi`.
 
 Le diagnostic ne doit pas être plus détaillé que nécessaire pour changer la décision scientifique suivante.
 
-### 5.3 Diagnostic de vitesse circulaire dérivé
+Une réduction générique n'est pas appelée « axisymétrique » ou « circulaire » par simple perte de la coordonnée `phi`.
 
-Après définition explicite d'un opérateur de réduction du champ, on peut construire un diagnostic gravitationnel de vitesse circulaire, par exemple :
+### 5.3 Vitesse équivalente de force et vitesse circulaire axisymétrisée
+
+À partir d'une réduction quelconque du champ radial, on peut construire la quantité dimensionnelle :
 
 ```text
-v_circ,FIELD(R) = sqrt(R |g_R,red(R,0)|)
+v_F,red(R) = sqrt(R |g_R,red(R,0 ; O_phi)|)
 ```
 
-Cette quantité décrit le mouvement circulaire associé au champ radial réduit choisi. Sa définition exige que la réduction géométrique soit explicitée et qualifiée ; elle n'exige pas que le gaz réel soit lui-même en équilibre circulaire.
+`v_F,red` est un diagnostic de force radiale réduite. Il ne reçoit pas automatiquement le nom de vitesse circulaire.
 
-La question dynamique intervient à l'étape suivante : peut-on attendre de la cinématique intrinsèque O1 qu'elle trace ce diagnostic ? En présence de mouvements non circulaires, de termes temporels, de pression ou d'autres soutiens, un écart O1 / `v_circ,FIELD` peut être précisément le résultat scientifique à expliquer. Il ne rend pas à lui seul le diagnostic gravitationnel invalide.
+Si `O_phi` est explicitement l'opérateur définissant la composante axisymétrique du champ — par exemple la moyenne azimutale ou le mode `m=0` selon une convention qualifiée — on peut en dériver :
 
-Le nom historique `v_grav` peut être conservé comme alias de provenance, mais le document actif doit préférer un nom indiquant qu'il s'agit d'une vitesse circulaire dérivée du champ et non de la vitesse effectivement portée par le gaz.
+```text
+v_circ,axi(R) = sqrt(R |g_R,m=0(R,0)|)
+```
+
+Cette quantité est la vitesse circulaire du **champ axisymétrisé** ainsi défini. Elle n'affirme ni l'existence d'une orbite circulaire dans le champ non axisymétrique complet, ni que le gaz réel doive suivre cette vitesse.
+
+La question dynamique vient ensuite : dans quelle mesure la cinématique intrinsèque O1 suit-elle `v_circ,axi`, ou s'en écarte-t-elle sous l'effet de mouvements non circulaires, de termes temporels, de pression ou d'autres soutiens ? Cet écart peut être le résultat scientifique à expliquer ; il ne rend pas à lui seul la reconstruction gravitationnelle invalide.
+
+Le nom historique `v_grav` peut être conservé comme alias de provenance, mais il ne doit pas masquer la transformation effectuée. Un autre opérateur `O_phi` conserve le nom `v_F,red` tant qu'une interprétation circulaire supplémentaire n'a pas été justifiée.
 
 ## 6. Famille de solveur : choisir après la cible, pas après le résidu
 
@@ -317,15 +333,16 @@ Les questions de coût, version de bibliothèque, paramètres fins de convergenc
 ```text
 1. fermer l'identité matérielle minimale des snapshots et des bords
 2. qualifier unités + kernel/softening + référentiel
-3. définir champ vectoriel, domaine et réduction sans résidu cible
+3. définir champ vectoriel, domaine et opérateurs de réduction sans résidu cible
 4. choisir une implémentation candidate
 5. valider S sur oracles indépendants
 6. exécuter D/K seulement pour les questions de représentation réellement pertinentes
 7. reconstruire G2-FIELD en conservant phi
-8. définir et qualifier la réduction gravitationnelle éventuelle
-9. construire v_circ,FIELD si cette réduction est pertinente
-10. comparer O1 à ce diagnostic sans présupposer que le gaz doit le tracer exactement
-11. décider si FIELD -> EOM est nécessaire
+8. produire les diagnostics de non-axisymétrie et les réductions préenregistrées
+9. construire v_F,red pour les réductions utiles
+10. construire v_circ,axi seulement pour la composante axisymétrisée explicitement définie
+11. comparer O1 sans présupposer que le gaz doit tracer exactement v_circ,axi
+12. décider si FIELD -> EOM est nécessaire
 ```
 
 Aucun résultat scientifique sur matière sombre ou gravité modifiée n'est produit par cette pré-spécification.
