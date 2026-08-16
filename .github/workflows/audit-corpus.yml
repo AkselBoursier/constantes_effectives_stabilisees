@@ -65,5 +65,4 @@ jobs:
           --allow-missing
 
       - name: Inventorier les placeholders connus
-        continue-on-error: true
         run: bash audit/audit_placeholders.sh
