@@ -3,22 +3,24 @@
 Version : `v0.3-candidate`
 Date : `2026-08-16`
 Issue d'origine : `#97`
-Objet parent : `C7_GAL_C0B_prespecification_G2_v0_2.md`
+Dossier historique : PR `#98`, commit `10e9466be1ebc983da39a66ac31788a55e09836b`
 Statut : `EXPERIMENTAL_SUCCESSOR_CANDIDATE`
 Autorité canonique : `AUCUNE`
 
 ## 0. Fonction de cette version
 
-Cette v0.3 candidate teste si la pré-spécification G2 peut devenir plus courte et plus discriminante sans perdre les protections réellement utiles de la v0.2.
+Cette v0.3 candidate teste si la pré-spécification G2 peut devenir plus courte et plus discriminante sans perdre les protections réellement utiles de la v0.2 historique.
 
-La v0.2 reste le dossier technique et probatoire de provenance : unités détaillées, nomenclature des softenings, paramètres publics FIRE/GIZMO, périodicité, familles de solveurs, batterie S/D/K, dettes et sources. La v0.3 candidate n'efface aucune de ces informations ; elle teste une autre répartition des fonctions :
+La v0.2 de #98 reste un dossier technique et probatoire adressable par son commit : unités détaillées, nomenclature des softenings, paramètres publics FIRE/GIZMO, périodicité, familles de solveurs, batterie S/D/K, dettes et sources. Elle n'a pas besoin d'être copiée dans l'arbre actif pour conserver cette fonction de provenance.
+
+La répartition testée est :
 
 ```text
-v0.2 = dossier de preuve et de généalogie
+#98 @ 10e9466 = preuve détaillée et généalogie historique
 v0.3 candidate = contrat actif minimal pour la prochaine décision scientifique
 ```
 
-Si cette séparation exige de consulter constamment les deux documents pour comprendre une seule décision, elle échoue. Si elle permet au contraire de garder les preuves détaillées sans faire de chaque détail une règle active, elle pourra remplacer la v0.2 comme document directeur.
+Toute exigence nécessaire à une décision active doit être lisible dans cette v0.3 ou être matérialisée ultérieurement dans un protocole/manifeste exécutable qualifié. Une règle qui ne serait découvrable qu'en retournant dans la v0.2 historique n'a pas d'autorité active.
 
 Les labels historiques restent secondaires. Lorsqu'un ancien sigle est utile à la traçabilité, le nom humain de la fonction porte le sens et le sigle ne sert que de repère généalogique.
 
@@ -55,7 +57,9 @@ G2-FIELD = champ de la réalisation numérique FIRE déclarée
 
 Cette cible n'est pas appelée « vérité gravitationnelle totale ». Elle est un objet numérique situé dont la provenance et la fidélité doivent être explicites.
 
-Pour le gaz, la v0.2 a établi que le softening adaptatif est lié au kernel et que `SmoothingLength_HDF5` doit être traité comme information de support pertinente. Pour les espèces collisionnelles à softening fixe, la correspondance exacte entre paramètre historique et support de kernel reste à qualifier contre le changeset ou une sortie de démarrage adéquate avant calcul de référence.
+Le dossier historique #98 documente que, pour le gaz, le softening adaptatif est lié au kernel et que `SmoothingLength_HDF5` porte l'information de support pertinente. Pour les espèces collisionnelles à softening fixe, la correspondance exacte entre paramètre historique et support de kernel reste à qualifier contre le changeset ou une sortie de démarrage adéquate avant calcul de référence.
+
+Ces éléments n'acquièrent une fonction opérationnelle qu'une fois recopiés avec leur source et leur valeur exacte dans le futur protocole/manifeste exécutable ; le code ne doit pas dépendre de l'interprétation implicite d'un ancien document.
 
 ### 2.2 Cible EOM conditionnelle
 
@@ -79,7 +83,7 @@ Avant de revendiquer un **champ avec conditions de bord suffisamment fidèles** 
 
 - confirmer la concordance des attributs utiles du snapshot visé avec les conventions publiques retenues ;
 - vérifier les comptes d'espèces et la couverture nécessaire des sources ;
-- appliquer les conversions `a/h` selon le contrat d'unités documenté dans la v0.2 ;
+- appliquer les conversions `a/h` provenant des sources primaires et les figer avec leurs valeurs dans le manifeste exécutable ;
 - enregistrer la convention de `G` utilisée ;
 - n'ouvrir une décision métrologique supplémentaire sur `G` que si l'écart entre conventions devient non négligeable devant la précision scientifique pertinente.
 
@@ -226,7 +230,7 @@ Cette étape qualifie un effet de représentation/résolution, pas une mauvaise 
 
 ### 7.4 Tests minimaux conservés
 
-La batterie détaillée T1-T8 de la v0.2 reste le dossier de preuve. La v0.3 conserve seulement leur fonction :
+Le dossier historique #98 contient une batterie détaillée T1-T8. La v0.3 n'en conserve comme exigences actives que les fonctions discriminantes :
 
 - loi de paire/kernel et supports inégaux ;
 - sphère de Plummer comme distribution analytique, non comme loi de softening FIRE ;
@@ -237,7 +241,7 @@ La batterie détaillée T1-T8 de la v0.2 reste le dossier de preuve. La v0.3 con
 - périodicité, mode moyen et raccord court/long ;
 - comparaison interméthodes contre un oracle commun, jamais par vote majoritaire.
 
-Les détails d'implémentation des tests restent dans le dossier v0.2 jusqu'à ce qu'un protocole exécutable les remplace.
+Avant exécution, ces fonctions devront être transformées en protocole testable avec entrées, oracle, métriques, tolérances et sens autorisé du verdict. Les détails historiques de #98 peuvent informer cette rédaction mais ne valent pas automatiquement règle active.
 
 ## 8. Ne plus appeler tout cela un unique « budget d'erreur »
 
@@ -326,7 +330,7 @@ Seules les dettes capables de bloquer ou de changer la prochaine étape restent 
 2. qualifier la correspondance du softening fixe vers le support de kernel pour le changeset historique ;
 3. autoriser et qualifier le référentiel publié ou son contrôle indépendant ;
 4. définir le domaine spatial et les opérateurs de réduction sans inspection du résidu scientifique ;
-5. choisir les tolérances des tests synthétiques avant cible ;
+5. transformer les fonctions de validation en protocole exécutable et fixer leurs tolérances avant cible ;
 6. démontrer qu'une implémentation candidate reproduit l'oracle requis ;
 7. n'ouvrir `G2-EOM` que si le test FIELD/EOM le rend nécessaire.
 
@@ -339,7 +343,7 @@ Les questions de coût, version de bibliothèque, paramètres fins de convergenc
 2. qualifier unités + kernel/softening + référentiel
 3. définir champ vectoriel, domaine et opérateurs de réduction sans résidu cible
 4. choisir une implémentation candidate
-5. valider S sur oracles indépendants
+5. matérialiser et valider les tests sur oracles indépendants
 6. exécuter D/K seulement pour les questions de représentation réellement pertinentes
 7. reconstruire G2-FIELD en conservant phi
 8. produire les diagnostics de non-axisymétrie et les réductions préenregistrées
@@ -355,19 +359,19 @@ Aucun résultat scientifique sur matière sombre ou gravité modifiée n'est pro
 
 La v0.3 candidate échoue si :
 
-- une protection importante de la v0.2 disparaît sans remplacement fonctionnel ;
-- elle oblige à retourner constamment à la v0.2 pour comprendre une décision active ;
+- une protection importante du dossier historique disparaît sans remplacement fonctionnel ;
+- elle oblige à retourner dans #98 pour comprendre une décision active ;
+- une règle de #98 acquiert de fait une autorité active sans être repromue explicitement ;
 - la conservation de `phi` ne peut changer aucune décision du lot C7-GAL-C ;
 - la distinction validité / erreur / représentation ne change aucun verdict pratique ;
 - la liberté technique hors cible permet en pratique de régler le résidu scientifique ;
-- elle devient plus longue ou plus complexe que la v0.2 par accumulation ultérieure ;
-- elle transforme la v0.2 en norme cachée plutôt qu'en dossier probatoire.
+- elle devient plus longue ou plus complexe par accumulation ultérieure.
 
 ## 14. Statut de sortie expérimental
 
 ```text
 C0-B_V03_CANDIDATE = A_TESTER
-C0-B_V02 = PROVENANCE_ET_DOSSIER_PROBATOIRE_INCHANGES
+DOSSIER_V02 = PROVENANCE_HISTORIQUE_#98@10e9466
 G2 = NON_AUTORISEE
 CALCUL_FIRE = NON_AUTORISE
 MERGE = NON_AUTORISE
@@ -379,7 +383,7 @@ La question de qualification est désormais :
 
 ## 15. Sources et provenance
 
-Les références techniques détaillées restent celles de la v0.2, notamment :
+Le dossier historique #98 @ `10e9466` conserve la traçabilité détaillée. Les sources primaires qui soutiennent les choix locaux comprennent notamment :
 
 - Wetzel et al. (2023), diffusion publique FIRE-2 ;
 - Hopkins et al. (2018), méthodes FIRE-2 ;
@@ -388,4 +392,4 @@ Les références techniques détaillées restent celles de la v0.2, notamment :
 - Springel (2005), GADGET-2 et TreePM périodique ;
 - Sands et al. (2024), limites des reconstructions de courbes de rotation en régime non circulaire/hors équilibre.
 
-La v0.3 candidate n'élève aucune de ces références au rang d'autorité normative générale du dépôt. Elles soutiennent seulement les choix physiques et numériques locaux de C7-GAL-C0-B.
+La v0.3 candidate n'élève ni le dossier historique ni ces références au rang d'autorité normative générale du dépôt. Elles soutiennent seulement les choix physiques et numériques locaux de C7-GAL-C0-B.
