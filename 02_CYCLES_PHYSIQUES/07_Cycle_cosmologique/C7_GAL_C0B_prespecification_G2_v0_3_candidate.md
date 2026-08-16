@@ -20,11 +20,15 @@ v0.3 candidate = contrat actif minimal pour la prochaine décision scientifique
 
 Si cette séparation exige de consulter constamment les deux documents pour comprendre une seule décision, elle échoue. Si elle permet au contraire de garder les preuves détaillées sans faire de chaque détail une règle active, elle pourra remplacer la v0.2 comme document directeur.
 
+Les labels historiques restent secondaires. Lorsqu'un ancien sigle est utile à la traçabilité, le nom humain de la fonction porte le sens et le sigle ne sert que de repère généalogique.
+
 ## 1. Question scientifique protégée
 
 Le lot C7-GAL-C cherche à déterminer quelle part de l'écart entre cinématique du gaz et support gravitationnel subsiste lorsque l'accès par courbe de rotation cesse d'être supposé exact.
 
 La route G2 ne doit donc pas produire d'abord une courbe de rotation. Elle doit d'abord reconstruire un champ gravitationnel suffisamment qualifié pour tester si une réduction en profil radial est scientifiquement admissible dans le régime étudié.
+
+Dans ce document, la **cinématique intrinsèque du gaz** désigne les vitesses du gaz dans le référentiel galactique reconstruit, avant projection instrumentale ou pseudo-observation. Le label historique `O1` peut être utilisé comme raccourci de traçabilité, mais ne remplace pas cette définition.
 
 La séquence active devient :
 
@@ -33,7 +37,7 @@ sources FIRE publiques
 -> champ vectoriel reconstruit
 -> qualification de la géométrie et du régime
 -> réduction éventuelle en profil radial
--> comparaison avec la cinématique intrinsèque O1
+-> comparaison avec la cinématique intrinsèque du gaz
 -> décision éventuelle FIELD -> EOM
 ```
 
@@ -71,7 +75,7 @@ Les points suivants ne constituent pas une barre d'erreur. S'ils ne sont pas suf
 
 ### 3.1 Identité des sources et unités
 
-Avant une reconstruction F2 :
+Avant de revendiquer un **champ avec conditions de bord suffisamment fidèles** à la simulation (ancien niveau `F2`) :
 
 - confirmer la concordance des attributs utiles du snapshot visé avec les conventions publiques retenues ;
 - vérifier les comptes d'espèces et la couverture nécessaire des sources ;
@@ -84,7 +88,7 @@ Une mauvaise unité ou une provenance non établie invalide le produit ; elle n'
 ### 3.2 Softening et loi de source
 
 - gaz : utiliser directement l'information de kernel sauvegardée lorsque sa signification pour le changeset est qualifiée ;
-- PartType1/2/4 : qualifier la correspondance exacte paramètre de softening -> support de kernel avant référence F2 ;
+- PartType1 (matière sombre haute résolution), PartType2 (matière sombre basse résolution du volume) et PartType4 (étoiles) : qualifier la correspondance exacte paramètre de softening -> support de kernel avant d'en faire une référence de champ ;
 - ne jamais remplacer silencieusement la loi spline par une force de Plummer ;
 - conserver PartType2 tant que sa non-pertinence physique n'est pas démontrée pour le domaine étudié.
 
@@ -92,7 +96,7 @@ Une mauvaise unité ou une provenance non établie invalide le produit ; elle n'
 
 La route périodique reste candidate seulement après confirmation de `BoxSize`, de la couverture des sources nécessaires, de la convention du mode moyen et d'un oracle périodique qualifié.
 
-Une reconstruction isolée peut être utilisée comme contrôle local F1. Elle ne devient pas F2 par commodité.
+Une reconstruction isolée peut être utilisée comme **contrôle local** (ancien niveau `F1`). Elle ne devient pas une référence avec bords qualifiés (ancien `F2`) par commodité.
 
 ## 4. Référentiel et géométrie : préserver ce que l'on cherche à tester
 
@@ -104,7 +108,7 @@ Un désaccord robuste entre centres ou vitesses n'est pas résolu en choisissant
 
 ### 4.2 Orientation
 
-L'orientation du disque est un choix scientifique parce qu'elle détermine les composantes radiale, azimutale et verticale. La règle d'orientation doit être fixée avant inspection du résidu O1/G2 ou incluse dans une sensibilité symétrique préenregistrée.
+L'orientation du disque est un choix scientifique parce qu'elle détermine les composantes radiale, azimutale et verticale. La règle d'orientation doit être fixée avant inspection du résidu cinématique/champ ou incluse dans une sensibilité symétrique préenregistrée.
 
 Aucune circularité orbitale dérivée d'un potentiel déjà reconstruit ne doit servir silencieusement à définir l'axe qui sera ensuite utilisé pour tester ce même potentiel.
 
@@ -180,7 +184,7 @@ v_circ,axi(R) = sqrt(R |g_R,m=0(R,0)|)
 
 Cette quantité est la vitesse circulaire du **champ axisymétrisé** ainsi défini. Elle n'affirme ni l'existence d'une orbite circulaire dans le champ non axisymétrique complet, ni que le gaz réel doive suivre cette vitesse.
 
-La question dynamique vient ensuite : dans quelle mesure la cinématique intrinsèque O1 suit-elle `v_circ,axi`, ou s'en écarte-t-elle sous l'effet de mouvements non circulaires, de termes temporels, de pression ou d'autres soutiens ? Cet écart peut être le résultat scientifique à expliquer ; il ne rend pas à lui seul la reconstruction gravitationnelle invalide.
+La question dynamique vient ensuite : dans quelle mesure la cinématique intrinsèque du gaz suit-elle `v_circ,axi`, ou s'en écarte-t-elle sous l'effet de mouvements non circulaires, de termes temporels, de pression ou d'autres soutiens ? Cet écart peut être le résultat scientifique à expliquer ; il ne rend pas à lui seul la reconstruction gravitationnelle invalide.
 
 Le nom historique `v_grav` peut être conservé comme alias de provenance, mais il ne doit pas masquer la transformation effectuée. Un autre opérateur `O_phi` conserve le nom `v_F,red` tant qu'une interprétation circulaire supplémentaire n'a pas été justifiée.
 
@@ -192,13 +196,13 @@ La route candidate reste :
 
 ```text
 court champ : arbre ou méthode équivalente avec loi M4 qualifiée
-long champ : traitement périodique/PM qualifié si requis
+long champ : méthode Particle-Mesh (PM) ou correction périodique qualifiée si requise
 petits tests : somme directe ou oracle indépendant
 ```
 
-Une architecture proche de TreePM est pertinente parce que le run original utilise une séparation court/long périodique, mais la ressemblance de nom ou d'algorithme ne vaut pas reproduction automatique du changeset FIRE.
+Une architecture TreePM — arbre au court rayon, Particle-Mesh au long rayon — est pertinente parce que le run original utilise une séparation court/long périodique, mais la ressemblance d'algorithme ne vaut pas reproduction automatique du changeset FIRE.
 
-FMM et autres familles peuvent rester des candidats techniques si elles reproduisent la même cible et les mêmes conditions de bord avec une qualification indépendante.
+Une méthode multipolaire rapide (Fast Multipole Method, FMM) ou d'autres familles peuvent rester des candidats techniques si elles reproduisent la même cible et les mêmes conditions de bord avec une qualification indépendante.
 
 ## 7. Validation : séparer trois questions
 
@@ -275,10 +279,10 @@ Tout choix capable de changer la signification ou le verdict :
 - traceur ;
 - opérateur de réduction ;
 - conditions de bord physiquement revendiquées ;
-- niveau FIELD/EOM ;
+- niveau de fidélité FIELD/EOM ;
 - masque scientifique ;
 - métrique et seuil de décision ;
-- règle O1/G2.
+- règle de comparaison entre cinématique intrinsèque et champ gravitationnel.
 
 ### 9.2 À qualifier techniquement hors cible
 
@@ -321,7 +325,7 @@ Seules les dettes capables de bloquer ou de changer la prochaine étape restent 
 1. confirmer `BoxSize`, comptes d'espèces et couverture nécessaire pour la route périodique revendiquée ;
 2. qualifier la correspondance du softening fixe vers le support de kernel pour le changeset historique ;
 3. autoriser et qualifier le référentiel publié ou son contrôle indépendant ;
-4. définir le domaine spatial et l'opérateur de réduction sans inspection du résidu scientifique ;
+4. définir le domaine spatial et les opérateurs de réduction sans inspection du résidu scientifique ;
 5. choisir les tolérances des tests synthétiques avant cible ;
 6. démontrer qu'une implémentation candidate reproduit l'oracle requis ;
 7. n'ouvrir `G2-EOM` que si le test FIELD/EOM le rend nécessaire.
@@ -341,7 +345,7 @@ Les questions de coût, version de bibliothèque, paramètres fins de convergenc
 8. produire les diagnostics de non-axisymétrie et les réductions préenregistrées
 9. construire v_F,red pour les réductions utiles
 10. construire v_circ,axi seulement pour la composante axisymétrisée explicitement définie
-11. comparer O1 sans présupposer que le gaz doit tracer exactement v_circ,axi
+11. comparer la cinématique intrinsèque du gaz sans présupposer qu'elle doit tracer exactement v_circ,axi
 12. décider si FIELD -> EOM est nécessaire
 ```
 
