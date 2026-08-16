@@ -34,7 +34,7 @@ SOURCE_OR_ARCHIVE_PARTS = {
     "90_Critiques_ constantes_effectives_stabilisees",
 }
 
-CONFLICT_MARKERS = ("<<<<<<<", "=======", ">>>>>>>")
+CONFLICT_BOUNDARIES = ("<<<<<<<", ">>>>>>>")
 
 OBSOLETE_ACTIVE_REFERENCES = {
     "Matrice_temporelle_v0_1.md": "Matrice_temporelle_v0_2.md",
@@ -95,9 +95,9 @@ def iter_lines_outside_fences(lines: list[str]):
 
 def check_conflicts(path: Path, lines: list[str]) -> list[Finding]:
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         stripped = line.lstrip()
-        if any(stripped.startswith(marker) for marker in CONFLICT_MARKERS):
+        if any(stripped.startswith(marker) for marker in CONFLICT_BOUNDARIES):
             findings.append(
                 Finding("ERROR", path, number, "marqueur de conflit Git")
             )
