@@ -126,7 +126,7 @@ g_z_FIELD(R,phi,z)
 
 Un produit ne doit pas devenir `g_R_FIELD(R,z)` par simple omission de `phi`.
 
-## 5. Sorties : du champ vers la courbe seulement si le régime le permet
+## 5. Sorties : du champ vers une réduction circulaire seulement si elle est explicitée
 
 ### 5.1 Sortie primaire
 
@@ -154,17 +154,19 @@ Avant promotion d'un profil radial, conserver au minimum :
 
 Le diagnostic ne doit pas être plus détaillé que nécessaire pour changer la décision scientifique suivante.
 
-### 5.3 Vitesse gravitationnelle dérivée
+### 5.3 Diagnostic de vitesse circulaire dérivé
 
-La quantité
+Après définition explicite d'un opérateur de réduction du champ, on peut construire un diagnostic gravitationnel de vitesse circulaire, par exemple :
 
 ```text
-v_grav(R) = sqrt(R |g_R(R,0)|)
+v_circ,FIELD(R) = sqrt(R |g_R,red(R,0)|)
 ```
 
-est un produit dérivé conditionnel. Elle n'est interprétée comme support circulaire que si la réduction radiale et le régime dynamique rendent cette interprétation admissible.
+Cette quantité décrit le mouvement circulaire associé au champ radial réduit choisi. Sa définition exige que la réduction géométrique soit explicitée et qualifiée ; elle n'exige pas que le gaz réel soit lui-même en équilibre circulaire.
 
-Si la non-axisymétrie ou le hors-équilibre dominent, le résultat pertinent reste le champ vectoriel et sa structure, non une courbe forcée.
+La question dynamique intervient à l'étape suivante : peut-on attendre de la cinématique intrinsèque O1 qu'elle trace ce diagnostic ? En présence de mouvements non circulaires, de termes temporels, de pression ou d'autres soutiens, un écart O1 / `v_circ,FIELD` peut être précisément le résultat scientifique à expliquer. Il ne rend pas à lui seul le diagnostic gravitationnel invalide.
+
+Le nom historique `v_grav` peut être conservé comme alias de provenance, mais le document actif doit préférer un nom indiquant qu'il s'agit d'une vitesse circulaire dérivée du champ et non de la vitesse effectivement portée par le gaz.
 
 ## 6. Famille de solveur : choisir après la cible, pas après le résidu
 
@@ -320,9 +322,10 @@ Les questions de coût, version de bibliothèque, paramètres fins de convergenc
 5. valider S sur oracles indépendants
 6. exécuter D/K seulement pour les questions de représentation réellement pertinentes
 7. reconstruire G2-FIELD en conservant phi
-8. tester si une réduction radiale est admissible
-9. comparer à O1
-10. décider si FIELD -> EOM est nécessaire
+8. définir et qualifier la réduction gravitationnelle éventuelle
+9. construire v_circ,FIELD si cette réduction est pertinente
+10. comparer O1 à ce diagnostic sans présupposer que le gaz doit le tracer exactement
+11. décider si FIELD -> EOM est nécessaire
 ```
 
 Aucun résultat scientifique sur matière sombre ou gravité modifiée n'est produit par cette pré-spécification.
