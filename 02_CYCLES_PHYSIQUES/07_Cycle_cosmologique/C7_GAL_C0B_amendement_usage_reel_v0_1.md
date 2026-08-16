@@ -1,6 +1,6 @@
 # C7-GAL-C0-B — amendement expérimental issu du test d'usage réel
 
-Version : `v0.1-experimentale`
+Version : `v0.2-experimentale`
 Date : `2026-08-16`
 Objet parent : `C7_GAL_C0B_prespecification_G2_v0_2.md`
 PR témoin : `#109`
@@ -10,76 +10,91 @@ Statut : `OVERLAY_EXPERIMENTAL_NON_CANONIQUE`
 
 Ce document ne remplace pas la v0.2 et ne modifie pas sa provenance. Il teste trois corrections apparues lors du premier test d'usage réel du protocole human-first / machine-verifiable :
 
-1. distinguer la cible numérique FIRE effectivement reconstruite d'un continuum physique idéalise ;
-2. conserver explicitement la dépendance azimutale avant toute reduction en profil radial ;
-3. séparer ce qui doit être pre-enregistre scientifiquement de ce qui peut être qualifie techniquement hors resultat cible.
+1. distinguer la cible numérique FIRE effectivement reconstruite d'un continuum physique idéalisé ;
+2. conserver explicitement la dépendance azimutale avant toute réduction en profil radial ;
+3. séparer ce qui doit être pré-enregistré scientifiquement de ce qui peut être qualifié techniquement hors résultat cible.
 
-L'amendement n'a d'autorite que dans le banc experimental. S'il n'apporte pas un gain discriminant net, il doit etre retire plutot qu'integre.
+L'amendement n'a d'autorité que dans le banc expérimental. S'il n'apporte pas un gain discriminant net, il doit être retiré plutôt qu'intégré.
 
-## 2. Cible de reconstruction : ne pas appeler toute difference une erreur
+## 2. Cible de reconstruction : ne pas appeler toute différence une erreur
 
-La premiere cible de `G2-FIELD` est le champ gravitationnel instantane defini par la realisation FIRE publique effectivement disponible, avec ses masses discretes, son kernel, ses softenings et les conditions de bord qualifiees :
+La première cible de `G2-FIELD` est le champ gravitationnel instantané défini par la réalisation FIRE publique effectivement disponible, avec ses masses discrètes, son kernel, ses softenings et les conditions de bord qualifiées :
 
 ```text
-snapshot discret + modele de masse/softening FIRE qualifie
--> champ vectoriel numerique cible
+snapshot discret + modèle de masse/softening FIRE qualifié
+-> champ vectoriel numérique cible
 ```
 
-Par rapport a cette cible, une approximation de solveur, une mauvaise conversion d'unites, une condition de bord incorrecte ou une fermeture numerique defectueuse sont des erreurs d'acces/reconstruction.
+Par rapport à cette cible, une approximation de solveur, une mauvaise conversion d'unités, une condition de bord incorrecte ou une fermeture numérique défectueuse ne reçoivent pas toutes le même statut.
 
-En revanche, la granularite particulaire et le softening ne sont pas automatiquement des erreurs de reconstruction de cette cible : ils participent a la definition du systeme numerique simule. Ils deviennent des effets de resolution ou de modelisation seulement lorsque la question change et compare cette realisation a un continuum physique idealise ou a une limite non adoucie.
+Certaines situations rendent la reconstruction invalide ou non qualifiée : mauvaise provenance, convention d'unités incohérente, couverture de sources insuffisante pour la cible annoncée, conditions de bord non établies lorsqu'elles sont constitutives de la cible, échec d'un oracle requis ou fermeture de composantes incompatible avec l'implémentation déclarée. Elles doivent produire un arrêt, une suspension ou une limitation explicite, pas une barre d'erreur qui rendrait le résultat artificiellement acceptable.
 
-La chaine doit donc rester explicite :
+D'autres écarts peuvent être réellement bornés après qualification de la cible : erreur résiduelle du solveur, interpolation, discrétisation d'une grille d'évaluation ou sensibilité numérique à un raffinement. Ceux-là peuvent être traités comme erreurs ou incertitudes numériques lorsqu'un oracle ou une convergence indépendante permet de les mesurer.
+
+Enfin, la granularité particulaire et le softening ne sont pas automatiquement des erreurs de reconstruction de la cible FIRE discrète : ils participent à la définition du système numérique simulé. Ils deviennent des effets de résolution ou de modélisation lorsque la question change et compare cette réalisation à un continuum physique idéalisé ou à une limite non adoucie.
+
+La chaîne doit donc rester explicite :
 
 ```text
-A. realisation FIRE discrete et adoucie
-   -> reconstruire fidelement G2-FIELD
+A. réalisation FIRE discrète et adoucie
+   -> établir que la cible est reconstructible
+   -> reconstruire fidèlement G2-FIELD
 
-B. realisation FIRE reconstruite
-   -> comparer, si scientifiquement pertinent, a une representation continue/non adoucie
+B. reconstruction qualifiée
+   -> borner les erreurs numériques résiduelles
+
+C. réalisation FIRE reconstruite
+   -> comparer, si scientifiquement pertinent,
+      à une représentation continue/non adoucie
 ```
 
-Les niveaux S/D/K de la v0.2 restent utiles comme tests, mais leur interpretation depend de la cible :
+Les niveaux S/D/K de la v0.2 restent utiles comme tests, mais leur interprétation dépend de la cible :
 
-- `S` qualifie directement l'acces numerique au meme objet discret ;
-- `D` et `K` qualifient surtout le passage de la realisation simulee vers une representation continue ou une limite de resolution ;
-- ils ne doivent pas etre additionnes sous l'etiquette generale « erreur de G2 » sans nommer l'objet auquel l'erreur est rapportee.
+- `S` qualifie directement l'accès numérique au même objet discret ;
+- `D` et `K` qualifient surtout le passage de la réalisation simulée vers une représentation continue ou une limite de résolution ;
+- ils ne doivent pas être additionnés sous l'étiquette générale « erreur de G2 » sans nommer l'objet auquel l'écart est rapporté.
 
-### Consequence pour le budget
+### 2.1 Quatre fonctions à ne pas confondre
 
-Le budget futur doit distinguer au minimum :
+Le futur successeur doit distinguer les fonctions suivantes sans nécessairement en faire quatre nouvelles catégories permanentes :
 
 ```text
-RECONSTRUCTION_DE_LA_CIBLE
-= unites + solveur + bords + fermeture + fidelite de l'implementation
+CONDITIONS_DE_VALIDITE
+= identité/provenance + conventions cohérentes + couverture requise
+  + conditions de bord constitutives + oracles bloquants + fermeture
+
+ERREURS_NUMERIQUES_BORNEES
+= résidu solveur + interpolation + convergence/raffinement qualifiables
 
 CHOIX_DE_REPERE_ET_DE_REDUCTION
-= centre + vitesse systeme + orientation + projection/reduction
+= centre + vitesse système + orientation + réduction azimutale/radiale
+  + projection éventuelle
 
 REPRESENTATION_ET_RESOLUTION
-= discretisation + kernel/softening + passage eventuel au continuum
+= réalisation discrète + kernel/softening
+  relativement à une autre cible physique ou continue
 
 FIELD_VERS_EOM
-= difference champ a point-test / equation du mouvement adaptative
+= différence champ à point-test / équation du mouvement adaptative
 ```
 
-Cette partition est fonctionnelle, pas une nouvelle taxonomie canonique.
+La première ligne n'est pas un « budget d'incertitude » : lorsqu'une condition nécessaire échoue, elle change le statut de validité du produit. Les autres lignes peuvent produire sensibilités, enveloppes ou écarts uniquement lorsque leur sens est défini par rapport à une cible nommée.
 
-## 3. Ne pas imposer l'axisymetrie avant de l'avoir testee
+## 3. Ne pas imposer l'axisymétrie avant de l'avoir testée
 
-Le produit primaire ne doit pas etre reduit d'emblee a :
+Le produit primaire ne doit pas être réduit d'emblée à :
 
 ```text
 g_R_FIELD(R,z), g_z_FIELD(R,z)
 ```
 
-La sortie primaire doit conserver le champ vectoriel local avec sa dependance azimutale, par exemple :
+La sortie primaire doit conserver le champ vectoriel local avec sa dépendance azimutale, par exemple :
 
 ```text
 g_FIELD(x,y,z)
 ```
 
-ou, apres fixation du repere :
+ou, après fixation du repère :
 
 ```text
 g_R_FIELD(R,phi,z)
@@ -87,16 +102,16 @@ g_phi_FIELD(R,phi,z)
 g_z_FIELD(R,phi,z)
 ```
 
-La reduction en un profil `g_R_FIELD(R,z)` devient une operation secondaire dont l'operateur doit etre declare : moyenne, mediane, secteur, harmonique ou autre reduction justifiee. Elle ne doit pas etre implicite.
+La réduction en un profil `g_R_FIELD(R,z)` devient une opération secondaire dont l'opérateur doit être déclaré : moyenne, médiane, secteur, harmonique ou autre réduction justifiée. Elle ne doit pas être implicite.
 
 Avant toute transformation en `v_grav(R)`, le dossier doit au minimum conserver :
 
 - `g_phi` ;
 - la dispersion ou structure azimutale de `g_R` et `g_z` ;
-- un diagnostic preenregistre de non-axisymetrie adapte a la question scientifique ;
-- la trace de l'operateur ayant produit le profil radial reduit.
+- un diagnostic pré-enregistré de non-axisymétrie adapté à la question scientifique ;
+- la trace de l'opérateur ayant produit le profil radial réduit.
 
-Aucun ordre harmonique universel ni seuil d'axisymetrie n'est impose ici. Le critere doit etre choisi avant le residu scientifique cible et seulement a la granularite necessaire pour changer la decision suivante.
+Aucun ordre harmonique universel ni seuil d'axisymétrie n'est imposé ici. Le critère doit être choisi avant le résidu scientifique cible et seulement à la granularité nécessaire pour changer la décision suivante.
 
 La transformation :
 
@@ -104,75 +119,76 @@ La transformation :
 v_grav(R) = sqrt(R |g_R(R,0)|)
 ```
 
-n'est autorisee comme produit interpretable que si la reduction radiale et l'approximation de support circulaire ont ete qualifiees pour le regime considere. Sinon, le champ vectoriel et son heterogeneite azimutale restent le resultat pertinent.
+n'est autorisée comme produit interprétable que si la réduction radiale et l'approximation de support circulaire ont été qualifiées pour le régime considéré. Sinon, le champ vectoriel et son hétérogénéité azimutale restent le résultat pertinent.
 
-Cette correction est directement motivee par la question parent de C7-GAL-C : l'enquete vise precisement a tester les mouvements non circulaires, les termes hors equilibre et les situations ou une courbe de rotation reduite cesse d'etre un acces fiable au support gravitationnel.
+Cette correction est directement motivée par la question parent de C7-GAL-C : l'enquête vise précisément à tester les mouvements non circulaires, les termes hors équilibre et les situations où une courbe de rotation réduite cesse d'être un accès fiable au support gravitationnel.
 
-## 4. Pre-enregistrement scientifique versus qualification technique
+## 4. Pré-enregistrement scientifique versus qualification technique
 
-Le principe anti-post-hoc est conserve, mais il ne doit pas transformer chaque parametre numerique en decision scientifique humaine distincte.
+Le principe anti-post-hoc est conservé, mais il ne doit pas transformer chaque paramètre numérique en décision scientifique humaine distincte.
 
-### 4.1 Doit etre gele avant exposition au residu cible
+### 4.1 Doit être gelé avant exposition au résidu cible
 
-Tout choix capable de changer la signification ou le verdict scientifique doit etre preenregistre ou place dans une sensibilite symetrique definie a l'avance, notamment :
+Tout choix capable de changer la signification ou le verdict scientifique doit être pré-enregistré ou placé dans une sensibilité symétrique définie à l'avance, notamment :
 
-- objet scientifique compare ;
-- echantillon et domaine analyse ;
-- centre, vitesse systeme et orientation ;
-- operateur de reduction azimutale/radiale ;
-- selection du traceur ;
+- objet scientifique comparé ;
+- échantillon et domaine analysé ;
+- centre, vitesse système et orientation ;
+- opérateur de réduction azimutale/radiale ;
+- sélection du traceur ;
 - conditions de bord retenues comme physiquement pertinentes ;
-- niveau de fidelite FIELD/EOM requis ;
-- masques affectant la region scientifique ;
-- metrique et seuil qui changent un verdict ;
-- regle de comparaison O1/G2.
+- niveau de fidélité FIELD/EOM requis ;
+- masques affectant la région scientifique ;
+- métrique et seuil qui changent un verdict ;
+- règle de comparaison O1/G2.
 
-### 4.2 Peut etre qualifie techniquement hors cible
+### 4.2 Peut être qualifié techniquement hors cible
 
-Un parametre d'implementation peut etre choisi ou raffine sans ratification humaine valeur par valeur si :
+Un paramètre d'implémentation peut être choisi ou raffiné sans ratification humaine valeur par valeur si :
 
-1. la propriete qu'il doit proteger est deja declaree ;
-2. un oracle, un test synthetique ou une convergence independante du residu cible permet de le qualifier ;
-3. la tolerance est fixee avant lecture du resultat cible ;
-4. les echecs et variantes pertinentes sont conserves ;
-5. le reglage ne change ni la cible scientifique ni l'operateur de comparaison.
+1. la propriété qu'il doit protéger est déjà déclarée ;
+2. un oracle, un test synthétique ou une convergence indépendante du résidu cible permet de le qualifier ;
+3. la tolérance est fixée avant lecture du résultat cible ;
+4. les échecs et variantes pertinentes sont conservés ;
+5. le réglage ne change ni la cible scientifique ni l'opérateur de comparaison.
 
-Exemples typiques : angle d'ouverture d'un arbre, resolution PM, ordre d'expansion, precision arithmetique, nombre de points d'un test synthetique, strategie de raffinement ou details equivalentement qualifies d'une implementation.
+Exemples typiques : angle d'ouverture d'un arbre, résolution PM, ordre d'expansion, précision arithmétique, nombre de points d'un test synthétique, stratégie de raffinement ou détails équivalemment qualifiés d'une implémentation.
 
-La valeur/version de `G` suit la meme logique : une convention explicite et coherente avec le systeme d'unites doit etre enregistree ; une decision scientifique supplementaire n'est necessaire que si l'ambiguite entre conventions devient non negligeable devant le budget pertinent.
+La valeur/version de `G` suit la même logique : une convention explicite et cohérente avec le système d'unités doit être enregistrée ; une décision scientifique supplémentaire n'est nécessaire que si l'ambiguïté entre conventions devient non négligeable devant le budget pertinent.
 
-### 4.3 Principe de controle
+### 4.3 Principe de contrôle
 
-Pour chaque garde-fou candidate :
+Pour chaque garde-fou candidat :
 
-> Si cette contrainte disparait, quelle decision scientifique devient effectivement moins sure ?
+> Si cette contrainte disparaît, quelle décision scientifique devient effectivement moins sûre ?
 
-Si aucune decision, aucun rang probatoire, aucune cible ou aucune reproductibilite pertinente ne change, la contrainte ne doit pas etre promue par precaution abstraite.
+Si aucune décision, aucun rang probatoire, aucune cible, aucune condition de validité ou aucune reproductibilité pertinente ne change, la contrainte ne doit pas être promue par précaution abstraite.
 
 ## 5. Effet attendu sur la v0.2
 
-Si cet amendement survit au test, une version successeur devra integrer les changements sans conserver cet overlay comme couche durable :
+Si cet amendement survit au test, une version successeur devra intégrer les changements sans conserver cet overlay comme couche durable :
 
-- §8.1 : champ primaire vectoriel avec dependance azimutale conservee ;
-- §8.3-8.4 : reduction vers `v_grav` explicitement conditionnelle ;
-- §§10-12 : S/D/K conserves, mais rapportes a une cible nommee ;
-- §11 : budget separe entre reconstruction, repere/reduction, representation-resolution et FIELD/EOM ;
-- §§13-14 : retrait des ratifications humaines qui peuvent etre remplacees par une qualification technique independante ;
-- §16 : dettes classees selon leur effet reel sur la prochaine decision scientifique.
+- §8.1 : champ primaire vectoriel avec dépendance azimutale conservée ;
+- §8.3-8.4 : réduction vers `v_grav` explicitement conditionnelle ;
+- §§10-12 : S/D/K conservés, mais rapportés à une cible nommée ;
+- §11 : remplacer le budget unique par la distinction validité / erreur numérique / repère-réduction / représentation-résolution / FIELD-EOM ;
+- §§13-14 : retirer les ratifications humaines qui peuvent être remplacées par une qualification technique indépendante ;
+- §16 : classer les dettes selon leur effet réel sur la prochaine décision scientifique.
 
-Le successeur ne devra pas etre plus long par simple accumulation. La correction doit idealement reduire le nombre de statuts et de decisions prealables tout en augmentant la lisibilite de la chaine scientifique.
+Le successeur ne devra pas être plus long par simple accumulation. La correction doit idéalement réduire le nombre de statuts et de décisions préalables tout en augmentant la lisibilité de la chaîne scientifique.
 
 ## 6. Falsificateurs de l'amendement
 
-L'amendement doit etre rejete ou revise s'il produit l'un des effets suivants :
+L'amendement doit être rejeté ou révisé s'il produit l'un des effets suivants :
 
-1. il permet de regler un choix scientifique apres lecture du residu cible ;
+1. il permet de régler un choix scientifique après lecture du résidu cible ;
 2. il rend la reconstruction moins reproductible ;
-3. il conserve la dependance azimutale sans que cela puisse jamais changer une decision dans C7-GAL-C ;
-4. il deplace simplement les memes dettes sous de nouveaux noms ;
-5. il augmente durablement la complexite documentaire sans supprimer une ambiguite, une fausse obligation ou une possibilite de glissement inferentiel.
+3. il conserve la dépendance azimutale sans que cela puisse jamais changer une décision dans C7-GAL-C ;
+4. il déplace simplement les mêmes dettes sous de nouveaux noms ;
+5. il transforme des échecs de validité en incertitudes absorbables ;
+6. il augmente durablement la complexité documentaire sans supprimer une ambiguïté, une fausse obligation ou une possibilité de glissement inférentiel.
 
-## 7. Verdict experimental attendu
+## 7. Verdict expérimental attendu
 
 ```text
 AMENDEMENT = A_TESTER
@@ -184,4 +200,4 @@ MERGE_MAIN = NON
 
 Le test porte sur la question suivante :
 
-> Cette correction rend-elle la future decision scientifique plus discriminante et plus lisible, sans fermer prematurement l'exploration ni rouvrir la porte au reglage post-hoc ?
+> Cette correction rend-elle la future décision scientifique plus discriminante et plus lisible, sans fermer prématurément l'exploration ni rouvrir la porte au réglage post-hoc ?
