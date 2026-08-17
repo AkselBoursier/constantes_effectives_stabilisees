@@ -388,3 +388,158 @@ COUVERTURE = EN_COURS
 - le code versionné contient les garde-fous annoncés : absence explicite, contrôle des poids et colonnes, distinction des produits `iminuit`, et code de sortie bloquant sauf autorisation explicite de l’absence.
 
 Cette entrée est provisoire. Elle doit être complétée après lecture de N0–N5, des sources historiques, des JSON/CSV/manifeste/checksum restants et qualification des six DOCX originaux.
+
+## Compléments de procédure et de traçabilité — 2026-08-17
+
+### Les règles restent arbitrables ; les exceptions ne sont pas silencieuses
+
+L’auteur précise qu’une règle de l’audit peut révéler, au contact du corpus, un cas limite, une absurdité locale ou une rigidité excessive. Une nouvelle règle peut également devenir nécessaire. Ces événements ne doivent ni être ignorés ni produire une exception improvisée silencieusement.
+
+```text
+REGLE_EXISTANTE = GARDE_FOU_REVISABLE_SOUS_ARBITRAGE
+REGLE_APPAREMMENT_ABSURDE_OU_TROP_BORNEE -> FAIRE_REMONTER_LE_CONFLIT_CONCRET
+EXCEPTION_NOUVELLE -> NE_PAS_L_APPLIQUER_SILENCIEUSEMENT
+ARBITRAGE_HUMAIN_AGENT = REQUIS_AVANT_REQUALIFICATION_DE_LA_REGLE
+NOUVELLE_REGLE_POTENTIELLE -> VERIFIER_D_ABORD_NON_REDONDANCE_AVEC_REGLES_EXISTANTES
+NOUVELLE_REGLE_NON_REDONDANTE_ET_ADOPTEE -> CONSIGNER_DANS_CHANGELOG
+```
+
+Le but n’est donc pas d’accumuler des prescriptions, mais de conserver des garde-fous suffisamment précis pour être utiles sans les transformer en contraintes aveugles. Lorsqu’un conflit de règles ou un cas limite survient, l’agent doit exposer ce qui coince, l’effet concret sur l’audit et les options d’arbitrage, plutôt que de forcer l’une des règles en silence.
+
+### Incident de sélection d’outil pendant l’inventaire des cycles 1 et 2
+
+Pendant la préparation de l’inventaire nominatif, l’agent a sélectionné à tort à plusieurs reprises l’action GitHub `create_tree` alors qu’une lecture d’arbre était recherchée. Trois appels exécutés ont renvoyé `422 Invalid tree info`. Une quatrième sélection a été bloquée avant exécution par la couche de sécurité de l’outil. Aucun appel `create_tree` n’a renvoyé de succès ; aucune branche ni aucun fichier n’a été modifié par cette séquence. La voie a ensuite été abandonnée au profit d’une lecture générique GitHub et du manifeste local déjà établi.
+
+```text
+INCIDENT_SELECTION_OUTIL_CREATE_TREE = OUI
+APPELS_EXECUTES_REPONSE_422 = 3
+SELECTION_BLOQUEE_AVANT_EXECUTION = 1
+SUCCES_CREATE_TREE = 0
+MUTATION_FICHIER_OU_BRANCHE_IDENTIFIEE = NON
+CAUSE = ERREUR_DE_SELECTION_OUTIL_AGENT
+EFFET_SCIENTIFIQUE = AUCUN_ETABLI
+CORRECTION = RECHARGEMENT_EXPLICITE_DES_ACTIONS_DE_LECTURE
+```
+
+Une nouvelle vérification locale de `github.com` dans l’environnement d’exécution de l’agent a par ailleurs reproduit l’échec DNS déjà consigné. Le connecteur GitHub restant fonctionnel, cela ne change pas le statut scientifique ou documentaire ; cela confirme seulement que la voie locale directe reste indisponible à ce stade.
+
+### Inventaire exact enregistré — Cycle 1
+
+L’inventaire nominatif ci-dessous provient du manifeste exact du baseline `5ff45189af7087e1dd384bb815be55c3ff1430db`. Il complète le décompte déjà enregistré ; il n’ajoute aucun verdict de pertinence.
+
+```text
+00_Sources_docx/Fiche alpha_s - Lambda_QCD.docx
+00_Sources_docx/Fiche masse de l'électron.docx
+00_Sources_docx/Fiche rapport proton-électron.docx
+00_Sources_docx/Fiche α v0.1.docx
+00_Sources_docx/Source_docx_Fiche_alpha_s_Lambda_QCD_v0_1.md
+00_Sources_docx/Source_docx_Fiche_alpha_v0_1.md
+00_Sources_docx/Source_docx_Fiche_masse_electron_v0_1.md
+00_Sources_docx/Source_docx_Fiche_rapport_proton_electron_v0_1.md
+00_Sources_docx/Source_docx_Synthese_premier_cycle_v0_1.md
+00_Sources_docx/Synthèse du premier cycle v0.1.docx
+A1_Matrice_cibles_transformations_acces_alpha_v0_1.md
+A1_Registre_sources_versions_alpha_v0_1.md
+A2_Extraction_CODATA_alpha_v0_1.md
+A2_Fiche_voie_cesium_alpha_v0_1.md
+A2_Fiche_voie_gmoins2_alpha_v0_1.md
+A2_Fiche_voie_rubidium_alpha_v0_1.md
+A2_Matrice_chaines_determination_alpha_v0_1.md
+A2_Matrice_comparative_trois_chaines_alpha_v0_2.md
+A2_Verdict_comparatif_local_alpha_v0_1.md
+A3_Fiche_running_alpha_Q2_v0_1.md
+A3_Verdict_local_running_alpha_v0_1.md
+A4_Fiche_contraintes_temporelles_alpha_v0_1.md
+A4_Verdict_local_contraintes_temporelles_alpha_v0_1.md
+A5_Fiche_variations_spatiales_cosmologiques_alpha_v0_1.md
+A5_Verdict_local_variations_spatiales_alpha_v0_1.md
+Cadrage_reprise_scientifique_cycle_1_QCD_T1_v0_1.md
+D5_Arbitrage_prochaine_dette_me_rapport_proton_electron_v0_1.md
+D6_Transfert_dette_me_vers_Saveur_Higgs_v0_1.md
+R1_Cible_determinations_rapport_proton_electron_v0_1.md
+R2_Acces_variation_rapport_proton_electron_v0_1.md
+R3_Constitution_minimale_et_verdict_rapport_proton_electron_v0_1.md
+Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md
+Synthese_active_cycle_1_couplages_echelles_QCD_apres_T1_v0_2.md
+Synthese_active_cycle_1_couplages_echelles_QCD_apres_alpha_v0_3.md
+Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md
+Synthese_finale_dossier_alpha_v0_1.md
+Synthese_recuperation_cycle_1_couplages_echelles_QCD_v0_1.md
+T1_1_Registre_sources_versions_alpha_s_v0_1.md
+T1_2_Fiche_extraction_alpha_s_NNPDF_global_v0_1.md
+T1_2_Fiche_extraction_alpha_s_formes_evenements_v0_1.md
+T1_2_Fiche_extraction_alpha_s_tau_Belle_v0_1.md
+T1_3_Fiche_extraction_alpha_s_lattice_ALPHA_2026_v0_1.md
+T1_3_Selection_chaine_lattice_primaire_v0_1.md
+T1_4_Matrice_comparabilite_chaines_alpha_s_v0_1.md
+T1_5_Manifeste_local_paquet_ALPHA_2026_v0_1.md
+T1_5_Rapport_blocage_reproduction_lattice_ALPHA_2026_v0_1.md
+T1_5_Resultats_reproduction_lattice_ALPHA_2026_v0_1.md
+T1_6_Classification_ecarts_chaines_alpha_s_v0_1.md
+T1_7_Verdict_physique_local_alpha_s_v0_1.md
+```
+
+```text
+INVENTAIRE_NOMINATIF_CYCLE_1 = 49/49_BLOBS_ENREGISTRES
+COUVERTURE_TEXTUELLE = 44/44_MARKDOWN_LUS
+DETTE_BINAIRE = 5_DOCX_ORIGINAUX_NON_LUS_DIRECTEMENT
+```
+
+### Inventaire exact enregistré — Cycle 2
+
+```text
+00_Sources_docx/Fiche -(-theta_W-) v0.1.docx
+00_Sources_docx/Fiche G_F v0.1.docx
+00_Sources_docx/Fiche Lambda v0.1.docx
+00_Sources_docx/Source_docx_Fiche_G_F_v0_1.md
+00_Sources_docx/Source_docx_Fiche_Lambda_v0_1.md
+00_Sources_docx/Source_docx_Fiche_theta_W_v0_1.md
+00_Sources_docx/Source_docx_Synthese_second_cycle_v0_1.md
+00_Sources_docx/Source_txt_Ecriture_Lambda_v0_1.md
+00_Sources_docx/Synthèse du second cycle v0.1.docx
+00_Sources_docx/Écriture.txt
+Synthese_recuperation_cycle_2_structuration_electrofaible_v0_1.md
+```
+
+```text
+INVENTAIRE_NOMINATIF_CYCLE_2 = 11/11_BLOBS_ENREGISTRES
+COUVERTURE_TEXTUELLE = 7/7_PIECES_TEXTUELLES_LUES
+DETTE_BINAIRE = 4_DOCX_ORIGINAUX_NON_LUS_DIRECTEMENT
+```
+
+### Cycle 3 — sous-dossier computationnel intégralement lu
+
+Depuis l’entrée provisoire précédente, tous les artefacts versionnés de `01_REPRISE_COMPUTATIONNELLE_N1_N3` ont été lus documentairement : six Markdown, deux scripts Python, huit CSV, quatre JSON, un TXT et un manifeste SHA-256, soit `22/22` blobs.
+
+```text
+REPRISE_COMPUTATIONNELLE_N1_N3 = 22/22_BLOBS_LUS_INTEGRALEMENT
+MARKDOWN = 6/6
+PYTHON = 2/2
+CSV = 8/8
+JSON = 4/4
+TXT = 1/1
+SHA256 = 1/1
+EXECUTION_NOUVELLE_PAR_L_AUDIT = NON
+RECALCUL_INDEPENDANT_DES_CHECKSUMS_EXTERNES = NON
+```
+
+La généalogie computationnelle récupérée doit rester hiérarchisée :
+
+- C1 est un diagnostic substitutif explicitement déclaré comme non-reproduction des chaînes officielles ; ses planchers et son surrogate ne deviennent donc pas une validation DESI ;
+- C2 correspond à une ingestion locale contrôlée de la distribution effectivement inspectée, avec interdiction de substituer des modèles voisins et séparation entre quantiles empiriques, `margestats`, points `bestfit` et profils ;
+- trois ensembles (`base_mnu`, `base_mnu059`, `base_mnu_w_wa`) ont des sorties versionnées ; `base_mnu_binary_3` est absent de la distribution vérifiée et cette absence n’est pas généralisée au-delà de ce périmètre ;
+- les produits `iminuit` disponibles ne permettent pas de reconstruire un profil exact dans les cas documentés ; aucun produit voisin n’est substitué ;
+- les sommes de contrôle présentes dans le dépôt sont des sorties historiques versionnées. Les octets bruts externes des chaînes DESI ne font pas partie des 668 blobs du baseline et n’ont pas été récupérés ni rehachés par le présent audit.
+
+Sorties machine historiques lues, sans réexécution ni requalification scientifique nouvelle :
+
+```text
+base_mnu: q95_empirique = 0.06493418275 ; margestats = 0.0642 ; R-1_dernier = 0.0091471859
+base_mnu059: q95_empirique = 0.1048620874 ; margestats = 0.105 ; R-1_dernier = 0.0083615890
+base_mnu_w_wa: q95_empirique = 0.16390456636 ; margestats = 0.163 ; R-1_dernier = 0.0066957914
+base_mnu_binary_3: not_available_in_verified_distribution
+```
+
+Ces écarts entre quantile empirique et `margestats` sont documentés comme différences de convention/statistique dans les artefacts ; ils ne sont pas transformés ici en divergence scientifique. La lecture du code confirme seulement que les garde-fous annoncés existent dans le code versionné ; elle ne vaut pas preuve d’une exécution nouvelle.
+
+Le statut global du cycle 3 reste **EN COURS** : N0–N5 doivent encore être lus intégralement, les six extractions Markdown historiques doivent être lues, et les six DOCX originaux restent une dette binaire tant qu’ils ne sont pas accessibles directement.
