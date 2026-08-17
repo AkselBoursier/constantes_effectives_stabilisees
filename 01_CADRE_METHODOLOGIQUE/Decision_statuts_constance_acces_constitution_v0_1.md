@@ -3,14 +3,17 @@
 ## 0. Statut documentaire
 
 ```text
-statut : décision canonique de resynchronisation ;
+statut : décision canonique active pour la distinction objet / accès / constitution ;
 fonction : lever une contradiction entre le cadre de refondation et plusieurs
            dégagements théoriques ultérieurs ;
-portée : documents actifs, cartes, livrables et futurs agents ;
+portée courante : énoncés, documents et travaux auxquels cette distinction est
+                  effectivement applicable ;
 précédence : complète et précise refondation-du-domaine.md ;
-             prime provisoirement sur les usages incompatibles de
-             « mode de constance » dans les documents antérieurs.
+             prime sur les usages incompatibles de « mode de constance »
+             tant qu’aucune décision humaine ultérieure applicable ne l’amende.
 ```
+
+Le noyau normatif de cette décision reste actif. En revanche, ses exemples, cas litigieux et surtout la cartographie des chantiers de la section 6 conservent l’état du projet au moment de la décision : ils ne désignent pas à eux seuls les lignes actuellement ouvertes, leur priorité ni leur rang documentaire. Pour l’état programmatique courant, utiliser les portes d’entrée vivantes du dépôt.
 
 Cette décision ne supprime aucun acquis philosophique, cosmologique ou
 méthodologique. Elle distingue les niveaux auxquels ces acquis valent.
