@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Configurer Python
         uses: actions/setup-python@v5
@@ -55,20 +57,55 @@ jobs:
       - name: Compiler les scripts Python
         run: python -m compileall -q audit 02_CYCLES_PHYSIQUES
 
-      - name: Installer les dépendances du test C2
-        run: >-
-          python -m pip install
-          -r 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/requirements.txt
+      - name: Déterminer la portée du test C2
+        id: c2_scope
+        shell: bash
+        run: |
+          c2_relevant_from_files() {
+            grep -Eq '^(\.github/workflows/audit-corpus\.yml|02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2\.py)$'
+          }
 
-      # Contrat : PASS signifie seulement que l'auto-test synthetique borne du script C2
-      # s'execute avec succes sur son manifeste ; il ne reproduit pas les chaines DESI et ne valide aucun resultat scientifique.
+          # Qualification locale du prédicat : un chemin C2 doit passer, un chemin documentaire banal doit être rejeté.
+          printf '%s\n' '.github/workflows/audit-corpus.yml' | c2_relevant_from_files
+          if printf '%s\n' 'README.md' | c2_relevant_from_files; then
+            echo "Le routeur C2 classe à tort README.md comme pertinent." >&2
+            exit 1
+          fi
+
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            relevant=true
+            reason=workflow_dispatch
+          else
+            changed_files="$(git diff --name-only HEAD^1 HEAD)"
+            printf 'Fichiers introduits par la PR :\n%s\n' "$changed_files"
+            if printf '%s\n' "$changed_files" | c2_relevant_from_files; then
+              relevant=true
+              reason=c2_scope_change
+            else
+              relevant=false
+              reason=out_of_scope
+            fi
+          fi
+
+          echo "relevant=$relevant" >> "$GITHUB_OUTPUT"
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+          echo "C2_RELEVANT=$relevant ($reason)"
+
+      - name: Installer la dépendance du test C2
+        if: steps.c2_scope.outputs.relevant == 'true'
+        run: python -m pip install numpy==2.5.2
+
+      # Contrat : PASS signifie seulement que le jeu synthetique interne du script C2
+      # reussit sous Python 3.12 avec NumPy 2.5.2. Le manifeste reste fourni car l'interface
+      # CLI l'exige, mais il n'est pas lu dans ce mode sans --data-root. Ce test ne reproduit
+      # pas les chaines DESI et ne valide aucun resultat scientifique.
       - name: Exécuter le test synthétique C2
+        if: steps.c2_scope.outputs.relevant == 'true'
         run: >-
           python 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2.py
           --manifest 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/manifest_produits_officiels_c2.json
           --output-dir /tmp/c2-self-test
           --self-test
-          --allow-missing
 
       - name: Inventorier les placeholders connus
         run: bash audit/audit_placeholders.sh
