@@ -3,8 +3,10 @@
 ## 0. Statut
 
 ```text
-statut : couche active de clôture et d’orientation au 27 juillet 2026 ;
-remplace pour l’orientation courante :
+statut scientifique : synthèse de clôture du premier périmètre, établie au 27 juillet 2026 ;
+fonction documentaire courante : point d’entrée pour les acquis de ce périmètre
+                                 et ses conditions de réouverture ;
+remplace pour l’orientation du périmètre :
   la décision active finale de la synthèse v0.4 ;
 conserve :
   Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md
@@ -22,6 +24,12 @@ ne vaut pas :
   instruction du Yukawa électronique ;
   nouvelle taxonomie de statuts.
 ```
+
+### Mise à jour du statut documentaire après propagation Saveur–Higgs
+
+La chronologie portée par les sections 4, 6 et 7 ci-dessous s’arrête au transfert D6. Depuis cette coupure, le lot `m_e / y_e / v / accès direct au Higgs` a été instruit par S1–S3 puis propagé par la PR #58 : la dette `m_e` transférée est **localement résolue dans son premier périmètre** et ne constitue plus une dette active du cycle 1.
+
+Les formulations ci-dessous qui parlent encore de « dette active correspondante », de dette `m_e` « transférée vers Saveur–Higgs » ou d’une future ouverture du lot S1–S3 conservent l’état procédural du 27 juillet ; elles ne doivent pas être relues comme état courant. Le verdict scientifique du premier périmètre, ses résultats et ses conditions générales de réouverture ne sont pas modifiés par cette mise à jour documentaire.
 
 ## 1. Formulation exacte
 
