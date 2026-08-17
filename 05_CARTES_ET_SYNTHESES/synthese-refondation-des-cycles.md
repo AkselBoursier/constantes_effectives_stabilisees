@@ -2,6 +2,15 @@
 
 ## Statut
 
+```text
+statut : synthèse scientifique et méthodologique substantielle datée de la phase de refondation ;
+fonction : conserver les distinctions et résultats transversaux établis à cette coupure ;
+ne vaut pas : tableau de bord courant des cycles, autorité opérationnelle sur leur activité
+              présente, ni remplacement des points d’entrée vivants plus récents.
+```
+
+Les résultats et distinctions ci-dessous restent à lire selon leur portée propre. Les formulations documentaires de la section 16 décrivent la décision de surface prise au moment de cette synthèse ; elles ne déterminent plus, à elles seules, ce qui constitue aujourd’hui un point d’entrée ou une autorité active. Pour l’état courant, utiliser les README vivants et les décisions ultérieures applicables.
+
 Ce document synthétise les résultats obtenus après :
 
 - la refondation du domaine ;
