@@ -102,6 +102,30 @@ BORNE_DUREE_RAPPORTEE = MOINS_DE_TROIS_HEURES
 IDENTITE_DE_CAUSE_AVEC_LES_502_#131 = NON_ETABLIE
 ```
 
+### Incident pendant le contrôle substantiel de #131 et reprise observée
+
+Pendant le contrôle substantiel de #131, deux tentatives consécutives d’ajout du commentaire de verdict ont renvoyé `502`. Après chaque erreur, une relecture de la conversation de PR a montré que le commentaire n’avait pas été persisté. Le seuil de suspension convenu a donc été appliqué et aucune promotion ni fusion n’a été tentée dans cet état.
+
+L’auteur a ensuite redémarré son ordinateur et signalé que sa connexion Internet paraissait fonctionner normalement. Ce redémarrage constitue un événement local observé, mais aucun lien causal avec les erreurs GitHub n’est établi. Une nouvelle tentative d’écriture du même commentaire a ensuite réussi et sa relecture immédiate a confirmé sa persistance exacte.
+
+```text
+INCIDENT_502_COMMENTAIRE_CONTROLE_#131 = 2_ECHECS_CONSECUTIFS_NON_PERSISTES
+SUSPENSION_DES_MUTATIONS = APPLIQUEE
+REDEMARRAGE_LOCAL_UTILISATEUR = EFFECTUE
+ECRITURE_TEST_APRES_REDEMARRAGE = SUCCES_RELUE_CONFORME
+CAUSE_DU_RETABLISSEMENT = NON_ETABLIE
+VOIE_D_ECRITURE = RETABLIE_PROVISOIREMENT
+```
+
+Si aucune récidive n’est observée au cours d’opérations ultérieures réellement représentatives, cet incident pourra être requalifié comme **incident transitoire historique non reproduit dans la suite observée**. Ce déclassement ne supprime pas sa trace, ne lui attribue aucune cause rétrospective et n’est pas déclenché par un délai arbitraire.
+
+```text
+DECLASSEMENT_INCIDENT = CONDITIONNEL
+CRITERE = ABSENCE_DE_RECIDIVE_SUR_OPERATIONS_REPRESENTATIVES
+EFFACEMENT_DE_L_INCIDENT = NON
+CAUSE_RACINE_APRES_DECLASSEMENT = NON_ETABLIE
+```
+
 ## Réduction progressive autorisée
 
 La réduction du corpus de travail devient légitime **après** remontée du contenu, jamais avant.
