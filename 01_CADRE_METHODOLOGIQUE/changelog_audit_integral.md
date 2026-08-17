@@ -1171,3 +1171,101 @@ CONVENTION_SPLINE = DECISION_SCIENTIFIQUEMENT_ACTIVE_DANS_LES_TESTS_DE_STRESS
 ```
 
 Prochaine étape : lire la série G2.4, puis les rapports de durcissement/sentinelle/capacité, avant de confronter les assertions des rapports aux 24 scripts versionnés.
+
+#### Cycle 7 — clôture documentaire intégrale du baseline
+
+La lecture des dix rapports restants de G2.4/CAP/REJ/SENT puis des vingt-quatre scripts versionnés ferme le périmètre matériel du cycle 7.
+
+```text
+CYCLE_7_RACINE = 13/13_MARKDOWN_LUS
+REPRISE_README_REQUIREMENTS = 3/3_LUS
+REPRISE_CONFIGS = 9/9_LUES
+REPRISE_MANIFESTE = 1/1_LU
+REPRISE_REPORTS = 16/16_LUS
+REPRISE_SCRIPTS = 24/24_LUS
+REPRISE_COMPUTATIONNELLE = 53/53_BLOBS_LUS
+CYCLE_7_TOTAL = 66/66_BLOBS_LUS
+DETTE_DOCX_C7 = 0
+COUVERTURE_DOCUMENTAIRE_CYCLE_7 = COMPLETE
+EXECUTION_NOUVELLE_PAR_L_AUDIT = NON
+REVALIDATION_SCIENTIFIQUE_EXTERNE = NON
+```
+
+Cette complétude porte sur le corpus Git du baseline. Elle ne remplace pas les données externes, les sorties hors Git, les issues ou les artefacts matériels auxquels les documents renvoient, et elle ne transforme pas les qualifications historiques en résultats recalculés par le présent audit.
+
+##### Chaîne G2.4 : capacité, optimisation et amendement
+
+La qualification du lanceur a d'abord conclu que le plan initial de 32 chaînes était techniquement prohibitif dans l'environnement local. Ce résultat de capacité a déclenché une optimisation du calcul, non une modification du modèle, des priors ou des variantes scientifiques.
+
+L'optimisation sépare les paramètres lents de fond des nœuds `X_i` rapides et introduit un cache exact, sans émulateur. Elle a d'abord reproduit l'oracle directeur, puis cette équivalence a exposé une faiblesse numérique de l'oracle acoustique lui-même. L'amendement A1 a donc corrigé la règle acoustique et conservé la règle antérieure comme `legacy` au lieu de réétiqueter rétroactivement les anciens résultats. Le contrôle direct jusqu'à `z=10^8`, devenu numériquement vacant, est retiré de la porte d'acceptation au profit d'une quadrature Gauss–Legendre segmentée et d'une borne analytique de queue.
+
+```text
+OPTIMISATION_REUSSIE_CONTRE_ORACLE -> ORACLE_SCIENTIFIQUEMENT_SUFFISANT = FAUX
+DEFAUT_ORACLE_DECOUVERT_APRES_EQUIVALENCE = CONSERVE
+AMENDEMENT_A1 = CORRECTION_NUMERIQUE_BORNEE
+ANCIENNE_REGLE = CONSERVEE_COMME_LEGACY
+S5_ENVELOPES_SCIENTIFIQUES = NON_RATIFIEES
+```
+
+##### Le vert de harnais n'est pas une preuve suffisante
+
+Plusieurs épisodes indépendants établissent dans le corpus lui-même qu'un harnais peut être vert tout en fournissant une preuve vacante ou mal attribuée.
+
+Dans G2.4d, un premier ensemble de fautes injectées paraissait entièrement détecté, mais cinq gardes aval étaient en réalité inatteignables : une exception antérieure suffisait à produire l'échec attendu. La correction impose ensuite l'identité de la cause, l'ordonnancement des contrôles et un scénario nominal positif qui doit atteindre la porte cible.
+
+REJ-1 rencontre une vacuité d'une autre nature : après l'existence légitime d'un run sentinelle, des qualificateurs conçus pour un monde vide ne testent plus la garde annoncée. Le correctif substitue explicitement un monde synthétique seulement dans le harnais, vérifie l'atteinte de la porte et restaure ensuite le monde réel, sans relâcher la garde de production.
+
+SENT-0A/B découvre après une première qualification deux défauts supplémentaires : une fenêtre TOCTOU lors de l'acquisition du répertoire et une machine d'état du manifeste trop permissive. Ils sont corrigés par acquisition exclusive atomique et finalisation monotone.
+
+CAP-1 conserve enfin une première passe rouge avec plusieurs causes distinctes, dont une preuve de verrou redevenue vacante et une interrogation système intermittente. Les branches réellement inatteignables sont déclarées telles plutôt que simulées artificiellement comme couvertes.
+
+```text
+VERT_HARNAIS -> PREUVE_NON_VACANTE = NON_GARANTI
+ECHEC_MACHINE -> CANDIDAT_SCIENTIFIQUE_EN_CAUSE = NON_AUTOMATIQUE
+CAUSE_D_ECHEC = A_REPRODUIRE_ET_LOCALISER
+PREUVE_DE_GARDE = EXIGE_ATTEINTE_DE_LA_PORTE + CAUSE_EXACTE + CAS_NOMINAL
+```
+
+Cette convergence avec une règle générale déjà établie ne crée pas une nouvelle règle : elle lui fournit plusieurs cas documentaires internes supplémentaires.
+
+##### Recoupement rapports ↔ code
+
+La lecture des 24 scripts confirme que les distinctions revendiquées ne sont pas seulement narratives :
+
+- acquisition BAO bornée par taille et empreintes ;
+- conversion explicite de `theta_star` dans la compression CMB ;
+- voies de contrôle BAO et acoustiques distinctes du code directeur ;
+- séparation MAP / maximum de vraisemblance / minimum rencontré ;
+- domaine signé de `X(z)` et rejet par invalidité du fond, non par positivité imposée de `X` ;
+- quatre variantes M2a/M2b × natural/not-a-knot maintenues distinctes ;
+- adaptateur rapide exact avec séparation lent/rapide, sans émulation ;
+- modes numériques `legacy` et amendés maintenus explicitement distincts ;
+- qualificateurs auto-bloquants et injections de fautes ;
+- acquisition atomique du run, machine d'état monotone et contrat privé de préparation ;
+- politique de capacité séparée de la convergence ;
+- driver PowerShell sans timeout ni relance automatique ;
+- heartbeat observateur en ajout seulement, sans fonction de pilotage scientifique.
+
+Les deux scripts de MCMC n'ont pas le même rang : `run_mcmc_g1_3.py` appartient à la reproduction des références ΛCDM/CPL ; `run_mcmc_xz_g2_4.py` est le lanceur de production `X(z)` entouré des gardes ultérieures. Leur présence dans le corpus ne vaut pas exécution nouvelle par l'audit.
+
+Le qualificateur SENT-0D reconstruit un franchissement étroit à deux clés, sous contrat de préparation scellé et périmètre sentinelle. Le qualificateur SENT-0 vérifie notamment que cette ouverture étroite ne devient pas une autorisation générale de production.
+
+##### Effet sur l'état scientifique
+
+La lecture exhaustive du cycle 7 améliore fortement la reconstruction des causes, des portes et des bifurcations computationnelles, mais elle n'autorise aucune promotion scientifique de RUN1 ou de SCI-1.
+
+Le point d'entrée courant du cycle conserve explicitement la séparation :
+
+```text
+RUN1_PERSISTENCE_RED = CAUSE_SOURCE_CONTRAT_QUALIFIEE_DANS_LE_CONTEXTE_COURANT
+RUN1_SCIENTIFIC_QUALIFICATION = NON
+SCI1 = NON_QUALIFIABLE_DANS_L_ETAT_COURANT
+NEW_SAMPLING = NON_AUTORISE
+C7_C1 != C7_GAL
+```
+
+Ces états sont enregistrés comme état documentaire courant du baseline et non reproduits expérimentalement par le présent audit. La complétude `66/66` n'ouvre donc ni B1, ni un nouveau sampling, ni une conclusion sur la géométrie intrinsèque du posterior.
+
+Le cycle 7 est le premier cycle parcouru sous ce changelog dont le corpus versionné peut être déclaré **documentairement complet sans dette de format**. Cela ne lui confère aucun rang scientifique supérieur aux cycles 1 à 6 ; ceux-ci restent incomplets principalement à cause de leurs DOCX originaux non lus directement.
+
+Prochaine position documentaire propre : ouvrir l'inventaire exact du cycle 8 — métrologique SI — sans utiliser la synthèse du cycle 4 comme substitut à sa lecture.
