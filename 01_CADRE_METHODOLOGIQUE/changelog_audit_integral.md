@@ -1269,3 +1269,311 @@ Ces états sont enregistrés comme état documentaire courant du baseline et non
 Le cycle 7 est le premier cycle parcouru sous ce changelog dont le corpus versionné peut être déclaré **documentairement complet sans dette de format**. Cela ne lui confère aucun rang scientifique supérieur aux cycles 1 à 6 ; ceux-ci restent incomplets principalement à cause de leurs DOCX originaux non lus directement.
 
 Prochaine position documentaire propre : ouvrir l'inventaire exact du cycle 8 — métrologique SI — sans utiliser la synthèse du cycle 4 comme substitut à sa lecture.
+
+### 2026-08-17 — Retard de journalisation après le cycle 7 et reprise contrôlée
+
+Après la clôture documentaire du cycle 7, les cycles 8, 9 et 10 ont été lus intégralement avant que leurs entrées puissent être persistées dans ce changelog. La cause n'est pas documentaire : le connecteur GitHub disponible ne proposait pas d'opération d'append ou de patch textuel et l'écriture exposée remplace le blob UTF-8 complet. Le fichier étant devenu volumineux, l'agent a différé l'écriture plutôt que de reconstruire le contenu depuis une réponse tronquée.
+
+Une vérification ultérieure a établi que le blob complet courant pouvait être relu directement par SHA. Le rattrapage présent repart donc du blob exact `9d5913521c613a9b728e18849e0af37e1fa83cad`, sans création d'un second journal ni migration vers une issue.
+
+```text
+RETARD_CHANGELOG_APRES_C7 = OUI
+CYCLES_CONCERNES_AVANT_RATTRAPAGE = C8_C9_C10
+CAUSE = ABSENCE_APPEND_PATCH_NATIF_DANS_CONNECTEUR + PRUDENCE_SUR_REMPLACEMENT_INTEGRAL
+PERTE_DE_LECTURE_IDENTIFIEE = NON
+MUTATION_OBJETS_AUDITES = NON
+MIGRATION_VERS_ISSUE = NON_AUTORISEE_ET_NON_EFFECTUEE
+REPRISE = BLOB_COMPLET_COURANT_RELU_PAR_SHA_AVANT_ECRITURE
+```
+
+Ce retard constitue une non-conformité de cadence par rapport à l'obligation de mise à jour après chaque cycle physique. Il n'est pas requalifié en simple détail technique ; la cause et la reprise sont conservées ici.
+
+### Cycle 8 — métrologique SI — couverture documentaire complète
+
+Arbre exact au baseline : `3b569c5c53460289dd0bf4ec2e93f56fa0007dbd`.
+
+Inventaire exact :
+
+```text
+Cycle_metrologique_SI_v0_1_c_h_e.md
+architecture-relationnelle-metrologique-si.md
+evaluation-gain-explicatif-metrologique-si.md
+verification-metrologique-si.md
+```
+
+```text
+CYCLE_8_TOTAL_BLOBS = 4
+CYCLE_8_MARKDOWN = 4/4_LUS_INTEGRALEMENT
+DETTE_DOCX_C8 = 0
+COUVERTURE_DOCUMENTAIRE_CYCLE_8 = COMPLETE
+```
+
+La lecture confirme que le traitement actif du SI dépasse la récupération historique du cycle 4. Le cycle 8 utilise le SI comme **calibrateur** : il teste les distinctions entre grandeur physique, valeur définissante, réalisation, accès et redistribution de l'incertitude.
+
+Le gain différentiel n'est donc pas le constat tautologique que certaines constantes ont une valeur exacte dans le SI. Il réside notamment dans les opérations suivantes :
+
+```text
+definition != realisation ;
+exactitude conventionnelle != precision empirique ;
+fixation d'une valeur -> transformation de la fonction de certaines experiences ;
+fixation d'une valeur -> redistribution des incertitudes vers les realisations et autres grandeurs ;
+role physique d'une grandeur != son statut definissant dans le SI.
+```
+
+Les anciens verdicts d'« architecture confirmée » ou de « fonction de fixité » sont explicitement retirés comme conclusions actives générales dans la reprise. Le cycle conserve les relations physiques et métrologiques locales sans faire de la métrologie SI le modèle implicite de toutes les formes de constance.
+
+```text
+SI_COMME_CALIBRATEUR = RESULTAT_DOCUMENTAIRE_ACTIF
+EXACTITUDE_SI_COMME_THESE_SUFFISANTE = REFUSEE
+TRANSFORMATION_DE_LA_FONCTION_DES_EXPERIENCES_APRES_FIXATION = RESURGENCE_IMPORTANTE
+REDISTRIBUTION_DES_INCERTITUDES = RESURGENCE_IMPORTANTE
+GENERALISATION_DU_SI_A_TOUT_LE_PROJET = NON_ETABLIE
+```
+
+Aucun audit externe du BIPM, du CODATA ou des réalisations n'est ouvert par cette lecture.
+
+### Cycle 9 — fine-tuning — couverture documentaire complète
+
+Arbre exact au baseline : `a37bdde61027389330548410248969880889f668`.
+
+Inventaire exact :
+
+```text
+cadrage-cycle-fine-tuning.md
+fiche-cas-constante-cosmologique.md
+fiche-cas-hierarchie-electrofaible.md
+fiche-cas-quarks-legers-etat-hoyle.md
+fiche-cas-univers-sans-interaction-faible.md
+note-ponderation-cas-weakless.md
+synthese-premier-lot-fine-tuning.md
+```
+
+```text
+CYCLE_9_TOTAL_BLOBS = 7
+CYCLE_9_MARKDOWN = 7/7_LUS_INTEGRALEMENT
+DETTE_DOCX_C9 = 0
+COUVERTURE_DOCUMENTAIRE_CYCLE_9 = COMPLETE
+```
+
+Le cycle refuse de traiter le « fine-tuning » comme un diagnostic homogène. Les cas sont instruits avec des dépendances différentes et les sorties restent asymétriques.
+
+- la hiérarchie électrofaible conserve une sensibilité possible aux seuils UV, mais cette sensibilité est conditionnelle à la théorie et à la manière dont les degrés de liberté lourds sont reliés au secteur de Higgs ;
+- le cas weakless est un stress test de **possibilité conditionnelle** : il fragilise des formulations anthropiques trop fortes mais ne fournit ni probabilité, ni mécanisme de réalisation, ni preuve que notre interaction faible est dispensable dans toute histoire physique ;
+- l'état de Hoyle conserve une sensibilité physique réelle, mais elle est corrélée à plusieurs paramètres et à la physique nucléaire : le cas ne se réduit pas à un bouton indépendant ;
+- la constante cosmologique conserve une contingence résiduelle plus résistante dans le périmètre étudié.
+
+La synthèse refuse donc les deux réductions symétriques :
+
+```text
+FINE_TUNING = ILLUSION_GENERALE -> NON_ETABLI
+FINE_TUNING = PREUVE_GENERALE_DE_NECESSITE -> NON_ETABLI
+```
+
+La fonction du cycle est comparative : localiser ce qui relève d'une sensibilité paramétrique, d'une dépendance de théorie, d'un espace contrefactuel, d'une corrélation physique ou d'une contingence encore ouverte.
+
+### Cycle 10 — fixité électrofaible dynamique — couverture documentaire complète
+
+Arbre exact au baseline : `489b767b73a71dcb61b07a1579998532a557cdfc`.
+
+Inventaire matériel :
+
+```text
+Markdown = 10
+Python = 3
+CSV = 3
+TOTAL = 16
+```
+
+```text
+CYCLE_10_MARKDOWN = 10/10_LUS_INTEGRALEMENT
+CYCLE_10_SCRIPTS = 3/3_LUS_INTEGRALEMENT
+CYCLE_10_CSV = 3/3_LUS_INTEGRALEMENT
+CYCLE_10_TOTAL = 16/16_BLOBS_LUS
+DETTE_DOCX_C10 = 0
+COUVERTURE_DOCUMENTAIRE_CYCLE_10 = COMPLETE
+EXECUTION_NOUVELLE_PAR_L_AUDIT = NON
+```
+
+Le cadrage distingue au minimum dépendance RG, dépendance thermique/environnementale, variation dynamique dans l'espace-temps et variation inférentielle. Une variation dynamique exige un porteur, des équations, des fonctions de couplage, une rétroaction et des observables ; une simple prescription `G_F(t)` n'est pas considérée comme explication.
+
+Le dossier définit la « constitution dynamique d'une fixité » comme une quasi-stationnarité relative à un régime, une tolérance et une durée. Il garde explicitement comme issues possibles la réduction, le déplacement ou l'aggravation du réglage.
+
+#### Phase 2 — portail scalaire-Higgs minimal stable
+
+Le script `scan_portail_higgs.py` recoupe les hypothèses du rapport : condensat `Z_2` stable, régime quadratique après oscillation, `rho_phi propto a^-3`, absence de dissipation et filtre BBN simplifié.
+
+Sortie machine historique versionnée :
+
+```text
+points = 20769
+passes_all = 0
+```
+
+Le rapport et le CSV convergent sur l'obstacle : l'amplitude de `v` peut être rapidement amortie, mais l'énergie du condensat devient une relique de type matière et surproduit la densité cosmologique. La borne exploratoire relic-safe conduit à une variation initiale maximale de l'ordre de `7e-11`, trop petite pour l'objectif du cycle.
+
+Verdict borné :
+
+```text
+MODELE_Z2_MINIMAL_STABLE_QUADRATIQUE = ECARTE_COMME_MECANISME_AUTONOME_DANS_CE_TOY_MODEL
+EXCLUSION_GENERALE_DES_PORTAILS_SCALAIRES = NON
+```
+
+#### Phase 3 — régime quartique conservatif
+
+Le script `scan_portail_higgs_quartique.py` et son CSV donnent :
+
+```text
+total_points = 2077061
+acceptable_points = 0
+best_significant_r_eq ~= 6.0049e7
+```
+
+La dilution quartique améliore le comportement intermédiaire, mais le retour au régime quadratique induit par le portail réintroduit une composante de matière ; retarder ce retour augmente en même temps l'énergie quartique initiale.
+
+Verdict :
+
+```text
+REGIME_QUARTIQUE_CONSERVATIF_SEUL = INSUFFISANT_DANS_LE_MODELE_ETUDIE
+```
+
+#### Phase 4 — toy model dissipatif
+
+Le modèle ouvre explicitement le bilan énergétique : l'énergie perdue par le condensat est transférée au bain relativiste. Quatre prescriptions de dissipation sont comparées. Le code et le CSV reproduisent une fenêtre non vide pour une largeur constante, un taux thermique et un rapport `Gamma/H` constant ; une prescription auto-extinguible proportionnelle à `phi^2` exige des valeurs initiales de `Gamma/H` de l'ordre de `1e10-1e11` dans le contrôle local.
+
+Ce résultat change le statut technique du toy model, pas le statut scientifique de l'histoire réelle :
+
+```text
+FENETRE_DISSIPATIVE_PHENOMENOLOGIQUE = NON_VIDE
+TAUX_MICROSCOPIQUE_DERIVE_D_UN_LAGRANGIEN = NON
+HISTOIRE_REELLE_DE_L_UNIVERS_ETABLIE = NON
+PROBABILITE_DU_SCENARIO = NON_ETABLIE
+```
+
+La trajectoire des trois phases localise progressivement le problème :
+
+```text
+convergence de la variable seule
+-> devenir energetique du porteur
+-> dilution conservative insuffisante
+-> bilan ouvert phenomenologiquement possible
+-> origine microscopique du transfert encore ouverte.
+```
+
+Le cycle fournit donc plusieurs résultats négatifs précis et une fenêtre effective locale, sans établir une variation électrofaible réelle passée.
+
+### 03_TESTS_TAXONOMIQUES — couverture textuelle complète, DOCX ouverts
+
+Inventaire exact : 11 blobs = 7 Markdown + 4 DOCX.
+
+```text
+MARKDOWN_LUS_INTEGRALEMENT = 7/7
+DOCX_LUS_DIRECTEMENT = 0/4
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE = INCOMPLETE
+```
+
+La couche historique ne raconte pas une taxonomie déjà stabilisée. Le premier test des « familles fragiles » conservait encore :
+
+```text
+Relation = famille faible qualifiee ;
+Seuil = famille provisoire ;
+Fond = famille provisoire monoplace.
+```
+
+Les tests ultérieurs modifient réellement cet état :
+
+- `Seuil` est testé sur `M_W` et `Lambda_QCD` puis rétrogradé : ces grandeurs sont d'abord des échelles, le seuil étant un rôle local de borne ou de validité ;
+- `Fond` est testé contre `Lambda`, `H_0`, `Omega_i`, `w`, `A_s`, `n_s`, puis rétrogradé vers un rôle architectural cosmologique ;
+- `Relation` survit encore dans le test historique comme famille qualifiée, avec sous-types stratifié, compositionnel, spectral et constitutif ;
+- la récupération v1.3 durcit ensuite cette dernière conclusion et ne restaure plus `Relation` par défaut : la liaison devient un objet d'analyse soumis à un test de non-réduction.
+
+```text
+TAXONOMIE_HISTORIQUE = TRAJECTOIRE_DE_TESTS_ET_RETROGRADATIONS
+SEUIL_COMME_FAMILLE_ACTIVE = NON
+FOND_COMME_FAMILLE_ACTIVE = NON
+RELATION_COMME_FAMILLE_PAR_DEFAUT = NON_DANS_LA_RECUPERATION_V1_3
+FONCTIONS_LOCALES_ISSUES_DES_ANCIENNES_FAMILLES = CONSERVEES_A_TESTER
+```
+
+Le test traversant `H_0` ne recalcule pas la tension. Il vérifie qu'une tension peut devenir un signal méthodologique actif — niveau d'escalade, tests de dégradation et substitution — sans devenir une famille ni une anomalie physique conclue.
+
+Les quatre DOCX historiques restent une dette binaire transverse distincte de la dette des cycles physiques.
+
+### 04_ARCHITECTURES — couverture textuelle complète, DOCX ouvert
+
+Arbre exact au baseline : `15bccd447588d4f1798112b200d0aa374b761768`.
+
+```text
+TOTAL_BLOBS = 15
+MARKDOWN = 14/14_LUS_INTEGRALEMENT
+DOCX = 0/1_LU_DIRECTEMENT
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE = INCOMPLETE
+```
+
+Le seul DOCX est `00_Sources_docx/Note de consolidation saveur-Higgs v0.1.docx`, accompagné d'une extraction Markdown explicitement non substitutive.
+
+La couche architecturale fournit un second point de lecture du matériau des cycles. Elle ne doit pas être traitée comme autorité supérieure par emplacement. Sa trajectoire interne est elle-même stratifiée : consolidation historique, notes locales, stress test cosmologique, puis « cercle 2 » de reprise positive.
+
+#### Saveur-Higgs
+
+La note locale conserve dans son corps l'ancien verdict « architecture constitutive confirmée », mais un avis de requalification daté du 16 juillet 2026 retire explicitement ce verdict général : les relations et solidarités locales sont conservées, sans explication d'origine acquise. Le lot 2A conserve le terme `constitutif` comme fonction architecturale locale et recentre la description sur `v`, Yukawa, diagonalisation, spectres, orientations et accès.
+
+Ce recoupement est compatible avec le cycle 5 auditée exhaustivement :
+
+```text
+CHAINE_LOCALE_SAVEUR_HIGGS = CORROBOREE_DOCUMENTAIREMENT
+ARCHITECTURE_CONSTITUTIVE_COMME_VERDICT_GENERAL = REQUALIFIEE
+ORIGINE_YUKAWA_HIERARCHIES = TOUJOURS_OUVERTE
+```
+
+#### Métrologique SI
+
+Le lot 2B reformule le SI par la chaîne :
+
+```text
+stabilisation empirique
+-> absorption definitionnelle
+-> compositions exactes
+-> realisations pratiques
+-> redistribution des incertitudes
+-> roles physiques conserves.
+```
+
+Cette seconde couche recoupe le gain différentiel du cycle 8 et confirme que le contenu intéressant n'est pas l'exactitude brute, mais ce que la fixation change dans la fonction des expériences et dans la localisation de l'incertitude.
+
+#### Effective basse énergie
+
+La note locale emploie encore « architecture de validité confirmée ». Le lot 2C est plus descriptif : il distingue intégration locale d'un médiateur, flot/changement de régime QCD et suppression hiérarchique gravitationnelle. Le point transversal est une pluralité de **validités situées**, et non un mécanisme physique commun.
+
+Ce recoupement soutient la requalification déjà remontée au cycle 6 : unité méthodologique/structurelle de validité, sans famille ontologique unique.
+
+#### Cosmologique
+
+La note et le stress test maintiennent historiquement une macro-architecture inferentielle/reconstructive, mais la décomposent en sous-réseaux : fond/expansion, budget normalisé, état de composante, primordial, croissance/reconstruction, avec tensions transversales. Aucun sous-réseau autonome n'est confirmé dans ce stress test.
+
+Le lot 2D reformule positivement cette organisation. Cela demeure une couche historique distincte de la ligne computationnelle C7-C1 et de C7-GAL ; aucun statut scientifique de ces lignes actives n'en est déduit.
+
+#### Synthèse transverse du cercle 2
+
+Le lot 2E propose quatre « modes » :
+
+```text
+Saveur-Higgs -> constitution ;
+SI -> definition et realisation ;
+Effectif basse energie -> validite de description ;
+Cosmologie -> inference et reconstruction.
+```
+
+Il propose aussi comme grammaire transversale : régime, solidarité, accès, trajectoire, limite et test de retrait. Cette généralisation est désormais un **objet à éprouver** dans les cartes, synthèses, critiques et autres couches ; le fait qu'elle soit formulée dans une synthèse architecturale ne suffit pas à la promouvoir comme théorie du projet.
+
+```text
+QUATRE_MODES_ARCHITECTURAUX = PROPOSITION_TRANSVERSE_HISTORIQUE_A_TESTER
+GRAMMAIRE_REGIME_SOLIDARITE_ACCES_TRAJECTOIRE_LIMITE = OUTIL_TRANSVERSE_CANDIDAT
+TEST_DE_RETRAIT = OUTIL_CANDIDAT
+PROMOTION_COMME_THESE_GENERALE = NON_ETABLIE_A_CE_PALIER
+```
+
+Le lot 2F contrôle surtout le vocabulaire et décide que les anciennes notes ne doivent pas être « purifiées » ligne à ligne : elles gardent une fonction généalogique, tandis que les futures cartes doivent porter la formulation positive. Cela concorde avec le statut de laboratoire et avec la règle de ne pas réécrire rétroactivement les objets audités.
+
+La prochaine position documentaire propre est `05_CARTES_ET_SYNTHESES` (141 blobs), qui permettra précisément de tester comment ces propositions architecturales ont été propagées, corrigées ou contredites dans les cartes et synthèses ultérieures.
