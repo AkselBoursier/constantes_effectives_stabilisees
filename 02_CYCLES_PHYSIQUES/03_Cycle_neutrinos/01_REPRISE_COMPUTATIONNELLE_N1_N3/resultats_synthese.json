@@ -1,0 +1,48 @@
+{
+  "status": "surrogate_published_summary_not_official_chain_reproduction",
+  "oscillation_inputs": {
+    "dm21": 7.5e-05,
+    "dm21_sigma": 1.2e-06,
+    "dm32_no": 0.00243,
+    "dm32_no_sigma": 3.5e-05,
+    "abs_dm32_io": 0.00248,
+    "abs_dm32_io_sigma": 3.5e-05
+  },
+  "desi_published_summary": {
+    "bayes_upper_95": 0.0642,
+    "posterior_sd": 0.02,
+    "feldman_cousins_upper_95": 0.053,
+    "w0wa_upper_95": 0.163
+  },
+  "oscillation_floors": {
+    "NO": {
+      "mean_eV": 0.05870910464100896,
+      "sd_eV": 0.0003594630312768552,
+      "quantiles_2p5_50_97p5_eV": [
+        0.05800024822730542,
+        0.05871054463010421,
+        0.059408337078198314
+      ]
+    },
+    "IO": {
+      "mean_eV": 0.09883952325626025,
+      "sd_eV": 0.0007077005772072936,
+      "quantiles_2p5_50_97p5_eV": [
+        0.09744899827548775,
+        0.09884111216770104,
+        0.10021747278230608
+      ]
+    }
+  },
+  "surrogate_unbounded_gaussian": {
+    "mu_eV": -0.015164903259505593,
+    "sigma_eV": 0.037496590882208004
+  },
+  "diagnostics": {
+    "probability_above_NO_floor_given_uniform_Sigma_ge_0": 0.07117851509133512,
+    "probability_above_IO_floor_given_uniform_Sigma_ge_0": 0.0034446821266535268,
+    "z_NO_floor_from_unbounded_surrogate_mean": 1.9701526502124624,
+    "z_IO_floor_from_unbounded_surrogate_mean": 3.0403944420947484,
+    "bayes_factor_NO_over_IO_uniform_m_lightest_0_1eV": 15.886280651392372
+  }
+}

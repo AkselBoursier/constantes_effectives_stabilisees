@@ -1,5 +1,12 @@
 # Matrice des acquis theoriques v0.1
 
+> **Avis de rang — 16 juillet 2026.** Cette matrice est conservee comme
+> extraction doctrinale d'un etat anterieur. Elle ne constitue plus une
+> autorite generale sur l'orientation ni sur la ponderation des cycles. Les
+> formulations centrees sur la qualification doivent etre relues depuis la
+> [vue d'ensemble v0.3](Vue_ensemble_une_page_v0_3.md) et le [controle de
+> consolidation](Controle_consolidation_cinq_contrastes_v0_1.md).
+
 ## Passage de la carte methodologique aux enonces argumentables
 
 ### 1. Fonction

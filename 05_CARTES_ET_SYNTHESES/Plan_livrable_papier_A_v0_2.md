@@ -6,12 +6,17 @@
 
 ```text
 statut : plan actif resserré ;
+décision 2026-07-27 : l'essai « Qualifier la constance » (fusionné dans main, PR #59) est un article autonome, distinct de ce papier A (monographie grande voilure) et des plans A1/A2 ; ce dispositif de livrables est donc découplé de l'essai et à ré-actualiser au regard de l'avancement ;
 remplace pour l’usage courant : Plan_livrable_papier_A_v0_1.md ;
 conserve la v0.1 : comme plan de grande voilure et réservoir ;
 format visé : premier article autonome, centré sur la constance de l’objet ;
 constitution : second axe, préparant un papier B ;
-accès : appareil probatoire subordonné, non centre philosophique.
+accès : appareil probatoire décisif dans ce papier, sans devenir le centre
+        philosophique de ce livrable précis.
 ```
+
+Cet ordre est local au papier A. Il corrige un surcentrage antérieur de l'accès,
+mais ne fixe pas une hiérarchie générale entre objet, constitution et accès.
 
 ## 1. Question du papier
 
@@ -81,7 +86,7 @@ Fonction : établir la constance effective et sa rupture à l’échelle faible.
 Thèse locale : une grandeur peut être constante dans un régime sans être
 fondamentale ni universelle.
 
-### 4.5 Cas positif 2 — `h` et `R = N_A k_B` dans le SI
+### 4.5 Cas positif 2 — `h` et `R = N_A k_B` dans le Système international d’unités (SI)
 
 Fonction : distinguer exactitude définissante, composition et réalisation.
 
@@ -99,7 +104,7 @@ Le détail des tensions sert de contrôle, non de centre de l’article.
 
 Fonction : montrer qu’un domaine admissible stable n’est pas une valeur constante.
 
-### 4.8 Première ouverture constitutive — CKM/PMNS et BEH
+### 4.8 Première ouverture constitutive — matrices de Cabibbo–Kobayashi–Maskawa (CKM), de Pontecorvo–Maki–Nakagawa–Sakata (PMNS) et mécanisme Brout–Englert–Higgs (BEH)
 
 Fonction : distinguer :
 
@@ -111,9 +116,10 @@ origine encore ouverte des valeurs.
 
 Cette section prépare la question génétique sans l’épuiser.
 
-### 4.9 Discussion — hiérarchie des questions
+### 4.9 Discussion — articulation des questions
 
-Présenter explicitement :
+Présenter explicitement les trois questions, dans l'ordre argumentatif local du
+papier :
 
 ```text
 I. ce qui tient ;

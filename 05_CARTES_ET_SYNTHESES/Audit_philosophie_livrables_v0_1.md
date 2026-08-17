@@ -365,6 +365,11 @@ Le mecanisme BEH occupe une zone de jonction :
 seuil de constitution ;
 rapport entre champ, masse et stabilisation ;
 frontiere entre cycle physique et interrogation philosophique.
+statut a jour (2026-07-27) : cette zone est desormais instruite cote
+physique par le cycle 5 (cas electron : masse physique, Yukawa, vertex
+H-e-e ; lot S1-S3 localement clos) ; le raccordement philosophique est
+ouvert le 2026-07-27 comme chantier ; le dossier reste sous le sas
+d'integration.
 ```
 
 Usage :

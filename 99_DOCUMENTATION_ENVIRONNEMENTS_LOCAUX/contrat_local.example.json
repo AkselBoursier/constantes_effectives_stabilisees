@@ -1,0 +1,73 @@
+{
+  "_commentaire": "MODÈLE PUBLIC — aucune valeur locale réelle. Copier hors du dépôt, remplir avec les chemins réels, et ne JAMAIS versionner la copie remplie (voir .gitignore). Les valeurs de capacité ci-dessous ne sont PAS des exemples : ce sont les valeurs ratifiées du lot C7-C1 (issue #90, 2 août 2026), que le lanceur compare exactement.",
+  "contrat": "c7-c1-local",
+  "version": "1.3.0",
+  "date_utc": "AAAA-MM-JJTHH:MM:SS+00:00",
+  "statut": "PREPARATION_ONLY",
+  "confidentialite": "PRIVE — contient des chemins locaux reels ; jamais dans le depot public",
+  "chemins_reels": {
+    "depot_directeur": "<REPO>",
+    "environnement": "<ENV>",
+    "python_directeur": "<ENV>/Scripts/python.exe",
+    "env_secondaire_gele": "<ENV_SECONDAIRE>",
+    "donnees": "<DATA>",
+    "runs": "<RUNS>",
+    "temp_scientifique": "<TEMP>",
+    "caches": "<CACHE>",
+    "archives_runs_anterieurs": "<ARCHIVES>",
+    "restauration": "<RESTAURATION>",
+    "manifestes": "<MANIFESTES>"
+  },
+  "environnement": {
+    "python": "3.12.0",
+    "cobaya": "3.5",
+    "camb": "1.5.4",
+    "numpy": "1.26.4",
+    "scipy": "1.13.1",
+    "getdist": "1.7.7",
+    "n_paquets": 35,
+    "empreinte_sha256_inventaire_normalise": "<SHA256_INVENTAIRE>",
+    "contrainte": "numpy < 2 obligatoire (camb 1.5.4)",
+    "wsl_class": "environnement distinct, NON substituable, hors autorite C7-C1"
+  },
+  "donnees": {
+    "<FICHIER_BAO_MOYENNE>": "<SHA256>",
+    "<FICHIER_BAO_COVARIANCE>": "<SHA256>",
+    "manifeste": "<MANIFESTES>/manifeste_donnees.json"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "NUMEXPR_NUM_THREADS": 1,
+    "PYTHONNOUSERSITE": 1,
+    "regle": "injectes par l'enveloppe au processus ; jamais persistes"
+  },
+  "racine_runs": {
+    "chemin": "<RUNS>",
+    "hors_git": true,
+    "hors_synchronisation_cloud": true,
+    "systeme_fichiers": "NTFS",
+    "gelee_pour_le_lot": true,
+    "migration_pendant_chaine_ou_reprise": false,
+    "garde_technique_minimale_Gio": 40,
+    "budget_production_requis_Gio": 20,
+    "budget_production_statut": "RATIFIE",
+    "regle_capacite": "La garde technique minimale ne constitue pas une autorisation de production. L'admission d'un NOUVEAU run exige : espace_libre >= budget_restant_alloue + allocation_run_actif + reserve_reprise + reserve_volume. La ratification du budget ne vaut PAS autorisation : le statut global reste PREPARATION_ONLY et la production reste verrouillée.",
+    "statut": "PRETE, NON OUVERTE A LA PRODUCTION",
+    "reference_ratification_budget": "CAP0-2026-08-02-issue90-rat1",
+    "reserve_reprise_Gio": 1.15,
+    "reserve_volume_minimale_Gio": 40,
+    "politique_capacite_version": "cap1-1.1.0",
+    "volume_ratifie": "C",
+    "_note_volume_ratifie": "Lettre du volume ratifie par decision humaine. Source NORMATIVE unique du support actif : elle n'est jamais deduite de %SystemDrive%. Deplacer <RUNS> vers un autre volume exige une nouvelle ratification humaine et une nouvelle version de politique de capacite."
+  },
+  "interdits_en_vigueur": [
+    "raccord au lanceur",
+    "manifestes reels de production",
+    "MCMC",
+    "minimisation",
+    "posterior",
+    "reecriture d'historique Git"
+  ]
+}

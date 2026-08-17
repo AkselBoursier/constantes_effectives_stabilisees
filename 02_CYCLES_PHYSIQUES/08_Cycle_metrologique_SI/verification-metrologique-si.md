@@ -252,16 +252,21 @@ Cette architecture est réelle et opératoire.
 
 Elle n’est pas une architecture physique au même sens que le secteur Higgs–Yukawa, ni une architecture de validité au sens des EFT.
 
-### Décision
+### Décision requalifiée
 
 ```text
-architecture métrologique définitionnelle : confirmée ;
+architecture métrologique définitionnelle : établie au sens descriptif minimal ;
 unification ontologique des constantes : refusée.
 ```
 
-## 11. Résultat pour la fonction de fixité
+Cette décision ne suffit pas à attribuer au cycle une forte portée
+philosophique. Celle-ci dépend d'effets différentiels établis sur les chaînes
+de réalisation, la redistribution des incertitudes, les comparaisons ou les
+inférences.
 
-Le SI montre une fonction de fixité distincte :
+## 11. Résultat pour la fonction métrologique
+
+Le SI permet de décrire une fonction métrologique distincte :
 
 > assurer la stabilité intersubjective et internationale des valeurs numériques, des unités et des comparaisons de mesure.
 

@@ -25,7 +25,7 @@ dans l'etat fondamental), les masses des bosons de jauge et des
 fermions sont installes.
 second ordre (le corpus) : le statut de ce qui se stabilise a la
 transition. Le corpus traite "brisure" comme tete de trajectoire du
-secteur Saveur-Higgs et la laisse en boite ; le chantier demande ce
+secteur Saveur-Higgs, et cette tete est desormais instruite cote physique par le cycle 5 (cas electron), qui reconstruit le reseau v / masse / Yukawa en regime brise (lot S1-S3 valide, PR #56) ; le raccordement philosophique de la jonction BEH est ouvert le 2026-07-27 comme chantier, sous le sas d'integration ; le chantier demande ce
 qui, exactement, acquiert un statut stable, et par quel regime.
 ```
 
@@ -128,15 +128,20 @@ que ce releve s'interdit.
 1. la question technique (la brisure est-elle physique ?) est un
    debat actif, non clos ; le corpus n'a pas a la trancher, il peut
    la situer.
-2. le versant physique du chantier (mecanisme BEH, potentiel,
-   stabilite du vide, valeur v) reste a instruire - possiblement
-   cote Codex, au registre froid, comme envisage.
+2. le versant physique du chantier (valeur v, relation masse-Yukawa,
+   acces au vertex H-e-e) est desormais instruit cote physique par le
+   cycle 5 (cas electron) : lot S1-S3 valide et localement clos (PR #56),
+   v traite comme parametre electrofaible ; la jonction BEH est ainsi
+   instruite cote physique, et son raccordement philosophique est
+   ouvert le 2026-07-27 comme chantier, sous le sas d'integration.
 3. lectures primaires a programmer avant tout fil : Struyve (2011,
    arXiv 1102.0468), Smeenk (2006), la synthese de Strocchi (2015),
    l'entree SEP sur la symetrie et sa brisure.
-4. prochaine etape cote philosophie : un voisinage dedie (genre
-   Voisinage) sur une des positions, quand un fil sera extrait -
-   pas avant.
+4. prochaine etape cote philosophie : le raccordement est ouvert le
+   2026-07-27 (decision de l'auteur), a la suite de l'instruction
+   physique par le cycle 5 (BEH) et de l'ouverture du cycle 7
+   (historicite cosmique, issue #61) ; un voisinage dedie sur une des
+   positions peut desormais etre instruit, le fil pouvant etre extrait.
 ```
 
 ### 6. Sources

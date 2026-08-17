@@ -1,0 +1,6 @@
+construction,quantite,valeur_eV,statut,interpretation
+base_mnu,quantile_superieur_95,0.0642,publie_non_reproduit,"LambdaCDM, somme libre et frontiere a zero"
+base_mnu,ecart_type_marginal,0.0200,publie_non_reproduit,"largeur marginale rapportee par l'analyse neutrino"
+base_mnu_w_wa,quantile_superieur_95,0.1630,publie_non_reproduit,"extension w0-wa; borne environ 2.54 fois plus haute"
+base_mnu_binary_3,masse_legere_superieure_95,0.0230,publie_non_reproduit,"profils d'oscillation et deux ordres; non equivalent a base_mnu059"
+base_mnu059,quantile_superieur_95,,non_extrait,"doit etre calcule depuis les poids officiels"

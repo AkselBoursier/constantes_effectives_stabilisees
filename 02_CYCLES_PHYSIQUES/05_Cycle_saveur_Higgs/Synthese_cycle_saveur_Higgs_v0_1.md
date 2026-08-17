@@ -2,6 +2,15 @@
 
 ## Architecture constitutive, echelle de brisure et orientations de saveur
 
+> **Requalification active — 14 juillet 2026.** Le reseau physique decrit dans
+> cette synthese est conserve. En revanche, les formules « architecture
+> constitutive confirmee », « solidarite constitutive stabilisee » et
+> « temporalite de constitution » ne valent plus comme verdicts generaux. Le
+> cycle est desormais un **pont architectural** : il documente comment echelle,
+> couplages, spectres et orientations deviennent solidaires dans le regime
+> electrofaible brise, sans transformer cette solidarite en explication de leur
+> origine ni en philosophie generale de la constitution.
+
 ### 1. Fonction de cette synthese
 
 Cette synthese met le cycle Saveur-Higgs au meme rang documentaire que les autres cycles physiques actifs.
@@ -18,23 +27,27 @@ angles de melange leptoniques
 masse absolue des neutrinos
 ```
 
-Elle extrait leur consequence methodologique principale :
+Elle extrait leur consequence methodologique principale, requalifiee apres le
+controle comparatif des dix cycles :
 
 ```text
-Saveur-Higgs = architecture constitutive de solidarisation
+Saveur-Higgs = reseau architectural de dependances documente
 ```
 
-Cette consequence fixe un rang architectural, non une sortie taxonomique locale.
+Cette consequence attribue au cycle un role de pont, non une sortie taxonomique
+locale ni un rang explicatif superieur.
 
 ### 2. Question directrice
 
 La question du cycle est :
 
-> Qu'est-ce qui devient stabilise dans le secteur Saveur-Higgs lorsque l'echelle de brisure, les matrices de couplage, les masses et les orientations deviennent solidaires ?
+> Comment l'echelle de brisure, les matrices de couplage, les masses et les
+> orientations deviennent-elles solidaires dans le secteur Saveur-Higgs, et
+> que cette solidarite explique-t-elle effectivement ?
 
 La reponse n'est pas une constante unique.
 
-Le cycle stabilise une structure :
+Le cycle documente une structure :
 
 ```text
 echelle de brisure
@@ -46,10 +59,10 @@ echelle de brisure
 
 ### 3. Decision centrale
 
-La decision de rang est :
+La decision de rang requalifiee est :
 
 ```text
-Architecture Saveur-Higgs = architecture constitutive confirmee.
+Saveur-Higgs = pont architectural documente, gain explicatif conditionnel.
 ```
 
 Elle articule plusieurs familles ou roles :
@@ -65,11 +78,11 @@ Borne ou projection pour certains neutrinos
 
 Elle ne cree pas une famille superieure.
 
-### 4. Trajectoire constitutive
+### 4. Reseau physique et ordre de description
 
 Le cycle n'est pas seulement un tableau de grandeurs juxtaposees.
 
-Il a une trajectoire de stabilisation :
+Il articule un enchainement de relations :
 
 ```text
 regime electrofaible non brise
@@ -82,7 +95,8 @@ regime electrofaible non brise
 -> manifestations transitionnelles ou oscillatoires
 ```
 
-Cette temporalite est conceptuelle.
+Cet ordre est logique et descriptif. Il ne doit etre confondu ni avec une
+histoire temporelle unique, ni avec une genese physique complete.
 
 Elle ne pretend pas expliquer l'origine profonde des Yukawa.
 
@@ -152,7 +166,7 @@ une grandeur Saveur-Higgs doit toujours etre lue avec son regime physique et son
 
 ### 8. Formes internes du cycle
 
-Le cycle stabilise quatre formes internes.
+Le cycle distingue quatre formes internes.
 
 | Forme | Grandeurs | Fonction |
 |---|---|---|
@@ -165,17 +179,17 @@ Ces formes ne se remplacent pas.
 
 Elles sont solidaires dans l'architecture.
 
-### 9. Ce que le cycle confirme
+### 9. Ce que le cycle etablit localement
 
-Le cycle confirme :
+Le cycle etablit :
 
 ```text
-1. Saveur-Higgs est une architecture constitutive.
-2. Cette architecture stabilise une solidarite constitutive.
+1. Echelle, couplages, spectres et orientations forment un reseau de dependances.
+2. Ce reseau est physiquement instructif dans le regime electrofaible brise.
 3. Relation ne doit pas absorber les masses, matrices et ecarts.
 4. Orientation reste une famille forte pour CKM et PMNS.
 5. Les neutrinos exigent une prudence d'acces et de modele.
-6. La temporalite pertinente est une temporalite de constitution.
+6. L'ordre logique, l'histoire thermique et les voies d'acces doivent rester distincts.
 ```
 
 ### 10. Ce que le cycle ne confirme pas
@@ -202,21 +216,25 @@ un classement relationnel pour toute ecriture de masse ou de melange.
 | Les regimes d'acces sont-ils explicites ? | Oui, mais heterogenes |
 | L'architecture se reduit-elle a Relation ? | Non |
 
-Conclusion :
+Conclusion requalifiee :
 
 ```text
-Architecture Saveur-Higgs confirmee comme architecture constitutive.
+Pont Saveur-Higgs documente ; explication de l'origine et generalisation refusees.
 ```
 
 ### 12. Formule issue du cycle
 
 Formule longue :
 
-> Une grandeur Saveur-Higgs n'est pas seulement une valeur ou une relation ; elle prend statut dans une trajectoire constitutive ou l'echelle de brisure, les couplages, les spectres et les orientations deviennent solidaires.
+> Une grandeur Saveur-Higgs n'est pas seulement une valeur ou une relation ;
+> elle est decrite dans un reseau ou l'echelle de brisure, les couplages, les
+> spectres et les orientations deviennent solidaires sous des hypotheses
+> determinees.
 
 Formule courte :
 
-> Saveur-Higgs stabilise une constitution architecturale.
+> Saveur-Higgs documente une solidarite architecturale sans en faire une
+> explication d'origine.
 
 ### 13. Effet sur les documents actifs
 

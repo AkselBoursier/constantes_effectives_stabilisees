@@ -4,7 +4,15 @@
 
 Cette phase ajoute un bilan énergétique ouvert au condensat scalaire homogène.
 
-Le calcul reste phénoménologique. Il ne dérive pas `Gamma_phi` depuis un lagrangien et ne constitue ni un calcul de thermalisation complet ni une analyse BBN.
+Le calcul reste phénoménologique. Il ne dérive pas `Gamma_phi` depuis un
+lagrangien et ne constitue ni un calcul de thermalisation complet ni une
+analyse de nucléosynthèse primordiale (BBN).
+
+Le [contraste avec le cycle d'ajustement fin](../../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_9_10_contrefactuel_dynamique_contingence_v0_1.md),
+achevé le 16 juillet 2026, conserve cette fenêtre comme résultat effectif local.
+Il précise qu'elle n'est ni une probabilité, ni une réalisation microscopique,
+ni l'établissement de l'histoire réelle de notre univers. Le scan compare des
+paramètres ; l'intégration calcule une trajectoire pour chaque point.
 
 La question testée est :
 

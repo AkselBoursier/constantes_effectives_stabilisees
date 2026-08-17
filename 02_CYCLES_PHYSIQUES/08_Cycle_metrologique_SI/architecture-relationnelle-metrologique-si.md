@@ -247,9 +247,9 @@ La définition de la seconde pourrait être révisée sans que le temps physique
 
 La photométrie SI serait organisée différemment, sans modification de la propagation électromagnétique elle-même.
 
-## 12. Première décision sur la fonction de fixité
+## 12. Première décision sur la fonction métrologique
 
-Le SI confirme une fonction de fixité réelle, mais elle est :
+Le dossier documente une fonction métrologique précise, qui est :
 
 ```text
 définitionnelle
@@ -259,7 +259,10 @@ définitionnelle
 
 plutôt que dynamique.
 
-Elle maintient la comparabilité des mesures en fixant des valeurs numériques et des règles de dérivation.
+Elle maintient la comparabilité des mesures en fixant des valeurs numériques
+et des règles de dérivation. Cette description ne reçoit une portée
+philosophique supplémentaire que si ses effets sur les réalisations, les
+incertitudes ou les inférences sont effectivement montrés.
 
 Elle ne doit pas être projetée rétroactivement sur la nature physique des grandeurs comme si celles-ci étaient devenues constantes par décision.
 

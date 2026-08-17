@@ -1,5 +1,7 @@
 # Audit de solidite v0.1
 
+> **Declassement (2026-07-27, rang genealogie).** Sont declassees, deja appliquees : les deux corrections ciblees de la fiche V2 (qualification P5/P6 de la seconde moitie de la formule de l'objet inverse ; distinction realisation traitee / formation de regime impensee). Le reste de l'audit (echelle probatoire P1-P6, ordre des tests) reste actif ou a re-decider.
+
 ## Statuts probatoires des pieces maitresses, risque structurel du redacteur-modele, et point nodal
 
 ### 0. Statut documentaire

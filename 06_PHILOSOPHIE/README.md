@@ -1,5 +1,32 @@
 # 06_PHILOSOPHIE
 
+## Chantier actif — catégories, accès et inférences en microphysique
+
+Branche : `agent/contribution-q1-information-chemin`
+
+Le chantier Q (catégories, accès et inférences en microphysique) étudie les
+fonctions des catégories dans la préparation, le contrôle, l'enregistrement,
+l'inférence et la communication. Il ne doit pas être
+confondu avec la question de qualification (`Q-qual`) ni avec la question de
+formation (`Q-form`). Les niveaux `C0–C4` désignent la maturité d'une
+contribution.
+
+Ordre de lecture :
+
+1. [Entrée du chantier Q](PROGRAMME_Q1_CONTRIBUTION_README.md)
+2. [Dossier Stern–Gerlach](PILOTE_Q1_STERN_GERLACH_README.md)
+3. [Interférence — cadrage](Pilote_Q1_interference_cadrage_v0_1.md)
+4. [Interférence — fonctions et migrations](Pilote_Q1_interference_fonctions_v0_1.md)
+5. [Interférence — évaluation de contribution](Pilote_Q1_interference_evaluation_contribution_v0_1.md)
+
+Stern–Gerlach et les séquences d'axes servent de calibration. Le troisième test
+sur l'interférence distingue une indication encodée, accessible, lue,
+enregistrée ou utilisée pour conditionner une inférence.
+
+Statut : coordination de couches établie (`C1`) ; contribution différenciée
+plausible (`C2`) ; protocole transférable non établi (`C3`). La prochaine
+opération est le positionnement bibliographique de `C2`.
+
 ## Charte de la branche philosophique v0.1
 
 ### 1. Fonction
@@ -72,10 +99,8 @@ rang : exploration philosophique active ;
 la branche est en amont des degagements theoriques :
 elle nourrit la matrice des degagements et les fiches d'horizon,
 elle ne les remplace pas.
-
 l'integration de cette branche a l'index raisonne du corpus est
 une decision de statut soumise a validation.
-
 le sas de raccordement actuel est :
 05_CARTES_ET_SYNTHESES/Audit_integration_branche_philosophique_v0_1.md
 ```
@@ -126,7 +151,10 @@ Ordre de la suite (decide en juillet 2026) :
    B sont ouvertes, sous reserves de lectures integrales listees
    dans chaque fiche (Massimi 2022 ; Tal 2018 ; volume Routledge
    2019 ; Papale 2024 ; Wolff 2020) ;
-   la suite se decide au guichet : plan de livrable du papier A,
+   la suite se decide au guichet [decision 2026-07-27 : l'essai « Qualifier
+   la constance » fusionne (PR #59) est un article autonome, distinct du
+   papier A / A1 / A2 ; ce dispositif de livrables est decouple de l'essai
+   et a re-actualiser] : plan de livrable du papier A,
    ou deuxieme cycle (V1-V2 ont amorce son axe), ou voisinages
    V3-V6 restants ;
 3. deuxieme cycle programme : conditions d'acces et constitution
@@ -159,6 +187,10 @@ Ordre de la suite (decide en juillet 2026) :
 8. releve de paysage brisure electrofaible : produit comme
    preparation du seuil electrofaible et de la jonction
    d'historicite cosmique, sans ouverture du chantier et sans
-   extraction de fil ; sas de cadrage correspondant :
+   extraction de fil ; cote physique, la zone de jonction BEH est
+   desormais instruite par le cycle 5 (Saveur-Higgs, cas electron), le
+   raccordement philosophique etant ouvert le 2026-07-27 comme chantier,
+   sous le sas de cadrage ; sas
+   de cadrage correspondant :
    05_CARTES_ET_SYNTHESES/Note_cadrage_BEH_zone_jonction_v0_1.md.
 ```

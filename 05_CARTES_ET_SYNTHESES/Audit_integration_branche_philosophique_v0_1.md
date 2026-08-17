@@ -1,5 +1,7 @@
 # Audit d'integration de la branche philosophique v0.1
 
+> **Declassement (2026-07-27, rang genealogie).** Est declassee la clause de perimetre de ce cycle d'audit ("aucune fusion vers main, aucun changement de rang du pan physique, seules des corrections locales de rang et de formulation") : le cycle d'audit est passe et une fusion a depuis eu lieu (essai, PR #59). La regle d'integration (le sas) et les statuts d'usage de la branche restent actifs.
+
 ## Tri de raccordement, statuts d'usage et micro-corrections avant commit sur travail
 
 ### 0. Statut documentaire
@@ -70,7 +72,9 @@ ou des horizons differes.
    maturite probatoire.
 
 4. Les chantiers CP-1 a CP-4, V-dim, C6 et la question
-   Brout-Englert-Higgs sont des signaux de jonction. Ils deviennent
+   Brout-Englert-Higgs sont des signaux de jonction. La question BEH
+   est desormais instruite cote physique par le cycle 5 (cas electron),
+   mais reste non raccordee cote philosophique ; les autres deviennent
    interessants apres raccordement, pas dans ce commit.
 
 5. La covariance CODATA garde rang de controle de fidelite. Elle ne
@@ -127,7 +131,7 @@ deux vers le mecanisme de Brout-Englert-Higgs comme zone de jonction :
 brisure, constitution de secteur, acquisition de masse, regime deja
 brise, historicite cosmique.
 
-statut dans le present audit : signal reconnu, non ouvert.
+statut dans le present audit : desormais instruit cote physique par le cycle 5 (cas electron : reseau probatoire de la masse physique au Yukawa puis au vertex H-e-e, lot S1-S3) ; raccordement philosophique ouvert le 2026-07-27 comme chantier (decision de l'auteur), sous le sas d'integration.
 raison : l'ouverture BEH toucherait a la fois CP-1, CP-2, C6 et la
 question de formation Q2. Elle doit venir apres le raccordement de
 la branche philosophique et apres une note dediee de cadrage.

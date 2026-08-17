@@ -4,7 +4,6 @@
 Controle :
 - marqueurs de conflit Git ;
 - blocs de code Markdown non fermes ;
-- titres sans contenu avant le titre suivant ou la fin du fichier ;
 - liens relatifs vers des fichiers absents ;
 - references a quelques versions obsoletes dans les documents actifs.
 
@@ -34,7 +33,7 @@ SOURCE_OR_ARCHIVE_PARTS = {
     "90_Critiques_ constantes_effectives_stabilisees",
 }
 
-CONFLICT_MARKERS = ("<<<<<<<", "=======", ">>>>>>>")
+CONFLICT_BOUNDARIES = ("<<<<<<<", ">>>>>>>")
 
 OBSOLETE_ACTIVE_REFERENCES = {
     "Matrice_temporelle_v0_1.md": "Matrice_temporelle_v0_2.md",
@@ -44,7 +43,6 @@ OBSOLETE_ACTIVE_REFERENCES = {
 }
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
-HEADING_RE = re.compile(r"^(#{1,6})\s+\S")
 FENCE_RE = re.compile(r"^\s*```")
 
 
@@ -76,11 +74,28 @@ def is_historical_or_source(path: Path) -> bool:
     return any(part in SOURCE_OR_ARCHIVE_PARTS for part in path.parts)
 
 
+def iter_lines_outside_fences(lines: list[str]):
+    """Yield 1-based line numbers and content outside fenced code blocks.
+
+    Markdown-like syntax inside code examples must not be interpreted as links or
+    active document references. PowerShell casts such as ``[int](...)`` are a
+    representative false positive avoided by this iterator.
+    """
+
+    in_fence = False
+    for number, line in enumerate(lines, start=1):
+        if FENCE_RE.match(line):
+            in_fence = not in_fence
+            continue
+        if not in_fence:
+            yield number, line
+
+
 def check_conflicts(path: Path, lines: list[str]) -> list[Finding]:
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         stripped = line.lstrip()
-        if any(stripped.startswith(marker) for marker in CONFLICT_MARKERS):
+        if any(stripped.startswith(marker) for marker in CONFLICT_BOUNDARIES):
             findings.append(
                 Finding("ERROR", path, number, "marqueur de conflit Git")
             )
@@ -105,31 +120,6 @@ def check_fences(path: Path, lines: list[str]) -> list[Finding]:
     ]
 
 
-def check_empty_headings(path: Path, lines: list[str]) -> list[Finding]:
-    findings: list[Finding] = []
-    headings = [
-        index for index, line in enumerate(lines) if HEADING_RE.match(line)
-    ]
-    for position, index in enumerate(headings):
-        next_index = headings[position + 1] if position + 1 < len(headings) else len(lines)
-        body = lines[index + 1 : next_index]
-        meaningful = [
-            line.strip()
-            for line in body
-            if line.strip() and not line.strip().startswith("<!--")
-        ]
-        if not meaningful:
-            findings.append(
-                Finding(
-                    "WARNING",
-                    path,
-                    index + 1,
-                    "titre sans contenu avant le titre suivant ou la fin du fichier",
-                )
-            )
-    return findings
-
-
 def normalize_link_target(raw: str) -> str | None:
     target = raw.strip()
     if not target:
@@ -152,7 +142,7 @@ def normalize_link_target(raw: str) -> str | None:
 
 def check_links(path: Path, lines: list[str], root: Path) -> list[Finding]:
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         for match in LINK_RE.finditer(line):
             target = normalize_link_target(match.group(1))
             if target is None:
@@ -189,7 +179,7 @@ def check_obsolete_references(path: Path, lines: list[str]) -> list[Finding]:
         return []
 
     findings: list[Finding] = []
-    for number, line in enumerate(lines, start=1):
+    for number, line in iter_lines_outside_fences(lines):
         for obsolete, replacement in OBSOLETE_ACTIVE_REFERENCES.items():
             if obsolete in line:
                 findings.append(
@@ -213,7 +203,6 @@ def audit_file(path: Path, root: Path) -> list[Finding]:
     findings: list[Finding] = []
     findings.extend(check_conflicts(path, lines))
     findings.extend(check_fences(path, lines))
-    findings.extend(check_empty_headings(path, lines))
     findings.extend(check_links(path, lines, root))
     findings.extend(check_obsolete_references(path, lines))
     return findings

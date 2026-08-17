@@ -1,5 +1,7 @@
 # Plan d'instruction des echelles philosophiques v0.1
 
+> **Declassement (2026-07-27, rang genealogie).** Sont declassees, executees : les lots P0 (Carte_foyers), E-1 (Extraction_epistemologique_cycles_physiques) et E0 (Table_echelles_situations) et l'ordre d'anteriorite correspondant - leurs trois sorties existent dans 05_CARTES_ET_SYNTHESES. Evaluation faite (2026-07-27) : le programme est declasse comme depasse. Sa fonction terminale d'arbitrage de livrable est supersedee par la gouvernance des dettes (D9) et par la decision de l'essai comme article autonome ; sa substance est deja instruite comme chantiers vivants (Q2 active, jonctions BEH et C6 ouvertes, cosmologie via cycle 7 / issue #61). Les lots E1/E2/E3 et la synthese ne sont pas a produire. A garder passivement : la table des echelles (section 2) comme carte d'attention. Alignement d'etiquettes : l'echelle de maturite P1-P6 de ce plan est distincte de l'echelle probatoire P1-P6 canonique (06_PHILOSOPHIE/Audit_solidite_v0_1.md) - meme etiquette, deux systemes.
+
 ## 0. Statut documentaire
 
 ```text

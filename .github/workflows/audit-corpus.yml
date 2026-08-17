@@ -7,27 +7,105 @@ on:
 permissions:
   contents: read
 
+# Les runs automatiques d'une meme PR partagent une cle de concurrence.
+# Un lancement manuel utilise son run_id et reste donc independant des PR et des autres lancements manuels.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
 
       - name: Configurer Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
+      - name: Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Vérifier la structure
         run: python audit/audit_structure_corpus.py
 
-      - name: Vérifier les liens
-        run: bash audit/audit_liens.sh
+      # Contrat : PASS signifie que tous les exports explicitement cibles existent et sont deja
+      # sous leur forme assainie canonique. Cela n'etablit ni l'exhaustivite des archives ni leur validite scientifique.
+      - name: Vérifier l'assainissement des archives conversationnelles
+        run: node audit/sanitize_conversation_exports.mjs
 
-      - name: Vérifier l'encodage
-        run: bash audit/audit_encodage.sh
+      # Contrat : PASS signifie qu'aucune entree suivie par Git n'appartient aux deux classes
+      # interdites ci-dessous. Cela ne vaut pas audit general de toutes les donnees sensibles ou externes.
+      - name: Vérifier les données externes et PDF éditeurs
+        shell: bash
+        run: |
+          if git ls-files data_external | grep -q .; then
+            echo "Des données externes sont suivies par Git." >&2
+            exit 1
+          fi
+          if git ls-files '93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/**/*.pdf' | grep -q .; then
+            echo "Un PDF éditeur reste suivi dans le laboratoire éditorial." >&2
+            exit 1
+          fi
+
+      - name: Compiler les scripts Python
+        run: python -m compileall -q audit 02_CYCLES_PHYSIQUES
+
+      - name: Déterminer la portée du test C2
+        id: c2_scope
+        shell: bash
+        run: |
+          c2_relevant_from_files() {
+            grep -Eq '^(\.github/workflows/audit-corpus\.yml|02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2\.py)$'
+          }
+
+          # Qualification locale du prédicat : un chemin C2 doit passer, un chemin documentaire banal doit être rejeté.
+          printf '%s\n' '.github/workflows/audit-corpus.yml' | c2_relevant_from_files
+          if printf '%s\n' 'README.md' | c2_relevant_from_files; then
+            echo "Le routeur C2 classe à tort README.md comme pertinent." >&2
+            exit 1
+          fi
+
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            relevant=true
+            reason=workflow_dispatch
+          else
+            changed_files="$(git diff --name-only HEAD^1 HEAD)"
+            printf 'Fichiers introduits par la PR :\n%s\n' "$changed_files"
+            if printf '%s\n' "$changed_files" | c2_relevant_from_files; then
+              relevant=true
+              reason=c2_scope_change
+            else
+              relevant=false
+              reason=out_of_scope
+            fi
+          fi
+
+          echo "relevant=$relevant" >> "$GITHUB_OUTPUT"
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+          echo "C2_RELEVANT=$relevant ($reason)"
+
+      - name: Installer la dépendance du test C2
+        if: steps.c2_scope.outputs.relevant == 'true'
+        run: python -m pip install numpy==2.5.2
+
+      # Contrat : PASS signifie seulement que le jeu synthetique interne du script C2
+      # reussit sous Python 3.12 avec NumPy 2.5.2. Le manifeste reste fourni car l'interface
+      # CLI l'exige, mais il n'est pas lu dans ce mode sans --data-root. Ce test ne reproduit
+      # pas les chaines DESI et ne valide aucun resultat scientifique.
+      - name: Exécuter le test synthétique C2
+        if: steps.c2_scope.outputs.relevant == 'true'
+        run: >-
+          python 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2.py
+          --manifest 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/manifest_produits_officiels_c2.json
+          --output-dir /tmp/c2-self-test
+          --self-test
 
       - name: Inventorier les placeholders connus
-        continue-on-error: true
         run: bash audit/audit_placeholders.sh

@@ -121,7 +121,7 @@ P6 : horizon de recherche.
 | Metrologie | S03, S04, S06, S07 | Definition, realisation, latitude, regime gris, rectification CODATA | Dette de lecture SI, de Courtenay, Tal ; details techniques a verifier | A1 fort |
 | Architecture | S05, S04, S06 | Holisme a degres ; test de retrait ; covariance comme mesure candidate | Meta-circularite du retrait ; covariance requalifiee comme controle de fidelite | A2 / A4 |
 | Exportabilite | Tests C5, Synthese_phase_de_test | Non-trivialite, frontiere du cadre, comparaison hors terrain natif | Quatre cas seulement ; passage vers corpus physique a cadrer | A4 |
-| Constitution / seuil | S07 en amont ; BEH hors premier cycle | Constantes, masse, unites naturelles, seuils de constitution comme zone de jonction | Couverture faible dans les situations ; BEH demande fiche propre d'echelle | B ou dossier jonction |
+| Constitution / seuil | S07 en amont ; BEH hors premier cycle | Constantes, masse, unites naturelles, seuils de constitution comme zone de jonction | Couverture faible dans les situations ; BEH demande fiche propre d'echelle ; jonction BEH desormais instruite cote physique par le cycle 5 (cas electron), raccordement philosophique ouvert le 2026-07-27 comme chantier, sous le sas d'integration | B ou dossier jonction |
 | Arene anthropique | S01, S02, plan d'arene | Grands nombres, selection indexicale, horizon fine-tuning | Horizon encore preparatoire ; dossier a garder differe | Horizon / B ulterieur |
 
 ## 5. Densite relative des echelles

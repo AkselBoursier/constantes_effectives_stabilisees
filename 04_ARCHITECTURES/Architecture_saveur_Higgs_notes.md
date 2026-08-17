@@ -1,5 +1,15 @@
 # Architecture Saveur-Higgs - notes d'integration
 
+> **Avis de requalification — 16 juillet 2026.** Les relations, equations et
+> solidarites decrites ici sont conservees. En revanche, « architecture
+> constitutive confirmee » ne vaut plus comme verdict general : l'interpretation
+> active est celle d'un reseau architectural dans le regime electrofaible
+> brise, avec un gain explicatif local sur les fonctions et les dependances,
+> sans explication acquise de leur origine. Voir la [synthese active du cycle
+> 5](../02_CYCLES_PHYSIQUES/05_Cycle_saveur_Higgs/Synthese_cycle_saveur_Higgs_v0_1.md)
+> et la [reprise comparative des cycles 2 et
+> 5](../05_CARTES_ET_SYNTHESES/Reprise_comparative_cycles_2_5_fonction_architecture_explication_v0_1.md).
+
 ## Statut apres conversion de la note historique et refonte v1.3
 
 ### 1. Fonction de la note

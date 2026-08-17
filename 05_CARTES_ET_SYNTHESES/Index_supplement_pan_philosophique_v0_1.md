@@ -6,12 +6,13 @@
 
 ```text
 statut : supplement d'index additif (05_CARTES_ET_SYNTHESES) ;
-il complete Index_raisonne_du_corpus_v1_0.md sans le reecrire :
-l'index v1.0 reste la couche stable de navigation du pan physique
-et methodologique ; le present supplement ajoute la couche recente
+il complete l'index raisonne du corpus, dont la version active de
+navigation est desormais v2.2 (v2.3 disponible), sans le reecrire :
+cet index unifie porte la couche stable du pan physique et
+methodologique ; le present supplement ajoute la couche recente
 (branche philosophique, tests, plans, synthese transversale).
 integre : tous les documents produits en juillet 2026.
-prolonge : l'index v1.0 (ne le remplace pas).
+prolonge : l'index raisonne actif v2.2/v2.3 (ne le remplace pas).
 conserve : les statuts et l'ordre de lecture du pan physique.
 ```
 
@@ -101,8 +102,9 @@ mise a plat ; remplace la v0.1 comme synthese courante sans l'effacer
 comme etape historique.
 Audit_integration_branche_philosophique_v0_1.md - sas de
 raccordement : apports integrables, reserves, micro-corrections et
-point de jonction Brout-Englert-Higgs reconnu, puis prolonge par
-l'ouverture physique du cycle du seuil electrofaible.
+point de jonction Brout-Englert-Higgs desormais instruit cote physique
+par le cycle 5 (cas electron ; lot S1-S3) ; raccordement philosophique
+ouvert le 2026-07-27 comme chantier, sous le sas d'integration.
 Note_cadrage_BEH_zone_jonction_v0_1.md - sas technique de jonction :
 prepare le seuil electrofaible et l'historicite cosmique en
 distinguant mecanisme physique, architecture Saveur-Higgs, debat
@@ -137,8 +139,9 @@ positionnement Q1/Q2.
 ### 5. Rang des nouveaux documents dans la carte active
 
 ```text
-la carte active du corpus (index v1.0, section 17) se complete
-ainsi, sans que rien du pan physique change de rang :
+la carte active du corpus, desormais portee par l'index raisonne v2.2
+(v2.3 disponible), se complete ainsi, sans que rien du pan physique
+change de rang :
 
 Q1 qualification (inchange) : Premier_degagement_these,
 Matrice_degagements, Mise_epreuve.
@@ -197,7 +200,8 @@ cycles et des trois ebauches en vigueur.
 ### 7. Formule de cloture
 
 ```text
-L'index v1.0 tient le pan physique ; ce supplement ajoute la couche
-philosophique et les livrables, sans rien reecrire. Deux couches,
+L'index raisonne v2.2 (v2.3 disponible) tient le pan physique et
+methodologique ; ce supplement conserve la trace de la couche
+philosophique et des livrables ajoutes en juillet 2026, sans rien reecrire. Deux couches,
 une navigation : le stable dessous, le recent dessus.
 ```
