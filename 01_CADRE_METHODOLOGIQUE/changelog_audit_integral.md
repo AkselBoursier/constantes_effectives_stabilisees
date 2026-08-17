@@ -18,6 +18,7 @@ En conséquence :
 TOPOLOGIE_DOCUMENTAIRE ~= TOPOLOGIE_INTELLECTUELLE = NON_PRESUME
 RANG_APPARENT_D_UN_DOCUMENT -> IMPORTANCE_INTELLECTUELLE = NON_ETABLI
 ROUTAGE_VIVANT -> EXHAUSTIVITE_DES_ACQUIS = NON_ETABLI
+CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE
 ```
 
 Les titres, README, routes vivantes, noms de fichiers, répertoires, catégories et statuts documentaires peuvent orienter la navigation. Ils ne peuvent pas servir à exclure un document avant lecture de son contenu.
@@ -27,11 +28,11 @@ Les titres, README, routes vivantes, noms de fichiers, répertoires, catégories
 Pour l’audit engagé sous ce programme :
 
 ```text
-LECTURE_DOCUMENTAIRE_DU_CORPUS = EXHAUSTIVE
+LECTURE_DOCUMENTAIRE_DU_CORPUS_DE_REFERENCE = EXHAUSTIVE
 AUDIT_DE_SURFACE_COMME_SUBSTITUT = REFUSE
 ```
 
-Chaque document du corpus auditable doit être lu intégralement avant d’être tenu pour sans effet sur les audits.
+Chaque document du corpus de référence doit être lu intégralement avant d’être tenu pour sans effet sur les audits. Tant que le manifeste exact n’est pas établi, aucune pièce ne peut être exclue par pertinence supposée, catégorie, titre, rang, emplacement ou routage.
 
 Cette exigence de lecture exhaustive ne signifie pas :
 
@@ -91,7 +92,15 @@ CORPS_ATTENDU_APRES_REPRISE = RELU_CONFORME
 CONTOURNEMENT_SILENCIEUX = INTERDIT
 ```
 
-L’auteur a également signalé avoir rencontré auparavant une erreur de type `503 / Bad Gateway ou Service Unavailable` sur GitHub pendant une durée qu’il ne peut pas établir précisément, avec seulement la borne certaine rapportée `moins de trois heures`. Cet événement est conservé comme signal utilisateur distinct ; son identité de cause avec les `502` observés ici est `NON_ETABLIE`.
+L’auteur a également signalé avoir rencontré auparavant sur GitHub une erreur qu’il décrit approximativement comme « bad gateway / 503 ». Le code HTTP exact n’est pas établi à partir de son souvenir. La durée exacte n’est pas établie non plus ; la seule borne certaine rapportée est `moins de trois heures`.
+
+```text
+INCIDENT_UTILISATEUR_ANTERIEUR = SIGNALE
+CODE_HTTP_EXACT = NON_ETABLI
+DUREE_EXACTE = NON_ETABLIE
+BORNE_DUREE_RAPPORTEE = MOINS_DE_TROIS_HEURES
+IDENTITE_DE_CAUSE_AVEC_LES_502_#131 = NON_ETABLIE
+```
 
 ## Réduction progressive autorisée
 
@@ -156,13 +165,13 @@ Aucune rubrique n’est remplie par supposition. Une rubrique vide ou encore inc
 ```text
 BASELINE_GIT_MAIN = 5ff45189af7087e1dd384bb815be55c3ff1430db
 DATE_DE_DECISION = 2026-08-17
-MANIFESTE_EXHAUSTIF_DU_CORPUS_AUDITABLE = A_ETABLIR
-NOMBRE_EXACT_DE_DOCUMENTS_AUDITABLES = NON_ETABLI_A_CE_STADE
+MANIFESTE_EXHAUSTIF_DU_CORPUS_DE_REFERENCE = A_ETABLIR
+NOMBRE_EXACT_DE_DOCUMENTS_DU_CORPUS = NON_ETABLI_A_CE_STADE
 ```
 
 Le nombre exact n’est pas fixé ici à partir d’un décompte approximatif. Le manifeste exhaustif devra distinguer au moins les blobs versionnés, les documents lisibles, les sources binaires ou doublonnées, le code et les autres pièces dont l’équivalence éventuelle ne peut être présumée.
 
-Aucune exclusion de catégorie n’est autorisée avant cette qualification du corpus.
+Aucune exclusion de catégorie ou de pertinence n’est autorisée avant lecture et remontée dans le changelog.
 
 ## État initial avant première investigation complète
 
@@ -171,6 +180,7 @@ Aucune exclusion de catégorie n’est autorisée avant cette qualification du c
 ```text
 AUDIT_DOCUMENTAIRE_EXHAUSTIF = DECIDE
 LECTURE_INTEGRALE_AVANT_EXCLUSION = REQUISE
+CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE
 REDUCTION_PROGRESSIVE = AUTORISEE_APRES_REMONTEE
 AUDITS_ANTERIEURS = CONSERVES_COMME_PREUVES_ET_HISTORIQUE
 SUFFISANCE_CONTEXTUELLE_AUDITS_ANTERIEURS = NON_ETABLIE_PAR_DEFAUT
@@ -214,7 +224,7 @@ Signal conservé :
 
 ```text
 GAIN_DE_L_INVENTAIRE_INITIAL = FAIBLE_DANS_CE_CAS
-ABSENCE_D_ELEMENT_PROFOND_NON_LU = NON_ETABLIE
+ABSENCE_D_ELEMENT_PROFOND_NON_LU = NON_ETABLI
 INVESTIGATION_COMPLETE_C6 = NON_EFFECTUEE_SOUS_CE_CHANGELOG
 ```
 
