@@ -2,7 +2,7 @@
 
 ## Fonction et rang
 
-Ce document porte la **séquence de contrôle du projet** : types d’audits, dépendances, états, critères d’arrêt, d’extension et de réouverture, ainsi que les conditions d’amendement de cette séquence.
+Ce document porte la **séquence de contrôle du projet** : types d’audits, dépendances, états, critères d’arrêt, d’approfondissement et de réouverture, ainsi que les conditions d’amendement de cette séquence.
 
 Il ne contient pas les résultats des audits et n’autorise par lui-même aucune réinstruction scientifique, computationnelle, méthodologique ou philosophique. Les issues restent les unités d’exécution bornées ; les PR et Git portent les mutations et leur historique.
 
@@ -29,7 +29,7 @@ DEPENDANCE_NON_TESTEE = NON_ETABLIE
 
 `NON_DECIDABLE` est plus fort et ne doit pas servir de synonyme : il suppose qu’une instruction pertinente a été tentée et qu’une limite explicitée des matériaux, des accès ou du périmètre autorisé empêche actuellement de trancher.
 
-Une rubrique inconnue reste `NON_ETABLIE` ; elle n’est pas remplie par vraisemblance.
+Une rubrique inconnue reste `NON_ETABLI` ; elle n’est pas remplie par vraisemblance.
 
 ### 1.2 Symétrie critique
 
@@ -58,11 +58,30 @@ Un chantier ne doit pas être artificiellement clos pour permettre à un autre d
 
 L’effet de cette suspension sur un autre chantier doit être testé séparément.
 
-### 1.5 Pas d’extension gratuite, pas de fermeture gratuite
+### 1.5 Couverture documentaire exhaustive, approfondissement substantiel discriminant
 
-Un audit ne s’étend pas simplement parce qu’un matériau existe. Il s’étend lorsqu’une conclusion importante dépend d’un élément non qualifié ou lorsqu’un contre-exemple reproduit montre que le périmètre initial est insuffisant.
+La trajectoire documentaire du projet n’est pas présumée refléter fidèlement sa trajectoire intellectuelle. Un résultat, une question, une dette, un refus, un incident ou une bifurcation peut se trouver dans un document dont le titre, le rang ou le routage vivant ne signale plus sa fonction réelle.
 
-Réciproquement, un périmètre initial borné ne ferme jamais par principe la possibilité de réauditer d’autres cycles ou volets.
+```text
+TOPOLOGIE_DOCUMENTAIRE ~= TOPOLOGIE_INTELLECTUELLE = NON_PRESUME
+RANG_APPARENT_D_UN_DOCUMENT -> IMPORTANCE_INTELLECTUELLE = NON_ETABLI
+ROUTAGE_VIVANT -> EXHAUSTIVITE_DES_ACQUIS = NON_ETABLI
+CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE
+```
+
+En conséquence, la **lecture documentaire du corpus de référence est exhaustive**. Tant que son manifeste exact n’est pas établi, aucune pièce ne peut être exclue par pertinence supposée, catégorie, titre, rang, emplacement ou routage. Un audit de surface, un README, une synthèse ou un inventaire de titres ne peuvent remplacer la lecture du contenu pour exclure un document.
+
+Cette exhaustivité documentaire ne signifie pas réauditer scientifiquement, computationnellement, méthodologiquement ou philosophiquement chaque contenu avec la même profondeur. Après lecture intégrale et remontée dans le changelog d’audit, l’approfondissement substantiel reste commandé par les résultats, dépendances, contradictions, dettes et falsificateurs effectivement identifiés.
+
+La réduction progressive du corpus actif est donc autorisée **après remontée**, jamais avant.
+
+### 1.6 Pas d’approfondissement gratuit, pas de fermeture gratuite
+
+La présence d’un matériau impose sa couverture dans la lecture documentaire exhaustive ; elle n’impose pas automatiquement une réinstruction substantielle complète.
+
+Un audit substantiel s’approfondit lorsqu’une conclusion importante dépend d’un élément non qualifié, lorsqu’un résultat remonté exige vérification, lorsqu’un contre-exemple reproduit montre qu’une conclusion est insuffisamment soutenue, ou lorsqu’une résurgence modifie la carte des dépendances.
+
+Réciproquement, aucune lecture achevée ni aucun périmètre courant ne ferme par principe la possibilité de réauditer un cycle ou un volet lorsque le changelog ou un audit ultérieur fait surgir une raison matérielle de le faire.
 
 ---
 
@@ -108,20 +127,25 @@ Déclarer `NON_BLOQUANT_POUR_Y` exige que la dépendance de `Y` envers `X` ait �
 
 ```text
 QUESTION
-PERIMETRE_INITIAL
+CORPUS_DE_REFERENCE_A_COUVRIR
+PERIMETRE_SUBSTANTIEL_INITIAL
 DEPENDANCES_CONNUES
 HYPOTHESES_A_TESTER
 MATERIAUX_OU_RESULTATS_SENTINELLES
 CONTRE_TESTS_OU_FALSIFICATEURS
 CRITERES_D_ARRET
-CRITERES_D_EXTENSION
+CRITERES_D_APPROFONDISSEMENT
 CRITERES_DE_REOUVERTURE
 SORTIES_RECEVABLES
 ```
 
+`CORPUS_DE_REFERENCE_A_COUVRIR` décrit ce qui doit être lu intégralement et ne peut être réduit par pertinence supposée avant lecture. `PERIMETRE_SUBSTANTIEL_INITIAL` décrit seulement où commence la réinstruction approfondie ; il ne constitue jamais un filtre documentaire d’exclusion.
+
 Les contre-tests doivent être adaptés à la nature de l’audit. Leur fonction est d’empêcher qu’une conclusion soit qualifiée sans exposition suffisante à une alternative, un cas négatif, une ablation ou un falsificateur pertinent. Lorsqu’aucun contre-test de ce type n’est applicable, cette absence doit être justifiée plutôt que supposée.
 
 La fiche doit rester aussi courte que le permet la contrôlabilité réelle de l’audit. Les issues peuvent porter son exécution détaillée ; elles ne remplacent pas ce programme comme vue de la séquence générale.
+
+Le changelog vivant `changelog_audit_integral.md` est obligatoire pour les investigations engagées sous cette règle de couverture. Il est mis à jour au minimum après chaque investigation complète d’un cycle et à chaque résurgence significative susceptible de modifier une lecture, une dette, une relation ou une décision.
 
 ---
 
@@ -131,24 +155,24 @@ Cette séquence exprime des dépendances de travail, non une chaîne irréversib
 
 | Étape | Audit | Fonction / question principale |
 |---|---|---|
-| **0** | **Cadrage du programme** | Fixer questions, dépendances, sentinelles, contre-tests, critères d’arrêt, d’extension et de réouverture. Le présent document est le premier résultat de ce cadrage ; il n’ouvre aucun audit substantiel. |
-| **1** | **Documentaire minimal d’orientation** | Localiser les pièces, distinguer routes vivantes, rangs revendiqués et états datés. Des travaux documentaires antérieurs, notamment ceux ayant conduit à #124 et #126, existent comme matériaux candidats ; leur qualification comme réalisation partielle de cette étape reste à établir sous le présent programme. Cet audit ne décide pas de la justesse scientifique, conceptuelle ou philosophique. |
-| **2** | **Scientifique des résultats porteurs** | Partir de résultats explicitement invoqués, reliés ou candidats à soutenir l’architecture intellectuelle actuelle, puis vérifier ce qu’ils établissent réellement et si leur qualification suffit à l’usage envisagé. Le caractère « porteur » n’est pas présupposé. Le périmètre initial reste borné ; d’autres cycles sont réauditables si une dépendance ou un contre-exemple le justifie. |
-| **3** | **Conceptuel** | Identifier les questions, distinctions et fonctions intellectuelles réellement portées, puis tester ce qu’elles sont devenues : conservées, partiellement conservées, transformées avec gain ou perte, encore fécondes, dépassées, perdues/non réassimilées ou non décidables. Le test porte sur la fonction discriminante, pas sur la survie d’un mot. |
+| **0** | **Cadrage du programme** | Fixer questions, couverture documentaire, dépendances, sentinelles éventuelles, contre-tests, critères d’arrêt, d’approfondissement et de réouverture. Le présent document est le premier résultat de ce cadrage ; il n’ouvre aucun audit substantiel. |
+| **1** | **Documentaire d’orientation et de couverture** | Localiser les pièces, distinguer routes vivantes, rangs revendiqués et états datés, puis établir le manifeste exhaustif du corpus de référence. Des travaux documentaires antérieurs, notamment ceux ayant conduit à #124 et #126, existent comme matériaux candidats ; leur qualification comme réalisation partielle de cette étape reste à établir sous le présent programme. Cet audit ne décide pas de la justesse scientifique, conceptuelle ou philosophique. |
+| **2** | **Scientifique des résultats porteurs** | Lire intégralement le corpus de référence avant toute exclusion documentaire, remonter les résultats et dépendances dans le changelog, puis vérifier en profondeur ce que les résultats effectivement porteurs établissent réellement et si leur qualification suffit à l’usage envisagé. Le caractère « porteur » n’est pas présupposé par la sélection initiale, le rang documentaire ou le routage. |
+| **3** | **Conceptuel** | Identifier les questions, distinctions et fonctions intellectuelles réellement portées, puis tester ce qu’elles sont devenues : conservées, partiellement conservées, transformées avec gain ou perte, encore fécondes, dépassées, perdues/non réassimilées ou non décidables. Le test porte sur la fonction discriminante, pas sur la survie d’un mot. Le corpus de référence est couvert intégralement avant toute exclusion documentaire. |
 | **4** | **Méthodologique** | Tester si les règles et distinctions actuelles sont justifiées au regard des problèmes, discriminations, risques et supports effectivement établis, ou si elles sont seulement locales, redondantes, trop fortes, mal placées, non justifiées ou non décidables. Une règle n’est ni dérivée automatiquement des résultats scientifiques ni justifiée par sa seule cohérence interne. |
-| **5** | **Philosophique** | Distinguer propositions, portées et transferts entre philosophie, science et méthodologie. `COMPATIBLE != DERIVE_DE`. La généalogie éditoriale ou conversationnelle n’est consultée que si une transformation intellectuelle déterminée l’exige. |
+| **5** | **Philosophique** | Distinguer propositions, portées et transferts entre philosophie, science et méthodologie. `COMPATIBLE != DERIVE_DE`. Les matériaux philosophiques, éditoriaux et généalogiques sont repérés à partir de la couverture intégrale du corpus de référence ; aucun emplacement ni rang documentaire ne permet de les filtrer avant lecture. |
 | **6** | **Cohérence intellectuelle** | Tester si questions de recherche, résultats retenus, distinctions conceptuelles, choix méthodologiques et propositions philosophiques composent un programme dont les transitions sont justifiées plutôt que reconstruites a posteriori. Rechercher aussi les continuités réelles masquées, les acquis sous-exploités et les tensions fécondes. |
-| **7** | **Cohérence générale / transversale** | Après qualification suffisante des couches concernées, contrôler les relations pertinentes : questions ↔ résultats, résultats ↔ concepts, concepts ↔ méthode, science ↔ philosophie, philosophie ↔ méthode, documents/issues ↔ état substantiel réel. Aucune relation n’est auditée par simple souci d’exhaustivité. |
+| **7** | **Cohérence générale / transversale** | Après qualification suffisante des couches concernées, contrôler les relations pertinentes : questions ↔ résultats, résultats ↔ concepts, concepts ↔ méthode, science ↔ philosophie, philosophie ↔ méthode, documents/issues ↔ état substantiel réel. La couverture documentaire déjà consignée évite de confondre absence de lecture et absence de relation. |
 | **8** | **Contre-audit** | Tenter activement de falsifier les conclusions précédentes de manière bilatérale : surpromotion **et** écrasement, continuité artificielle **et** continuité réelle devenue invisible, concept inutile **et** concept dont l’ablation fait perdre une discrimination, résultat surinterprété **et** sous-exploité. Cette étape complète les contre-tests locaux ; elle ne les remplace pas. |
-| **9** | **Normalisation documentaire Human-First** | Seulement lorsque les dépendances substantielles d’une transformation sont suffisamment qualifiées : documents vivants humains, routage agent minimal, noms stables, réécriture positive, réduction de méta-documentation, archivage et suppression exceptionnelle. |
+| **9** | **Normalisation documentaire Human-First** | Seulement lorsque les dépendances substantielles d’une transformation sont suffisamment qualifiées et que la couverture nécessaire est consignée : documents vivants humains, routage agent minimal, noms stables, réécriture positive, réduction de méta-documentation, archivage et suppression exceptionnelle. |
 
 ### Co-instruction bornée des étapes 2 et 3
 
 Les étapes 2 et 3 ne forment pas une dérivation simple `2 -> 3`.
 
-Une première sélection scientifique peut partir des résultats explicitement invoqués par les questions, synthèses ou décisions actuelles, sans supposer que cette relation est justifiée. L’audit conceptuel peut ensuite révéler qu’un résultat omis, une ancienne question ou une fonction intellectuelle impose un retour scientifique ciblé. Inversement, la qualification scientifique peut invalider ou réduire une relation conceptuelle présumée.
+La lecture documentaire exhaustive peut faire remonter des résultats, questions ou fonctions intellectuelles que les routes courantes ne signalaient pas. L’audit scientifique détermine ensuite lesquels exigent une qualification scientifique approfondie ; l’audit conceptuel peut à son tour révéler qu’un résultat omis, une ancienne question ou une fonction intellectuelle impose un retour scientifique ciblé. Inversement, la qualification scientifique peut invalider ou réduire une relation conceptuelle présumée.
 
-Cette boucle n’autorise pas un réaudit général de la physique : chaque extension reste soumise aux critères de dépendance et d’extension du présent programme.
+L’exhaustivité porte donc sur la **lecture et la remontée**, non sur la répétition automatique de toute opération scientifique.
 
 Pour l’audit scientifique, préserver lorsque pertinent la séparation :
 
@@ -166,46 +190,59 @@ Pour l’étape 9, l’historique Git améliore la réauditabilité mais ne suff
 
 ---
 
-## 5. Retours ciblés et réouverture
+## 5. Retours ciblés, résurgences et réouverture
 
 La séquence n’est pas strictement linéaire. Un audit peut rouvrir une couche antérieure lorsque sa propre conclusion en dépend réellement.
 
 Exemples :
 
+- un document lu fait resurgir un résultat scientifique oublié ou déplacé → inscription immédiate au changelog puis qualification de son effet ;
 - un problème conceptuel dépend d’un résultat physique insuffisamment qualifié → retour scientifique ciblé ;
 - une règle méthodologique change la lecture d’un résultat → réaudit scientifique ciblé ;
 - une portée philosophique a été importée dans la méthode sans qualification → retour méthodologique ciblé ;
-- une transformation intellectuelle reste inexpliquée → généalogie ciblée, sans réouverture automatique de toute l’archéologie ;
-- le contre-audit reproduit un faux déclassement, une fausse promotion ou un faux raccord → réouverture du seul chantier nécessaire.
+- une transformation intellectuelle reste inexpliquée → remontée des matériaux généalogiques pertinents ;
+- le contre-audit reproduit un faux déclassement, une fausse promotion ou un faux raccord → réouverture du chantier nécessaire.
 
 Toute réouverture identifie :
 
 ```text
 DECLENCHEUR
 CONCLUSION_PRECEDENTE_A_RETESTER
-NOUVEAU_PERIMETRE_MINIMAL
-POURQUOI_LE_PERIMETRE_PRECEDENT_NE_SUFFIT_PLUS
+NOUVEAU_PERIMETRE_SUBSTANTIEL_MINIMAL
+POURQUOI_LA_QUALIFICATION_PRECEDENTE_NE_SUFFIT_PLUS
 ```
 
-Aucun audit qualifié n’est irrévocable. Aucun audit n’est rouvert pour la seule possibilité abstraite d’un doute.
+Aucun audit qualifié n’est irrévocable. Une résurgence significative est enregistrée avant de décider si elle exige ou non une réouverture substantielle.
 
 ---
 
-## 6. Profondeur et arrêt
+## 6. Profondeur, couverture et arrêt
 
-La profondeur est commandée par les dépendances de la décision, pas par le nombre de niveaux documentaires disponibles.
+Deux dimensions sont désormais séparées.
+
+### Couverture documentaire
 
 ```text
-question examinee
+corpus de reference manifeste
+-> lecture integrale des documents
+-> remontee dans le changelog
+-> aucune exclusion avant lecture
+```
+
+La couverture ne s’arrête pas parce qu’un README, un titre ou une synthèse paraît suffisant.
+
+### Profondeur substantielle
+
+```text
+element remonte
+-> question examinee
 -> premisses necessaires
 -> supports de ces premisses
 -> approfondissement si une premisse reste non qualifiee
 -> STOP local lorsque la conclusion propre de l'audit devient qualifiable dans le perimetre declare
 ```
 
-Ce `STOP` ne qualifie pas automatiquement l’effet de l’audit sur un autre chantier.
-
-Une dette extérieure à ce raisonnement ne force pas son instruction immédiate.
+Ce `STOP` substantiel ne transforme pas un document non lu en document sans effet et ne qualifie pas automatiquement l’effet de l’audit sur un autre chantier.
 
 Un audit peut s’arrêter avec `NON_DECIDABLE` seulement après avoir explicité l’instruction tentée et la limite qui empêche de trancher avec les matériaux, accès ou périmètre autorisés. Ce résultat reste visible comme tel.
 
@@ -221,6 +258,8 @@ Ajouter une étape, scinder ou fusionner un audit, modifier l’ordre ou introdu
 4. pourquoi une simple précision d’une étape existante ne suffit pas.
 
 Test d’ablation : si retirer l’amendement ne change aucune décision possible, aucune protection ou aucune capacité de falsification, l’amendement n’est pas justifié.
+
+La règle d’exhaustivité documentaire introduite le 17 août 2026 constitue une **précision transversale de couverture**, pas une nouvelle étape : son apport a été reproduit par des cas où le routage vivant masquait des matériaux pertinents (notamment C7 et C3), puis étendu par décision humaine en raison de la non-linéarité possible du projet.
 
 ```text
 PAS_DE_NOUVELLE_COUCHE
@@ -240,6 +279,9 @@ sans gain discriminant ou de contrôle démontré.
 PROGRAMME VIVANT DES AUDITS
 = sequence, dependances, etats, criteres
 
+CHANGELOG VIVANT DE L'AUDIT INTEGRAL
+= couverture lue, remontees, resurgences, dettes et reductions justifiees
+
 ISSUES
 = executions bornees, preuves, arbitrages, blocages, resultats locaux
 
@@ -253,15 +295,18 @@ Les statuts transitoires de PR, branches ou opérations en cours restent dans Gi
 
 ---
 
-## 9. État initial du programme
+## 9. État courant du programme après décision d’exhaustivité documentaire
 
 ```text
 SEQUENCE_D_AUDITS = VALIDEE_COMME_BASE_DE_TRAVAIL
+COUVERTURE_DOCUMENTAIRE_EXHAUSTIVE = REQUISE
+CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE
+CHANGELOG_AUDIT_INTEGRAL = REQUIS
 AUDITS_SUBSTANTIELS = NON_OUVERTS_PAR_CE_DOCUMENT
 
 TRAVAUX_DOCUMENTAIRES_ANTERIEURS = EXISTENT
 QUALIFICATION_DE_CES_TRAVAUX_COMME_ETAPE_1 = NON_ETABLIE
-PORTEE_DES_RESULTATS_ANTERIEURS = A_RETESTER_SELON_DEPENDANCES
+PORTEE_DES_RESULTATS_ANTERIEURS = A_RETESTER_APRES_REMONTEE
 ```
 
-La première utilisation de ce programme devra cadrer explicitement l’audit substantiel initial avant de l’ouvrir. Elle ne transformera pas rétrospectivement les travaux antérieurs en preuves qu’ils n’avaient pas pour fonction d’établir.
+La première utilisation substantielle de ce programme doit d’abord établir le manifeste exact du corpus de référence sans exclusion préalable par pertinence supposée. Elle ne transforme pas rétrospectivement les travaux antérieurs en preuves qu’ils n’avaient pas pour fonction d’établir.
