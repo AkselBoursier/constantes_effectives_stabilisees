@@ -174,6 +174,22 @@ Le changelog doit être mis à jour au minimum :
 
 Une mise à jour peut agréger plusieurs découvertes d’une même investigation, mais elle ne doit pas laisser une nouveauté significative hors registre jusqu’à la fin générale de l’audit.
 
+## Portée de la lecture seule
+
+Clarification ajoutée le 17 août 2026 après explicitation humaine : la règle de **lecture seule** concerne les objets audités et les objets servant de preuves pendant leur investigation. Elle interdit de modifier ces objets pour les rendre plus cohérents, plus lisibles ou plus conformes pendant qu’ils sont justement en train d’être lus et qualifiés.
+
+Elle ne s’applique pas au présent changelog. Le changelog est un instrument de traçabilité de l’audit et doit pouvoir être écrit au fil de la lecture lorsque les conditions de mise à jour ci-dessus sont remplies. Son écriture ne constitue pas une mutation de l’objet audité ; elle constitue l’enregistrement séparé de ce que l’audit a effectivement établi.
+
+```text
+OBJETS_AUDITES_PENDANT_INVESTIGATION = READ_ONLY_PAR_DEFAUT
+SOURCES_PREUVES_ET_ARTEFACTS_LUS = NE_PAS_MODIFIER_PENDANT_QUALIFICATION
+CHANGELOG_AUDIT_INTEGRAL = ECRITURE_AUTORISEE_ET_REQUISE
+LECTURE_SEULE_DES_OBJETS_AUDITES -> GEL_DU_CHANGELOG = FAUX
+DECOUVERTE_SIGNIFICATIVE -> INSCRIPTION_CHANGELOG_SANS_ATTENDRE_LA_CLOTURE_GENERALE
+```
+
+Cette clarification corrige une ambiguïté opératoire rencontrée pendant les cycles 1 et 2 : l’incomplétude documentaire due aux DOCX non lus ne devait pas empêcher l’inscription immédiate des remontées significatives déjà établies dans les pièces effectivement lues.
+
 ## Unité minimale d’une entrée
 
 Chaque entrée d’investigation doit permettre de retrouver au minimum :
