@@ -907,3 +907,145 @@ DETTE_DOCX_CUMULEE_APRES_C5 = 24
 Aucun nouveau verdict scientifique n’est produit par le présent audit documentaire. Les valeurs et qualifications scientifiques historiques sont conservées comme contenu versionné ; leur revalidation externe n’est pas ouverte ici.
 
 Prochaine position documentaire : ouvrir l’inventaire exact du cycle 6, tout en conservant le cycle 5 au statut `INCOMPLETE` tant que ses cinq DOCX originaux ne sont pas directement qualifiés.
+
+## Clarification de lecture — remarques informatives, généralisation et complexité généalogique
+
+L’auteur corrige une inférence produite lors du cycle 5 : constater une complexité généalogique substantielle dans ce cycle ne permet pas d’inférer que les cycles 1 à 4 en possèdent moins. Le statut de laboratoire concerne le projet dans son ensemble ; la complexité de chaque cycle reste à établir par sa propre lecture, sans réaudit rétroactif automatique.
+
+Deuxième clarification : la prudence contre les généralisations automatiques n’est pas une interdiction de généraliser. Un cas particulier peut légitimement soutenir une généralisation lorsque les recoupements, contre-tests ou autres matériaux lui donnent une portée suffisante.
+
+```text
+CAS_PARTICULIER -> REGLE_UNIVERSELLE = NON_AUTOMATIQUE
+CAS_PARTICULIER + SUPPORT_TRANSVERSAL_SUFFISANT -> GENERALISATION = POSSIBLE
+NON_GENERALISATION_AUTOMATIQUE != INTERDICTION_DE_GENERALISER
+COMPLEXITE_GENEALOGIQUE_C5 -> COMPLEXITE_MOINDRE_C1_C4 = NON_ETABLI
+```
+
+Enfin, les remarques conversationnelles de l’auteur sont **informatives par défaut**. Elles servent de contexte et peuvent orienter l’attention, mais ne doivent pas être converties automatiquement en décision de projet ou en règle nouvelle. Une prise de position explicitement décisionnelle — validation, réfutation, amendement, autorisation, interdiction ou décision équivalente — peut modifier l’état ou le cadre correspondant.
+
+```text
+REMARQUE_INFORMATIVE -> MUTATION_DU_CADRE = NON_AUTOMATIQUE
+PRISE_DE_DECISION_EXPLICITE -> EFFET_A_CONSIGNER_SELON_SON_OBJET
+CORRECTION_EXPLICITE_D_UNE_INFERENCE_AGENT = A_INTEGRER_COMME_CLARIFICATION
+```
+
+Cette clarification ne change pas la méthode de lecture exhaustive en cours.
+
+### Cycle 6 — effectif basse énergie — couverture textuelle complète, DOCX ouverts
+
+Arbre exact au baseline : `4492d3c3763e4a69b8e40984c25c2dfc0d2b5511`.
+
+Inventaire exact :
+
+```text
+00_Sources_docx/Cycle effectif basse énergie v0.1.docx
+00_Sources_docx/Cycle effectif basse énergie v0.2.docx
+00_Sources_docx/Cycle effectif basse énergie v0.3.docx
+00_Sources_docx/Fiche alpha_G - M_Pl (1).docx
+00_Sources_docx/Fiche alpha_G - M_Pl.docx
+00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_1.md
+00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_2.md
+00_Sources_docx/Source_docx_Cycle_effectif_basse_energie_v0_3.md
+00_Sources_docx/Source_docx_Fiche_alpha_G_M_Pl_A_v0_1.md
+00_Sources_docx/Source_docx_Fiche_alpha_G_M_Pl_B_v0_1.md
+Cycle_effectif_basse_energie_v0_4_alphaG_MPl.md
+Synthese_comparaison_alphaG_MPl_sources_v0_1.md
+Synthese_cycle_effectif_basse_energie_v0_1.md
+architecture-relationnelle-basse-energie.md
+evaluation-gain-explicatif-basse-energie.md
+verification-physique-basse-energie.md
+```
+
+```text
+CYCLE_6_TOTAL_BLOBS = 16
+CYCLE_6_MARKDOWN = 11/11_LUS_INTEGRALEMENT
+CYCLE_6_DOCX_ORIGINAUX = 0/5_LUS_DIRECTEMENT
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE_CYCLE_6 = INCOMPLETE
+```
+
+La synthèse historique portait un verdict fort d’« architecture inter-familles confirmée ». Elle déclare désormais elle-même ce verdict historique et non autoritatif. La reprise active repart de l’hypothèse et la requalifie plus sobrement.
+
+#### Résultat principal de la reprise
+
+Trois opérations physiques ne doivent pas être confondues :
+
+```text
+Fermi / W : réduction locale par médiateur lourd non résolu ;
+QCD : flot de couplage et changement de régime dynamique ;
+gravitation EFT : expansion hiérarchique avec corrections supprimées à basse énergie.
+```
+
+Elles ne partagent pas un mécanisme physique unique de « formation d’une constante ». Le noyau commun récupéré est principalement méthodologique et structurel :
+
+```text
+séparation d’échelles ;
+choix des degrés de liberté ;
+symétries ;
+expansion / comptage ou organisation contrôlée ;
+coefficients dans un cadre déclaré ;
+estimation de l’erreur ;
+domaine de rupture.
+```
+
+La reprise conserve donc un résultat de type **architecture méthodologique de validité**, et non une classe ontologique générale de constantes effectives basse énergie.
+
+#### Corrections et distinctions acquises dans le corpus
+
+Le dossier actif établit notamment :
+
+- `G_F` est le coefficient dominant d’une description locale dans son domaine, non un substitut universel de toute la théorie électrofaible ;
+- matching, running et mélange d’opérateurs appartiennent à la chaîne EFT ; un coefficient de Wilson isolé dépend de la base, du schéma et de l’échelle et n’est pas un invariant physique autonome ;
+- `alpha_s(mu)` est un couplage courant ; `Lambda_MSbar` est un paramètre d’échelle dépendant du schéma et ne doit pas être identifié sans qualification à une observable unique de confinement ;
+- la gravitation peut être prédictive comme EFT de basse énergie sans complétion UV connue ; `M_Pl` organise le comptage de puissances mais n’est pas démontrée comme frontière physique nette ;
+- « basse énergie » n’est pas synonyme de simplification : elle produit localité effective dans le secteur faible, entrée dans le non-perturbatif en QCD et suppression hiérarchique dans la gravitation effective.
+
+Le rapport d’évaluation dégage en outre trois niveaux distincts :
+
+```text
+fixité de composante ;
+stabilité de prédiction ;
+validité de description.
+```
+
+Une prédiction peut rester stable alors que certains coefficients courent, changent de base ou sont raccordés. Cette distinction est remontée comme résultat local du cycle 6 ; sa portée transversale au reste du projet n’est ni promue ni interdite par principe et devra être soutenue si elle est généralisée.
+
+#### Deux états alpha_G / M_Pl
+
+Les deux extractions `A` et `B` proviennent de deux DOCX distincts. La note de comparaison établit qu’elles ne sont pas des copies et doivent rester deux états généalogiques séparés. La fiche active v0.4 les dépasse toutes deux en ajoutant notamment la distinction Planck / Planck réduite, la comparaison explicite avec Fermi et QCD, ainsi que la requalification de la « hiérarchie d’échelle » en fonction plutôt qu’en famille.
+
+```text
+ALPHAG_MPL_A_B = DEUX_ETATS_DISTINCTS
+DEDUPLICATION_SILENCIEUSE = INTERDITE
+ANCIENNE_CATEGORIE_HIERARCHIE_D_ECHELLE = NON_RESTAUREE_COMME_FAMILLE
+```
+
+#### Rapport aux audits antérieurs
+
+Le premier inventaire de surface avait conclu que le gain initial d’inventaire paraissait faible dans ce cycle. La lecture exhaustive ne révèle pas un sous-dossier caché analogue au cycle 3, mais elle apporte une requalification substantielle du résultat ancien : l’unité qui résiste n’est pas celle d’une famille d’objets, mais celle d’une discipline de validité. Ainsi :
+
+```text
+GAIN_INVENTAIRE_DE_SURFACE_FAIBLE = FAIT_INITIAL_CONSERVE
+GAIN_DE_LA_LECTURE_EXHAUSTIVE = REQUALIFICATION_CONCEPTUELLE_SUBSTANTIELLE
+ABSENCE_DE_SURPRISE_TOPOLOGIQUE != ABSENCE_DE_GAIN_INTELLECTUEL
+```
+
+Aucun résultat scientifique n’est revalidé extérieurement par cette lecture documentaire ; les vérifications présentes sont des rapports historiques versionnés dont la suffisance pour un futur audit scientifique substantiel reste à tester selon le programme général.
+
+#### Dette binaire
+
+Les cinq DOCX originaux restent non lus directement. Les extractions annoncent explicitement qu’elles ne les remplacent pas.
+
+```text
+DETTE_DOCX_C1 = 5
+DETTE_DOCX_C2 = 4
+DETTE_DOCX_C3 = 6
+DETTE_DOCX_C4 = 4
+DETTE_DOCX_C5 = 5
+DETTE_DOCX_C6 = 5
+DETTE_DOCX_CUMULEE_APRES_C6 = 29
+```
+
+La dette n’empêche pas l’ouverture du cycle 7. Le cycle 6 reste `INCOMPLETE` au sens documentaire global tant que les cinq DOCX originaux ne sont pas qualifiés directement ou par une procédure d’équivalence effectivement établie.
+
+Prochaine position documentaire : ouvrir l’inventaire exhaustif du cycle 7, sans présumer que ses routes vivantes, ses rapports computationnels ou ses issues résument suffisamment ses 66 blobs.
