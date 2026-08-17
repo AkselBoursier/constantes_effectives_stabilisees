@@ -18,7 +18,7 @@ En conséquence :
 TOPOLOGIE_DOCUMENTAIRE ~= TOPOLOGIE_INTELLECTUELLE = NON_PRESUME
 RANG_APPARENT_D_UN_DOCUMENT -> IMPORTANCE_INTELLECTUELLE = NON_ETABLI
 ROUTAGE_VIVANT -> EXHAUSTIVITE_DES_ACQUIS = NON_ETABLI
-CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE
+CORPUS_DE_REFERENCE_EXACT = ETABLI_PAR_MANIFESTE_GIT_BASELINE
 ```
 
 Les titres, README, routes vivantes, noms de fichiers, répertoires, catégories et statuts documentaires peuvent orienter la navigation. Ils ne peuvent pas servir à exclure un document avant lecture de son contenu.
@@ -126,6 +126,21 @@ EFFACEMENT_DE_L_INCIDENT = NON
 CAUSE_RACINE_APRES_DECLASSEMENT = NON_ETABLIE
 ```
 
+### Incident réseau local pendant la lecture exhaustive
+
+Le 17 août 2026, les tentatives d’accès local à `github.com` depuis l’environnement d’exécution de l’agent ont échoué avec une erreur de résolution DNS (`Could not resolve host` / `Temporary failure in name resolution`). Le connecteur GitHub est resté fonctionnel et a permis de poursuivre les lectures du dépôt.
+
+L’auteur a diagnostiqué localement, avec GitHub Copilot, un rôle possible de son VPN et a constaté un rétablissement sur sa propre machine après déconnexion. Une nouvelle vérification dans l’environnement d’exécution de l’agent a toutefois continué d’échouer. Les deux environnements ne doivent donc pas être assimilés et aucune cause racine commune n’est établie.
+
+```text
+INCIDENT_DNS_CONTENEUR_LOCAL = REPRODUIT
+ACCES_GITHUB_PAR_CONNECTEUR = FONCTIONNEL
+ETAT_DISTANT_AMBIGU = NON
+CAUSE_RACINE = NON_ETABLIE
+VPN_UTILISATEUR_COMME_CAUSE_DU_CONTENEUR = NON_ETABLI
+EFFET = LIMITATION_DE_LA_VOIE_LOCALE_SANS_BLOCAGE_DE_LA_LECTURE_CONNECTEUR
+```
+
 ## Réduction progressive autorisée
 
 La réduction du corpus de travail devient légitime **après** remontée du contenu, jamais avant.
@@ -189,17 +204,38 @@ Aucune rubrique n’est remplie par supposition. Une rubrique vide ou encore inc
 ```text
 BASELINE_GIT_MAIN = 5ff45189af7087e1dd384bb815be55c3ff1430db
 DATE_DE_DECISION = 2026-08-17
-MANIFESTE_EXHAUSTIF_DU_CORPUS_DE_REFERENCE = A_ETABLIR
-NOMBRE_EXACT_DE_DOCUMENTS_DU_CORPUS = NON_ETABLI_A_CE_STADE
+MANIFESTE_EXHAUSTIF_DU_CORPUS_DE_REFERENCE = ETABLI
+NOMBRE_EXACT_BLOBS_GIT_DU_CORPUS = 668
+CHEMINS_DUPLIQUES = 0
+FICHIERS_NON_CLASSES_MATERIELLEMENT = 0
+EQUIVALENCE_DOCX_MD = NON_ETABLIE
 ```
 
-Le nombre exact n’est pas fixé ici à partir d’un décompte approximatif. Le manifeste exhaustif devra distinguer au moins les blobs versionnés, les documents lisibles, les sources binaires ou doublonnées, le code et les autres pièces dont l’équivalence éventuelle ne peut être présumée.
+Le manifeste compte les blobs versionnés, non les répertoires. Chaque chemin de blob est une pièce distincte ; aucune déduplication n’est effectuée sur la seule similarité des noms, formats ou contenus supposés. Les sources binaires, extractions textuelles, code, données structurées, images et autres pièces restent dans le périmètre documentaire.
+
+Répartition matérielle globale établie :
+
+```text
+.md = 525
+.docx = 62
+.py = 29
+.csv = 11
+.json = 10
+.yaml + .yml = 10
+.png = 8
+.txt = 4
+.ots = 2
+autres extensions unitaires = 7
+TOTAL = 668
+```
 
 Aucune exclusion de catégorie ou de pertinence n’est autorisée avant lecture et remontée dans le changelog.
 
 ## État initial avant première investigation complète
 
 ### Décision de couverture
+
+L’état ci-dessous conserve la décision initiale au moment de l’ouverture de la procédure. Le manifeste ayant depuis été établi, la ligne `CORPUS_DE_REFERENCE_EXACT = A_ETABLIR_PAR_MANIFESTE` est historique et ne décrit plus l’état courant.
 
 ```text
 AUDIT_DOCUMENTAIRE_EXHAUSTIF = DECIDE
@@ -254,8 +290,85 @@ INVESTIGATION_COMPLETE_C6 = NON_EFFECTUEE_SOUS_CE_CHANGELOG
 
 Le dernier point est essentiel : l’absence de surprise dans un inventaire n’autorise plus à conclure qu’une lecture exhaustive ne produira rien.
 
-## Journal des investigations complètes
+## Journal des investigations
 
-Aucune investigation complète de cycle n’est encore enregistrée sous ce changelog.
+Aucune investigation complète de cycle n’est encore enregistrée : les cycles 1 et 2 ont une couverture textuelle exhaustive mais restent matériellement incomplets tant que leurs DOCX originaux ne sont pas lus directement. Le cycle 3 est en cours.
 
-La première entrée sera créée après lecture intégrale du premier cycle choisi, avec manifeste de couverture et remontée de tous les éléments significatifs identifiés avant réduction éventuelle.
+### 2026-08-17 — Manifeste exhaustif du baseline
+
+```text
+PERIMETRE = baseline 5ff45189af7087e1dd384bb815be55c3ff1430db
+COUVERTURE_MANIFESTE = COMPLETE
+NOMBRE_EXACT_BLOBS_GIT = 668
+CHEMINS_DUPLIQUES = 0
+CLASSIFICATION_MATERIELLE_MINIMALE = ETABLIE
+PERTINENCE_INTELLECTUELLE = NON_QUALIFIEE_PAR_LE_MANIFESTE
+```
+
+Le manifeste ferme l’ancienne approximation numérique du corpus. Il établit le périmètre matériel sans transformer la classification par extension ou format en filtre intellectuel.
+
+### 2026-08-17 — Cycle 1, couplages, échelles et QCD — remontée documentaire partielle
+
+```text
+PERIMETRE = 49 blobs
+MARKDOWN = 44
+DOCX = 5
+MARKDOWN_LUS_INTEGRALEMENT = 44/44
+DOCX_LUS_DIRECTEMENT = 0/5
+EXTRACTIONS_DOCX_LUES = 5/5
+COUVERTURE = INCOMPLETE
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+```
+
+Acquis et trajectoires remontés :
+
+- le dossier `alpha` sépare explicitement valeur recommandée de basse énergie, running avec l’échelle, variation temporelle et variation spatiale/cosmologique ;
+- la discordance des chaînes de détermination de basse énergie n’est pas convertie en variation physique de `alpha` ; cohérence nominale, cohérence opérationnelle après expansion CODATA, équivalence des chaînes et convergence causale restent distinguées ;
+- la trajectoire spatiale est conservée comme prétention statistique historique, puis repondération par systématique instrumentale, puis contrainte locale mieux calibrée, sans conversion en réfutation universelle ;
+- le blocage historique de reproduction ALPHA est conservé comme obstacle d’environnement avant levée ultérieure, et la reproduction reste qualifiée comme aval à partir de produits condensés ;
+- la dette `m_e` a été transférée vers Saveur–Higgs avec conditions de réouverture, et non supprimée.
+
+Limites et dettes : les cinq DOCX originaux restent à lire directement ; les extractions déclarent elles-mêmes ne pas remplacer les originaux et peuvent dégrader équations, tableaux ou graphiques. Aucun verdict scientifique nouveau n’est émis par la présente remontée.
+
+### 2026-08-17 — Cycle 2, structuration électrofaible — remontée documentaire partielle
+
+```text
+PERIMETRE = 11 blobs
+MARKDOWN = 6
+TXT = 1
+DOCX = 4
+PIECES_TEXTUELLES_LUES_INTEGRALEMENT = 7/7
+DOCX_LUS_DIRECTEMENT = 0/4
+COUVERTURE = INCOMPLETE
+```
+
+Acquis et trajectoires remontés :
+
+- la synthèse initiale proposait une taxonomie fonctionnelle forte : régime générateur, différenciation fermionique, hiérarchie d’échelle, raccordement effectif, mélange de jauge et fond cosmologique ;
+- la synthèse de récupération ultérieure ne restaure pas cette taxonomie comme classification active ; elle récupère surtout la distinction entre fonction, relation, explication de valeur et mécanisme ;
+- l’unité du cycle est requalifiée comme comparative et généalogique, non comme secteur physique homogène ;
+- plusieurs objets ont migré vers Saveur–Higgs, basse énergie et cosmologie ; la redistribution est traitée comme bifurcation documentaire, non comme annulation du cycle ;
+- aucune « stabilité électrofaible » ni « résultat négatif » global sur la stabilité du régime n’est récupéré comme verdict du cycle.
+
+Limites et dettes : quatre DOCX originaux restent non lus directement ; `G_F`, `theta_W` et `Lambda` restent explicitement à vérifier scientifiquement depuis leurs sources primaires lors de l’audit substantiel approprié.
+
+### 2026-08-17 — Cycle 3, neutrinos — investigation en cours
+
+```text
+PERIMETRE = 42 blobs
+00_SOURCES_DOCX = 12 blobs = 6 DOCX + 6 Markdown
+RACINE_ACTIVE = 8 Markdown
+REPRISE_COMPUTATIONNELLE_N1_N3 = 22 blobs
+COUVERTURE = EN_COURS
+```
+
+Éléments déjà remontés avant clôture du cycle :
+
+- la synthèse de récupération décrit le secteur comme reconstruction par accès non équivalents et conserve une structure d’incomplétude contrôlée ;
+- la synthèse active ultérieure porte un verdict scientifique de cycle distinct et localise une tension N1–N3 sous `LambdaCDM` sans l’ériger en contradiction modèle-indépendante ;
+- la reprise computationnelle contient une généalogie C1 substitutive puis C2 contrôlée ; C1 se déclare explicitement non-reproduction des chaînes officielles ;
+- C2 distingue `base_mnu`, `base_mnu059`, `base_mnu_binary_3` et `base_mnu_w_wa`, interdit leur substitution et sépare quantiles empiriques, `margestats`, maxima ponctuels et profils ;
+- l’ingestion locale ultérieure reproduit trois ensembles distribués au niveau des chaînes et conserve `base_mnu_binary_3` comme absent de la distribution vérifiée, sans généraliser cette absence à toute distribution officielle ;
+- le code versionné contient les garde-fous annoncés : absence explicite, contrôle des poids et colonnes, distinction des produits `iminuit`, et code de sortie bloquant sauf autorisation explicite de l’absence.
+
+Cette entrée est provisoire. Elle doit être complétée après lecture de N0–N5, des sources historiques, des JSON/CSV/manifeste/checksum restants et qualification des six DOCX originaux.
