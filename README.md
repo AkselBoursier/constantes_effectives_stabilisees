@@ -13,6 +13,12 @@ Ce dépôt part de ce contraste. Il ne cherche pas à démontrer que « les cons
 
 Ces questions n’imposent ni une réponse dynamique à chaque objet, ni une taxonomie universelle des constantes.
 
+## Distinction minimale
+
+Dans ce dépôt, la **constance** désigne l’attribution conditionnée d’un maintien à une cible identifiée ; la **stabilisation** désigne l’établissement, la consolidation ou le maintien des conditions dans lesquelles ce maintien devient opératoire ou affirmable.
+
+Avant d’étendre un tel énoncé, expliciter au minimum la cible, la transformation considérée, le régime, l’échelle / le schéma / le modèle pertinents, la tolérance et la condition de rupture. Les dossiers disciplinaires peuvent raffiner ce contrôle ; ils restent premiers.
+
 ## Entrer dans le projet
 
 Pour voir le programme au travail, la porte la plus directe est la physique :

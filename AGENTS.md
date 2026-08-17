@@ -25,26 +25,26 @@ Pour une tâche locale :
 
 Ne pas précharger l’intégralité du corpus par défaut. La provenance détaillée se consulte lorsqu’une décision, une contradiction ou une révision l’exige.
 
-## 3. Rang documentaire
+## 3. Routage et autorité documentaire
 
-Distinguer toujours état vivant et provenance.
+Ne pas confondre l’endroit où l’on commence avec ce qui fait autorité. Un point d’entrée vivant local route vers l’autorité applicable ; il ne l’acquiert pas par sa seule fonction d’accueil.
 
-```text
-point d’entrée vivant local
-> décisions humaines récentes encore applicables
-> protocoles / spécifications / résultats qualifiés du chantier
-> synthèses validées
-> explorations et états datés
-> archives et provenance historique
-```
+Avant d’agir, distinguer :
 
-Ce classement n’est pas déduit mécaniquement de la date, du numéro d’issue ou du nom de fichier. Une couche vivante doit identifier explicitement ce qui gouverne l’action courante.
+- les autorités transverses : cadre canonique et décisions de rang encore applicables ;
+- l’autorité locale courante : décision humaine, protocole, spécification ou issue explicitement identifiée par le point d’entrée vivant du chantier ;
+- les résultats qualifiés et synthèses validées, qui établissent ce qu’ils portent dans leur périmètre sans devenir automatiquement une autorisation d’action ;
+- les explorations et états datés ;
+- les archives et la provenance historique.
+
+Une décision humaine plus récente explicitement applicable peut amender une règle ou une décision antérieure. Ni la date, ni le numéro d’issue, ni le nom du fichier ne suffisent à établir ce rang.
 
 Ne pas modifier une archive ou un état daté pour simuler une cohérence actuelle. Corriger la porte d’entrée vivante et conserver la généalogie.
 
 ## 4. Règles scientifiques et méthodologiques
 
 - Identifier ce qui est effectivement testé, sous quelle transformation, dans quel régime et avec quelles limites.
+- Pour un énoncé de constance ou de stabilisation, rendre explicites au minimum la cible, la transformation, le régime, l’échelle / le schéma / le modèle pertinents, la tolérance et la condition de rupture.
 - Ne pas confondre propriété de la cible, qualité de l’accès et mode de constitution.
 - Distinguer résultat, soutien probatoire et verdict.
 - Borner toute conclusion au domaine réellement instruit.
@@ -86,21 +86,7 @@ Deux lignes sont actuellement indépendantes :
 
 Ne jamais appeler `C7-GAL` « C7-C1 GAL ». Aucun état MCMC, aucune porte B1/SCI-1 et aucune autorisation de calcul ne se transfèrent de C7-C1 vers C7-GAL. Réciproquement, une dette matérielle ou une porte G2 de C7-GAL ne modifie pas SCI-1.
 
-À l’état courant :
-
-```text
-C7-C1 / X(z) :
-  SCI1 = NON_QUALIFIABLE
-  B1 = NON_AUTORISEE
-  NEW_SAMPLING = NON_AUTORISE
-
-C7-GAL :
-  C0_A_MATERIAL_CLOSURE = OUVERTE
-  G1 = INDISPONIBLE
-  G2 = NON_OUVERTE
-```
-
-Pour les détails et les causes, lire les issues actives ; ne pas reconstituer l’autorité depuis les anciennes issues seules.
+Les permissions, blocages et états mouvants ne sont pas recopiés ici : les lire dans le README du cycle 7 puis dans l’issue active de la ligne. Ne pas reconstituer l’autorité depuis les anciennes issues seules.
 
 ## 7. Documents et preuves
 
@@ -134,7 +120,7 @@ identifier la question qui le justifie
 → ne jamais propager automatiquement le verdict
 ```
 
-Une dette n’est transférée scientifiquement que si le nouveau terrain offre un accès, un discriminant ou une structure explicative réellement différente. Sinon, la qualifier simplement de différée ou suspendue.
+Une dette n’est transférée scientifiquement que si le nouveau terrain offre un accès, un discriminant ou une structure explicative réellement différente. Sinon, la qualifier simplement de différérée ou suspendue.
 
 ## 10. Git et mutations
 
