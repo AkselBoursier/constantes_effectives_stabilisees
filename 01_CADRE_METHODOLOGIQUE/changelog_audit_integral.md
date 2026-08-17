@@ -65,6 +65,34 @@ La lecture exhaustive doit permettre, pour chaque audit antérieur rencontré, d
 
 L’absence de contexte complet chez un agent antérieur n’est donc ni une invalidation automatique, ni une autorisation de conserver son verdict intact. Son effet doit être établi cas par cas à partir des contenus effectivement remontés.
 
+## Intégrité opérationnelle et signalement des incidents
+
+Toute erreur rencontrée pendant une opération qui peut affecter l’état du dépôt ou la confiance dans cet état doit être signalée explicitement au moment où elle survient. Cela inclut notamment les erreurs d’API, de passerelle, de service, de CI, de persistance, de lecture après écriture ou toute réponse contradictoire d’un outil.
+
+```text
+INCIDENT_RENCONTRE -> SIGNALEMENT_HUMAIN_IMMEDIAT
+ERREUR_5XX -> ETAT_DE_L_ECRITURE = INCONNU_JUSQU_A_RELECTURE
+CONTOURNEMENT_REUSSI != INCIDENT_ANNULE
+READ_BACK_CONFORME = NECESSAIRE_APRES_ETAT_AMBIGU
+ETAT_CONTRADICTOIRE_OU_NON_RELISIBLE -> MUTATIONS_SUSPENDUES
+```
+
+Un incident n’est jamais contourné silencieusement. Si une autre voie technique permet ensuite d’obtenir l’état demandé, l’incident initial reste consigné avec son type, l’opération concernée, ce qui était connu ou inconnu au moment de l’erreur, le contrôle effectué ensuite et l’état finalement relu. Une cause racine ne doit pas être inventée à partir du seul code HTTP.
+
+### Incident observé pendant la préparation de la PR #131
+
+Le 17 août 2026, plusieurs opérations GitHub ont produit des erreurs intermittentes `502` lors de la création ou de la modification de la PR #131. Des lectures, écritures de fichiers, commentaires et exécutions CI ont par ailleurs réussi. Une modification du corps de la PR a échoué sur `502`, un no-op avec le même endpoint a réussi, une nouvelle modification a de nouveau échoué, puis la même modification a finalement réussi et a été relue conforme.
+
+```text
+INCIDENT_502_#131 = REPRODUIT_INTERMITTENT
+CAUSE_RACINE = NON_ETABLIE
+CORRUPTION_PR_#131 = NON_IDENTIFIEE
+CORPS_ATTENDU_APRES_REPRISE = RELU_CONFORME
+CONTOURNEMENT_SILENCIEUX = INTERDIT
+```
+
+L’auteur a également signalé avoir rencontré auparavant une erreur de type `503 / Bad Gateway ou Service Unavailable` sur GitHub pendant une durée qu’il ne peut pas établir précisément, avec seulement la borne certaine rapportée `moins de trois heures`. Cet événement est conservé comme signal utilisateur distinct ; son identité de cause avec les `502` observés ici est `NON_ETABLIE`.
+
 ## Réduction progressive autorisée
 
 La réduction du corpus de travail devient légitime **après** remontée du contenu, jamais avant.
@@ -93,7 +121,8 @@ Le changelog doit être mis à jour au minimum :
 4. lorsqu’un résultat négatif, une bifurcation, un arbitrage ou une fonction intellectuelle jusque-là non remontée devient visible ;
 5. lorsqu’une relation entre deux parties du corpus est établie, réfutée ou requalifiée ;
 6. lorsqu’un contenu nouvellement remonté modifie la suffisance contextuelle attribuable à un audit antérieur ;
-7. avant toute réduction substantielle du corpus de travail fondée sur les lectures déjà effectuées.
+7. lorsqu’un incident d’intégrité opérationnelle survient ou est requalifié après vérification ;
+8. avant toute réduction substantielle du corpus de travail fondée sur les lectures déjà effectuées.
 
 Une mise à jour peut agréger plusieurs découvertes d’une même investigation, mais elle ne doit pas laisser une nouveauté significative hors registre jusqu’à la fin générale de l’audit.
 
@@ -114,6 +143,7 @@ BIFURCATIONS_MIGRATIONS_RENOMMAGES
 ELEMENTS_RESURGIS
 RELATIONS_A_D_AUTRES_CYCLES_OU_COUCHES
 AUDITS_ANTERIEURS_RENCONTRES_ET_EFFET_DU_CONTEXTE_NOUVEAU
+INCIDENTS_D_INTEGRITE_OPERATIONNELLE
 NON_ETABLI_OU_NON_DECIDABLE
 EFFET_SUR_LES_AUDITS_EN_COURS = NON_ETABLI_PAR_DEFAUT
 PROCHAINE_CONSEQUENCE_EVENTUELLE
@@ -144,6 +174,7 @@ LECTURE_INTEGRALE_AVANT_EXCLUSION = REQUISE
 REDUCTION_PROGRESSIVE = AUTORISEE_APRES_REMONTEE
 AUDITS_ANTERIEURS = CONSERVES_COMME_PREUVES_ET_HISTORIQUE
 SUFFISANCE_CONTEXTUELLE_AUDITS_ANTERIEURS = NON_ETABLIE_PAR_DEFAUT
+SIGNALEMENT_INCIDENTS_INTEGRITE = OBLIGATOIRE
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT_A_CE_STADE
 ```
 
