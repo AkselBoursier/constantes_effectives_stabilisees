@@ -4,22 +4,23 @@
 
 ```text
 chemin historique : Dette_active_masse_electron_Yukawa_v0_1.md ;
-statut proposé au 27 juillet 2026 :
-  dette localement résolue dans son premier périmètre ;
+statut courant : dette localement résolue dans son premier périmètre ;
 origine : décision D6 du cycle 1 ;
 cycle d’accueil : Saveur–Higgs ;
 lot de résolution : S1–S3 ;
 validation scientifique locale : acquise par S3-V1 et S3-V2 ;
 fusion des preuves : PR #56 ;
-propagation active : en attente de validation de l’issue #57 ;
-autorité de la présente requalification : aucune avant fusion de la propagation ;
+propagation active : validée par P5-1 à P5-5 et fusionnée par la PR #58 ;
+autorité documentaire : requalification acquise ;
 ne vaut pas : clôture du cycle Saveur–Higgs,
                observation directe du Yukawa électronique,
                explication de la hiérarchie fermionique,
                ni sélection de la prochaine dette scientifique.
 ```
 
-Le nom de fichier conserve la provenance de la dette transférée. Son contenu courant doit primer sur le mot `active` présent dans le chemin.
+Le nom de fichier conserve la provenance de la dette transférée. Le mot `active` présent dans le chemin est historique et ne qualifie plus l’état de la dette.
+
+Les sections 6 et 8 ci-dessous conservent la **proposition documentaire antérieure à la fusion de PR #58**. Les expressions « après validation de la propagation », « statut proposé » et « décision encore ouverte dans #57 » y décrivent l’état de préparation du 27 juillet, non le statut courant. La validation et la propagation sont désormais acquises ; l’arbitrage de la dette scientifique suivante est resté séparé et a été traité ensuite par D9 (#60).
 
 ## 1. Dette initiale
 

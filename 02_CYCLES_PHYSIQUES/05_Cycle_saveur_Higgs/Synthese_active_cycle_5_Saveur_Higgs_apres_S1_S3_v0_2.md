@@ -3,14 +3,16 @@
 ## 0. Statut
 
 ```text
-statut : proposition de synthèse active du cycle Saveur–Higgs ;
-date : 27 juillet 2026 ;
-issue : #57 ;
+statut : synthèse active validée du cycle Saveur–Higgs ;
+date scientifique : 27 juillet 2026 ;
+issue de propagation : #57 — close / completed ;
+validation documentaire : P5-1 à P5-5 validées, propagation fusionnée par la PR #58 ;
 base scientifique : S1, S2 et S3 validés et fusionnés par la PR #56 ;
-fonction : propager de manière bornée le verdict local du cas électronique
-           vers l’orientation active du cycle ;
-autorité : aucune avant validation humaine de la propagation ;
-remplace pour l’usage courant, après validation :
+fonction : porter de manière bornée le verdict local du cas électronique
+           dans l’orientation active du cycle ;
+autorité : point d’entrée courant du cycle 5 pour le périmètre S1–S3,
+            selon P5-2 et la fusion de la PR #58 ;
+remplace pour l’usage courant :
   Synthese_cycle_saveur_Higgs_v0_1.md ;
 conserve la v0.1 : comme état architectural antérieur ;
 ne vaut pas : réécriture de S1–S3,
@@ -18,8 +20,10 @@ ne vaut pas : réécriture de S1–S3,
                ajustement global SMEFT,
                explication de la hiérarchie fermionique,
                nouvelle taxonomie,
-               ni arbitrage de la prochaine dette scientifique.
+               ni arbitrage courant de la prochaine dette scientifique.
 ```
+
+Les sections 17 et 19 conservent l’état procédural **avant** la validation et la fusion de la propagation. Elles documentent la séparation qui devait être préservée entre propagation et arbitrage de la dette suivante ; elles ne doivent plus être lues comme des décisions encore en attente. L’arbitrage post-S1–S3 a été conduit séparément par D9 (#60). Cette mise à jour de statut ne réécrit aucun résultat scientifique de S1–S3 et ne sélectionne aucune nouvelle dette actuelle.
 
 ## 1. Pourquoi une propagation est nécessaire
 

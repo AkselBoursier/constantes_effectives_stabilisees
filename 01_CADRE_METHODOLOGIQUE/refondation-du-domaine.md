@@ -2,19 +2,21 @@
 
 ## Statut
 
-Ce document est le cadre canonique actif de la refondation.
+Ce document porte le **noyau canonique actif** de la refondation : critères d’énoncé situé, distinction cible / accès / constitution, discipline terminologique et conditions de refus ou de rupture.
+
+Il ne constitue pas un tableau de bord de l’état courant des cycles. Les sections d’application et les synthèses qu’il référence conservent l’état scientifique ou documentaire correspondant à leur propre coupure ; pour l’activité actuelle d’un cycle, partir de l’[accueil des cycles](../02_CYCLES_PHYSIQUES/README.md) puis du point d’entrée local qu’il désigne.
 
 Son historique est désormais porté par Git. Aucun numéro de version n’est ajouté à son nom.
 
-Décision de rang associée :
+Décision de rang associée et encore applicable :
 
 - [Constance de l’objet, stabilisation de l’accès et mode de constitution](Decision_statuts_constance_acces_constitution_v0_1.md)
 
-Carte de jonction associée :
+État de jonction transversal daté, conservé pour son contenu et sa généalogie mais non comme route active du projet :
 
 - [Carte des frottements entre chantiers](../05_CARTES_ET_SYNTHESES/Carte_frottements_chantiers_v0_1.md)
 
-Document de synthèse associé :
+Synthèse substantielle datée de la phase de refondation, à ne pas lire comme état programmatique courant :
 
 - [Synthèse de la refondation des cycles](../05_CARTES_ET_SYNTHESES/synthese-refondation-des-cycles.md)
 
