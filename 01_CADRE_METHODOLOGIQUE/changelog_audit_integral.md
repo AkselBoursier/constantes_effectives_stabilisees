@@ -583,3 +583,57 @@ DETTE_COMBINAISON_MULTI_ISOTOPES_NME = OUVERTE
 Cette requalification est documentaire : le présent audit n’a pas réexécuté les chaînes DESI externes. Il établit seulement que la dette formulée dans N3/N5 a fait l’objet d’une reprise computationnelle versionnée plus tard, avec succès partiel et limites explicites.
 
 Prochaine étape documentaire du cycle 3 : lire intégralement les six extractions Markdown historiques de `00_Sources_docx`, puis maintenir séparément la dette des six DOCX originaux tant que leur lecture directe reste techniquement impossible.
+
+### Cycle 3 — couche historique textuelle lue ; couverture non-DOCX complète
+
+Les six extractions Markdown de `00_Sources_docx` sont maintenant lues intégralement. Avec la racine active et la reprise computationnelle, toutes les pièces non-DOCX du cycle 3 sont donc couvertes.
+
+```text
+CYCLE_3_TOTAL_BLOBS = 42
+CYCLE_3_MARKDOWN = 20/20_LUS_INTEGRALEMENT
+CYCLE_3_AUTRES_NON_DOCX = 16/16_LUS_INTEGRALEMENT
+CYCLE_3_NON_DOCX = 36/36_LUS_INTEGRALEMENT
+CYCLE_3_DOCX_ORIGINAUX = 0/6_LUS_DIRECTEMENT
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE_CYCLE_3 = INCOMPLETE
+```
+
+Les six extractions répètent explicitement qu’elles ne remplacent pas les DOCX originaux et que les équations, tableaux, graphiques ou la mise en page peuvent être dégradés. Elles sont donc traitées comme pièces documentaires autonomes, non comme substituts probatoires complets.
+
+La couche historique fait apparaître une taxonomie forte :
+
+```text
+Delta m^2 -> « constantes de phase oscillatoire »
+theta_12, theta_23, theta_13 -> « constantes de projection oscillatoire »
+delta_CP -> « constante de phase d’asymétrie oscillatoire »
+masse absolue / ancrage -> « constante de seuil spectral »
+ensemble du secteur -> « constantes oscillatoires de mélange et de phase »
+```
+
+La synthèse historique voulait intégrer ces catégories à une carte consolidée et introduire explicitement des **degrés de stabilisation** : fortement stabilisé, partiellement stabilisé, en cours de stabilisation, borné sans mesure positive, structurellement ouvert.
+
+Cette couche n’est pas annulée par N0–N5, mais elle est requalifiée. Les documents actifs ultérieurs conservent plusieurs fonctions physiques sous-jacentes — différence, projection, phase, ancrage, bornes et médiations — tout en abandonnant l’idée qu’elles doivent nécessairement devenir une taxonomie canonique de « constantes ». `N5` reformule notamment l’ancien dossier de « masse absolue » comme **plusieurs fonctions non équivalentes d’un même spectre**, reliées seulement par des ponts dont les hypothèses doivent rester visibles.
+
+```text
+ANCIENNE_TAXONOMIE_NEUTRINOS = FAIT_GENEALOGIQUE_CONSERVE
+RESTAURATION_COMME_TAXONOMIE_ACTIVE = NON_ETABLIE
+FONCTIONS_PHYSIQUES_SOUS_JACENTES = LARGEMENT_CONSERVEES_ET_REQUALIFIEES
+FORMULE « MASSE_ABSOLUE_COMME_UNIQUE_OBJET_D_ACCES » = REQUALIFIEE_PAR_N5
+DEGRES_DE_STABILISATION = IDEE_HISTORIQUE_RESURGIE_A_CONSERVER_POUR_AUDIT_TRANSVERSAL
+```
+
+La fiche historique de masse absolue conserve aussi des états empiriques plus anciens — par exemple la borne Planck+BAO `0.12 eV` et une version antérieure de KamLAND-Zen — que les fiches N3/N4 ultérieures redatent avec DESI DR2 et le jeu complet KamLAND-Zen. Ces différences sont une chronologie documentaire, pas des contradictions à moyenner.
+
+Aucune occurrence explicite suffisamment nette de la vieille question générale de « définissabilité » n’est récupérée dans ces six extractions comme programme directeur du cycle 3. Des fonctions voisines existent — conditions de manifestation, ancrage spectral, passage entre production/propagation/détection — mais leur identité avec cette ancienne question générale n’est pas établie par le seul cycle 3.
+
+La dette binaire demeure : six DOCX originaux doivent encore être lus directement ou faire l’objet d’une procédure d’équivalence réellement établie. Cette dette n’empêche pas la poursuite de l’audit exhaustif des autres cycles ; elle reste enregistrée pour reprise ultérieure.
+
+```text
+DETTE_DOCX_C1 = 5
+DETTE_DOCX_C2 = 4
+DETTE_DOCX_C3 = 6
+DETTE_DOCX_CUMULEE_APRES_C3 = 15
+BLOCAGE_DES_CYCLES_SUIVANTS_PAR_CETTE_DETTE = NON
+```
+
+Prochaine étape : ouvrir l’inventaire exact du cycle 4 et poursuivre la lecture exhaustive, tout en conservant le cycle 3 au statut `INCOMPLETE` tant que ses six DOCX ne sont pas directement qualifiés.
