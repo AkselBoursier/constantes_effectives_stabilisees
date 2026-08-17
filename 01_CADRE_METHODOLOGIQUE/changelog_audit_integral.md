@@ -1049,3 +1049,85 @@ DETTE_DOCX_CUMULEE_APRES_C6 = 29
 La dette n’empêche pas l’ouverture du cycle 7. Le cycle 6 reste `INCOMPLETE` au sens documentaire global tant que les cinq DOCX originaux ne sont pas qualifiés directement ou par une procédure d’équivalence effectivement établie.
 
 Prochaine position documentaire : ouvrir l’inventaire exhaustif du cycle 7, sans présumer que ses routes vivantes, ses rapports computationnels ou ses issues résument suffisamment ses 66 blobs.
+
+### Cycle 7 — inventaire exact et couche de racine intégralement lue
+
+Arbre exact au baseline : `3df6810ef1a6b1f98f74c7d37dfc9fe7f14668f2`.
+
+Le cycle contient exactement 66 blobs et, contrairement aux cycles 1 à 6, aucun DOCX. La répartition matérielle exacte est :
+
+```text
+Markdown = 31
+Python = 23
+YAML = 9
+TXT = 2
+PowerShell = 1
+TOTAL = 66
+```
+
+La racine contient 13 Markdown ; le sous-dossier `01_REPRISE_COMPUTATIONNELLE_C7_C1` contient 53 blobs : 18 Markdown, 23 Python, 9 YAML, 2 TXT et 1 PowerShell.
+
+```text
+CYCLE_7_RACINE_MARKDOWN = 13/13_LUS_INTEGRALEMENT
+CYCLE_7_REPRISE_COMPUTATIONNELLE = 0/53_A_CE_PALIER
+CYCLE_7_TOTAL_LU = 13/66
+COUVERTURE_CYCLE_7 = EN_COURS
+DETTE_DOCX_C7 = 0
+```
+
+#### Trajectoire de la couche cosmologique de racine
+
+La racine conserve plusieurs états successifs : cadrage des objets cosmologiques, fiches `Lambda`, `H_0`, `Omega_i`, `w`, `A_s/n_s`, `sigma_8/S_8`, synthèse historique, plan de reprise, puis triptyque `architecture / vérification / évaluation`.
+
+La synthèse historique avait formulé une `macro-architecture` de fonctions et sous-réseaux. Le triptyque de reprise la requalifie explicitement :
+
+```text
+ARCHITECTURE_COSMOLOGIQUE_INFERENTIELLE_RECONSTRUCTIVE = CONFIRMEE_DANS_CETTE_REPRISE_HISTORIQUE
+MACRO_ARCHITECTURE_DE_CONSTANTES = REFUSEE_DANS_CETTE_REPRISE_HISTORIQUE
+```
+
+Cette qualification est conservée comme résultat historique versionné. Elle ne vaut pas automatiquement verdict scientifique actuel du cycle 7, dont les lignes courantes `C7-C1 / X(z) / SCI-1` et `C7-GAL / C0` sont plus tardives et indépendantes.
+
+#### Distinctions remontées dans les 13 pièces
+
+La couche de racine sépare notamment :
+
+```text
+Lambda : paramètre de loi candidat à la constance dans GR + Lambda ;
+H_0 : valeur actuelle de H(t), donc paramètre d'état ;
+Omega_i : rapports normalisés dépendant de rho_crit et de l'époque ;
+w : relation / paramétrisation d'état ;
+A_s, n_s : paramètres primordiaux à pivot déclaré ;
+sigma_8, S_8 : reconstructions tardives et combinaisons adaptées à des dégénérescences ;
+tension : propriété comparative de réseaux d'inférence, non objet physique autonome.
+```
+
+Le triptyque insiste en outre sur la séparation de trois chaînes :
+
+```text
+chaîne physique ;
+chaîne paramétrique ;
+chaîne inférentielle.
+```
+
+et sur la règle historique :
+
+```text
+fixé dans un fit != constant physiquement.
+```
+
+Ces distinctions seront recoupées avec les artefacts computationnels ; elles ne sont pas tenues pour confirmées par la seule synthèse.
+
+#### Relation avec les lignes actives
+
+Le README courant sépare explicitement :
+
+```text
+C7-C1 / X(z) / SCI-1
+!=
+C7-GAL / C0
+```
+
+Aucun état, blocage, autorisation ou verdict ne se transfère entre les deux. Le README signale aussi que le rouge de persistance de RUN1 a une cause source/contrat qualifiée sans qualification scientifique de RUN1, tandis que C7-GAL reste bloquée sur l'accès matériel à certains HDF5. Ces états sont seulement enregistrés ici comme contenu du README ; ils devront être reconstruits depuis les pièces concernées et ne sont pas utilisés comme substitut aux 53 blobs restant à lire.
+
+Prochaine étape documentaire : lecture exhaustive des 53 blobs de `01_REPRISE_COMPUTATIONNELLE_C7_C1`, en commençant par README, requirements, configurations et manifeste de provenance avant les rapports et scripts.
