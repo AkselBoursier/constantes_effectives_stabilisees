@@ -703,3 +703,207 @@ DETTE_DOCX_CUMULEE_APRES_C4 = 19
 ```
 
 Aucun audit scientifique substantiel nouveau n’est ouvert par cette lecture. La prochaine lecture séquentielle peut passer au cycle 5 sans effacer cette dette.
+
+## Complément de cadrage — statut de laboratoire du projet
+
+L’auteur précise que le dépôt ne doit pas être lu comme un produit intellectuel achevé dont chaque état antérieur serait soit une erreur à corriger, soit une doctrine à restaurer. Il fonctionne avant tout comme un **laboratoire de recherche**, avec essais de vocabulaire, architectures provisoires, bifurcations, abandons, réabsorptions, reprises et changements de niveau.
+
+Cette précision modifie la présomption documentaire, sans diminuer l’exigence de preuve :
+
+```text
+PROJET = LABORATOIRE_EN_EVOLUTION
+GENEALOGIE_COMPLEXE = ATTENDUE_COMME_PROPRIETE_DU_TRAVAIL
+ETAT_ANTERIEUR_ABANDONNE -> ERREUR = NON_PRESUME
+ETAT_ANTERIEUR_ABANDONNE -> DOCTRINE_A_RESTAURER = NON_PRESUME
+TRANSFORMATION_DE_VOCABULAIRE -> PERTE_OU_GAIN = A_ETABLIR
+BRANCHE_EXPERIMENTALE -> AUTORITE_COURANTE = NON_PRESUME
+ETAT_COURANT -> VERITE_TERMINALE = NON_PRESUME
+```
+
+Conséquence pour l’audit : la généalogie doit être lue comme un ensemble d’expériences intellectuelles dont les fonctions peuvent survivre à la disparition des termes, ou au contraire avoir été réellement abandonnées. Le rôle de l’audit est de reconstruire ces transformations et leurs effets, non de lisser le laboratoire en trajectoire linéaire ni de promouvoir automatiquement l’état le plus récent.
+
+Cette précision renforce les règles déjà établies de non-promotion, de symétrie critique et de conservation des bifurcations ; elle ne crée pas d’exception à la lecture exhaustive.
+
+### Cycle 5 — Saveur–Higgs — couverture textuelle complète, DOCX ouverts
+
+Arbre exact du cycle au baseline : `d42368104ea389d0e985fa594088550013870f58`.
+
+Inventaire exact :
+
+```text
+00_Sources_docx/Fiche (v) v0.1.docx
+00_Sources_docx/Fiche CKM v0.1.docx
+00_Sources_docx/Fiche Wolfenstein v0.1.docx
+00_Sources_docx/Fiche Yukawa v0.1.docx
+00_Sources_docx/Source_docx_Fiche_CKM_v0_1.md
+00_Sources_docx/Source_docx_Fiche_Wolfenstein_v0_1.md
+00_Sources_docx/Source_docx_Fiche_Yukawa_v0_1.md
+00_Sources_docx/Source_docx_Fiche_v_v0_1.md
+00_Sources_docx/Source_docx_Synthese_cycle_CKM_v0_1.md
+00_Sources_docx/Synthèse du cycle CKM v0.1.docx
+Cycle_CP1_seuil_electrofaible_v0_1.md
+Dette_active_masse_electron_Yukawa_v0_1.md
+Fiche_masse_absolue_neutrinos_v0_1.md
+Note_physique_BEH_mecanisme_v0_1.md
+S1_Relation_structurelle_masse_electron_Yukawa_v0_1.md
+S2_Acces_metrologiques_indirects_directs_Yukawa_electron_v0_1.md
+S3_Verdict_local_masse_electron_Yukawa_acces_Higgs_v0_1.md
+Synthese_CP1_seuil_electrofaible_v0_1.md
+Synthese_active_cycle_5_Saveur_Higgs_apres_S1_S3_v0_2.md
+Synthese_cycle_saveur_Higgs_v0_1.md
+Synthese_recuperation_sources_saveur_Higgs_cible_v0_1.md
+architecture-relationnelle-higgs-yukawa.md
+evaluation-gain-explicatif-higgs-yukawa.md
+verification-physique-higgs-yukawa.md
+```
+
+```text
+CYCLE_5_TOTAL_BLOBS = 24
+CYCLE_5_MARKDOWN = 19/19_LUS_INTEGRALEMENT
+CYCLE_5_DOCX_ORIGINAUX = 0/5_LUS_DIRECTEMENT
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE_CYCLE_5 = INCOMPLETE
+```
+
+La trajectoire documentaire du cycle 5 est elle-même un résultat important de l’audit. Elle comporte plusieurs couches expérimentales successives qu’il ne faut ni fusionner ni hiérarchiser rétrospectivement sans contrôle :
+
+```text
+sources historiques taxonomiques
+-> compression CKM / Orientation
+-> pilote « architecture relationnelle / fonction de fixité »
+-> sous-cycle CP-1 « constance de seuil »
+-> requalification Saveur–Higgs en pont architectural
+-> lot S1–S3 centré sur les rangs probatoires
+-> synthèse active v0.2 = pont architectural + réseau de passages probatoires.
+```
+
+#### Résurgences historiques et requalifications
+
+Les sources historiques proposaient notamment :
+
+```text
+v -> « constante de régime générateur » ;
+Yukawa -> « constantes de différenciation fermionique » / « constantes de texture » ;
+CKM -> orientation de saveur ;
+Wolfenstein -> paramètres hiérarchiques d’orientation ;
+CP-1 -> « constance de seuil ».
+```
+
+La synthèse historique CKM avait déjà commencé à compresser les anciennes catégories neutrino en une famille générale `Orientation`, en rétrogradant « oscillatoire » vers un régime de manifestation. La récupération Saveur–Higgs ultérieure va plus loin : elle conserve les fonctions de `v`, Yukawa, CKM et Wolfenstein mais refuse de restaurer les anciennes étiquettes comme rangs taxonomiques autonomes.
+
+```text
+ANCIENNES_CATEGORIES_SAVEUR_HIGGS = FAITS_GENEALOGIQUES_CONSERVES
+RESTAURATION_COMME_TAXONOMIE_ACTIVE = NON_ETABLIE
+FONCTIONS_LOCALES_SOUS_JACENTES = PARTIELLEMENT_CONSERVEES_ET_REQUALIFIEES
+CP1_CONSTANCE_DE_SEUIL = EXPERIENCE_METHODOLOGIQUE_HISTORIQUE_A_NE_PAS_PROMOUVOIR_PAR_DEFAUT
+```
+
+#### Correction physique interne importante
+
+Le pilote `architecture-relationnelle-higgs-yukawa.md` et sa vérification corrigent une séquence ancienne susceptible de suggérer que les Yukawa sont produits par la brisure électrofaible. La formulation contrôlée devient :
+
+```text
+les termes de Yukawa appartiennent déjà au Lagrangien symétrique ;
+la valeur moyenne non nulle du Higgs permet leur contribution aux matrices de masse ;
+la diagonalisation révèle valeurs propres et désalignements ;
+elle ne crée ni n’explique la hiérarchie encodée dans les Yukawa.
+```
+
+La même vérification sépare l’ordre logique de la théorie, les opérations de représentation, les voies d’accès et l’histoire thermique. Le changement électrofaible dans le Modèle standard physique est traité comme un **crossover** et non comme un instant singulier de « formation des constantes ».
+
+#### Pilote « fonction de fixité »
+
+Le pilote conclut que l’hypothèse de « fonction de fixité » possède un gain local limité : elle aide à distinguer fixation d’échelle, texture, spectre, orientation et raccordement effectif, mais elle n’est pas démontrée comme vocabulaire général de tous les cycles.
+
+Le document d’évaluation formule explicitement :
+
+```text
+PILOTE_HIGGS_YUKAWA = CONCLUANT_SOUS_CONDITIONS
+GENERALISATION_FONCTION_DE_FIXITE_A_TOUS_LES_CYCLES = NON_ETABLIE
+GAIN_LE_PLUS_ROBUSTE = RELATIONS_TYPEES + LOCALISATION_DES_ARRETS_DE_L_EXPLICATION
+```
+
+Le gain n’est donc pas la création d’un métalangage supplémentaire ; il réside surtout dans la séparation des mécanismes, représentations, régimes et accès, ainsi que dans la capacité à formuler des contrefactuels et à localiser ce que le Modèle standard paramètre sans l’expliquer.
+
+#### Requalification active v0.1 -> v0.2
+
+La synthèse v0.1 conserve le réseau :
+
+```text
+échelle de brisure
++ Yukawa
++ matrices de masse
++ diagonalisation
++ spectres
++ orientations CKM / PMNS.
+```
+
+Elle a toutefois été explicitement requalifiée : les formulations fortes d’« architecture constitutive confirmée », de « solidarité constitutive stabilisée » ou de « temporalité de constitution » ne valent plus comme verdicts généraux. Le rang actif devient :
+
+```text
+SAVEUR_HIGGS = PONT_ARCHITECTURAL_DOCUMENTE
+GAIN_EXPLICATIF = CONDITIONNEL
+EXPLICATION_D_ORIGINE = REFUSEE
+```
+
+La synthèse active v0.2 ajoute au pont architectural un **réseau de passages probatoires indexés**, sans généraliser automatiquement le cas électronique aux autres fermions ou orientations.
+
+#### Dette électronique transférée depuis le cycle 1
+
+La dette `m_e / y_e` transférée par D6 n’a pas été oubliée. S1–S3 l’ont localement résolue dans son premier périmètre.
+
+S1 impose les distinctions :
+
+```text
+M_e
+!= m_e^S(mu)
+!= y_e^S(mu)
+!= v^S(mu)
+!= v_F
+!= g_hee.
+```
+
+et les trois rangs :
+
+```text
+identité nue
+!= paramétrisation renormalisée
+!= raccordement à une masse physique corrigé.
+```
+
+S2 distingue métrologie, eEDM, `a_e`, `H -> e+e-` et futur `e+e- -> H` par leur cible et leur modèle de passage. Il refuse une combinaison numérique hors modèle commun et refuse toute hiérarchie universelle `direct > indirect`.
+
+S3 porte le verdict local :
+
+```text
+M_e = masse physique très précisément déterminée ;
+y_e standard = inféré avec grande précision dans le Modèle standard minimal sous conventions déclarées ;
+H -> e+e- = branche directement bornée, sans observation du couplage standard ;
+origine de la petitesse de y_e = NON_EXPLIQUEE ;
+hiérarchie fermionique = NON_EXPLIQUEE.
+```
+
+La dette est donc close **localement**, tandis que le cycle Saveur–Higgs reste ouvert et que l’observation directe du Yukawa électronique à la valeur standard demeure non acquise.
+
+#### Dossier neutrino présent dans le cycle 5
+
+La fiche interne `Fiche_masse_absolue_neutrinos_v0_1.md` constitue une couche intermédiaire entre l’ancienne taxonomie neutrino et la reconstruction N0–N5 du cycle 3. Elle refuse déjà de faire de la « masse absolue » une famille autonome et requalifie « seuil spectral » comme rôle, non comme famille. Elle distingue `m_beta`, `Sigma_m_nu` et `m_beta_beta` et avertit que la trajectoire des bornes n’est pas une variation physique de la masse.
+
+Sa présence dans Saveur–Higgs montre une interface historique réelle entre les cycles 3 et 5 ; elle n’autorise pas à déplacer rétroactivement l’autorité actuelle du dossier neutrino hors du cycle 3.
+
+#### Dettes et limites
+
+Les cinq DOCX originaux restent non lus directement et leurs extractions déclarent ne pas les remplacer. La dette binaire cumulée devient :
+
+```text
+DETTE_DOCX_C1 = 5
+DETTE_DOCX_C2 = 4
+DETTE_DOCX_C3 = 6
+DETTE_DOCX_C4 = 4
+DETTE_DOCX_C5 = 5
+DETTE_DOCX_CUMULEE_APRES_C5 = 24
+```
+
+Aucun nouveau verdict scientifique n’est produit par le présent audit documentaire. Les valeurs et qualifications scientifiques historiques sont conservées comme contenu versionné ; leur revalidation externe n’est pas ouverte ici.
+
+Prochaine position documentaire : ouvrir l’inventaire exact du cycle 6, tout en conservant le cycle 5 au statut `INCOMPLETE` tant que ses cinq DOCX originaux ne sont pas directement qualifiés.
