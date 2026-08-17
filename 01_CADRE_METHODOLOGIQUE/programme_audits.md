@@ -25,7 +25,11 @@ ABSENCE_DE_CONTRE_EXEMPLE != PREUVE_POSITIVE
 DEPENDANCE_NON_TESTEE = NON_ETABLIE
 ```
 
-Une rubrique inconnue reste `NON_ETABLIE` ou `NON_DECIDABLE` selon le cas ; elle n’est pas remplie par vraisemblance.
+`NON_ETABLI` signifie qu’une proposition, relation ou dépendance n’a pas encore été démontrée dans le périmètre considéré.
+
+`NON_DECIDABLE` est plus fort et ne doit pas servir de synonyme : il suppose qu’une instruction pertinente a été tentée et qu’une limite explicitée des matériaux, des accès ou du périmètre autorisé empêche actuellement de trancher.
+
+Une rubrique inconnue reste `NON_ETABLIE` ; elle n’est pas remplie par vraisemblance.
 
 ### 1.2 Symétrie critique
 
@@ -38,13 +42,15 @@ PAS_DE_DEFLATION_SANS_SUPPORT
 
 Une conclusion positive et une critique négative supportent la même charge de preuve. L’audit doit pouvoir nommer et préserver les acquis réels — résultat robuste, distinction discriminante, gain explicatif, question féconde, fonction conceptuelle conservée, compatibilité ou tension féconde — autant que les erreurs, surinterprétations, pertes, dettes et incohérences réelles.
 
-Un résultat négatif scientifiquement informatif est un acquis lorsqu’il réduit effectivement l’espace des possibilités ou modifie une décision.
+Un résultat négatif scientifiquement informatif est un acquis lorsqu’il borne, exclut ou réduit effectivement un espace de possibilités, révèle une limitation pertinente, ou modifie ce qu’une décision ou une interprétation peut légitimement soutenir.
 
 ### 1.3 Tout verdict est borné
 
 Aucune conclusion ne vaut au-delà des matériaux, transformations, régimes, documents, résultats ou relations effectivement contrôlés.
 
-`QUALIFIE_DANS_LE_PERIMETRE` signifie : conditions suffisantes pour avancer dans le périmètre déclaré. Il ne signifie ni vérité définitive ni interdiction de réouverture.
+`QUALIFIE_DANS_LE_PERIMETRE` signifie seulement que la **conclusion propre de l’audit** est suffisamment instruite dans le périmètre déclaré. Cet état ne vaut ni vérité définitive, ni non-blocage, ni autorisation automatique pour un autre chantier.
+
+L’effet sur un autre chantier reste toujours qualifié sur l’axe séparé défini en section 2.
 
 ### 1.4 L’inachevé peut rester inachevé
 
@@ -72,6 +78,12 @@ QUALIFIE_DANS_LE_PERIMETRE
 A_REOUVRIR_SUR_CONDITION
 ```
 
+- `NON_OUVERT` : aucune instruction substantielle n’a encore été engagée sous ce programme.
+- `EN_COURS` : l’instruction est active et aucune conclusion terminale n’est encore qualifiée.
+- `SUSPENDU` : l’instruction reste incomplète ; la raison de suspension et le reste non qualifié doivent être explicites.
+- `QUALIFIE_DANS_LE_PERIMETRE` : la conclusion propre de l’audit est suffisamment instruite dans son périmètre, sans effet automatique sur un autre chantier.
+- `A_REOUVRIR_SUR_CONDITION` : une condition future explicite a été identifiée comme déclencheur de réexamen. Tant qu’elle n’est pas satisfaite, elle ne constitue pas une réouverture active ; si elle devient vraie, la conclusion affectée doit être retestée avant d’être réutilisée au-delà de ce que permet encore son ancien périmètre.
+
 ### Effet de `X` sur un autre chantier ou une décision `Y`
 
 ```text
@@ -85,6 +97,7 @@ La valeur par défaut est `NON_ETABLI`.
 
 ```text
 SUSPENDU != NON_BLOQUANT
+QUALIFIE_DANS_LE_PERIMETRE != NON_BLOQUANT
 ```
 
 Déclarer `NON_BLOQUANT_POUR_Y` exige que la dépendance de `Y` envers `X` ait été testée et que les éléments restant non qualifiés dans `X` ne soutiennent aucune prémisse nécessaire de `Y` dans le périmètre examiné. L’absence momentanée de contre-exemple ne suffit pas.
@@ -99,11 +112,14 @@ PERIMETRE_INITIAL
 DEPENDANCES_CONNUES
 HYPOTHESES_A_TESTER
 MATERIAUX_OU_RESULTATS_SENTINELLES
+CONTRE_TESTS_OU_FALSIFICATEURS
 CRITERES_D_ARRET
 CRITERES_D_EXTENSION
 CRITERES_DE_REOUVERTURE
 SORTIES_RECEVABLES
 ```
+
+Les contre-tests doivent être adaptés à la nature de l’audit. Leur fonction est d’empêcher qu’une conclusion soit qualifiée sans exposition suffisante à une alternative, un cas négatif, une ablation ou un falsificateur pertinent. Lorsqu’aucun contre-test de ce type n’est applicable, cette absence doit être justifiée plutôt que supposée.
 
 La fiche doit rester aussi courte que le permet la contrôlabilité réelle de l’audit. Les issues peuvent porter son exécution détaillée ; elles ne remplacent pas ce programme comme vue de la séquence générale.
 
@@ -115,16 +131,24 @@ Cette séquence exprime des dépendances de travail, non une chaîne irréversib
 
 | Étape | Audit | Fonction / question principale |
 |---|---|---|
-| **0** | **Cadrage du programme** | Fixer questions, dépendances, sentinelles, critères d’arrêt, d’extension et de réouverture. Le présent document est le premier résultat de ce cadrage ; il n’ouvre aucun audit substantiel. |
-| **1** | **Documentaire minimal d’orientation** | Localiser les pièces, distinguer routes vivantes, rangs revendiqués et états datés. Les travaux ayant conduit notamment à #124 et #126 en constituent une partie déjà réalisée, elle-même réauditable. Cet audit ne décide pas de la justesse scientifique, conceptuelle ou philosophique. |
-| **2** | **Scientifique des résultats porteurs** | Identifier les résultats qui soutiennent réellement l’architecture intellectuelle actuelle et vérifier si leur qualification suffit à cet usage. Le périmètre initial reste borné ; d’autres cycles sont réaudités si une dépendance ou un contre-exemple le justifie. |
+| **0** | **Cadrage du programme** | Fixer questions, dépendances, sentinelles, contre-tests, critères d’arrêt, d’extension et de réouverture. Le présent document est le premier résultat de ce cadrage ; il n’ouvre aucun audit substantiel. |
+| **1** | **Documentaire minimal d’orientation** | Localiser les pièces, distinguer routes vivantes, rangs revendiqués et états datés. Des travaux documentaires antérieurs, notamment ceux ayant conduit à #124 et #126, existent comme matériaux candidats ; leur qualification comme réalisation partielle de cette étape reste à établir sous le présent programme. Cet audit ne décide pas de la justesse scientifique, conceptuelle ou philosophique. |
+| **2** | **Scientifique des résultats porteurs** | Partir de résultats explicitement invoqués, reliés ou candidats à soutenir l’architecture intellectuelle actuelle, puis vérifier ce qu’ils établissent réellement et si leur qualification suffit à l’usage envisagé. Le caractère « porteur » n’est pas présupposé. Le périmètre initial reste borné ; d’autres cycles sont réauditables si une dépendance ou un contre-exemple le justifie. |
 | **3** | **Conceptuel** | Identifier les questions, distinctions et fonctions intellectuelles réellement portées, puis tester ce qu’elles sont devenues : conservées, partiellement conservées, transformées avec gain ou perte, encore fécondes, dépassées, perdues/non réassimilées ou non décidables. Le test porte sur la fonction discriminante, pas sur la survie d’un mot. |
-| **4** | **Méthodologique** | Tester si les règles et distinctions actuelles sont justifiées par les résultats et discriminations qualifiés, ou si elles sont seulement locales, redondantes, trop fortes, mal placées, non justifiées ou non décidables. La cohérence interne d’une règle ne prouve pas sa nécessité. |
+| **4** | **Méthodologique** | Tester si les règles et distinctions actuelles sont justifiées au regard des problèmes, discriminations, risques et supports effectivement établis, ou si elles sont seulement locales, redondantes, trop fortes, mal placées, non justifiées ou non décidables. Une règle n’est ni dérivée automatiquement des résultats scientifiques ni justifiée par sa seule cohérence interne. |
 | **5** | **Philosophique** | Distinguer propositions, portées et transferts entre philosophie, science et méthodologie. `COMPATIBLE != DERIVE_DE`. La généalogie éditoriale ou conversationnelle n’est consultée que si une transformation intellectuelle déterminée l’exige. |
 | **6** | **Cohérence intellectuelle** | Tester si questions de recherche, résultats retenus, distinctions conceptuelles, choix méthodologiques et propositions philosophiques composent un programme dont les transitions sont justifiées plutôt que reconstruites a posteriori. Rechercher aussi les continuités réelles masquées, les acquis sous-exploités et les tensions fécondes. |
 | **7** | **Cohérence générale / transversale** | Après qualification suffisante des couches concernées, contrôler les relations pertinentes : questions ↔ résultats, résultats ↔ concepts, concepts ↔ méthode, science ↔ philosophie, philosophie ↔ méthode, documents/issues ↔ état substantiel réel. Aucune relation n’est auditée par simple souci d’exhaustivité. |
-| **8** | **Contre-audit** | Tenter activement de falsifier les conclusions précédentes de manière bilatérale : surpromotion **et** écrasement, continuité artificielle **et** continuité réelle devenue invisible, concept inutile **et** concept dont l’ablation fait perdre une discrimination, résultat surinterprété **et** sous-exploité. |
+| **8** | **Contre-audit** | Tenter activement de falsifier les conclusions précédentes de manière bilatérale : surpromotion **et** écrasement, continuité artificielle **et** continuité réelle devenue invisible, concept inutile **et** concept dont l’ablation fait perdre une discrimination, résultat surinterprété **et** sous-exploité. Cette étape complète les contre-tests locaux ; elle ne les remplace pas. |
 | **9** | **Normalisation documentaire Human-First** | Seulement lorsque les dépendances substantielles d’une transformation sont suffisamment qualifiées : documents vivants humains, routage agent minimal, noms stables, réécriture positive, réduction de méta-documentation, archivage et suppression exceptionnelle. |
+
+### Co-instruction bornée des étapes 2 et 3
+
+Les étapes 2 et 3 ne forment pas une dérivation simple `2 -> 3`.
+
+Une première sélection scientifique peut partir des résultats explicitement invoqués par les questions, synthèses ou décisions actuelles, sans supposer que cette relation est justifiée. L’audit conceptuel peut ensuite révéler qu’un résultat omis, une ancienne question ou une fonction intellectuelle impose un retour scientifique ciblé. Inversement, la qualification scientifique peut invalider ou réduire une relation conceptuelle présumée.
+
+Cette boucle n’autorise pas un réaudit général de la physique : chaque extension reste soumise aux critères de dépendance et d’extension du présent programme.
 
 Pour l’audit scientifique, préserver lorsque pertinent la séparation :
 
@@ -176,12 +200,14 @@ question examinee
 -> premisses necessaires
 -> supports de ces premisses
 -> approfondissement si une premisse reste non qualifiee
--> STOP local lorsque la decision devient qualifiable dans le perimetre declare
+-> STOP local lorsque la conclusion propre de l'audit devient qualifiable dans le perimetre declare
 ```
+
+Ce `STOP` ne qualifie pas automatiquement l’effet de l’audit sur un autre chantier.
 
 Une dette extérieure à ce raisonnement ne force pas son instruction immédiate.
 
-Un audit peut s’arrêter avec `NON_DECIDABLE` si les matériaux suffisants sont inaccessibles ou si l’extension nécessaire dépasse le périmètre autorisé. Ce résultat reste visible comme tel.
+Un audit peut s’arrêter avec `NON_DECIDABLE` seulement après avoir explicité l’instruction tentée et la limite qui empêche de trancher avec les matériaux, accès ou périmètre autorisés. Ce résultat reste visible comme tel.
 
 ---
 
@@ -223,19 +249,19 @@ PR / GIT
 
 Un éventuel GitHub Project peut représenter visuellement ces états mais ne devient pas une autorité scientifique, conceptuelle ou méthodologique par lui-même.
 
+Les statuts transitoires de PR, branches ou opérations en cours restent dans GitHub ; ils ne doivent pas être recopiés dans ce document vivant sauf s’ils changent durablement la structure ou l’autorité du programme.
+
 ---
 
-## 9. État initial de ce programme
+## 9. État initial du programme
 
 ```text
 SEQUENCE_D_AUDITS = VALIDEE_COMME_BASE_DE_TRAVAIL
-CONTRAT_EPISTEMIQUE = CANDIDAT_A_PROMOTION
 AUDITS_SUBSTANTIELS = NON_OUVERTS_PAR_CE_DOCUMENT
 
-AUDIT_DOCUMENTAIRE_MINIMAL = PARTIELLEMENT_REALISE_AVANT_CREATION
+TRAVAUX_DOCUMENTAIRES_ANTERIEURS = EXISTENT
+QUALIFICATION_DE_CES_TRAVAUX_COMME_ETAPE_1 = NON_ETABLIE
 PORTEE_DES_RESULTATS_ANTERIEURS = A_RETESTER_SELON_DEPENDANCES
-
-PR_#128 = CANDIDATE_DOCUMENTAIRE_DISTINCTE / NON_PROMUE
 ```
 
 La première utilisation de ce programme devra cadrer explicitement l’audit substantiel initial avant de l’ouvrir. Elle ne transformera pas rétrospectivement les travaux antérieurs en preuves qu’ils n’avaient pas pour fonction d’établir.
