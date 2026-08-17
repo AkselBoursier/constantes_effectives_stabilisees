@@ -43,6 +43,28 @@ Cette exigence de lecture exhaustive ne signifie pas :
 
 Elle signifie qu’aucune décision de non-pertinence, de redondance, de portée ou d’exclusion substantielle ne peut reposer uniquement sur la surface documentaire.
 
+## Audits antérieurs : faits conservés, suffisance contextuelle non présumée
+
+Les audits déjà effectués restent des faits historiques et leurs preuves locales ne sont ni annulées ni déclassées par principe.
+
+Cependant, une partie de ces audits a été menée par des agents qui ne disposaient pas nécessairement de l’ensemble du contexte aujourd’hui jugé pertinent. Leur existence ne permet donc pas de présumer que leur périmètre, leurs exclusions ou leurs conclusions sont suffisants pour le présent programme.
+
+```text
+AUDIT_ANTERIEUR_EFFECTUE = FAIT_HISTORIQUE_CONSERVE
+PREUVES_LOCALES_ANTERIEURES = A_CONSERVER
+SUFFISANCE_CONTEXTUELLE_POUR_LE_PRESENT_PROGRAMME = NON_ETABLIE_PAR_DEFAUT
+RE_AUDIT_AUTOMATIQUE_DE_TOUT = NON
+```
+
+La lecture exhaustive doit permettre, pour chaque audit antérieur rencontré, de déterminer si le contexte nouvellement remonté :
+
+- ne change rien à sa conclusion ni à sa portée ;
+- exige seulement une recontextualisation ou une réduction de portée ;
+- fait apparaître une prémisse, une exclusion ou une dépendance non testée ;
+- justifie alors un réaudit substantiel ciblé.
+
+L’absence de contexte complet chez un agent antérieur n’est donc ni une invalidation automatique, ni une autorisation de conserver son verdict intact. Son effet doit être établi cas par cas à partir des contenus effectivement remontés.
+
 ## Réduction progressive autorisée
 
 La réduction du corpus de travail devient légitime **après** remontée du contenu, jamais avant.
@@ -70,7 +92,8 @@ Le changelog doit être mis à jour au minimum :
 3. lorsqu’une dette change de statut ou d’effet ;
 4. lorsqu’un résultat négatif, une bifurcation, un arbitrage ou une fonction intellectuelle jusque-là non remontée devient visible ;
 5. lorsqu’une relation entre deux parties du corpus est établie, réfutée ou requalifiée ;
-6. avant toute réduction substantielle du corpus de travail fondée sur les lectures déjà effectuées.
+6. lorsqu’un contenu nouvellement remonté modifie la suffisance contextuelle attribuable à un audit antérieur ;
+7. avant toute réduction substantielle du corpus de travail fondée sur les lectures déjà effectuées.
 
 Une mise à jour peut agréger plusieurs découvertes d’une même investigation, mais elle ne doit pas laisser une nouveauté significative hors registre jusqu’à la fin générale de l’audit.
 
@@ -90,6 +113,7 @@ CONTRADICTIONS_OU_TENSIONS
 BIFURCATIONS_MIGRATIONS_RENOMMAGES
 ELEMENTS_RESURGIS
 RELATIONS_A_D_AUTRES_CYCLES_OU_COUCHES
+AUDITS_ANTERIEURS_RENCONTRES_ET_EFFET_DU_CONTEXTE_NOUVEAU
 NON_ETABLI_OU_NON_DECIDABLE
 EFFET_SUR_LES_AUDITS_EN_COURS = NON_ETABLI_PAR_DEFAUT
 PROCHAINE_CONSEQUENCE_EVENTUELLE
@@ -118,6 +142,8 @@ Aucune exclusion de catégorie n’est autorisée avant cette qualification du c
 AUDIT_DOCUMENTAIRE_EXHAUSTIF = DECIDE
 LECTURE_INTEGRALE_AVANT_EXCLUSION = REQUISE
 REDUCTION_PROGRESSIVE = AUTORISEE_APRES_REMONTEE
+AUDITS_ANTERIEURS = CONSERVES_COMME_PREUVES_ET_HISTORIQUE
+SUFFISANCE_CONTEXTUELLE_AUDITS_ANTERIEURS = NON_ETABLIE_PAR_DEFAUT
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT_A_CE_STADE
 ```
 
