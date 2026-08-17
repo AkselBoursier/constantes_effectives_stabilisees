@@ -3,12 +3,17 @@
 ## 0. Statut
 
 ```text
-statut : carte transversale active de jonction ;
-fonction : rendre visibles les dialogues, tensions et dépendances entre
-           refondation, philosophie, fine-tuning et fixité dynamique ;
+statut : état transversal daté de jonction ;
+fonction historique : rendre visibles les dialogues, tensions et dépendances entre
+                      refondation, philosophie, fine-tuning et fixité dynamique ;
+statut courant : conservé comme contenu de jonction et pièce généalogique,
+                 mais ne constitue plus une porte d’entrée active ni un tableau
+                 de l’activité actuelle des chantiers ;
 ne fait pas : fusionner les niveaux, produire une ontologie finale ou
               remplacer les dossiers locaux.
 ```
+
+Cette carte conserve l’état de jonction construit au moment de sa rédaction. Les termes `actif`, `résultat actuel`, `test actif` ou les questions ouvertes qui apparaissent ci-dessous doivent être lus à cette coupure historique, non comme des autorisations ou priorités présentes. Pour l’état courant, partir des README vivants et des issues qu’ils désignent.
 
 Cette carte répond au problème suivant : plusieurs lignes du projet disposent
 désormais d’un vocabulaire et de résultats propres, mais leur coexistence dans
