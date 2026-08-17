@@ -543,3 +543,43 @@ base_mnu_binary_3: not_available_in_verified_distribution
 Ces écarts entre quantile empirique et `margestats` sont documentés comme différences de convention/statistique dans les artefacts ; ils ne sont pas transformés ici en divergence scientifique. La lecture du code confirme seulement que les garde-fous annoncés existent dans le code versionné ; elle ne vaut pas preuve d’une exécution nouvelle.
 
 Le statut global du cycle 3 reste **EN COURS** : N0–N5 doivent encore être lus intégralement, les six extractions Markdown historiques doivent être lues, et les six DOCX originaux restent une dette binaire tant qu’ils ne sont pas accessibles directement.
+
+### Cycle 3 — couche active N0–N5 intégralement lue
+
+Les six pièces `N0` à `N5` ont maintenant été lues intégralement au baseline. Avec les deux synthèses de racine déjà lues, la couche active du cycle est couverte à `8/8` Markdown.
+
+```text
+N0_N5 = 6/6_LUS_INTEGRALEMENT
+SYNTHESES_RACINE = 2/2_LUES_INTEGRALEMENT
+RACINE_ACTIVE_CYCLE_3 = 8/8_MARKDOWN_LUS
+COUVERTURE_CYCLE_3_GLOBALE = TOUJOURS_INCOMPLETE
+```
+
+Résultats structurants remontés :
+
+- `N0` définit comme unité de comparaison un **énoncé empirique situé avec sa chaîne d’accès**, et prévoit explicitement la révision du gabarit s’il homogénéise des opérations physiquement distinctes. Cette clause est compatible avec la règle générale d’arbitrage des règles déjà consignée ; elle ne nécessite pas à ce stade une règle supplémentaire distincte.
+- `N1` établit la différence entre architecture différentielle du spectre et ancrage absolu. Les oscillations contraignent les écarts de masses, le mélange et des phases sous le cadre à trois saveurs, mais restent invariantes sous translation commune des `m_i^2`. L’ajustement global est qualifié comme **inférence de second niveau**, non comme instrument unique.
+- `N2` précise le sens borné de « direct » : la cinématique bêta est locale et indépendante de la cosmologie, mais elle dépend d’un modèle de désintégration, de la réponse instrumentale et d’une construction statistique. La différence entre la limite directrice Lokhov–Tkachov et le contrôle Feldman–Cousins illustre que la règle d’intervalle à la frontière fait partie de l’énoncé.
+- `N3` sépare deux sources physiques de sensibilité cosmologique : **expansion** et **libre parcours/croissance**. La borne `0.0642 eV` sous `LambdaCDM`, la construction fréquentiste `0.053 eV` et l’élargissement à `0.163 eV` sous `w_0w_aCDM` sont des énoncés différents. La tension N1–N3 est explicitement localisée dans un réseau `données + likelihoods + modèle + priors + frontière`, et non attribuée comme propriété intrinsèque du neutrino.
+- `N4` sépare trois niveaux : absence de pic, borne de demi-vie isotopique, puis borne conditionnelle sur `m_beta_beta` après ajout du mécanisme et de la physique nucléaire. Une non-détection ne tranche pas Dirac contre Majorana.
+- `N5` remplace la formulation trop lâche « plusieurs accès à la masse absolue » par **plusieurs fonctions non équivalentes d’un spectre de masses, coordonnées par un modèle commun et des hypothèses propres à chaque voie**. Aucune paire ne fournit de contradiction modèle-indépendante ; la seule tension quantitative saillante est N1–N3 sous le modèle cosmologique de base.
+
+La matrice N5 affirme une transférabilité du gabarit vers les architectures d’extraction du cycle 1 et les chaînes reconstructives du cycle 7, mais elle en borne elle-même la portée : ce schéma n’est pas une théorie générale de la mesure et doit être adapté localement. Cette transférabilité est donc un **signal à tester**, non une autorisation de requalifier les cycles 1 ou 7 avant leur propre audit exhaustif.
+
+### Requalification de dettes du cycle 3 par croisement N3/N5 ↔ reprise computationnelle ultérieure
+
+La lecture croisée de N3/N5 et du sous-dossier computationnel, postérieur dans la généalogie documentaire, modifie le statut de certaines dettes sans ouvrir de nouveau calcul :
+
+```text
+DETTE_LIRE_CHAINES_DESI_ET_REPRODUIRE_QUANTILES = PARTIELLEMENT_TRAITEE_HISTORIQUEMENT
+DETTE_QUANTILES_BASE_MNU_BASE_MNU059_W_WA = SORTIES_VERSIONNEES_PRESENTES
+BASE_MNU_BINARY_3 = ABSENTE_DE_LA_DISTRIBUTION_VERIFIEE_SANS_GENERALISATION
+DETTE_PROFILS_FREQUENTISTES_EXACTS = OUVERTE
+DETTE_REPRODUCTION_NUFIT_6_1 = OUVERTE
+DETTE_REPRODUCTION_KATRIN = OUVERTE
+DETTE_COMBINAISON_MULTI_ISOTOPES_NME = OUVERTE
+```
+
+Cette requalification est documentaire : le présent audit n’a pas réexécuté les chaînes DESI externes. Il établit seulement que la dette formulée dans N3/N5 a fait l’objet d’une reprise computationnelle versionnée plus tard, avec succès partiel et limites explicites.
+
+Prochaine étape documentaire du cycle 3 : lire intégralement les six extractions Markdown historiques de `00_Sources_docx`, puis maintenir séparément la dette des six DOCX originaux tant que leur lecture directe reste techniquement impossible.
