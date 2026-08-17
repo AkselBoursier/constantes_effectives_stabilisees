@@ -637,3 +637,69 @@ BLOCAGE_DES_CYCLES_SUIVANTS_PAR_CETTE_DETTE = NON
 ```
 
 Prochaine étape : ouvrir l’inventaire exact du cycle 4 et poursuivre la lecture exhaustive, tout en conservant le cycle 3 au statut `INCOMPLETE` tant que ses six DOCX ne sont pas directement qualifiés.
+
+### Cycle 4 — thermo-métrologie SI — couverture textuelle complète, DOCX ouverts
+
+Inventaire exact au baseline :
+
+```text
+00_Sources_docx/Fiche N_A v0.1.docx
+00_Sources_docx/Fiche R v0.1.docx
+00_Sources_docx/Fiche k_B v0.1.docx
+00_Sources_docx/Source_docx_Fiche_N_A_v0_1.md
+00_Sources_docx/Source_docx_Fiche_R_v0_1.md
+00_Sources_docx/Source_docx_Fiche_k_B_v0_1.md
+00_Sources_docx/Source_docx_Synthese_quatrieme_cycle_v0_1.md
+00_Sources_docx/Synthèse du quatrième cycle.docx
+Synthese_recuperation_thermo_metrologique_SI_v0_1.md
+```
+
+```text
+CYCLE_4_TOTAL_BLOBS = 9
+CYCLE_4_MARKDOWN = 5/5_LUS_INTEGRALEMENT
+CYCLE_4_DOCX_ORIGINAUX = 0/4_LUS_DIRECTEMENT
+EQUIVALENCE_DOCX_EXTRACTION_MD = NON_ETABLIE
+COUVERTURE_DOCUMENTAIRE_GLOBALE_CYCLE_4 = INCOMPLETE
+```
+
+La récupération active précise que ce bloc ne constitue pas le cycle SI actif complet : il sert de récupération généalogique avant l’architecture métrologique et renvoie notamment au cycle 8 et aux documents d’architecture SI. Il faut donc distinguer le quatrième cycle historique du traitement SI actif ultérieur.
+
+Le contenu utile n’est pas la proposition triviale « certaines constantes sont exactes par convention ». Le cycle sépare plusieurs niveaux qui peuvent être confondus :
+
+```text
+constante définissante primaire ;
+grandeur exacte par composition ;
+rôle physique local ;
+mode de stabilisation conventionnelle ;
+histoire empirique ayant rendu la convention possible ;
+réalisation pratique des unités avec incertitudes résiduelles.
+```
+
+`k_B` et `N_A` sont récupérées comme constantes définissantes du SI depuis 2019, mais leurs fonctions physiques restent distinctes : passage température/énergie et entropie statistique pour `k_B`, passage nombre d’entités/quantité de matière pour `N_A`. Leur exactitude numérique actuelle ne signifie ni mesure infiniment précise ni exactitude des réalisations expérimentales.
+
+`R = N_A k_B` introduit un cas différent : `R` n’est pas une constante définissante primaire. Son exactitude est dérivée par composition de deux constantes définissantes exactes. Le document souligne aussi que `R` n’apporte pas d’information physique indépendante supplémentaire par rapport à `N_A` et `k_B` pris ensemble, tout en conservant une fonction opératoire propre dans le langage thermodynamique molaire.
+
+La synthèse historique bifurquait explicitement deux axes : rôle/régime physique et accès/stabilisation métrologique, ainsi que stabilisation empirique et stabilisation conventionnelle. Elle formulait une règle méthodologique ancienne selon laquelle chaque fiche devrait répondre séparément à la question de la fonction physique et à celle du mode de fixation ou d’accès à la valeur.
+
+Cette règle historique est **remontée mais non promue automatiquement en règle de gouvernance de l’audit intégral**. Elle concerne d’abord la méthode de description scientifique des constantes et recouvre déjà partiellement des distinctions actuelles entre objet, accès, régime, métrologie et statut d’énoncé. Sa portée transversale devra être testée dans les cycles ultérieurs avant toute réactivation normative générale.
+
+```text
+REGLE_HISTORIQUE_ROLE_PHYSIQUE_VS_ACCES_METROLOGIQUE = RESURGIE
+FONCTION_INTELLECTUELLE = CLAIRE
+PROMOTION_COMME_REGLE_AUDIT_GLOBAL = NON_ETABLIE
+REDONDANCE_PARTIELLE_AVEC_CADRE_ACTUEL = PROBABLE_MAIS_A_TESTER
+```
+
+Le cycle 4 répond donc partiellement à l’ancienne interrogation sur son caractère potentiellement tautologique : sa profondeur éventuelle ne réside pas dans le constat de l’exactitude SI, mais dans la distinction entre **origine de l’exactitude, fonction physique, histoire empirique et réalisation instrumentale**. La suffisance scientifique de cette distinction pour justifier un cycle autonome reste à évaluer dans l’audit transversal ; elle n’est pas présumée par la seule lecture documentaire.
+
+Les quatre DOCX originaux restent une dette binaire. La dette cumulée devient :
+
+```text
+DETTE_DOCX_C1 = 5
+DETTE_DOCX_C2 = 4
+DETTE_DOCX_C3 = 6
+DETTE_DOCX_C4 = 4
+DETTE_DOCX_CUMULEE_APRES_C4 = 19
+```
+
+Aucun audit scientifique substantiel nouveau n’est ouvert par cette lecture. La prochaine lecture séquentielle peut passer au cycle 5 sans effacer cette dette.
