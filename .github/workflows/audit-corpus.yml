@@ -7,6 +7,12 @@ on:
 permissions:
   contents: read
 
+# Les runs automatiques d'une meme PR partagent une cle de concurrence.
+# Un lancement manuel utilise son run_id et reste donc independant des PR et des autres lancements manuels.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -27,9 +33,13 @@ jobs:
       - name: Vérifier la structure
         run: python audit/audit_structure_corpus.py
 
+      # Contrat : PASS signifie que tous les exports explicitement cibles existent et sont deja
+      # sous leur forme assainie canonique. Cela n'etablit ni l'exhaustivite des archives ni leur validite scientifique.
       - name: Vérifier l'assainissement des archives conversationnelles
         run: node audit/sanitize_conversation_exports.mjs
 
+      # Contrat : PASS signifie qu'aucune entree suivie par Git n'appartient aux deux classes
+      # interdites ci-dessous. Cela ne vaut pas audit general de toutes les donnees sensibles ou externes.
       - name: Vérifier les données externes et PDF éditeurs
         shell: bash
         run: |
@@ -50,6 +60,8 @@ jobs:
           python -m pip install
           -r 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/requirements.txt
 
+      # Contrat : PASS signifie seulement que l'auto-test synthetique borne du script C2
+      # s'execute avec succes sur son manifeste ; il ne reproduit pas les chaines DESI et ne valide aucun resultat scientifique.
       - name: Exécuter le test synthétique C2
         run: >-
           python 02_CYCLES_PHYSIQUES/03_Cycle_neutrinos/01_REPRISE_COMPUTATIONNELLE_N1_N3/analyse_produits_officiels_desi_c2.py
