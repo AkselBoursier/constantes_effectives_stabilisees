@@ -1,83 +1,74 @@
-# 01_REPRISE_COMPUTATIONNELLE_C7_C1
+# C7-C1 / X(z) — reprise computationnelle
 
-Reprise computationnelle du cycle cosmologique — lot C7-C1 :
-comparaison commune `LambdaCDM` / CPL / `X(z)` sous la même vraisemblance
-DESI DR2 BAO (13 composantes) et le même ancrage CMB comprimé.
+Ce dossier porte la reprise computationnelle du lot `C7-C1` du cycle cosmologique : comparaison commune `LambdaCDM` / CPL / `X(z)` sous la même vraisemblance DESI DR2 BAO et le même ancrage CMB comprimé.
 
-## Gouvernance
+Il contient à la fois des pièces historiques de la construction G0–G2 et les supports computationnels encore utiles. Son README doit être lu depuis l’autorité opérationnelle courante, non comme une permission de reprendre automatiquement les portes historiques.
+
+## Autorité opérationnelle actuelle
+
+- ancrage actif : [issue #119 — C7-C1 / X(z), audit de persistance post-EXP-1B RUN1](https://github.com/AkselBoursier/constantes_effectives_stabilisees/issues/119) ;
+- provenance principale de EXP-1 et RUN1 : `#102` ;
+- provenance plus ancienne de la construction C7-C1 : `#63`, `#60`, `#61`, `#62` ;
+- archivage historique : `#64`.
+
+`#63` n’est plus l’issue directrice de la reprise actuelle. Ses portes G0–G2 et les rapports du dossier restent des éléments de provenance et de qualification locale lorsqu’ils sont encore pertinents.
+
+## Question scientifique de fond
+
+> Les mauvaises propriétés d’exploration de `X(z)` proviennent-elles principalement de la configuration du sampler, de la paramétrisation ou de la géométrie effective du posterior ?
+
+Cette question reste ouverte.
+
+## État courant borné
 
 ```text
-issue directrice : #63 (C7-C1) ;
-provenance       : #60 — D9 ; #61 — A0–A5 ; #62 — P29 ;
-archivage        : décision séparée #64 (rien d'initialisé ici) ;
-branche          : comp/c7-c1-comparaison-commune ;
-base             : origin/main = 5e088d1 (vérifié G1.0) ;
-état G1          : G1.0, G1.2 et G1.3 validées ;
-porte suivante   : G2.1 — validation de l'instrument numérique X(z),
-                   ouverte dans #63 sur une branche distincte après merge.
+EXP1A_GEOMETRIC_AUDIT = CLOS_TECHNIQUEMENT
+P = TECHNIQUEMENT_QUALIFIE_POUR_CONTRASTE
+B1 = NON_AUTORISEE
+
+EXP1B_CAMPAIGN = CONSOMMEE
+REAL_MCMC_ATTEMPT = 1
+RUNS_PLANIFIES = 12
+RUNS_EXECUTES = 1
+
+PERSISTENCE_DELTA_6_CAUSE = REPRODUITE_SOURCE_LEVEL
+CLASSIFICATION_#119 = A / SEMANTIQUE_COBAYA_ATTENDUE_REPRODUITE
+PERSISTENCE_CONTRACT_WEIGHT_SUM_EQ_BUDGET = TROP_FORT
+RUN1_DISK_LOSS = NON_ETABLI
+RUN1_ARTIFACT_SET_BYTE_AUDIT = ENCORE_OUVERT
+RUN1_SCIENTIFIC_QUALIFICATION = NON
+SCI1 = NON_QUALIFIABLE
+NEW_SAMPLING = NON_AUTORISE
 ```
 
-Les huit chaînes G1.3 ont été produites hors Git. Elles ne sont ni suivies
-ni distribuées dans cette PR.
-
-## Portes (résumé de #63)
-
-- G0 — provenance et spécification : **close et ratifiée** (G0.6) ;
-- G1.0 — environnement, octets, configurations, tests de point :
-  **validée** (commentaire G1.2 de #63) ;
-- G1.2 — qualification de la vraisemblance commune : **validée**
-  (commentaire G1.4 de #63 ; corrections documentaires en `1ee2b4c`) ;
-- G1.3 — reproductions LambdaCDM et CPL sous la vraisemblance commune
-  (8 chaînes convergées, T7 passé, minimisations multi-départs,
-  contraste) : **validée** (commentaire G1.6 de #63 ;
-  `reports/rapport_G1_3.md`) ;
-- G2.0 — spécification de `X(z)` : **ratifiée** ;
-- G2.1 — invariants et stabilité de `X(z)` : **ouverte pour tests seulement** ;
-- G2.2 — pré-enregistrement des priors ; G2.3 — première inférence ;
-- G3 — comparaison commune ; G4 — verdict.
+Le `delta=6` de RUN1 a été expliqué par la sémantique attendue de Cobaya au démarrage : six rejets avant la première acceptation rendent faux le contrat général `sum(weights) == raw_proposals`. Cette qualification corrige la cause du rouge de persistance ; elle ne transforme pas RUN1 en résultat scientifique et ne prouve pas que l’ensemble scellé des artefacts a été audité byte-à-byte.
 
 ## Interdits actifs
 
 ```text
-données, chaînes, caches, environnements : hors Git ;
-data_external : lecture seule, jamais suivi par Git ;
-aucun chemin absolu local, secret ou jeton dans les fichiers suivis ;
-aucune substitution de fichier voisin à un produit demandé ;
-pas de qualification d'un meilleur point de profil de vraisemblance ;
-pas de Wilks automatique pour le modèle spline ;
-aucun MCMC X(z), aucune minimisation X(z) et aucune inférence avant
-validation humaine de G2.1 puis pré-enregistrement G2.2.
+NEW_SAMPLING = NON_AUTORISE
+RUNS_RESTANTS_11 = NON_AUTORISES
+B1_SCIENTIFIQUE = NON_AUTORISEE
+SCI1_INTERPRETATION = NON_AUTORISEE
+PHYSICAL_XZ_INFERENCE = NONE
 ```
 
-## Contenu
+Aucune ancienne autorisation de budget ni aucune porte historique de `#63` ne vaut permission implicite de poursuivre aujourd’hui.
+
+## Contenu du dossier
 
 ```text
-configs/     — transcriptions LambdaCDM et CPL (+ copies officielles de
-               référence dans configs/references/) ;
-manifests/   — provenance, versions, tailles, SHA-256 ;
-scripts/     — vraisemblances transcrites, acquisition et tests G1.0,
-               contrôle BAO et repondération G1.2,
-               analyse_g1_3.py, run_mcmc_g1_3.py et minimize_g1_3.py ;
-reports/     — rapports G1.0, G1.2 et rapport_G1_3.md,
-               jamais de chaînes brutes ;
-requirements-c7c1.txt — gel de l'environnement isolé.
+configs/     — transcriptions LambdaCDM et CPL, références et configurations historiques ;
+manifests/   — provenance, versions, tailles et SHA-256 des pièces concernées ;
+scripts/     — vraisemblances transcrites, acquisition, tests et outils computationnels ;
+reports/     — rapports G1/G2 et qualifications locales, jamais une autorité automatique sur l’état courant ;
+requirements-c7c1.txt et requirements-c7c1-secondaire.txt — environnements historiques/isolés du dossier.
 ```
 
-## Exécution des tests G1.0 (depuis cette racine)
+Les données, chaînes, caches et environnements restent hors Git. `data_external` reste une source locale en lecture seule lorsqu’elle est utilisée.
 
-```text
-C7C1_DATA_DIR = répertoire local hors Git contenant desi_bao_dr2/ ;
-python scripts/acquire_bao_data.py            # acquisition vérifiée
-python scripts/test_points_g1_0.py configs/c7c1_lcdm_bao_cmbcomp.yaml <dir_chaine_officielle_base>
-python scripts/test_points_g1_0.py configs/c7c1_cpl_bao_cmbcomp.yaml  <dir_chaine_officielle_base_w_wa>
-```
+## Historique G0–G2
 
-Les répertoires de chaînes officielles restent sous `data_external/`
-(lecture seule) et sont passés en argument à l'exécution.
+La construction initiale a qualifié une vraisemblance commune, reproduit les références LambdaCDM/CPL et ouvert progressivement l’instrument `X(z)`. Les détails exacts des portes G0, G1 et G2 restent dans `#63` et les rapports locaux.
 
-## Prior CPL ratifié (G0.6)
-
-```text
-w0 ~ U[-3, 1] ; wa ~ U[-3, 2] ; w0 + wa < 0 (bloc prior explicite,
-testé : un point violant est rejeté avec logprior = -inf).
-```
+Ils sont à lire comme généalogie technique et scientifique du dossier. Pour toute action nouvelle, repartir de `#119`, puis remonter à ces pièces uniquement lorsque la question l’exige.
