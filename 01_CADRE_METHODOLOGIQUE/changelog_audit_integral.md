@@ -1131,3 +1131,43 @@ C7-GAL / C0
 Aucun état, blocage, autorisation ou verdict ne se transfère entre les deux. Le README signale aussi que le rouge de persistance de RUN1 a une cause source/contrat qualifiée sans qualification scientifique de RUN1, tandis que C7-GAL reste bloquée sur l'accès matériel à certains HDF5. Ces états sont seulement enregistrés ici comme contenu du README ; ils devront être reconstruits depuis les pièces concernées et ne sont pas utilisés comme substitut aux 53 blobs restant à lire.
 
 Prochaine étape documentaire : lecture exhaustive des 53 blobs de `01_REPRISE_COMPUTATIONNELLE_C7_C1`, en commençant par README, requirements, configurations et manifeste de provenance avant les rapports et scripts.
+
+#### Cycle 7 — jalon computationnel : provenance, configurations, G1 et G2.1–G2.3
+
+À ce palier, 19 des 53 blobs de la reprise computationnelle ont été lus, soit 32/66 blobs pour le cycle 7 entier.
+
+```text
+REPRISE_COMPUTATIONNELLE_LUE = 19/53
+CYCLE_7_TOTAL_LU = 32/66
+CONFIGS = 9/9_LUES
+MANIFESTE_PROVENANCE = 1/1_LU
+README_ET_REQUIREMENTS = 3/3_LUS
+RAPPORTS_LUS = 6/16
+SCRIPTS_LUS = 0/24
+```
+
+Les deux gels d’environnement restent distincts : l’environnement directeur historique utilise notamment `Cobaya 3.5`, `CAMB 1.5.4`, `NumPy 1.26.4`, tandis que le contrôle secondaire utilise `Cobaya 3.5.7` et ajoute `typing_extensions`. Ils ne sont pas fusionnés en un environnement unique.
+
+Le manifeste G1.0 borne la provenance : données BAO officielles hors Git, octets épinglés et hachés ; références YAML conservées ; compression CMB publique transcrite avec convention explicite `theta_star=0.01041` et conversion `/100` depuis la sérialisation CAMB ; prior CPL `w0 ~ U[-3,1]`, `wa ~ U[-3,2]`, `w0+wa<0`.
+
+Les YAML locaux ΛCDM/CPL conservent les blocs `theory/params/sampler` des références historiques et remplacent les bindings NERSC par la transcription locale contrôlée ; la sortie a été supprimée à G1.0. Les quatre configurations `X(z)` font varier uniquement la grille M2a/M2b et la convention de spline natural/not-a-knot, à graines distinctes ; elles portent toutes `inference.autorisee: false`.
+
+G1.0 puis G1.2 documentent une qualification de la vraisemblance commune avant MCMC. BAO est triangulée entre bindings historiques, transcription locale et vraisemblance stock à environ `1e-6` sur les points fixes. La compression CMB publique arrondie ne reproduit pas byte-à-byte la compression interne DESI ; son effet a été quantifié par repondération exacte intégrale et jugé sous les seuils historiques ratifiés. Ce statut doit rester : **qualification historique versionnée**, non revalidation externe par le présent audit.
+
+G1.3 rapporte ensuite les reproductions ΛCDM et CPL sous la vraisemblance commune, avec séparation explicite entre posterior, MAP, maximum de vraisemblance et minimum rencontré dans les chaînes. Les départs naïfs de minimisation CPL ont tous échoué à retrouver la vallée pertinente ; ce résultat négatif a été conservé, puis des départs informés depuis les chaînes ont été utilisés. Il ne faut donc pas réécrire rétroactivement la réussite finale comme absence d’échec d’optimisation.
+
+G2.1 est un rapport de validation instrumentale, sans MCMC ni posterior `X(z)`. Il documente notamment : identité `X=1` avec ΛCDM, comparaison natural/not-a-knot, domaine signé, continuation constante, stabilité numérique, voie indépendante pour plusieurs quantités et fautes injectées. La convention de spline est montrée comme scientifiquement active sur les profils de stress ; aucune convention n’est promue par ce seul constat.
+
+Le pré-enregistrement G2.2 fixe avant inférence quatre variantes co-primaires, familles de priors, conditions de troncature, diagnostics de convergence, statistiques, sensibilités et règles d’amendement. Il interdit explicitement d’éliminer ou promouvoir une variante après inspection des résultats et refuse Wilks automatique pour les splines.
+
+G2.3 qualifie les configurations sans inférence et installe une porte auto-bloquante : schéma YAML intégral, garde des sorties hors Git, refus des options MCMC/minimisation, tests de logprior, identité, ré-exécution des contrôles et fautes injectées. Une condition fausse doit produire un code non nul ; un simple `false` dans un JSON n’est pas accepté comme garde suffisante.
+
+```text
+G1_G2_3 = CHAINE_DE_QUALIFICATION_TECHNIQUE_HISTORIQUE_REMONTEE
+RESULTAT_SCIENTIFIQUE_XZ = NON_PRODUIT_PAR_CES_PORTES
+MCMC_XZ_AVANT_AUTORISATION_ULTERIEURE = ABSENTE_DANS_CES_PIECES
+ECHECS_OPTIMISATION_CPL_NAIVE = RESULTAT_NEGATIF_CONSERVE
+CONVENTION_SPLINE = DECISION_SCIENTIFIQUEMENT_ACTIVE_DANS_LES_TESTS_DE_STRESS
+```
+
+Prochaine étape : lire la série G2.4, puis les rapports de durcissement/sentinelle/capacité, avant de confronter les assertions des rapports aux 24 scripts versionnés.
