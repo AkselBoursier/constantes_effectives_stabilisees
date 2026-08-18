@@ -1147,3 +1147,60 @@ AUDIT_COMPLETE = OUI
 PHASE_1_DOCUMENTAIRE = NON_CLOTUREE
 PROCHAINE_ACTION = ALIGNER_LE_REGIME_SELECTIF_DE_92_AVEC_LA_REGLE_DE_PHASE_1
 ```
+
+---
+
+## 2026-08-18 — Cloture documentaire de la phase 1 sous regimes explicites
+
+La phase 1 documentaire est cloturee comme phase de couverture et de remontee,
+avec les regimes particuliers valides pour les archives et travaux anterieurs.
+Le corpus de reference reste le baseline `5ff45189af7087e1dd384bb815be55c3ff1430db`
+avec `668` blobs.
+
+### Regimes de couverture appliques
+
+```text
+01_A_90 = LECTURE_MATERIELLE_ET_REMONTEE_COMPLETEE
+91_TRAVAUX_ANTERIEURS = SYNTHESE_PAR_GROUPES, ELEMENTS_DISCRIMINANTS_CONSERVES
+92_ARCHIVES_CONVERSATIONNELLES = CARTOGRAPHIE_SELECTIVE_VALIDEE, LIMITES_CONSERVEES
+93_LABORATOIRE_EDITORIAL = LECTURE_DES_10_BLOBS_COMPLETEE
+99_ENVIRONNEMENTS_LOCAUX = LECTURE_DES_4_BLOBS COMPLETEE
+AUDIT = LECTURE_DES_3_SCRIPTS COMPLETEE
+```
+
+La reduction de granularite de 91 est l'exception humaine explicite du present
+chantier. Le regime selectif de 92 est une propriete documentaire declaree de
+ses archives : les paires JSON/Markdown ne sont pas des sources independantes,
+et la cartographie validee des transitions conserve les decisions, abandons,
+ajournements et non-decisions utiles sans reproduire le clavardage.
+
+### Ce que la phase 1 etablit
+
+```text
+CORPUS_MATERIEL = ETABLI_PAR_MANIFESTE
+ROUTAGE_ET_STATUTS = REMONTES_AVEC_LIMITES
+DETTES_ET_QUESTIONS_RESURGIES = CONSERVEES
+PROPOSITIONS_HISTORIQUES = REQUALIFIEES, NON_PROMUES
+OBJETS_AUDITES = RESTES_EN_LECTURE_SEULE
+DONNEES_LOURDES_ET_ENVIRONNEMENTS = RESTES_HORS_GIT
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+```
+
+La phase 1 ne conclut ni a la validite scientifique des resultats, ni a
+l'originalite theorique, ni a la portee transversale des concepts. Elle etablit
+seulement la base documentaire, les genealogies utiles, les limites de preuve,
+les dettes et les portes de requalification qui devront gouverner la phase 2.
+
+### Porte de phase 2
+
+La phase 2 ne s'ouvre pas automatiquement par cette cloture. Son cadrage doit
+etre repris a la lumiere du corpus remonte, notamment pour remplacer les
+anciennes sentinelles-filtre par une organisation de profondeur scientifique
+qui ne reduit pas la couverture documentaire. Toute ouverture substantielle
+reste soumise a validation humaine explicite.
+
+```text
+PHASE_1_DOCUMENTAIRE = CLOTUREE_SOUS_REGIMES_DECLARES
+PHASE_2_SCIENTIFIQUE = NON_OUVERTE
+PROCHAINE_ACTION = REPRENDRE_LE_CADRAGE_130_SANS_SENTINELLE_EXCLUSIVE
+```
