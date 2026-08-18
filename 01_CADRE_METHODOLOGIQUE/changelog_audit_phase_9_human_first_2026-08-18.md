@@ -265,6 +265,27 @@ premier essai devra être réversible, comparer le texte source et le texte
 consolidé, et être soumis à une lecture humaine avant toute promotion dans une
 vue publique.
 
+### Méta-règle appliquée au test lui-même
+
+Le test de consolidation s'approche des règles générales de l'audit sans leur
+être exclusivement assujetti comme à une norme immuable. Il tient compte de
+leur évolution, de leur portée locale ou transversale et de la classe du
+document testé.
+
+```text
+TEST = INSTRUCTION_ADAPTATIVE, NON_EXAMEN_DE_CONFORMITE_MECANIQUE
+REGLES_DE_REFERENCE = EVOLUTIVES, LOCALES_OU_TRANSVERSALES_SELON_LE_CAS
+BUT_DU_TEST = LISIBILITE, PROFONDEUR, PORTÉE_ET_CONSERVATION_DU_SENS
+CHEMIN_DU_TEST = ADAPTABLE_AU_GENRE_ET_AU_PUBLIC
+META_REGLE = S_APPLIQUE_AU_TEST_LUI_MEME
+```
+
+Un test peut donc conclure qu'une règle est suffisante, locale, trop forte,
+incomplète ou à amender. Il doit conserver la raison, le matériau observé, le
+gain attendu et la condition de reprise. Il ne transforme pas une adaptation
+locale en nouvelle règle générale sans satisfaire le test d'amendement du
+programme.
+
 ## Validation provisoire et étapes préparatoires au premier test
 
 Validation humaine reçue pour le cadrage de la consolidation éditoriale
