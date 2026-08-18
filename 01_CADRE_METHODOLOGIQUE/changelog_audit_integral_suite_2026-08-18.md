@@ -1415,3 +1415,37 @@ qui empêchent une portée plus forte sont déjà explicites et aucune pièce
 supplémentaire identifiée ne promet actuellement un gain discriminant sans
 ouvrir une instruction distincte. C1 reste donc localement qualifié pour ces
 résultats, sans verdict global inter-cycle.
+
+---
+
+## 2026-08-18 — Addendum : méta-règle non exclusive et adaptable
+
+L'auteur précise que la règle de transition depuis les résultats de phase 1 ne
+doit être ni exclusive ni immuable, et qu'elle ne doit pas être limitée à la
+phase 2. La proposition est retenue sous une formulation plus générale dans le
+programme d'audits, section `1.7`.
+
+```text
+CARTOGRAPHIE_EXISTANTE = POINT_DE_DEPART, NON_EXCLUSION
+BUT_DE_L_ETAPE = A_PRESERVER
+CHEMIN_D_INSTRUCTION = ADAPTABLE_AU_CONTEXTE
+REGLE = NON_EXCLUSIVE, NON_IMMUTABLE, TRANSVERSALE
+RETOUR_CIBLE = AUTORISE_SI_MATERIELLEMENT_JUSTIFIE
+TRIANGULATION = PROPORTIONNEE_A_LA_QUESTION, SANS_PLAFOND_NUMERIQUE_A_PRIORI
+ARRET = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE_DANS_SON_PERIMETRE
+```
+
+La méta-règle s'applique aux étapes `0–9`, aux co-instructions et aux retours
+ciblés. Elle ne remplace aucune étape, aucun contre-test, aucun critère d'arrêt
+ou aucune condition de réouverture ; elle empêche seulement qu'une sentinelle,
+une route initiale ou une réduction de corpus soit traitée comme chemin unique.
+Toute adaptation doit rester traçable : question poursuivie, déclencheur,
+éléments conservés, éléments repris ou ajoutés, et condition d'arrêt.
+
+```text
+ADDENDUM_HUMAIN = PRIS_EN_COMPTE
+PHASE_2 = CONTINUEE_SOUS_LA_META_REGLE
+PORTABILITE_AUX_AUTRES_ETAPES = AUTORISEE_SOUS_PERIMETRE_PROPRE
+EXCLUSIVITE_DE_LA_REGLE = REFUSEE
+IMMUTABILITE_DE_LA_REGLE = REFUSEE
+```

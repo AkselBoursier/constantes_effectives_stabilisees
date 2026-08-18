@@ -83,6 +83,36 @@ Un audit substantiel s’approfondit lorsqu’une conclusion importante dépend 
 
 Réciproquement, aucune lecture achevée ni aucun périmètre courant ne ferme par principe la possibilité de réauditer un cycle ou un volet lorsque le changelog ou un audit ultérieur fait surgir une raison matérielle de le faire.
 
+### 1.7 Méta-règle de cartographie et d’instruction adaptative
+
+La cartographie disponible constitue le point de départ le plus économique de
+l’instruction suivante, mais elle ne constitue jamais un filtre exclusif ni une
+limite immuable. Toute étape doit garder son but propre et respecter les
+contrôles qui lui sont nécessaires ; elle peut toutefois adapter son chemin au
+contexte, aux résultats remontés, aux lacunes, aux contradictions, aux
+dépendances et aux falsificateurs effectivement rencontrés.
+
+```text
+CARTOGRAPHIE_EXISTANTE = POINT_DE_DEPART, NON_EXCLUSION
+ETAPE_EN_COURS = BUT_A_PRESERVER, CHEMIN_ADAPTABLE
+REGLE_DE_TRAVAIL = NON_EXCLUSIVE, NON_IMMUTABLE, CONTEXTUELLE
+RETOUR_CIBLE = AUTORISE_SI_MATERIELLEMENT_JUSTIFIE
+RELECTURE_OU_TRIANGULATION = PROPORTIONNEE_A_LA_QUESTION
+ARRET = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE_DANS_SON_PERIMETRE
+```
+
+Cette méta-règle ne remplace aucune étape, aucun critère d’arrêt, aucun
+contre-test ni aucune condition de réouverture. Elle interdit seulement de
+traiter un point d’entrée, une sentinelle, une séquence initiale ou une
+réduction de corpus comme l’unique chemin légitime. Une adaptation doit être
+motivée dans le changelog par la question poursuivie, l’élément déclencheur,
+ce qui est conservé, ce qui est ajouté ou repris, et la condition d’arrêt.
+
+Elle s’applique transversalement aux étapes `0–9`, aux co-instructions et aux
+retours ciblés, sous réserve de la portée propre de chaque audit. Elle ne donne
+pas à une étape le pouvoir de promouvoir seule une hypothèse, un résultat ou
+une décision relevant d’un autre rang.
+
 ---
 
 ## 2. Deux axes indépendants : état et effet sur une dépendance
@@ -157,7 +187,7 @@ Cette séquence exprime des dépendances de travail, non une chaîne irréversib
 |---|---|---|
 | **0** | **Cadrage du programme** | Fixer questions, couverture documentaire, dépendances, sentinelles éventuelles, contre-tests, critères d’arrêt, d’approfondissement et de réouverture. Le présent document est le premier résultat de ce cadrage ; il n’ouvre aucun audit substantiel. |
 | **1** | **Documentaire d’orientation et de couverture** | Localiser les pièces, distinguer routes vivantes, rangs revendiqués et états datés, puis établir le manifeste exhaustif du corpus de référence. Des travaux documentaires antérieurs, notamment ceux ayant conduit à #124 et #126, existent comme matériaux candidats ; leur qualification comme réalisation partielle de cette étape reste à établir sous le présent programme. Cet audit ne décide pas de la justesse scientifique, conceptuelle ou philosophique. |
-| **2** | **Scientifique des résultats porteurs** | Partir des résultats, dettes, dépendances et contradictions effectivement remontés par l’étape 1, puis vérifier en profondeur ce que les résultats effectivement porteurs établissent réellement et si leur qualification suffit à l’usage envisagé. Le corpus de l’étape 1 n’est pas relu par défaut. Une lacune, contradiction ou dépendance non qualifiée déclenche une triangulation ciblée avec les issues, fichiers, commentaires de PR, commits ou autres pièces pertinentes ; son nombre n’est pas plafonné a priori, mais elle s’arrête dès que la question locale est suffisamment instruite. Le caractère « porteur » n’est pas présupposé par la sélection initiale, le rang documentaire ou le routage. |
+| **2** | **Scientifique des résultats porteurs** | En application de la méta-règle 1.7, partir des résultats, dettes, dépendances et contradictions effectivement remontés par l’étape 1, puis vérifier en profondeur ce que les résultats effectivement porteurs établissent réellement et si leur qualification suffit à l’usage envisagé. Le corpus de l’étape 1 n’est pas relu par défaut, sans que cette économie devienne une exclusion. Une lacune, contradiction ou dépendance non qualifiée déclenche une triangulation ciblée avec les issues, fichiers, commentaires de PR, commits ou autres pièces pertinentes ; son nombre n’est pas plafonné a priori, mais elle s’arrête dès que la question locale est suffisamment instruite. Le caractère « porteur » n’est pas présupposé par la sélection initiale, le rang documentaire ou le routage. |
 | **3** | **Conceptuel** | Identifier les questions, distinctions et fonctions intellectuelles réellement portées, puis tester ce qu’elles sont devenues : conservées, partiellement conservées, transformées avec gain ou perte, encore fécondes, dépassées, perdues/non réassimilées ou non décidables. Le test porte sur la fonction discriminante, pas sur la survie d’un mot. Le corpus de référence est couvert intégralement avant toute exclusion documentaire. |
 | **4** | **Méthodologique** | Tester si les règles et distinctions actuelles sont justifiées au regard des problèmes, discriminations, risques et supports effectivement établis, ou si elles sont seulement locales, redondantes, trop fortes, mal placées, non justifiées ou non décidables. Une règle n’est ni dérivée automatiquement des résultats scientifiques ni justifiée par sa seule cohérence interne. |
 | **5** | **Philosophique** | Distinguer propositions, portées et transferts entre philosophie, science et méthodologie. `COMPATIBLE != DERIVE_DE`. Les matériaux philosophiques, éditoriaux et généalogiques sont repérés à partir de la couverture intégrale du corpus de référence ; aucun emplacement ni rang documentaire ne permet de les filtrer avant lecture. |
@@ -170,7 +200,7 @@ Cette séquence exprime des dépendances de travail, non une chaîne irréversib
 
 Les étapes 2 et 3 ne forment pas une dérivation simple `2 -> 3`.
 
-La lecture documentaire exhaustive de l’étape 1 peut faire remonter des résultats, questions ou fonctions intellectuelles que les routes courantes ne signalaient pas. L’audit scientifique repart de cette remontée et détermine lesquels exigent une qualification scientifique approfondie ; il ne réouvre pas par défaut la lecture des pièces déjà couvertes. Une lacune, contradiction ou dépendance non qualifiée justifie une triangulation ciblée avec les sources pertinentes ; le recoupement reste sans plafond numérique a priori, mais sans prolifération gratuite et avec arrêt local dès que la question est suffisamment instruite. L’audit conceptuel peut à son tour révéler qu’un résultat omis, une ancienne question ou une fonction intellectuelle impose un retour scientifique ciblé. Inversement, la qualification scientifique peut invalider ou réduire une relation conceptuelle présumée.
+La lecture documentaire exhaustive de l’étape 1 peut faire remonter des résultats, questions ou fonctions intellectuelles que les routes courantes ne signalaient pas. L’audit scientifique repart de cette remontée et détermine lesquels exigent une qualification scientifique approfondie ; il ne réouvre pas par défaut la lecture des pièces déjà couvertes, conformément à la méta-règle 1.7, sans transformer cette économie en exclusion. Une lacune, contradiction ou dépendance non qualifiée justifie une triangulation ciblée avec les sources pertinentes ; le recoupement reste sans plafond numérique a priori, mais sans prolifération gratuite et avec arrêt local dès que la question est suffisamment instruite. L’audit conceptuel peut à son tour révéler qu’un résultat omis, une ancienne question ou une fonction intellectuelle impose un retour scientifique ciblé. Inversement, la qualification scientifique peut invalider ou réduire une relation conceptuelle présumée.
 
 L’exhaustivité porte donc sur la **lecture et la remontée**, non sur la répétition automatique de toute opération scientifique.
 
