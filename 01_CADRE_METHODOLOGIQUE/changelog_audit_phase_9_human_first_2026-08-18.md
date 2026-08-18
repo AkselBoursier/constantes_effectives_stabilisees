@@ -1335,27 +1335,37 @@ ne désigne ni une compilation du sens, ni une validation scientifique, ni une
 automatisation complète de la rédaction.
 
 ```text
-COMPILATION_METAPHORIQUE = PREPARATION_OPERATIONNELLE
-OUTILS = EXECUTABLES
-CONTRATS = PRESENTS_ET_COMPATIBLES
-ENTREES_ET_SORTIES = IDENTIFIABLES
-LIMITES = DECLAREES
+COMPILATION_METAPHORIQUE = PARTIELLE_ET_LOCALE
+PERIMETRE_CONTROLE = OUTILS_ET_CONTRATS_RECENTS
+WORKFLOW_GLOBAL = NON_COMPILE
+CORPUS_DE_REECRITURE = NON_TRAITE
+OUTILS = EXECUTABLES_DANS_LEUR_PERIMETRE
+CONTRATS = PRESENTS_DANS_LEUR_PERIMETRE
+ENTREES_ET_SORTIES = IDENTIFIABLES_LOCALLEMENT
+LIMITES = DECLAREES_MAIS_COUVERTURE_INCOMPLETE
 LECTURE_HUMAINE = NON_DELEGABLEE
 DECISION_DE_PROMOTION = NON_AUTOMATIQUE
 ```
 
-Le contrôle de préparation a confirmé :
+Le contrôle de préparation a confirmé seulement :
 
 - l'exécutabilité de l'outil append-only et de l'audit structurel ;
 - la présence du contrat de mobilisation sélective sur pièce ;
 - la présence du circuit de relecture complète et de réécriture positive ;
 - l'absence d'erreur structurelle dans le corpus contrôlé.
 
+Il n'a pas confirmé la qualité de la prose du corpus, la réécriture complète
+des documents, la couverture des cercles prévus, ni la compilation de toutes
+les fonctions nécessaires à la reconstruction générale. Les deux portes déjà
+polies sont des pièces pilotes : leur texte reste susceptible d'une reprise
+Human-First complète.
+
 Les neuf avertissements de références potentiellement anciennes restent une
-dette documentaire identifiée. Ils ne bloquent pas ce lot de reconstruction,
-mais ne sont pas transformés en validation silencieuse ni effacés par le
-polissage. Le workflow est donc prêt pour une nouvelle pièce, avec ses
-contrôles actifs et ses limites visibles.
+dette documentaire identifiée. Ils ne bloquent pas les contrôles locaux, mais
+ils contribuent à montrer que l'état global n'est pas prêt à être déclaré
+terminé. La prochaine étape est donc la compilation progressive du workflow
+complet par classes de documents, suivie d'une réécriture réelle et contrôlée
+du corpus, sans prétendre que les premiers polissages constituent ce résultat.
 
 ## Deuxième pièce : porte locale du cycle 7
 
