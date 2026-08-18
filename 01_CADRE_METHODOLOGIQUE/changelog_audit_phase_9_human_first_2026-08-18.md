@@ -453,6 +453,40 @@ Cette première réduction du champ diminue le risque de prolifération : deux
 portes publiques principales sont à examiner avant toute addition, tandis que
 les autres conservent leur spécialisation.
 
+## Premier prototype reversible : carte publique des cycles
+
+Un prototype interne a ete produit dans le laboratoire editorial :
+`93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/ESSAI_tentative/travail_ecriture/Prototype_carte_publique_cycles_Human_First_2026-08-18.md`.
+Il teste l'option d'une carte publique complete sur les dix cycles, avec des
+liens d'approfondissement, sans reprendre dans le flux principal les journaux,
+dettes et etats de maintenance.
+
+Le test des routes a d'abord falsifie le prototype : les liens relatifs etaient
+calcules depuis un niveau incorrect du laboratoire. Une seconde verification a
+confirme la profondeur reelle de trois niveaux sous la racine, puis tous les
+liens locaux ont ete corriges et controles.
+
+La comparaison de contenu a egalement fait remonter trois elements uniques qui
+avaient ete omis dans la premiere version : les deux lignes independantes de
+C7 (`C7-C1 / X(z)` et `C7-GAL`), le complement 2026 du cycle 8 et les resultats
+des phases 2, 3 et 4 du cycle 10. Ils ont ete reintegres avant qualification du
+prototype.
+
+```text
+PROTOTYPE = PRODUIT_SUR_COPIE
+ROUTES_LOCALES = 15 / 15 RESOLUES
+CONTENU_UNIQUE_RETRACE = OUI
+DEFAUTS_DETECTES_ET_CORRIGES = 2
+PROMOTION_PUBLIQUE = NON
+RESULTAT = CARTE_PUBLIQUE_POSSIBLE_SOUS_CONTROLE_DES_ROUTES_ET_DU_CONTENU
+SEPARATION_EN_DOCUMENT_SUPPLEMENTAIRE = NON_DECIDEE
+PROCHAINE_INSTRUCTION = COMPARER_LISIBILITE_ET_COUT_DE_MAINTENANCE
+```
+
+Ce résultat reste local au genre « carte d'accueil scientifique ». Il ne
+justifie ni une réécriture du README source, ni une règle générale de
+séparation documentaire.
+
 ## Ouverture effective du premier test
 
 La matrice interne de capacité est produite pour le premier lot :
