@@ -960,3 +960,39 @@ ARCHIVE_JSON = TOUJOURS_OUVERTE
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
 PROCHAINE_ACTION = LIRE_LES_CONVERSATIONS_PAR_FOYERS_SANS_PROMOTION_AUTOMATIQUE
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : foyer conversationnel hard problem et posture
+
+Un premier bloc de l'export QWEN a ete lu autour du hard problem, de la posture
+personnelle, de la perception par patterns et de la construction de l'article.
+Il fait apparaitre plusieurs corrections explicites qui doivent rester dans la
+genealogie :
+
+```text
+EXPERIENCE_PERSONNELLE = CONTEXTE_DE_POSITIONNEMENT, NON_FONDEMENT_SCIENTIFIQUE
+ANALOGIE_TOURBILLON/FLAMME = PREFEREE_POUR_SA_LISIBILITE_LOCALE
+EXEMPLE_CHAISE = POSSIBLE, MAIS EXIGE_EXPLICITATION_DE_LA_CHAINE
+PATTERN = PERCEPTION_RELATIONNELLE_REVENDIQUEE, NON_PREUVE_DE_MECANISME
+IA = ACCELERATEUR_D_APPRENTISSAGE_ET_GUIDE_VERS_LA_PRECISION
+PROPOSITION_IA = PISTE_DE_TRAVAIL, NON_AUTORITE
+```
+
+Les échanges montrent aussi que certaines formulations initiales ont ete
+corrigees par l'auteur lui-meme : l'experience dite mystique ne doit pas etre
+utilisee comme preuve, le langage de non-dualite ne doit pas etre pris au pied
+de la lettre, et la methode de l'auteur ne doit pas etre reconstruite comme
+critere affirmatif general. Ces corrections recoupent la posture actuelle de
+modalisation et la separation entre philosophie, experience et qualification
+scientifique.
+
+Le bloc reste genealogique : il ne valide ni la these du hard problem, ni une
+theorie de la conscience, ni un concept transversal de coupe.
+
+```text
+FOYER_CONVERSATIONNEL_LU = HARD_PROBLEM_POSTURE_PATTERNS
+CONVERSATIONS_LUES_COMPLETEMENT = NON_ETABLI_A_CE_PALIER
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+PROCHAINE_ACTION = LIRE_LE_FOYER_TEMPS_COSMOLOGIQUE_ET_RECHERCHES_PHYSIQUES
+```
