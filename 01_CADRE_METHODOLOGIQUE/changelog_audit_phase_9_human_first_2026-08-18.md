@@ -530,6 +530,37 @@ ne presuppose ni une fusion par classe, ni une multiplication des README, ni
 une migration de masse. Le depot reste un laboratoire dans la branche d'audit
 et aucune restructuration effective n'est ouverte.
 
+## Ouverture du cadrage de réarchitecture générale
+
+Le retour suivant élargit le chantier : la question ne porte plus seulement
+sur la forme des portes Human-First, mais sur l'architecture générale qui doit
+accueillir les continuations physiques, computationnelles, méthodologiques,
+philosophiques et éditoriales. La structure actuelle est conservée comme
+support historique et opératoire ; elle n'est pas traitée comme une cible
+intouchable ni comme un modèle à reproduire automatiquement.
+
+Le cadrage interne est consigné dans :
+`01_CADRE_METHODOLOGIQUE/cadrage_rearchitecture_generale_sans_perte_2026-08-18.md`.
+
+```text
+REARCHITECTURE_GENERALE = CONCEPTION_A_INSTRUIRE
+INVESTIGATIONS_EXISTANTES = CONSERVEES
+ARBORESCENCE_ACTUELLE = TEMOIN_HISTORIQUE_ET_OPERATIONNEL
+NOUVELLE_ARBORESCENCE = NON_CREEE
+MIGRATION = NON_OUVERTE
+```
+
+Le cadrage distingue les plans public, recherche, preuve, provenance et
+laboratoire, mais ne les convertit pas encore en dossiers. Trois options sont
+à comparer : réorganisation par plans, domaines avec fonctions internes, ou
+documents autonomes avec indexation tardive. Le choix devra venir d'un
+mappage sans déplacement et d'un contrôle des pertes, duplications,
+dépendances et coûts de liaison.
+
+Cette ouverture ne constitue pas un nouvel audit scientifique global. Elle
+réoriente la phase 9 vers une conception d'architecture et peut révéler des
+retours locaux nécessaires ; elle ne relance aucune investigation par défaut.
+
 ## Ouverture effective du premier test
 
 La matrice interne de capacité est produite pour le premier lot :
