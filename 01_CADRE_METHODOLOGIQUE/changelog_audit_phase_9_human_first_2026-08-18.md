@@ -840,6 +840,30 @@ granularité du réseau de pièces de L2, la pluralité de L4 et la formalisatio
 des relations computationnelles. La prochaine instruction est de définir un
 contrat minimal d'objet migrable, sans ouvrir de migration réelle.
 
+## Palier 6 : contrat minimal d'un objet migrable
+
+Le contrat est consigné dans :
+`01_CADRE_METHODOLOGIQUE/contrat_minimal_objet_migrable_lot_pilote_2026-08-18.md`.
+Il ne prescrit ni déplacement ni format technique. Il définit les invariants à
+contrôler si une destination change un jour : identité, contenu unique, portée,
+statut, relations, provenance, conditions de reprise et critères de perte.
+
+```text
+PALIER_6 = CONTRAT_MINIMAL_OBJET_MIGRABLE
+CONTRAT_MINIMAL = APPLICABLE_AU_LOT
+IDENTITE_ET_CONTENU = CONTROLEABLES
+STATUT_ET_AUTORISATION = SEPARES
+RELATIONS = A_QUALIFIER_PAR_TYPE
+MIGRATION_CONCEPTUELLE = TESTABLE
+MIGRATION_REELLE = NON_OUVERTE
+```
+
+Le contrat refuse une migration lorsque l'identité n'est pas retraçable, que le
+contenu unique ou la provenance ne sont pas inventoriés, qu'une dépendance
+sémantique reste ambiguë ou qu'une autorisation est inférée du chemin. Les
+champs incomplets du lot concernent surtout la granularité probatoire de L2,
+les relations d'accès de L3 et les applications locales de L4.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
