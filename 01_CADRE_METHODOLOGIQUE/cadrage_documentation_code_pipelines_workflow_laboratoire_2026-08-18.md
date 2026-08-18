@@ -122,6 +122,32 @@ déjà qualifiés : elle cherchera les opérations répétitives, contrôlables 
 réversibles qui peuvent être automatisées, tout en laissant humaines les
 questions de modèle, de portée, de promotion, d'autorisation et de décision.
 
+## L'audit comme objet de travail potentiel
+
+L'audit lui-même peut devenir un objet documentaire distinct : ses phases,
+contre-tests, retours ciblés, décisions, résultats négatifs et effets sur la
+transformation du projet constituent une trajectoire de travail, pas un
+résultat scientifique à absorber dans les documents audités.
+
+```text
+AUDIT = OBJET_DE_WORKFLOW_ET_DE_PROVENANCE
+RESULTATS_DE_L_AUDIT = QUALIFICATIONS_BORNEES
+EFFETS_SUR_LE_PROJET = A_DOCUMENTer_SEPAREMENT
+TEMPLATE = A_DECIDER_APRES_EVALUATION
+```
+
+La séparation éventuelle des phases ou la création d'un modèle réutilisable ne
+sera justifiée qu'après comparaison entre :
+
+- ce que l'audit a effectivement facilité dans la transformation du projet ;
+- les éléments spécifiques à cette trajectoire et non transférables ;
+- les contrôles qui ont réellement réduit les pertes ou les ambiguïtés ;
+- le coût cognitif et documentaire du modèle lui-même ;
+- le risque de transformer une généalogie locale en procédure obligatoire.
+
+Pour l'instant, l'audit est conservé comme workflow local documenté. Sa
+templateisation reste une possibilité ouverte, non une sortie attendue.
+
 ## Séparation des niveaux de résultat
 
 ```text

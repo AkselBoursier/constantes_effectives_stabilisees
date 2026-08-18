@@ -1059,6 +1059,28 @@ répétitives, contrôlables et réversibles qui allègent la charge cognitive,
 mais les choix de modèle, de données, de portée, de promotion et d'autorisation
 restent humains.
 
+## L'audit comme objet documentaire local
+
+La reconception conserve également la possibilité de documenter l'audit
+lui-même : phases, contre-tests, retours, décisions, effets sur la
+transformation du projet et éléments non transférables. Cette documentation
+ne doit pas être confondue avec les résultats scientifiques produits ou
+qualifiés par l'audit.
+
+```text
+AUDIT = OBJET_DE_WORKFLOW_ET_DE_PROVENANCE
+EFFETS_DE_L_AUDIT = A_EVALUER
+SEPARATION_DES_PHASES = A_DECIDER_APRES_RESULTATS
+TEMPLATE_AUDIT = POSSIBILITE_NON_AUTORISEE_PAR_DEFAUT
+CI = COMPOSANTE_DU_WORKFLOW_GLOBAL
+DECISIONS_HUMAINES = CONSERVEES
+```
+
+La valeur d'une éventuelle templateisation sera jugée après coup : gain réel
+de continuité, réduction des pertes, allègement cognitif, réutilisabilité et
+absence de rigidification. L'audit reste pour l'instant un workflow local du
+laboratoire, documenté comme tel.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
