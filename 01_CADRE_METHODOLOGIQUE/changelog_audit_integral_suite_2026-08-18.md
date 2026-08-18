@@ -813,3 +813,62 @@ ARCHIVES_CONVERSATIONNELLES = NON_OUVERTES_A_CE_PALIER
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
 PROCHAINE_ACTION = LIRE_LES_CONTROLES_RESTANTS_ET_LES_DOCUMENTS_DE_TRAVAIL_CIBLES
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : migrations et prose historique recoupees
+
+Les documents `M_migrations.md`, `T0_MANUSCRIT_NOUVEAU.md`,
+`RECHERCHE_CONTRE_SOI_T1.md`, `essai_suspension_categories.md` et
+`phenomenologie_des_coupes.md` ont ete lus dans cette passe.
+
+### Resultat principal
+
+Les textes historiques portent encore, avec des degres de modalisation variables,
+des formulations que les registres K/M et l'audit transversal ont depuis
+retirees, suspendues ou regionalisees :
+
+```text
+TOUTE_COUPE_EST_CONSTITUTIVE = THESIS_HISTORIQUE_NON_ACTIVE
+POROSITE_COMME_CATEGORIE_GENERALE = THESIS_HISTORIQUE_NON_ACTIVE
+COUPLAGE_STRUCTUREL_ETENDU = EXTENSION_HISTORIQUE_A_REINSTRUIRE
+CO_CONSTITUTION_UNIVERSELLE = HYPOTHESE_HISTORIQUE_FORTE, NON_PREMISSE
+LEGIFERATION_UNIVERSELLE = PROPOSITION_METAPHYSIQUE_HISTORIQUE, SUSPENDUE
+REEL_AUTO_INTERROGATIF = FORMULATION_PHENOMENOLOGIQUE/METAPHORIQUE, NON_RESULTAT
+```
+
+Le texte `M_migrations.md` ne demande pas de corriger ces documents historiques.
+Il impose de qualifier chaque occurrence selon sa fonction : citation, trace
+genealogique, critique, hypothese locale, argument actuel ou formulation a
+retirer. Cette regle est compatible avec l'exigence actuelle de conservation
+sans promotion.
+
+### Recoupements et limites
+
+`RECHERCHE_CONTRE_SOI_T1.md` apporte une critique importante des pretentions
+d'originalite : Barad et Spencer-Brown sont des antecedents directs a confronter,
+le couplage structurel reste d'abord biologique, et l'originalite theorique
+forte ne peut pas etre deduite de l'absence d'une expression exacte dans la
+litterature. Ces observations recoupent P8-003 et la typologie des voisins,
+mais le rapport de recherche lui-meme reste une piece historique, non une
+validation bibliographique actuelle.
+
+`T0_MANUSCRIT_NOUVEAU.md` contient un partage utile entre physique standard,
+proposition philosophique et statut modal, mais il conserve aussi des claims
+de second ordre qui exigeraient un audit disciplinaire avant toute reprise.
+
+`essai_suspension_categories.md` et `phenomenologie_des_coupes.md` conservent
+des noyaux phenomenologiques et pedagogiques, mais leurs termes generaux
+(`porosite`, `coupes vivantes`, `ethique de la reliance`, `reel auto-interrogatif`)
+ne sont pas automatiquement des concepts du cadre actuel. Ils doivent rester
+des matériaux de genese et des candidats a instruire.
+
+### Statut intermediaire
+
+```text
+TEXTES_CIBLES_LUS_DANS_CETTE_PASSE = 5
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+CONCEPTS_HISTORIQUES_RESURGIS = CONSERVES_SANS_PROMOTION
+REINSTRUCTION_SCIENTIFIQUE = NON_OUVERTE
+PROCHAINE_ACTION = CONTINUER_LES_CONTROLES_91_ET_LES_DOCUMENTS_DE_TRAVAIL_NON_LUS
+```
