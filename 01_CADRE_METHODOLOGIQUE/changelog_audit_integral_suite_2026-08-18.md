@@ -1464,6 +1464,27 @@ PROCHAINE_ACTION = CLOTURER_LA_DESCENTE_C1_OU_REVENIR_SUR_UNE_DEPENDANCE_DECLENC
 
 ---
 
+## 2026-08-18 — Raccord vers le changelog stable de phase 2
+
+Pour limiter la longueur du changelog integral sans perte de provenance, un
+journal stable propre a la phase 2 est ouvert :
+
+`01_CADRE_METHODOLOGIQUE/changelog_audit_phase_2_scientifique_2026-08-18.md`
+
+Les entrees de phase 2 deja appendues dans cette partie restent ici comme
+historique ; elles ne sont pas deplacees ni recopiees. Le journal de phase
+prend le relais apres la qualification locale de C1 et conserve les memes
+regles d'ecriture, le meme rang et les memes exigences de controle.
+
+```text
+JOURNAL_PHASE_2 = OUVERT
+RACCORD = SANS_PERTE, SANS_DUPLICATION
+POINT_DE_RELAIS = APRES_02df636
+PROCHAINE_SENTINELLE = S2 / CYCLE_3_NEUTRINOS
+```
+
+---
+
 ## 2026-08-18 — Addendum : méta-règle non exclusive et adaptable
 
 L'auteur précise que la règle de transition depuis les résultats de phase 1 ne

@@ -113,6 +113,35 @@ retours ciblés, sous réserve de la portée propre de chaque audit. Elle ne don
 pas à une étape le pouvoir de promouvoir seule une hypothèse, un résultat ou
 une décision relevant d’un autre rang.
 
+### 1.8 Journalisation séquencée par phase
+
+Le changelog vivant peut être réparti en journaux stables correspondant à une
+phase complète lorsque la longueur, la continuité de lecture ou la fonction de
+contrôle le justifie. Cette répartition est technique et ne doit produire ni
+perte, ni résumé substitutif, ni rupture de provenance.
+
+```text
+UNITE_DE_JOURNAL = PHASE_COMPLETE_OU_LOT_COHERENT
+REGLES_D_ECRITURE = HERITEES_ET_EXPLICITES_DANS_CHAQUE_PHASE
+RACCORD_INTER_PHASES = OBLIGATOIRE
+DUPLICATION_DES_ENTREES = INTERDITE_SAUF_GAIN_DE_CONTROLE_EXPLICITE
+DEPLACEMENT_D_UNE_ENTREE = PROVENANCE_ET_REFERENCE_CONSERVEES
+NOM_DU_FICHIER = STABLE_PENDANT_LA_PHASE
+```
+
+Un journal de phase conserve les mêmes exigences que le changelog intégral :
+résultats positifs et négatifs, limites, dettes, contradictions, bifurcations,
+triangulations, incidents, effets sur les décisions et états `NON_ETABLI` ou
+`NON_DECIDABLE`. Il peut renvoyer à une entrée antérieure déjà complète au lieu
+de la recopier, à condition d'indiquer le fichier, la phase, le point de
+raccord et la raison de cette non-duplication.
+
+La création d'un journal de phase ne clôt pas la phase, ne crée pas une
+nouvelle autorité et ne rend pas immuable son organisation. Une phase peut
+rester dans un journal unique ou être subdivisée seulement si ce choix apporte
+un gain réel de contrôlabilité ; le programme et le changelog doivent alors
+conserver la généalogie du choix.
+
 ---
 
 ## 2. Deux axes indépendants : état et effet sur une dépendance
@@ -312,6 +341,9 @@ PROGRAMME VIVANT DES AUDITS
 CHANGELOG VIVANT DE L'AUDIT INTEGRAL
 = couverture lue, remontees, resurgences, dettes et reductions justifiees
 
+CHANGELOGS DE PHASE
+= execution sequentielle d'une phase complete, avec raccord sans perte
+
 ISSUES
 = executions bornees, preuves, arbitrages, blocages, resultats locaux
 
@@ -322,6 +354,12 @@ PR / GIT
 Un éventuel GitHub Project peut représenter visuellement ces états mais ne devient pas une autorité scientifique, conceptuelle ou méthodologique par lui-même.
 
 Les statuts transitoires de PR, branches ou opérations en cours restent dans GitHub ; ils ne doivent pas être recopiés dans ce document vivant sauf s’ils changent durablement la structure ou l’autorité du programme.
+
+Un changelog de phase peut devenir l'instrument courant de la phase concernée.
+Il doit alors rappeler les règles héritées, pointer vers le changelog antérieur,
+indiquer son manifeste de départ et maintenir un raccord explicite lors de la
+clôture. Le changelog intégral historique n'est pas réécrit pour créer cette
+séparation.
 
 ---
 
