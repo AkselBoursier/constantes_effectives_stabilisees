@@ -675,3 +675,80 @@ NOUVELLE_AUTORISATION_COMPUTATIONNELLE = AUCUNE
 REINSTRUCTION_SUBSTANTIELLE = NON_OUVERTE
 PROCHAINE_ETAPE = RECONSTRUIRE_LA_PORTE_DOCUMENTAIRE_SUIVANTE_SANS_EXCLUSION
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : ouverture de la porte documentaire
+
+Inventaire local au baseline courant :
+
+```text
+TOTAL_BLOBS_91 = 85
+MARKDOWN = 82
+DOCX = 2
+JSON = 1
+COUVERTURE_DOCUMENTAIRE_91 = OUVERTE
+```
+
+Le dossier contient des manuscrits, essais, recherches, registres de decisions,
+archives conversationnelles et reconstructions genealogiques. Son README declare
+qu'il s'agit d'une archive de trajectoire, non d'une autorite active, et demande
+une comparaison avec l'etat courant avant toute reprise. Cette indication route
+la lecture mais n'autorise aucune exclusion : les 85 blobs restent dans le
+corpus jusqu'a leur lecture et leur remontee.
+
+### Premiers points d'entree lus
+
+Les points d'entree `README.md` et `SOURCE_HIERARCHY.md`, ainsi que les documents
+recommandes `POSTURE_EPISTEMIQUE.md`, `ARCHEOLOGIE_BIFURCATIONS_fevrier-juin2026.md`,
+`CHANGELOG_CONCEPTUEL.md`, `DECISION_LEDGER.md`, `Annexe_genealogique.md` et
+`le_reglage_fin_v9.md` ont ete lus comme contexte historique.
+
+Ils font remonter plusieurs elements qui devront etre distingues dans la suite :
+
+```text
+POSTURE_RELATIONNELLE_ET_REFLEXIVE = ORIENTATION_HISTORIQUE
+COUPE_CONSTITUTIVE_UNIVERSELLE = THESIS_HISTORIQUE_RETIREE_OU_SUSPENDUE
+COUPLAGE_STRUCTUREL_HORS_BIOLOGIE = EXTENSION_A_REINSTRUIRE
+DEFINISSABILITE = QUESTION_HISTORIQUE, FONCTION_PORTEUSE_NON_TRANCHEE
+PERCOLATION = PISTE_HISTORIQUE_A_REINSTRUIRE, NON_RESTAUREE
+ORIGINALITE_THEORIQUE_FORTE = NON_DEMONTEE_DANS_LE_REGISTRE_LU
+GAIN_METHODOLOGIQUE = A_TESTER_PAR_COMPARAISON_SOUSTRACTIVE
+```
+
+Le `DECISION_LEDGER` conserve des decisions historiques compatibles avec le
+programme actuel sur plusieurs points : reconstruction disciplinaire avant
+traduction, modalisation des propositions, possibilite d'echec, regionalisation
+des concepts et interdiction des remplacements lexicaux globaux. En revanche,
+`SOURCE_HIERARCHY.md` et la posture ancienne appartiennent a leur chantier de
+phase 1 et ne remplacent pas le programme vivant actuel.
+
+### Tension de methode conservee
+
+La posture epistemique ancienne privilegie la justesse sur l'exhaustivite et
+le dossier 91 se presente comme une archive a parcourir genealogiquement. Le
+programme actuel exige au contraire la lecture exhaustive du corpus de reference
+avant toute exclusion documentaire. La regle de reprise est donc :
+
+```text
+JUSTESSE_COMME_POSTURE_HISTORIQUE = CONSERVEE_COMME_CONTEXTE
+EXHAUSTIVITE_DOCUMENTAIRE_ACTUELLE = REGLE_APPLICABLE
+ARCHIVE_91_COMME_FILTRAGE_DE_PERTINENCE = REFUSE
+ARCHIVE_91_COMME_SOURCE_D_AUTORITE_ACTIVE = REFUSE
+```
+
+Cette tension ne constitue pas une incoherence a corriger dans les anciens
+documents. Elle doit etre conservee comme changement de programme et controlee
+dans les lectures ulterieures, notamment lorsque des questions anciennes
+resurgissent sous un vocabulaire plus recent.
+
+### Etat et prochaine action
+
+```text
+COUVERTURE_MATERIELLE_91 = 0/85 A CE PALIER
+POINTS_D_ENTREE_LUS = 8
+DOCX_91_LUS_DIRECTEMENT = 0/2
+JSON_91_LU_INTEGRALEMENT = 0/1
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_REGISTRES_ET_CONTROLES_91_AVANT_LES_ARCHIVES_CONVERSATIONNELLES
+```
