@@ -920,6 +920,28 @@ propriété ou une relation sans produire un dossier fourre-tout. L'absence de
 `04_ARCHITECTURES/README.md` reste un fait d'inventaire : elle ne justifie pas
 la création immédiate d'une nouvelle porte.
 
+## Palier 9 : mesure du coût des relations transversales
+
+La mesure est consignée dans :
+`01_CADRE_METHODOLOGIQUE/mesure_cout_relations_transversales_lot_secondaire_2026-08-18.md`.
+Elle évalue qualitativement la création, la qualification, la maintenance, la
+vérification et la récupérabilité des relations du lot secondaire.
+
+```text
+PALIER_9 = COUT_DES_RELATIONS_TRANSVERSALES
+RELATIONS_TRANSVERSALES = GERABLES_SANS_REGISTRE_SUR_LE_LOT
+COUT_ELEVE = CONCENTRE_SUR_QUELQUES_ARTICULATIONS
+VUES_DE_RELATION = UTILES_SOUS_QUESTION_CIBLEE
+REGISTRE_CENTRAL = NON_JUSTIFIE
+AUTOMATISATION = PREMATUREE
+MIGRATION = NON_OUVERTE
+```
+
+Le lot ne montre pas d'explosion relationnelle. Le coût est concentré sur les
+articulations méthode / architecture, éditorial / philosophie / méthode et les
+jonctions historiques. Une vue de relations ciblée pourra être testée ; un
+registre général ne sera pas ouvert sans déficit de contrôle observé.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
