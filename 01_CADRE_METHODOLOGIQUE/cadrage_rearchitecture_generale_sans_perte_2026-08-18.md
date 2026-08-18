@@ -249,6 +249,59 @@ registre n'est justifié que si l'inventaire montre que Git, les documents
 locaux et les issues ne suffisent plus à retrouver les identités, statuts et
 relations.
 
+## Deux workflows à ne pas confondre
+
+La reconception doit distinguer au moins deux workflows, dont les objets et les
+critères de réussite ne sont pas les mêmes.
+
+### Workflow sémantique intégral
+
+Il organise le travail sur le sens du projet : comprendre une pièce, identifier
+son registre ou son caractère transversal, préserver ses limites, qualifier ses
+relations, choisir sa fonction documentaire et construire une vue adaptée à un
+public ou à une tâche.
+
+```text
+QUESTION_OU_BESOIN
+-> CONTENU_ET_REGISTRES_CONCERNES
+-> STATUT_ET_PORTEE
+-> DEPENDANCES_SEMANTIQUES
+-> DOCUMENT_AUTONOME_OU_RELATION
+-> VUE_ET_ROUTAGE
+-> TEST_DE_PERTE_ET_DE_LISIBILITE
+```
+
+Ce workflow précède la stabilisation des chemins. Il peut produire une
+proposition, un refus de classer, une demande de triangulation ou une
+architecture locale. Il ne transforme pas automatiquement son résultat en
+publication ni en migration.
+
+### Workflow CI et maintenance technique
+
+Le workflow CI vérifie l'état technique du dépôt : syntaxe, liens, formats,
+outils, tests automatisables, contrôles de provenance et éventuellement
+génération de vues. Il ne décide pas du sens scientifique, du rang d'une pièce,
+de la portée d'un résultat ou de la promotion d'un document.
+
+```text
+ARTEFACTS_ET_REGLES_DEJA_QUALIFIES
+-> CONTROLES_AUTOMATISABLES
+-> RAPPORT_TECHNIQUE
+-> CORRECTION_OU_ESCALADE_HUMAINE
+```
+
+Le CI peut donc soutenir le workflow sémantique intégral, mais ne doit pas le
+remplacer. Une vérification technique réussie établit seulement que le
+contrôle technique exécuté a réussi dans son périmètre.
+
+### Ordre de conception
+
+Le workflow sémantique intégral est prioritaire pour la réarchitecture actuelle.
+L'amélioration du CI constitue une phase ultérieure, après clarification des
+objets, statuts, relations et vues qu'il devra contrôler. Concevoir le CI trop
+tôt risquerait de figer l'architecture actuelle et de transformer ses chemins
+transitoires en contrats durables.
+
 ## Découpage recommandé du travail
 
 ### Palier 1 : modèle conceptuel

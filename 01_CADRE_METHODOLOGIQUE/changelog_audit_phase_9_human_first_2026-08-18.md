@@ -653,6 +653,29 @@ peut signaler une relation transversale ou une dimension émergente, sans
 imposer immédiatement d'allonger la liste. Toute extension reste locale tant
 qu'elle n'a pas montré sa nécessité et sa portée.
 
+## Distinction des workflows
+
+La suggestion relative aux workflows est intégrée au cadrage de réarchitecture.
+Le workflow prioritaire de la phase actuelle est le **workflow sémantique
+intégral** : il traite le contenu, les registres, les statuts, les relations,
+les fonctions documentaires, les vues et les contrôles de perte.
+
+Le **workflow CI** est distinct. Il traite les contrôles techniques
+automatisables, la syntaxe, les liens, les formats, les tests et la maintenance
+des artefacts déjà qualifiés. Il peut soutenir le workflow sémantique, mais ne
+peut ni décider du sens, ni établir un rang scientifique, ni autoriser une
+promotion documentaire.
+
+```text
+WORKFLOW_SEMANTIQUE_INTEGRALE = PRIORITAIRE_MAINTENANT
+WORKFLOW_CI = PHASE_ULTERIEURE
+CI = SUPPORT_TECHNIQUE, NON_ARBITRE_DU_SENS
+```
+
+L'amélioration du CI sera donc instruite après la clarification des objets et
+relations de la nouvelle architecture, afin de ne pas transformer les chemins
+actuels en contrats durables par simple automatisation.
+
 Le test suivant comparera la forme actuelle de l'accueil des cycles à une
 proposition éventuellement séparée entre carte publique et détails de
 routage. La décision dépendra du gain de lisibilité et de contrôle observé,
