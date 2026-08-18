@@ -766,6 +766,31 @@ et de travail, domaines comme contextes de recherche, et statuts comme axe
 indépendant. Cette combinaison conserve les gains des trois cartes sans faire
 du plan, du domaine et de l'objet une hiérarchie unique.
 
+## Palier 4B : test de la combinaison architecturale hybride
+
+Le test de combinaison est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_combinaison_architecture_hybride_lot_pilote_2026-08-18.md`.
+Il vérifie sur le lot pilote si les objets autonomes peuvent accueillir les
+plans comme vues et les domaines comme contextes, sans créer de hiérarchie
+cachée ni de registre central préalable.
+
+```text
+PALIER_4B = TEST_DE_COMBINAISON_ARCHITECTURALE
+COMBINAISON_HYBRIDE = COHERENTE_SUR_LE_LOT
+OBJETS_AUTONOMES = SOCLE_RETENU_PROVISOIREMENT
+PLANS = VUES_NON_CANONIQUES
+DOMAINES = CONTEXTES_NON_STATUTS
+MIGRATION_CONCEPTUELLE = POSSIBLE_SUR_LE_LOT
+REGISTRE_CENTRAL = NON_JUSTIFIE_A_CE_PALIER
+MIGRATION_REELLE = NON_OUVERTE
+```
+
+Le test ne révèle pas de hiérarchie cachée nécessaire sur ce lot. Il fait
+toutefois émerger un point à instruire avant toute généralisation : le statut
+d'un objet, l'état d'une ligne de travail et l'autorisation d'agir ne doivent
+pas être confondus. Les relations computationnelles et les dépendances de L2
+devront également être testées avec une granularité plus fine.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
