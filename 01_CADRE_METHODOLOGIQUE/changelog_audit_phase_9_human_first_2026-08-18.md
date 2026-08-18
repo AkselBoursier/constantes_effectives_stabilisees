@@ -942,6 +942,31 @@ articulations méthode / architecture, éditorial / philosophie / méthode et le
 jonctions historiques. Une vue de relations ciblée pourra être testée ; un
 registre général ne sera pas ouvert sans déficit de contrôle observé.
 
+## Palier 10 : test d'une vue de relations ciblée
+
+Le prototype est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_vue_relations_ciblee_lot_secondaire_2026-08-18.md`.
+Il sélectionne les articulations sensibles T1 à T5 sans résumer les objets et
+sans créer de registre central.
+
+```text
+PALIER_10 = VUE_DE_RELATIONS_CIBLEE
+VUE_DE_RELATIONS_CIBLEE = UTILE_SUR_LE_LOT
+REGISTRE_CENTRAL = NON_REQUIS
+CONTENU_CANONIQUE = NON_DUPLIQUE
+RELATIONS_TRANSVERSALES = RENDUES_LISIBLES_SOUS_QUESTION
+VUE_EXHAUSTIVE = NON_RECOMMANDEE
+RECONSTRUIBILITE = OUI
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme qu'une vue relationnelle locale peut rendre visibles les
+passages entre philosophie, méthode, architecture, éditorial et provenance.
+Elle doit rester une projection motivée par une question, et non devenir une
+nouvelle autorité. Le prochain lot à tester sera computationnel ou probatoire,
+afin d'exposer le modèle à des relations dont la portée pour un résultat est
+plus directement contrôlée.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
