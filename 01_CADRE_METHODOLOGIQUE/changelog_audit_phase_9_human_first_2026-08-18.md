@@ -743,6 +743,29 @@ recherche ne doit probablement pas devenir un tableau de bord transversal.
 Il ne décide pas encore si ces vues seront des fichiers, des README, des index
 générés ou une combinaison de ces formes.
 
+## Palier 4 : comparaison des cartes d'architecture abstraites
+
+La comparaison est consignée dans :
+`01_CADRE_METHODOLOGIQUE/comparaison_cartes_architecture_abstraites_lot_pilote_2026-08-18.md`.
+Trois cartes ont été confrontées sur le même lot : plans fonctionnels,
+domaines avec fonctions internes, et objets autonomes avec vues tardives.
+
+```text
+PALIER_4 = COMPARAISON_DE_CARTES_ABSTRAITES
+CARTE_A = UTILE_COMME_VUE_FONCTIONNELLE
+CARTE_B = CONTINUITE_DE_DOMAINE, RISQUE_DE_REPRODUCTION
+CARTE_C = SOCLE_CONCEPTUEL_LE_PLUS_STABLE
+COMBINAISON_A_B_C = A_TESTER
+ARBORESCENCE_REELLE = NON_DEFINIE
+MIGRATION = NON_OUVERTE
+```
+
+La recommandation locale est de tester une combinaison : objets autonomes et
+relations explicites comme socle, plans fonctionnels comme vues de distribution
+et de travail, domaines comme contextes de recherche, et statuts comme axe
+indépendant. Cette combinaison conserve les gains des trois cartes sans faire
+du plan, du domaine et de l'objet une hiérarchie unique.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
