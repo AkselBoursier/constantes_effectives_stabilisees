@@ -864,6 +864,35 @@ sémantique reste ambiguë ou qu'une autorisation est inférée du chemin. Les
 champs incomplets du lot concernent surtout la granularité probatoire de L2,
 les relations d'accès de L3 et les applications locales de L4.
 
+## Palier 7 : simulation de deux destinations abstraites
+
+La simulation est consignée dans :
+`01_CADRE_METHODOLOGIQUE/simulation_migration_conceptuelle_deux_destinations_2026-08-18.md`.
+Elle confronte le contrat minimal à deux modèles de distribution : plans
+fonctionnels d'une part, domaines et questions d'autre part. Aucun chemin ou
+dossier cible n'est créé.
+
+```text
+PALIER_7 = SIMULATION_MIGRATION_CONCEPTUELLE
+SIMULATION_A = PASSE
+SIMULATION_B = PASSE
+INVARIANTS = CONSERVABLES_DANS_LES_DEUX_MODELES
+DESTINATION_MATERIELLE = NON_CHOISIE
+ARCHITECTURE_FINALE = NON_DECIDEE
+MIGRATION_REELLE = NON_OUVERTE
+```
+
+La destination par plans favorise la lisibilité fonctionnelle et la séparation
+public / preuve / provenance. La destination par domaines conserve mieux la
+continuité des travaux par question, mais expose davantage au risque de
+répéter les fonctions communes. Les deux simulations exigent le socle d'objets
+autonomes et de relations explicites.
+
+Avant toute migration pilote, il faudra tester le contrat sur un lot d'une
+autre nature, détailler les relations probatoires et computationnelles,
+examiner les objets transversaux et obtenir une décision humaine sur le lot,
+la destination et le mode de retour.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
