@@ -1147,6 +1147,28 @@ reconception générale et tests de l'audit. Une opération concrète pourra
 rouvrir le fil outils si elle apporte un discriminant nouveau ; aucune étape
 artificielle d'inventaire ou de templatisation n'est ajoutée pour le fermer.
 
+## Retour au fil principal : fiche du pipeline computationnel borné
+
+Après la mise en veille active du fil outils, le travail reprend avec la
+documentation computationnelle. La première fiche unitaire de pipeline est :
+`01_CADRE_METHODOLOGIQUE/fiche_documentation_pipeline_alpha_borne_2026-08-18.md`.
+
+```text
+RETOUR_AU_FIL_PRINCIPAL = EFFECTIF
+PROFIL = PIPELINE_DE_REPRISE_COMPUTATIONNELLE_BORNE
+DOCUMENTATION_COMPUTATIONNELLE = SUFFISANTE_POUR_LE_PERIMETRE
+CHAINES_CODE_ENVIRONNEMENT_RESULTAT = DISTINCTES_ET_RELIEES
+RESULTAT_LOCAL = RECEVABLE_DANS_SON_PERIMETRE
+REPRODUCTION_DE_L_ANALYSE_COMPLETE = NON_ETABLIE
+PROMOTION = NON_OUVERTE
+```
+
+La fiche conserve la chaîne des opérations, la provenance du paquet, les
+sorties et les limites. Elle distingue explicitement résultat machine,
+qualification technique et résultat scientifique. Elle montre aussi que la
+documentation computationnelle peut être suffisante pour un périmètre sans
+prétendre documenter ou reproduire l'analyse entière.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
