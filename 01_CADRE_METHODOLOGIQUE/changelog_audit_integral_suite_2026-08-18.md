@@ -752,3 +752,64 @@ JSON_91_LU_INTEGRALEMENT = 0/1
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
 PROCHAINE_ACTION = LIRE_LES_REGISTRES_ET_CONTROLES_91_AVANT_LES_ARCHIVES_CONVERSATIONNELLES
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : registres et controles de phase remontes
+
+Les documents `CONCEPT_STATUS.md`, `OPEN_QUESTIONS.md`, `PHASE5_CONTROLE.md`,
+`PHASE6_CONTROLE.md`, `PHASE7_CONTROLE.md`, `PHASE8_AUDIT_TRANSVERSAL.md` et
+`PHASE8_CONTROLE.md` ont ete lus comme registres historiques et controles de
+production. Ils ne remplacent pas le programme vivant actuel, mais ils rendent
+la genealogie des retraits, suspensions, regionalisations et validations locales
+plus explicite.
+
+### Continuite avec les regles actuellement applicables
+
+```text
+COUPE = FAMILLE_CANDIDATE, INVARIANT_TRANSVERSAL_NON_ETABLI
+TOUTE_COUPE_EST_CONSTITUTIVE = RETIREE
+COUPLAGE_STRUCTUREL = REGIONALISE, TRADUCTION_INDEPENDANTE_REQUISE
+ONTO_EPISTEMOLOGIE_FORTE = SUSPENDUE
+POROSITE_GENERALE = RETIREE_OU_SUSPENDUE
+SEDIMENTATION = REGIONALISEE
+ORIGINALITE_THEORIQUE_FORTE = NON_DEMONTEE
+EXEMPLES_SCIENTIFIQUES = TERRAINS_D_EPREUVE, NON_PREUVES_DU_CADRE
+MIGRATION = LOCALE, NON_SUBSTITUTIVE
+```
+
+Les controles de phase 5 a 8 confirment que la v13 est une architecture de
+travail coherente et conditionnelle, non une theorie transversale demontree.
+Ils conservent les echecs possibles : redescription, retrait, suspension,
+fragmentation, regionalisation, inapplicabilite, deformation, refutation locale
+et redondance conceptuelle. Cette memoire negative est compatible avec la
+fonction du changelog et ne doit pas etre lissée en bilan positif.
+
+### Questions et limites resurgies
+
+Les questions suivantes restent ouvertes dans les registres lus :
+
+```text
+INVARIANT_MINIMAL_DE_COUPE = OUVERT_STRUCTURANT
+GAIN_NON_REDONDANT = METHODOLOGIQUEMENT_DISPONIBLE, PEU_TESTE_SUR_DOSSIERS_COMPLETS
+VOISINS_PAR_SOURCES_PRIMAIRES = OUVERT_BIBLIOGRAPHIQUE
+EXEMPLES_SCIENTIFIQUES_COMPLETS = OUVERT_DISCIPLINAIRE
+CONSTITUTION_ET_CO_CONSTITUTION = CHARGE_DE_PREUVE_FORTE
+ONTO_EPISTEMOLOGIE_FORTE = SUSPENDUE
+```
+
+Le dossier README signale par ailleurs deux renvois absents dans
+`MANUSCRIT_LIVRE_soustraction_de_soi.md`. Ils sont conserves comme anomalies
+documentaires ; ils ne seront ni reconstruits ni remplaces par conjecture.
+
+### Statut intermediaire
+
+```text
+REGISTRES_91_LUS = 7
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+DOCX_91_LUS_DIRECTEMENT = 0/2
+JSON_91_LU_INTEGRALEMENT = 0/1
+ARCHIVES_CONVERSATIONNELLES = NON_OUVERTES_A_CE_PALIER
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_CONTROLES_RESTANTS_ET_LES_DOCUMENTS_DE_TRAVAIL_CIBLES
+```
