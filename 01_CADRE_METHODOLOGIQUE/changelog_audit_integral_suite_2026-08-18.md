@@ -1418,6 +1418,52 @@ résultats, sans verdict global inter-cycle.
 
 ---
 
+## 2026-08-18 — Phase 2 C1 : contraintes temporelles et spatiales de `alpha`
+
+Deux descentes supplémentaires ont été effectuées à partir de pièces déjà
+remontées : `A4_Verdict_local_contraintes_temporelles_alpha_v0_1.md` et
+`A5_Verdict_local_variations_spatiales_alpha_v0_1.md`.
+
+### Contraintes temporelles
+
+```text
+CIBLE = ALPHA, FAMILLES_DE_VARIATION_DECLARÉES
+TRANSFORMATIONS = DERIVE_LINEAIRE, MODULATION_ANNUELLE_DU_POTENTIEL
+RESULTAT = NON_DETECTION_DISCRIMINANTE_DANS_LES_FAMILLES_TESTEES
+PORTÉE = CONTRAINTE_LOCALE_INDEXEE_AUX_SENSIBILITES_ET_A_LA_BANDE_TEMPORELLE
+REFUS = INVARIANCE_TEMPORELLE_UNIVERSELLE
+```
+
+La non-détection soutient un maintien seulement pour les formes de variation
+auxquelles les comparaisons d'horloges étaient sensibles. Les oscillations,
+transitoires et formes non linéaires restent hors qualification.
+
+### Variations spatiales et cosmologiques
+
+```text
+PRETENTION_HISTORIQUE = DIPOLE_POSITIF_PUBLIE
+CONTROLE_INSTRUMENTAL = DISTORSIONS_LONGUE_PORTÉE_ETABLIES
+ACCES_PLUS_DISCRIMINANT = ESPRESSO, NON_DETECTION_LOCALE
+RESULTAT = AFFAIBLISSEMENT_DE_L_ATTRIBUTION_A_ALPHA
+PORTÉE_GLOBALE = SUSPENDUE
+```
+
+Le contrôle ne choisit pas artificiellement le zéro : il rend une transformation
+instrumentale concurrente observable et réduit ainsi le poids probatoire de la
+prétention historique. La non-détection ESPRESSO reste locale à sa ligne de
+visée et ne devient pas une invariance cosmologique universelle.
+
+```text
+ALPHA_TEMPOREL = QUALIFIE_DANS_LE_PERIMETRE_LOCAL
+ALPHA_SPATIAL = QUALIFIE_LOCAL_PAR_REATTRIBUTION_PARTIELLE, GLOBAL_SUSPENDU
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+NOUVELLE_TRIANGULATION = NON_REQUISE_A_CE_PALIER
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_ACTION = CLOTURER_LA_DESCENTE_C1_OU_REVENIR_SUR_UNE_DEPENDANCE_DECLENCHEE
+```
+
+---
+
 ## 2026-08-18 — Addendum : méta-règle non exclusive et adaptable
 
 L'auteur précise que la règle de transition depuis les résultats de phase 1 ne
