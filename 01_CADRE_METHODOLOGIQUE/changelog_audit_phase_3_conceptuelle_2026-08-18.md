@@ -330,9 +330,16 @@ REECRITURE_PHILOSOPHIQUE = AUCUNE
 NOUVEAU_CALCUL = NON_LANCE
 PHASE_3 = QUALIFIEE_DANS_LE_PERIMETRE
 PHASE_4 = NON_OUVERTE
+NOUVELLE_REGLE_DURABLE = AUCUNE
+NOUVELLE_META_REGLE = AUCUNE
 ```
 
 Les questions qui exigeraient une réinstruction scientifique, méthodologique ou
 philosophique restent `NON_ETABLIES` ou conditionnelles ; elles ne sont pas
 converties en dettes sans question précise, gain discriminant attendu et
 condition de reprise.
+
+Le test d'ablation, la comparaison au vocabulaire disciplinaire standard et le
+typage des portées appliqués dans cette phase sont des critères déjà prévus par
+le programme. Leur application aux fonctions F1–F8 ne constitue pas un nouvel
+amendement de gouvernance.
