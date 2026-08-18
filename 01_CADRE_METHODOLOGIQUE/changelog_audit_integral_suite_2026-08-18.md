@@ -926,3 +926,37 @@ COUVERTURE_MATERIELLE_91 = INCOMPLETE
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
 PROCHAINE_ACTION = POURSUIVRE_LA_LECTURE_JSON_ET_DES_PIECES_91_RESTANTES
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : cartographie minimale de l'export conversationnel
+
+L'export JSON assaini contient `30` conversations. Un index local a ete produit
+sans identifiants, URL, chemins de telechargement ni contenu de messages :
+
+```text
+CONVERSATIONS = 30
+MESSAGES_ET_ROLES = CONSERVES_DANS_L_EXPORT
+METADONNEES_TECHNIQUES_SENSIBLES = RETIREES_PAR_L_ASSAINISSEMENT
+LECTURE_INTEGRALE_DES_MESSAGES = NON_ETABLIE_A_CE_PALIER
+```
+
+Les titres font apparaitre plusieurs foyers distincts : hard problem et
+cognition, temps cosmologique, trous noirs, conscience, manuscrits, critiques
+et cartes conceptuelles. Cette pluralite interdit de reconstruire une trajectoire
+unique a partir des titres. Elle servira seulement a ordonner la lecture des
+messages, en conservant les bifurcations et les corrections comme materiaux
+historiques.
+
+Les pieces jointes mentionnees dans l'export ne sont pas presumees accessibles
+ni equivalentes aux blobs presents dans le corpus. Leur nom ou leur taille ne
+constitue pas une preuve de lecture, et aucune extraction absente ne sera
+reconstruite par conjecture.
+
+```text
+INDEX_CONVERSATIONNEL = ETABLI
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+ARCHIVE_JSON = TOUJOURS_OUVERTE
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_CONVERSATIONS_PAR_FOYERS_SANS_PROMOTION_AUTOMATIQUE
+```
