@@ -315,3 +315,151 @@ Ces fonctions sont conservées comme matière philosophique et généalogique ; 
 ### Prochaine étape
 
 Poursuivre exhaustivement les 25 Markdown restants et les deux fichiers `.ots`, sans utiliser le README ou la synthèse du premier cycle comme substituts.
+
+---
+
+## 2026-08-18 — `06_PHILOSOPHIE` : clôture documentaire intégrale du baseline
+
+La lecture des vingt-cinq Markdown restants et des deux reçus OpenTimestamps ferme le périmètre matériel du dossier.
+
+```text
+TREE_SHA_06 = 6f78cff0d7a74f1490a84a7f12aed39483835339
+MARKDOWN_LUS_INTEGRALEMENT = 37/37
+OTS_LUS_MATERIELLEMENT = 2/2
+TOTAL_BLOBS_LUS = 39/39
+DOCX = 0
+COUVERTURE_DOCUMENTAIRE_06 = COMPLETE
+REVALIDATION_HISTORIQUE_EXTERNE = NON
+REVALIDATION_PHILOSOPHIQUE_EXTERNE = NON
+```
+
+### Programmes philosophiques : exécution et abandon ne doivent pas être confondus
+
+Les programmes C2 et C3 restent des programmes soumis à validation dans leurs propres documents. Le programme C4/C5/C6 porte en revanche une couche de déclassement ultérieure : C5 a été exécuté et clos ; C4 reste à re-décider ; C6 a changé de nature et devient une jonction vers le versant physique plutôt qu’un sixième cycle philosophique.
+
+```text
+PROGRAMME_PRESENT_DANS_CORPUS -> EXECUTION = NON_PRESUME
+C5_EXPORTABILITE = EXECUTE_ET_CLOS_DANS_LA_COUCHE_ULTERIEURE
+C4 = A_REDECIDER
+C6 = JONCTION_PHYSIQUE_PHILOSOPHIQUE, NON_SIXIEME_CYCLE
+```
+
+### Test de covariance : résultat favorable puis rétrogradation probatoire
+
+`Test_covariance_architectures_v0_1.md` verrouille cinq prédictions sur les corrélations CODATA et rapporte cinq confirmations. Mais le même document instruit ensuite l’objection de tautologie : les architectures et les prédictions partageaient directement une partie de la structure publique de l’ajustement.
+
+Le verdict est donc explicitement requalifié :
+
+```text
+COVARIANCE_CODATA = CONTROLE_DE_FIDELITE
+PREUVE_FORTE_DE_LA_GRAMMAIRE = NON
+« EXIGENCE_DE_L_AUDIT_SATISFAITE » = RETIREE_PAR_LE_DOCUMENT_LUI_MEME
+```
+
+Cette auto-rétractation est un résultat méthodologique important : un test peut passer numériquement tout en perdre une partie substantielle de son poids probatoire après examen de sa dépendance aux données de construction.
+
+### Cycle C5 : quatre cas hors échantillon et portée bornée
+
+Les quatre cas sont :
+
+```text
+C5-1 constante solaire : valeur nominale stabilisée d’un référent variable ;
+C5-2 constantes de stabilité : effectivité indexée au milieu ;
+C5-3 constante de Michaelis K_M : effectivité relative au modèle et aux conditions ;
+C5-4 pi : cas de durcissement hors domaine empirique.
+```
+
+Les trois premiers produisent des qualifications différenciées ; le quatrième laisse volontairement vides les rangs physiques et refuse d’inventer un mode de « nécessité mathématique » pour absorber le cas.
+
+Le verdict d’exportabilité doit rester borné aux cas testés :
+
+```text
+EXPORTABILITE_SUR_QUATRE_CAS = FAVORABLE_ET_DISCRIMINANTE
+EXPORTABILITE_UNIVERSELLE = NON_ETABLIE
+PI -> GRAMMAIRE_NON_TOTALISANTE_UNIVERSELLEMENT = NON_ETABLI
+PI = CONTRE_TYPE_LOCAL_OU_LA_PROCEDURE_SAIT_EXCLURE_SANS_FORCAGE
+```
+
+### OpenTimestamps : antériorité technique, non validation substantielle
+
+Les deux fichiers `.ots` sont présents comme blobs distincts et ont été lus matériellement en base64. Ils portent le format OpenTimestamps et accompagnent séparément :
+
+```text
+Test_C5_3_constante_Michaelis_predictions.md
+Test_C5_4_constante_mathematique_predictions.md
+```
+
+```text
+OTS_PRESENT_ET_DISTINCT = ETABLI
+ANTERIORITE_TECHNIQUE_DES_FICHIERS_DE_PREDICTIONS = DOCUMENTEE
+CONTENU_DES_PREDICTIONS_VALIDÉ_PAR_HORODATAGE = FAUX
+HORODATAGE -> VERITE_SCIENTIFIQUE = FAUX
+```
+
+### Stern–Gerlach : calibration plutôt que nouvelle théorie de la mesure
+
+Le dossier distingue explicitement : expérience historique de 1922, modèle quantique idéalisé et dispositifs modernes. Il sépare aussi les fonctions matérielles, opératoires, formelles, d’enregistrement, inférentielles, communicationnelles et pédagogiques.
+
+Résultats documentaires robustes :
+
+```text
+EXPERIENCE_HISTORIQUE != MODELE_IDEAL != DISPOSITIF_MODERNE
+SEPARATION != DETECTION != SELECTION != PREPARATION
+STATISTIQUE_TERMINALE -> HISTOIRE_UNIQUE_DE_PREPARATION = FAUX
+ABSENCE_D_ACCES_LOCAL_A_LA_PHASE -> DISPARITION_ONTOLOGIQUE_DE_COHERENCE = NON
+```
+
+Le dossier déclare lui-même que les distinctions formelles centrales sont largement occupées dans la littérature et ne revendique aucune nouvelle théorie de la mesure.
+
+### Résurgence de la notion de coupe
+
+`Pilote_Q1_Stern_Gerlach_matrice_fonctions_v0_1.md` et le verdict de première passe disent explicitement que `coupe` n’est pas encore un concept unique constitué. Le terme recouvre alors plusieurs partitions non équivalentes :
+
+```text
+matérielle ;
+système / appareil ;
+formelle ;
+choix d’axe ;
+coarse-graining ;
+historique ;
+pédagogique.
+```
+
+Qualification généalogique :
+
+```text
+COUPE_DANS_STERN_GERLACH = FAMILLE_DE_PARTITIONS_A_EFFETS_SPECIFIES
+THEORIE_GENERALE_DE_LA_COUPE = NON_OBTENUE_A_CE_PALIER
+EVOLUTION_ULTERIEURE_DU_CONCEPT = A_RECONSTRUIRE_TRANSVERSALEMENT, NON_A_RETROPROJETER
+```
+
+Cette résurgence est particulièrement importante pour un audit ultérieur du manuscrit/cadre, mais elle ne doit pas être relue à travers la définition plus tardive sans preuve de continuité.
+
+### Interférence et information de chemin : contribution clarificatrice candidate
+
+Le troisième test distingue cinq statuts d’information :
+
+```text
+encodée ;
+accessible ;
+lue ;
+enregistrée ;
+utilisée pour conditionner une inférence.
+```
+
+Il distingue aussi distributions marginales, conjointes et conditionnelles, et refuse les lectures rétrocausales naïves de l’« effacement ».
+
+Mais l’évaluation finale est explicitement prudente :
+
+```text
+NOUVEAUTE_PHYSIQUE = AUCUNE_REVENDIQUEE
+C0_CORRECTION_DOCUMENTATION = ETABLI
+C1_COORDINATION_DE_COUCHES = ETABLI
+C2_CONTRIBUTION_DIFFERENCIEE = PLAUSIBLE_A_CONTROLER_BIBLIOGRAPHIQUEMENT
+C3_PROTOCOLE_TRANSFERABLE = NON_ETABLI
+C4_NOUVEAUTE_SUBSTANTIELLE = NON_RECHERCHEE
+```
+
+Le dossier `06_PHILOSOPHIE` est donc fermé documentairement sans transformer sa richesse exploratoire en doctrine ou en résultat philosophique général.
+
+Prochaine position documentaire propre : `90_Critiques_ constantes_effectives_stabilisees`.
