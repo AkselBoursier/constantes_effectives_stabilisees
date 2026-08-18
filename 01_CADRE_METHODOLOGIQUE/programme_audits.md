@@ -263,6 +263,51 @@ les deux fonctions restent accessibles avec des coûts de lecture différents.
 La règle est un contrôle de représentation Human-First, non une autorisation
 de réécriture ou de suppression immédiate.
 
+### Consolidation éditoriale sémantique
+
+La réduction documentaire de la phase 9 ne désigne ni une compression
+quantitative, ni une concaténation mécanique de fichiers, ni une suppression
+des versions. Le terme de travail retenu est :
+
+```text
+CONSOLIDATION_EDITORIALE_SEMANTIQUE
+```
+
+Elle consiste à reconstruire, pour un public et une fonction dominants, un
+document plus clair à partir de plusieurs pièces, en faisant remonter leur
+contenu intellectuel, scientifique, méthodologique ou éditorial pertinent.
+Elle peut réduire le nombre de documents actifs, mais son critère premier est
+la conservation et l'amélioration de la structure de sens.
+
+```text
+SOURCES_LUES_ET_CARTOGRAPHIEES
+-> FONCTION_DOMINANTE_ET_PUBLIC
+-> RANGS, RESULTATS, LIMITES ET TRANSITIONS
+-> TEXTE_CONTINU_RECOMPOSE
+-> CONTROLE_DE_PERTE_ET_DE_PORTEE
+-> ROUTE_DE_PROVENANCE
+```
+
+Une consolidation réussie conserve les distinctions qui changent un verdict,
+rassemble les éléments complémentaires sans fabriquer une cohérence absente,
+remplace la juxtaposition par une progression lisible et adapte le ton, la
+longueur et le degré de détail à la classe du document. Les généalogies et
+états datés restent récupérables sans être imposés au lecteur.
+
+```text
+COMPRESSION_QUANTITATIVE_SEULE = INSUFFISANTE
+CONCATENATION_MECANIQUE = REFUSEE
+CONSOLIDATION_SEMANTIQUE = A_TESTER
+FUSION_SANS_MATRICE_DE_PERTE = NON_AUTORISEE
+ARCHIVAGE_DES_VERSIONS = DECISION_HUMAINE_SEPAREE
+```
+
+Le test d'ablation compare le document consolidé aux sources : contenu unique,
+rang, limite, contradiction, bifurcation, résultat négatif et condition de
+réouverture doivent rester retrouvables. Une réduction de longueur sans gain de
+compréhension ou de contrôle est refusée ; un document trop large est subdivisé
+par fonction plutôt que simplement raccourci.
+
 ### Co-instruction bornée des étapes 2 et 3
 
 Les étapes 2 et 3 ne forment pas une dérivation simple `2 -> 3`.

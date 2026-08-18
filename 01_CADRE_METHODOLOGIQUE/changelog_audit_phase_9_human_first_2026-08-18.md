@@ -237,6 +237,34 @@ remplissent actuellement une fonction de navigation réelle. La phase 9 doit
 d'abord proposer une architecture cible séparant présentation, état courant et
 profondeur de laboratoire, puis soumettre cette architecture à validation.
 
+## Précision terminologique : consolidation éditoriale sémantique
+
+La proposition initiale de « concaténation sémantique » est retenue comme
+intuition, mais amendée comme terme opératoire :
+
+```text
+CONSOLIDATION_EDITORIALE_SEMANTIQUE = TERME_DE_TRAVAIL
+COMPRESSION = DESCRIPTION_INSUFFISANTE_SI_QUANTITATIVE
+CONCATENATION = AUCUNE_OPERATION_MECANIQUE
+```
+
+La consolidation vise un document par fonction dominante, rédigé naturellement
+pour son public, à partir de plusieurs pièces dont le sens a été cartographié.
+Elle ne crée pas une synthèse moyenne : les contradictions, limites, résultats
+négatifs, rangs et conditions de réouverture restent visibles à leur place.
+
+```text
+GAINS_ATTENDUS = LISIBILITE, PROFONDEUR, NON_PROLIFERATION, RECUPERABILITE
+RISQUE_PRINCIPAL = FABRIQUER_UNE_CONTINUITE_OU_PERDRE_UN_ELEMENT_UNIQUE
+TEST_OBLIGATOIRE = MATRICE_SOURCES_CONTENU_REPRIS_DEVENIR
+DECISION_SUR_LES_ARCHIVES = SEPAREE, NON_PRESUPPOSEE
+```
+
+La consolidation ne sera testée qu'après inventaire d'un lot homogène. Le
+premier essai devra être réversible, comparer le texte source et le texte
+consolidé, et être soumis à une lecture humaine avant toute promotion dans une
+vue publique.
+
 ## Sas de resynchronisation : capacité du projet et capacité des documents
 
 L'audit des phases 1 à 8 a qualifié des résultats, des fonctions, des règles,
