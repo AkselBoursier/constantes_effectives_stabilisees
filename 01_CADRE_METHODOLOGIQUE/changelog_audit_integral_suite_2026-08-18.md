@@ -872,3 +872,57 @@ CONCEPTS_HISTORIQUES_RESURGIS = CONSERVES_SANS_PROMOTION
 REINSTRUCTION_SCIENTIFIQUE = NON_OUVERTE
 PROCHAINE_ACTION = CONTINUER_LES_CONTROLES_91_ET_LES_DOCUMENTS_DE_TRAVAIL_NON_LUS
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : premieres pieces brutes etat intermediaire
+
+Les deux DOCX et l'export JSON du dossier ont ete ouverts localement pour
+controle materiel. L'export JSON a une taille de `693199` octets et contient
+une version assainie des conversations : les identifiants, URL signees et
+metadonnees techniques sans fonction documentaire sont retires, tandis que
+les contenus de messages, titres, horodatages et roles sont conserves.
+
+### Refondation du cadre
+
+Le DOCX `Projet de refondation du cadre des coupes constitutives.docx` confirme
+explicitement la requalification v12 -> v13 :
+
+```text
+TOUTE_COUPE_EST_CONSTITUTIVE = INTENABLE_ET_RETIREE
+CO_CONSTITUTION_GENERALE = INTENABLE_ET_RETIREE
+GRADIENT_PHYSIQUE_BIOLOGIQUE_REFLEXIF = RETIRE
+DESTINS_TRANSVERSAUX = RETIRES
+POROSITE_GENERALE = RETIREE
+SEDIMENTATION_UNIVERSELLE = RETIREE
+VARIATION_LOCALE = INSUFFISANTE_COMME_PREUVE_DE_TRANSVERSALITE
+MIGRATION_PAR_REMPLACEMENT_LEXICAL = INTERDITE
+PROGRAMME_COMPARATIF_V13 = ORIENTATION_RETENUE
+```
+
+Cette pièce renforce la continuité avec le programme et les registres déjà
+lus ; elle ne constitue pas une autorisation de réactiver les formulations
+qu'elle décrit comme historiques.
+
+Le DOCX `motif_coupe_constitutive.docx` est un essai philosophique transversal
+ancien, structuré autour de la complémentarité, de la perception, de la Gestalt,
+de la métastabilité et des coupes agentielles. Il doit être lu comme une pièce
+généalogique et un candidat de comparaison, non comme une preuve d'invariant
+transversal ou d'originalité théorique.
+
+### Export conversationnel
+
+La structure JSON montre des conversations assainies contenant des propositions,
+des corrections, des hésitations et des formulations explicitement non canoniques.
+Les messages ne seront pas traités comme décisions humaines par défaut. Leur
+lecture doit préserver les bifurcations et les corrections, sans exposer les
+métadonnées retirées ni convertir les suggestions de modèles en autorité.
+
+```text
+DOCX_CONTROLE_MATERIEL = 2/2
+JSON_STRUCTURE_CONTROLEE = OUI
+JSON_LECTURE_CONVERSATIONNELLE_COMPLETE = NON_ETABLIE_A_CE_PALIER
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = POURSUIVRE_LA_LECTURE_JSON_ET_DES_PIECES_91_RESTANTES
+```
