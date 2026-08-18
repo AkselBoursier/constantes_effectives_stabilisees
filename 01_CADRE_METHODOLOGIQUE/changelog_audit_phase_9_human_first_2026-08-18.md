@@ -265,6 +265,36 @@ premier essai devra être réversible, comparer le texte source et le texte
 consolidé, et être soumis à une lecture humaine avant toute promotion dans une
 vue publique.
 
+## Validation provisoire et étapes préparatoires au premier test
+
+Validation humaine reçue pour le cadrage de la consolidation éditoriale
+sémantique. Cette validation ne vaut pas autorisation de modifier les README,
+de fusionner des documents ou de déplacer des archives.
+
+Avant le premier test, la phase 9 suivra cette séquence :
+
+```text
+1. MATRICE_DES_DOCUMENTS_CIBLES
+2. CONTRAT_DE_CAPACITE_EDITORIALE_PAR_DOCUMENT
+3. SELECTION_D_UN_LOT_HOMOGENE
+4. PROTOTYPE_REVERSIBLE_SUR_COPIE
+5. COMPARAISON_SOURCES / CONSOLIDATION / PERTES
+6. LECTURE_HUMAINE_ET_DECISION_DE_PROMOTION
+```
+
+Le premier lot candidat reste limité aux deux portes publiques déjà auditées :
+`README.md` et `02_CYCLES_PHYSIQUES/README.md`. Ce choix est un point de départ
+réversible, non une exclusivité de la phase 9 ; il permet de tester la méthode
+sur des fonctions proches mais non identiques : accueil général et accueil
+scientifique.
+
+```text
+VALIDATION_HUMAINE = CADRAGE_PROVISOIRE_ACCEPTE
+REDACTION_PUBLIQUE = TOUJOURS_NON_OUVERTE
+PREMIER_LOT = A_CARTOGRAPHIER_AVANT_PROTOTYPE
+ARCHIVES = AUCUNE_DECISION_PRise
+```
+
 ## Sas de resynchronisation : capacité du projet et capacité des documents
 
 L'audit des phases 1 à 8 a qualifié des résultats, des fonctions, des règles,
