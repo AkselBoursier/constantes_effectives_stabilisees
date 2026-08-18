@@ -992,6 +992,45 @@ relations computationnelles et probatoires exigent un vocabulaire plus strict
 que les routes de lecture, mais elles restent compatibles avec le socle par
 objets autonomes et relations explicites.
 
+## Amendement : documentation technique, résultats et workflow du laboratoire
+
+Le lot computationnel fait émerger une couche de reconception supplémentaire.
+Le cadrage est consigné dans :
+`01_CADRE_METHODOLOGIQUE/cadrage_documentation_code_pipelines_workflow_laboratoire_2026-08-18.md`.
+La documentation du code et des pipelines ne sera pas traitée comme une
+réécriture des résultats, ni comme une preuve scientifique par elle-même.
+
+```text
+CODE
+-> ENVIRONNEMENT
+-> EXECUTION
+-> SORTIES_MACHINE
+-> QUALIFICATION_TECHNIQUE
+-> RESULTAT_SCIENTIFIQUE
+-> VERDICT_ET_PORTEE
+```
+
+Quatre couches sont distinguées : documentation du code, documentation
+d'exécution, qualification technique et résultat scientifique. Une cinquième
+fonction, la documentation locale du workflow général du laboratoire, décrit
+les passages, contrôles humains, statuts, promotions et retours ; elle reste
+distincte du CI et des résultats.
+
+```text
+DOCUMENTATION_TECHNIQUE = A_INSTRUIRE
+DOCUMENTATION_WORKFLOW_GLOBAL = A_CONSERVER_LOCALEMENT
+RESULTATS_SCIENTIFIQUES = SEPARES_DES_SCRIPTS_ET_SORTIES
+PIPELINES_PUBLICS = NIVEAUX_DE_PUBLICATION_A_DISTINGUER
+CI = A_AMELIORER_PLUS_TARD
+MIGRATION = NON_OUVERTE
+```
+
+Avant toute documentation exhaustive du code, un petit lot représentant un
+pipeline borné, un script local et un outil transversal sera testé. Aucun
+pipeline ne sera rendu public par la seule présence d'un script ou d'un
+manifeste ; le niveau effectivement documenté, reproductible ou réutilisable
+devra être déclaré.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,

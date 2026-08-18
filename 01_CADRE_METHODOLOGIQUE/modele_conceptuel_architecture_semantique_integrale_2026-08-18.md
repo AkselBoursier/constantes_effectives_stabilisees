@@ -49,6 +49,8 @@ objets liés, une pièce transversale ou un statut non classable.
 | **État** | Décrire une situation temporelle ou opérationnelle. | Une propriété permanente du contenu. |
 | **Relation** | Décrire un lien de sens, de provenance, de complément ou de navigation. | Un simple lien Markdown. |
 | **Workflow** | Décrire une transformation contrôlée du travail. | Une arborescence ou un statut. |
+| **Documentation technique** | Décrire le code, l'environnement, les entrées, les sorties et les contrôles d'exécution. | Un résultat scientifique ou une validation physique. |
+| **Résultat scientifique** | Porter un énoncé qualifié, sa portée et ses limites. | Le script, la sortie machine ou le manifeste qui le soutient. |
 
 ## Axes à séparer
 
@@ -75,6 +77,20 @@ Aucun axe ne doit être reconstruit à partir d'un autre. En particulier :
 - la vue ne détermine pas le rang ;
 - la provenance ne détermine pas la vérité du contenu ;
 - le chemin ne détermine aucune de ces propriétés à lui seul.
+
+La documentation computationnelle constitue une relation entre plusieurs axes,
+mais elle ne les fusionne pas :
+
+```text
+CODE -> EXECUTION -> SORTIE_MACHINE -> QUALIFICATION_TECHNIQUE
+   -> RESULTAT_SCIENTIFIQUE -> VERDICT_ET_PORTEE
+```
+
+Chaque transition doit pouvoir être documentée séparément, avec ses conditions
+et ses ruptures. Le workflow général du laboratoire constitue lui aussi un
+objet documentaire distinct : il décrit le fonctionnement, les passages, les
+contrôles humains et les règles de promotion ; il n'est ni un résultat
+scientifique ni le workflow CI.
 
 ## Registres sémantiques
 
