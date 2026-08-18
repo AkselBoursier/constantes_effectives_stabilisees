@@ -791,6 +791,31 @@ d'un objet, l'état d'une ligne de travail et l'autorisation d'agir ne doivent
 pas être confondus. Les relations computationnelles et les dépendances de L2
 devront également être testées avec une granularité plus fine.
 
+## Palier 5A : découplage du statut, de l'état et de l'autorisation
+
+Le test est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_decouplage_statut_et_autorisation_lot_pilote_2026-08-18.md`.
+Il confronte la distinction à cinq cas du lot : synthèse scientifique active,
+blocage computationnel, décision méthodologique, archive de provenance et plan
+éditorial expérimental.
+
+```text
+PALIER_5A = DECOUPLAGE_STATUT_ET_AUTORISATION
+DECOUPLAGE = COHERENT_SUR_LE_LOT
+STATUT = PROPRIETE_BORNEE_DE_L_OBJET
+ETAT = PROPRIETE_DE_LA_LIGNE_OU_DE_LA_REPRISE
+AUTORISATION = DECISION_LOCALE_EXPLICITE
+AUTORISATION_DERIVEE_AUTOMATIQUE = REFUSEE
+ARCHIVE_REACTIVEE_AUTOMATIQUEMENT = REFUSEE
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme qu'une synthèse active n'autorise pas automatiquement un
+calcul, qu'un blocage d'accès ne constitue pas un échec scientifique et qu'une
+archive utile ne redevient pas une autorité. La distinction reste locale au
+lot et devra être confrontée à d'autres lignes, issues et relations avant
+toute généralisation architecturale.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
