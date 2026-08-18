@@ -1236,3 +1236,127 @@ MUTATION_SCIENTIFIQUE = AUCUNE
 NOUVEAU_SAMPLING = NON_AUTORISE
 PROCHAINE_ETAPE = ATTENDRE_VALIDATION_EXPLICITE_DE_#130_AVANT_INSTRUCTION
 ```
+
+---
+
+## 2026-08-18 — Validation humaine de `#130` et règle de transition phase 1 -> phase 2
+
+Validation humaine explicite recue de l'auteur pour le cadrage `#130`.
+La transition est desormais reglee par les resultats de phase 1, non par une
+nouvelle exploration indistincte du corpus deja couvert.
+
+```text
+PHASE_1 = POINT_DE_DEPART_DE_PHASE_2
+RELECTURE_DES_668_BLOBS = NON_PAR_DEFAUT
+LACUNE_OU_CONTRADICTION = DECLENCHEUR_DE_TRIANGULATION_CIBLEE
+SOURCES_DE_TRIANGULATION = ISSUES, FICHIERS, COMMENTAIRES_PR, COMMITS, AUTRES_PIECES_PERTINENTES
+NOMBRE_DE_RECOUPEMENTS = SANS_PLAFOND_A_PRIORI, SANS_PROLIFERATION_GRATUITE
+ARRET_LOCAL = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE
+AUDIT_SCIENTIFIQUE = OUVERT_SOUS_LE_CADRAGE_#130
+```
+
+La triangulation peut mobiliser une ou plusieurs sources selon le contexte.
+Elle doit repondre a une lacune, une tension ou une dependance identifiee,
+rester proportionnee a la question et conserver ses limites. La cloture
+documentaire de phase 1 ne vaut pas qualification scientifique ; inversement,
+la phase 2 ne requalifie pas automatiquement les 668 blobs.
+
+```text
+PHASE_2_SCIENTIFIQUE = OUVERTE
+CORPUS_DE_DEPART = RESULTATS_ET_DETTES_REMONTEES_EN_PHASE_1
+NOUVEAU_SAMPLING = NON_AUTORISE_PAR_CETTE_OUVERTURE
+PREMIERE_INSTRUCTION = CARTOGRAPHIER_LES_RESULTATS_REMONTEE_ET_LEURS_DEPENDANCES
+```
+
+---
+
+## 2026-08-18 — Phase 2 : première cartographie à partir des acquis de phase 1
+
+La première instruction substantielle de phase 2 commence par le cycle 1,
+indiqué comme porte scientifique dans la clôture locale de son premier
+périmètre. La cartographie s'appuie sur les deux synthèses actives déjà
+remontées par la phase 1 et ne relit pas le corpus général.
+
+Sources de départ :
+
+- `02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md` ;
+- `02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md` ;
+- les pièces `T1`, `alpha` et `R1-R3` explicitement citées par ces synthèses, à mobiliser seulement si une question locale exige une descente.
+
+### Résultats et fonctions remontés
+
+```text
+QCD_T1 = REPRODUCTION_AVAL_ALPHA_ACQUISE, COMPARABILITE_CONDITIONNELLE,
+         EQUIVALENCE_INTER_CHAINES_REFUSEE, TEST_GLOBAL_SUSPENDU
+ALPHA = REFERENCE_CODATA_COMPOSITE, RUNNING_ALPHA_Q2_SOUTENU,
+        CONTRAINTES_TEMPORELLES_BORNEES, NON_DETECTION_SPATIALE_LOCALE
+M_P_SUR_M_E = VALEUR_AJUSTEE_COMPOSITE, ACCES_DE_VARIATION_NON_EQUIVALENTS,
+              CONSTITUTION_HETEROGENE, ATTRIBUTION_SEPAREE_NON_ETABLIE
+M_E = INSTRUITE_POUR_L_INTERPRETATION_DE_M_P_SUR_M_E,
+      DETTE_AUTONOME_TRANSFEREE_VERS_SAVEUR_HIGGS
+FONCTIONS_TRANSVERSALES = INDEXATION_CIBLE_TRANSFORMATION_ACCES,
+                           DISTINCTION_DETERMINER_CONTRAINDRE_EXPLIQUER
+```
+
+### Suffisance et limites à ce palier
+
+```text
+SUFFISANCE_DOCUMENTAIRE_POUR_CARTOGRAPHIE_INITIALE = ETABLIE
+SUFFISANCE_SCIENTIFIQUE_POUR_QUALIFIER_UN_USAGE_TRANSVERSAL = NON_ETABLIE
+LACUNE_IMMEDIATE_EXIGEANT_RELECTURE_DU_CORPUS_GENERAL = NON_IDENTIFIEE
+TRIANGULATION_SUPPLEMENTAIRE = A_DECLENCHER_SUR_QUESTION_LOCALE
+NOUVEAU_CALCUL = NON_LANCE
+```
+
+Les limites déjà portées par les synthèses restent actives : produits
+condensés pour la reproduction ALPHA, covariances inter-chaînes manquantes,
+formes de variation bornées, portée astrophysique locale, dépendances aux
+modèles et absence d'attribution séparée des deux masses. Cette entrée ne
+qualifie donc pas encore la suffisance d'un résultat pour un usage transversal ;
+elle établit seulement la carte de départ et les points qui pourront déclencher
+une triangulation ciblée.
+
+```text
+ETAPE_2_C1 = CARTOGRAPHIE_INITIALE_TERMINEE
+PROCHAINE_ACTION = TESTER_UNE_DEPENDANCE_PORTEUSE_CIBLEE_SANS_RELECTURE_GLOBALE
+```
+
+---
+
+## 2026-08-18 — Triangulation ciblée C1 : QCD-T1 et PR #18
+
+La dépendance porteuse testée est la suivante : la comparaison de quatre
+déterminations de `alpha_s` peut-elle soutenir davantage qu'une comparabilité
+conditionnelle sous convention commune ?
+
+Le recoupement a utilisé uniquement :
+
+- la synthèse scientifique détaillée du cycle 1 ;
+- `T1_7_Verdict_physique_local_alpha_s_v0_1.md` ;
+- la PR #18 et ses commentaires de ratification/revue.
+
+Concordances établies :
+
+```text
+REPRODUCTION_ALPHA = AVAL, PRODUITS_CONDENSES, ACQUIS_BORNE
+COMPARABILITE_INTER_CHAINES = CONDITIONNELLE_SOUS_CONVENTION_COMMUNE
+EQUIVALENCE_DES_QUATRE_CHAINES = REFUSEE
+PORTEUR_PHYSIQUE_INTER_CHAINES_DEMONTRE = NON_ETABLI
+COMPATIBILITE_STATISTIQUE_GLOBALE = SUSPENDUE
+COHERENCE_PHYSIQUE_COMMUNE = NON_DEMONTREE
+T1_8 = NON_OUVERT
+```
+
+La PR et ses commentaires ne fournissent pas un résultat scientifique distinct
+à substituer aux pièces locales ; ils confirment la généalogie de la ratification,
+la correction de rang de T1.7 et les limites déjà présentes dans la synthèse.
+La triangulation n'a donc pas révélé de contradiction matérielle exigeant une
+réouverture du corpus général ou un nouveau calcul.
+
+```text
+TRIANGULATION_C1_T1 = SUFFISANTE_POUR_CETTE_QUESTION_LOCALE
+USAGE_TRANSVERSAL_PLUS_FORT = NON_ETABLI
+RELECTURE_GENERALE = NON_DECLENCHEE
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_ACTION = PASSER_A_UNE_AUTRE_DEPENDANCE_PORTEUSE_OU_ARRETER_C1_SI_AUCUN_GAIN_DISCRIMINANT
+```
