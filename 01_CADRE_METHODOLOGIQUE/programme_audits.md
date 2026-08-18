@@ -225,6 +225,44 @@ Cette séquence exprime des dépendances de travail, non une chaîne irréversib
 | **8** | **Contre-audit** | Tenter activement de falsifier les conclusions précédentes de manière bilatérale : surpromotion **et** écrasement, continuité artificielle **et** continuité réelle devenue invisible, concept inutile **et** concept dont l’ablation fait perdre une discrimination, résultat surinterprété **et** sous-exploité. Cette étape complète les contre-tests locaux ; elle ne les remplace pas. |
 | **9** | **Normalisation documentaire Human-First** | Seulement lorsque les dépendances substantielles d’une transformation sont suffisamment qualifiées et que la couverture nécessaire est consignée : documents vivants humains, routage agent minimal, noms stables, réécriture positive, réduction de méta-documentation, archivage et suppression exceptionnelle. |
 
+### Règle Human-First : représentation publique et laboratoire
+
+La phase 9 distingue deux fonctions documentaires qui ne doivent pas être
+fusionnées :
+
+```text
+DOCUMENT_PUBLIC_HUMAN_FIRST = ETAT_COURANT_LISIBLE, LANGAGE_NATUREL, FONCTION_ET_PORTÉE
+LABORATOIRE = PROVENANCE, GENEALOGIE, JOURNAUX, DETTES, TUYAUTERIE, ETATS_DATÉS
+```
+
+Les documents d’accueil, de distribution et les documents destinés à une
+lecture humaine courante décrivent d’abord ce que le projet est, ce qu’il
+examine, ce qu’il établit et dans quelles limites. Ils ne racontent pas par
+défaut l’histoire de fabrication du dépôt, la séquence des agents, les étapes
+de l’audit ou les opérations de maintenance. Une généalogie peut être proposée
+dans une annexe ou une route séparée, clairement optionnelle et sans conditionner
+la compréhension de l’état courant.
+
+Cette règle ne demande ni un état figé ni l’effacement de l’histoire. Elle impose
+une séparation de vues : l’état public courant reste révisable, tandis que la
+provenance et la tuyauterie restent récupérables dans les journaux, archives,
+issues et Git. Toute suppression ou réduction de contenu doit continuer à
+respecter les contrôles de contenu unique, fonction probatoire et récupérabilité.
+
+```text
+LANGAGE_PUBLIC = POSITIF, DESCRIPTIF, NATUREL
+HISTORICITE_DANS_L_ACCUEIL = OPTIONNELLE, NON_IMPOSEE
+TUYAUTERIE_DANS_LA_DISTRIBUTION = A_RELEGUER_HORS_FLUX_PRINCIPAL
+ETAT_COURANT = REVISABLE, NON_FIGE
+PROVENANCE = CONSERVEE, NON_PROPAGEE_PAR_DEFAUT
+```
+
+Test d’ablation : si cette séparation est retirée, la lisibilité publique et la
+traçabilité du laboratoire sont mises en concurrence ; si elle est conservée,
+les deux fonctions restent accessibles avec des coûts de lecture différents.
+La règle est un contrôle de représentation Human-First, non une autorisation
+de réécriture ou de suppression immédiate.
+
 ### Co-instruction bornée des étapes 2 et 3
 
 Les étapes 2 et 3 ne forment pas une dérivation simple `2 -> 3`.
