@@ -36,7 +36,7 @@ NOUVELLE_COUCHE = NON_JUSTIFIEE_PAR_DEFAUT
 | **Outil d'audit** | Détecter des défauts structurels ou des risques bornés | Audit structurel du corpus | Transformer un contrôle partiel en audit exhaustif |
 | **Outil computationnel** | Exécuter ou analyser une opération scientifique locale | Scripts neutrino ou cosmologiques | Confondre exécution et résultat scientifique |
 | **Outil de coordination** | Aider aux passages entre humain, LLM, GitHub et dépôt | Routes d'issues, journaux et contrats | Créer une plomberie plus lourde que le gain humain |
-| **Outil éditorial** | Tester, comparer ou documenter une forme | Prototypes et matrices Human-First | Promouvoir un essai par simple réutilisation |
+| **Outil éditorial** | Relire, réécrire et comparer une pièce selon sa classe, son public, sa portée et ses limites | `Reecriture_positive_vocabulaire_v0_3.md` et `Protocole_travail_redaction_post_philosophie_v0_1.md` | Réduire le polissage à un changement de ton ou affaiblir un refus |
 
 Ces profils peuvent se recouper. Ils ne constituent pas une taxonomie fermée.
 Un outil peut rester transversal ou non classé si cette description est plus
@@ -91,6 +91,12 @@ Le premier lot d'outils à examiner peut rester limité à :
 3. un script computationnel local — analyse scientifique située ;
 4. un contrat ou une matrice éditoriale — coordination de rédaction.
 
+L'outil éditorial est mobilisé avec ce premier lot. Il ne s'agit pas d'un
+simple lissage stylistique : la pièce est relue dans son ensemble, sa fonction,
+son public, son contenu unique, ses limites et sa provenance sont rappelés,
+puis la rédaction positive est appliquée sans retirer les refus ni les
+conditions de portée.
+
 Ce lot couvre les interfaces machine, dépôt, LLM et humain sans créer de nouveau
 répertoire fonctionnel. Aucun inventaire exhaustif de tous les outils n'est
 requis avant de tester ces profils.
@@ -130,3 +136,24 @@ séparé de la lecture humaine et de la décision de promotion. Le changelog n'e
 donc pas seulement une archive : il conserve la mémoire opératoire nécessaire
 pour reprendre et appliquer les transformations qualifiées, sans devenir une
 autorité scientifique ni un registre exhaustif.
+
+## Contrat local de l'outil d'écriture
+
+Pour chaque pièce reconstruite, l'outil d'écriture suit le circuit :
+
+```text
+RELECTURE_COMPLETE_DE_LA_PIECE
+-> CLASSE + PUBLIC + FONCTION + PORTEE + PROVENANCE
+-> RESULTATS, ACQUIS ET LIMITES A_CONSERVER
+-> REECRITURE_POSITIVE_STRUCTURELLE_ET_LEXICALE
+-> COMPARAISON_AVANT_APRES
+-> CONTROLE_DE_PERTE_ET_DE_PORTÉE
+-> LECTURE_HUMAINE
+-> DECISION_DE_PROMOTION
+```
+
+La règle positive v0.3 et le protocole de rédaction sont les références
+actuelles de ce circuit. Une future skill ne sera envisagée qu'après plusieurs
+usages sur des pièces de classes différentes, si un gain de continuité et de
+charge cognitive est effectivement observé. Son existence ne sera pas déduite
+de la seule répétition du protocole.

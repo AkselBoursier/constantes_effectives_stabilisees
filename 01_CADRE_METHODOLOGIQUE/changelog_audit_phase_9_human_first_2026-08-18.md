@@ -1303,3 +1303,25 @@ reconstruite, sous la forme d'une opération contrôlée et réversible. Les
 protocoles de réécriture restent les règles de rédaction et de contrôle de
 perte ; ils ne constituent pas un préalable pour différer toute application,
 ni une permission de réécrire sans qualification de la pièce.
+
+L'outil d'écriture est explicitement ajouté à cette mobilisation. Il s'appuie
+sur `01_CADRE_METHODOLOGIQUE/Reecriture_positive_vocabulaire_v0_3.md` et
+`01_CADRE_METHODOLOGIQUE/Protocole_travail_redaction_post_philosophie_v0_1.md`.
+Pour chaque pièce, il impose une relecture complète avant rédaction, puis
+nomme la classe, le public, la fonction, la portée, les acquis et les limites.
+La formulation positive vient ensuite ; elle conserve les refus, les dettes,
+les conditions de rupture et les bornes de validité.
+
+```text
+OUTIL_D_ECRITURE = MOBILISE_SUR_PIECE
+RELECTURE_COMPLETE = PREALABLE_A_LA_REECRITURE
+REECRITURE_POSITIVE = ACTIVE
+LIMITES_ET_REFUS = CONSERVES
+COMPARAISON_AVANT_APRES = REQUISE
+SKILL_DE_REDACTION = A_EVALUER_APRES_USAGES_REELS
+```
+
+La skill n'est donc pas créée à ce stade. Plusieurs opérations sur des classes
+de documents différentes devront d'abord montrer un gain réel de continuité et
+de charge cognitive, sans transformer le protocole local en nouvelle couche
+obligatoire.
