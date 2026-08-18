@@ -1181,3 +1181,27 @@ routage. La décision dépendra du gain de lisibilité et de contrôle observé,
 non d'une obligation préalable de créer un document supplémentaire. Le
 contenu unique, les limites, les indépendances entre cycles et les routes
 scientifiques seront contrôlés avant toute proposition de promotion.
+
+## Synthèse architecturale de contrôle
+
+Une synthèse unique rassemble désormais les résultats de la reconception :
+`01_CADRE_METHODOLOGIQUE/synthese_architecturale_controle_2026-08-18.md`.
+Elle ne crée ni nouvelle phase de test ni nouvelle arborescence. Elle distingue
+les invariants déjà observés, les hypothèses encore ouvertes, le fil outils en
+veille active et les décisions réservées à l'humain.
+
+```text
+SYNTHESE_ARCHITECTURALE = PRODUITE
+DIRECTION = COHERENTE
+IMAGE_GLOBALE = PARTIELLEMENT_VISIBLE_MAIS_PLUS_CONTRAINTE
+CHAOS_RECONSTRUIT = NON_DEMONTRE
+RISQUE_DE_METAPROLIFERATION = REEL_ET_SURVEILLE
+NOUVEAU_TEST = EXIGE_UN_DISCRIMINANT
+MIGRATION = NON_OUVERTE
+LECTURE_HUMAINE = REQUISE_AVANT_PASSAGE
+```
+
+Le socle provisoire reste : objets autonomes, relations explicites, plans comme
+vues, domaines comme contextes, statuts et autorisations découplés. Le nombre
+final de documents, l'arborescence, le registre relationnel, le template de
+l'audit et le CI futur restent indécidés.
