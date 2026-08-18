@@ -105,3 +105,25 @@ NOUVEAU_PROJET = NON_CREE
 CI = PARTIE_DU_WORKFLOW_GLOBAL
 DECISIONS_HUMAINES = CONSERVEES
 ```
+
+## Mise en veille active du fil outils
+
+Le fil outils et workflow est suffisamment instruit pour ne pas exiger un
+nouveau test abstrait immédiat. Il n'est pas clôturé au sens fort : les outils
+pourront être testés directement sur pièce lors des travaux futurs, ce qui est
+le meilleur moment pour vérifier leur robustesse, leur fonctionnalité et leur
+transportabilité.
+
+```text
+FIL_OUTILS = MIS_EN_VEILLE_ACTIVE
+RESULTATS_LOCAUX = CONSERVES
+PROMOTION = NON_OUVERTE
+TEST_DIRECT_SUR_PIECE = A_REPRENDRE_AU_BESOIN
+TEMPLATE = NON_DECIDE
+RETOUR_AU_FIL_PRINCIPAL = OUI
+```
+
+La suite prioritaire revient donc à la documentation computationnelle, à la
+reconception générale et aux tests de l'audit principal. Une reprise du fil
+outils sera déclenchée seulement par une opération concrète qui fournit un
+discriminant nouveau, et non par l'obligation de compléter un inventaire.

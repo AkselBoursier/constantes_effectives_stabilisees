@@ -207,3 +207,17 @@ RESULTATS_SCIENTIFIQUES = SEPARES_DES_SCRIPTS_ET_SORTIES
 MIGRATION = NON_OUVERTE
 DECISION_HUMAINE = REQUISE_AVANT_PUBLICATION_OU_PARTAGE
 ```
+
+## Etat du fil outils et workflow
+
+Les outils internes ont été suffisamment cadrés pour être conservés comme
+objets du workflow global, sans ouvrir une documentation exhaustive. Leur test
+le plus utile sera ultérieur et situé : il pourra intervenir directement lors
+d'une opération réelle, avec ses entrées, ses sorties et ses décisions humaines.
+
+```text
+FIL_OUTILS = MIS_EN_VEILLE_ACTIVE
+SUITE_PRIORITAIRE = DOCUMENTATION_COMPUTATIONNELLE_ET_AUDIT_PRINCIPAL
+TEST_SUR_PIECE = DECLENCHEUR_DE_REOUVERTURE
+PROLIFERATION = REFUSEE
+```

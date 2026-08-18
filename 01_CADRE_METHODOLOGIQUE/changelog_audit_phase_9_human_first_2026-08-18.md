@@ -1126,6 +1126,27 @@ coordination. Le critère ne sera pas la nouveauté de l'outil, mais le gain
 réel de charge cognitive, la clarté de ses garanties, ses limites, sa
 réutilisabilité et la conservation des décisions humaines.
 
+## Décision de mise en veille active du fil outils
+
+Le fil outils et workflow n'est pas clôturé catégoriquement. Il a produit les
+résultats locaux nécessaires pour guider la suite, mais sa valeur fonctionnelle
+et sa transportabilité seront mieux testées directement sur pièce lors des
+opérations futures.
+
+```text
+FIL_OUTILS = MIS_EN_VEILLE_ACTIVE
+RESULTATS_LOCAUX = CONSERVES
+PROMOTION = NON_OUVERTE
+TEST_DIRECT_SUR_PIECE = A_REPRENDRE_AU_BESOIN
+TEMPLATE = NON_DECIDE
+RETOUR_AU_FIL_PRINCIPAL = OUI
+```
+
+La suite revient donc au fil principal : documentation computationnelle,
+reconception générale et tests de l'audit. Une opération concrète pourra
+rouvrir le fil outils si elle apporte un discriminant nouveau ; aucune étape
+artificielle d'inventaire ou de templatisation n'est ajoutée pour le fermer.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
