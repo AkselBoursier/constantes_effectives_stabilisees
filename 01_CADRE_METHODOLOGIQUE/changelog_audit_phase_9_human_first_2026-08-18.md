@@ -561,6 +561,29 @@ Cette ouverture ne constitue pas un nouvel audit scientifique global. Elle
 réoriente la phase 9 vers une conception d'architecture et peut révéler des
 retours locaux nécessaires ; elle ne relance aucune investigation par défaut.
 
+## Recommandation architecturale provisoire
+
+Le cadrage est complété par une piste à axes séparés : document autonome,
+domaine, fonction, statut et vue de distribution. Cette piste évite de faire
+porter par un seul chemin l'identité, le rang, l'état et l'usage d'une pièce.
+
+```text
+PIECE_CANONIQUE = DOCUMENT_AUTONOME
+AXES = DOMAINE + FONCTION + STATUT + VUE
+CARTE_ET_INDEX = VUES_DERIVEES
+LIEN = SEMANTIQUE, PROVENANCE, COMPLEMENT, ROUTE_OU_VOISINAGE
+```
+
+La recommandation reste une hypothèse, non une décision d'architecture. Elle
+sera testée par modèle conceptuel, mappage sans déplacement, vues sur copie,
+puis migration pilote. Elle permettrait de repartir de zéro architecturalement
+sans recommencer les investigations scientifiques.
+
+Les anti-patterns explicitement retenus sont la simple renumérotation des
+dossiers, le statut déduit du chemin, le README cumulant toutes les fonctions,
+la duplication publique avant identification de la pièce canonique et la
+généralisation depuis un seul lot.
+
 ## Ouverture effective du premier test
 
 La matrice interne de capacité est produite pour le premier lot :

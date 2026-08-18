@@ -128,6 +128,92 @@ couche de navigation produite après coup.
 Les options peuvent être combinées. Le test ne cherchera pas à élire une
 architecture générale par préférence abstraite.
 
+## Recommandation de travail
+
+La piste la plus prometteuse est une architecture **à axes séparés**, plutôt
+qu'une nouvelle hiérarchie unique :
+
+```text
+DOCUMENT_AUTONOME = UNITE_DE_SENS_ET_DE_PROVENANCE
+DOMAINE = TERRAIN_DE_RECHERCHE_OU_QUESTION
+FONCTION = ACCUEIL, CARTE, SYNTHESE, PREUVE, METHODE, PROVENANCE, ESSAI
+STATUT = EXPLORATION, EN_COURS, SUSPENDU, QUALIFIE_DANS_LE_PERIMETRE, ARCHIVE
+VUE = DISTRIBUTION_PUBLIQUE_OU_ROUTE_DE_TRAVAIL
+```
+
+Dans cette hypothèse, un dossier physique peut contenir plusieurs fonctions,
+mais une synthèse ne devient pas une simple sous-section de la carte qui la
+distribue. Le statut ne devrait pas être encodé uniquement dans le nom du
+fichier ou dans la profondeur du chemin. La provenance ne devrait pas être
+reconstruite à partir de la seule position actuelle.
+
+### Conséquences pratiques
+
+- Les documents porteurs de sens reçoivent un nom stable et une identité de
+   travail indépendante de leur destination future.
+- Les cartes, README et index servent à orienter ; ils ne deviennent pas les
+   sources canoniques de tous les contenus qu'ils distribuent.
+- Une même pièce peut être reliée à un domaine et à plusieurs fonctions sans
+   être copiée dans plusieurs dossiers.
+- Les états mouvants restent dans les portes opérationnelles appropriées ; ils
+   ne sont pas figés dans une carte publique.
+- Les relations sont décrites par leur nature : dépendance sémantique,
+   provenance, complément, route ou simple voisinage.
+- Une vue publique peut être reconstruite lorsque les chemins changent, sans
+   réécrire les documents de fond.
+
+Cette piste ne demande pas nécessairement un outil ou un registre central. Un
+registre n'est justifié que si l'inventaire montre que Git, les documents
+locaux et les issues ne suffisent plus à retrouver les identités, statuts et
+relations.
+
+## Découpage recommandé du travail
+
+### Palier 1 : modèle conceptuel
+
+Définir les axes, les statuts et les relations minimales avec quelques exemples
+existants. Ne créer aucun dossier cible.
+
+### Palier 2 : mappage sans déplacement
+
+Associer un lot réduit de pièces aux axes proposés. Une pièce peut recevoir
+plusieurs étiquettes de fonction, mais son contenu canonique reste unique.
+
+### Palier 3 : test de vues
+
+Construire sur copie une vue publique, une vue de recherche et une vue de
+provenance à partir du même lot. Vérifier que chacune est lisible sans
+transformer les autres en doublons.
+
+### Palier 4 : migration pilote
+
+Choisir un lot homogène dont les dépendances sont comprises. Créer des
+correspondances réversibles entre anciennes et nouvelles destinations, sans
+supprimer ni déplacer les sources.
+
+### Palier 5 : décision d'architecture
+
+Comparer le gain réel, les pertes, la maintenance et la possibilité de retour.
+La décision humaine porte alors sur l'architecture, le périmètre de migration
+et le traitement des pièces non classables.
+
+Cette progression permet de repartir de zéro **architecturalement** sans
+repartir de zéro **scientifiquement**.
+
+## Anti-patterns à éviter
+
+- Remplacer les dossiers numérotés par de nouveaux dossiers numérotés sans
+   changer le principe d'organisation.
+- Déduire le statut d'une pièce de son emplacement ou de la date de son nom.
+- Faire d'un README un index, un journal, une synthèse scientifique et un
+   contrat opérationnel à la fois.
+- Créer une copie « publique » avant d'avoir identifié la pièce canonique et
+   sa provenance.
+- Générer des liens avant de distinguer les dépendances sémantiques des routes
+   de navigation.
+- Transformer une architecture expérimentale en règle générale parce qu'elle
+   fonctionne sur un seul lot.
+
 ## Protocole de conception sans perte
 
 1. Inventorier les fonctions et les contenus, sans modifier les sources.
