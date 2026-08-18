@@ -452,3 +452,28 @@ PROCHAINE_INSTRUCTION = AUDITER_LA_STRUCTURE_DU_README_RACINE_ET_DE_L_ACCUEIL_CY
 Cette première réduction du champ diminue le risque de prolifération : deux
 portes publiques principales sont à examiner avant toute addition, tandis que
 les autres conservent leur spécialisation.
+
+## Ouverture effective du premier test
+
+La matrice interne de capacité est produite pour le premier lot :
+`01_CADRE_METHODOLOGIQUE/matrice_capacite_documents_human_first_2026-08-18.md`.
+Elle confirme que le lot est homogène par fonction d'accueil, mais distingue
+deux capacités : le README racine porte déjà une vue publique conceptuelle,
+tandis que l'accueil des cycles combine une carte scientifique et un routage
+vivant.
+
+```text
+MATRICE_DES_CIBLES = PRODUITE
+CONTRAT_DE_CAPACITE = PRECISE_DANS_LA_MATRICE
+README_RACINE = TEMOIN_DE_CONTROLE, PAS_DE_PROTOTYPE_A_CE_PALIER
+README_CYCLES = PREMIERE_CIBLE_DE_PROTOTYPE_SUR_COPIE
+MUTATION_DES_SOURCES = NON
+PROMOTION_PUBLIQUE = NON_OUVERTE
+```
+
+Le test suivant comparera la forme actuelle de l'accueil des cycles à une
+proposition éventuellement séparée entre carte publique et détails de
+routage. La décision dépendra du gain de lisibilité et de contrôle observé,
+non d'une obligation préalable de créer un document supplémentaire. Le
+contenu unique, les limites, les indépendances entre cycles et les routes
+scientifiques seront contrôlés avant toute proposition de promotion.
