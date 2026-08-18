@@ -105,6 +105,23 @@ Cette documentation doit rester un **contrat de fonctionnement local** avant de
 pouvoir devenir une porte publique. Elle doit être versionnée, mais ne doit pas
 être recopiée dans chaque document d'accueil.
 
+Le CI appartient à ce workflow global comme composante technique. Il ne lui est
+pas extérieur : il automatise certaines opérations du contrat de fonctionnement
+et remonte des contrôles. Il ne doit toutefois pas absorber les décisions
+humaines ni devenir le workflow complet par défaut.
+
+```text
+WORKFLOW_GLOBAL
+ = SEMANTIQUE + RECHERCHE + PROVENANCE + DECISION_HUMAINE + CI
+CI = COMPOSANTE_TECHNIQUE, NON_EQUIVALENT_DU_WORKFLOW_GLOBAL
+AUTOMATISATION = ALLEGEMENT_COGNITIF_SELECTIF
+```
+
+L'amélioration ultérieure du CI devra donc partir des objets et transitions
+déjà qualifiés : elle cherchera les opérations répétitives, contrôlables et
+réversibles qui peuvent être automatisées, tout en laissant humaines les
+questions de modèle, de portée, de promotion, d'autorisation et de décision.
+
 ## Séparation des niveaux de résultat
 
 ```text
@@ -139,6 +156,9 @@ Pour chaque profil, construire une fiche de documentation sans déplacer le code
 puis vérifier si les mêmes champs sont réellement utiles. Le schéma doit rester
 ouvert à un champ émergent et ne doit pas créer un registre central avant qu'un
 besoin de contrôle soit démontré.
+
+Le premier test de ces trois profils est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_documentation_technique_trois_profils_2026-08-18.md`.
 
 ## Décision réservée
 

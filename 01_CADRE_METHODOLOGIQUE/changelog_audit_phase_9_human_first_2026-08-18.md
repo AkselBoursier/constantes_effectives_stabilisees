@@ -1031,6 +1031,34 @@ pipeline ne sera rendu public par la seule présence d'un script ou d'un
 manifeste ; le niveau effectivement documenté, reproductible ou réutilisable
 devra être déclaré.
 
+## Test documentaire sur trois profils computationnels
+
+Le test est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_documentation_technique_trois_profils_2026-08-18.md`.
+Il couvre un pipeline ALPHA borné, un script local d'analyse neutrino et l'outil
+transversal append-only des journaux.
+
+```text
+DOCUMENTATION_DES_TROIS_PROFILS = POSSIBLE
+CODE_ET_RESULTAT = SEPARABLES_ET_RELIABLES
+CI = COMPOSANTE_TECHNIQUE_DU_WORKFLOW_GLOBAL
+AUTOMATISATION = ALLEGEMENT_COGNITIF_SELECTIF
+DECISION_HUMAINE = CONSERVEE
+PUBLICATION_DE_PIPELINE = A_DECIDER_PAR_NIVEAU
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme la chaîne `code -> environnement -> exécution -> sortie
+machine -> qualification technique -> résultat scientifique`. Documenter le
+code ne valide pas le modèle ; documenter l'exécution ne crée pas une nouvelle
+mesure ; l'outil CI ne qualifie pas le contenu qu'il contrôle.
+
+La distinction ne sépare pas artificiellement le workflow global du CI : le CI
+en est une composante technique. L'amélioration future cherchera des opérations
+répétitives, contrôlables et réversibles qui allègent la charge cognitive,
+mais les choix de modèle, de données, de portée, de promotion et d'autorisation
+restent humains.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
