@@ -1360,3 +1360,58 @@ RELECTURE_GENERALE = NON_DECLENCHEE
 NOUVEAU_CALCUL = NON_LANCE
 PROCHAINE_ACTION = PASSER_A_UNE_AUTRE_DEPENDANCE_PORTEUSE_OU_ARRETER_C1_SI_AUCUN_GAIN_DISCRIMINANT
 ```
+
+---
+
+## 2026-08-18 — Phase 2 C1 : qualification locale de deux dépendances
+
+Deux pièces directement citées par la cartographie ont été descendues sans
+réouverture du corpus général : `A3_Verdict_local_running_alpha_v0_1.md` et
+`R3_Constitution_minimale_et_verdict_rapport_proton_electron_v0_1.md`.
+
+### `alpha(Q²)`
+
+```text
+CIBLE = COUPLAGE_ELECTROMAGNETIQUE_EFFECTIF_ESPACE_LIKE
+TRANSFORMATION = TRANSFERT_D_IMPULSION_QUADRATIQUE
+RESULTAT_LOCAL = RUNNING_POSITIVEMENT_SOUTENU_DANS_LES_DOMAINES_BHABHA_ETUDIES
+MAINTIEN_ASSOCIE = RELATION_D_EVOLUTION_COMPATIBLE_AVEC_LA_QED
+LIMITES = DOMAINE, PARAMETRISATION, CALCULS_RADIATIFS, HORS_SCHEMAS_NON_INSTRUITS
+```
+
+Ce résultat soutient une distinction locale entre variation sous `Q²` et
+maintien d'une relation d'évolution. Il ne soutient ni une variation
+temporelle, ni une invariance spatiale, ni une mesure absolue indépendante du
+modèle, ni une proposition transversale universelle.
+
+### `m_p/m_e`
+
+```text
+CIBLE = RAPPORT_PHYSIQUE_SANS_DIMENSION_A_SORTIE_AJUSTEE
+TRANSFORMATIONS = DERIVE_LOCALE, MODULATION_DE_POTENTIEL, DIFFERENCE_ASTROPHYSIQUE_FINIE
+CONSTITUTION = NUMERATEUR_QCD / DENOMINATEUR_ELECTROFAIBLE_BRISE
+RESULTAT_LOCAL = CONTRAINTES_SANS_ATTRIBUTION_SEPAREE_DES_DEUX_MASSES
+LIMITES = MODELE_DE_SENSIBILITE, CHAINS_D_ACCES, DECOMPOSITIONS_DEPENDANTES_DU_SCHEMA
+```
+
+Ce résultat soutient une discipline d'attribution : une contrainte sur le
+rapport ne devient pas une explication de `m_p`, de `m_e`, de `y_e` ou de
+`Lambda_QCD` sans modèle supplémentaire et observables indépendantes. La
+précision métrologique du rapport ne constitue pas une qualification directe
+de son origine.
+
+### Sortie de la descente
+
+```text
+ALPHA_Q2 = QUALIFIE_DANS_LE_PERIMETRE_LOCAL
+M_P_SUR_M_E = QUALIFIE_DANS_LE_PERIMETRE_LOCAL, ATTRIBUTION_CAUSALE_NON_ETABLIE
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+NOUVELLE_TRIANGULATION = NON_REQUISE_A_CE_PALIER
+NOUVEAU_CALCUL = NON_LANCE
+```
+
+La profondeur substantielle s'arrête ici pour ces deux dépendances : les limites
+qui empêchent une portée plus forte sont déjà explicites et aucune pièce
+supplémentaire identifiée ne promet actuellement un gain discriminant sans
+ouvrir une instruction distincte. C1 reste donc localement qualifié pour ces
+résultats, sans verdict global inter-cycle.
