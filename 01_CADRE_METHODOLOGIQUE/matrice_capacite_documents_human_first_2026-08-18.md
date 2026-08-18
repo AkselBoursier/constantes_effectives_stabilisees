@@ -7,13 +7,13 @@ Artefact interne de la phase 9. Cette matrice prepare un test editorial reversib
 ```text
 PHASE = 9 / NORMALISATION_DOCUMENTAIRE_HUMAN_FIRST
 LOT = README_RACINE + README_CYCLES_PHYSIQUES
-STATUT = MATRICE_DE_CAPACITE_A_TESTER
+STATUT = MATRICE_DE_CAPACITE_REQUALIFIEE_APRES_TEST
 PUBLICATION = NON
 MUTATION_DES_SOURCES = NON
 DECISION_HUMAINE_REQUISE = POUR_TOUTE_PROMOTION_PUBLIQUE
 ```
 
-La matrice ne suppose pas que les deux documents doivent devenir un seul texte ni qu'une nouvelle porte doit etre creee. Elle teste ce que chaque document peut porter sans perdre de sens et quelle separation minimale rendrait la lecture plus claire.
+La matrice ne suppose pas que les deux documents doivent devenir un seul texte ni qu'une nouvelle porte doit etre creee. Elle teste ce que chaque document peut porter sans perdre de sens et quelle separation minimale rendrait la lecture plus claire. Le premier prototype a toutefois montre que cette matrice intervenait trop tard sur les destinations : elle decrivait des documents deja attaches a l'arborescence actuelle avant d'avoir teste les classes documentaires et leur stabilite.
 
 ## Regles de lecture de la matrice
 
@@ -51,18 +51,18 @@ La matrice ne suppose pas que les deux documents doivent devenir un seul texte n
 
 Le document doit rester court, conceptuel et descriptif. Sa capacite maximale est un accueil public : il peut expliquer l'objet, les questions et les distinctions necessaires pour choisir une route. Il ne doit pas porter la qualification detaillee des cycles ni la fabrication de l'etat courant.
 
-Le premier test ne cherchera donc pas a le consolider avec d'autres documents. Il verificera plutot la stabilite de ses liens, la suffisance de ses limites et la possibilite de reduire encore la tuyauterie sans perte.
+Le premier test ne cherchera donc pas a le consolider avec d'autres documents. Il servira de temoin de controle pour la stabilite des liens, la suffisance des limites et la possibilite de reduire la tuyauterie sans perte. La redaction de nouveaux contenus autonomes est reportee jusqu'a la definition des classes documentaires.
 
 ### README des cycles physiques
 
 Le document peut porter une carte publique des terrains et leurs differences. Il peut renvoyer vers une profondeur scientifique locale, mais ne peut pas absorber les etats, dettes et decisions de chaque cycle sans devenir un tableau de bord de laboratoire.
 
-Le premier test comparera deux options reversibles :
+Le premier test a compare deux options reversibles en pratique, mais cette comparaison est suspendue comme strategie de restructuration :
 
 1. conserver la carte actuelle en retirant seulement les details qui n'aident pas a choisir un cycle ;
 2. rediger sur copie une carte publique et une route de laboratoire separee, sans supprimer ni deplacer la source.
 
-L'option 2 ne sera retenue que si elle apporte un gain discriminant de lecture superieur au cout d'une route supplementaire.
+L'option 2 ne sera pas retenue comme architecture tant que les classes documentaires, leurs fonctions et leurs conditions de migration ne sont pas stabilisees. Un lien valide aujourd'hui ne constitue pas une garantie de migrabilite.
 
 ## Test adaptatif a appliquer
 
@@ -78,6 +78,24 @@ PROMOTION = DECISION_HUMAINE_SEPAREE
 
 La matrice elle-meme reste falsifiable : si le prototype montre que la separation public/laboratoire surcharge la lecture ou masque une route necessaire, cette hypothese sera requalifiee pour ce genre de document. Aucun resultat local ne sera generalise aux autres documents sans nouveau test.
 
+## Requalification apres le premier prototype
+
+```text
+PROTOTYPE_LIE_AUX_CHEMINS_ACTUELS = TEMOIN_LIMITe
+PROTOTYPE_COMME_ARCHITECTURE_CIBLE = SUSPENDU
+REDACTION_AUTONOME_PAR_CLASSE = A_OUVRIR
+LIENS_INTER_DOCUMENTAIRES = A_REPORTER_APRES_STABILISATION_DES_CLASSES
+```
+
+Le prototype n'est ni invalide comme essai de lecture ni recevable comme
+architecture future. Il a montré que la correction des liens et la
+preservation du contenu doivent etre testees separement : la premiere porte
+sur l'etat present du depot, la seconde sur la capacite d'un document a migrer
+vers une organisation encore undecidee.
+
 ## Sortie attendue du prochain palier
 
-Produire sur copie un prototype limite au README des cycles, puis comparer la carte actuelle, la proposition eventuellement separee et la matrice. Le README racine sert de temoin de controle ; il n'est pas modifie par ce palier.
+Produire un cadrage interne des classes documentaires et de leurs contrats de
+capacite, sans imposer encore de chemins, de noms de destination ou de liens.
+Le README racine et l'accueil des cycles deviennent des temoins, non les
+premieres cibles de migration.

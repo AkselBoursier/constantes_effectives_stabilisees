@@ -487,6 +487,49 @@ Ce résultat reste local au genre « carte d'accueil scientifique ». Il ne
 justifie ni une réécriture du README source, ni une règle générale de
 séparation documentaire.
 
+## Requalification : éviter la boucle des destinations
+
+Le retour sur le prototype montre une limite de la stratégie initiale. La
+verification des liens a ete utile pour controler l'etat present du clone,
+mais elle attachait deja le texte a une arborescence que la restructuration
+pourrait remplacer. Corriger les chemins aujourd'hui ne garantit donc pas la
+migrabilite du contenu demain ; cela peut au contraire multiplier les reprises
+des documents parents et enfants.
+
+```text
+HYPOTHESE_DE_CARTE_LIEE_AUX_CHEMINS = REQUALIFIEE
+VALEUR_DU_PROTOTYPE = TEMOIN_DE_CONTROLE, NON_ARCHITECTURE_CIBLE
+BOUCLE_DE_REDISTRIBUTION = RISQUE_RECONNU
+RESTRUCTURATION_PAR_CHEMINS = SUSPENDUE
+```
+
+Le prototype est conserve comme essai date et non promu. Aucun lien n'est
+retravaille dans les documents publics tant que les fonctions et classes
+documentaires ne sont pas suffisamment stabilisees.
+
+## Nouveau sas propose : classes avant destinations
+
+Un cadrage interne ouvre un test par classes documentaires :
+`01_CADRE_METHODOLOGIQUE/cadrage_test_classes_documentaires_human_first_2026-08-18.md`.
+Il ne cree pas une nouvelle architecture durable. Il teste d'abord des contrats
+de contenu sans chemin ni nom de destination, puis leur capacite a migrer vers
+plusieurs organisations possibles.
+
+```text
+CLASSES_AVANT_CHEMINS = A_TESTER
+CONTRAT_SANS_DESTINATION = A_TESTER
+DOCUMENT_AUTONOME = A_TESTER_SUR_LOT_HOMOGENE
+LIENS = A_CONSTRUIRE_APRES_STABILISATION_DES_CLASSES
+ARCHITECTURE_FINALE = NON_DECIDEE
+NOUVEL_AUDIT_GLOBAL = NON_JUSTIFIE_A_CE_PALIER
+```
+
+Ce sas peut conduire a conserver la distribution actuelle, a redefinir des
+classes, a isoler des documents uniques ou a rouvrir une question locale. Il
+ne presuppose ni une fusion par classe, ni une multiplication des README, ni
+une migration de masse. Le depot reste un laboratoire dans la branche d'audit
+et aucune restructuration effective n'est ouverte.
+
 ## Ouverture effective du premier test
 
 La matrice interne de capacité est produite pour le premier lot :
