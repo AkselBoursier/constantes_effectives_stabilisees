@@ -1081,6 +1081,29 @@ de continuité, réduction des pertes, allègement cognitif, réutilisabilité e
 absence de rigidification. L'audit reste pour l'instant un workflow local du
 laboratoire, documenté comme tel.
 
+## Outils internes : inventaire sélectif sans prolifération
+
+La proposition relative aux outils mobilisés ou créés dans le laboratoire est
+retenue comme un cadrage de tri, non comme un nouveau projet. Elle est décrite
+dans :
+`01_CADRE_METHODOLOGIQUE/cadrage_outils_internes_et_workflow_partageable_2026-08-18.md`.
+
+```text
+OUTILS_INTERNES = OBJETS_A_EVALUER
+INVENTAIRE_GLOBAL = NON_LANCE
+PREMIER_LOT = SELECTIF
+NOUVEAU_PROJET = NON_CREE
+RESULTAT_LOCAL = POSSIBLE
+PROPOSITION_DE_WORKFLOW_PARTAGEABLE = A_TESTER
+PROMOTION_PUBLIQUE = NON_OUVERTE
+```
+
+Le premier inventaire pourra couvrir un outil de conservation, un outil
+d'audit, un script computationnel local et un outil éditorial ou de
+coordination. Le critère ne sera pas la nouveauté de l'outil, mais le gain
+réel de charge cognitive, la clarté de ses garanties, ses limites, sa
+réutilisabilité et la conservation des décisions humaines.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,

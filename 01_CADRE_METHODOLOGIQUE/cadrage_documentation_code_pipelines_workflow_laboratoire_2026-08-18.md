@@ -186,6 +186,16 @@ besoin de contrôle soit démontré.
 Le premier test de ces trois profils est consigné dans :
 `01_CADRE_METHODOLOGIQUE/test_documentation_technique_trois_profils_2026-08-18.md`.
 
+Les outils internes mobilisés au fil du projet relèvent du même workflow global.
+Ils ne doivent pas provoquer une nouvelle couche de prolifération documentaire.
+Un inventaire sélectif peut examiner leur fonction de conservation, d'audit,
+de calcul, de coordination ou d'éditorialisation, puis décider au cas par cas
+si un outil vaut seulement comme résultat local ou comme proposition de
+workflow partageable entre humains, LLM, GitHub et machines.
+
+Le cadrage dédié est consigné dans :
+`01_CADRE_METHODOLOGIQUE/cadrage_outils_internes_et_workflow_partageable_2026-08-18.md`.
+
 ## Décision réservée
 
 ```text
