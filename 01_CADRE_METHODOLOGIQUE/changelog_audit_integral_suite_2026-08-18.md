@@ -469,3 +469,135 @@ C4_NOUVEAUTE_SUBSTANTIELLE = NON_RECHERCHEE
 Le dossier `06_PHILOSOPHIE` est donc fermé documentairement sans transformer sa richesse exploratoire en doctrine ou en résultat philosophique général.
 
 Prochaine position documentaire propre : `90_Critiques_ constantes_effectives_stabilisees`.
+
+
+---
+
+## 2026-08-18 — `90_Critiques_ constantes_effectives_stabilisees` : reprise locale et controle des sources
+
+### Perimetre et methode
+
+La reprise commence a la position indiquee par la partie 2 du changelog :
+`90_Critiques_ constantes_effectives_stabilisees`.
+
+Le controle est effectue dans le clone local dedie a l'audit, sur la branche
+`audit/changelog-reprise-2026-08-18`, au HEAD `e76c92da08aa9e84f62b28f5e88296b3f4ecab50`.
+Le corpus scientifique et les donnees externes ne sont pas modifies.
+
+Inventaire local du bloc au baseline :
+
+```text
+TOTAL_BLOBS_90 = 34
+DOCX = 13
+MARKDOWN = 13
+PNG = 8
+DOCX_SHA256_DECLARED_AND_MATCHED = 13/13
+DOCX_WORD_DOCUMENT_XML_READ = 13/13
+PNG_VISUALLY_INSPECTED = 8/8
+EXTERNAL_SCIENTIFIC_REVALIDATION = NON
+```
+
+Les 13 extractions Markdown ont ete relues dans le cadre de cette reprise. Les
+13 originaux DOCX ont ensuite ete ouverts localement et leur `word/document.xml`
+a ete lu pour controler le texte structurel, les noeuds textuels et les tables
+contenues dans le document. Les 13 SHA-256 declares dans les extractions
+correspondent aux SHA-256 calcules sur les DOCX locaux. Une erreur apparente de
+chemin pour quatre noms accentues provenait seulement du decodage de la sortie
+PowerShell ; la verification par correspondance locale a confirme les quatre
+hashes manquants.
+
+Cette verification etablit la provenance et la couverture materielle locale.
+Elle ne transforme pas l'extraction en equivalence generale de mise en page :
+la presentation Word, les proprietes de style, les elements non contenus dans
+`word/document.xml` et l'interpretation scientifique externe ne sont pas
+revalides par cette operation.
+
+### Les PNG sont des pieces documentaires, non de simples illustrations
+
+Les huit PNG extraits des DOCX ont ete inspectes visuellement. Ils contiennent
+des planches de synthese avec des titres, diagnostics, seuils, statuts et plans
+d'action. Ils ne peuvent donc pas etre omis comme simples elements decoratifs.
+
+Les formulations visuelles rendent notamment explicites :
+
+```text
+CONSOLIDATION -> SAS_DYNAMIQUE_VERS_REFERENCE = PROPOSITION_HISTORIQUE
+AUCUNE_OUVERTURE_SANS_VERROUILLAGE_PREALABLE = PROPOSITION_HISTORIQUE
+SEUIL_ARCHITECTURE >= 3_NOEUDS = CRITERE_PROPOSE
+PROTOCOLE_H0_S8 > 5_SIGMA = CRITERE_PROPOSE
+HIGGS_VS_DELTA_M2 = CADRAGE_NARRATIF_PROPOSE
+REGIME_ET_ACCES_FUSIONNES = PROPOSITION_BORNEE_AUX_CONSTANTES_EFFECTIVES
+TENSIONS -> STATUT_ONTOLOGIQUE_PROVISOIRE = PROPOSITION_HISTORIQUE
+```
+
+Ces formulations ont une fonction genealogique importante : elles montrent des
+moments ou le projet, ou un agent de critique, a tente de durcir la taxonomie,
+de transformer une tension en declencheur, ou de faire passer une architecture
+d'un statut descriptif a un statut decisionnel. Elles ne constituent pas pour
+cela des decisions humaines, des regles actuelles ou des autorisations de calcul.
+
+### Acquis et propositions retrouvees dans les 13 DOCX
+
+Les sources critiques convergent vers plusieurs lignes de travail :
+
+- la distinction entre famille, fonction transversale et architecture est
+  jugee insuffisamment decisionnelle dans plusieurs critiques ;
+- la cosmologie est repetitivement decrite comme un reseau d'inferences et de
+  tensions, avec des propositions de double etiquetage, de trajectoire
+  diachronique et de tests de substitution ;
+- les cas neutrino sont presentes comme un deplacement d'une constante-valeur
+  vers des relations oscillatoires, avec une mise en avant des limites de
+  l'acces PMNS aux phases de Majorana ;
+- le SI 2019 est mobilise comme cas de distinction entre stabilisation empirique,
+  fixation conventionnelle et realisation pratique ;
+- plusieurs critiques demandent de remplacer un test de retrait binaire par un
+  test de destabilisation, de substitution ou de resistance ;
+- plusieurs engagements restent au statut `[TBD]`, sans preuve dans ce lot de
+  leur execution ni de leur promotion durable.
+
+Ces lignes se recoupent avec des resurgences deja notees dans les cycles et les
+architectures, mais le recoupement ne vaut pas validation de la theorie proposee.
+Les formulations fortes comme « automatiser la discipline », « indicateur de
+rupture de validite », « statut ontologique provisoire » ou « effondrement
+immediat du sens physique » restent des assertions a qualifier, non des verdicts.
+
+### Controle de compatibilite avec le cadre courant
+
+Le lot contient des prescriptions qui entrent potentiellement en tension avec
+les regles actuellement applicables : promotion automatique d'une tension,
+seuil universel de `5 sigma`, fusion generale du regime et de l'acces, blocage
+automatique de nouveaux cycles, ou transformation d'un test editorial en
+algorithme de decision.
+
+Statut retenu :
+
+```text
+PRESCRIPTIONS_HISTORIQUES_DU_LOT = CONSERVEES
+PROMOTION_AUTOMATIQUE_EN_REGLE_COURANTE = NON
+SEUIL_UNIVERSEL_5_SIGMA = NON_VALIDE_COMME_REGLE_GENERALE
+STATUT_ONTOLOGIQUE_D_UNE_TENSION = NON_PROMU
+NOUVELLE_AUTORISATION_COMPUTATIONNELLE = AUCUNE
+REVALIDATION_SCIENTIFIQUE_EXTERNE = NON_EFFECTUEE
+```
+
+Toute reutilisation de ces propositions doit etre instruite dans le domaine
+competent, avec cible, transformation, regime, modele, tolerance et condition
+de rupture explicites. En particulier, aucune proposition issue de ce lot
+n'autorise un nouveau sampling, une modification de la partie computationnelle
+ou une requalification de C7-C1 / C7-GAL.
+
+### Etat de couverture et suite
+
+Le bloc `90_Critiques_ constantes_effectives_stabilisees` est desormais couvert
+materiellement dans cette reprise locale : les 13 Markdown, les 13 DOCX et les
+8 PNG ont ete lus ou inspectes selon leur nature. Cette fermeture de couverture
+ne ferme aucune qualification scientifique et ne supprime aucune dette de
+revalidation externe.
+
+```text
+COUVERTURE_MATERIELLE_90 = COMPLETE
+QUALIFICATION_SCIENTIFIQUE_90 = NON_OUVERTE_PAR_CETTE_LECTURE
+PRESCRIPTIONS_A_RETESTER = OUI
+DETTES_EXPLICITES_DU_LOT = CONSERVEES
+PROCHAINE_ACTION = RECOUPER_90_AVEC_LES_ENTREES_ET_CARTES_DEJA_LUES
+```

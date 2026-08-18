@@ -78,7 +78,8 @@ def main() -> int:
     if not block:
         fail("le bloc d'ajout est vide")
 
-    separator = b"" if old.endswith((b"\n", b"\r")) else b"\n"
+    old_ended_with_newline = old.endswith((b"\n", b"\r"))
+    separator = b"" if old_ended_with_newline else b"\n"
     new = old + separator + block
     if not new.startswith(old):
         fail("le nouveau contenu ne preserve pas le prefixe")
@@ -132,6 +133,7 @@ def main() -> int:
     print(f"NEW_SHA256={sha256(new)}")
     print(f"OLD_BYTES={len(old)}")
     print(f"ADDED_BYTES={len(new) - len(old)}")
+    print(f"EOF_NEWLINE_ADDED={not old_ended_with_newline}")
     return 0
 
 
