@@ -41,6 +41,57 @@ actuelle permet deja ces distinctions avec un cout de lecture acceptable, ou si
 une nouvelle organisation cree davantage de doublons et de routes que de
 clarte.
 
+## Portee du terme « semantique »
+
+Dans ce cadrage, « semantique » ne doit pas etre compris comme une simple
+question de vocabulaire, de style ou de reformulation des documents existants.
+Il peut servir de terme englobant pour l'architecture de ce que chaque piece
+veut dire, etablit, suppose, borne et rend transmissible.
+
+Le terme de travail recommande est donc :
+
+```text
+ARCHITECTURE_SEMANTIQUE_INTEGRALE
+ = PHYSIQUE
+ + EPISTEMIQUE
+ + COMPUTATIONNELLE
+ + METHODOLOGIQUE
+ + PHILOSOPHIQUE
+ + EDITORIALE
+```
+
+Cette somme ne fusionne pas les registres. Elle exige au contraire de conserver
+leur distinction et de rendre explicites leurs passages :
+
+| Registre | Question de sens a preserver |
+|---|---|
+| **Physique** | Quelle cible, quelle transformation, quel regime, quelle grandeur ou relation sont effectivement examines ? |
+| **Epistemique** | Par quel acces, quelle justification, quel degre de soutien et quelle limite l'enonce devient-il recevable ? |
+| **Computationnel** | Quel calcul, quelle representation, quel resultat machine et quelle qualification technique sont en jeu ? |
+| **Methodologique** | Quelle regle, quel contre-test, quel critere d'arret ou d'amendement organise l'enquete ? |
+| **Philosophique** | Quelle interpretation, quelle portee conceptuelle ou quel transfert est propose, et avec quel statut ? |
+| **Editorial** | Pour quel public, quelle fonction, quel niveau de lecture et quelle route le contenu est-il compose ? |
+
+Ainsi, la semantique constitue le niveau de liaison et de conservation du sens,
+non un sixieme domaine qui absorberait les cinq autres. Une architecture peut
+etre semantiquement coherente tout en laissant une question physique ouverte,
+un calcul non qualifie ou une interpretation suspendue.
+
+La distinction est importante :
+
+```text
+SEMANTIQUE = CE_QUI_REND_LES_REGISTRES_LISIBLES_ET_RELIABLES
+             ENTRE_EUX
+SEMANTIQUE != VERITE_PHYSIQUE
+SEMANTIQUE != QUALIFICATION_AUTOMATIQUE
+SEMANTIQUE != UNIFORMISATION_DES_REGISTRES
+```
+
+Le mot « semantique » peut donc suffire dans le nom général du chantier, a
+condition que son perimetre soit declare ainsi. Dans les contrats locaux, il
+faudra conserver les noms des registres concernes plutot que d'ecrire seulement
+« contenu semantique ».
+
 ## Principes de conception
 
 1. **Fonction avant emplacement.** Un chemin ne doit pas décider seul du rang,

@@ -602,6 +602,36 @@ MUTATION_DES_SOURCES = NON
 PROMOTION_PUBLIQUE = NON_OUVERTE
 ```
 
+## Clarification : sémantique comme architecture intégrale du sens
+
+Le terme « sémantique » est élargi pour ce chantier. Il ne désigne pas une
+simple réécriture lexicale ou éditoriale, mais la conservation et la liaison
+contrôlable de ce que les pièces veulent dire, établissent, supposent, bornent
+et rendent transmissible.
+
+```text
+ARCHITECTURE_SEMANTIQUE_INTEGRALE
+ = PHYSIQUE + EPISTEMIQUE + COMPUTATIONNELLE
+ + METHODOLOGIQUE + PHILOSOPHIQUE + EDITORIALE
+```
+
+Cette extension n'absorbe pas les registres les uns dans les autres. Elle
+demande de conserver leurs questions propres et leurs statuts, puis de rendre
+explicites leurs passages. La sémantique n'est donc ni une vérité physique,
+ni une qualification automatique, ni une uniformisation des écritures.
+
+```text
+SEMANTIQUE = NIVEAU_DE_LIAISON_ET_DE_CONSERVATION_DU_SENS
+REGISTRES = DISTINCTS, MAIS ARTICULABLES
+CONTRATS_LOCAUX = NOMMER_LES_REGISTRES_EFFECTIVEMENT_CONCERNES
+ARCHITECTURE_RECOMMANDEE = SEMANTIQUE_INTEGRALE, NON_REDUCTION_AU_STYLE
+```
+
+Le terme peut ainsi suffire pour nommer le chantier général, à condition que
+ce périmètre soit déclaré dans le cadrage et que les contrats locaux précisent
+toujours s'ils portent sur la physique, l'épistémique, le computationnel, la
+méthodologie, la philosophie ou l'éditorial.
+
 Le test suivant comparera la forme actuelle de l'accueil des cycles à une
 proposition éventuellement séparée entre carte publique et détails de
 routage. La décision dépendra du gain de lisibilité et de contrôle observé,
