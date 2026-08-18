@@ -601,3 +601,77 @@ PRESCRIPTIONS_A_RETESTER = OUI
 DETTES_EXPLICITES_DU_LOT = CONSERVEES
 PROCHAINE_ACTION = RECOUPER_90_AVEC_LES_ENTREES_ET_CARTES_DEJA_LUES
 ```
+
+---
+
+## 2026-08-18 — `90_Critiques_ constantes_effectives_stabilisees` : recoupement avec le cadre deja remonte
+
+Le recoupement du lot 90 avec `Fiche_criblage_critiques_lot2_v0_1.md`,
+`Addendum_matrice_criblage_lot2_v0_1.md`, `Passerelle_escalade_tensions_cosmologiques_v0_1.md`,
+`Audit_resynchronisation_theorique_v0_1.md`, `Audit_dependances_et_reorganisation_v0_1.md`
+et `Index_raisonne_du_corpus_v1_0.md` montre que les propositions fortes des DOCX
+n'apparaissent pas comme des decisions isolees du lot 90.
+
+### Continuites confirmees
+
+```text
+CLASSIFICATION_EN_SORTIE = DEJA_INTEGREE_COMME_COUCHE_DECISIONNELLE
+COUPLAGE_FORT_REGIME_ACCES = DEJA_REMANIE_LOCALEMENT
+TENSIONS = OBJETS_DE_PROTOCOLE, NON_ANOMALIES_AUTOMATIQUES
+TEST_DE_RETRAIT = CONSERVE_ET_COMPLETE_PAR_DEGRADATION_SUBSTITUTION
+TEMPORALITE_SCINDEE = DEJA_PORTEE_PAR_MATRICE_V0_2
+ESCALADE = GRADUEE, SANS SAUT DIRECT TENSION -> ANOMALIE
+RELATION = SOUS_AUDIT, NON_FAMILLE_REFUGE
+```
+
+La fiche de criblage transforme explicitement les propositions brutes du lot 2
+en statuts differencies : `A integrer`, `A remanier`, `A tester`, `A tenir en
+reserve` ou `A refuser comme telle`. L'addendum rend la classification finale
+et les verrous d'options proceduraux, tout en maintenant la possibilite de
+`classement differe`, `classement refuse` et `point de bascule candidat`.
+
+La passerelle cosmologique interdit le saut direct d'une tension vers une
+anomalie. Elle exige l'examen des routes d'acces, de leur independance, des
+degenerescences, des systematiques, du modele de fond, de la temporalite et
+d'une substitution controlee.
+
+### Requalification des propositions du lot 90
+
+```text
+SEUIL_UNIVERSEL_5_SIGMA = REFUSE_COMME_REGLE_GENERALE
+SEUIL_FIXE_TROIS_NOEUDS = REFUSE_COMME_QUANTIFICATION_UNIVERSELLE
+FUSION_GENERALE_REGIME_ACCES = REFUSEE
+STATUT_ONTOLOGIQUE_PROVISOIRE_D_UNE_TENSION = REMPLACE_PAR STATUT HEURISTIQUE PROBATOIRE
+BLOCAGE_AUTOMATIQUE_DE_TOUT_NOUVEAU_CYCLE = NON_ADOPTE
+MATHEMATISATION_TOTALE_DU_CORPUS = NON_ADOPTEE
+```
+
+Ces refus ne suppriment pas les objections dont les propositions procedaient.
+Ils conservent leur fonction de falsification ou d'orientation : reduire
+l'arbitraire des cas litigieux, rendre visibles les couplages, tester la
+resilience et empecher une classification prematuree.
+
+### Relation avec les documents de reorganisation
+
+L'audit des dependances a deja etabli que les DOCX sont des pieces du socle et
+que leur deplacement physique ne doit pas etre confondu avec une suppression,
+une conversion ou une perte de provenance. L'index raisonne avait encore une
+fonction de navigation et de classement qui devait etre corrigee par les
+qualifications ulterieures ; il ne peut pas servir seul de preuve de pertinence
+ou d'exhaustivite.
+
+Le lot 90 renforce donc une conclusion documentaire, sans ouvrir de migration :
+les sources DOCX, leurs extractions et leurs PNG doivent rester distinguables,
+et les propositions historiques doivent rester recuperables sans etre
+promues par simple presence dans une synthese.
+
+### Statut de reprise
+
+```text
+RECOUPLEMENT_90_AVEC_CADRE_ANTERIEUR = EFFECTUE
+CONTINUITE_METHODOLOGIQUE = CONFIRMEE_DANS_LE_PERIMETRE_LU
+NOUVELLE_REGLE_SCIENTIFIQUE = AUCUNE
+NOUVELLE_AUTORISATION_COMPUTATIONNELLE = AUCUNE
+REINSTRUCTION_SUBSTANTIELLE = NON_OUVERTE
+PROCHAINE_ETAPE = RECONSTRUIRE_LA_PORTE_DOCUMENTAIRE_SUIVANTE_SANS_EXCLUSION
+```
