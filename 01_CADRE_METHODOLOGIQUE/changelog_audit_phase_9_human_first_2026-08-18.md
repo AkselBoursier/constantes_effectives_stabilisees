@@ -187,3 +187,67 @@ REECRITURE_PUBLIQUE = NON_OUVERTE
 DEPLACEMENT_OU_SUPPRESSION = NON_AUTORISE
 PROCHAINE_INSTRUCTION = INVENTORIER_LES_README_ET_DOCUMENTS_D_ACCUEIL
 ```
+
+## Inventaire des portes d'accueil et de distribution
+
+### Vues publiques ou de routage humain
+
+```text
+README.md = VUE_PUBLIQUE_PRINCIPALE, OBJET, QUESTIONS, ROUTAGE
+02_CYCLES_PHYSIQUES/README.md = VUE_PUBLIQUE_SCIENTIFIQUE, ROUTAGE_DES_CYCLES
+06_PHILOSOPHIE/README.md = VUE_DE_BRANCHE, CHARTE, RANG, ROUTAGE_LOCAL
+99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX/README.md = VUE_PUBLIQUE_EXPURGEE,
+                                                      CONTRAT_ET_FRONTIERES
+```
+
+Ces portes sont lisibles par un nouveau lecteur, mais elles n'ont pas toutes
+la même fonction. Le README racine porte l'entrée générale ; l'accueil des
+cycles porte le routage scientifique ; le README philosophique porte une
+branche exploratoire ; le dossier 99 porte une notice publique d'environnement.
+Elles ne doivent pas être fusionnées dans un tableau de bord unique.
+
+### Vues opératoires, agentiques ou de provenance
+
+```text
+AGENTS.md = REGLES_D_INTERVENTION_AGENTIQUE, NON_PAGE_DE_DISTRIBUTION
+91_TRAVAUX_ANTERIEURS/README.md = GENEALOGIE_OPTIONNELLE, ARCHIVE_EXPLICATIVE
+92_ARCHIVES_CONVERSATIONNELLES/README.md = PROVENANCE_ARCHIVISTIQUE,
+                                           NON_AUTORITE_ACTIVE
+```
+
+`AGENTS.md` doit rester précis pour l'intervention agentique et ne pas être
+transformé en accueil général. Les dossiers 91 et 92 disposent déjà d'un
+langage de provenance qui permet une consultation optionnelle sans imposer
+l'historicité au lecteur courant.
+
+### Absences de porte locale
+
+```text
+01_CADRE_METHODOLOGIQUE/README.md = NON_TROUVE_DANS_LE_CLONE
+05_CARTES_ET_SYNTHESES/README.md = NON_TROUVE_DANS_LE_CLONE
+93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/README.md = NON_TROUVE_DANS_LE_CLONE
+```
+
+Ces absences sont des faits d'inventaire, non encore des défauts à corriger.
+Avant de créer une porte, il faut établir si le README racine, un index actif,
+un document de cadre ou le laboratoire porte déjà la fonction de routage. La
+création d'un README n'est justifiée que par un gain de navigation supérieur à
+son coût de maintenance.
+
+### Première décision Human-First
+
+```text
+PORTE_PUBLIQUE_PRINCIPALE = README_RACINE
+PORTE_SCIENTIFIQUE = README_CYCLES
+PORTE_PHILOSOPHIQUE = README_06
+PORTES_DE_PROVENANCE = 91, 92
+PORTE_ENVIRONNEMENT_PUBLIC = 99
+AGENTS = COUCHE_OPERATIONNELLE_SEPAREE
+README_MANQUANTS = A_EVALUER, NON_A_CREER_PAR_DEFAUT
+RELECTURE_ET_REECRITURE = NON_OUVERTES
+PROCHAINE_INSTRUCTION = AUDITER_LA_STRUCTURE_DU_README_RACINE_ET_DE_L_ACCUEIL_CYCLES
+```
+
+Cette première réduction du champ diminue le risque de prolifération : deux
+portes publiques principales sont à examiner avant toute addition, tandis que
+les autres conservent leur spécialisation.
