@@ -1024,3 +1024,39 @@ CONVERSATIONS_LUES_COMPLETEMENT = NON_ETABLI_A_CE_PALIER
 COUVERTURE_MATERIELLE_91 = INCOMPLETE
 PROCHAINE_ACTION = LIRE_LE_FOYER_TEMPS_COSMOLOGIQUE_ET_RECHERCHES_PHYSIQUES
 ```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : criblage compresse des propositions hard problem
+
+La passe a granularite reduite sur les pieces de travail du foyer conscience /
+hard problem fait remonter un element a effet d'audit :
+`article_hard_problem.md` propose une dissolution du hard problem par
+requalification de la coupe physique/phenomenale, l'enactivisme, la
+co-emergence, la logique du tiers inclus et la notion de `transcendance
+epistemique`.
+
+Ces formulations sont des propositions philosophiques historiques, non des
+resultats scientifiques. Certaines sections les presentent avec une force
+demonstrative superieure a ce que les registres ulterieurs autorisent.
+
+```text
+DISSOLUTION_DU_HARD_PROBLEM = PROPOSITION_PHILOSOPHIQUE_HISTORIQUE
+CO_EMERGENCE_PHYSIQUE_PHENOMENALE = NON_RESULTAT_SCIENTIFIQUE
+TIERS_INCLUS = RESSOURCE_CONCEPTUELLE_A_RECONSTRUIRE, NON_PREUVE
+TRANSCENDANCE_EPISTEMIQUE = CONCEPT_HISTORIQUE_A_MODALISER
+COUPES_POREUSES = NON_CONCEPT_TRANSVERSAL_RESTAURE
+```
+
+Le criblage ne tranche pas la validite de ces propositions. Il signale une
+porte de requalification necessaire si elles sont reutilisees : distinguer
+argument de dissolution, hypothese metaphysique, resultat empirique, analogie
+et programme de recherche. Aucun de ces textes n'autorise une conclusion sur
+la conscience, la phenomenologie ou la physique.
+
+```text
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+ELEMENTS_DISCRIMINANTS_REMONTEE = OUI
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = CRIBLER_LES_GROUPES_TEMPS_COSMOLOGIQUE_ET_PHYSIQUE
+```
