@@ -1392,3 +1392,34 @@ PORTES_SCI1_B1_G2 = CONSERVEES
 RESULTAT = POLISSAGE_HUMAN_FIRST_RECEVABLE_SUR_PIECE_SENSIBLE
 PROMOTION = A_DECIDER_HUMAINE
 ```
+
+## Première réécriture complète d'une pièce autonome
+
+L'essai local `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/ESSAI_tentative/travail_ecriture/Essai_Qualifier_la_constance_v0_1.md` a été repris intégralement dans une pièce distincte :
+`93_LABORATOIRE_EDITORIAL_EXPERIMENTAL/ESSAI_tentative/travail_ecriture/Qualifier_la_constance_reconstruction_Human_First_v0_1.md`.
+
+La pièce source est conservée. La reconstruction ne décrit pas le dispositif
+qui l'a produite ; elle en incarne les résultats : cible et transformation
+déclarées, distinction constance/stabilisation, portée des énoncés, pluralité
+des régimes, dépendance aux routes, formes relationnelles de la constance,
+séparation entre documentation, résultat et interprétation, et conservation
+des refus et des limites.
+
+```text
+PIECE_3 = ESSAI_LOCAL_AUTONOME
+RELECTURE = COMPLETE
+REECRITURE = TOTALE_ET_CONTINUE
+SOURCE = CONSERVEE
+LIENS_INTERNES = AUCUN
+OUTILS_DANS_LE_TEXTE = NON_DECRITS
+RESULTAT = RECOMPOSITION_HUMAN_FIRST_CANDIDATE
+PROMOTION_CANONIQUE = NON_DECIDEE
+CONTROLE_STRUCTUREL = 0_ERREUR
+AVERTISSEMENTS_CORPUS = 9_HORS_PIECE
+```
+
+Cette pièce constitue le premier test réel de la reconstruction par
+incarnation. Elle ne justifie pas encore une généralisation, une fusion, un
+déplacement de répertoire ou la création d'une skill. La lecture humaine doit
+d'abord décider si la prose, la conservation des distinctions et la portée du
+texte sont effectivement supérieures à la pièce source.
