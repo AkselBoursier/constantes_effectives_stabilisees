@@ -1081,6 +1081,28 @@ de continuité, réduction des pertes, allègement cognitif, réutilisabilité e
 absence de rigidification. L'audit reste pour l'instant un workflow local du
 laboratoire, documenté comme tel.
 
+## Test d'une fiche documentaire sur un outil de conservation
+
+La première fiche unitaire est consignée dans :
+`01_CADRE_METHODOLOGIQUE/fiche_documentation_outil_append_audit_2026-08-18.md`.
+Elle documente `tools/append_audit_changelog.py` comme outil de conservation
+transversal.
+
+```text
+FICHE_OUTIL_APPEND = PRODUITE
+CONTRAT_DOCUMENTAIRE = SUFFISANT_POUR_CE_PROFIL
+GARANTIES_TECHNIQUES = DISTINCTES_DU_CONTENU
+CHARGE_COGNITIVE = REDUITE_SUR_L_OPERATION_APPEND
+DECISION_HUMAINE = CONSERVEE
+TEMPLATE_GENERAL = NON_DEDUIT
+PROMOTION_PUBLIQUE = NON_OUVERTE
+```
+
+La fiche distingue les préconditions, les garanties, les refus et les limites
+de l'outil. Elle n'interprète pas le contenu ajouté, ne qualifie aucun résultat
+scientifique et ne transforme pas l'outil local en workflow public. Le prochain
+test comparera ce profil à un outil d'audit structurel.
+
 ## Outils internes : inventaire sélectif sans prolifération
 
 La proposition relative aux outils mobilisés ou créés dans le laboratoire est
