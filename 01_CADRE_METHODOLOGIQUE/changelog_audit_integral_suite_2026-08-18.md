@@ -1204,3 +1204,35 @@ PHASE_1_DOCUMENTAIRE = CLOTUREE_SOUS_REGIMES_DECLARES
 PHASE_2_SCIENTIFIQUE = NON_OUVERTE
 PROCHAINE_ACTION = REPRENDRE_LE_CADRAGE_130_SANS_SENTINELLE_EXCLUSIVE
 ```
+
+---
+
+## 2026-08-18 — Controle de la porte de phase 2 : issue `#130`
+
+Le cadrage distant de l'audit scientifique des resultats porteurs et ses
+commentaires de controle ont ete relus apres la cloture documentaire de phase 1.
+Ils integrent les corrections attendues par le programme actuel :
+
+```text
+SENTINELLES = ORGANISATION_DE_LA_PROFONDEUR, NON_FILTRE_DOCUMENTAIRE
+C7 = CONTROLE_DE_RANG_BORNE
+C2 = CHALLENGE_ADVERSARIAL_BORNE
+C4_C9 = HORS_PERIMETRE_INITIAL, EXTENSION_SUR_DECLENCHEUR_MATERIEL
+FRAICHEUR_BIBLIOGRAPHIQUE = BORNEE_AUX_CONCLUSIONS_SENSIBLES
+AUDITS_ANTERIEURS = CONSERVES, SUFFISANCE_CONTEXTUELLE_NON_PRESUMEE
+EFFET_SUR_Y = NON_ETABLI, SORTIE_RECEVABLE
+AUDIT_SCIENTIFIQUE = NON_OUVERT
+```
+
+Le cadrage est donc compatible avec la phase 1 sous sa forme controlee, mais
+reste candidat a validation humaine. Cette relecture ne vaut ni ouverture de
+l'audit scientifique, ni autorisation de calcul, ni selection automatique d'un
+resultat porteur. Une validation explicite de l'issue doit preceder toute
+instruction substantielle.
+
+```text
+PORTE_PHASE_2 = CADRAGE_COMPATIBLE, VALIDATION_HUMAINE_REQUISE
+MUTATION_SCIENTIFIQUE = AUCUNE
+NOUVEAU_SAMPLING = NON_AUTORISE
+PROCHAINE_ETAPE = ATTENDRE_VALIDATION_EXPLICITE_DE_#130_AVANT_INSTRUCTION
+```
