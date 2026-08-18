@@ -893,6 +893,33 @@ autre nature, détailler les relations probatoires et computationnelles,
 examiner les objets transversaux et obtenir une décision humaine sur le lot,
 la destination et le mode de retour.
 
+## Palier 8 : mappage abstrait d'un lot secondaire transversal
+
+Le lot secondaire est consigné dans :
+`01_CADRE_METHODOLOGIQUE/mappage_abstrait_lot_secondaire_transversal_2026-08-18.md`.
+Il comprend une porte philosophique, le noyau méthodologique canonique, une
+carte architecturale transversale, un essai éditorial expérimental et une carte
+de jonction datée. Il ne reprend donc pas la dominante scientifique du premier
+lot.
+
+```text
+PALIER_8 = LOT_SECONDAIRE_TRANSVERSAL
+CONTRAT_MINIMAL_SUR_LOT_SECONDAIRE = APPLICABLE_AVEC_PRECISIONS
+TRANSVERSALITE = DIMENSION_REELLE_A_CONSERVER
+FONCTION_DOMINANTE = INSUFFISANTE_SEULE
+REGISTRES_MULTIPLES = NECESSAIRES
+NON_CLASSEMENT = RECEVABLE
+NOUVELLE_CATEGORIE_GENERALE = NON_JUSTIFIEE
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme que T2 ne se réduit pas à la méthode, que T4 ne devient pas
+une synthèse scientifique par sa richesse et que T5 ne devient pas une route
+vivante par sa fonction de jonction. La transversalité peut rester une
+propriété ou une relation sans produire un dossier fourre-tout. L'absence de
+`04_ARCHITECTURES/README.md` reste un fait d'inventaire : elle ne justifie pas
+la création immédiate d'une nouvelle porte.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
