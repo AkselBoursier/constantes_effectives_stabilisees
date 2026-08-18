@@ -1,22 +1,28 @@
-# Suite du changelog vivant de l’audit intégral — 2026-08-18
+# Changelog vivant de l’audit intégral — partie 2
 
 ## Fonction et rang
 
-Ce document est un **journal complémentaire de continuité** du fichier :
+Ce document est la **partie 2 du même changelog vivant de l’audit intégral** commencé dans :
 
 `01_CADRE_METHODOLOGIQUE/changelog_audit_integral.md`
 
-Il est créé à la demande explicite de l’auteur le 2026-08-18, après constat que le connecteur GitHub disponible n’expose pas d’opération d’append ou de patch textuel sur un fichier existant, mais seulement un remplacement UTF-8 intégral.
+Il ne constitue ni un journal secondaire, ni une synthèse, ni une mémoire allégée. La séparation en deux fichiers est uniquement technique : le connecteur GitHub disponible ne permettait pas un append/patch sûr du premier fichier sans reconstruction intégrale depuis des réponses potentiellement tronquées.
 
-La création de cette suite évite de reconstruire le changelog principal depuis une réponse tronquée et donc de risquer une perte de mémoire d’audit.
+**Toutes les règles du changelog principal s’appliquent ici intégralement, sans exception, affaiblissement ni changement de rang.** Cela inclut notamment : couverture exhaustive du corpus de référence avant exclusion, conservation des faits et preuves des audits antérieurs, signalement des incidents, réduction seulement après remontée suffisante, obligation de mise à jour continue, lecture seule des objets audités mais écriture requise du changelog, et unité minimale d’entrée.
+
+Cette continuité signifie en particulier qu’une lecture exhaustive ne peut pas être remplacée par une petite synthèse qui ferait disparaître des éléments uniques. Une entrée peut agréger plusieurs découvertes d’une même investigation, mais elle doit conserver assez de matière pour retrouver les acquis positifs, résultats négatifs, limites, dettes, contradictions, bifurcations, migrations, renommages, éléments resurgis, relations transversales, effets sur audits antérieurs, incidents, `NON_ETABLI` / `NON_DECIDABLE` et conséquences éventuelles.
 
 ```text
-CHANGELOG_PRINCIPAL = CONSERVE_INCHANGE
-CHANGELOG_COMPLEMENTAIRE = MEMOIRE_DE_CONTINUITE_AUTORISEE_PAR_L_AUTEUR
+CHANGELOG_AUDIT_INTEGRAL_PARTIE_1 = changelog_audit_integral.md
+CHANGELOG_AUDIT_INTEGRAL_PARTIE_2 = PRESENT_FICHIER
+REGLES_PARTIE_1 -> PARTIE_2 = HERITAGE_INTEGRAL
+PARTIE_2 = CONTINUATION_DIRECTE_DU_MEME_INSTRUMENT_DE_TRACABILITE
+PARTIE_2 = SYNTHESE_SECONDAIRE = FAUX
+LECTURE_EXHAUSTIVE -> COMPRESSION_AVEC_PERTE_D_ELEMENTS_UNIQUES = INTERDITE
+UNITE_MINIMALE_D_ENTREE = IDENTIQUE_A_LA_PARTIE_1
 NOUVELLE_AUTORITE_SCIENTIFIQUE = NON
-REMPLACEMENT_DU_CHANGELOG_PRINCIPAL = NON
+REMPLACEMENT_DE_LA_PARTIE_1 = NON
 FUSION_ULTERIEURE_AUTOMATIQUE = NON
-RECONCILIATION_ULTERIEURE = A_FAIRE_EXPLICITEMENT_SI_UN_PATCH_SUR_DEVIENT_DISPONIBLE
 ```
 
 Point de raccord vérifié avant création : le changelog principal courant, blob `1746c524e37c064ca043f49d8f1601ce816030d1`, se termine après la lecture de `04_ARCHITECTURES` et désigne `05_CARTES_ET_SYNTHESES` comme prochaine position documentaire propre.
@@ -27,7 +33,7 @@ Corpus de référence inchangé :
 BASELINE = 5ff45189af7087e1dd384bb815be55c3ff1430db
 NOMBRE_EXACT_BLOBS_GIT = 668
 LECTURE_DES_OBJETS_AUDITES = READ_ONLY_PAR_DEFAUT
-ECRITURE_DU_PRESENT_JOURNAL = AUTORISEE
+ECRITURE_DU_PRESENT_CHANGELOG = AUTORISEE_ET_REQUISE
 ```
 
 ---
