@@ -816,6 +816,30 @@ archive utile ne redevient pas une autorité. La distinction reste locale au
 lot et devra être confrontée à d'autres lignes, issues et relations avant
 toute généralisation architecturale.
 
+## Palier 5B : test des identités et des relations
+
+Le test est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_identites_relations_lot_pilote_2026-08-18.md`.
+Il vérifie que les objets restent identifiables lorsque les vues ou domaines
+de lecture changent, et que les relations ne sont pas réduites à des chemins
+ou à des liens Markdown.
+
+```text
+PALIER_5B = IDENTITES_ET_RELATIONS
+IDENTITES_SANS_CHEMIN = POSSIBLES_SUR_LE_LOT
+RELATIONS_TYPEES = NECESSAIRES
+CHANGEMENT_DE_VUE = COMPATIBLE_AVEC_LA_STABILITE_DES_OBJETS
+REATTRIBUTION_PAR_CHEMIN = REFUSEE
+AUTOMATISATION_DES_RELATIONS = PREMATUREE
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme que les relations de route, de preuve, de provenance, de
+reprise et de norme sont discriminables. Il laisse toutefois ouvertes la
+granularité du réseau de pièces de L2, la pluralité de L4 et la formalisation
+des relations computationnelles. La prochaine instruction est de définir un
+contrat minimal d'objet migrable, sans ouvrir de migration réelle.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
