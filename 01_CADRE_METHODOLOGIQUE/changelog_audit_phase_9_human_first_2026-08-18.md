@@ -20,6 +20,8 @@ Regles heritees :
 PHASE = 9 / NORMALISATION_DOCUMENTAIRE_HUMAN_FIRST
 STATUT = EN_COURS
 PHASE_2_A_8 = QUALIFIEES_DANS_LE_PERIMETRE
+AUDIT_GLOBAL = NON_CLOTURE
+RECONSTRUCTION_EFFECTIVE = OUVERTE_SUR_BRANCHE_DE_TRAVAIL
 MUTATION_IRREVERSIBLE = NON_AUTORISEE_PAR_CE_CADRAGE
 SUPPRESSION = NON_AUTORISEE_PAR_DEFAUT
 NOUVEAU_CALCUL = NON_LANCE
@@ -445,8 +447,10 @@ PORTES_DE_PROVENANCE = 91, 92
 PORTE_ENVIRONNEMENT_PUBLIC = 99
 AGENTS = COUCHE_OPERATIONNELLE_SEPAREE
 README_MANQUANTS = A_EVALUER, NON_A_CREER_PAR_DEFAUT
-RELECTURE_ET_REECRITURE = NON_OUVERTES
-PROCHAINE_INSTRUCTION = AUDITER_LA_STRUCTURE_DU_README_RACINE_ET_DE_L_ACCUEIL_CYCLES
+RELECTURE_ET_REECRITURE = OUVERTE_SUR_LOTS_BORNES
+RECONSTRUCTION = A_COMMENCER_APRES_QUALIFICATION_DES_CIBLES
+PROMOTION_DES_RESULTATS = SOUS_DECISION_HUMAINE
+PROCHAINE_INSTRUCTION = RECONSTRUIRE_PROGRESSIVEMENT_LES_PORTES_HUMAN_FIRST
 ```
 
 Cette première réduction du champ diminue le risque de prolifération : deux
@@ -1205,3 +1209,70 @@ Le socle provisoire reste : objets autonomes, relations explicites, plans comme
 vues, domaines comme contextes, statuts et autorisations découplés. Le nombre
 final de documents, l'arborescence, le registre relationnel, le template de
 l'audit et le CI futur restent indécidés.
+
+## Passage à la reconstruction effective Human-First
+
+La synthèse de contrôle ne clôt pas l'audit et ne vaut pas architecture finale.
+Elle fournit désormais une direction suffisante pour commencer la reconstruction
+effective du dépôt, sans relancer une campagne générale de tests. Les tests et
+cadrages précédents deviennent des contraintes de travail et des contrôles de
+conservation ; ils ne sont pas remplacés par une nouvelle série d'épreuves.
+
+```text
+AUDIT_GLOBAL = NON_CLOTURE
+PHASE_9 = EN_COURS
+RECONSTRUCTION_EFFECTIVE = OUVERTE
+RECONSTRUCTION = PROGRESSIVE, BORNEE, REVERSIBLE
+RETOUR_A_LA_PHYSIQUE = EXCLU_TANT_QUE_FORME_ET_INFRASTRUCTURE_NON_RECONSTRUITES
+RETOUR_A_LA_PHILOSOPHIE = EXCLU_TANT_QUE_LA_PORTEE_DE_LA_RECONSTRUCTION_N_EST_PAS_QUALIFIEE
+NOUVELLE_CAMPAGNE_DE_TESTS = NON_REQUISE_A_CE_STADE
+```
+
+La reconstruction commence par des lots de portes ou de documents à fonction
+dominante. Pour chaque lot :
+
+1. identifier la fonction actuelle, le public, le contenu unique, les limites,
+  les dépendances et la provenance ;
+2. rédiger une forme Human-First sur la branche de travail, sans supprimer ni
+  déplacer la source avant contrôle ;
+3. comparer l'ancienne et la nouvelle forme sur le sens, les statuts, les
+  relations, les limites et les routes ;
+4. conserver les écarts, pertes éventuelles, refus et décisions dans le journal
+  de phase ;
+5. soumettre toute promotion, suppression ou déplacement à une décision humaine.
+
+Le premier lot effectif doit être choisi parmi les portes d'accueil déjà
+identifiées, en priorité le README racine et l'accueil des cycles. Le choix du
+lot ne préjuge ni de l'arborescence finale ni de la création d'un document
+supplémentaire. Le dépôt général peut donc commencer à prendre une forme
+Human-First tout en restant un chantier d'audit ouvert.
+
+## Premier lot de reconstruction effective : accueil des cycles
+
+Le premier lot est ouvert sur `02_CYCLES_PHYSIQUES/README.md`. Le README racine
+est conservé comme témoin de contrôle, car sa fonction d'accueil conceptuel et
+de routage humain est déjà compatible avec le contrat Human-First établi.
+
+La réécriture locale de l'accueil des cycles conserve :
+
+- la distinction propre au cycle 8 entre dissémination, valeur de consensus et
+  réalisation ;
+- le lien vers l'évaluation scientifique du cycle ;
+- la route de provenance vers l'issue #115 ;
+- l'absence de réécriture rétroactive de l'évaluation.
+
+La modification déplace seulement le détail opérationnel de l'issue hors du
+flux principal, sans créer de nouveau document ni déplacer la source.
+
+```text
+LOT_1 = README_CYCLES_PHYSIQUES
+README_RACINE = CONSERVE_COMME_TEMOIN
+CONTENU_UNIQUE = CONSERVE
+ROUTE_SCIENTIFIQUE = CONSERVE
+ROUTE_DE_PROVENANCE = CONSERVE_ET_RENDU_OPTIONNEL
+NOUVEAU_DOCUMENT = NON
+DEPLACEMENT = NON
+SUPPRESSION = NON
+PROMOTION = A_DECIDER_HUMAINE
+RESULTAT = POLISSAGE_HUMAN_FIRST_LOCAL_RECEVABLE
+```
