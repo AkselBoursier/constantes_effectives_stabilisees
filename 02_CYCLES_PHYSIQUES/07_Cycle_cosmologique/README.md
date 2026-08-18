@@ -1,6 +1,10 @@
 # Cycle 7 — Cosmologie
 
-Ce README est la porte d’entrée locale vivante du cycle cosmologique. Il ne remplace ni les rapports scientifiques ni les issues de travail ; il indique seulement quelle ligne est active, quelle autorité la gouverne et quelles frontières ne doivent pas être franchies par héritage implicite.
+Ce README est la porte d'entrée locale vivante du cycle cosmologique. Il présente
+les deux lignes de recherche, leur question, leur état courant borné et leur
+route d'autorité. Les rapports scientifiques, les pièces locales et les issues
+conservent chacun leur fonction propre ; cette porte les rend accessibles sans
+fusionner leurs statuts.
 
 ## Deux lignes actives, deux états scientifiques
 
@@ -12,7 +16,9 @@ C7-C1 / X(z) / SCI-1
 C7-GAL / C0
 ```
 
-Elles peuvent partager une infrastructure ou des contraintes logistiques, mais elles ne partagent pas d’état scientifique. Une autorisation, une fermeture, un blocage ou un verdict dans l’une ne se transfère pas dans l’autre.
+Elles peuvent partager une infrastructure ou des contraintes logistiques. Chaque
+ligne conserve son état scientifique, son autorisation, ses blocages et ses
+verdicts ; la lecture d'une ligne reste donc indépendante de l'autre.
 
 Ne jamais désigner `C7-GAL` comme « C7-C1 GAL » : `C7-C1` désigne la ligne `X(z)`.
 
@@ -63,11 +69,14 @@ L’absence d’accès matériel actuel aux deux snapshots HDF5 empêche de calc
 
 Aucun potentiel reconstruit, gradient, courbe de rotation, verdict matière sombre / gravité modifiée ou exécution G2 n’est autorisé par cet état.
 
-## Documents historiques du cycle
+## Provenance et reprise du cycle
 
-Les fichiers `Cycle_cosmologique_v0_1_*` à `v0_7_*`, les architectures, vérifications, évaluations et plans antérieurs restent des pièces de cadrage, de résultat ou de provenance. Ils ne sont pas réécrits pour simuler l’état actuel.
+Les fichiers `Cycle_cosmologique_v0_1_*` à `v0_7_*`, les architectures,
+vérifications, évaluations et plans antérieurs restent des pièces de cadrage,
+de résultat ou de provenance. Leur fonction historique reste accessible tandis
+que ce README porte l'orientation courante.
 
-Pour reprendre une ligne active :
+Pour reprendre une ligne active, suivre ce circuit :
 
 ```text
 README du cycle 7
@@ -76,4 +85,7 @@ README du cycle 7
 → provenance seulement si une décision ou une contradiction l’exige
 ```
 
-Il n’existe pas de `AGENTS.md` local à ce stade : aucune règle locale distincte du noyau racine n’a été jugée nécessaire. Les interdictions et autorisations mouvantes restent dans `#119` et `#120`.
+Le noyau racine porte les règles d'intervention applicables au cycle. Les états
+mouvants, autorisations et blocages sont gouvernés par les issues `#119` et
+`#120`, chacune dans sa ligne ; ce README en donne la route sans reconstruire
+leur contenu à partir de l'historique.

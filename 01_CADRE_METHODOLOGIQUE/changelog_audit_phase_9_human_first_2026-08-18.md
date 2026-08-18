@@ -1356,3 +1356,29 @@ dette documentaire identifiée. Ils ne bloquent pas ce lot de reconstruction,
 mais ne sont pas transformés en validation silencieuse ni effacés par le
 polissage. Le workflow est donc prêt pour une nouvelle pièce, avec ses
 contrôles actifs et ses limites visibles.
+
+## Deuxième pièce : porte locale du cycle 7
+
+Le circuit de reconstruction est appliqué au README local du cycle 7,
+`02_CYCLES_PHYSIQUES/07_Cycle_cosmologique/README.md`, dont la fonction est
+plus sensible qu'une carte générale : il route deux lignes scientifiques
+indépendantes et expose des états bornés, des blocages et des permissions.
+
+La relecture complète a conduit à un polissage limité des passages de fonction,
+de provenance et de reprise. Les blocs d'état de `C7-C1 / X(z) / SCI-1` et de
+`C7-GAL / C0` sont conservés, ainsi que les routes vers `#119` et `#120`.
+L'écriture positive rend la fonction de la porte plus directe sans transformer
+un blocage en autorisation, un état technique en résultat scientifique ou une
+issue en autorité générale.
+
+```text
+PIECE_2 = README_LOCAL_CYCLE_7
+CLASSE = PORTE_DE_ROUTAGE_SCIENTIFIQUE_VIVANTE
+RELECTURE_COMPLETE = EFFECTUEE
+REECRITURE = BORNEE_AU_CADRE_ET_AU_ROUTAGE
+ETATS_SCIENTIFIQUES = CONSERVES
+INDEPENDANCE_C7_C1_C7_GAL = CONSERVEE
+PORTES_SCI1_B1_G2 = CONSERVEES
+RESULTAT = POLISSAGE_HUMAN_FIRST_RECEVABLE_SUR_PIECE_SENSIBLE
+PROMOTION = A_DECIDER_HUMAINE
+```
