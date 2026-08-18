@@ -237,6 +237,79 @@ remplissent actuellement une fonction de navigation réelle. La phase 9 doit
 d'abord proposer une architecture cible séparant présentation, état courant et
 profondeur de laboratoire, puis soumettre cette architecture à validation.
 
+## Sas de resynchronisation : capacité du projet et capacité des documents
+
+L'audit des phases 1 à 8 a qualifié des résultats, des fonctions, des règles,
+des interfaces et des limites. Il n'a pas encore transformé cette qualification
+en contrat explicite pour chaque document public. La phase 9 ajoute donc un sas
+de resynchronisation avant tout polissage :
+
+```text
+RESULTATS_QUALIFIES
+-> CE_QUE_LE_PROJET_PEUT_PORTER
+-> CE_QUE_CHAQUE_DOCUMENT_PEUT_DIRE
+-> PUBLIC_ET_FONCTION_DU_DOCUMENT
+-> FORME, LONGUEUR ET ROUTE_DE_PROVENANCE
+```
+
+Ce sas ne crée pas une nouvelle phase d'audit. Il précise la fonction de la
+phase 9 et empêche une réécriture fidèle de la forme ancienne de conserver des
+énoncés que l'audit a requalifiés, ou de supprimer des limites qui restent
+constitutives de la portée.
+
+### Matrice minimale à produire pour chaque document cible
+
+```text
+DOCUMENT
+PUBLIC_VISE
+FONCTION_UNIQUE_OU_DOMINANTE
+RESULTATS_ET_FONCTIONS_QUE_LE_PROJET_PEUT_PORTER
+ENONCES_AUTORISES
+ENONCES_A_BORNER_OU_A_RENVOYER
+CONTENU_DE_LABORATOIRE_A_RELEGUER
+CONTENU_UNIQUE_A_CONSERVER
+FORMAT_ET_LONGUEUR_PROPORTIONNES
+ROUTE_OPTIONNELLE_VERS_PROVENANCE
+DECISION_HUMAINE_REQUISE
+```
+
+La matrice doit permettre de répondre à la question « que peut dire ce
+document ? », et non seulement « que contient-il aujourd'hui ? ». Un document
+ne doit pas porter simultanément l'accueil, la preuve détaillée, la généalogie,
+le journal d'audit et le workflow agentique lorsque ces fonctions peuvent être
+séparées sans perte.
+
+### Architecture éditoriale cible à discuter
+
+```text
+VUE_PUBLIQUE = projet, questions, acquis qualifiés, limites, points d'entrée
+VUE_SCIENTIFIQUE = synthèses et pièces locales nécessaires à un résultat
+VUE_METHODOLOGIQUE = règles actives et contrats de qualification
+VUE_PROVENANCE = archives, généalogie, états datés, décisions et changelogs
+VUE_AGENTIQUE = AGENTS.md, workflow, contraintes d'intervention
+VUE_EXPERIMENTALE = laboratoire éditorial, plans et essais non promus
+```
+
+La cible n'est pas un fichier unique pour tout le dépôt. Elle vise plutôt un
+document principal par fonction dominante, avec des annexes ou routes de
+provenance optionnelles. La compression est réussie lorsque le lecteur peut
+comprendre l'état courant sans lire la fabrication du projet, tandis que la
+provenance reste récupérable pour un audit ultérieur.
+
+```text
+RESYNCHRONISATION_SEMANTIQUE = REQUISE_AVANT_REECRITURE
+CAPACITE_DU_PROJET = A_DECRIRE_PAR_PORTÉE_ET_RANG
+CAPACITE_DU_DOCUMENT = A_DECRIRE_PAR_PUBLIC_ET_FONCTION
+CONSOLIDATION = A_PROPOSER_APRES_MATRICE_DOCUMENTAIRE
+SUPPRESSION_OU_DEPLACEMENT = TOUJOURS_SOUS_GATE_HUMAIN
+```
+
+Cette proposition est une extension opératoire de la phase 9, non une
+autorisation de polissage. Elle sera testée par ablation : sans ce sas, une
+réécriture peut rester lisible tout en publiant une capacité dépassée ou en
+mélangeant état courant et généalogie ; avec lui, chaque document reçoit une
+portée vérifiable avant sa rédaction.
+
 ## Inventaire des portes d'accueil et de distribution
 
 ### Vues publiques ou de routage humain
