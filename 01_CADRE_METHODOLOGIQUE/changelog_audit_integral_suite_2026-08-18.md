@@ -1060,3 +1060,90 @@ ELEMENTS_DISCRIMINANTS_REMONTEE = OUI
 AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
 PROCHAINE_ACTION = CRIBLER_LES_GROUPES_TEMPS_COSMOLOGIQUE_ET_PHYSIQUE
 ```
+
+---
+
+## 2026-08-18 — Blocs restants de la phase 1 : `92`, `93`, `99` et `audit`
+
+### `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL`
+
+Les dix Markdown du laboratoire editorial ont ete lus. Ils documentent des
+plans et variantes d'essai autour de la qualification de la constance, avec une
+structure soustractive et des dettes bibliographiques explicites.
+
+```text
+TOTAL_BLOBS_93 = 10
+COUVERTURE_93 = COMPLETE
+ESSAI_EDITORIAL = PLAN_DE_TRAVAIL, NON_RESULTAT_SCIENTIFIQUE
+DETTES_TAL_DE_COURTENAY = LEVEES_DANS_LES_FICHES_V0_2
+PDF_EDITEURS = A_RETIRER_AVANT_FUSION_PUBLIQUE
+```
+
+Le laboratoire conserve comme garde-fous : exactitude definissante != mesure,
+validite de domaine, couplage modele-acces, bornes neutrino != mesures positives,
+et absence de conclusion ontologique. Les budgets de signes, variantes v0.1-v0.3
+et choix de structure restent des decisions editoriales, non des validations du
+cadre ni des resultats physiques.
+
+### `99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX`
+
+Les quatre blobs ont ete lus. Le dossier est public, expurge et preparation-only.
+
+```text
+TOTAL_BLOBS_99 = 4
+COUVERTURE_99 = COMPLETE
+CONTRAT_C7_C1 = PREPARATION_ONLY
+MCMC_ET_PRODUCTION = FERMEES
+MANIFESTES_REELS = INTERDITS_DANS_LE_DEPOT_PUBLIC
+DATA_RUNS_ENVIRONNEMENTS = HORS_GIT
+```
+
+Le contrat confirme que le volume et les chemins computationnels reels doivent
+rester dans un contrat prive hors depot. Aucune valeur de capacite ou de contrat
+public ne constitue une autorisation de calcul.
+
+### `audit`
+
+Les trois scripts d'audit ont ete lus. Ils controlent des proprietes techniques
+(placeholders, structure Markdown, assainissement d'exports) et ne qualifient
+ni la science, ni l'autorite, ni l'interpretation.
+
+```text
+TOTAL_BLOBS_AUDIT = 3
+COUVERTURE_AUDIT = COMPLETE
+CONTROLES_MACHINE = TECHNIQUES_SEULEMENT
+PLACEHOLDERS = DETTE_D_EXTRACTION, NON_INVALIDITE_SCIENTIFIQUE
+```
+
+### `92_ARCHIVES_CONVERSATIONNELLES`
+
+Le README et le registre court des arbitrages sont lus. Le bloc contient huit
+blobs : trois exports JSON, trois Markdown paralleles, un README et un registre
+d'arbitrages. Les paires JSON/Markdown proviennent des memes exports et ne sont
+pas deux sources independantes.
+
+```text
+TOTAL_BLOBS_92 = 8
+ARCHIVES_ASSAINIES = OUI
+AUTORITE_SCIENTIFIQUE_ACTIVE = NON
+EXTRACTION_SELECTIVE_VALIDEE = OUI
+LECTURE_DES_SIX_EXPORTS = NON_ETABLIE_A_CE_PALIER
+```
+
+Le README declare que l'export integral courant n'est pas une obligation et que
+la cartographie selective des transitions est le dispositif de provenance
+retenu. Cette disposition est une regle locale de l'archive, mais elle doit
+etre comparee a l'exigence d'exhaustivite du programme actuel avant de fermer
+la phase 1. La phase ne sera donc pas declaree close sur ce seul fondement.
+
+### Etat de phase 1
+
+```text
+93_COMPLETE = OUI
+99_COMPLETE = OUI
+AUDIT_COMPLETE = OUI
+92_COMPLETE = NON_ETABLI
+91_COMPLETE = NON_ETABLI_SELON_EXCEPTION_BORNEE
+PHASE_1_DOCUMENTAIRE = NON_CLOTUREE
+PROCHAINE_ACTION = ALIGNER_LE_REGIME_SELECTIF_DE_92_AVEC_LA_REGLE_DE_PHASE_1
+```
