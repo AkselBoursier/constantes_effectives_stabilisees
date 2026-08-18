@@ -1276,3 +1276,30 @@ SUPPRESSION = NON
 PROMOTION = A_DECIDER_HUMAINE
 RESULTAT = POLISSAGE_HUMAN_FIRST_LOCAL_RECEVABLE
 ```
+
+## Mobilisation des outils sur pièces
+
+La clôture des tests abstraits d'outillage ne vaut pas clôture de l'usage des
+outils. À partir de ce lot, les outils déjà fabriqués sont mobilisés sur les
+pièces de reconstruction lorsque leur fonction et leur classe le justifient.
+Le premier lot a déjà utilisé la matrice de capacité pour qualifier la cible et
+l'audit structurel pour contrôler les liens, les clôtures Markdown et les
+marqueurs de conflit. Les avertissements de références anciennes ont été
+conservés comme dette distincte, sans élargir artificiellement le lot.
+
+```text
+TESTS_ABSTRAITS_OUTILLAGE = CLOS_DANS_LEUR_PERIMETRE
+OUTILS_EXISTANTS = MOBILISABLES_SUR_PIECE
+EVALUATION_SUR_PIECE = MODE_DE_TRAVAIL_ACTIF
+OUTIL_APPEND_ONLY = RESERVE_A_LA_JOURNALISATION_STRUCTURELLE
+NOUVEL_OUTIL = NON_REQUIS_SANS_DEFICIT
+CHAQUE_OPERATION = OUTIL + CLASSE + ENTREE + SORTIE + LIMITE + DECISION
+CHANGELOG = MEMOIRE_OPERATOIRE_ET_PROVENANCE
+CHANGELOG != AUTORITE_SCIENTIFIQUE
+```
+
+Le polissage intervient donc dans le workflow Human-First dès qu'une pièce est
+reconstruite, sous la forme d'une opération contrôlée et réversible. Les
+protocoles de réécriture restent les règles de rédaction et de contrôle de
+perte ; ils ne constituent pas un préalable pour différer toute application,
+ni une permission de réécrire sans qualification de la pièce.

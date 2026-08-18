@@ -106,24 +106,27 @@ CI = PARTIE_DU_WORKFLOW_GLOBAL
 DECISIONS_HUMAINES = CONSERVEES
 ```
 
-## Mise en veille active du fil outils
+## Mobilisation sélective sur pièce
 
-Le fil outils et workflow est suffisamment instruit pour ne pas exiger un
-nouveau test abstrait immédiat. Il n'est pas clôturé au sens fort : les outils
-pourront être testés directement sur pièce lors des travaux futurs, ce qui est
-le meilleur moment pour vérifier leur robustesse, leur fonctionnalité et leur
-transportabilité.
+Le fil outils et workflow ne fait pas l'objet d'un nouvel inventaire abstrait.
+Les outils déjà fabriqués sont toutefois mobilisés sur les pièces de la
+reconstruction lorsque leur fonction, leur classe et leur contrat le justifient.
+Cette utilisation directe sur pièce est désormais le mode principal de
+qualification restant : elle permet de vérifier la robustesse, la
+fonctionnalité et la transportabilité dans une opération réelle.
 
 ```text
-FIL_OUTILS = MIS_EN_VEILLE_ACTIVE
+FIL_OUTILS = MOBILISATION_SELECTIVE_SUR_PIECE
 RESULTATS_LOCAUX = CONSERVES
 PROMOTION = NON_OUVERTE
-TEST_DIRECT_SUR_PIECE = A_REPRENDRE_AU_BESOIN
+TEST_DIRECT_SUR_PIECE = MODE_DE_TRAVAIL_ACTIF
 TEMPLATE = NON_DECIDE
-RETOUR_AU_FIL_PRINCIPAL = OUI
+NOUVEL_OUTIL = NON_REQUIS_SANS_DEFICIT
 ```
 
-La suite prioritaire revient donc à la documentation computationnelle, à la
-reconception générale et aux tests de l'audit principal. Une reprise du fil
-outils sera déclenchée seulement par une opération concrète qui fournit un
-discriminant nouveau, et non par l'obligation de compléter un inventaire.
+Chaque opération doit déclarer l'outil mobilisé, sa fonction, ses entrées, ses
+sorties, ses garanties effectives et ses limites. Un résultat technique reste
+séparé de la lecture humaine et de la décision de promotion. Le changelog n'est
+donc pas seulement une archive : il conserve la mémoire opératoire nécessaire
+pour reprendre et appliquer les transformations qualifiées, sans devenir une
+autorité scientifique ni un registre exhaustif.
