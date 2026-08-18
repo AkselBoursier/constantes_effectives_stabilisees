@@ -92,6 +92,37 @@ condition que son perimetre soit declare ainsi. Dans les contrats locaux, il
 faudra conserver les noms des registres concernes plutot que d'ecrire seulement
 « contenu semantique ».
 
+### Méta-règle d'ouverture et d'émergence
+
+La liste des registres ci-dessus est initiale et illustrative. Elle n'est pas
+une taxonomie fermée, ni une obligation de classement exhaustif. Un contenu
+peut rester transversal, mixte, non classé ou provisoirement indécidable si
+aucune catégorie ne le décrit sans perte.
+
+```text
+REGISTRES_PROPOSES = REPÈRES_INITIAUX, NON_LISTE_FERMEE
+ELEMENT_EMERGENT = A_DECRIRE_AVANT_DE_LE_CLASSER
+FORCAGE_DANS_UNE_CASE = REFUSE
+DIMENSION_NOUVELLE = A_TESTER, NON_AJOUTER_AUTOMATIQUEMENT
+STATUT_NON_CLASSABLE = RECEVABLE_ET_A_CONSERVER
+```
+
+Lorsqu'un élément nouveau apparaît, la première question n'est donc pas « dans
+quelle case le faire entrer ? », mais « que change-t-il dans la compréhension,
+la preuve, la méthode, la pratique ou la transmission du projet ? ». Il peut
+révéler une relation entre plusieurs registres, une fonction qui les traverse,
+ou une dimension que le modèle ne prévoyait pas.
+
+Une dimension nouvelle ne devient pas une nouvelle catégorie durable par sa
+seule apparition. Elle doit montrer un gain discriminant, une fonction propre
+ou une nécessité de contrôle supérieure au coût de l'ajouter. Inversement,
+l'absence de catégorie adaptée ne doit jamais justifier la disparition,
+l'affaiblissement ou la réécriture silencieuse de l'élément.
+
+Cette méta-règle reprend la règle générale d'émergence des règles : le modèle
+reste ouvert à ce qui le met en défaut, et toute extension est locale tant
+qu'elle n'a pas été testée au-delà de son cas d'apparition.
+
 ## Principes de conception
 
 1. **Fonction avant emplacement.** Un chemin ne doit pas décider seul du rang,

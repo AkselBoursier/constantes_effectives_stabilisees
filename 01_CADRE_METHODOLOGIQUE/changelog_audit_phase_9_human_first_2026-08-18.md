@@ -632,6 +632,27 @@ ce périmètre soit déclaré dans le cadrage et que les contrats locaux précis
 toujours s'ils portent sur la physique, l'épistémique, le computationnel, la
 méthodologie, la philosophie ou l'éditorial.
 
+### Méta-règle : la liste reste ouverte
+
+Les registres nommés ne constituent pas une liste exhaustive. Ils servent de
+repères initiaux pour instruire l'architecture sémantique intégrale. Un élément
+qui ne rentre pas proprement dans ces repères peut rester transversal, mixte,
+non classé ou indécidable ; il ne doit pas être forcé dans une case pour
+produire une apparence de complétude.
+
+```text
+LISTE_DES_REGISTRES = OUVERTE
+ELEMENT_EMERGENT = A_DECRIRE_ET_A_TESTER
+FORCAGE_TAXONOMIQUE = REFUSE
+NOUVELLE_DIMENSION = A_JUSTIFIER_PAR_UN_GAIN_DISCRIMINANT
+GENERALISATION = NON_AUTOMATIQUE
+```
+
+L'absence d'une catégorie adaptée est elle-même une information du test. Elle
+peut signaler une relation transversale ou une dimension émergente, sans
+imposer immédiatement d'allonger la liste. Toute extension reste locale tant
+qu'elle n'a pas montré sa nécessité et sa portée.
+
 Le test suivant comparera la forme actuelle de l'accueil des cycles à une
 proposition éventuellement séparée entre carte publique et détails de
 routage. La décision dépendra du gain de lisibilité et de contrôle observé,
