@@ -816,6 +816,34 @@ PROCHAINE_ACTION = LIRE_LES_CONTROLES_RESTANTS_ET_LES_DOCUMENTS_DE_TRAVAIL_CIBLE
 
 ---
 
+## 2026-08-18 — Amendement humain borne pour `91_TRAVAUX_ANTERIEURS`
+
+Decision explicite recueillie au cours de la reprise : pour le dossier des
+travaux anterieurs, la granularite peut etre reduite et l'exhaustivite peut etre
+relative, a condition de conserver tout element qui peut modifier l'audit.
+
+Cette exception ne s'etend pas au corpus documentaire de reference principal.
+Elle ne permet pas d'exclure un document par son titre ou son statut apparent.
+Elle modifie seulement la forme de remontee du lot 91 : lecture et synthese par
+regroupements, avec conservation des elements discriminants.
+
+```text
+EXCEPTION_DE_GRANULARITE = 91_TRAVAUX_ANTERIEURS_SEULEMENT
+EXHAUSTIVITE_RELATIVE = AUTORISEE_DANS_CE_DOSSIER
+ELEMENTS_UNIQUES_A_EFFET_D_AUDIT = A_CONSERVER
+QUESTIONS_DETTES_BIFURCATIONS_RESULTATS_NEGATIFS = A_CONSERVER
+PROVENANCE_CONTRADICTIONS_LIMITES = A_CONSERVER
+EXCLUSION_PAR_SURFACE = INTERDITE
+CORPUS_PRINCIPAL_668 = REGLE_D_EXHAUSTIVITE_INCHANGE
+```
+
+Le statut de couverture du lot 91 sera donc exprime en termes de groupes lus,
+de pieces controlees et d'elements discriminants remontes, sans pretendre a une
+lecture integrale de chaque conversation brute lorsque celle-ci n'est pas
+necessaire pour l'effet d'audit.
+
+---
+
 ## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : migrations et prose historique recoupees
 
 Les documents `M_migrations.md`, `T0_MANUSCRIT_NOUVEAU.md`,
