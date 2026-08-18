@@ -260,6 +260,18 @@ qualifier scientifiquement de nouveaux résultats sans ouvrir une instruction
 distincte des dettes qu'il énumère. Il n'y a pas de résurgence non prévue par
 les critères d'extension de #130.
 
+Cette limite de portée n'est pas inscrite comme une dette autonome de phase 2.
+Elle reste un résultat du challenge, utile pour borner les conclusions et pour
+orienter éventuellement la phase 3 ; une dette scientifique ne sera déclarée
+que si une instruction ultérieure identifie une question précise, un gain
+discriminant attendu et une condition de reprise.
+
+```text
+C2_LIMITE_DE_PORTEE = RESULTAT_DE_CHALLENGE
+DETTE_SCIENTIFIQUE_C2 = NON_DECLAREE_A_CE_PALIER
+DECLARATION_DETTE_FUTURE = CONDITIONNELLE_A_UNE_QUESTION_PRECISE
+```
+
 ---
 
 ## 2026-08-18 — Clôture de la phase 2 sous périmètre qualifié
