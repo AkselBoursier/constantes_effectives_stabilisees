@@ -20,7 +20,7 @@ complete au lieu de la recopier.
 ```text
 PHASE = 2 / AUDIT_SCIENTIFIQUE_DES_RESULTATS_PORTEURS
 ISSUE_DE_CADRAGE = #130
-STATUT = EN_COURS
+STATUT = QUALIFIEE_DANS_LE_PERIMETRE
 CORPUS_DE_DEPART = RESULTATS_ET_DETTES_REMONTEES_EN_PHASE_1
 RELECTURE_GLOBALE_DES_668_BLOBS = NON_PAR_DEFAUT
 NOUVEAU_CALCUL = NON_LANCE
@@ -274,7 +274,7 @@ DECLARATION_DETTE_FUTURE = CONDITIONNELLE_A_UNE_QUESTION_PRECISE
 
 ---
 
-## 2026-08-18 — Clôture de la phase 2 sous périmètre qualifié
+## 2026-08-18 — État intermédiaire après S1–S3
 
 Les six sentinelles candidates ont franchi leur porte d'approfondissement, et
 les deux contrôles pré-engagés ont été exécutés dans leur périmètre borné.
@@ -318,7 +318,7 @@ contre-audit produit un faux raccord ou si une question validée introduit un
 résultat hors périmètre. Une réouverture devra identifier le déclencheur, la
 conclusion à retester et le périmètre minimal.
 
-La phase 3 conceptuelle n'est pas ouverte par cette clôture.
+La phase 3 conceptuelle n'est pas ouverte par cet état intermédiaire.
 
 ```text
 PROCHAINE_ETAPE = ATTENDRE_OUVERTURE_EXPLICITE_DE_L_ETAPE_3
@@ -411,4 +411,28 @@ RESULTAT_SCIENTIFIQUE_UNIVERSEL = NON_ETABLI
 MECANISME_MICROSCOPIQUE = NON_ETABLI
 REINTERPRETATION_DU_TOY_MODEL_EN_HISTOIRE_PHYSIQUE = REFUSEE
 NOUVEAU_CALCUL = NON_LANCE
+```
+
+---
+
+## 2026-08-18 — Clôture finale de la phase 2 sous périmètre qualifié
+
+La clôture intervient après l'instruction de S1–S6 et l'exécution bornée des
+contrôles C7 et C2. L'entrée intermédiaire précédente est conservée comme
+étape de journalisation ; elle ne constitue pas une clôture anticipée.
+
+```text
+S1_A_S6 = QUALIFIES_DANS_LE_PERIMETRE
+C7 = CONTROLE_DE_RANG_EXECUTE
+C2 = CHALLENGE_EXECUTE, EXTENSION_NON_DECLENCHEE
+PHASE_2 = QUALIFIEE_DANS_LE_PERIMETRE
+STATUT = QUALIFIEE_DANS_LE_PERIMETRE
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+DETTE_SCIENTIFIQUE_C2 = NON_DECLAREE_A_CE_PALIER
+NOUVELLE_REGLE_DURABLE = AUCUNE
+NOUVELLE_META_REGLE = AUCUNE
+PHASE_3_ET_4 = OUVERTES_DANS_LEURS_JOURNAUX_PROPRES
+PHASE_5_ET_SUIVANTES = NON_OUVERTES
+NOUVEAU_CALCUL = NON_LANCE
+MUTATION_SCIENTIFIQUE = AUCUNE
 ```
