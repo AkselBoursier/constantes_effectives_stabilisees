@@ -30,7 +30,7 @@ Les autres portes dépendent de la tâche :
 
 - **[Cadre méthodologique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)** : bornes des affirmations, distinctions entre cible, accès et constitution, et discipline des qualifications transversales ;
 - **[Glossaire](GLOSSAIRE.md)** : terminologie active lorsqu’un terme du projet doit être précisé ;
-- **[Philosophie](06_PHILOSOPHIE/README.md)** : volet distinct. Il n’est pas la porte de reprise actuelle des dossiers scientifiques et doit être resitué avant toute nouvelle propagation vers ceux-ci ;
+- **[Philosophie](06_PHILOSOPHIE/README.md)** : volet distinct. Il n’est pas la porte de reprise actuelle des dossiers scientifiques et doit être resitué avant toute nouvelle propagation vers ceux-ci. Son README conserve des marqueurs de la phase philosophique antérieure (`Chantier actif`, branche de travail, prochaine opération) : ils documentent cette coupure et ne constituent pas, à eux seuls, une autorisation opérationnelle actuelle ;
 - **[AGENTS.md](AGENTS.md)** : règles opérationnelles minimales pour intervenir dans le dépôt.
 
 ## Où se trouve l’état courant ?

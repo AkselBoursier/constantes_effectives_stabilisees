@@ -3,11 +3,11 @@
 Ce glossaire recense les termes méthodologiques fondamentaux du corpus. Il ne
 remplace pas les décisions et protocoles actifs ; il sert de référence rapide.
 
-Documents directeurs :
+Références de rang et d’application :
 
-- [Décision de rang — constance, accès et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) ;
-- [Ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) ;
-- [Verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md).
+- [Décision de rang — constance, accès et constitution](01_CADRE_METHODOLOGIQUE/Decision_statuts_constance_acces_constitution_v0_1.md) — décision canonique encore applicable pour cette distinction ;
+- [Ajustements directeurs D1–D5](01_CADRE_METHODOLOGIQUE/Ajustements_directeurs_D1_D5_regimes_constance_v0_1.md) — couche d’application validée, sans fonction de tableau de bord ;
+- [Verdict final de l’audit de portée](05_CARTES_ET_SYNTHESES/Verdict_final_audit_portee_regimes_constance_v0_1.md) — décision qui a autorisé ces ajustements. Ses sections de séquence et d’état terminal décrivent la coupure du 20 juillet 2026 (`application documentaire` alors ouverte, `T1–T3` alors ouverts, cycle 1 alors prochaine dette) et ne doivent pas être lues comme état programmatique courant.
 
 La [note méthodologique v1.3](01_CADRE_METHODOLOGIQUE/Note_synthese_methodologique_v1_3_pre_familial_et_temporalite.md)
 reste un état généalogique important, mais elle ne commande plus seule la
