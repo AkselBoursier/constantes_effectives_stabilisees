@@ -188,6 +188,55 @@ DEPLACEMENT_OU_SUPPRESSION = NON_AUTORISE
 PROCHAINE_INSTRUCTION = INVENTORIER_LES_README_ET_DOCUMENTS_D_ACCUEIL
 ```
 
+## Audit structurel des deux portes publiques principales
+
+### README racine
+
+```text
+LIGNES = 55
+FONCTION = OBJET_DU_PROJET, QUESTIONS, DISTINCTION_MINIMALE, ROUTAGE_HUMAIN
+TUYAUTERIE_EXPLICITE = FAIBLE
+HISTORICITE_EXPLICITE = LIMITEE_AU_NOM_HISTORIQUE
+ETAT = PORTE_PUBLIQUE_COURANTE_COMPATIBLE_HUMAN_FIRST
+```
+
+Le README racine présente le projet, ses deux questions, la distinction
+constance/stabilisation et les portes de lecture. Sa section sur l'état courant
+reste utile pour le routage, mais devra être distinguée, au polissage, d'un
+tableau de bord de laboratoire.
+
+### Accueil des cycles physiques
+
+```text
+LIGNES = 35
+FONCTION = PRESENTATION_DES_DIX_CYCLES_ET_ROUTAGE_SCIENTIFIQUE
+TABLEAU_DES_CYCLES = OUI
+VERSIONNAGE_DES_CIBLES = PRESENT
+ETATS_ET_ISSUES = PRESENTS_PAR_REFERENCE
+ETAT = PORTE_HYBRIDE_PUBLIC / LABORATOIRE
+```
+
+L'accueil des cycles est lisible et utile, mais il combine la présentation des
+terrains avec des chemins de reprise, des versions de synthèses, des résultats
+locaux et une issue active (#115). Cette hybridation ne constitue pas encore
+une faute : le fichier sert effectivement de routage vivant. Elle devient
+toutefois la première cible de séparation des vues Human-First.
+
+### Décision de cadrage
+
+```text
+README_RACINE = CONSERVE_COMME_BASE_PUBLIQUE, A_POLIR_APRES_ARCHITECTURE_VALIDEE
+README_CYCLES = CONSERVE_COMME_ROUTAGE_HYBRIDE, SEPARATION_PUBLIC/LABORATOIRE_A_TESTER
+REDACTION_IMMEDIATE = NON
+FUSION_OU_DEPLACEMENT = NON
+PROCHAINE_INSTRUCTION = DEFINIR_LA_STRUCTURE_CIBLE_DU_README_RACINE_ET_DES_CYCLES
+```
+
+Le test d'ablation ne justifie pas encore de réécrire : les deux documents
+remplissent actuellement une fonction de navigation réelle. La phase 9 doit
+d'abord proposer une architecture cible séparant présentation, état courant et
+profondeur de laboratoire, puis soumettre cette architecture à validation.
+
 ## Inventaire des portes d'accueil et de distribution
 
 ### Vues publiques ou de routage humain
