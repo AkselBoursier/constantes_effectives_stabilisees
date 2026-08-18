@@ -1325,3 +1325,34 @@ La skill n'est donc pas créée à ce stade. Plusieurs opérations sur des class
 de documents différentes devront d'abord montrer un gain réel de continuité et
 de charge cognitive, sans transformer le protocole local en nouvelle couche
 obligatoire.
+
+## Préparation opérationnelle du workflow
+
+Le terme « compilation » est retenu ici comme métaphore informatique bornée :
+il désigne la vérification que les fonctions nécessaires à une opération de
+reconstruction sont disponibles, compatibles et appelables dans le dépôt. Il
+ne désigne ni une compilation du sens, ni une validation scientifique, ni une
+automatisation complète de la rédaction.
+
+```text
+COMPILATION_METAPHORIQUE = PREPARATION_OPERATIONNELLE
+OUTILS = EXECUTABLES
+CONTRATS = PRESENTS_ET_COMPATIBLES
+ENTREES_ET_SORTIES = IDENTIFIABLES
+LIMITES = DECLAREES
+LECTURE_HUMAINE = NON_DELEGABLEE
+DECISION_DE_PROMOTION = NON_AUTOMATIQUE
+```
+
+Le contrôle de préparation a confirmé :
+
+- l'exécutabilité de l'outil append-only et de l'audit structurel ;
+- la présence du contrat de mobilisation sélective sur pièce ;
+- la présence du circuit de relecture complète et de réécriture positive ;
+- l'absence d'erreur structurelle dans le corpus contrôlé.
+
+Les neuf avertissements de références potentiellement anciennes restent une
+dette documentaire identifiée. Ils ne bloquent pas ce lot de reconstruction,
+mais ne sont pas transformés en validation silencieuse ni effacés par le
+polissage. Le workflow est donc prêt pour une nouvelle pièce, avec ses
+contrôles actifs et ses limites visibles.
