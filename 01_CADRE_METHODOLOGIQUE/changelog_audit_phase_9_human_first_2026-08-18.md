@@ -967,6 +967,31 @@ nouvelle autorité. Le prochain lot à tester sera computationnel ou probatoire,
 afin d'exposer le modèle à des relations dont la portée pour un résultat est
 plus directement contrôlée.
 
+## Palier 11 : test du lot computationnel et probatoire
+
+Le test est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_lot_computationnel_probatoire_2026-08-18.md`.
+Le lot comprend un protocole commun neutrino, une matrice comparative, un
+manifeste de provenance ALPHA, un résultat de reproduction borné et un rapport
+historique de blocage.
+
+```text
+PALIER_11 = LOT_COMPUTATIONNEL_PROBATOIRE
+CONTRAT_COMPUTATIONNEL = TIENT_SUR_LE_LOT
+RELATIONS_PROBATOIRES = DOIVENT_ETRE_TYPEES
+DISTINCTION_MACHINE_TECHNIQUE_SCIENCE = CONSERVABLE
+VUES_SCIENTIFIQUE_ET_COMPUTATIONNELLE = SEPARABLES
+CALCUL_NOUVEAU = NON_LANCE
+MIGRATION = NON_OUVERTE
+```
+
+Le test confirme qu'un résultat de reproduction borné ne devient pas une
+nouvelle mesure, qu'une empreinte de provenance ne devient pas une validation
+physique et qu'un blocage historique ne devient pas l'état courant. Les
+relations computationnelles et probatoires exigent un vocabulaire plus strict
+que les routes de lecture, mais elles restent compatibles avec le socle par
+objets autonomes et relations explicites.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
