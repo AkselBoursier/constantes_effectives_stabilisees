@@ -103,3 +103,87 @@ Construire l'inventaire cible des documents d'accueil et de distribution, puis
 proposer une architecture de vues publiques et de routes optionnelles vers la
 provenance. Aucune reecriture en masse, suppression, fusion ou modification de
 l'etat scientifique n'est autorisee avant validation humaine du perimetre.
+
+## Inventaire initial des règles d'ecriture et essais éditoriaux
+
+### Réécriture positive
+
+```text
+Reecriture_positive_vocabulaire_v0_1 = ETAPE_GENEALOGIQUE
+Reecriture_positive_vocabulaire_v0_2 = EXTENSION_STRUCTURELLE, SOURCE_HISTORIQUE
+Reecriture_positive_vocabulaire_v0_3 = CANDIDAT_ACTIF, TESTE_SUR_TROIS_GENRES
+Test_reecriture_structurelle_v0_1 = VALIDATION_BORNEE, DEPLOIEMENT_PAR_CERCLES
+```
+
+La v0.3 conserve les refus factuels, les non-thèses et les sorties négatives
+dans leurs conteneurs propres. Elle ajoute la complétude informative, la
+charité de rang et les registres de modalité. Son principe n'est donc pas une
+interdiction de dire non : il exige que le texte nomme d'abord le résultat, la
+fonction, l'appui ou le rang, puis conserve la limite avec toute sa force.
+
+```text
+V0_3 = REGLE_DE_REDACTION_ACTIVE_A_EVALUER_DOCUMENT_PAR_DOCUMENT
+V0_1_V0_2 = PROVENANCE_GENEALOGIQUE, NON_CANDIDATS_CONCURRENTS
+TEST_STRUCTUREL = SUPPORT_SATISFAISANT, GENERALISATION_A_CONTROLER
+```
+
+### Protocole de rédaction post-philosophie
+
+Le protocole post-philosophie fournit le noyau opératoire : écriture positive,
+deux registres `constance` / `constante`, statuts probatoires P1-P6,
+correction modale, positionnement Q1/Q2 et discipline Git. Il guide les
+nouveaux documents, mais ne décide pas à lui seul quels documents doivent
+devenir publics, historiques ou annexes.
+
+```text
+PROTOCOLE_POST_PHILOSOPHIE = GUIDE_OPERATOIRE
+STATUT_PUBLIC_DES_DOCUMENTS = A_DETERMINER_PAR_INVENTAIRE_HUMAN_FIRST
+SEPARATION_VUE_PUBLIQUE_LABORATOIRE = ADDENDUM_PHASE_9_REQUIS
+```
+
+### Non-prolifération et consolidation
+
+La synthèse de récupération du socle méthodologique et la note critique de
+compression portent le principe suivant : une distinction locale peut rester
+utile dans une fiche sans devenir une famille générale ; la compression doit
+changer le niveau sans appauvrir la carte.
+
+```text
+COMPRESSION = GAIN_DE_CLARTE_SANS_PERTE_DE_DISCRIMINATION
+FUSION = AUTORISEE_SEULEMENT_APRES_REMONTEE_ET_CONTROLE_DU_CONTENU_UNIQUE
+DOCUMENT_UNIQUE_PAR_FONCTION = HYPOTHESE_DE_CONSOLIDATION_A_TESTER
+```
+
+Cette règle ne justifie pas encore une fusion concrète : les fonctions, publics,
+statuts et dépendances des documents cibles doivent d'abord être inventoriés.
+
+### Laboratoire éditorial
+
+Le laboratoire contient actuellement des plans, une tentative de rédaction et
+une relecture de l'essai `Qualifier la constance`. Ces pièces montrent une
+capacité rédactionnelle et des choix de structure, mais l'essai conserve des
+formulations historiques, des affirmations longues et un appareil de sources
+qui exigeraient une qualification distincte avant diffusion.
+
+```text
+ESSAI_QUALIFIER_LA_CONSTANCE = MATERIAU_EXPERIMENTAL
+PLAN_LIVRABLE_THEORIQUE = PLAN_DE_REDACTION, NON_TEXTE_PUBLIC_AUTORISE
+RELECTURE = CONTROLE_EDITORIAL, NON_VALIDATION_SCIENTIFIQUE
+LABORATOIRE_EDITORIAL = PROVENANCE_ET_ESSAIS, NON_FLUX_PUBLIC
+README_DU_LABORATOIRE = NON_TROUVE_DANS_LE_CLONE_A_CE_PALIER
+```
+
+L'absence du README attendu est une lacune d'inventaire à vérifier, non une
+autorisation de créer ou de déplacer un document.
+
+## Décision de phase à ce palier
+
+```text
+REGLES_D_ECRITURE_REMONTEES = OUI
+REGLE_ACTIVE_CANDIDATE = REECRITURE_POSITIVE_V0_3
+REGLE_DE_COMPRESSION = JUSTIFIEE_COMME_CRITERE, NON_COMME_FUSION_AUTOMATIQUE
+VUE_PUBLIQUE_LABORATOIRE = DISTINCTION_JUSTIFIEE
+REECRITURE_PUBLIQUE = NON_OUVERTE
+DEPLACEMENT_OU_SUPPRESSION = NON_AUTORISE
+PROCHAINE_INSTRUCTION = INVENTORIER_LES_README_ET_DOCUMENTS_D_ACCUEIL
+```
