@@ -694,6 +694,32 @@ ARBORESCENCE_CIBLE = NON_DECIDEE
 MIGRATION = NON_OUVERTE
 ```
 
+## Palier 2 : mappage abstrait du lot pilote
+
+Le mappage est consigné dans :
+`01_CADRE_METHODOLOGIQUE/mappage_abstrait_lot_pilote_architecture_2026-08-18.md`.
+Le lot comprend six pièces observées dans leurs fonctions actuelles : accueil,
+synthèse scientifique, blocage computationnel, décision méthodologique,
+provenance et plan éditorial expérimental.
+
+```text
+PALIER_2 = MAPPAGE_ABSTRAIT_SANS_DEPLACEMENT
+LOT = 6 PIECES
+MAPPAGE_SANS_CHEMIN = POSSIBLE_SUR_LE_LOT
+FONCTION_DOMINANTE = UTILE_MAIS_NON_EXCLUSIVE
+REGISTRES_MULTIPLES = NECESSAIRES
+NOMBRE_DE_DOCUMENTS = NON_DEDUIT_A_CE_PALIER
+ARBORESCENCE = NON_DEDUITE_A_CE_PALIER
+```
+
+Le mappage montre que les statuts et relations ne sont pas interchangeables :
+un blocage d'exécution, une décision canonique, une archive et un essai ne
+produisent pas les mêmes effets. Il confirme aussi qu'une pièce peut relever de
+plusieurs registres sans devoir être copiée. Les tensions relevées concernent
+la pluralité de L4, le routage présent dans L5 et l'incompatibilité de public et
+de statut entre L1 et L6 ; elles seront testées au palier des vues, sans
+correction immédiate.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
