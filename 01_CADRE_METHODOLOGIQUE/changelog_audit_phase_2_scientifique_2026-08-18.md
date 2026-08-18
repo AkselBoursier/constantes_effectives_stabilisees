@@ -150,3 +150,66 @@ DETTE_COMPUTATIONNELLE = CONSERVEE
 NOUVEAU_CALCUL = NON_LANCE
 PROCHAINE_SENTINELLE = S3 / CYCLE_5_SAVEUR_HIGGS
 ```
+
+---
+
+## 2026-08-18 — S3 : cas électronique Saveur–Higgs
+
+### Porte d'approfondissement
+
+La synthèse active du cycle 5 porte un usage matériel distinct : elle utilise
+le cas électronique pour tester comment une architecture de relations devient
+un réseau de passages probatoires, sans confondre masse physique, paramètre
+renormalisé, Yukawa inféré et accès direct au vertex Higgs–électron.
+
+```text
+USAGE_MATERIEL_S3 = ETABLI
+QUESTION = DISTINGUER_ARCHITECTURE, DETERMINATION, INFERENCE, RACCORDEMENT, ACCES_DIRECT
+POINT_DE_DESCENTE = SYNTHESE_ACTIVE_S1_S3
+S1_A_S3 = NON_DESCENDUS_A_CE_PALIER
+```
+
+### Résultat local examiné
+
+Le cas distingue les cibles :
+
+```text
+M_E = MASSE_PHYSIQUE
+M_E_S_MU = PARAMETRE_DE_MASSE_RENORMALISE
+Y_E_S_MU = YUKAWA_RENORMALISE_INFERÉ
+V_S_MU = PARAMETRE_ELECTROFAIBLE_RENORMALISE
+V_F = ECHELLE_DERIVEE_DE_G_F
+G_HEE = VERTEX_HIGGS_ELECTRON
+```
+
+Il distingue également trois rangs de la relation masse–Yukawa : identité nue,
+paramétrisation renormalisée et raccordement radiatif à une masse physique. La
+chaîne probatoire va de la détermination métrologique de `M_e` à l'inférence du
+Yukawa sous cadre déclaré, puis aux accès indirects et à la recherche directe.
+
+### Portée et limites
+
+```text
+M_E = DETERMINÉE_AVEC_GRANDE_PRECISION
+Y_E = INFERE_SOUS_MODELE_ET_SCHEMA_DECLARÉS
+ACCES_INDIRECTS = COMPLEMENTAIRES, MODELE_DEPENDANTS
+H_E_E_DIRECT = BORNE_SANS_OBSERVATION
+ORIGINE_DU_YUKAWA = NON_EXPLIQUEE
+GENERALISATION_AUX_AUTRES_FERMIONS = NON_ETABLIE
+AJUSTEMENT_GLOBAL_SMEFT = NON_ETABLI
+```
+
+Le lot électronique établit donc localement qu'une relation structurelle peut
+être accompagnée d'un réseau de passages probatoires indexés. Il ne fournit ni
+mesure directe acquise du Yukawa électronique, ni explication de la hiérarchie
+fermionique, ni autorisation de propager automatiquement le profil aux autres
+fermions ou matrices.
+
+```text
+S3 = QUALIFIEE_DANS_LE_PERIMETRE_LOCAL
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+TRIANGULATION_SUPPLEMENTAIRE = NON_REQUISE_A_CE_PALIER
+REOUVERTURE_S3 = SUR_MATERIAU_MODIFIANT_CIBLE, RANG OU VERDICT
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_SENTINELLE = S4 / CYCLE_6_THEORIES_EFFECTIVES_BASSE_ENERGIE
+```
