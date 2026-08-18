@@ -720,6 +720,29 @@ la pluralité de L4, le routage présent dans L5 et l'incompatibilité de public
 de statut entre L1 et L6 ; elles seront testées au palier des vues, sans
 correction immédiate.
 
+## Palier 3 : test des vues abstraites
+
+Le test des vues est consigné dans :
+`01_CADRE_METHODOLOGIQUE/test_vues_abstraites_lot_pilote_architecture_2026-08-18.md`.
+Il projette le même lot sur trois usages : vue publique, vue de recherche et
+vue de provenance. Les objets et leur contenu canonique restent inchangés.
+
+```text
+PALIER_3 = TEST_DE_VUES
+VUES_MULTIPLES_SUR_MEMES_OBJETS = POSSIBLE
+CONTENU_CANONIQUE = NON_DUPLIQUE_PAR_DEFAUT
+VUE_PUBLIQUE = SEPARABLE_DE_LA_PROVENANCE
+VUE_DE_RECHERCHE = A_LOCALISER_PAR_QUESTION_OU_DOMAINE
+ARBORESCENCE = TOUJOURS_NON_DEDUITE
+MIGRATION = NON_OUVERTE
+```
+
+Le test montre qu'une vue publique peut rester sélective, qu'une vue de
+provenance peut être proposée sans imposer la généalogie et qu'une vue de
+recherche ne doit probablement pas devenir un tableau de bord transversal.
+Il ne décide pas encore si ces vues seront des fichiers, des README, des index
+générés ou une combinaison de ces formes.
+
 Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
 preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
 portera sur la conservation des identités, statuts, limites, contradictions,
