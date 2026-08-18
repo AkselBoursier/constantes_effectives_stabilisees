@@ -676,6 +676,30 @@ L'amélioration du CI sera donc instruite après la clarification des objets et
 relations de la nouvelle architecture, afin de ne pas transformer les chemins
 actuels en contrats durables par simple automatisation.
 
+## Palier 1 : modèle conceptuel de l'architecture
+
+Le passage à l'étape suivante est ouvert avec le modèle interne :
+`01_CADRE_METHODOLOGIQUE/modele_conceptuel_architecture_semantique_integrale_2026-08-18.md`.
+Il ne propose encore aucune arborescence. Il distingue l'objet de travail,
+le dossier de recherche, la vue, la pièce de preuve, l'état, la relation et le
+workflow.
+
+```text
+PALIER_1 = MODELE_CONCEPTUEL
+OBJET_PRIMAIRE = OBJET_DE_TRAVAIL, NON_CHEMIN
+NOMBRE_DE_DOCUMENTS = A_DEDUIRE_DES_FONCTIONS_ET_RELATIONS
+OBJET_TRANSVERSAL_OU_NON_CLASSE = RECEVABLE
+VUES_ET_LIENS = A_TESTER_APRES_IDENTIFICATION_DES_OBJETS
+ARBORESCENCE_CIBLE = NON_DECIDEE
+MIGRATION = NON_OUVERTE
+```
+
+Le modèle sera confronté à un lot réduit comprenant accueil, synthèse,
+preuve ou protocole, règle méthodologique, provenance et essai. Le contrôle
+portera sur la conservation des identités, statuts, limites, contradictions,
+conditions de reprise et relations ; il pourra conclure qu'une pièce résiste
+légitimement à la partition proposée.
+
 Le test suivant comparera la forme actuelle de l'accueil des cycles à une
 proposition éventuellement séparée entre carte publique et détails de
 routage. La décision dépendra du gain de lisibilité et de contrôle observé,
