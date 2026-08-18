@@ -88,3 +88,65 @@ PORTE_D_APPROFONDISSEMENT = A_TESTER
 TRIANGULATION = SUR_LACUNE_OU_CONTRADICTION_MATERIELLE
 ARRET_LOCAL = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE
 ```
+
+---
+
+## 2026-08-18 — S2 : cycle 3, fonctions non équivalentes d'un spectre
+
+### Porte d'approfondissement
+
+La synthèse active du cycle 3 identifie un usage matériel : soutenir la
+distinction entre un même secteur physique et plusieurs fonctions contraintes
+par des accès différents. Cet usage ne repose pas sur le seul mot « masse » ni
+sur une illustration documentaire.
+
+```text
+USAGE_MATERIEL_S2 = ETABLI
+QUESTION = COMPARER_DES_FONCTIONS_D_UN_SPECTRE_SANS_LES_RENDRE_INTERCHANGEABLES
+POINT_DE_DESCENTE = N5_MATRICE_COMPARATIVE_QUATRE_ACCES
+N0_A_N4 = NON_DESCENDUS_A_CE_PALIER
+```
+
+### Résultat local examiné
+
+N5 distingue :
+
+```text
+N1 = DIFFERENCES_DE_MASSES, MELANGE, PHASE_DE_DIRAC
+N2 = MOYENNE_QUADRATIQUE_ELECTRONIQUE
+N3 = SOMME_COSMOLOGIQUE
+N4 = DEMI_VIE, PUIS AMPLITUDE_COHERENTE_CONDITIONNELLE
+```
+
+La comparaison devient recevable seulement après déclaration d'un spectre
+latent, de la matrice PMNS, de l'ordre, de la masse minimale et des hypothèses
+propres à la cosmologie ou à la double bêta. N5 associe à chaque accès sa trace,
+son modèle de passage, sa fonction contrainte, ses absences structurelles et
+son niveau de reproductibilité.
+
+### Portée et limites
+
+```text
+RESULTAT_LOCAL = FONCTIONS_NON_EQUIVALENTES_D_UN_MEME_SECTEUR = ETABLI
+PONTS_DE_COMPARAISON = DECLARES_ET_BORNES
+COMPATIBILITE_GENERALE = QUALIFIEE_A_LA_COUPURE, SANS_CONTRADICTION_MODELE_INDEPENDANTE
+TENSION_N1_N3 = CONDITIONNELLE_A_LAMBDA_CDM_ET_AUX_CONSTRUCTIONS_STATISTIQUES
+AJUSTEMENT_CONJOINT = NON_ETABLI
+DETERMINATION_DE_L_ORDRE = NON_ETABLIE_COMME_RESULTAT_UNIVERSEL
+NATURE_DIRAC_MAJORANA = NON_TRANCHEE
+```
+
+La fonction comparative de S2 est donc qualifiée dans son périmètre : elle
+montre comment un même secteur peut être contraint par des grandeurs non
+équivalentes, et où les ponts physiques ou inférentiels ajoutent leurs
+hypothèses. Elle ne fournit pas une mesure unique de la masse des neutrinos,
+ni un ajustement conjoint reproductible.
+
+```text
+S2 = QUALIFIEE_DANS_LE_PERIMETRE_LOCAL
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+TRIANGULATION_SUPPLEMENTAIRE = NON_REQUISE_A_CE_PALIER
+DETTE_COMPUTATIONNELLE = CONSERVEE
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_SENTINELLE = S3 / CYCLE_5_SAVEUR_HIGGS
+```
