@@ -107,6 +107,18 @@ Les permissions, blocages et états mouvants ne sont pas recopiés ici : les lir
 
 Un document destiné à représenter l’état courant est mis à jour sous un nom stable par défaut. Git porte son historique. Ne pas créer une nouvelle version de fichier pour chaque changement sans raison propre.
 
+### 7.1 État courant et généalogie
+
+Un document courant parle d’abord de son objet tel qu’il doit être compris dans l’état présent du travail. Il n’a pas à raconter ses anciennes formulations pour justifier la formulation actuelle.
+
+Par défaut, ne pas écrire dans un document courant des phrases du type « auparavant X, maintenant Y » ou des négations d’un état antérieur absent du document. Si une ancienne formulation n’est plus nécessaire à la compréhension de l’objet présent, la retirer du document courant plutôt que la conserver comme pseudo-historique.
+
+La généalogie des transformations appartient par défaut à Git, aux diffs, aux commits, aux PR, aux issues, aux checkpoints, aux archives ou aux documents dont la fonction est explicitement historique, comparative ou décisionnelle. Ces supports conservent le passé ; le document courant conserve l’état présent.
+
+Préférer la mise à jour d’un document existant sous identité stable lorsque sa fonction reste la même. Créer un nouveau document seulement lorsqu’une fonction, une pièce probatoire, un état comparable ou un objet réellement nouveau exige une identité propre.
+
+Cette règle ne s’applique pas aux pièces dont l’objet est précisément temporel ou comparatif : changelog, rapport de décision, pré-enregistrement, protocole exécuté, état daté, archive, généalogie ou comparaison explicite.
+
 Un protocole exécuté, une extraction, un pré-enregistrement, un résultat ou une décision dont l’état doit rester comparable est conservé comme pièce distincte.
 
 Avant de supprimer, déplacer ou déclasser un document existant, vérifier au minimum son contenu unique, ses dépendances et sa fonction scientifique ou probatoire.
