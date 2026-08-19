@@ -136,6 +136,18 @@ Pour un chantier borné, préférer un ancrage opérationnel principal identifia
 
 Ne pas créer de mise à jour documentaire pour chaque action technique. Ne pas inférer automatiquement l’issue active depuis un numéro, une date ou un label.
 
+### 8.1 Idées pertinentes hors périmètre
+
+Lorsqu’une idée mérite une attention ultérieure mais déborde du chantier courant, ne pas la poursuivre automatiquement et ne pas la laisser dépendre de la mémoire de la conversation.
+
+Avant de reprendre le chantier principal, **matérialiser sa capture** dans le support le plus léger qui permette un suivi réel : issue distincte si elle constitue une question ou une dette autonome, checkpoint si elle modifie l’état du chantier courant, ou simple pointeur si un ancrage existe déjà.
+
+La capture doit préciser au minimum : ce qui mérite d’être repris, pourquoi ce n’est pas traité maintenant, et sous quelle condition ou à quel palier la question doit être réouverte.
+
+**Capture = bloquante avant reprise si l’idée serait autrement perdue. Résolution = conditionnellement bloquante.** Résoudre immédiatement seulement si la question conditionne la validité, la traçabilité ou la prochaine action du chantier courant, ou si sa résolution est strictement bornée, rapide et n’ouvre pas un nouveau chantier. Sinon, la différer explicitement avec suivi.
+
+Ne pas transformer chaque pensée latérale en issue : la matérialisation est justifiée lorsqu’il existe une valeur de reprise identifiable, pas par la seule apparition d’une idée.
+
 Une intervention humaine ne doit pas être transformée automatiquement en ordre. Lorsque cela change l’action, distinguer au moins : observation, hypothèse, proposition, préférence, décision et autorisation. Une proposition reste à évaluer intellectuellement et méthodologiquement ; une décision ou autorisation explicite s’applique dans le périmètre qu’elle établit.
 
 Avant d’engager une tâche longue, vérifier qu’un point de reprise suffisamment consolidé existe si la perte de contexte serait coûteuse. À un palier de consolidation ou avant de clore une longue séquence, effectuer un autocontrôle borné portant sur : intelligibilité des objets, traçabilité suffisante, respect du périmètre et absence de nouvel artefact injustifié. Ne pas maintenir par défaut une boucle d’auto-réflexivité permanente parallèle au travail principal.
