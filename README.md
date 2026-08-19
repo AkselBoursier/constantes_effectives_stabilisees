@@ -48,6 +48,8 @@ Git / anciennes issues → provenance et généalogie
 
 Un document ancien peut conserver un résultat local valide sans être l’autorité opérationnelle actuelle. Une issue récente ne vaut pas automatiquement autorité par sa date ou son numéro : le point d’entrée vivant du chantier doit l’identifier explicitement.
 
+Dans une issue longue, le corps initial peut conserver l’état d’ouverture alors que des commentaires ultérieurs ont changé l’état de reprise. Pour déterminer une priorité, une autorisation ou un blocage courant, ne pas s’arrêter au corps : rechercher le dernier **checkpoint explicitement présenté comme état courant, terminal ou correctif**. Ce checkpoint met à jour l’état opérationnel sans effacer la chronologie antérieure.
+
 ## Un dépôt de recherche en cours
 
 Les cycles n’ont pas tous le même degré d’avancement. Certains disposent d’une synthèse récente ; d’autres sont encore à l’état de récupération, de cadrage, d’audit ou de programme ouvert. Un résultat négatif, un refus, une suspension ou une impossibilité d’instruire davantage sont des sorties possibles de l’enquête, au même titre qu’un résultat positif.
