@@ -113,7 +113,9 @@ Avant de supprimer, déplacer ou déclasser un document existant, vérifier au m
 
 Ne pas créer de registre central supplémentaire lorsqu’un README local, une issue active ou Git porte déjà la fonction nécessaire. Ne créer un `AGENTS.md` local que si des règles locales diffèrent réellement du noyau racine ; un fichier local affine le parent, il ne doit pas le recopier intégralement.
 
-Pour un chantier long ou complexe susceptible de perdre son état de reprise, conserver un **checkpoint unique et traçable** dans l’ancrage opérationnel déjà utilisé par ce chantier : commentaire de PR lorsqu’une PR porte effectivement le travail, commentaire d’issue lorsqu’une issue en est l’ancrage, ou autre support existant approprié.
+Pour un chantier long ou complexe susceptible de perdre son état de reprise, conserver un **ancrage opérationnel principal identifiable** : PR lorsqu’une PR porte effectivement le travail, issue lorsqu’une issue en est l’ancrage, ou autre support existant approprié.
+
+À l’intérieur de cet ancrage, créer des **checkpoints successifs et traçables** lorsqu’un changement modifie réellement l’état de reprise. Un checkpoint représente un état daté du chantier ; il n’est pas réécrit pour représenter un état ultérieur, sauf correction factuelle explicitement signalée.
 
 Un checkpoint n’est pas un journal exhaustif. Il conserve seulement ce qui est nécessaire à une reprise sûre :
 
@@ -124,7 +126,7 @@ Un checkpoint n’est pas un journal exhaustif. Il conserve seulement ce qui est
 - prochaine opération réellement retenue ;
 - quelques ancres de provenance suffisantes pour retrouver les preuves.
 
-Mettre à jour le même checkpoint lorsqu’un changement modifie réellement l’état de reprise. Ne pas dupliquer automatiquement le même état dans plusieurs supports.
+Créer un nouveau checkpoint seulement lorsqu’un changement substantiel justifie un nouvel état de reprise. Ne pas dupliquer automatiquement le même checkpoint dans plusieurs supports. La non-prolifération porte sur la multiplication des ancrages, des supports redondants et des checkpoints sans changement d’état ; elle ne justifie pas l’écrasement d’états antérieurs nécessaires à la traçabilité.
 
 ## 8. Issues, interventions humaines et état du travail
 
