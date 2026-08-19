@@ -11,6 +11,25 @@ Les dix cycles rassemblent ces terrains sans supposer qu’ils doivent produire 
 
 Les usages et méthodes propres à chaque domaine restent premiers. Les cycles ne constituent pas les chapitres successifs d’une démonstration unique.
 
+## État de reprise des recherches
+
+Le fait qu’un cycle possède des résultats ou une synthèse ne signifie pas qu’un chantier y soit actuellement activable. Pour une reprise, distinguer au moins : **ligne opérationnellement active**, **question scientifique vivante mais sans opération sélectionnée**, et **périmètre clos ou suspendu avec condition de réouverture**. Cette distinction sert au routage ; elle ne crée pas une hiérarchie scientifique entre les cycles.
+
+| Cycle | État de reprise courant |
+|---|---|
+| **1 — Couplages, échelles et QCD** | Premier périmètre clos ; réouverture seulement sur matériau réellement discriminant. |
+| **2 — Secteur électrofaible structurant** | Pas de ligne active unifiée ; les dettes restantes sont redistribuées entre plusieurs chantiers et ne se rouvrent que sur question précise. |
+| **3 — Neutrinos** | Science consolidée mais programme computationnel encore vivant ; aucune opération neutrino n’est actuellement sélectionnée comme chantier actif. |
+| **4 — Thermodynamique et métrologie** | Pas de ligne autonome active ; réouverture seulement si une question thermo-métrologique distincte du cycle SI devient nécessaire. |
+| **5 — Saveur–Higgs** | Le lot électronique est clos ; la question des valeurs, textures et hiérarchies de Yukawa reste scientifiquement vivante mais dormante. |
+| **6 — Théories effectives à basse énergie** | Évaluation conclue dans son périmètre ; aucun programme scientifique autonome actif identifié. |
+| **7 — Cosmologie** | Deux lignes réellement actives, mais toutes deux bloquées par une condition concrète. `C7-C1 / X(z)` n’autorise aucun nouveau sampling ; `C7-GAL` n’autorise pas encore G2. Lire le README local puis les issues actives pour l’état mouvant. |
+| **8 — Système international** | Gain local qualifié ; aucun chantier scientifique SI actif. Réouverture sur question métrologique précise ou matériau modifiant le verdict. |
+| **9 — Ajustement fin** | Premier lot non clos ; programme scientifique vivant mais dormant, à poursuivre seulement si un nouveau cas produit un contraste réel. |
+| **10 — Quasi-fixité électrofaible** | Programme vivant mais dormant après un résultat phénoménologique local ; la réalisation microscopique reste à instruire avant toute nouvelle phase. |
+
+Ce bloc est une **porte de reprise**, pas une copie des statuts techniques détaillés. Lorsqu’un cycle possède une issue ou un README local vivant, ceux-ci portent l’état mouvant et les autorisations précises. Si l’état de reprise d’un cycle change, cette vue doit être resynchronisée ; Git conserve son historique.
+
 ## Choisir un cycle
 
 | Cycle | Ce qu’il permet d’examiner | Commencer ici |

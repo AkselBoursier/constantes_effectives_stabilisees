@@ -30,7 +30,7 @@ Les autres portes dépendent de la tâche :
 
 - **[Cadre méthodologique](01_CADRE_METHODOLOGIQUE/refondation-du-domaine.md)** : bornes des affirmations, distinctions entre cible, accès et constitution, et discipline des qualifications transversales ;
 - **[Glossaire](GLOSSAIRE.md)** : terminologie active lorsqu’un terme du projet doit être précisé ;
-- **[Philosophie](06_PHILOSOPHIE/README.md)** : volet distinct. Il n’est pas la porte de reprise actuelle des dossiers scientifiques et doit être resitué avant toute nouvelle propagation vers ceux-ci ;
+- **[Philosophie](06_PHILOSOPHIE/README.md)** : volet distinct. Il n’est pas la porte de reprise actuelle des dossiers scientifiques et doit être resitué avant toute nouvelle propagation vers ceux-ci. Son README conserve encore un état programmatique de juillet 2026 : les mentions `Chantier actif`, branche de travail et prochaine opération ne doivent pas être prises seules comme état courant ;
 - **[AGENTS.md](AGENTS.md)** : règles opérationnelles minimales pour intervenir dans le dépôt.
 
 ## Où se trouve l’état courant ?
@@ -47,6 +47,8 @@ Git / anciennes issues → provenance et généalogie
 ```
 
 Un document ancien peut conserver un résultat local valide sans être l’autorité opérationnelle actuelle. Une issue récente ne vaut pas automatiquement autorité par sa date ou son numéro : le point d’entrée vivant du chantier doit l’identifier explicitement.
+
+Dans une issue longue, le corps initial peut conserver l’état d’ouverture alors que des commentaires ultérieurs ont changé l’état de reprise. Pour déterminer une priorité, une autorisation ou un blocage courant, ne pas s’arrêter au corps : rechercher le dernier **checkpoint explicitement présenté comme état courant, terminal ou correctif**. Ce checkpoint met à jour l’état opérationnel sans effacer la chronologie antérieure.
 
 ## Un dépôt de recherche en cours
 
