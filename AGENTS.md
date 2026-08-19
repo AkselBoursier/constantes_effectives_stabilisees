@@ -132,7 +132,7 @@ Créer un nouveau checkpoint seulement lorsqu’un changement substantiel justif
 
 Une issue porte une instruction bornée, ses décisions et les étapes qui changent réellement l’état du travail. Elle ne doit pas devenir une copie exhaustive de la conversation.
 
-Pour un chantier borné, préférer un ancrage opérationnel unique. Consigner un changement lorsqu’il modifie substantiellement la question, le périmètre, un résultat, un blocage durable, une validation, la décision suivante, l’ouverture, le remplacement, la suspension, la clôture ou la réouverture du travail.
+Pour un chantier borné, préférer un ancrage opérationnel principal identifiable. Consigner un changement lorsqu’il modifie substantiellement la question, le périmètre, un résultat, un blocage durable, une validation, la décision suivante, l’ouverture, le remplacement, la suspension, la clôture ou la réouverture du travail.
 
 Ne pas créer de mise à jour documentaire pour chaque action technique. Ne pas inférer automatiquement l’issue active depuis un numéro, une date ou un label.
 
