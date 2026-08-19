@@ -469,3 +469,1050 @@ C4_NOUVEAUTE_SUBSTANTIELLE = NON_RECHERCHEE
 Le dossier `06_PHILOSOPHIE` est donc fermé documentairement sans transformer sa richesse exploratoire en doctrine ou en résultat philosophique général.
 
 Prochaine position documentaire propre : `90_Critiques_ constantes_effectives_stabilisees`.
+
+
+---
+
+## 2026-08-18 — `90_Critiques_ constantes_effectives_stabilisees` : reprise locale et controle des sources
+
+### Perimetre et methode
+
+La reprise commence a la position indiquee par la partie 2 du changelog :
+`90_Critiques_ constantes_effectives_stabilisees`.
+
+Le controle est effectue dans le clone local dedie a l'audit, sur la branche
+`audit/changelog-reprise-2026-08-18`, au HEAD `e76c92da08aa9e84f62b28f5e88296b3f4ecab50`.
+Le corpus scientifique et les donnees externes ne sont pas modifies.
+
+Inventaire local du bloc au baseline :
+
+```text
+TOTAL_BLOBS_90 = 34
+DOCX = 13
+MARKDOWN = 13
+PNG = 8
+DOCX_SHA256_DECLARED_AND_MATCHED = 13/13
+DOCX_WORD_DOCUMENT_XML_READ = 13/13
+PNG_VISUALLY_INSPECTED = 8/8
+EXTERNAL_SCIENTIFIC_REVALIDATION = NON
+```
+
+Les 13 extractions Markdown ont ete relues dans le cadre de cette reprise. Les
+13 originaux DOCX ont ensuite ete ouverts localement et leur `word/document.xml`
+a ete lu pour controler le texte structurel, les noeuds textuels et les tables
+contenues dans le document. Les 13 SHA-256 declares dans les extractions
+correspondent aux SHA-256 calcules sur les DOCX locaux. Une erreur apparente de
+chemin pour quatre noms accentues provenait seulement du decodage de la sortie
+PowerShell ; la verification par correspondance locale a confirme les quatre
+hashes manquants.
+
+Cette verification etablit la provenance et la couverture materielle locale.
+Elle ne transforme pas l'extraction en equivalence generale de mise en page :
+la presentation Word, les proprietes de style, les elements non contenus dans
+`word/document.xml` et l'interpretation scientifique externe ne sont pas
+revalides par cette operation.
+
+### Les PNG sont des pieces documentaires, non de simples illustrations
+
+Les huit PNG extraits des DOCX ont ete inspectes visuellement. Ils contiennent
+des planches de synthese avec des titres, diagnostics, seuils, statuts et plans
+d'action. Ils ne peuvent donc pas etre omis comme simples elements decoratifs.
+
+Les formulations visuelles rendent notamment explicites :
+
+```text
+CONSOLIDATION -> SAS_DYNAMIQUE_VERS_REFERENCE = PROPOSITION_HISTORIQUE
+AUCUNE_OUVERTURE_SANS_VERROUILLAGE_PREALABLE = PROPOSITION_HISTORIQUE
+SEUIL_ARCHITECTURE >= 3_NOEUDS = CRITERE_PROPOSE
+PROTOCOLE_H0_S8 > 5_SIGMA = CRITERE_PROPOSE
+HIGGS_VS_DELTA_M2 = CADRAGE_NARRATIF_PROPOSE
+REGIME_ET_ACCES_FUSIONNES = PROPOSITION_BORNEE_AUX_CONSTANTES_EFFECTIVES
+TENSIONS -> STATUT_ONTOLOGIQUE_PROVISOIRE = PROPOSITION_HISTORIQUE
+```
+
+Ces formulations ont une fonction genealogique importante : elles montrent des
+moments ou le projet, ou un agent de critique, a tente de durcir la taxonomie,
+de transformer une tension en declencheur, ou de faire passer une architecture
+d'un statut descriptif a un statut decisionnel. Elles ne constituent pas pour
+cela des decisions humaines, des regles actuelles ou des autorisations de calcul.
+
+### Acquis et propositions retrouvees dans les 13 DOCX
+
+Les sources critiques convergent vers plusieurs lignes de travail :
+
+- la distinction entre famille, fonction transversale et architecture est
+  jugee insuffisamment decisionnelle dans plusieurs critiques ;
+- la cosmologie est repetitivement decrite comme un reseau d'inferences et de
+  tensions, avec des propositions de double etiquetage, de trajectoire
+  diachronique et de tests de substitution ;
+- les cas neutrino sont presentes comme un deplacement d'une constante-valeur
+  vers des relations oscillatoires, avec une mise en avant des limites de
+  l'acces PMNS aux phases de Majorana ;
+- le SI 2019 est mobilise comme cas de distinction entre stabilisation empirique,
+  fixation conventionnelle et realisation pratique ;
+- plusieurs critiques demandent de remplacer un test de retrait binaire par un
+  test de destabilisation, de substitution ou de resistance ;
+- plusieurs engagements restent au statut `[TBD]`, sans preuve dans ce lot de
+  leur execution ni de leur promotion durable.
+
+Ces lignes se recoupent avec des resurgences deja notees dans les cycles et les
+architectures, mais le recoupement ne vaut pas validation de la theorie proposee.
+Les formulations fortes comme « automatiser la discipline », « indicateur de
+rupture de validite », « statut ontologique provisoire » ou « effondrement
+immediat du sens physique » restent des assertions a qualifier, non des verdicts.
+
+### Controle de compatibilite avec le cadre courant
+
+Le lot contient des prescriptions qui entrent potentiellement en tension avec
+les regles actuellement applicables : promotion automatique d'une tension,
+seuil universel de `5 sigma`, fusion generale du regime et de l'acces, blocage
+automatique de nouveaux cycles, ou transformation d'un test editorial en
+algorithme de decision.
+
+Statut retenu :
+
+```text
+PRESCRIPTIONS_HISTORIQUES_DU_LOT = CONSERVEES
+PROMOTION_AUTOMATIQUE_EN_REGLE_COURANTE = NON
+SEUIL_UNIVERSEL_5_SIGMA = NON_VALIDE_COMME_REGLE_GENERALE
+STATUT_ONTOLOGIQUE_D_UNE_TENSION = NON_PROMU
+NOUVELLE_AUTORISATION_COMPUTATIONNELLE = AUCUNE
+REVALIDATION_SCIENTIFIQUE_EXTERNE = NON_EFFECTUEE
+```
+
+Toute reutilisation de ces propositions doit etre instruite dans le domaine
+competent, avec cible, transformation, regime, modele, tolerance et condition
+de rupture explicites. En particulier, aucune proposition issue de ce lot
+n'autorise un nouveau sampling, une modification de la partie computationnelle
+ou une requalification de C7-C1 / C7-GAL.
+
+### Etat de couverture et suite
+
+Le bloc `90_Critiques_ constantes_effectives_stabilisees` est desormais couvert
+materiellement dans cette reprise locale : les 13 Markdown, les 13 DOCX et les
+8 PNG ont ete lus ou inspectes selon leur nature. Cette fermeture de couverture
+ne ferme aucune qualification scientifique et ne supprime aucune dette de
+revalidation externe.
+
+```text
+COUVERTURE_MATERIELLE_90 = COMPLETE
+QUALIFICATION_SCIENTIFIQUE_90 = NON_OUVERTE_PAR_CETTE_LECTURE
+PRESCRIPTIONS_A_RETESTER = OUI
+DETTES_EXPLICITES_DU_LOT = CONSERVEES
+PROCHAINE_ACTION = RECOUPER_90_AVEC_LES_ENTREES_ET_CARTES_DEJA_LUES
+```
+
+---
+
+## 2026-08-18 — `90_Critiques_ constantes_effectives_stabilisees` : recoupement avec le cadre deja remonte
+
+Le recoupement du lot 90 avec `Fiche_criblage_critiques_lot2_v0_1.md`,
+`Addendum_matrice_criblage_lot2_v0_1.md`, `Passerelle_escalade_tensions_cosmologiques_v0_1.md`,
+`Audit_resynchronisation_theorique_v0_1.md`, `Audit_dependances_et_reorganisation_v0_1.md`
+et `Index_raisonne_du_corpus_v1_0.md` montre que les propositions fortes des DOCX
+n'apparaissent pas comme des decisions isolees du lot 90.
+
+### Continuites confirmees
+
+```text
+CLASSIFICATION_EN_SORTIE = DEJA_INTEGREE_COMME_COUCHE_DECISIONNELLE
+COUPLAGE_FORT_REGIME_ACCES = DEJA_REMANIE_LOCALEMENT
+TENSIONS = OBJETS_DE_PROTOCOLE, NON_ANOMALIES_AUTOMATIQUES
+TEST_DE_RETRAIT = CONSERVE_ET_COMPLETE_PAR_DEGRADATION_SUBSTITUTION
+TEMPORALITE_SCINDEE = DEJA_PORTEE_PAR_MATRICE_V0_2
+ESCALADE = GRADUEE, SANS SAUT DIRECT TENSION -> ANOMALIE
+RELATION = SOUS_AUDIT, NON_FAMILLE_REFUGE
+```
+
+La fiche de criblage transforme explicitement les propositions brutes du lot 2
+en statuts differencies : `A integrer`, `A remanier`, `A tester`, `A tenir en
+reserve` ou `A refuser comme telle`. L'addendum rend la classification finale
+et les verrous d'options proceduraux, tout en maintenant la possibilite de
+`classement differe`, `classement refuse` et `point de bascule candidat`.
+
+La passerelle cosmologique interdit le saut direct d'une tension vers une
+anomalie. Elle exige l'examen des routes d'acces, de leur independance, des
+degenerescences, des systematiques, du modele de fond, de la temporalite et
+d'une substitution controlee.
+
+### Requalification des propositions du lot 90
+
+```text
+SEUIL_UNIVERSEL_5_SIGMA = REFUSE_COMME_REGLE_GENERALE
+SEUIL_FIXE_TROIS_NOEUDS = REFUSE_COMME_QUANTIFICATION_UNIVERSELLE
+FUSION_GENERALE_REGIME_ACCES = REFUSEE
+STATUT_ONTOLOGIQUE_PROVISOIRE_D_UNE_TENSION = REMPLACE_PAR STATUT HEURISTIQUE PROBATOIRE
+BLOCAGE_AUTOMATIQUE_DE_TOUT_NOUVEAU_CYCLE = NON_ADOPTE
+MATHEMATISATION_TOTALE_DU_CORPUS = NON_ADOPTEE
+```
+
+Ces refus ne suppriment pas les objections dont les propositions procedaient.
+Ils conservent leur fonction de falsification ou d'orientation : reduire
+l'arbitraire des cas litigieux, rendre visibles les couplages, tester la
+resilience et empecher une classification prematuree.
+
+### Relation avec les documents de reorganisation
+
+L'audit des dependances a deja etabli que les DOCX sont des pieces du socle et
+que leur deplacement physique ne doit pas etre confondu avec une suppression,
+une conversion ou une perte de provenance. L'index raisonne avait encore une
+fonction de navigation et de classement qui devait etre corrigee par les
+qualifications ulterieures ; il ne peut pas servir seul de preuve de pertinence
+ou d'exhaustivite.
+
+Le lot 90 renforce donc une conclusion documentaire, sans ouvrir de migration :
+les sources DOCX, leurs extractions et leurs PNG doivent rester distinguables,
+et les propositions historiques doivent rester recuperables sans etre
+promues par simple presence dans une synthese.
+
+### Statut de reprise
+
+```text
+RECOUPLEMENT_90_AVEC_CADRE_ANTERIEUR = EFFECTUE
+CONTINUITE_METHODOLOGIQUE = CONFIRMEE_DANS_LE_PERIMETRE_LU
+NOUVELLE_REGLE_SCIENTIFIQUE = AUCUNE
+NOUVELLE_AUTORISATION_COMPUTATIONNELLE = AUCUNE
+REINSTRUCTION_SUBSTANTIELLE = NON_OUVERTE
+PROCHAINE_ETAPE = RECONSTRUIRE_LA_PORTE_DOCUMENTAIRE_SUIVANTE_SANS_EXCLUSION
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : ouverture de la porte documentaire
+
+Inventaire local au baseline courant :
+
+```text
+TOTAL_BLOBS_91 = 85
+MARKDOWN = 82
+DOCX = 2
+JSON = 1
+COUVERTURE_DOCUMENTAIRE_91 = OUVERTE
+```
+
+Le dossier contient des manuscrits, essais, recherches, registres de decisions,
+archives conversationnelles et reconstructions genealogiques. Son README declare
+qu'il s'agit d'une archive de trajectoire, non d'une autorite active, et demande
+une comparaison avec l'etat courant avant toute reprise. Cette indication route
+la lecture mais n'autorise aucune exclusion : les 85 blobs restent dans le
+corpus jusqu'a leur lecture et leur remontee.
+
+### Premiers points d'entree lus
+
+Les points d'entree `README.md` et `SOURCE_HIERARCHY.md`, ainsi que les documents
+recommandes `POSTURE_EPISTEMIQUE.md`, `ARCHEOLOGIE_BIFURCATIONS_fevrier-juin2026.md`,
+`CHANGELOG_CONCEPTUEL.md`, `DECISION_LEDGER.md`, `Annexe_genealogique.md` et
+`le_reglage_fin_v9.md` ont ete lus comme contexte historique.
+
+Ils font remonter plusieurs elements qui devront etre distingues dans la suite :
+
+```text
+POSTURE_RELATIONNELLE_ET_REFLEXIVE = ORIENTATION_HISTORIQUE
+COUPE_CONSTITUTIVE_UNIVERSELLE = THESIS_HISTORIQUE_RETIREE_OU_SUSPENDUE
+COUPLAGE_STRUCTUREL_HORS_BIOLOGIE = EXTENSION_A_REINSTRUIRE
+DEFINISSABILITE = QUESTION_HISTORIQUE, FONCTION_PORTEUSE_NON_TRANCHEE
+PERCOLATION = PISTE_HISTORIQUE_A_REINSTRUIRE, NON_RESTAUREE
+ORIGINALITE_THEORIQUE_FORTE = NON_DEMONTEE_DANS_LE_REGISTRE_LU
+GAIN_METHODOLOGIQUE = A_TESTER_PAR_COMPARAISON_SOUSTRACTIVE
+```
+
+Le `DECISION_LEDGER` conserve des decisions historiques compatibles avec le
+programme actuel sur plusieurs points : reconstruction disciplinaire avant
+traduction, modalisation des propositions, possibilite d'echec, regionalisation
+des concepts et interdiction des remplacements lexicaux globaux. En revanche,
+`SOURCE_HIERARCHY.md` et la posture ancienne appartiennent a leur chantier de
+phase 1 et ne remplacent pas le programme vivant actuel.
+
+### Tension de methode conservee
+
+La posture epistemique ancienne privilegie la justesse sur l'exhaustivite et
+le dossier 91 se presente comme une archive a parcourir genealogiquement. Le
+programme actuel exige au contraire la lecture exhaustive du corpus de reference
+avant toute exclusion documentaire. La regle de reprise est donc :
+
+```text
+JUSTESSE_COMME_POSTURE_HISTORIQUE = CONSERVEE_COMME_CONTEXTE
+EXHAUSTIVITE_DOCUMENTAIRE_ACTUELLE = REGLE_APPLICABLE
+ARCHIVE_91_COMME_FILTRAGE_DE_PERTINENCE = REFUSE
+ARCHIVE_91_COMME_SOURCE_D_AUTORITE_ACTIVE = REFUSE
+```
+
+Cette tension ne constitue pas une incoherence a corriger dans les anciens
+documents. Elle doit etre conservee comme changement de programme et controlee
+dans les lectures ulterieures, notamment lorsque des questions anciennes
+resurgissent sous un vocabulaire plus recent.
+
+### Etat et prochaine action
+
+```text
+COUVERTURE_MATERIELLE_91 = 0/85 A CE PALIER
+POINTS_D_ENTREE_LUS = 8
+DOCX_91_LUS_DIRECTEMENT = 0/2
+JSON_91_LU_INTEGRALEMENT = 0/1
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_REGISTRES_ET_CONTROLES_91_AVANT_LES_ARCHIVES_CONVERSATIONNELLES
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : registres et controles de phase remontes
+
+Les documents `CONCEPT_STATUS.md`, `OPEN_QUESTIONS.md`, `PHASE5_CONTROLE.md`,
+`PHASE6_CONTROLE.md`, `PHASE7_CONTROLE.md`, `PHASE8_AUDIT_TRANSVERSAL.md` et
+`PHASE8_CONTROLE.md` ont ete lus comme registres historiques et controles de
+production. Ils ne remplacent pas le programme vivant actuel, mais ils rendent
+la genealogie des retraits, suspensions, regionalisations et validations locales
+plus explicite.
+
+### Continuite avec les regles actuellement applicables
+
+```text
+COUPE = FAMILLE_CANDIDATE, INVARIANT_TRANSVERSAL_NON_ETABLI
+TOUTE_COUPE_EST_CONSTITUTIVE = RETIREE
+COUPLAGE_STRUCTUREL = REGIONALISE, TRADUCTION_INDEPENDANTE_REQUISE
+ONTO_EPISTEMOLOGIE_FORTE = SUSPENDUE
+POROSITE_GENERALE = RETIREE_OU_SUSPENDUE
+SEDIMENTATION = REGIONALISEE
+ORIGINALITE_THEORIQUE_FORTE = NON_DEMONTEE
+EXEMPLES_SCIENTIFIQUES = TERRAINS_D_EPREUVE, NON_PREUVES_DU_CADRE
+MIGRATION = LOCALE, NON_SUBSTITUTIVE
+```
+
+Les controles de phase 5 a 8 confirment que la v13 est une architecture de
+travail coherente et conditionnelle, non une theorie transversale demontree.
+Ils conservent les echecs possibles : redescription, retrait, suspension,
+fragmentation, regionalisation, inapplicabilite, deformation, refutation locale
+et redondance conceptuelle. Cette memoire negative est compatible avec la
+fonction du changelog et ne doit pas etre lissée en bilan positif.
+
+### Questions et limites resurgies
+
+Les questions suivantes restent ouvertes dans les registres lus :
+
+```text
+INVARIANT_MINIMAL_DE_COUPE = OUVERT_STRUCTURANT
+GAIN_NON_REDONDANT = METHODOLOGIQUEMENT_DISPONIBLE, PEU_TESTE_SUR_DOSSIERS_COMPLETS
+VOISINS_PAR_SOURCES_PRIMAIRES = OUVERT_BIBLIOGRAPHIQUE
+EXEMPLES_SCIENTIFIQUES_COMPLETS = OUVERT_DISCIPLINAIRE
+CONSTITUTION_ET_CO_CONSTITUTION = CHARGE_DE_PREUVE_FORTE
+ONTO_EPISTEMOLOGIE_FORTE = SUSPENDUE
+```
+
+Le dossier README signale par ailleurs deux renvois absents dans
+`MANUSCRIT_LIVRE_soustraction_de_soi.md`. Ils sont conserves comme anomalies
+documentaires ; ils ne seront ni reconstruits ni remplaces par conjecture.
+
+### Statut intermediaire
+
+```text
+REGISTRES_91_LUS = 7
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+DOCX_91_LUS_DIRECTEMENT = 0/2
+JSON_91_LU_INTEGRALEMENT = 0/1
+ARCHIVES_CONVERSATIONNELLES = NON_OUVERTES_A_CE_PALIER
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_CONTROLES_RESTANTS_ET_LES_DOCUMENTS_DE_TRAVAIL_CIBLES
+```
+
+---
+
+## 2026-08-18 — Amendement humain borne pour `91_TRAVAUX_ANTERIEURS`
+
+Decision explicite recueillie au cours de la reprise : pour le dossier des
+travaux anterieurs, la granularite peut etre reduite et l'exhaustivite peut etre
+relative, a condition de conserver tout element qui peut modifier l'audit.
+
+Cette exception ne s'etend pas au corpus documentaire de reference principal.
+Elle ne permet pas d'exclure un document par son titre ou son statut apparent.
+Elle modifie seulement la forme de remontee du lot 91 : lecture et synthese par
+regroupements, avec conservation des elements discriminants.
+
+```text
+EXCEPTION_DE_GRANULARITE = 91_TRAVAUX_ANTERIEURS_SEULEMENT
+EXHAUSTIVITE_RELATIVE = AUTORISEE_DANS_CE_DOSSIER
+ELEMENTS_UNIQUES_A_EFFET_D_AUDIT = A_CONSERVER
+QUESTIONS_DETTES_BIFURCATIONS_RESULTATS_NEGATIFS = A_CONSERVER
+PROVENANCE_CONTRADICTIONS_LIMITES = A_CONSERVER
+EXCLUSION_PAR_SURFACE = INTERDITE
+CORPUS_PRINCIPAL_668 = REGLE_D_EXHAUSTIVITE_INCHANGE
+```
+
+Le statut de couverture du lot 91 sera donc exprime en termes de groupes lus,
+de pieces controlees et d'elements discriminants remontes, sans pretendre a une
+lecture integrale de chaque conversation brute lorsque celle-ci n'est pas
+necessaire pour l'effet d'audit.
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : migrations et prose historique recoupees
+
+Les documents `M_migrations.md`, `T0_MANUSCRIT_NOUVEAU.md`,
+`RECHERCHE_CONTRE_SOI_T1.md`, `essai_suspension_categories.md` et
+`phenomenologie_des_coupes.md` ont ete lus dans cette passe.
+
+### Resultat principal
+
+Les textes historiques portent encore, avec des degres de modalisation variables,
+des formulations que les registres K/M et l'audit transversal ont depuis
+retirees, suspendues ou regionalisees :
+
+```text
+TOUTE_COUPE_EST_CONSTITUTIVE = THESIS_HISTORIQUE_NON_ACTIVE
+POROSITE_COMME_CATEGORIE_GENERALE = THESIS_HISTORIQUE_NON_ACTIVE
+COUPLAGE_STRUCTUREL_ETENDU = EXTENSION_HISTORIQUE_A_REINSTRUIRE
+CO_CONSTITUTION_UNIVERSELLE = HYPOTHESE_HISTORIQUE_FORTE, NON_PREMISSE
+LEGIFERATION_UNIVERSELLE = PROPOSITION_METAPHYSIQUE_HISTORIQUE, SUSPENDUE
+REEL_AUTO_INTERROGATIF = FORMULATION_PHENOMENOLOGIQUE/METAPHORIQUE, NON_RESULTAT
+```
+
+Le texte `M_migrations.md` ne demande pas de corriger ces documents historiques.
+Il impose de qualifier chaque occurrence selon sa fonction : citation, trace
+genealogique, critique, hypothese locale, argument actuel ou formulation a
+retirer. Cette regle est compatible avec l'exigence actuelle de conservation
+sans promotion.
+
+### Recoupements et limites
+
+`RECHERCHE_CONTRE_SOI_T1.md` apporte une critique importante des pretentions
+d'originalite : Barad et Spencer-Brown sont des antecedents directs a confronter,
+le couplage structurel reste d'abord biologique, et l'originalite theorique
+forte ne peut pas etre deduite de l'absence d'une expression exacte dans la
+litterature. Ces observations recoupent P8-003 et la typologie des voisins,
+mais le rapport de recherche lui-meme reste une piece historique, non une
+validation bibliographique actuelle.
+
+`T0_MANUSCRIT_NOUVEAU.md` contient un partage utile entre physique standard,
+proposition philosophique et statut modal, mais il conserve aussi des claims
+de second ordre qui exigeraient un audit disciplinaire avant toute reprise.
+
+`essai_suspension_categories.md` et `phenomenologie_des_coupes.md` conservent
+des noyaux phenomenologiques et pedagogiques, mais leurs termes generaux
+(`porosite`, `coupes vivantes`, `ethique de la reliance`, `reel auto-interrogatif`)
+ne sont pas automatiquement des concepts du cadre actuel. Ils doivent rester
+des matériaux de genese et des candidats a instruire.
+
+### Statut intermediaire
+
+```text
+TEXTES_CIBLES_LUS_DANS_CETTE_PASSE = 5
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+CONCEPTS_HISTORIQUES_RESURGIS = CONSERVES_SANS_PROMOTION
+REINSTRUCTION_SCIENTIFIQUE = NON_OUVERTE
+PROCHAINE_ACTION = CONTINUER_LES_CONTROLES_91_ET_LES_DOCUMENTS_DE_TRAVAIL_NON_LUS
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : premieres pieces brutes etat intermediaire
+
+Les deux DOCX et l'export JSON du dossier ont ete ouverts localement pour
+controle materiel. L'export JSON a une taille de `693199` octets et contient
+une version assainie des conversations : les identifiants, URL signees et
+metadonnees techniques sans fonction documentaire sont retires, tandis que
+les contenus de messages, titres, horodatages et roles sont conserves.
+
+### Refondation du cadre
+
+Le DOCX `Projet de refondation du cadre des coupes constitutives.docx` confirme
+explicitement la requalification v12 -> v13 :
+
+```text
+TOUTE_COUPE_EST_CONSTITUTIVE = INTENABLE_ET_RETIREE
+CO_CONSTITUTION_GENERALE = INTENABLE_ET_RETIREE
+GRADIENT_PHYSIQUE_BIOLOGIQUE_REFLEXIF = RETIRE
+DESTINS_TRANSVERSAUX = RETIRES
+POROSITE_GENERALE = RETIREE
+SEDIMENTATION_UNIVERSELLE = RETIREE
+VARIATION_LOCALE = INSUFFISANTE_COMME_PREUVE_DE_TRANSVERSALITE
+MIGRATION_PAR_REMPLACEMENT_LEXICAL = INTERDITE
+PROGRAMME_COMPARATIF_V13 = ORIENTATION_RETENUE
+```
+
+Cette pièce renforce la continuité avec le programme et les registres déjà
+lus ; elle ne constitue pas une autorisation de réactiver les formulations
+qu'elle décrit comme historiques.
+
+Le DOCX `motif_coupe_constitutive.docx` est un essai philosophique transversal
+ancien, structuré autour de la complémentarité, de la perception, de la Gestalt,
+de la métastabilité et des coupes agentielles. Il doit être lu comme une pièce
+généalogique et un candidat de comparaison, non comme une preuve d'invariant
+transversal ou d'originalité théorique.
+
+### Export conversationnel
+
+La structure JSON montre des conversations assainies contenant des propositions,
+des corrections, des hésitations et des formulations explicitement non canoniques.
+Les messages ne seront pas traités comme décisions humaines par défaut. Leur
+lecture doit préserver les bifurcations et les corrections, sans exposer les
+métadonnées retirées ni convertir les suggestions de modèles en autorité.
+
+```text
+DOCX_CONTROLE_MATERIEL = 2/2
+JSON_STRUCTURE_CONTROLEE = OUI
+JSON_LECTURE_CONVERSATIONNELLE_COMPLETE = NON_ETABLIE_A_CE_PALIER
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = POURSUIVRE_LA_LECTURE_JSON_ET_DES_PIECES_91_RESTANTES
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : cartographie minimale de l'export conversationnel
+
+L'export JSON assaini contient `30` conversations. Un index local a ete produit
+sans identifiants, URL, chemins de telechargement ni contenu de messages :
+
+```text
+CONVERSATIONS = 30
+MESSAGES_ET_ROLES = CONSERVES_DANS_L_EXPORT
+METADONNEES_TECHNIQUES_SENSIBLES = RETIREES_PAR_L_ASSAINISSEMENT
+LECTURE_INTEGRALE_DES_MESSAGES = NON_ETABLIE_A_CE_PALIER
+```
+
+Les titres font apparaitre plusieurs foyers distincts : hard problem et
+cognition, temps cosmologique, trous noirs, conscience, manuscrits, critiques
+et cartes conceptuelles. Cette pluralite interdit de reconstruire une trajectoire
+unique a partir des titres. Elle servira seulement a ordonner la lecture des
+messages, en conservant les bifurcations et les corrections comme materiaux
+historiques.
+
+Les pieces jointes mentionnees dans l'export ne sont pas presumees accessibles
+ni equivalentes aux blobs presents dans le corpus. Leur nom ou leur taille ne
+constitue pas une preuve de lecture, et aucune extraction absente ne sera
+reconstruite par conjecture.
+
+```text
+INDEX_CONVERSATIONNEL = ETABLI
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+ARCHIVE_JSON = TOUJOURS_OUVERTE
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = LIRE_LES_CONVERSATIONS_PAR_FOYERS_SANS_PROMOTION_AUTOMATIQUE
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : foyer conversationnel hard problem et posture
+
+Un premier bloc de l'export QWEN a ete lu autour du hard problem, de la posture
+personnelle, de la perception par patterns et de la construction de l'article.
+Il fait apparaitre plusieurs corrections explicites qui doivent rester dans la
+genealogie :
+
+```text
+EXPERIENCE_PERSONNELLE = CONTEXTE_DE_POSITIONNEMENT, NON_FONDEMENT_SCIENTIFIQUE
+ANALOGIE_TOURBILLON/FLAMME = PREFEREE_POUR_SA_LISIBILITE_LOCALE
+EXEMPLE_CHAISE = POSSIBLE, MAIS EXIGE_EXPLICITATION_DE_LA_CHAINE
+PATTERN = PERCEPTION_RELATIONNELLE_REVENDIQUEE, NON_PREUVE_DE_MECANISME
+IA = ACCELERATEUR_D_APPRENTISSAGE_ET_GUIDE_VERS_LA_PRECISION
+PROPOSITION_IA = PISTE_DE_TRAVAIL, NON_AUTORITE
+```
+
+Les échanges montrent aussi que certaines formulations initiales ont ete
+corrigees par l'auteur lui-meme : l'experience dite mystique ne doit pas etre
+utilisee comme preuve, le langage de non-dualite ne doit pas etre pris au pied
+de la lettre, et la methode de l'auteur ne doit pas etre reconstruite comme
+critere affirmatif general. Ces corrections recoupent la posture actuelle de
+modalisation et la separation entre philosophie, experience et qualification
+scientifique.
+
+Le bloc reste genealogique : il ne valide ni la these du hard problem, ni une
+theorie de la conscience, ni un concept transversal de coupe.
+
+```text
+FOYER_CONVERSATIONNEL_LU = HARD_PROBLEM_POSTURE_PATTERNS
+CONVERSATIONS_LUES_COMPLETEMENT = NON_ETABLI_A_CE_PALIER
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+PROCHAINE_ACTION = LIRE_LE_FOYER_TEMPS_COSMOLOGIQUE_ET_RECHERCHES_PHYSIQUES
+```
+
+---
+
+## 2026-08-18 — `91_TRAVAUX_ANTERIEURS` : criblage compresse des propositions hard problem
+
+La passe a granularite reduite sur les pieces de travail du foyer conscience /
+hard problem fait remonter un element a effet d'audit :
+`article_hard_problem.md` propose une dissolution du hard problem par
+requalification de la coupe physique/phenomenale, l'enactivisme, la
+co-emergence, la logique du tiers inclus et la notion de `transcendance
+epistemique`.
+
+Ces formulations sont des propositions philosophiques historiques, non des
+resultats scientifiques. Certaines sections les presentent avec une force
+demonstrative superieure a ce que les registres ulterieurs autorisent.
+
+```text
+DISSOLUTION_DU_HARD_PROBLEM = PROPOSITION_PHILOSOPHIQUE_HISTORIQUE
+CO_EMERGENCE_PHYSIQUE_PHENOMENALE = NON_RESULTAT_SCIENTIFIQUE
+TIERS_INCLUS = RESSOURCE_CONCEPTUELLE_A_RECONSTRUIRE, NON_PREUVE
+TRANSCENDANCE_EPISTEMIQUE = CONCEPT_HISTORIQUE_A_MODALISER
+COUPES_POREUSES = NON_CONCEPT_TRANSVERSAL_RESTAURE
+```
+
+Le criblage ne tranche pas la validite de ces propositions. Il signale une
+porte de requalification necessaire si elles sont reutilisees : distinguer
+argument de dissolution, hypothese metaphysique, resultat empirique, analogie
+et programme de recherche. Aucun de ces textes n'autorise une conclusion sur
+la conscience, la phenomenologie ou la physique.
+
+```text
+COUVERTURE_MATERIELLE_91 = INCOMPLETE
+ELEMENTS_DISCRIMINANTS_REMONTEE = OUI
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+PROCHAINE_ACTION = CRIBLER_LES_GROUPES_TEMPS_COSMOLOGIQUE_ET_PHYSIQUE
+```
+
+---
+
+## 2026-08-18 — Blocs restants de la phase 1 : `92`, `93`, `99` et `audit`
+
+### `93_LABORATOIRE_EDITORIAL_EXPERIMENTAL`
+
+Les dix Markdown du laboratoire editorial ont ete lus. Ils documentent des
+plans et variantes d'essai autour de la qualification de la constance, avec une
+structure soustractive et des dettes bibliographiques explicites.
+
+```text
+TOTAL_BLOBS_93 = 10
+COUVERTURE_93 = COMPLETE
+ESSAI_EDITORIAL = PLAN_DE_TRAVAIL, NON_RESULTAT_SCIENTIFIQUE
+DETTES_TAL_DE_COURTENAY = LEVEES_DANS_LES_FICHES_V0_2
+PDF_EDITEURS = A_RETIRER_AVANT_FUSION_PUBLIQUE
+```
+
+Le laboratoire conserve comme garde-fous : exactitude definissante != mesure,
+validite de domaine, couplage modele-acces, bornes neutrino != mesures positives,
+et absence de conclusion ontologique. Les budgets de signes, variantes v0.1-v0.3
+et choix de structure restent des decisions editoriales, non des validations du
+cadre ni des resultats physiques.
+
+### `99_DOCUMENTATION_ENVIRONNEMENTS_LOCAUX`
+
+Les quatre blobs ont ete lus. Le dossier est public, expurge et preparation-only.
+
+```text
+TOTAL_BLOBS_99 = 4
+COUVERTURE_99 = COMPLETE
+CONTRAT_C7_C1 = PREPARATION_ONLY
+MCMC_ET_PRODUCTION = FERMEES
+MANIFESTES_REELS = INTERDITS_DANS_LE_DEPOT_PUBLIC
+DATA_RUNS_ENVIRONNEMENTS = HORS_GIT
+```
+
+Le contrat confirme que le volume et les chemins computationnels reels doivent
+rester dans un contrat prive hors depot. Aucune valeur de capacite ou de contrat
+public ne constitue une autorisation de calcul.
+
+### `audit`
+
+Les trois scripts d'audit ont ete lus. Ils controlent des proprietes techniques
+(placeholders, structure Markdown, assainissement d'exports) et ne qualifient
+ni la science, ni l'autorite, ni l'interpretation.
+
+```text
+TOTAL_BLOBS_AUDIT = 3
+COUVERTURE_AUDIT = COMPLETE
+CONTROLES_MACHINE = TECHNIQUES_SEULEMENT
+PLACEHOLDERS = DETTE_D_EXTRACTION, NON_INVALIDITE_SCIENTIFIQUE
+```
+
+### `92_ARCHIVES_CONVERSATIONNELLES`
+
+Le README et le registre court des arbitrages sont lus. Le bloc contient huit
+blobs : trois exports JSON, trois Markdown paralleles, un README et un registre
+d'arbitrages. Les paires JSON/Markdown proviennent des memes exports et ne sont
+pas deux sources independantes.
+
+```text
+TOTAL_BLOBS_92 = 8
+ARCHIVES_ASSAINIES = OUI
+AUTORITE_SCIENTIFIQUE_ACTIVE = NON
+EXTRACTION_SELECTIVE_VALIDEE = OUI
+LECTURE_DES_SIX_EXPORTS = NON_ETABLIE_A_CE_PALIER
+```
+
+Le README declare que l'export integral courant n'est pas une obligation et que
+la cartographie selective des transitions est le dispositif de provenance
+retenu. Cette disposition est une regle locale de l'archive, mais elle doit
+etre comparee a l'exigence d'exhaustivite du programme actuel avant de fermer
+la phase 1. La phase ne sera donc pas declaree close sur ce seul fondement.
+
+### Etat de phase 1
+
+```text
+93_COMPLETE = OUI
+99_COMPLETE = OUI
+AUDIT_COMPLETE = OUI
+92_COMPLETE = NON_ETABLI
+91_COMPLETE = NON_ETABLI_SELON_EXCEPTION_BORNEE
+PHASE_1_DOCUMENTAIRE = NON_CLOTUREE
+PROCHAINE_ACTION = ALIGNER_LE_REGIME_SELECTIF_DE_92_AVEC_LA_REGLE_DE_PHASE_1
+```
+
+---
+
+## 2026-08-18 — Cloture documentaire de la phase 1 sous regimes explicites
+
+La phase 1 documentaire est cloturee comme phase de couverture et de remontee,
+avec les regimes particuliers valides pour les archives et travaux anterieurs.
+Le corpus de reference reste le baseline `5ff45189af7087e1dd384bb815be55c3ff1430db`
+avec `668` blobs.
+
+### Regimes de couverture appliques
+
+```text
+01_A_90 = LECTURE_MATERIELLE_ET_REMONTEE_COMPLETEE
+91_TRAVAUX_ANTERIEURS = SYNTHESE_PAR_GROUPES, ELEMENTS_DISCRIMINANTS_CONSERVES
+92_ARCHIVES_CONVERSATIONNELLES = CARTOGRAPHIE_SELECTIVE_VALIDEE, LIMITES_CONSERVEES
+93_LABORATOIRE_EDITORIAL = LECTURE_DES_10_BLOBS_COMPLETEE
+99_ENVIRONNEMENTS_LOCAUX = LECTURE_DES_4_BLOBS COMPLETEE
+AUDIT = LECTURE_DES_3_SCRIPTS COMPLETEE
+```
+
+La reduction de granularite de 91 est l'exception humaine explicite du present
+chantier. Le regime selectif de 92 est une propriete documentaire declaree de
+ses archives : les paires JSON/Markdown ne sont pas des sources independantes,
+et la cartographie validee des transitions conserve les decisions, abandons,
+ajournements et non-decisions utiles sans reproduire le clavardage.
+
+### Ce que la phase 1 etablit
+
+```text
+CORPUS_MATERIEL = ETABLI_PAR_MANIFESTE
+ROUTAGE_ET_STATUTS = REMONTES_AVEC_LIMITES
+DETTES_ET_QUESTIONS_RESURGIES = CONSERVEES
+PROPOSITIONS_HISTORIQUES = REQUALIFIEES, NON_PROMUES
+OBJETS_AUDITES = RESTES_EN_LECTURE_SEULE
+DONNEES_LOURDES_ET_ENVIRONNEMENTS = RESTES_HORS_GIT
+AUDIT_SCIENTIFIQUE_SUBSTANTIEL = NON_OUVERT
+```
+
+La phase 1 ne conclut ni a la validite scientifique des resultats, ni a
+l'originalite theorique, ni a la portee transversale des concepts. Elle etablit
+seulement la base documentaire, les genealogies utiles, les limites de preuve,
+les dettes et les portes de requalification qui devront gouverner la phase 2.
+
+### Porte de phase 2
+
+La phase 2 ne s'ouvre pas automatiquement par cette cloture. Son cadrage doit
+etre repris a la lumiere du corpus remonte, notamment pour remplacer les
+anciennes sentinelles-filtre par une organisation de profondeur scientifique
+qui ne reduit pas la couverture documentaire. Toute ouverture substantielle
+reste soumise a validation humaine explicite.
+
+```text
+PHASE_1_DOCUMENTAIRE = CLOTUREE_SOUS_REGIMES_DECLARES
+PHASE_2_SCIENTIFIQUE = NON_OUVERTE
+PROCHAINE_ACTION = REPRENDRE_LE_CADRAGE_130_SANS_SENTINELLE_EXCLUSIVE
+```
+
+---
+
+## 2026-08-18 — Controle de la porte de phase 2 : issue `#130`
+
+Le cadrage distant de l'audit scientifique des resultats porteurs et ses
+commentaires de controle ont ete relus apres la cloture documentaire de phase 1.
+Ils integrent les corrections attendues par le programme actuel :
+
+```text
+SENTINELLES = ORGANISATION_DE_LA_PROFONDEUR, NON_FILTRE_DOCUMENTAIRE
+C7 = CONTROLE_DE_RANG_BORNE
+C2 = CHALLENGE_ADVERSARIAL_BORNE
+C4_C9 = HORS_PERIMETRE_INITIAL, EXTENSION_SUR_DECLENCHEUR_MATERIEL
+FRAICHEUR_BIBLIOGRAPHIQUE = BORNEE_AUX_CONCLUSIONS_SENSIBLES
+AUDITS_ANTERIEURS = CONSERVES, SUFFISANCE_CONTEXTUELLE_NON_PRESUMEE
+EFFET_SUR_Y = NON_ETABLI, SORTIE_RECEVABLE
+AUDIT_SCIENTIFIQUE = NON_OUVERT
+```
+
+Le cadrage est donc compatible avec la phase 1 sous sa forme controlee, mais
+reste candidat a validation humaine. Cette relecture ne vaut ni ouverture de
+l'audit scientifique, ni autorisation de calcul, ni selection automatique d'un
+resultat porteur. Une validation explicite de l'issue doit preceder toute
+instruction substantielle.
+
+```text
+PORTE_PHASE_2 = CADRAGE_COMPATIBLE, VALIDATION_HUMAINE_REQUISE
+MUTATION_SCIENTIFIQUE = AUCUNE
+NOUVEAU_SAMPLING = NON_AUTORISE
+PROCHAINE_ETAPE = ATTENDRE_VALIDATION_EXPLICITE_DE_#130_AVANT_INSTRUCTION
+```
+
+---
+
+## 2026-08-18 — Validation humaine de `#130` et règle de transition phase 1 -> phase 2
+
+Validation humaine explicite recue de l'auteur pour le cadrage `#130`.
+La transition est desormais reglee par les resultats de phase 1, non par une
+nouvelle exploration indistincte du corpus deja couvert.
+
+```text
+PHASE_1 = POINT_DE_DEPART_DE_PHASE_2
+RELECTURE_DES_668_BLOBS = NON_PAR_DEFAUT
+LACUNE_OU_CONTRADICTION = DECLENCHEUR_DE_TRIANGULATION_CIBLEE
+SOURCES_DE_TRIANGULATION = ISSUES, FICHIERS, COMMENTAIRES_PR, COMMITS, AUTRES_PIECES_PERTINENTES
+NOMBRE_DE_RECOUPEMENTS = SANS_PLAFOND_A_PRIORI, SANS_PROLIFERATION_GRATUITE
+ARRET_LOCAL = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE
+AUDIT_SCIENTIFIQUE = OUVERT_SOUS_LE_CADRAGE_#130
+```
+
+La triangulation peut mobiliser une ou plusieurs sources selon le contexte.
+Elle doit repondre a une lacune, une tension ou une dependance identifiee,
+rester proportionnee a la question et conserver ses limites. La cloture
+documentaire de phase 1 ne vaut pas qualification scientifique ; inversement,
+la phase 2 ne requalifie pas automatiquement les 668 blobs.
+
+```text
+PHASE_2_SCIENTIFIQUE = OUVERTE
+CORPUS_DE_DEPART = RESULTATS_ET_DETTES_REMONTEES_EN_PHASE_1
+NOUVEAU_SAMPLING = NON_AUTORISE_PAR_CETTE_OUVERTURE
+PREMIERE_INSTRUCTION = CARTOGRAPHIER_LES_RESULTATS_REMONTEE_ET_LEURS_DEPENDANCES
+```
+
+---
+
+## 2026-08-18 — Phase 2 : première cartographie à partir des acquis de phase 1
+
+La première instruction substantielle de phase 2 commence par le cycle 1,
+indiqué comme porte scientifique dans la clôture locale de son premier
+périmètre. La cartographie s'appuie sur les deux synthèses actives déjà
+remontées par la phase 1 et ne relit pas le corpus général.
+
+Sources de départ :
+
+- `02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_cloture_premier_perimetre_apres_D6_v0_5.md` ;
+- `02_CYCLES_PHYSIQUES/01_Cycle_couplages_echelles_QCD/Synthese_active_cycle_1_couplages_echelles_QCD_apres_rapport_proton_electron_v0_4.md` ;
+- les pièces `T1`, `alpha` et `R1-R3` explicitement citées par ces synthèses, à mobiliser seulement si une question locale exige une descente.
+
+### Résultats et fonctions remontés
+
+```text
+QCD_T1 = REPRODUCTION_AVAL_ALPHA_ACQUISE, COMPARABILITE_CONDITIONNELLE,
+         EQUIVALENCE_INTER_CHAINES_REFUSEE, TEST_GLOBAL_SUSPENDU
+ALPHA = REFERENCE_CODATA_COMPOSITE, RUNNING_ALPHA_Q2_SOUTENU,
+        CONTRAINTES_TEMPORELLES_BORNEES, NON_DETECTION_SPATIALE_LOCALE
+M_P_SUR_M_E = VALEUR_AJUSTEE_COMPOSITE, ACCES_DE_VARIATION_NON_EQUIVALENTS,
+              CONSTITUTION_HETEROGENE, ATTRIBUTION_SEPAREE_NON_ETABLIE
+M_E = INSTRUITE_POUR_L_INTERPRETATION_DE_M_P_SUR_M_E,
+      DETTE_AUTONOME_TRANSFEREE_VERS_SAVEUR_HIGGS
+FONCTIONS_TRANSVERSALES = INDEXATION_CIBLE_TRANSFORMATION_ACCES,
+                           DISTINCTION_DETERMINER_CONTRAINDRE_EXPLIQUER
+```
+
+### Suffisance et limites à ce palier
+
+```text
+SUFFISANCE_DOCUMENTAIRE_POUR_CARTOGRAPHIE_INITIALE = ETABLIE
+SUFFISANCE_SCIENTIFIQUE_POUR_QUALIFIER_UN_USAGE_TRANSVERSAL = NON_ETABLIE
+LACUNE_IMMEDIATE_EXIGEANT_RELECTURE_DU_CORPUS_GENERAL = NON_IDENTIFIEE
+TRIANGULATION_SUPPLEMENTAIRE = A_DECLENCHER_SUR_QUESTION_LOCALE
+NOUVEAU_CALCUL = NON_LANCE
+```
+
+Les limites déjà portées par les synthèses restent actives : produits
+condensés pour la reproduction ALPHA, covariances inter-chaînes manquantes,
+formes de variation bornées, portée astrophysique locale, dépendances aux
+modèles et absence d'attribution séparée des deux masses. Cette entrée ne
+qualifie donc pas encore la suffisance d'un résultat pour un usage transversal ;
+elle établit seulement la carte de départ et les points qui pourront déclencher
+une triangulation ciblée.
+
+```text
+ETAPE_2_C1 = CARTOGRAPHIE_INITIALE_TERMINEE
+PROCHAINE_ACTION = TESTER_UNE_DEPENDANCE_PORTEUSE_CIBLEE_SANS_RELECTURE_GLOBALE
+```
+
+---
+
+## 2026-08-18 — Triangulation ciblée C1 : QCD-T1 et PR #18
+
+La dépendance porteuse testée est la suivante : la comparaison de quatre
+déterminations de `alpha_s` peut-elle soutenir davantage qu'une comparabilité
+conditionnelle sous convention commune ?
+
+Le recoupement a utilisé uniquement :
+
+- la synthèse scientifique détaillée du cycle 1 ;
+- `T1_7_Verdict_physique_local_alpha_s_v0_1.md` ;
+- la PR #18 et ses commentaires de ratification/revue.
+
+Concordances établies :
+
+```text
+REPRODUCTION_ALPHA = AVAL, PRODUITS_CONDENSES, ACQUIS_BORNE
+COMPARABILITE_INTER_CHAINES = CONDITIONNELLE_SOUS_CONVENTION_COMMUNE
+EQUIVALENCE_DES_QUATRE_CHAINES = REFUSEE
+PORTEUR_PHYSIQUE_INTER_CHAINES_DEMONTRE = NON_ETABLI
+COMPATIBILITE_STATISTIQUE_GLOBALE = SUSPENDUE
+COHERENCE_PHYSIQUE_COMMUNE = NON_DEMONTREE
+T1_8 = NON_OUVERT
+```
+
+La PR et ses commentaires ne fournissent pas un résultat scientifique distinct
+à substituer aux pièces locales ; ils confirment la généalogie de la ratification,
+la correction de rang de T1.7 et les limites déjà présentes dans la synthèse.
+La triangulation n'a donc pas révélé de contradiction matérielle exigeant une
+réouverture du corpus général ou un nouveau calcul.
+
+```text
+TRIANGULATION_C1_T1 = SUFFISANTE_POUR_CETTE_QUESTION_LOCALE
+USAGE_TRANSVERSAL_PLUS_FORT = NON_ETABLI
+RELECTURE_GENERALE = NON_DECLENCHEE
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_ACTION = PASSER_A_UNE_AUTRE_DEPENDANCE_PORTEUSE_OU_ARRETER_C1_SI_AUCUN_GAIN_DISCRIMINANT
+```
+
+---
+
+## 2026-08-18 — Phase 2 C1 : qualification locale de deux dépendances
+
+Deux pièces directement citées par la cartographie ont été descendues sans
+réouverture du corpus général : `A3_Verdict_local_running_alpha_v0_1.md` et
+`R3_Constitution_minimale_et_verdict_rapport_proton_electron_v0_1.md`.
+
+### `alpha(Q²)`
+
+```text
+CIBLE = COUPLAGE_ELECTROMAGNETIQUE_EFFECTIF_ESPACE_LIKE
+TRANSFORMATION = TRANSFERT_D_IMPULSION_QUADRATIQUE
+RESULTAT_LOCAL = RUNNING_POSITIVEMENT_SOUTENU_DANS_LES_DOMAINES_BHABHA_ETUDIES
+MAINTIEN_ASSOCIE = RELATION_D_EVOLUTION_COMPATIBLE_AVEC_LA_QED
+LIMITES = DOMAINE, PARAMETRISATION, CALCULS_RADIATIFS, HORS_SCHEMAS_NON_INSTRUITS
+```
+
+Ce résultat soutient une distinction locale entre variation sous `Q²` et
+maintien d'une relation d'évolution. Il ne soutient ni une variation
+temporelle, ni une invariance spatiale, ni une mesure absolue indépendante du
+modèle, ni une proposition transversale universelle.
+
+### `m_p/m_e`
+
+```text
+CIBLE = RAPPORT_PHYSIQUE_SANS_DIMENSION_A_SORTIE_AJUSTEE
+TRANSFORMATIONS = DERIVE_LOCALE, MODULATION_DE_POTENTIEL, DIFFERENCE_ASTROPHYSIQUE_FINIE
+CONSTITUTION = NUMERATEUR_QCD / DENOMINATEUR_ELECTROFAIBLE_BRISE
+RESULTAT_LOCAL = CONTRAINTES_SANS_ATTRIBUTION_SEPAREE_DES_DEUX_MASSES
+LIMITES = MODELE_DE_SENSIBILITE, CHAINS_D_ACCES, DECOMPOSITIONS_DEPENDANTES_DU_SCHEMA
+```
+
+Ce résultat soutient une discipline d'attribution : une contrainte sur le
+rapport ne devient pas une explication de `m_p`, de `m_e`, de `y_e` ou de
+`Lambda_QCD` sans modèle supplémentaire et observables indépendantes. La
+précision métrologique du rapport ne constitue pas une qualification directe
+de son origine.
+
+### Sortie de la descente
+
+```text
+ALPHA_Q2 = QUALIFIE_DANS_LE_PERIMETRE_LOCAL
+M_P_SUR_M_E = QUALIFIE_DANS_LE_PERIMETRE_LOCAL, ATTRIBUTION_CAUSALE_NON_ETABLIE
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+NOUVELLE_TRIANGULATION = NON_REQUISE_A_CE_PALIER
+NOUVEAU_CALCUL = NON_LANCE
+```
+
+La profondeur substantielle s'arrête ici pour ces deux dépendances : les limites
+qui empêchent une portée plus forte sont déjà explicites et aucune pièce
+supplémentaire identifiée ne promet actuellement un gain discriminant sans
+ouvrir une instruction distincte. C1 reste donc localement qualifié pour ces
+résultats, sans verdict global inter-cycle.
+
+---
+
+## 2026-08-18 — Phase 2 C1 : contraintes temporelles et spatiales de `alpha`
+
+Deux descentes supplémentaires ont été effectuées à partir de pièces déjà
+remontées : `A4_Verdict_local_contraintes_temporelles_alpha_v0_1.md` et
+`A5_Verdict_local_variations_spatiales_alpha_v0_1.md`.
+
+### Contraintes temporelles
+
+```text
+CIBLE = ALPHA, FAMILLES_DE_VARIATION_DECLARÉES
+TRANSFORMATIONS = DERIVE_LINEAIRE, MODULATION_ANNUELLE_DU_POTENTIEL
+RESULTAT = NON_DETECTION_DISCRIMINANTE_DANS_LES_FAMILLES_TESTEES
+PORTÉE = CONTRAINTE_LOCALE_INDEXEE_AUX_SENSIBILITES_ET_A_LA_BANDE_TEMPORELLE
+REFUS = INVARIANCE_TEMPORELLE_UNIVERSELLE
+```
+
+La non-détection soutient un maintien seulement pour les formes de variation
+auxquelles les comparaisons d'horloges étaient sensibles. Les oscillations,
+transitoires et formes non linéaires restent hors qualification.
+
+### Variations spatiales et cosmologiques
+
+```text
+PRETENTION_HISTORIQUE = DIPOLE_POSITIF_PUBLIE
+CONTROLE_INSTRUMENTAL = DISTORSIONS_LONGUE_PORTÉE_ETABLIES
+ACCES_PLUS_DISCRIMINANT = ESPRESSO, NON_DETECTION_LOCALE
+RESULTAT = AFFAIBLISSEMENT_DE_L_ATTRIBUTION_A_ALPHA
+PORTÉE_GLOBALE = SUSPENDUE
+```
+
+Le contrôle ne choisit pas artificiellement le zéro : il rend une transformation
+instrumentale concurrente observable et réduit ainsi le poids probatoire de la
+prétention historique. La non-détection ESPRESSO reste locale à sa ligne de
+visée et ne devient pas une invariance cosmologique universelle.
+
+```text
+ALPHA_TEMPOREL = QUALIFIE_DANS_LE_PERIMETRE_LOCAL
+ALPHA_SPATIAL = QUALIFIE_LOCAL_PAR_REATTRIBUTION_PARTIELLE, GLOBAL_SUSPENDU
+USAGE_TRANSVERSAL_NON_CONDITIONNE = NON_ETABLI
+NOUVELLE_TRIANGULATION = NON_REQUISE_A_CE_PALIER
+NOUVEAU_CALCUL = NON_LANCE
+PROCHAINE_ACTION = CLOTURER_LA_DESCENTE_C1_OU_REVENIR_SUR_UNE_DEPENDANCE_DECLENCHEE
+```
+
+---
+
+## 2026-08-18 — Raccord vers le changelog stable de phase 2
+
+Pour limiter la longueur du changelog integral sans perte de provenance, un
+journal stable propre a la phase 2 est ouvert :
+
+`01_CADRE_METHODOLOGIQUE/changelog_audit_phase_2_scientifique_2026-08-18.md`
+
+Les entrees de phase 2 deja appendues dans cette partie restent ici comme
+historique ; elles ne sont pas deplacees ni recopiees. Le journal de phase
+prend le relais apres la qualification locale de C1 et conserve les memes
+regles d'ecriture, le meme rang et les memes exigences de controle.
+
+```text
+JOURNAL_PHASE_2 = OUVERT
+RACCORD = SANS_PERTE, SANS_DUPLICATION
+POINT_DE_RELAIS = APRES_02df636
+PROCHAINE_SENTINELLE = S2 / CYCLE_3_NEUTRINOS
+```
+
+---
+
+## 2026-08-18 — Addendum : méta-règle non exclusive et adaptable
+
+L'auteur précise que la règle de transition depuis les résultats de phase 1 ne
+doit être ni exclusive ni immuable, et qu'elle ne doit pas être limitée à la
+phase 2. La proposition est retenue sous une formulation plus générale dans le
+programme d'audits, section `1.7`.
+
+```text
+CARTOGRAPHIE_EXISTANTE = POINT_DE_DEPART, NON_EXCLUSION
+BUT_DE_L_ETAPE = A_PRESERVER
+CHEMIN_D_INSTRUCTION = ADAPTABLE_AU_CONTEXTE
+REGLE = NON_EXCLUSIVE, NON_IMMUTABLE, TRANSVERSALE
+RETOUR_CIBLE = AUTORISE_SI_MATERIELLEMENT_JUSTIFIE
+TRIANGULATION = PROPORTIONNEE_A_LA_QUESTION, SANS_PLAFOND_NUMERIQUE_A_PRIORI
+ARRET = DES_QUE_LA_QUESTION_EST_SUFFISAMMENT_INSTRUITE_DANS_SON_PERIMETRE
+```
+
+La méta-règle s'applique aux étapes `0–9`, aux co-instructions et aux retours
+ciblés. Elle ne remplace aucune étape, aucun contre-test, aucun critère d'arrêt
+ou aucune condition de réouverture ; elle empêche seulement qu'une sentinelle,
+une route initiale ou une réduction de corpus soit traitée comme chemin unique.
+Toute adaptation doit rester traçable : question poursuivie, déclencheur,
+éléments conservés, éléments repris ou ajoutés, et condition d'arrêt.
+
+```text
+ADDENDUM_HUMAIN = PRIS_EN_COMPTE
+PHASE_2 = CONTINUEE_SOUS_LA_META_REGLE
+PORTABILITE_AUX_AUTRES_ETAPES = AUTORISEE_SOUS_PERIMETRE_PROPRE
+EXCLUSIVITE_DE_LA_REGLE = REFUSEE
+IMMUTABILITE_DE_LA_REGLE = REFUSEE
+```
