@@ -25,6 +25,21 @@ Pour une tâche locale :
 
 Ne pas précharger l’intégralité du corpus par défaut. La provenance détaillée se consulte lorsqu’une décision, une contradiction ou une révision l’exige.
 
+### 2.1 Intelligibilité humaine suffisante
+
+Une prose grammaticalement claire ne suffit pas si les objets auxquels elle se réfère ne sont pas identifiables par le lecteur humain.
+
+Lorsqu’une proposition, une synthèse, un état ou une décision doit être compris, contrôlé ou validé humainement :
+
+- nommer d’abord l’objet en langage naturel ;
+- introduire ensuite, si utile, son code, sigle ou identifiant local comme référence secondaire ;
+- ré-expliciter le référent aux frontières de contexte lorsque plusieurs codes, phases, cycles ou sous-objets peuvent être confondus ;
+- ne pas présumer qu’une syntaxe fluide établit à elle seule la compréhension du référent.
+
+Cette règle n’interdit pas la notation compacte dans le travail effectif. Une notation locale peut être utilisée si elle apporte un gain réel de précision ou de charge cognitive et si son référent reste récupérable sans dépendre de la mémoire implicite de l’agent ou de l’auteur.
+
+La distinction entre vue publique, vue de synthèse et travail effectif est utile mais non rigide : la quantité de prose n’est pas le critère ; l’auditabilité sémantique l’est.
+
 ## 3. Routage et autorité documentaire
 
 Ne pas confondre l’endroit où l’on commence avec ce qui fait autorité. Un point d’entrée vivant local route vers l’autorité applicable ; il ne l’acquiert pas par sa seule fonction d’accueil.
@@ -88,7 +103,7 @@ Ne jamais appeler `C7-GAL` « C7-C1 GAL ». Aucun état MCMC, aucune porte B1/SC
 
 Les permissions, blocages et états mouvants ne sont pas recopiés ici : les lire dans le README du cycle 7 puis dans l’issue active de la ligne. Ne pas reconstituer l’autorité depuis les anciennes issues seules.
 
-## 7. Documents et preuves
+## 7. Documents, preuves et checkpoints de reprise
 
 Un document destiné à représenter l’état courant est mis à jour sous un nom stable par défaut. Git porte son historique. Ne pas créer une nouvelle version de fichier pour chaque changement sans raison propre.
 
@@ -96,15 +111,32 @@ Un protocole exécuté, une extraction, un pré-enregistrement, un résultat ou 
 
 Avant de supprimer, déplacer ou déclasser un document existant, vérifier au minimum son contenu unique, ses dépendances et sa fonction scientifique ou probatoire.
 
-Ne pas créer de registre central supplémentaire lorsqu’un README local, une issue active ou Git porte déjà la fonction nécessaire. Ne créer un `AGENTS.md` local que si des règles locales diffèrent réellement du noyau racine.
+Ne pas créer de registre central supplémentaire lorsqu’un README local, une issue active ou Git porte déjà la fonction nécessaire. Ne créer un `AGENTS.md` local que si des règles locales diffèrent réellement du noyau racine ; un fichier local affine le parent, il ne doit pas le recopier intégralement.
 
-## 8. Issues et état du travail
+Pour un chantier long ou complexe susceptible de perdre son état de reprise, conserver un **checkpoint unique et traçable** dans l’ancrage opérationnel déjà utilisé par ce chantier : commentaire de PR lorsqu’une PR porte effectivement le travail, commentaire d’issue lorsqu’une issue en est l’ancrage, ou autre support existant approprié.
+
+Un checkpoint n’est pas un journal exhaustif. Il conserve seulement ce qui est nécessaire à une reprise sûre :
+
+- objet travaillé, en langage naturel ;
+- acquis établis et limites de portée ;
+- questions, blocages ou décisions encore ouverts ;
+- inférences explicitement interdites ou non établies lorsqu’elles comptent ;
+- prochaine opération réellement retenue ;
+- quelques ancres de provenance suffisantes pour retrouver les preuves.
+
+Mettre à jour le même checkpoint lorsqu’un changement modifie réellement l’état de reprise. Ne pas dupliquer automatiquement le même état dans plusieurs supports.
+
+## 8. Issues, interventions humaines et état du travail
 
 Une issue porte une instruction bornée, ses décisions et les étapes qui changent réellement l’état du travail. Elle ne doit pas devenir une copie exhaustive de la conversation.
 
 Pour un chantier borné, préférer un ancrage opérationnel unique. Consigner un changement lorsqu’il modifie substantiellement la question, le périmètre, un résultat, un blocage durable, une validation, la décision suivante, l’ouverture, le remplacement, la suspension, la clôture ou la réouverture du travail.
 
 Ne pas créer de mise à jour documentaire pour chaque action technique. Ne pas inférer automatiquement l’issue active depuis un numéro, une date ou un label.
+
+Une intervention humaine ne doit pas être transformée automatiquement en ordre. Lorsque cela change l’action, distinguer au moins : observation, hypothèse, proposition, préférence, décision et autorisation. Une proposition reste à évaluer intellectuellement et méthodologiquement ; une décision ou autorisation explicite s’applique dans le périmètre qu’elle établit.
+
+Avant d’engager une tâche longue, vérifier qu’un point de reprise suffisamment consolidé existe si la perte de contexte serait coûteuse. À un palier de consolidation ou avant de clore une longue séquence, effectuer un autocontrôle borné portant sur : intelligibilité des objets, traçabilité suffisante, respect du périmètre et absence de nouvel artefact injustifié. Ne pas maintenir par défaut une boucle d’auto-réflexivité permanente parallèle au travail principal.
 
 ## 9. Passages entre volets ou cycles
 
