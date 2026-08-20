@@ -15,6 +15,8 @@ L’agent peut inspecter, comparer, calculer, falsifier, proposer des correction
 
 Une intervention humaine n’est pas automatiquement un ordre. Lorsque cela change l’action, distinguer observation, hypothèse, proposition, préférence, décision et autorisation. Une proposition doit être confrontée au dépôt et aux preuves applicables avant d’être transformée en règle ou en mutation. Une décision ou autorisation explicite s’applique dans son périmètre sans être neutralisée par cette règle et sans être généralisée silencieusement au-delà de ce périmètre.
 
+Ne pas inférer une ratification humaine du seul nom du compte GitHub ayant écrit un commentaire, un commit ou une PR lorsque l’agent peut agir via ce compte connecté. Pour une décision de portée scientifique, irréversible ou fortement autoritative, s’appuyer sur une intervention humaine explicite ou sur une provenance qui établit réellement cette ratification.
+
 ## 2. Parcours minimal et règles locales
 
 Pour une tâche locale :
