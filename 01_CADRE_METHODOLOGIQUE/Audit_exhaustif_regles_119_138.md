@@ -1,12 +1,14 @@
-# Audit exhaustif des règles et régimes — #119 à #138
+# Audit exhaustif et étude des règles et régimes — #119 à #138
 
 ## Fonction
 
-Cette pièce est l’ancrage de l’inventaire exhaustif des règles explicites et implicites présentes, appliquées, modifiées, testées, contredites ou perdues dans les objets GitHub #119 à #138 et dans les surfaces empiriques directement pertinentes pour leur interprétation.
+Cette pièce est l’ancrage d’un audit **exhaustif et qualifiant** des règles explicites et implicites présentes, appliquées, modifiées, testées, contredites, sous-appliquées, sur-appliquées ou perdues dans les objets GitHub #119 à #138 et dans les surfaces empiriques directement pertinentes pour leur interprétation.
 
-Elle précède toute nouvelle promotion normative dans `AGENTS.md`, toute migration vers l’infrastructure et toute sélection d’outil.
+L’audit ne se limite pas à observer ou recenser. Il doit **étudier** chaque règle suffisamment identifiée : reconstruire sa fonction, son régime, son effectivité, ses mécanismes, ses coûts, ses contre-cas, ses relations récursives et son statut probatoire. Lorsque l’observation existante ne suffit pas à discriminer entre plusieurs qualifications, l’audit doit concevoir puis, si son régime l’autorise, exécuter un contre-test, une ablation, une comparaison ou une vérification ciblée.
 
-La conversation fournie par l’auteur pendant la reprise du 20 août 2026 est traitée comme une **expérience empirique / surface d’observation des trajectoires et de l’application réelle des règles**. Elle n’est pas une autorité normative. Elle sert notamment à observer les règles effectivement déclenchées, non déclenchées, sur-appliquées, sous-appliquées, corrigées ou oubliées.
+Cette étude précède toute nouvelle promotion normative dans `AGENTS.md`, toute migration vers l’infrastructure et toute sélection d’outil.
+
+La conversation fournie par l’auteur pendant la reprise du 20 août 2026 est traitée comme une **expérience empirique / surface d’étude des trajectoires et de l’application réelle des règles**. Elle n’est pas une autorité normative. Elle sert notamment à confronter les règles disponibles au comportement effectif : déclenchement, oubli, sous-application, sur-application, correction, bénéfice, coût, récursivité et effet sur la décision suivante.
 
 ## Règles d’audit déjà applicables
 
@@ -21,60 +23,90 @@ L’audit applique notamment les exigences déjà établies dans le dépôt :
 - conserver les contre-cas, résultats négatifs, exceptions, conditions de silence et coûts ;
 - distinguer utilité d’une fonction et nécessité de la conserver sous forme de règle ;
 - ne pas réparer les règles pendant la phase d’inventaire ;
-- ne pas attribuer une ratification humaine sur la seule identité du compte GitHub auteur lorsqu’un agent peut écrire via le compte connecté.
+- ne pas attribuer une ratification humaine sur la seule identité du compte GitHub auteur lorsqu’un agent peut écrire via le compte connecté ;
+- ne pas appeler `test` une simple application favorable : chercher effet attendu, critère d’échec/coût, comparaison/ablation/contre-exemple et observation discriminante ;
+- lorsque plusieurs règles se gouvernent mutuellement, étudier la récursivité elle-même : règle, contrôle de la règle, contrôle du contrôle, trace de ce contrôle, synchronisation et condition d’arrêt.
 
-## Condition d’exhaustivité
+## Unité d’étude d’une règle
+
+Pour chaque règle ou pratique normative candidate, l’audit cherche, lorsqu’elles sont pertinentes :
+
+1. formulation(s) et transformations ;
+2. fonction protégée ou améliorée ;
+3. sujet : agent, humain, automatisation ou combinaison ;
+4. portée, déclencheur, durée, exceptions, priorité, héritage et condition de retrait ;
+5. autorité et ratification réellement retrouvées ;
+6. régime appliqué de facto et écarts avec le régime déclaré ;
+7. mécanisme d’enforcement réel : convention, document, Git, CI, script, workflow, validation humaine, etc. ;
+8. épisodes d’application, de silence, d’oubli, de sous-application et de sur-application ;
+9. effets observés sur information, erreur, décision, charge cognitive/documentaire/technique et réversibilité ;
+10. contre-cas, falsificateurs, ablations ou comparaisons déjà disponibles ;
+11. tests supplémentaires réellement discriminants, s’ils sont nécessaires et autorisés ;
+12. contradictions, redondances, absorptions possibles et relations récursives avec d’autres règles ;
+13. dépendance au domaine ou au régime ;
+14. statut probatoire et verdict provisoire, sans promotion automatique.
+
+Une règle peut donc être abondamment observée sans être encore suffisamment étudiée pour être qualifiée.
+
+## Condition d’exhaustivité et de suffisance de la première étude
 
 La première passe n’est pas terminée tant que :
 
 1. chaque objet #119–#138 a été lu avec son corps et tous ses commentaires/checkpoints pertinents ;
-2. chaque formulation normative ou pratique normative identifiable a soit une entrée de matrice, soit une justification explicite de non-règle ;
-3. les relations récursives entre règles, règles de contrôle, règles de contrôle des règles et mécanismes d’enforcement ont été reliées ;
-4. les règles explicitement locales sont séparées des extensions historiques ou supposées ;
-5. les règles implicites détectées dans les comportements réels sont distinguées des simples habitudes ;
-6. la surface empirique conversationnelle fournie a été confrontée aux règles du dépôt pour observer application, oubli, sous-application, sur-application et correction ;
-7. aucune grande famille de fonction rencontrée dans #119–#138 n’est exclue par convention.
+2. pour les PR qui matérialisent ou testent une règle, les diffs/contrôles nécessaires ont été inspectés afin de distinguer intention et application réelle ;
+3. chaque formulation normative ou pratique normative identifiable a soit une entrée de matrice, soit une justification explicite de non-règle ;
+4. chaque règle entrée dans la matrice a été étudiée au moins jusqu’au niveau nécessaire pour distinguer fonction, régime, effectivité et statut probatoire ;
+5. les relations récursives entre règles, règles de contrôle, règles de contrôle des règles et mécanismes d’enforcement ont été reliées ;
+6. les règles explicitement locales sont séparées des extensions historiques ou supposées ;
+7. les règles implicites détectées dans les comportements réels sont distinguées des simples habitudes ;
+8. la surface empirique conversationnelle fournie a été confrontée aux règles du dépôt pour étudier application, oubli, sous-application, sur-application, correction, coût et effet décisionnel ;
+9. les règles à fort impact ou au statut ambigu ont reçu un contre-test/une comparaison lorsqu’une observation seule ne permet pas de les qualifier et que le test est autorisé ;
+10. aucune grande famille de fonction rencontrée dans #119–#138 n’est exclue par convention.
+
+L’exhaustivité documentaire n’implique pas une profondeur identique pour toutes les règles : l’approfondissement est commandé par la dépendance réelle et le pouvoir discriminant attendu. Mais une règle ne peut être tenue pour sans effet ou qualifiée uniquement parce que son intitulé paraît clair.
 
 ## Couverture des objets
 
-| Objet | Nature | Corps | Commentaires/checkpoints | Règles extraites | Relations/récursivités | Statut couverture |
-|---|---|---|---|---|---|---|
-| #119 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #120 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #121 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #122 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #123 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #124 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #125 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #126 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #127 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #128 | PR | lu | aucun commentaire d’ouverture signalé | en cours | en cours | OUVERT |
-| #129 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #130 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #131 | PR | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #132 | PR | lu/état déjà partiellement reconstruit | à relire exhaustivement | en cours | en cours | OUVERT |
-| #133 | PR | lu/état courant connu | à relire exhaustivement | en cours | en cours | OUVERT |
-| #134 | issue | lu | à relire exhaustivement | en cours | en cours | OUVERT |
-| #135 | issue | lu | à relire exhaustivement | en cours | en cours | OUVERT |
-| #136 | issue | lu | à lire exhaustivement | en cours | en cours | OUVERT |
-| #137 | PR | lu | aucun commentaire au dernier contrôle | en cours | en cours | OUVERT |
-| #138 | PR gelée | lu | checkpoint/tentative à intégrer comme contre-cas | en cours | en cours | OUVERT |
+| Objet | Nature | Corps | Commentaires/checkpoints | Diffs/application réelle | Règles étudiées | Relations/récursivités | Statut couverture |
+|---|---|---|---|---|---|---|---|
+| #119 | issue | lu | lecture en cours | n/a + objets liés si nécessaires | en cours | en cours | OUVERT |
+| #120 | issue | lu | lecture en cours | n/a + objets liés si nécessaires | en cours | en cours | OUVERT |
+| #121 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
+| #122 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
+| #123 | issue | lu | lu | #124 lié | en cours | en cours | OUVERT |
+| #124 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
+| #125 | issue | lu | lu | #126 lié | en cours | en cours | OUVERT |
+| #126 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
+| #127 | issue | lu | lu | #128 + mutations issues | en cours | en cours | OUVERT |
+| #128 | PR | lu | aucun commentaire | à contrôler | en cours | en cours | OUVERT |
+| #129 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
+| #130 | issue | lu | lecture exhaustive en cours | objets liés selon dépendance | en cours | en cours | OUVERT |
+| #131 | PR | lu | à lire exhaustivement | à contrôler | en cours | en cours | OUVERT |
+| #132 | PR | état partiellement reconstruit | à relire exhaustivement | à contrôler | en cours | en cours | OUVERT |
+| #133 | PR | état courant connu | à relire exhaustivement | à contrôler | en cours | en cours | OUVERT |
+| #134 | issue | lu | à relire exhaustivement | mécanismes/outils liés | en cours | en cours | OUVERT |
+| #135 | issue | lu | à relire exhaustivement | épisodes/diffs liés | en cours | en cours | OUVERT |
+| #136 | issue | lu | à lire exhaustivement | mécanismes/outils liés | en cours | en cours | OUVERT |
+| #137 | PR | lu | aucun commentaire au dernier contrôle | à contrôler | en cours | en cours | OUVERT |
+| #138 | PR gelée | lu | checkpoint/tentative à intégrer comme cas empirique | diff à étudier comme contre-cas | en cours | en cours | OUVERT |
 
-## Sorties attendues après inventaire
+## Sorties attendues après étude
 
-Après couverture exhaustive, l’audit produira séparément :
+Après couverture exhaustive et étude suffisante, l’audit produira séparément :
 
 1. une matrice exhaustive des règles et régimes, sur un support choisi selon son rôle réel de filtrage, comparaison, maintenance et future automatisation ;
-2. une carte des récursivités et dépendances entre règles ;
-3. une synthèse exécutive indiquant ce qui paraît applicable, testable, promouvable, local, à restreindre, à contre-tester, à déplacer vers l’infrastructure ou à laisser en observation ;
-4. une cartographie fonctionnelle des besoins d’outillage, puis une recherche ciblée de capacités natives, API/MCP et outils open source gratuits, sans choisir un outil avant d’avoir établi la fonction à porter.
+2. une carte des récursivités, contradictions, dépendances, recouvrements et mécanismes d’enforcement entre règles ;
+3. une synthèse exécutive distinguant ce qui est suffisamment soutenu pour être appliqué/promu dans un régime donné, ce qui doit rester local ou en shadow, ce qui exige un contre-test, ce qui doit être restreint/retiré et ce qui paraît mieux porté par l’infrastructure ;
+4. seulement après cette synthèse, une cartographie fonctionnelle des besoins d’outillage, puis une recherche ciblée de capacités natives, API/MCP et outils open source gratuits, sans choisir un outil avant d’avoir établi la fonction à porter ;
+5. pour toute migration ou automatisation candidate, une comparaison entre règle interprétée, mécanisme infrastructurel, combinaison des deux et absence de changement.
 
 ## Statut
 
 ```text
-INVENTAIRE_119_138 = OUVERT / EXHAUSTIF
+AUDIT_119_138 = OUVERT / EXHAUSTIF / QUALIFIANT
+OBSERVATION_SEULE = INSUFFISANTE
 PROMOTION_NORMATIVE = SUSPENDUE
-MATRICE = SUPPORT_A_DECIDER_APRES_OBSERVATION_STRUCTURELLE
-OUTILLAGE = APRES_MATRICE_ET_FONCTIONS
+MATRICE = SUPPORT_A_DECIDER_APRES_OBSERVATION_DE_SA_STRUCTURE_REELLE
+OUTILLAGE = APRES_MATRICE_ET_SYNTHESE_FONCTIONNELLE
 MERGE = NON_AUTORISE_PAR_CE_DOCUMENT
 ```
