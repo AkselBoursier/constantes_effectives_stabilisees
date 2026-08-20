@@ -44,9 +44,11 @@ Pour chaque règle ou pratique normative candidate, l’audit cherche, lorsqu’
 11. tests supplémentaires réellement discriminants, s’ils sont nécessaires et autorisés ;
 12. contradictions, redondances, absorptions possibles et relations récursives avec d’autres règles ;
 13. dépendance au domaine ou au régime ;
-14. statut probatoire et verdict provisoire, sans promotion automatique.
+14. statut probatoire et verdict provisoire, sans promotion automatique ;
+15. **action à réaliser**, si l’étude en justifie une ;
+16. **condition de déclenchement / régime de cette action**, afin qu’une action locale ou conditionnelle ne soit pas lue comme une instruction générale.
 
-Une règle peut donc être abondamment observée sans être encore suffisamment étudiée pour être qualifiée.
+Une règle peut donc être abondamment observée sans être encore suffisamment étudiée pour être qualifiée. Elle peut aussi être suffisamment qualifiée sans appeler de nouvelle action.
 
 ## Condition d’exhaustivité et de suffisance de la première étude
 
@@ -81,7 +83,7 @@ L’exhaustivité documentaire n’implique pas une profondeur identique pour to
 | #128 | PR | lu | aucun commentaire | à contrôler | en cours | en cours | OUVERT |
 | #129 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
 | #130 | issue | lu | lecture exhaustive en cours | objets liés selon dépendance | en cours | en cours | OUVERT |
-| #131 | PR | lu | à lire exhaustivement | à contrôler | en cours | en cours | OUVERT |
+| #131 | PR | lu | lu | à contrôler | en cours | en cours | OUVERT |
 | #132 | PR | état partiellement reconstruit | à relire exhaustivement | à contrôler | en cours | en cours | OUVERT |
 | #133 | PR | état courant connu | à relire exhaustivement | à contrôler | en cours | en cours | OUVERT |
 | #134 | issue | lu | à relire exhaustivement | mécanismes/outils liés | en cours | en cours | OUVERT |
@@ -90,6 +92,38 @@ L’exhaustivité documentaire n’implique pas une profondeur identique pour to
 | #137 | PR | lu | aucun commentaire au dernier contrôle | à contrôler | en cours | en cours | OUVERT |
 | #138 | PR gelée | lu | checkpoint/tentative à intégrer comme cas empirique | diff à étudier comme contre-cas | en cours | en cours | OUVERT |
 
+## Schéma minimal attendu de la matrice finale
+
+Le support exact reste à décider après observation de la structure réelle, mais chaque entrée devra pouvoir porter au minimum :
+
+```text
+ID_REGLE
+FORMULATION_COURANTE
+FONCTION
+SUJET
+SOURCE(S)_ET_ANTECEDENT(S)
+REGIME_DECLARE
+REGIME_RATIFIE
+REGIME_DE_FACTO
+PORTEE / DECLENCHEUR / EXCEPTIONS / ARRET
+MECANISME_D_ENFORCEMENT
+EPISODES_D_APPLICATION
+EPISODES_DE_SILENCE
+SOUS_APPLICATIONS
+SUR_APPLICATIONS
+EFFETS_BENEFIQUES
+COUTS / EFFETS_ADVERSES
+CONTRE_CAS / ABLATIONS / TESTS
+RECURSIVITES / DEPENDANCES / CONTRADICTIONS
+STATUT_PROBATOIRE
+VERDICT_PROVISOIRE
+ACTION_A_REALISER
+CONDITION_DE_DECLENCHEMENT_DE_L_ACTION
+SUPPORT_CIBLE_EVENTUEL
+```
+
+`ACTION_A_REALISER` n’est pas synonyme de promotion. Les sorties admissibles incluent notamment : `AUCUNE`, `APPLIQUER_DANS_REGIME_X`, `CONTRE_TESTER`, `RESTREINDRE`, `REFORMULER`, `RETIRER`, `INSCRIRE_AGENTS_LOCAL`, `INSCRIRE_AGENTS_TRANSVERSE`, `PORTER_PAR_INFRASTRUCTURE`, `AUTOMATISER_MECANIQUEMENT`, `CONSERVER_EN_SHADOW`, `DOCUMENTER_ET_NE_PAS_ACTIVER`, ou une action plus spécifique justifiée par l’étude.
+
 ## Sorties attendues après étude
 
 Après couverture exhaustive et étude suffisante, l’audit produira séparément :
@@ -97,8 +131,9 @@ Après couverture exhaustive et étude suffisante, l’audit produira séparéme
 1. une matrice exhaustive des règles et régimes, sur un support choisi selon son rôle réel de filtrage, comparaison, maintenance et future automatisation ;
 2. une carte des récursivités, contradictions, dépendances, recouvrements et mécanismes d’enforcement entre règles ;
 3. une synthèse exécutive distinguant ce qui est suffisamment soutenu pour être appliqué/promu dans un régime donné, ce qui doit rester local ou en shadow, ce qui exige un contre-test, ce qui doit être restreint/retiré et ce qui paraît mieux porté par l’infrastructure ;
-4. seulement après cette synthèse, une cartographie fonctionnelle des besoins d’outillage, puis une recherche ciblée de capacités natives, API/MCP et outils open source gratuits, sans choisir un outil avant d’avoir établi la fonction à porter ;
-5. pour toute migration ou automatisation candidate, une comparaison entre règle interprétée, mécanisme infrastructurel, combinaison des deux et absence de changement.
+4. un plan d’action dérivé de la matrice, où chaque action conserve son régime, son déclencheur, son support cible et son niveau d’autorité ;
+5. seulement après cette synthèse, une cartographie fonctionnelle des besoins d’outillage, puis une recherche ciblée de capacités natives, API/MCP et outils open source gratuits, sans choisir un outil avant d’avoir établi la fonction à porter ;
+6. pour toute migration ou automatisation candidate, une comparaison entre règle interprétée, mécanisme infrastructurel, combinaison des deux et absence de changement.
 
 ## Statut
 
@@ -107,6 +142,7 @@ AUDIT_119_138 = OUVERT / EXHAUSTIF / QUALIFIANT
 OBSERVATION_SEULE = INSUFFISANTE
 PROMOTION_NORMATIVE = SUSPENDUE
 MATRICE = SUPPORT_A_DECIDER_APRES_OBSERVATION_DE_SA_STRUCTURE_REELLE
+ACTION_A_REALISER = SORTIE_OBLIGATOIRE_DE_L_ETUDE / PEUT_ETRE_AUCUNE
 OUTILLAGE = APRES_MATRICE_ET_SYNTHESE_FONCTIONNELLE
 MERGE = NON_AUTORISE_PAR_CE_DOCUMENT
 ```
