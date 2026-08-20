@@ -56,6 +56,19 @@ Une décision humaine plus récente explicitement applicable peut amender une r�
 
 Ne pas modifier une archive ou un état daté pour simuler une cohérence actuelle. Corriger la porte d’entrée vivante et conserver la généalogie.
 
+### 3.1 Archives conversationnelles comme corpus empirique
+
+Une archive conversationnelle n’est pas une autorité scientifique, doctrinale ou opérationnelle par sa seule existence. Elle peut néanmoins constituer un **corpus empirique de trajectoires** : apparition d’un problème, hypothèses successives, décisions, corrections, erreurs de portée, effets observés, contre-cas et déplacements de question.
+
+Lorsqu’une archive conversationnelle est utilisée pour instruire une règle, une décision ou une reprise :
+
+- distinguer ce qui y est seulement proposé de ce qui a été décidé ou effectivement appliqué ;
+- confronter les affirmations pertinentes à l’état matériel et aux autorités courantes du dépôt lorsque cette confrontation est possible ;
+- utiliser la conversation pour étudier les transformations du raisonnement et les effets d’une règle, pas pour contourner les qualifications présentes ;
+- ne pas exclure une promotion au seul motif que l’observation provient d’une conversation, mais ne pas promouvoir non plus une règle sur la seule force rhétorique ou la répétition de cette conversation.
+
+Une archive peut donc soutenir une promotion lorsqu’elle fournit une trajectoire suffisamment discriminante et que la portée proposée reste compatible avec les effets observables et l’état courant du dépôt.
+
 ## 4. Règles scientifiques et méthodologiques
 
 - Identifier ce qui est effectivement testé, sous quelle transformation, dans quel régime et avec quelles limites.
@@ -69,6 +82,34 @@ Ne pas modifier une archive ou un état daté pour simuler une cohérence actuel
 - Conserver les résultats négatifs, refus, suspensions, blocages et limites lorsqu’ils sont pertinents.
 - Une exploration peut proposer ; elle ne devient pas une règle durable sans qualification et validation.
 - N’ajouter une couche, une subdivision ou un document durable que s’il apporte un gain discriminant ou de contrôle supérieur à son coût de maintenance.
+
+### 4.1 Localiser avant d’intervenir
+
+Lorsqu’une correction est envisagée mais que la cause ou le niveau fonctionnel du défaut n’est pas encore établi, identifier d’abord **le niveau qui produit réellement le comportement** par le contrôle discriminant le moins coûteux, puis redescendre vers l’intervention minimale.
+
+Ne pas dézoomer par principe. S’arrêter dès qu’un discriminant local relie suffisamment le défaut, sa portée et la correction minimale, notamment lorsque la cause est déjà reproduite, localisée et réversible sans modifier la cible scientifique, le contrat probatoire ou une ressource protégée.
+
+Le raisonnement systémique sert à choisir le bon niveau d’analyse ; il ne remplace pas le test local une fois ce niveau identifié.
+
+### 4.2 Couplage probatoire des représentations indirectes
+
+Lorsqu’une propriété d’un objet réel est inférée à partir d’un toy, mock, proxy, fallback, harnais, conversion, extraction ou autre représentation indirecte, vérifier que le dispositif **exerce effectivement la propriété qu’il prétend qualifier** avant de généraliser son résultat.
+
+Cette vérification doit être proportionnée. Elle n’impose pas un contre-test supplémentaire pour une propriété directement observable ni lorsqu’une équivalence pertinente est déjà établie sans ambiguïté. Elle ne justifie pas non plus de consommer une ressource rare lorsqu’une source, une trace ou un contrôle moins coûteux possède déjà le pouvoir discriminant nécessaire.
+
+### 4.3 Portée et prudence de promotion
+
+Promouvoir une règle et étendre son périmètre sont deux décisions distinctes. Une règle peut être suffisamment soutenue pour un régime local, réversible et observable sans être qualifiée pour un autre domaine.
+
+La charge de preuve avant promotion ou extension doit être proportionnée notamment à :
+
+- l’autorité supplémentaire accordée à la règle ;
+- l’élargissement de domaine ou de portée demandé ;
+- la gravité d’un faux positif ou d’un faux négatif ;
+- la réversibilité de ses effets ;
+- sa capacité à modifier une décision scientifique, méthodologique ou humaine plutôt qu’à seulement améliorer une représentation.
+
+Ne pas appliquer une retenue uniforme à toutes les règles : une pratique locale, informative et facilement réversible peut être essayée plus tôt qu’une règle transversale, bloquante ou susceptible de modifier un verdict.
 
 ## 5. Science, machine et interprétation
 
