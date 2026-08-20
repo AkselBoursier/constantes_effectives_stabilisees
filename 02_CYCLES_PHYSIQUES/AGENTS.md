@@ -103,6 +103,8 @@ Les lignes `C7-C1 / X(z) / SCI-1` et `C7-GAL` sont indépendantes. Aucun état M
 
 Une erreur machine doit être reproduite et localisée avant d'être attribuée au candidat scientifique.
 
+Dans C7, un contrefactuel ou un défaut établi dans l'instrument de falsification ne reçoit un pouvoir bloquant sur le programme que s'il est relié à l'objet ou à l'environnement réellement utilisé, à une mutation plausible ou autorisée, à un produit scientifiquement utilisé, ou s'il montre qu'un test sur l'objet réel ne mesure pas ce qu'il annonce. Une dette abstraite portant sur une classe de programmes arbitrairement élargie n'est pas, par elle-même, un veto scientifique.
+
 ## 8. Promotions et mises à jour documentaires
 
 Une nouvelle question scientifique, un modèle, une donnée, un prior, une paramétrisation scientifique, un seuil d'évidence, une interprétation ou un verdict durable restent des frontières humaines.
