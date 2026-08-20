@@ -30,11 +30,18 @@ Routage local actuellement matérialisé :
 
 - [méthodologie, méta-règles et shadow learning](01_CADRE_METHODOLOGIQUE/AGENTS.md) ;
 - [cycles physiques](02_CYCLES_PHYSIQUES/AGENTS.md) ;
-- [philosophie](06_PHILOSOPHIE/AGENTS.md).
+- [philosophie](06_PHILOSOPHIE/AGENTS.md) ;
+- [archives conversationnelles](92_ARCHIVES_CONVERSATIONNELLES/AGENTS.md).
 
 Un `AGENTS.md` local hérite du noyau parent et précise un régime de travail ; il ne transforme pas automatiquement une règle locale en règle générale. Inversement, le fait qu’une règle soit née localement ne prouve pas qu’elle doive y rester : toute extension de portée doit être instruite séparément.
 
 Ne pas précharger l’intégralité du corpus par défaut. La provenance détaillée se consulte lorsqu’une décision, une contradiction, une révision ou une promotion de règle l’exige.
+
+### 2.1 Intelligibilité minimale
+
+Lorsque l’objet doit être compris, contrôlé ou validé par un humain, nommer d’abord l’objet en langage naturel puis utiliser, si utile, son code, sigle ou identifiant comme repère secondaire. Ré-expliciter le référent aux frontières de contexte lorsque plusieurs objets proches peuvent être confondus.
+
+La notation compacte reste permise lorsqu’elle apporte un gain réel de précision ou de charge cognitive et que son référent demeure récupérable sans dépendre de la mémoire implicite d’un agent.
 
 ## 3. Routage et autorité documentaire
 
@@ -50,6 +57,8 @@ Avant d’agir, distinguer :
 
 Une décision humaine plus récente explicitement applicable peut amender une règle ou une décision antérieure. Ni la date, ni le numéro d’issue, ni le nom du fichier ne suffisent à établir ce rang.
 
+Lorsqu’une issue ou une PR longue est utilisée pour établir un état courant, une priorité, une autorisation ou un blocage, ne pas s’arrêter automatiquement au corps d’ouverture. Rechercher les checkpoints ou commentaires explicitement correctifs, terminaux ou présentés comme état courant ; conserver la chronologie antérieure sans la confondre avec le dernier état applicable.
+
 Ne pas modifier une archive ou un état daté pour simuler une cohérence actuelle. Corriger la porte d’entrée vivante et conserver la généalogie.
 
 ## 4. Règles scientifiques et méthodologiques
@@ -61,6 +70,7 @@ Ne pas modifier une archive ou un état daté pour simuler une cohérence actuel
 - Borner toute conclusion au domaine réellement instruit.
 - Employer d’abord le vocabulaire standard du domaine ; les catégories internes restent secondaires.
 - Distinguer chemin physique, expérimental, métrologique, computationnel, inférentiel, historique ou représentationnel lorsque cette différence change l’argument.
+- Lorsqu’une propriété d’un objet réel est inférée depuis un toy, mock, proxy, fallback, harnais, conversion, extraction ou autre représentation indirecte, vérifier que le dispositif exerce effectivement la propriété revendiquée et que l’équivalence nécessaire est établie au niveau exact de l’usage. Ne pas ajouter un contre-test coûteux lorsque cette équivalence ou la propriété pertinente est déjà directement établie.
 - Préserver provenance, temporalité et statut des résultats.
 - Conserver les résultats négatifs, refus, suspensions, blocages et limites lorsqu’ils sont pertinents.
 - Une exploration peut proposer ; elle ne devient pas une règle durable sans qualification et validation.
@@ -115,6 +125,8 @@ Une issue porte une instruction bornée, ses décisions et les étapes qui chang
 
 Pour un chantier borné, préférer un ancrage opérationnel principal identifiable. Consigner un changement lorsqu’il modifie substantiellement la question, le périmètre, un résultat, un blocage durable, une validation, la décision suivante, l’ouverture, le remplacement, la suspension, la clôture ou la réouverture du travail.
 
+Lorsqu’une idée hors périmètre possède une valeur de reprise identifiable et un risque réel d’être perdue, la capturer dans le support existant le plus léger qui permette sa récupération. Ne créer un objet distinct que si sa fonction exige une identité propre. La capture ne vaut ni priorité ni obligation de résolution immédiate.
+
 Ne pas créer de mise à jour documentaire pour chaque action technique. Ne pas inférer automatiquement l’issue active depuis un numéro, une date ou un label.
 
 ## 9. Passages entre volets ou cycles
@@ -134,6 +146,8 @@ identifier la question qui le justifie
 Une dette n’est transférée scientifiquement que si le nouveau terrain offre un accès, un discriminant ou une structure explicative réellement différente. Sinon, la qualifier simplement de différérée ou suspendue.
 
 ## 10. Git et mutations
+
+Avant une mutation, effectuer un préflight borné : identifier la cible et la fonction de l’action ; lire l’état courant et le SHA lorsqu’un objet existant est modifié ; choisir une action correspondant à la classe réelle de la cible ; éviter les mutations sans effet matériel ; effectuer un contrôle terminal du résultat.
 
 - Utiliser une branche ou un worktree dédié pour toute mutation substantielle.
 - Garder une PR bornée ; ne pas mélanger des modifications indépendantes sans nécessité.
