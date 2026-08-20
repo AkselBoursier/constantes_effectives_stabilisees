@@ -26,6 +26,8 @@ Une qualification locale ne doit pas être promue lorsqu’un contexte matériel
 
 Promotion de statut et extension de périmètre sont distinctes. La prudence doit être proportionnée à l’autorité ajoutée, au saut de domaine, au coût d’erreur, à la réversibilité et à la capacité de la règle à modifier une décision substantielle.
 
+Lorsqu’une règle paraît utile, distinguer sa fonction de son mécanisme : intention utile, effet réellement produit, utilité nette, nécessité d’une règle explicite et nécessité de conserver cette fonction sous forme de règle sont des questions différentes. Si une fonction utile peut être portée plus simplement par Git, CI, un workflow, un état natif ou un autre mécanisme sans déplacer un jugement scientifique, considérer cette migration séparément.
+
 ## 3. Sur-extension et sous-application
 
 Chercher symétriquement les règles appliquées trop largement et celles comprises trop localement, sous-appliquées ou retirées trop tôt. Rechercher aussi les occasions manquées et les garde-fous perdus lors d’une reformulation.
