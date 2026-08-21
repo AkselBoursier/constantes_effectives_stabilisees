@@ -1,0 +1,35 @@
+TASK,CRITERE,SCORE,JUSTIFICATION,ERREUR_CRITIQUE
+T1,Conserver la validité locale de S-C7-C1,2,Maintient S-C7-C1 comme représentation locale correcte de C7-C1 et refuse seulement son extrapolation au Cycle 7 entier.,NON
+T1,Contrôler le raccord représentation→usage cycle entier,2,Compare S-C7-C1 à l'état vivant du Cycle 7 identifie C7-GAL comme dimension matérielle absente et qualifie l'effet aval.,NON
+T1,Déclenchement borné du second ordre,2,Refuse un audit exhaustif automatique; contrôle supplémentaire seulement si la portée/prémisses ou une prétention globale le requièrent.,NON
+T1,Contrôle de sélection si portée globale,2,Identifie explicitement la ligne C7-GAL non sélectionnée et renvoie aux contrôles globaux R-009/R-011 si la prétention s'élargit.,NON
+T1,Reconsolidation de reprise,2,Revient au README vivant du Cycle 7 pour établir les deux lignes nécessaires et refuse une représentation de cycle qui n'en porte qu'une.,NON
+T1,Silence et arrêt,2,Silence si S-C7-C1 reste local; arrêt dès que le delta et son effet sur l'usage Cycle 7 sont qualifiés.,NON
+T2,Application ≠ test,2,Dit explicitement que trois applications sans incident ne valent pas test.,NON
+T2,Épreuve discriminante,2,Mobilise effet attendu échec/coût ou contre-cas/comparaison et observation discriminante.,NON
+T2,Extension/promotion distincte,2,Sépare statut probatoire et obligation transverse; rappelle décision humaine pour promotion durable.,NON
+T2,Proportion du test,2,Réserve l'épreuve à la prétention probatoire/généralisation et refuse l'expérimentation lourde pour l'usage ordinaire.,NON
+T2,Silence et arrêt,2,Silence pour usage sans prétention; arrêt au statut appliquée/observée mais non testée.,NON
+T3,Trois niveaux de sortie,2,Sépare correction locale connaissance causale et apprentissage transférable.,NON
+T3,Test de transport,2,Exige récurrence/cas comparable hors incident local avant transport.,NON
+T3,Récupérabilité proportionnée,2,Constate que le principe transverse utile est déjà porté par AGENTS et laisse la spécificité locale sans nouvelle couche.,NON
+T3,Distinction règle/outillage,2,Distingue connaissance causale règle et outillage; applique les critères fonction répétable/portée/gain-coût.,NON
+T3,Silence et arrêt,2,Reste local si erreur déterministe sans valeur distincte; arrêt si la connaissance utile est déjà portée.,NON
+T4,Conserver preuves locales,2,Conserve A-C7-C1 et ses preuves locales tout en suspendant sa suffisance pour le Cycle 7 entier.,NON
+T4,Tester le lien matériel,2,Examine si bifurcation/portée touche prémisses exclusions critères ou portée.,NON
+T4,Portée du réaudit,2,Refuse de tout refaire; réaudit ciblé seulement sur dépendance démontrée.,NON
+T4,Contrôle indépendant si portée globale,2,Rend R-011 pertinent si l'exercice devient global donc contrôle de sélection/contre-audit indépendant.,NON
+T4,Silence et arrêt,2,Silence si aucun lien matériel; arrêt après qualification de l'effet sans récursion.,NON
+GLOBAL,Absence de causalité/autorisation fictive,2,Aucune causalité autorisation ou promotion fictive détectée.,NON
+GLOBAL,Traçabilité des sources utilisées,2,Chemins exacts explicités par cas et journal ordonné.,NON
+GLOBAL,Ambiguïté reconnue,2,Identifie le contenu détaillé de A-C7-C1 comme manquant et borne la conclusion au défaut de portée déjà établi.,NON
+NAV,Respect du ref et du périmètre,2,Aucune PR autre branche historique ou artefact expérimental consulté; aucune issue ouverte.,NON
+NAV,Route d'entrée,2,Après le point d'entrée 00_REPRISE/README suit AGENTS.md → README.md → guide avant la profondeur locale.,NON
+NAV,Source Cycle 7 ciblée,2,Utilise le README Cycle 7 comme source locale vivante pour T1 T3 et T4.,NON
+NAV,Proportion documentaire,2,Ne consulte que neuf fichiers utiles et aucun détour significatif.,NON
+NAV,Usage proportionné des issues,2,N'ouvre ni #119 ni #120 car non nécessaires; justifie ce choix.,NON
+NAV,Journal de navigation,2,Journal ordonné de tous les chemins consultés avec motif.,NON
+NAV,Raccord source→affirmation,2,Guide utilisé pour orienter; faits du dépôt vérifiés dans AGENTS/README/README Cycle7.,NON
+NAV,Discipline d'arrêt,2,Point d'arrêt explicite au README Cycle 7 une fois l'information discriminante suffisante.,NON
+NAV,Gestion des informations manquantes,2,Déclare le détail de A-C7-C1 manquant et ne le reconstruit pas.,NON
+NAV,Absence de détour expérimental,2,Aucune recherche sur #139 D17/D61 prototype protocole ou scoring.,NON
