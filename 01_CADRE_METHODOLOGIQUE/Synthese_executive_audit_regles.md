@@ -116,11 +116,27 @@ Une représentation qui prétend montrer l’état scientifique doit distinguer 
 - condition de reprise ;
 - effet attendu sur le programme.
 
-`recherche active != résultat` et `dette != priorité`.
+`recherche active != résultat` et `dette != priorité`. Cette séparation est portée explicitement par `R-023` : l’activité d’un chantier ne vaut ni qualification scientifique, ni permission de franchir la porte suivante.
 
 #49/#51 puis #114 permettent en outre de distinguer **clôture locale**, **suspension conditionnelle**, **veille conditionnelle** et **réouverture**. Une réouverture n’est justifiée que si un événement change effectivement un pont, un verdict ou une condition de reprise ; une nouvelle publication ou une nouvelle hypothèse ne suffit pas.
 
 Cette fonction doit être portée par les surfaces de reprise appropriées, mais elle ne justifie pas à elle seule un tableau de bord global permanent.
+
+## 4 bis. Passages entre domaines : transférer exige une réinstruction
+
+`R-016` empêche déjà de propager automatiquement l’état d’un chantier vers un autre : l’effet d’une conclusion sur un autre objet doit être testé, avec `NON_ETABLI` comme sortie recevable.
+
+`R-036` ajoute une exigence plus forte lorsqu’un passage inter-domaines est réellement utile : la question doit être **réinstruite** dans les objets, accès, discriminants et contraintes du domaine d’accueil.
+
+Le transfert `m_e` du cycle 1 vers Saveur–Higgs constitue le cas positif principal. Il n’a été justifié que parce que :
+
+- le résidu ne changeait plus le verdict courant du domaine d’origine ;
+- le domaine d’accueil apportait une structure explicative et des accès distincts ;
+- la question était reformulée plutôt que copiée ;
+- provenance et conditions de réouverture restaient visibles ;
+- le transfert n’ouvrait pas automatiquement un nouveau programme.
+
+La même logique borne les passages philosophie → science : une proposition philosophique peut préciser une question, mais elle ne modifie un statut physique qu’après réinstruction dans les discriminants du domaine compétent.
 
 ## 5. Continuité documentaire et provenance : plusieurs axes à ne pas fusionner
 
@@ -179,6 +195,10 @@ Le dispositif de second ordre doit rester **événementiel et borné**.
 
 `R-011` ajoute une contrainte spécifique aux audits de portée globale : ne pas seulement falsifier les conclusions reçues, mais chercher indépendamment ce que la sélection d’entrée a pu exclure.
 
+`R-014` protège les audits antérieurs contre les deux réécritures symétriques : un audit ancien n’est ni annulé par principe, ni réputé contextuellement suffisant par ancienneté. Ses preuves locales subsistent ; un réaudit n’est déclenché que si le nouveau contexte touche une prémisse, une exclusion, un critère ou une portée.
+
+`R-015` impose la symétrie critique : une conclusion positive et une critique négative supportent la même charge de preuve. #132 a montré toutefois que cette symétrie ne suffit pas si la **sélection d’entrée** est elle-même asymétrique ; d’où son articulation nécessaire avec `R-011` pour les audits globaux.
+
 #139 a exécuté cette passe : la fenêtre #119–#138 a été dépassée, les issues antérieures ont été parcourues jusqu’à #1 au niveau requis, #118 a fourni une archéologie antérieure vers A1–A3, puis plusieurs zones non sélectionnées ont été contre-échantillonnées. Les dernières lectures n’ont plus produit de nouvelle famille substantielle.
 
 Cela justifie :
@@ -193,9 +213,13 @@ La règle d’exhaustivité documentaire (`R-012`) reste exacte dans son régime
 
 La triangulation ciblée (`R-013`) reste bonne localement mais insuffisante, seule, pour une prétention d’exhaustivité globale.
 
-## 8. Autorité : « qui peut agir » et « qu’est-ce qui est autorisé » sont deux questions
+## 8. Autorité : intervention, capacité d’agir et portée d’une décision sont trois questions
 
-`R-020` et `R-034` résistent à la fusion.
+`R-019`, `R-020` et `R-034` ne doivent pas être aplaties.
+
+`R-019` type l’intervention humaine lorsque cela change l’action : observation, hypothèse, proposition, préférence, décision et autorisation. Une suggestion n’est pas automatiquement un ordre ; inversement une décision explicite ne doit pas être neutralisée en la requalifiant artificiellement comme simple proposition.
+
+`R-020` et `R-034` résistent ensuite à la fusion.
 
 `R-020` distribue l’autorité selon la nature de l’acte, son observabilité, sa réversibilité, son coût d’erreur et sa portée. Elle permet davantage d’autonomie agentique pour les opérations techniques locales, observables et réversibles, tout en maintenant les frontières scientifiques et irréversibles sous décision humaine.
 
@@ -238,6 +262,8 @@ Ces fonctions se prêtent à une mécanisation partielle parce qu’elles porten
 ## 10. Human-First : principe soutenu, portée à tester par l’usage
 
 `R-039` distingue une fonction d’interface : les surfaces de reprise et de décision doivent porter leur sens en langage humain ; les codes restent secondaires et récupérables.
+
+Elle ne remplace pas `R-030`. `R-030` protège la **fidélité scientifique du vocabulaire** : décrire d’abord le phénomène dans les termes du domaine et n’introduire une catégorie transverse que si elle ajoute un gain discriminant. Une formulation peut donc être très lisible mais scientifiquement inadéquate, ou scientifiquement correcte mais inutilement opaque.
 
 Cette règle ne signifie ni prose maximale, ni interdiction des sigles, ni réécriture de tout l’historique. Un identifiant compact est acceptable lorsqu’il réduit réellement la charge dans un contexte local où son référent est récupérable.
 
