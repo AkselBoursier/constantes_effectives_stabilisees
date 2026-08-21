@@ -4,7 +4,7 @@
 
 Cette pièce est l’ancrage courant de la PR #139. Elle porte l’état récupérable de l’audit des règles explicites et implicites du dépôt, de leurs régimes, effets, contre-cas et récursivités.
 
-La fenêtre #119–#138 était un point de départ, pas une frontière. L’étude a remonté les antécédents nécessaires, suivi les conséquences pertinentes, exécuté une passe indépendante repo-led, une étude exhaustive de second ordre du matériau empirique conversationnel fourni, puis un prototype 2D local, une Phase I aveugle répliquée à n=2 par condition et une Phase II écologique désormais ouverte.
+La fenêtre #119–#138 était un point de départ, pas une frontière. L’étude a remonté les antécédents nécessaires, suivi les conséquences pertinentes, exécuté une passe indépendante repo-led, une étude exhaustive de second ordre du matériau empirique conversationnel fourni, puis un prototype 2D local, une Phase I aveugle répliquée à n=2 par condition et une Phase II écologique en cours.
 
 Aucune sortie de cette PR n’est une autorité normative par simple présence. `AGENTS.md` n’est pas modifié et le merge n’est pas autorisé.
 
@@ -33,7 +33,7 @@ NON_INFERIORITE_D17 = REPRODUITE
 COMPRESSION_ENTREE_D17 = ENVIRON_28.1_POURCENT
 SUPERIORITE_D17 = NON_ETABLIE
 
-PHASE_II_ECOLOGIQUE = OUVERTE
+PHASE_II_ECOLOGIQUE = CONDITION_2_PRETE
 BASE_COMMUNE_PHASE_II = main@c9deaf1fe86b742d9227f0385e975809f64dc9bd
 CONDITION_1 = FICHES_PLUS_RELATIONS
 SHA_CONDITION_1 = c9deaf657ff15b8395aa54dd63e313561a58b7c6
@@ -41,7 +41,9 @@ FIDELITE_CONDITION_1 = 48/48
 NAVIGATION_CONDITION_1 = 20/20
 ERREUR_CRITIQUE_CONDITION_1 = 0
 CONTAMINATION_CONDITION_1 = NON
-CONDITION_2 = A_RECONSTRUIRE
+CONDITION_2 = ORGANISATION_FONCTIONNELLE
+SHA_CONDITION_2 = 267a894ad75c3d90e3c83fe1c9bb819c3038ca1b
+REPONSE_CONDITION_2 = NON_ENCORE_OBTENUE
 
 PROMOTION_NORMATIVE = NON_EFFECTUEE
 AGENTS_MODIFIE = NON
@@ -54,24 +56,17 @@ MERGE_#139 = NON_AUTORISE
 Trois fonctions ont résisté à l’ablation contre la matrice antérieure :
 
 ### R-040 — intégrité des transformations de représentation
-
 `justesse locale != suffisance pour l’usage aval`.
 
 ### R-041 — statut probatoire d’une règle
-
 `formulée != appliquée != observée != testée != soutenue/falsifiée != ratifiée != promue`.
 
 ### R-042 — remontée de résolution
-
 `solution locale != connaissance causale != apprentissage transférable`.
 
 Le régime d’une règle reste une dimension de la matrice ; le cycle de vie d’une candidate reste une trajectoire/processus.
 
 ## Prototype 2D et Phase I
-
-Le prototype organise localement le sous-système selon un axe horizontal déclencheur→contrôle→qualification→retour→silence/arrêt et un axe vertical reprise↕raccord de représentation↕audit de second ordre↕statut probatoire↕remontée de résolution.
-
-Phase I :
 
 ```text
 D17 = 42/48 puis 42/48 = 84/96
@@ -81,17 +76,22 @@ ERREURS_CRITIQUES = 0/4
 
 La supériorité générale de D17 n’est pas établie ; sa non-infériorité avec environ 28,1 % de matière d’entrée en moins est reproduite.
 
-## Phase II écologique — condition 1
+## Phase II écologique
 
-La Phase II part de `main@c9deaf1fe86b742d9227f0385e975809f64dc9bd`, avec branche temporaire séquentielle `reprise/controle-20260821`, même point d’entrée, mêmes quatre cas et une seule pièce variable : `00_REPRISE/guide_reprise.md`.
+Base commune : `main@c9deaf1fe86b742d9227f0385e975809f64dc9bd`.
 
-La première condition, révélée seulement après gel du score, était `FICHES_PLUS_RELATIONS`.
+Branche séquentielle : `reprise/controle-20260821`.
 
-Résultat :
+Les deux incarnations ont le même point d’entrée, les mêmes quatre cas, la même consigne externe et les mêmes fichiers du dépôt principal. Une seule pièce varie : `00_REPRISE/guide_reprise.md`.
+
+### Condition 1 — gelée
+
+Révélation après scoring : `FICHES_PLUS_RELATIONS`.
 
 ```text
-FIDELITE_DECISIONNELLE = 48/48
-NAVIGATION_ECOLOGIQUE = 20/20
+SHA = c9deaf657ff15b8395aa54dd63e313561a58b7c6
+FIDELITE = 48/48
+NAVIGATION = 20/20
 ERREURS_CRITIQUES = 0
 CONTAMINATION = NON
 FICHIERS_CONSULTES = 9
@@ -99,9 +99,18 @@ ISSUES_CONSULTEES = 0
 DETOURS_NON_NECESSAIRES = 0
 ```
 
-L’agent a utilisé le README vivant du Cycle 7 comme source locale factuelle, a refusé d’ouvrir #119/#120 faute de nécessité discriminante, a déclaré le détail de A-C7-C1 manquant plutôt que de le reconstruire, et a explicité son point d’arrêt documentaire.
+D61 atteint le plafond de la grille dans cet essai.
 
-La condition D61 atteint donc le plafond de la grille dans cet essai. La condition 2 ne peut démontrer un gain par score brut supérieur ; elle peut au mieux égaler le plafond avec une navigation aussi ou plus économique, ou montrer une perte.
+### Condition 2 — prête
+
+La branche a été forcée exactement sur la base commune puis reconstruite.
+
+```text
+CONDITION = ORGANISATION_FONCTIONNELLE
+SHA = 267a894ad75c3d90e3c83fe1c9bb819c3038ca1b
+```
+
+Contrôle d’intégrité : les cinq fichiers communs ont exactement les mêmes blob SHA que dans la condition 1. Le `guide_reprise.md` a le blob SHA `b1417f54e2ef749a142a9c532bad5e3a5b102b02`, identique à `Dossier_17.md`. Seule la variable expérimentale prévue diffère.
 
 ## Condition de réouverture générale
 
@@ -109,10 +118,4 @@ Réouvrir l’archéologie historique ou l’étude empirique seulement sur sign
 
 ## Prochaine opération
 
-1. remettre de force la branche expérimentale exactement sur `main@c9deaf1f...` ;
-2. recréer les cinq fichiers communs à l’identique ;
-3. injecter `ORGANISATION_FONCTIONNELLE` sous le même chemin `00_REPRISE/guide_reprise.md` ;
-4. geler le SHA de la seconde incarnation ;
-5. obtenir une réponse brute d’un nouveau chat éphémère avec exactement la même consigne ;
-6. scorer avant comparaison finale Phase II ;
-7. aucune promotion normative, installation ou fusion ne découle automatiquement de cette expérience.
+Obtenir une réponse brute d’un nouveau chat éphémère sur la condition 2, avec exactement la même URL de branche et exactement la même consigne externe. Ne pas relancer ni corriger l’agent. Scorer avant la comparaison finale Phase II.
