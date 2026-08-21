@@ -141,6 +141,19 @@ Après gel de la première réponse :
 5. enregistrer le SHA exact de la seconde incarnation ;
 6. lancer un chat éphémère neuf.
 
+## Résultat condition 1 — gelé
+
+```text
+SHA_CONDITION_1 = c9deaf657ff15b8395aa54dd63e313561a58b7c6
+CONDITION_1 = FICHES_PLUS_RELATIONS
+FIDELITE = 48/48
+NAVIGATION = 20/20
+ERREURS_CRITIQUES = 0
+CONTAMINATION = NON
+```
+
+Ce résultat a été obtenu et scoré avant toute reconstruction de la condition 2.
+
 ## Interprétation
 
 Phase II soutient un gain écologique de l'organisation fonctionnelle seulement si, à fidélité au moins non inférieure :
