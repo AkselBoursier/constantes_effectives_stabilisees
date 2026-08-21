@@ -1,8 +1,8 @@
-# Proposition de portée post-audit — état après second ordre empirique
+# Proposition de portée post-audit — état après second ordre empirique et tests agent neuf
 
 ## Fonction
 
-Ce document prépare une **décision humaine de portée** après intégration de l’étude exhaustive de second ordre du matériau empirique. Il ne modifie pas `AGENTS.md`, ne vaut pas ratification et ne vaut pas autorisation de merge.
+Ce document prépare des **décisions humaines de portée** après intégration de l’étude exhaustive de second ordre du matériau empirique et des tests du prototype fonctionnel. Il ne modifie pas `AGENTS.md`, ne vaut pas ratification et ne vaut pas autorisation de merge.
 
 L’ancienne proposition P1–P5 est conservée comme étape probatoire antérieure, mais elle n’est plus le delta terminal : le matériau empirique a fait émerger trois fonctions supplémentaires `R-040–R-042`.
 
@@ -71,15 +71,19 @@ justesse locale de la représentation
 suffisance pour l’usage aval
 ```
 
-**Mais** le matériau montre aussi le risque de sur-extension : toute traduction ou reformulation ne justifie pas un audit de transmission.
+Le risque de sur-extension reste réel : toute traduction ou reformulation ne justifie pas un audit de transmission.
 
-**Recommandation actuelle : `PAS_DE_PROMOTION_AGENTIQUE_IMMEDIATE`.** Conserver la fonction dans l’audit et l’exposer sur le prochain raccord réel avant décision de portage quotidien.
+Les tests agent neuf renforcent la fonction dans le cluster étudié : les agents ont correctement conservé la validité locale tout en refusant l’extrapolation cycle-wide, sans audit général automatique.
+
+**Statut requalifié : `FONCTION_FORTE / EXPOSITION_ECOLOGIQUE_POSITIVE / PROMOTION_TRANSVERSE_NON_AUTORISEE`.**
 
 ### R-041 — statut probatoire d’une règle
 
 **Preuve : très forte et répétée.**
 
 La fonction protège précisément l’audit des règles : `formulée`, `appliquée`, `observée`, `mise à l’épreuve`, `soutenue/falsifiée`, `ratifiée`, `promue` ne sont pas équivalents.
+
+Les six réponses agent neuf des Phases I et II ont toutes conservé la distinction centrale `application sans incident != test`, sans erreur critique.
 
 **Recommandation :** la fonction peut gouverner immédiatement les audits et décisions de promotion. Son inscription dans `AGENTS.md` quotidien reste une décision de support distincte ; une formulation locale méthodologique peut suffire si elle est nécessaire.
 
@@ -91,7 +95,9 @@ La fonction protège précisément l’audit des règles : `formulée`, `appliqu
 
 Après résolution : solution locale ≠ connaissance causale ≠ apprentissage transférable. La fonction évite que le pourquoi causal soit perdu tout en refusant de transformer chaque correctif en règle.
 
-**Recommandation actuelle : `PAS_DE_PROMOTION_TRANSVERSE`.** Exposer la fonction sur la prochaine résolution substantielle hors C7 ; si elle réduit réellement la répétition d’enquête sans produire de méta-travail disproportionné, réévaluer son portage.
+Les tests agent neuf montrent que cette séparation est utilisable dans le dépôt réel sans provoquer une généralisation automatique ni une création d’outil par défaut.
+
+**Statut requalifié : `FONCTION_DISTINCTE / EXPOSITION_ECOLOGIQUE_POSITIVE / TRANSPORT_TRANSVERSE_A_BORNER`.**
 
 ## 4. Fonctions à ne pas transformer en nouvelles lignes
 
@@ -101,27 +107,86 @@ Le cycle de vie d’une candidate est une trajectoire horizontale du dispositif,
 
 La procédure prospective C10 reste locale ; aucune prérégistration générale n’est soutenue.
 
-## 5. Delta de portée requalifié
+## 5. Résultat du prototype fonctionnel
 
-Le résultat n’est plus « quatre ajouts + un amendement ».
+### Phase I fermée
+
+```text
+D17 = 84/96
+D61 = 82/96
+ERREURS_CRITIQUES = 0
+COMPRESSION_ENTREE_D17 = ~28.1_POURCENT
+NON_INFERIORITE_D17 = REPRODUITE
+SUPERIORITE_GENERALE = NON_ETABLIE
+```
+
+### Phase II écologique
+
+```text
+D17_FIDELITE = 48/48
+D17_NAVIGATION = 20/20
+D61_FIDELITE = 48/48
+D61_NAVIGATION = 20/20
+ERREURS_CRITIQUES = 0
+CONTAMINATION = NON
+FICHIERS_CONSULTES = 9_DANS_CHAQUE_CONDITION
+```
+
+Le prototype fonctionnel ne démontre ni une meilleure exactitude générale ni une navigation plus courte en nombre de fichiers. Il soutient en revanche une **compression documentaire sous qualité conservée** dans les tests exécutés.
+
+Le résultat le plus défendable est :
+
+> l’organisation fonctionnelle conserve la qualité décisionnelle et la discipline de navigation de la présentation fiches+relations avec une surface de guide sensiblement plus compacte, sans augmentation observée des erreurs critiques.
+
+## 6. Portée proposée du prototype 2D
+
+Le prototype ne doit pas devenir une nouvelle autorité ou remplacer la matrice et les relations sources.
+
+### Option P2D-1 — essai réel local et ablable
+
+Utiliser la représentation fonctionnelle comme surface de guidage locale sur un chantier réel borné, avec :
+- sources 42/52 toujours récupérables ;
+- aucun verdict normatif propre au prototype ;
+- retour aux sources lorsque la qualification probatoire ou historique l’exige ;
+- suppression possible sans perte d’autorité.
+
+### Option P2D-2 — test sur un second sous-système
+
+Construire une seconde vue fonctionnelle locale sur un cluster différent de reprise/audit afin de tester la transférabilité du gain de compression avant toute sédimentation transverse.
+
+### Option P2D-3 — ne pas sédimenter
+
+Conserver seulement les résultats de test dans #139 et ne pas introduire de surface fonctionnelle durable supplémentaire.
+
+### Recommandation expérimentale
+
+```text
+RECOMMANDATION_PROTO_2D = P2D-1_OU_P2D-2
+PREFERENCE_PRUDENTE = P2D-1_LOCAL_ABLABLE
+SEDIMENTATION_TRANSVERSE = NON_JUSTIFIEE_A_CE_STADE
+DECISION_HUMAINE = REQUISE
+```
+
+La préférence pour P2D-1 vient du fait que le gain a déjà survécu à un test écologique réel du dépôt, mais seulement sur un sous-système et quatre situations construites. Un essai réel local est donc plus discriminant qu’une nouvelle répétition des mêmes scénarios, tout en restant réversible.
+
+## 7. Delta de portée normative requalifié
 
 ```text
 CANDIDATS_DIRECTS_LES_PLUS_FORTS = R-034, R-032, R-038
 CANDIDAT_ETROIT = R-033
 AMENDEMENT_NUCLEUS_PREFERABLE = R-025
 FONCTION_AUDIT_FORTE_SUPPORT_A_DECIDER = R-041
-EXPOSITION_SUPPLEMENTAIRE_AVANT_PROMOTION = R-040, R-042
+R-040 = EXPOSITION_ECOLOGIQUE_POSITIVE / PORTAGE_A_DECIDER
+R-042 = EXPOSITION_ECOLOGIQUE_POSITIVE / TRANSPORT_A_BORNER
 ```
 
-Cette hiérarchie est plus fidèle aux preuves qu’une promotion groupée.
+Cette hiérarchie reste plus fidèle aux preuves qu’une promotion groupée.
 
-## 6. Options de décision humaine
+## 8. Options de décision humaine sur le noyau normatif
 
 ### Option A — ne promouvoir aucune règle maintenant
 
 Conserver l’état 42/52 comme résultat d’audit et observer les prochaines expositions.
-
-Avantage : sédimentation minimale. Limite : R-034/R-032/R-038 disposent déjà d’éléments assez forts pour que l’attente n’apporte peut-être que peu d’information marginale.
 
 ### Option B — delta minimal à preuve très forte
 
@@ -137,25 +202,21 @@ Option B + portage explicite du statut probatoire des règles dans la surface m�
 
 Créer plusieurs nouveaux `AGENTS.md` ou une couche de gouvernance dédiée.
 
-**Non soutenue par #139 comme premier mouvement.** Les fonctions étudiées ne justifient pas à elles seules cette sédimentation.
+**Non soutenue par #139 comme premier mouvement.**
 
-## 7. Recommandation de l’audit après second ordre
-
-L’audit ne recommande plus une promotion groupée P1–P5.
-
-La recommandation la plus défendable est maintenant :
+## 9. Recommandation normative de l’audit
 
 ```text
 INSTRUIRE_OPTION_B_COMME_DELTA_MINIMAL
 +
 EXAMINER_SEPAREMENT_R-041_DANS_LE_REGIME_METHODOLOGIQUE
 +
-MAINTENIR_R-040_ET_R-042_EN_EXPOSITION_AVANT_PROMOTION
+DECIDER_SEPAREMENT_DU_PORTAGE_R-040_R-042
 ```
 
 Cette recommandation reste une **proposition d’audit**, pas une décision humaine.
 
-## 8. Condition avant toute mutation de `AGENTS.md`
+## 10. Conditions avant mutation de `AGENTS.md`
 
 Avant écriture normative :
 
@@ -168,6 +229,8 @@ Avant écriture normative :
 ```text
 AGENTS_MODIFIE = NON
 PROMOTION = NON_EFFECTUEE
-DECISION_HUMAINE = REQUISE
+DECISION_PROTO_2D = OUVERTE
+DECISION_PROMOTION_NORMATIVE = OUVERTE
+DECISION_OUTILLAGE = NON_OUVERTE
 MERGE_#139 = NON_AUTORISE
 ```
