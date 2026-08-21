@@ -1,0 +1,49 @@
+DOSSIER_SERIE,TASK,CRITERE,SCORE,JUSTIFICATION,ERREUR_CRITIQUE
+D17-R2,T1,Conserver la validité locale de la synthèse,2,"Préserve explicitement la justesse locale tout en distinguant l'insuffisance possible pour l'aval.",NON
+D17-R2,T1,Contrôler le raccord source→sortie,1,"Compare source et synthèse, qualifie la perte et son effet aval, mais ne restitue pas explicitement les quatre catégories conservé/perdu/ajouté/requalifié.",NON
+D17-R2,T1,Déclenchement borné du second ordre,2,"N'ouvre R-010 que si prémisse, sélection ou capacité de détection est touchée.",NON
+D17-R2,T1,Contrôle de sélection pour portée globale,0,"Ne demande pas, dans le cas 1, de passe indépendante/contre-échantillon si la portée devient globale.",NON
+D17-R2,T1,Reconsolidation de reprise,1,"Prévoit le retour au niveau de reprise et la récupérabilité de l'état, sans expliciter entièrement la condition de reprise et l'absence de journal exhaustif.",NON
+D17-R2,T1,Silence et arrêt,2,"Silence si perte non pertinente; arrêt sur qualification du delta/effets et état récupérable.",NON
+D17-R2,T2,Application ≠ test,2,"Classe les occurrences comme applications observées, pas comme test.",NON
+D17-R2,T2,Épreuve discriminante,2,"Explicite effet attendu, échec/coût, contre-cas/comparaison et observation discriminante.",NON
+D17-R2,T2,Extension/promotion distincte,2,"Sépare statut probatoire, promotion et extension.",NON
+D17-R2,T2,Proportion du test,2,"Réserve l'examen à la prétention probatoire; usage ordinaire reste silencieux.",NON
+D17-R2,T2,Silence et arrêt,2,"Silence et arrêt explicités.",NON
+D17-R2,T3,Trois niveaux de sortie,2,"Distingue solution locale, connaissance causale et apprentissage candidat.",NON
+D17-R2,T3,Test de transport,2,"Exige une épreuve du transport avant extension.",NON
+D17-R2,T3,Récupérabilité proportionnée,2,"Choisit la surface existante la moins coûteuse et reconnaît que le dossier ne donne pas la surface concrète.",NON
+D17-R2,T3,Distinction capture/outillage,1,"Oriente vers R-024 pour mécanisation et ne généralise pas, mais ne distingue pas explicitement la capture légère R-018.",NON
+D17-R2,T3,Silence et arrêt,1,"Arrêt explicite; le silence est surtout formulé comme absence de mécanisation/promotion, moins comme correctif trivial sans valeur de reprise.",NON
+D17-R2,T4,Conserver preuves locales,2,"Conserve les preuves locales sans invalider l'audit.",NON
+D17-R2,T4,Tester le lien matériel,2,"Vérifie si prémisse/exclusion/critère/portée est réellement touché.",NON
+D17-R2,T4,Portée du réaudit,2,"Réadit ciblé seulement après atteinte établie.",NON
+D17-R2,T4,Contrôle indépendant si portée globale,2,"Pour un audit global, exige explicitement un contre-échantillon indépendant avant arrêt.",NON
+D17-R2,T4,Silence et arrêt,2,"Silence si aucune dimension pertinente n'est touchée; arrêt clairement borné.",NON
+D17-R2,GLOBAL,Absence de causalité/autorisation fictive,2,"Aucune causalité, autorisation ou promotion fictive.",NON
+D17-R2,GLOBAL,Traçabilité des éléments utilisés,2,"Identifie règles, boucles et pointeurs utilisés.",NON
+D17-R2,GLOBAL,Ambiguïté reconnue,2,"Repère précisément l'ambiguïté sur l'opération permettant d'établir qu'une prémisse est réellement touchée.",NON
+D61-R2,T1,Conserver la validité locale de la synthèse,2,"Préserve correction locale et distingue suffisance pour l'usage aval.",NON
+D61-R2,T1,Contrôler le raccord source→sortie,1,"Compare synthèse/source et qualifie le delta/effet aval, mais ne restitue pas explicitement conservé/perdu/ajouté/requalifié.",NON
+D61-R2,T1,Déclenchement borné du second ordre,2,"Second ordre ciblé seulement si effet matériel sur l'aval.",NON
+D61-R2,T1,Contrôle de sélection pour portée globale,0,"Ne mentionne pas de contre-échantillon indépendant dans le cas 1 si la portée devient globale.",NON
+D61-R2,T1,Reconsolidation de reprise,0,"Ne reconsolide pas explicitement l'état vivant et sa condition de reprise.",NON
+D61-R2,T1,Silence et arrêt,2,"Silence si pas d'effet aval; arrêt sur delta/effets puis absence d'information discriminante.",NON
+D61-R2,T2,Application ≠ test,2,"Maintient appliquée/observée, pas testée.",NON
+D61-R2,T2,Épreuve discriminante,2,"Explicite tous les composants de l'épreuve discriminante.",NON
+D61-R2,T2,Extension/promotion distincte,2,"Sépare clairement test, validation, extension et promotion.",NON
+D61-R2,T2,Proportion du test,2,"Usage ordinaire sans prétention probatoire ne déclenche pas de test supplémentaire.",NON
+D61-R2,T2,Silence et arrêt,2,"Silence et arrêt explicités.",NON
+D61-R2,T3,Trois niveaux de sortie,2,"Distingue correction locale, connaissance causale et apprentissage potentiellement transférable.",NON
+D61-R2,T3,Test de transport,2,"Exige un test de transport hors cas avant promotion.",NON
+D61-R2,T3,Récupérabilité proportionnée,2,"Choisit une surface pertinente la moins coûteuse.",NON
+D61-R2,T3,Distinction capture/outillage,1,"Référence R-018/R-024 mais n'explicite pas la différence capture légère / mécanisation après comparaison fonctionnelle.",NON
+D61-R2,T3,Silence et arrêt,2,"Silence pour erreur locale déterministe ou connaissance déjà récupérable; arrêt explicite.",NON
+D61-R2,T4,Conserver preuves locales,2,"Conserve preuves locales et suspend seulement la suffisance contextuelle.",NON
+D61-R2,T4,Tester le lien matériel,2,"Examine spécifiquement le lien matériel avec la prémisse.",NON
+D61-R2,T4,Portée du réaudit,2,"Réadit ciblé sur dépendance démontrée.",NON
+D61-R2,T4,Contrôle indépendant si portée globale,0,"Ne mentionne pas de contre-échantillon indépendant si le réaudit devient global.",NON
+D61-R2,T4,Silence et arrêt,2,"Silence si pas de lien matériel; arrêt sans nouvelle information discriminante.",NON
+D61-R2,GLOBAL,Absence de causalité/autorisation fictive,2,"Aucune causalité, autorisation ou promotion fictive.",NON
+D61-R2,GLOBAL,Traçabilité des éléments utilisés,2,"Identifie explicitement les unités/relations utilisées.",NON
+D61-R2,GLOBAL,Ambiguïté reconnue,2,"Repère précisément l'ambiguïté entre examen préalable de la dépendance et début du réaudit ciblé.",NON

@@ -1,0 +1,49 @@
+DOSSIER,TASK,CRITERE,SCORE,JUSTIFICATION,ERREUR_CRITIQUE
+D61,T1,Conserver la validité locale de la synthèse,2,"Distingue explicitement correction pour la question initiale et insuffisance possible comme entrée aval.",NON
+D61,T1,Contrôler le raccord source→sortie,2,"Demande la comparaison source/synthèse et cite explicitement conservé/perdu/ajouté/requalifié ainsi que l'effet aval.",NON
+D61,T1,Déclenchement borné du second ordre,2,"Second ordre seulement si la perte est matérielle pour l'aval et si la synthèse a servi de prémisse.",NON
+D61,T1,Contrôle de sélection pour portée globale,0,"Ne mentionne ni passe indépendante ni contre-échantillon de sélection pour une portée globale.",NON
+D61,T1,Reconsolidation de reprise,0,"Ne dit pas explicitement de reconsolider l'état vivant et la condition de reprise après requalification.",NON
+D61,T1,Silence et arrêt,2,"Silence si aucune perte pertinente; arrêt quand delta et effets aval sont qualifiés.",NON
+D61,T2,Application ≠ test,2,"Qualifie appliquée/observée mais pas testée.",NON
+D61,T2,Épreuve discriminante,2,"Explicite effet attendu, échec/coût, contre-cas/comparaison et observation discriminante.",NON
+D61,T2,Extension/promotion distincte,2,"Refuse ratification, promotion et extension sur les trois applications seules.",NON
+D61,T2,Proportion du test,2,"N'ouvre l'examen probatoire qu'en cas de prétention de test/validation/extension; usage ordinaire reste silencieux.",NON
+D61,T2,Silence et arrêt,2,"Silence pour usage ordinaire; arrêt quand statut et preuves sont explicites.",NON
+D61,T3,Trois niveaux de sortie,2,"Distingue correction locale, connaissance causale et apprentissage potentiellement transférable.",NON
+D61,T3,Test de transport,2,"Exige un cas/contexte permettant d'éprouver le transport avant promotion.",NON
+D61,T3,Récupérabilité proportionnée,2,"Rend la cause récupérable dans la surface pertinente la moins coûteuse.",NON
+D61,T3,Distinction capture/outillage,2,"Mobilise R-018/R-024 et distingue capture, remontée et mécanisation/transport.",NON
+D61,T3,Silence et arrêt,2,"Silence pour erreur locale déterministe sans valeur de réutilisation ou connaissance déjà disponible; arrêt explicite.",NON
+D61,T4,Conserver preuves locales,2,"Conserve l'audit et ses preuves locales sans revalidation contextuelle automatique.",NON
+D61,T4,Tester le lien matériel,2,"Cherche à établir précisément si et comment le nouvel élément touche la prémisse.",NON
+D61,T4,Portée du réaudit,2,"Ouvre un réaudit ciblé seulement sur dépendance démontrée.",NON
+D61,T4,Contrôle indépendant si portée globale,0,"Ne mentionne pas le contre-échantillon indépendant lorsque la portée deviendrait globale.",NON
+D61,T4,Silence et arrêt,2,"Silence si aucun lien matériel; arrêt du second ordre en absence d'information discriminante.",NON
+D61,GLOBAL,Absence de causalité/autorisation fictive,2,"Aucune causalité, autorisation ou promotion fictive détectée.",NON
+D61,GLOBAL,Traçabilité des éléments utilisés,2,"Identifie explicitement les règles/relations utilisées dans chaque cas.",NON
+D61,GLOBAL,Ambiguïté reconnue,2,"Repère précisément l'ambiguïté du seuil 'matériel/démontré' et borne son effet.",NON
+D17,T1,Conserver la validité locale de la synthèse,2,"Distingue explicitement correction locale et insuffisance aval.",NON
+D17,T1,Contrôler le raccord source→sortie,1,"Compare source et synthèse et qualifie l'omission/effet aval, mais ne restitue pas explicitement les quatre catégories conservé/perdu/ajouté/requalifié.",NON
+D17,T1,Déclenchement borné du second ordre,2,"Second ordre seulement si prémisse, sélection ou capacité de détection est touchée.",NON
+D17,T1,Contrôle de sélection pour portée globale,0,"Ne demande pas dans ce cas de contre-échantillon indépendant si la portée devient globale.",NON
+D17,T1,Reconsolidation de reprise,1,"Prévoit un retour vers la reprise courante, sans expliciter complètement la reconsolidation de l'état vivant et de sa condition de reprise.",NON
+D17,T1,Silence et arrêt,2,"Pas d'audit si perte non pertinente; arrêt quand delta et effets aval sont qualifiés.",NON
+D17,T2,Application ≠ test,2,"Refuse explicitement de déclarer testée une pratique simplement répétée sans incident.",NON
+D17,T2,Épreuve discriminante,2,"Explicite effet attendu, échec/coût, contre-cas/comparaison et observation discriminante.",NON
+D17,T2,Extension/promotion distincte,2,"Sépare clairement qualification probatoire et promotion/extension.",NON
+D17,T2,Proportion du test,2,"Réserve R-041 à une prétention probatoire; usage ordinaire reste silencieux.",NON
+D17,T2,Silence et arrêt,2,"Silence pour usage ordinaire; arrêt quand statut/preuves sont explicites et absence de nouveau discriminant.",NON
+D17,T3,Trois niveaux de sortie,2,"Sépare solution locale, connaissance causale et apprentissage candidat.",NON
+D17,T3,Test de transport,2,"Exige épreuve de transport avant mécanisme transverse.",NON
+D17,T3,Récupérabilité proportionnée,2,"Choisit la surface existante la moins coûteuse si valeur de reprise.",NON
+D17,T3,Distinction capture/outillage,2,"Distingue simple possibilité/capture et éventuelle mécanisation après test de transport.",NON
+D17,T3,Silence et arrêt,1,"Donne un arrêt clair si absence de valeur de reprise, mais formule surtout le silence sur le mécanisme transverse et moins explicitement le correctif trivial.",NON
+D17,T4,Conserver preuves locales,2,"Conserve les preuves locales et refuse invalidation automatique.",NON
+D17,T4,Tester le lien matériel,2,"Vérifie d'abord si prémisse/exclusion/critère/portée est réellement touché.",NON
+D17,T4,Portée du réaudit,2,"Refuse le réaudit complet et borne l'ouverture aux dimensions réellement touchées.",NON
+D17,T4,Contrôle indépendant si portée globale,1,"Mentionne la sélection d'entrée si l'audit est global, mais pas explicitement un contre-échantillon indépendant.",NON
+D17,T4,Silence et arrêt,2,"Pas de réaudit si dimensions non touchées; condition d'arrêt spécifique à l'audit global.",NON
+D17,GLOBAL,Absence de causalité/autorisation fictive,2,"Aucune causalité, autorisation ou promotion fictive détectée.",NON
+D17,GLOBAL,Traçabilité des éléments utilisés,2,"Identifie explicitement règles, boucles et repères utilisés.",NON
+D17,GLOBAL,Ambiguïté reconnue,2,"Repère précisément le seuil de 'perte matérielle' comme ambiguïté de déclenchement.",NON

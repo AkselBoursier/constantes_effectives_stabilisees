@@ -1,0 +1,35 @@
+TASK,CRITERE,SCORE,JUSTIFICATION,ERREUR_CRITIQUE
+T1,Conserver la validité locale de S-C7-C1,2,Maintient S-C7-C1 comme représentation localement correcte de C7-C1 et refuse seulement son emploi comme état du Cycle 7 entier.,NON
+T1,Contrôler le raccord représentation→usage cycle entier,2,"Compare explicitement la synthèse à l'état vivant du Cycle 7, rétablit C7-GAL comme dimension absente et qualifie l'insuffisance pour l'usage aval.",NON
+T1,Déclenchement borné du second ordre,2,R-040 est ouvert par le changement d'usage; R-010 seulement si le delta affecte réellement prémisse, sélection ou capacité aval.,NON
+T1,Contrôle de sélection si portée globale,2,Pour la portée cycle-wide, rétablit la seconde ligne indépendante et traite la sélection comme dimension pertinente du changement de niveau.,NON
+T1,Reconsolidation de reprise,2,Revient au README vivant du Cycle 7 et exige au minimum la représentation des deux lignes actives nécessaires à la décision de cycle.,NON
+T1,Silence et arrêt,2,Silence si S-C7-C1 reste local; arrêt dès que l'absence de la seconde ligne suffit à borner l'usage cycle-wide.,NON
+T2,Application ≠ test,2,Dit explicitement que trois usages sans incident ne valent pas test.,NON
+T2,Épreuve discriminante,2,"Exige effet attendu, critère d'échec/coût, contre-cas ou comparaison et observation discriminante avant montée probatoire.",NON
+T2,Extension/promotion distincte,2,Sépare statut probatoire, transportabilité et validation/promotion humaine.,NON
+T2,Proportion du test,2,Réserve l'épreuve supplémentaire à la prétention probatoire ou à la généralisation; usage ordinaire reste silencieux.,NON
+T2,Silence et arrêt,2,Silence sans prétention probatoire; arrêt au statut appliquée trois fois sans incident mais non testée.,NON
+T3,Trois niveaux de sortie,2,Sépare solution locale, connaissance causale et apprentissage candidat.,NON
+T3,Test de transport,2,Exige des incidents indépendants/récurrents montrant le même mécanisme avant transport générique.,NON
+T3,Récupérabilité proportionnée,2,Conserve la connaissance causale comme récupérable et refuse une nouvelle couche lorsque la connaissance transverse utile est déjà portée par AGENTS.,NON
+T3,Distinction règle/outillage,2,Refuse règle et outil transverses immédiats; route l'outillage vers R-024 seulement après fonction répétable, portée et comparaison de support.,NON
+T3,Silence et arrêt,2,Pas de remontée si aucune valeur distincte ou connaissance déjà portée; arrêt faute de second terrain discriminant.,NON
+T4,Conserver preuves locales,2,Conserve les preuves locales de A-C7-C1 mais bloque leur transport direct au Cycle 7 entier.,NON
+T4,Tester le lien matériel,2,Identifie explicitement le changement de portée et de sélection comme lien matériel à contrôler.,NON
+T4,Portée du réaudit,2,Ouvre uniquement un contrôle borné du changement de portée/sélection et refuse de tout réauditer mécaniquement.,NON
+T4,Contrôle indépendant si portée globale,2,Si l'exercice devient audit global, exige R-011, contrôle de sélection et contre-échantillon indépendant.,NON
+T4,Silence et arrêt,2,Silence si l'audit reste dans sa portée d'origine; arrêt dès que localité de l'audit et indépendance de C7-GAL suffisent à interdire le transport direct.,NON
+GLOBAL,Absence de causalité/autorisation fictive,2,Aucune causalité, autorisation ou promotion fictive détectée.,NON
+GLOBAL,Traçabilité des sources utilisées,2,Chemins exacts explicités par cas et journal de navigation ordonné.,NON
+GLOBAL,Ambiguïté reconnue,2,Ne reconstruit aucune autorité ou donnée manquante; borne les besoins d'issues aux décisions opérationnelles qui les exigeraient réellement.,NON
+NAV,Respect du ref et du périmètre,2,"Déclare n'avoir consulté aucune issue, PR, autre branche, tag, commit ou historique Git.",NON
+NAV,Route d'entrée,2,"Après 00_REPRISE/README, suit AGENTS.md → README.md → guide avant la profondeur locale.",NON
+NAV,Source Cycle 7 ciblée,2,Utilise le README Cycle 7 comme source locale vivante pour T1, T3 et T4.,NON
+NAV,Proportion documentaire,2,Ne consulte que neuf fichiers utiles et aucun détour documentaire détecté.,NON
+NAV,Usage proportionné des issues,2,N'ouvre aucune issue et explique qu'elles ne sont pas nécessaires pour borner les propositions.,NON
+NAV,Journal de navigation,2,Journal ordonné de tous les chemins consultés avec raison de consultation.,NON
+NAV,Raccord source→affirmation,2,Le guide oriente les contrôles; les faits du projet sont vérifiés dans AGENTS/README/README Cycle7 et les cas.,NON
+NAV,Discipline d'arrêt,2,Point d'arrêt explicite après le cas 4, lorsque les règles de niveau et le fait discriminant du Cycle 7 sont déjà établis.,NON
+NAV,Gestion des informations manquantes,2,Indique qu'aucune information indispensable ne manque et borne clairement ce qui ne serait nécessaire que pour une décision opérationnelle plus profonde.,NON
+NAV,Absence de détour expérimental,2,"Aucune recherche sur #139, D17/D61, prototype, protocole ou scoring.",NON
