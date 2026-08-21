@@ -6,11 +6,15 @@ Ce document prépare une **décision humaine de portée** après l’audit #139.
 
 Il ne modifie pas `AGENTS.md` et ne vaut pas ratification.
 
+La proposition a été requalifiée après confrontation au matériau empirique conversationnel fourni par l’auteur et aux pièces du dépôt dans `Contre_test_empirique_delta_P1_P5.md`.
+
 Question testée :
 
 > Si l’on retire la formulation candidate parce qu’une règle actuelle porte déjà sa fonction, l’agent perd-il un déclencheur, une distinction, une limite d’autorité ou une protection contre un incident réellement observé ?
 
-Si la réponse est non, aucune nouvelle inscription n’est proposée.
+Une seconde question est désormais ajoutée :
+
+> Si la fonction est réelle, exige-t-elle une **nouvelle unité textuelle autonome**, ou peut-elle être portée plus sobrement par une formulation déjà existante ou par un mécanisme technique ?
 
 ## 1. Fonctions déjà suffisamment portées sur `main`
 
@@ -33,101 +37,115 @@ Le `AGENTS.md` courant porte déjà substantiellement :
 - `R-035` — contrôle avant suppression/déplacement/déclassement ;
 - `R-036` — passage inter-domaines par réinstruction, sans propagation du verdict ;
 - `R-037` — conservation des négatifs/refus/suspensions ;
-- une partie importante de `R-038` — branche/worktree, PR bornée, pas de main direct, CI ≠ merge.
+- une partie importante de `R-038` — branche/worktree, PR bornée, pas de `main` direct, CI ≠ merge.
 
-Verdict : **ne pas recopier ces fonctions par principe**. Les éventuels écarts doivent être traités seulement là où un incident ou une lacune de déclenchement est établi.
+Verdict : **ne pas recopier ces fonctions par principe**. Les écarts doivent être traités seulement là où un incident, une sous-application ou une lacune de déclenchement est établi.
 
-## 2. Lacunes marginales fortes
+## 2. Delta fonctionnel requalifié
 
-### P1 — R-033 : provenance, garantie, autorité, ratification humaine
+Le contre-test soutient toujours **cinq fonctions utiles**, mais plus cinq nouvelles règles autonomes.
+
+### P1 — R-033 : provenance apparente ≠ ratification humaine effective
 
 **Couverture actuelle : partielle.**
 
-Le routage documentaire est présent, mais la protection suivante manque :
+Le dispositif permet à un agent d’écrire sur GitHub via le compte connecté. L’identité apparente du compte auteur ne suffit donc pas, par construction, à établir que l’acte a été directement posé ou ratifié par l’humain.
 
-```text
-un commentaire/commit sous le compte auteur
-≠ preuve suffisante de ratification humaine
-lorsqu'un agent peut écrire via ce compte
-```
+Le matériau empirique montre effectivement des actions « ajoutées sur GitHub via l’outil dédié » ; en revanche, aucun épisode n’a encore été isolé où **cette ambiguïté seule** aurait produit un verdict scientifique erroné. Le soutien est donc structurel fort, mais le dommage historique direct est moins net que pour P2/P5.
 
-Cette lacune a un effet réel sur les décisions de forte autorité.
+Formulation candidate, volontairement étroite :
 
-**Gain marginal : fort.**
+> Pour une décision scientifique, irréversible ou de forte autorité, ne pas inférer une ratification humaine de la seule identité du compte GitHub auteur lorsqu’un agent peut agir via ce compte ; exiger une intervention humaine explicite ou une provenance qui l’établit réellement.
 
-Formulation minimale candidate :
+**Condition de silence :** commentaire informatif/technique sans effet d’autorité, ou provenance humaine déjà établie.
 
-> Ne pas inférer une ratification humaine de la seule identité du compte GitHub auteur lorsqu’un agent peut agir via ce compte. Pour une décision scientifique, irréversible ou de forte autorité, exiger une intervention humaine explicite ou une provenance qui l’établit réellement.
-
-**Support candidat :** noyau gouvernance agentique, probablement racine.
-
-**Statut : `CANDIDAT_PROMOTION_FORTE / DECISION_HUMAINE_REQUISE`.**
+**Statut : `CANDIDAT_PROMOTION_FORTE_MAIS_ETROITE / DECISION_HUMAINE_REQUISE`.**
 
 ### P2 — R-034 : portée exacte d’une décision
 
 **Couverture actuelle : partielle.**
 
-`AGENTS.md` énumère les frontières humaines, mais n’explicite pas suffisamment la non-transitivité : une qualification ou clôture locale ne vaut pas propagation, exécution, mutation ou merge.
+`AGENTS.md` énumère les frontières humaines, mais n’explicite pas assez la non-transitivité d’une décision vers un acte d’une autre nature.
 
-#117 fournit un contre-cas causal ; α3–α5 fournissent les cas positifs.
+Le soutien est désormais particulièrement fort :
 
-**Gain marginal : fort.**
+- le matériau conversationnel contient des autorisations GitHub correctement utilisées localement sans en déduire une autorisation générale de restructuration ;
+- α3–α5 autorisent une clôture locale sans propagation ni fusion ;
+- #117 fournit un contre-cas causal : un diagnostic de déclassement a été converti trop vite en suppression matérielle.
 
-Formulation minimale candidate :
+Formulation candidate :
 
 > Une décision ou autorisation ne couvre que la nature d’acte, l’objet et la portée qu’elle explicite. Qualifier, clore, valider ou fusionner une étape n’autorise pas automatiquement une exécution, propagation, mutation ou étape suivante d’une autre nature.
 
-**Support candidat :** racine, proche des frontières d’autorité.
+**Condition de silence :** une autorisation peut couvrir plusieurs micro-actes techniques si cette séquence appartient explicitement à la même opération bornée.
 
-**Statut : `CANDIDAT_PROMOTION_FORTE / DECISION_HUMAINE_REQUISE`.**
+**Statut : `CANDIDAT_PROMOTION_TRES_FORTE / DECISION_HUMAINE_REQUISE`.**
 
 ### P3 — R-032 : non-détection discriminante
 
 **Couverture actuelle : insuffisamment explicite.**
 
-Le noyau impose cible/régime/tolérance et rang probatoire, mais ne dit pas explicitement qu’une absence de signal n’est informative que si le test pouvait voir la famille d’alternatives pertinente.
+L’indexation cible/régime/tolérance et la séparation résultat/soutien/verdict ne suffisent pas logiquement à établir qu’une absence de signal est informative.
 
-**Gain marginal : scientifique réel.**
+α4 et α5 fournissent des épreuves scientifiques directes :
 
-Formulation minimale candidate :
+- une dérive linéaire lente et une modulation annuelle compatibles avec zéro peuvent constituer une non-détection discriminante **dans les familles et domaines déclarés** ;
+- elles n’autorisent ni invariance temporelle universelle, ni extension aux oscillations/transitoires non testés ;
+- une non-détection locale spectroscopique ne se généralise pas à tout le ciel ni indépendamment des calibrations et systématiques.
+
+Formulation candidate :
 
 > Une non-détection ne soutient un maintien ou une exclusion que pour une famille de variations effectivement testable par le dispositif dans le domaine déclaré. Une borne sur une valeur ne devient pas automatiquement une borne sur sa variation.
-
-**Support candidat :** règle scientifique, racine ou support scientifique local selon décision d’architecture.
 
 **Statut : `CANDIDAT_PROMOTION_SCIENTIFIQUE_FORTE / DECISION_HUMAINE_REQUISE`.**
 
 ### P4 — R-025 : constance ≠ stabilisation
 
-**Couverture actuelle : proche mais non explicite.**
+**Fonction scientifique : fortement soutenue.**
 
-Le `AGENTS.md` demande de qualifier un énoncé de constance ou stabilisation, mais ne formule pas directement la distinction qui a motivé D1.
+D1 distingue explicitement :
 
-**Gain marginal : modéré à fort.**
+```text
+constance de l’objet
+!= stabilisation de l’accès
+!= mode de constitution
+```
 
-Formulation minimale candidate :
+C10 fournit en outre un cas matériel : `v(t)` peut devenir pratiquement fixe alors que le système qui produit cette quasi-fixité reste énergétiquement inadmissible. La stabilité de la quantité accessible ne suffit donc pas à qualifier le mécanisme qui la porte.
 
-> Ne pas confondre constance de la cible, stabilisation d’un accès/estimateur/régime et maintien produit par un mécanisme ; préciser lequel est effectivement soutenu.
+Cependant, `AGENTS.md` porte déjà deux protections proches :
 
-**Support candidat :** section scientifique existante.
+- expliciter cible/transformation/régime pour les énoncés de constance ou stabilisation ;
+- ne pas confondre propriété de la cible, qualité de l’accès et mode de constitution.
 
-**Statut : `CANDIDAT_PROMOTION_SCIENTIFIQUE / DECISION_HUMAINE_REQUISE`.**
+Le contre-test réduit donc le **gain marginal d’une nouvelle ligne autonome**.
 
-### P5 — R-038 : pré-vol SHA / no-op / contrôle terminal
+Proposition : **ne pas créer une règle supplémentaire**. Si une promotion est décidée, intégrer une courte précision à la formulation scientifique existante, par exemple :
+
+> Ne pas identifier constance de la cible, stabilisation de l’accès/régime et maintien produit par un mécanisme.
+
+**Statut : `FONCTION_FORTE / AMENDEMENT_DU_NOYAU_EXISTANT_PREFERE`.**
+
+### P5 — R-038 : pré-vol des mutations dépendant de l’état courant
 
 **Couverture actuelle : partielle.**
 
-La discipline de branche/PR est présente, mais le comportement empirique de #139 montre une lacune opérationnelle : l’agent peut tenter plusieurs écritures sans relire le SHA ou répéter une action refusée.
+La branche/PR et la séparation CI/merge sont déjà présentes. Le manque empirique concerne le pré-vol au point d’écriture.
 
-**Gain marginal : fort pour les agents mutateurs.**
+Deux familles d’incidents l’établissent :
 
-Formulation minimale candidate :
+- le 19 août, une mauvaise invocation a créé un fichier parasite `__invalid__`; la correction correcte a exigé suspension des mutations, relecture, suppression et contrôle terminal ;
+- pendant #139, deux appels avec SHA invalide ont été répétés avant retour strict en lecture ; les `409` n’ont pas muté le dépôt mais ont reproduit la sous-application du pré-vol.
 
-> Avant une mutation versionnée : identifier cible et fonction, relire l’état/SHA courant, choisir l’action correspondant à la classe de cible, éviter une mutation sans effet, puis contrôler l’état terminal.
+La formulation doit rester bornée : un commentaire append-only n’exige pas le même contrat qu’un remplacement de fichier ou une mutation de ref.
 
-**Support candidat :** section Git/mutations ; à combiner avec mécanisation éventuelle plutôt qu’à multiplier en prose.
+Formulation candidate :
 
-**Statut : `CANDIDAT_PROMOTION_OPERATIONNELLE / MECANISATION_PARTIELLE_PREFERABLE`.**
+> Avant une mutation de fichier, ref ou autre objet dont l’écriture dépend de son état courant : identifier cible et fonction, relire l’état/SHA applicable, choisir l’action de la bonne classe, éviter une mutation sans effet, puis contrôler l’état terminal.
+
+**Support complémentaire :** mécaniser read-back/no-op lorsque l’interface le permet, sans transformer un contrôle technique en autorité scientifique.
+
+**Statut : `CANDIDAT_PROMOTION_OPERATIONNELLE_FORTE / MECANISATION_PARTIELLE_PREFERABLE`.**
 
 ## 3. Lacunes réelles mais support racine non démontré
 
@@ -135,32 +153,23 @@ Formulation minimale candidate :
 
 La fonction est fortement soutenue, mais une règle racine détaillée risquerait de transformer un problème de reprise en taxonomie générale.
 
-**Proposition :** ne pas promouvoir en racine à ce stade. Lorsqu’un support prétend représenter l’état d’un domaine, exiger localement qu’il expose question actuelle, investigation, acquis/négatifs, blocages, décision ouverte et condition de reprise.
+**Proposition :** lorsqu’un support prétend représenter l’état d’un domaine, exiger localement qu’il expose question actuelle, investigation, acquis/négatifs, blocages, décision ouverte et condition de reprise.
 
 **Statut : `SUPPORT_LOCAL_A_DECIDER`.**
 
 ### R-039 — Human-First
 
-Le besoin est réel, mais `AGENTS.md` actuel est déjà largement lisible et le test aveugle #137 est confondu.
+Le besoin est réel, mais une nouvelle ligne racine n’est pas encore démontrée comme supérieure à une bonne conception des surfaces elles-mêmes.
 
-Le principe minimal :
-
-```text
-intitulé humain porte le sens
-code/ID reste secondaire
-```
-
-peut produire un gain, mais l’audit ne démontre pas encore qu’une nouvelle ligne racine change davantage le comportement qu’une bonne rédaction des surfaces elles-mêmes.
-
-**Proposition :** tester dans les nouveaux supports et dans la vue 2D avant promotion durable.
+**Proposition :** poursuivre le test dans les nouveaux supports et dans le prototype 2D avant promotion durable.
 
 **Statut : `CANDIDAT_BORNE / PAS_PROMOTION_IMMEDIATE`.**
 
 ### R-019 — interventions humaines typées
 
-La fonction est fortement soutenue dans les conversations et A3. Cependant, son inscription textuelle peut elle-même créer un risque : un agent pourrait sur-interpréter toute phrase humaine et contester une instruction claire.
+La fonction est bien soutenue par le matériau empirique : les propositions ne doivent pas être transformées automatiquement en ordres. Mais son inscription textuelle peut produire le défaut inverse et conduire l’agent à contester une instruction claire.
 
-**Proposition :** si promotion, garder une formulation très courte et déclenchée seulement lorsque le type d’intervention change réellement l’action.
+**Proposition :** si promotion ultérieure, formulation très courte et déclenchée seulement lorsque le type d’intervention change réellement l’action.
 
 **Statut : `CANDIDAT_BORNE / DECISION_HUMAINE_REQUISE`.**
 
@@ -169,112 +178,111 @@ La fonction est fortement soutenue dans les conversations et A3. Cependant, son 
 Ne pas promouvoir à partir de #139 :
 
 - `R-006` — instrument documentaire régional ;
-- `R-010` — audit de second ordre, à garder événementiel dans les protocoles d’audit ;
+- `R-010` — audit de second ordre, événementiel ;
 - `R-011` — contre-audit indépendant pour audits globaux ;
 - `R-012` — exhaustivité dans corpus auditable défini ;
 - `R-013` — triangulation ciblée ;
 - `R-014` — requalification contextuelle d’audits antérieurs ;
-- `R-015` — symétrie critique, déjà portée par le programme d’audit ;
-- `R-017` — principe de non-prolifération déjà présent sous une forme suffisante ;
+- `R-015` — symétrie critique, portée par le programme d’audit ;
+- `R-017` — non-prolifération déjà présente sous une forme suffisante ;
 - `R-018` — capture légère en shadow ;
-- `R-021` — mieux porté par mécanisme/read-back que par nouvelle prose ;
+- `R-021` — mieux porté par read-back/mécanisme que par une ligne supplémentaire ;
 - `R-022` — mécanisme CI local ;
-- `R-024` — critère de phase outillage, non règle d’intervention quotidienne.
+- `R-024` — critère de phase outillage, non règle quotidienne.
 
-## 5. Test de compression du delta
+## 5. Test de compression
 
-La liste brute des candidats P1–P5 peut encore être comprimée.
-
-### P1 + P2 ne fusionnent pas
+### P1 et P2 restent distinctes
 
 `R-033` demande : **qu’est-ce que la provenance prouve ?**  
 `R-034` demande : **qu’est-ce que cette décision autorise ?**
 
-Un agent peut connaître correctement la provenance humaine et néanmoins sur-propager la portée de la décision. Les deux fonctions doivent rester distinctes.
+Une provenance correcte n’empêche pas une sur-propagation de la portée.
 
-### P3 ne se réduit pas à R-026/R-031
+### P3 reste distincte de R-026/R-031
 
-Un énoncé nul peut être correctement indexé et son rang probatoire correctement séparé, tout en restant non discriminant si le dispositif ne pouvait pas voir l’alternative. La non-détection conserve donc sa fonction propre.
+Un résultat nul peut être correctement indexé et correctement classé comme résultat tout en restant non discriminant si le dispositif ne pouvait pas voir l’alternative pertinente.
 
-### P4 ne se réduit pas à R-026
+### P4 est fonctionnellement distincte mais textuellement absorbable
 
-L’indexation ne corrige pas une confusion entre l’objet et le processus qui stabilise son accès. D1 garde donc un gain propre.
+La distinction constance/stabilisation est réelle. Ce qui n’est plus soutenu est la nécessité d’en faire **une nouvelle ligne autonome**, car le noyau actuel contient déjà les deux prémisses nécessaires.
 
 ### P5 ne doit pas devenir une seconde doctrine Git
 
-Le delta utile est le **pré-vol opérationnel** manquant. Branche, PR, main et merge sont déjà couverts ; ne pas les répéter.
+La branche, la PR, `main` et le merge sont déjà couverts. Seul le pré-vol de la mutation dépendant de l’état courant apporte un gain marginal.
 
-## 6. Delta minimal recommandé à soumettre
+## 6. Delta minimal requalifié à soumettre
 
-Si une décision humaine devait aujourd’hui autoriser un delta dans `AGENTS.md`, la proposition la plus compacte issue de #139 serait de considérer seulement cinq ajouts/fusions ciblés :
-
-```text
-1. provenance apparente != ratification humaine effective        [R-033]
-2. autorisation bornée à nature d'acte / objet / portée          [R-034]
-3. non-détection seulement si test discriminant                  [R-032]
-4. constance de cible != stabilisation d'accès/mécanisme         [R-025]
-5. pré-vol SHA / no-op / contrôle terminal pour mutation         [R-038]
-```
-
-Et trois décisions secondaires, non nécessaires au même moment :
+Le résultat du contre-test est :
 
 ```text
-R-009 science vivante -> support local à décider
-R-039 Human-First -> poursuivre test par usage
-R-019 intervention humaine typée -> formulation courte seulement si gain confirmé
+DELTA_FONCTIONNEL = 5 fonctions
+
+AJOUTS_TEXTUELS_AUTONOMES_CANDIDATS =
+  P1 provenance apparente != ratification humaine effective
+  P2 autorisation bornée à nature d'acte / objet / portée
+  P3 non-détection seulement si dispositif discriminant
+  P5 pré-vol des mutations dépendant de l'état courant
+
+AMENDEMENT_DU_NOYAU_EXISTANT =
+  P4 constance de cible != stabilisation d'accès/régime/mécanisme
 ```
 
-Cette recommandation est **plus petite** que le prototype #138. #138 reste un témoin expérimental utile, mais n’est pas utilisé ici comme autorité normative.
+La recommandation reste **plus petite que #138**. Aucun `AGENTS.md` local supplémentaire n’est nécessaire pour porter ce delta.
 
-## 7. Options de décision humaine
+## 7. Options de décision humaine requalifiées
 
 ### Option A — aucun delta maintenant
 
-Conserver `main` tel quel et observer si les cinq lacunes reproduisent encore des erreurs.
+Conserver `main` tel quel et observer.
 
-Avantage : coût documentaire nul.  
-Risque : P1/P2/P5 ont déjà des incidents ou conditions matérielles assez fortes pour que l’attente apporte peu d’information nouvelle.
+Avantage : aucun coût documentaire.  
+Limite : P2 et P5 ont déjà des contre-cas/incidents suffisamment directs pour que l’attente apporte peu d’information sur leur utilité.
 
-### Option B — delta minimal P1/P2/P5 seulement
+### Option B — protections agentiques P1/P2/P5
 
-Promouvoir uniquement les trois protections agentiques les plus directement reliées à des incidents : provenance/ratification, portée exacte des autorisations, pré-vol de mutation.
+Ajouter seulement les trois protections de gouvernance/mutation.
 
-Avantage : très faible augmentation de charge cognitive ; cible les défaillances d’action.
+Avantage : delta très court et centré sur l’action.  
+Limite : laisse hors noyau la protection scientifique P3.
 
-Limite : ne traite pas les deux lacunes scientifiques P3/P4.
+### Option C requalifiée — quatre ajouts + un amendement
 
-### Option C — delta minimal complet P1–P5
+- ajouter P1, P2, P3 et P5 sous leurs formes bornées ;
+- intégrer P4 à la formulation scientifique déjà présente plutôt que créer une ligne supplémentaire.
 
-Ajouter les trois protections agentiques + les deux protections scientifiques D1/P27.
-
-Avantage : couvre les lacunes marginales fortes démontrées par l’audit.
-
-Limite : augmente légèrement le noyau racine ; nécessite vérifier la meilleure localisation des deux règles scientifiques.
+Avantage : conserve les cinq fonctions démontrées en minimisant la sédimentation textuelle.  
+Limite : P1 repose davantage sur une ambiguïté structurelle démontrée que sur un dommage historique isolé.
 
 ### Option D — architecture locale plus large
 
-Créer/promouvoir des `AGENTS.md` locaux et distribuer davantage les règles.
+Créer/promouvoir plusieurs `AGENTS.md` locaux.
 
-Cette option a été expérimentée dans #138, mais #139 ne démontre pas qu’elle soit nécessaire pour porter les cinq lacunes marginales. Elle introduit une décision d’architecture supplémentaire et n’est donc **pas recommandée comme premier mouvement**.
+#139 ne démontre toujours pas cette nécessité. Cette option ajoute une décision architecturale indépendante et reste **non recommandée comme premier mouvement**.
 
-## 8. Recommandation de l’audit
-
-La meilleure balance gain/coût issue de la matrice est :
+## 8. Recommandation actuelle de l’audit
 
 ```text
-RECOMMANDATION = OPTION_C
+RECOMMANDATION = OPTION_C_REQUALIFIEE
 SOUS_CONDITION = décision humaine explicite de promotion
 ```
 
-Motif : P1/P2/P5 protègent des erreurs d’action déjà observées ; P3/P4 ajoutent deux fonctions scientifiques non réductibles aux formulations présentes ; le tout reste un delta court et évite une nouvelle architecture documentaire.
+Motif :
+
+- P2 et P5 ont des incidents/contre-cas directs ;
+- P3 a des épreuves scientifiques explicites et un gain logique non redondant ;
+- P1 protège une ambiguïté réelle de provenance à haute autorité mais doit rester étroite ;
+- P4 est scientifiquement solide mais ne justifie plus une nouvelle unité textuelle autonome.
 
 Cette recommandation **n’est pas une autorisation** de modifier `AGENTS.md`.
 
 ## Statut
 
 ```text
-PROPOSITION_PORTEE = INSTRUITE
-DELTA_RECOMMANDE = P1-P5
+PROPOSITION_PORTEE = REQUALIFIEE_APRES_CONTRE_TEST_EMPIRIQUE
+DELTA_FONCTIONNEL = P1-P5
+AJOUTS_AUTONOMES_MAX = P1 + P2 + P3 + P5
+P4 = AMENDEMENT_NOYAU_EXISTANT
 AGENTS_MODIFIE = NON
 DECISION_HUMAINE = REQUISE
 OPTION_LOCALE_LARGE = NON_RECOMMANDEE_EN_PREMIER_MOUVEMENT
