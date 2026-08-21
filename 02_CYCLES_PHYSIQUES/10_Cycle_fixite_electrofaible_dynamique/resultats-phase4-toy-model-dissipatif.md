@@ -14,6 +14,15 @@ Il précise qu'elle n'est ni une probabilité, ni une réalisation microscopique
 ni l'établissement de l'histoire réelle de notre univers. Le scan compare des
 paramètres ; l'intégration calcule une trajectoire pour chaque point.
 
+**Note de reprise du 21 août 2026.** La formulation de l'étape suivante a été
+requalifiée après vérification de la littérature. Le caractère dynamique et
+couplé de la cosmologie thermique et de la BBN est déjà standard ; il ne
+constitue pas une nouveauté propre à C10. Avant toute sélection d'un mécanisme
+microscopique, la question active devient la robustesse de la fenêtre obtenue
+ici lorsque l'on rétablit une thermodynamique réaliste autour de QCD et que
+l'on teste la validité du terme local de friction. Voir
+[note-reprise-processus-qcd-bbn-2026-08-21.md](note-reprise-processus-qcd-bbn-2026-08-21.md).
+
 La question testée est :
 
 > Existe-t-il une fenêtre de dissipation permettant une variation électrofaible ancienne significative, une quasi-fixité avant la BBN et une relique scalaire acceptable, sans injection excessive d'entropie ?
@@ -311,16 +320,33 @@ Le réglage éventuel se situe désormais dans :
 - la thermalisation ;
 - les contraintes de mélange, de cinquième force ou de rayonnement caché.
 
-## 12. Étape suivante
+## 12. Question suivante requalifiée — 21 août 2026
 
-La prochaine phase doit sélectionner une réalisation microscopique minimale parmi :
+La formulation antérieure prescrivait directement la sélection d'une réalisation microscopique. Elle est désormais trop rapide.
+
+La physique standard traite déjà la BBN et la cosmologie thermique comme des évolutions dynamiques couplées ; l'idée générale qu'une histoire physique peut compter n'est donc pas un résultat nouveau de C10. En revanche, la phase 4 repose précisément sur deux approximations susceptibles de modifier quantitativement la fenêtre obtenue :
+
+1. une thermodynamique à degrés de liberté relativistes constants, alors que les points les plus bas approchent le crossover QCD ;
+2. un transfert local `Q = Gamma_phi rho_phi`, alors que la relaxation d'un condensat dans un bain en expansion peut nécessiter une dynamique à température finie plus structurée.
+
+L'ordre de reprise devient donc :
+
+```text
+fenêtre phénoménologique de phase 4
+-> test de robustesse thermique / QCD
+-> test de robustesse du paramétrage local de dissipation
+-> sélection microscopique seulement si une fenêtre stable subsiste
+-> BBN détaillée seulement si une mémoire physique pertinente survit jusqu'à l'échelle MeV.
+```
+
+Les familles suivantes restent disponibles comme carte de candidats, sans sélection actuelle :
 
 1. légère brisure de `Z_2` et mélange scalaire-Higgs ;
 2. couplage de Yukawa à des fermions légers ;
 3. couplage à un second scalaire relativiste ;
 4. annihilation ou évaporation thermique du condensat.
 
-Le premier candidat doit être choisi en comparant le taux calculable aux fenêtres de `gamma_EW` obtenues ici.
+Le premier candidat ne doit donc plus être choisi avant d'avoir établi que la fenêtre effective actuelle constitue une cible physiquement suffisamment robuste.
 
 ## 13. Fichiers reproductibles
 
@@ -355,4 +381,4 @@ calculs/resultats_scan_dissipation_homogene_resume.csv
 Toy model homogène dissipatif : fenêtre phénoménologique non vide.
 ```
 
-La phase suivante n'a pas à complexifier arbitrairement le potentiel. Elle doit tester si un canal microscopique concret peut occuper cette fenêtre.
+La phase suivante n'a pas à complexifier arbitrairement le potentiel. La priorité est désormais de vérifier que la fenêtre dissipative reste une cible physique robuste avant de sélectionner un canal microscopique concret.
