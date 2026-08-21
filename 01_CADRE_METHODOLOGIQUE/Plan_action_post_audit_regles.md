@@ -2,277 +2,149 @@
 
 ## Fonction
 
-Ce document est l’**état d’action courant** dérivé de la matrice, de la table de relations, de la synthèse, de la cartographie d’outillage et du contre-test empirique final.
+Ce document est l’état d’action courant de #139 après intégration de l’étude exhaustive de second ordre du matériau empirique. Il ne transforme aucune qualification en promotion normative.
 
-Il ne transforme pas automatiquement une qualification en promotion normative.
-
-Sources courantes :
-
-- `matrice_regles_audit.csv` — 39 unités ;
-- `relations_regles_audit.csv` — 44 relations ;
-- `Synthese_executive_audit_regles.md` ;
-- `Cartographie_fonctions_mecanisables.md` ;
-- `Comparaison_capacites_outillage_post_audit.md` ;
-- `Contre_test_empirique_delta_P1_P5.md` ;
-- `Proposition_portee_post_audit_regles.md`.
-
-Les statuts sont :
+État de référence :
 
 ```text
-FAIT
-AUCUNE_ACTION_NOUVELLE
-A_DECIDER_HUMAINEMENT
-CONDITIONNEL
-LOCAL_SANS_PROMOTION
-RETIRE_OU_ABSORBE
-MECANISATION_PARTIELLE_SEULEMENT
+39 unités de base
++ 3 unités de second ordre (R-040 à R-042)
+= 42 unités effectives
+
+44 relations de base
++ 8 relations de second ordre
+= 52 relations effectives
 ```
 
-Aucun statut n’autorise le merge de #139.
+Pièces nouvelles : `Etude_second_ordre_materiau_empirique.md`, `codage_second_ordre_materiau_empirique.csv`, `delta_matrice_second_ordre_materiau_empirique.csv`, `delta_relations_second_ordre_materiau_empirique.csv`.
 
-## 1. Travaux de #139 déjà exécutés
+Aucun statut ci-dessous n’autorise le merge de #139.
 
-### Audit historique et matrice
+## 1. Travaux acquis
 
 ```text
-inventaire/étude = FAIT
-39 unités = MATRICÉES
-44 relations = RELIÉES
-saturation fonctionnelle de découverte de familles = ATTEINTE
-lecture de tout commentaire historique = NON REVENDIQUÉE
-archéologie = RÉOUVRABLE SUR INDICE DISCRIMINANT
+audit historique / repo-led                 = FAIT
+matrice de base 39                          = FAIT
+table de relations de base 44               = FAIT
+étude second ordre matériau 71/71           = FAIT
+saturation fonctionnelle corpus fixe        = ATTEINTE
+delta R-040 à R-042                         = MATÉRIALISÉ
+relations second ordre                      = MATÉRIALISÉES
+synthèse exécutive                          = RECONSOLIDÉE
+cartographie outillage                      = FAIT
+comparaison capacités                       = FAIT
+installation outil                          = NON JUSTIFIÉE
+AGENTS                                      = INCHANGÉ
+merge                                       = NON AUTORISÉ
 ```
 
-### Audit de second ordre
+L’ancienne conclusion `AUDIT_SUFFISAMMENT_INSTRUIT_POUR_DECISION_P1_P5` est retirée comme état terminal : P1–P5 restent utiles, mais étaient pré-second-ordre empirique.
 
-**Statut : FAIT dans le régime de #139.**
+## 2. Actions sans nouvelle promotion
 
-La synthèse a reçu une passe de contrôle qui a détecté plusieurs omissions de niveau puis s’est stabilisée sans nouvelle famille. La réflexivité continue reste refusée.
+Continuer à appliquer dans leur régime les noyaux déjà soutenus : rang machine/science, indexation des énoncés, cible/accès/constitution, portée des conclusions, conservation des négatifs, passage inter-domaines, routage documentaire, confinement Git, non-prolifération proportionnée et séparation activité/qualification.
 
-### Reconsolidation de reprise
+`AUCUNE_ACTION_NOUVELLE` ne signifie pas abandon de la fonction.
 
-**Statut : FAIT.**
+Les mécanismes actuels Git/GitHub/CI restent préférés aux nouvelles plateformes pour les propriétés réellement observables par la machine.
 
-L’ancrage courant a été mis à jour pour que la reprise ne dépende pas de la lecture de tous les checkpoints historiques.
+## 3. Nouvelles unités issues du second ordre
 
-### Cartographie d’outillage
+### R-040 — intégrité des transformations de représentation
 
-**Statut : FAIT pour la tranche issue de #139.**
+**Statut : `CANDIDATE_FORTE / PAS_PROMOTION_IMMEDIATE`.**
 
-Les fonctions mécanisables et non mécanisables ont été distinguées avant recherche d’outil.
+Action : conserver dans l’audit et l’éprouver sur le prochain raccord réel où une représentation devient l’entrée d’une phase, décision ou état courant.
 
-### Comparaison native / externe
+Critère : vérifier `conservé / perdu / ajouté / requalifié` et l’effet aval seulement si la transformation change de fonction ou de granularité pertinente.
 
-**Statut : FAIT.**
+Ne pas transformer toute reformulation en audit de transmission.
 
-Aucune nouvelle plateforme ou installation externe n’est justifiée pour les fonctions prioritaires. Git/GitHub, le workflow existant et les scripts locaux portent déjà l’essentiel des protections mécaniques utiles.
+### R-041 — statut probatoire d’une règle
 
-### Contre-test empirique P1–P5
+**Statut : `TRES_FORT_DANS_LE_REGIME_AUDIT_PROMOTION / DECISION_DE_SUPPORT_A_INSTRUIRE`.**
 
-**Statut : FAIT.**
+Action : utiliser immédiatement dans #139 pour qualifier les règles ; ne pas l’imposer comme protocole expérimental lourd à chaque usage quotidien.
 
-Le matériau empirique conversationnel et les pièces scientifiques/techniques du dépôt ont requalifié le delta : cinq fonctions utiles, mais quatre nouvelles unités textuelles autonomes au plus ; `R-025/P4` doit être fusionnée dans le noyau scientifique existant si elle est promue.
+Déclencheur : prétention `testée`, `validée`, `fonctionne`, extension de portée ou promotion.
 
-## 2. Conserver et appliquer sans nouvelle couche
+### R-042 — remontée de résolution
 
-Aucune nouvelle inscription n’est justifiée actuellement pour :
+**Statut : `FORTE_COMME_PROCESSUS_VERTICAL / PROMOTION_TRANSVERSE_NON_ETABLIE`.**
 
-- `R-001` — rang machine/science ;
-- `R-002` — localisation causale, absorbable dans le noyau causal/probatoire ;
-- `R-003` — couplage probatoire ;
-- `R-004` — routage/autorité documentaire ;
-- `R-005` — statut documentaire ;
-- `R-006` — double contre-factuel, local seulement ;
-- `R-007` — courant + généalogie, avec exceptions ;
-- `R-008` — ancrage + transitions substantielles ;
-- `R-010` à `R-015` — outils d’audit dans leurs régimes bornés ;
-- `R-016` — effet inter-chantiers ;
-- `R-017` — non-prolifération proportionnée ;
-- `R-018` — capture légère ;
-- `R-020` — distribution actuelle de l’autorité technique ;
-- `R-022` — routage CI C2 local ;
-- `R-023` — activité ≠ qualification ;
-- `R-024` — outil par fonction ;
-- `R-026` à `R-031` — noyau scientifique déjà largement porté ;
-- `R-035` à `R-037` — mutation destructive, réinstruction inter-domaines, conservation des négatifs.
+Action : lors de la prochaine résolution substantielle hors C7, distinguer explicitement `solution locale / connaissance causale / apprentissage candidat`, puis tester si quelque chose mérite de remonter.
 
-`AUCUNE_ACTION_NOUVELLE` signifie ici : **continuer à appliquer dans le bon régime**, pas abandonner la fonction.
+Ne pas créer de registre général ni de post-mortem obligatoire pour les correctifs triviaux.
 
-## 3. Décision normative réellement restante
+## 4. Ancien delta P1–P5 requalifié
 
-Le contre-test réduit le delta soumis à décision humaine à cinq fonctions, dont quatre ajouts autonomes au plus.
+P1–P5 ne sont plus le delta terminal, mais leurs preuves ne disparaissent pas.
 
-### P1 / R-033 — provenance apparente et ratification humaine
+- **P1 / R-033** : ambiguïté structurelle forte ; dommage direct isolé non établi ; portée seulement haute autorité/science/irréversible.
+- **P2 / R-034** : très forte ; contre-cas causal #117 ; candidate de non-transitivité des actes.
+- **P3 / R-032** : forte scientifiquement ; non-détection seulement si dispositif discriminant.
+- **P4 / R-025** : fonction forte, mais amendement du noyau existant préférable à une nouvelle ligne.
+- **P5 / R-038** : très forte pour mutations dépendant de l’état courant ; mécanisation partielle possible.
 
-```text
-STATUT = A_DECIDER_HUMAINEMENT
-PREUVE = AMBIGUITE_STRUCTURELLE_FORTE
-DOMMAGE_DIRECT_ISOLE = NON_ETABLI
-PORTEE_PROPOSEE = DECISIONS_SCIENTIFIQUES_IRREVERSIBLES_OU_HAUTE_AUTORITE
-```
+Aucune de ces fonctions n’est promue automatiquement par #139.
 
-Action candidate : une phrase courte au point d’autorité agentique ; pas d’archéologie de provenance pour chaque commentaire.
+## 5. Décisions de portée à réinstruire
 
-### P2 / R-034 — portée exacte des décisions
+La décision humaine post-audit doit maintenant examiner trois classes séparées.
 
-```text
-STATUT = A_DECIDER_HUMAINEMENT
-PREUVE = TRES_FORTE
-CONTRE_CAS_CAUSAL = #117
-CAS_POSITIFS = alpha3-alpha5 + autres portes
-```
+### Classe A — protections déjà fortement instruites pour accès agentique direct
 
-Action candidate : promouvoir une règle courte de non-transitivité des actes.
+À examiner : R-034, R-032, R-038 et, plus étroitement, R-033/R-025.
 
-### P3 / R-032 — non-détection discriminante
+La question n’est pas seulement « règle vraie ? », mais « `AGENTS.md` actuel porte-t-il déjà suffisamment son déclencheur et sa borne ? ».
 
-```text
-STATUT = A_DECIDER_HUMAINEMENT
-PREUVE_SCIENTIFIQUE = FORTE
-CAS = alpha4 / alpha5
-```
+### Classe B — fonctions de second ordre fortement qualifiées mais encore à exposer
 
-Action candidate : promouvoir une phrase scientifique courte précisant qu’une absence de signal n’est probante que pour les alternatives effectivement testables.
+- R-040 : futur raccord réel avant promotion agentique générale ;
+- R-042 : future résolution substantielle hors C7 avant promotion transverse.
 
-### P4 / R-025 — constance ≠ stabilisation
+### Classe C — fonction de gouvernance du statut probatoire
 
-```text
-STATUT = A_DECIDER_HUMAINEMENT
-FONCTION = FORTE
-NOUVELLE_LIGNE_AUTONOME = NON_RECOMMANDEE
-```
+R-041 est déjà suffisamment soutenue pour gouverner l’audit et la promotion des règles. Son support quotidien exact — prose agentique, méthodologie locale ou seulement protocole d’audit — reste à décider.
 
-Action candidate : si promotion décidée, **amender une formulation scientifique existante** plutôt qu’ajouter une unité supplémentaire.
-
-### P5 / R-038 — pré-vol des mutations dépendant de l’état courant
-
-```text
-STATUT = A_DECIDER_HUMAINEMENT
-PREUVE = TRES_FORTE
-INCIDENTS = __invalid__ + répétitions 409 de #139
-PORTAGE = TEXTE_COURT + MECANISATION_PARTIELLE_SI_DISPONIBLE
-```
-
-Action candidate : borner le pré-vol aux mutations de fichier/ref ou objets dont l’écriture dépend de l’état courant ; ne pas l’imposer à tout appel API append-only.
-
-## 4. Décisions secondaires non urgentes
-
-### R-009 — science vivante
-
-**Statut : `CONDITIONNEL / SUPPORT_LOCAL_A_DECIDER`.**
-
-Ne pas créer de tableau de bord global par principe. Lorsqu’une surface prétend représenter l’état scientifique d’un domaine, elle doit porter l’état vivant nécessaire à la reprise.
-
-### R-019 — interventions humaines typées
-
-**Statut : `CONDITIONNEL`.**
-
-Fonction soutenue, mais risque symétrique de sur-interpréter une instruction claire. Une éventuelle formulation doit être courte et ne se déclencher que lorsque le type d’intervention change l’action.
-
-### R-039 — Human-First
-
-**Statut : `CONDITIONNEL / TEST_PAR_USAGE`.**
-
-Continuer à l’éprouver sur les nouvelles surfaces et le prototype 2D. Pas de réécriture massive.
-
-### Vue 2D des récursivités
+## 6. Vue 2D
 
 **Statut : `PROTOTYPE_LOCAL_JUSTIFIE / NON_SEDIMENTÉ`.**
 
-Construire seulement un prototype dérivé des CSV, sur un sous-système borné, si l’on veut tester le gain de guidage agentique. Ne pas créer une troisième source normative.
+Le second ordre renforce sa fonction. Le prototype doit être dérivé des unités/relations existantes, non créer une troisième source normative.
 
-## 5. Mécanisation : verdict actuel
+Axe horizontal : déclencheur → exposition → observable → qualification → décision → action/silence/révision.
 
-### À conserver dans l’existant
+Axe vertical : incident → cause → connaissance → candidate → test/enforcement → contrôle du contrôle → représentation/reprise.
 
-- routage C2 dans GitHub Actions ;
-- `audit_structure_corpus.py` et distinction ERROR/WARNING ;
-- branches/PR/SHAs pour confinement et provenance ;
-- contrôle humain du merge.
+R-040, R-041 et R-042 doivent pouvoir y être placées sans arêtes ambiguës.
 
-### Mécanisation partielle possible si l’interface le permet
+## 7. Outillage
 
-- read-back après réponse d’écriture ambiguë (`R-021`) ;
-- lecture SHA/état avant remplacement d’un fichier/ref (`R-038`) ;
-- détection de no-op/diff vide ;
-- contrôle terminal après mutation ;
-- instrumentation de couverture de branches uniquement pour un harnais Python complexe lorsque cette observation manque réellement.
+Aucune nouvelle installation n’est ouverte.
 
-### Non justifié actuellement
+Conserver : Git/PR/SHA, read-back après état ambigu, routage C2, scripts locaux et distinction signal/sévérité.
 
-- nouvelle plateforme de gouvernance ;
-- installation générale de `pre-commit` pour protéger les écritures API ;
-- Coverage.py généralisé ;
-- Vale bloquant ;
-- système ADR/MADR complet ;
-- Log4brains ;
-- automatisation générale du shadow learning ;
-- auto-clôture temporelle des issues/PR.
+Les nouvelles fonctions R-040–R-042 sont principalement sémantiques ; une automatisation peut assister la trace, pas décider leur verdict.
 
-L’état réel des protections/rulesets de `main` n’a pas pu être observé avec le connecteur disponible. Il reste `ETAT_NON_OBSERVE`, pas `ABSENT`.
+## 8. Prochaine opération non normative recevable
 
-## 6. Régimes historiques à ne pas réactiver
+Deux opérations restent possibles sans franchir la promotion :
 
-Ne pas restaurer comme normes générales :
+1. construire un **prototype 2D local et dérivé**, sur un sous-système borné, puis tester son gain de guidage ;
+2. contre-tester la proposition de portée actuelle contre l’état 42/52 et produire une proposition humaine finale sans modifier `AGENTS.md`.
 
-- une seule unité substantielle active ;
-- P29 littéral ;
-- P28 comme veto général à la création ;
-- limite brute de branches ;
-- réflexivité continue ;
-- seuil numérique universel de shadow ;
-- ancienneté = dette ;
-- nombre brut d’issues/branches = complexité ;
-- Git comme historique intangible sans exception ;
-- originalité comme filtre scientifique général ;
-- `constante effective` comme classe transverse propre ;
-- accès comme centre universel ;
-- ordre universel formation → constitution → accès.
+Elles peuvent être séquencées ; aucune nouvelle archéologie générale n’est justifiée sans anomalie discriminante.
 
-D5 reste une décision programmatique active, pas une règle générique.
-
-## 7. État de séquence
-
-La séquence décidée par #139 a été exécutée jusqu’à la frontière normative :
+## Statut courant
 
 ```text
-matrice                          = FAIT
-relations                        = FAIT
-synthèse exécutive               = FAIT
-contre-audit synthèse            = FAIT
-plan d’action                    = FAIT / RECONSOLIDE
-cartographie fonctions/outillage = FAIT
-comparaison capacités            = FAIT
-contre-test empirique P1-P5      = FAIT
-proposition de portée            = REQUALIFIEE
-
-promotion AGENTS                 = NON EFFECTUEE
-migration/infrastructure         = NON OUVERTE
-installation outil               = NON
-merge #139                       = NON AUTORISE
-```
-
-## 8. Prochaine frontière
-
-La prochaine opération **normative** serait une décision humaine sur le delta requalifié :
-
-```text
-P1 + P2 + P3 + P5 = ajouts autonomes candidats
-P4 = amendement du noyau existant
-```
-
-Sans cette décision, il n’existe plus de tâche d’audit générale justifiant de continuer à produire de nouvelles règles ou de nouveaux supports.
-
-L’archéologie se réouvre seulement si une anomalie discriminante apparaît : nouvelle famille, contradiction de portée, contre-cas matériel, mécanisme d’enforcement absent ou filiation nécessaire à une décision.
-
-## Statut terminal courant
-
-```text
-AUDIT_GENERAL = SUFFISAMMENT_INSTRUIT_POUR_DECISION_DE_PORTEE
-DELTA = REQUALIFIE_EMPIRIQUEMENT
+AUDIT_GENERAL = ACQUIS
+SECOND_ORDRE_EMPIRIQUE = ACQUIS
+ETAT_ANALYTIQUE = 42 UNITES / 52 RELATIONS
+PROPOSITION_P1_P5 = PRE_SECOND_ORDRE / A_RECONSOLIDER
 ACTION_NORMATIVE_AUTOMATIQUE = NON
 AGENTS_MODIFIE = NON
-OUTIL_NOUVEAU = NON_JUSTIFIE
-DECISION_HUMAINE_DE_PROMOTION = REQUISE
+INSTALLATION = NON
 MERGE_#139 = NON_AUTORISE
 ```
