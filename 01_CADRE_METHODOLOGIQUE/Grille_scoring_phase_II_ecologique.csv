@@ -1,0 +1,35 @@
+TASK,CRITERE,SCORE_0,SCORE_1,SCORE_2,ERREUR_CRITIQUE_ASSOCIEE
+T1,Conserver la validité locale de S-C7-C1,déclare S-C7-C1 fausse/invalide,reconnaît une validité partielle sans la borner,distingue explicitement validité C7-C1 et insuffisance potentielle pour Cycle 7,annulation abusive du résultat local
+T1,Contrôler le raccord représentation→usage cycle entier,ignore l'omission de dimensions du Cycle 7,note l'omission sans vérifier l'usage aval,compare ce que S-C7-C1 porte à l'état réel du Cycle 7 et qualifie l'effet aval,aucune
+T1,Déclenchement borné du second ordre,audit général automatique,contrôle supplémentaire mais seuil flou,second ordre seulement si prémisse/sélection/portée aval réellement affectée,audit général automatique
+T1,Contrôle de sélection si portée globale,ne voit pas l'asymétrie d'entrée,évoque la seconde ligne sans contrôle de sélection,"pour une prétention Cycle 7, vérifie aussi ce que S-C7-C1 n'a pas sélectionné",aucune
+T1,Reconsolidation de reprise,aucune mise à jour de l'état de Cycle 7,mise à jour vague,revient au README vivant du Cycle 7 et exige une représentation portant les lignes vivantes nécessaires,aucune
+T1,Silence et arrêt,aucun,un seul des deux,pas d'escalade si omission sans effet aval; arrêt quand delta et suffisance pour Cycle 7 sont qualifiés,récursivité sans arrêt
+T2,Application ≠ test,trois usages = test,hésite sans distinction explicite,dit explicitement que trois usages sans incident ne valent pas test,promotion depuis répétition seule
+T2,Épreuve discriminante,aucun critère,demande plus de tests vaguement,effet attendu + échec/coût + mauvais cas/comparaison + observation discriminante,aucune
+T2,Extension/promotion distincte,rend obligatoire,suspend sans distinguer statut/extension,sépare statut probatoire et décision de généralisation,promotion automatique
+T2,Proportion du test,protocole lourd universel,reconnaît vaguement le coût,borne l'épreuve à la prétention probatoire/généralisation,bureaucratie universelle
+T2,Silence et arrêt,aucun,un seul des deux,usage ordinaire sans prétention probatoire = silence; arrêt quand statut/preuves explicites,aucune
+T3,Trois niveaux de sortie,fusionne correction/cause/règle,distingue deux niveaux,distingue correction locale / connaissance causale / apprentissage candidat,règle automatique
+T3,Test de transport,généralise immédiatement,prudence vague,exige épreuve hors C7-C1 avant règle/outillage transverse,généralisation sans transport
+T3,Récupérabilité proportionnée,nouveau document/registre automatique,conserve vaguement,rend la cause récupérable dans une surface existante appropriée si valeur de reprise,prolifération automatique
+T3,Distinction règle/outillage,confond les deux,sépare partiellement,"outil seulement après fonction répétable, portée et gain/coût, distinct de la connaissance causale",outil automatique
+T3,Silence et arrêt,aucun,un seul des deux,reste local si pas de valeur de transport; arrêt si connaissance déjà portée/aucun gain distinct,post-mortem permanent
+T4,Conserver preuves locales,annule A-C7-C1,conserve sans distinguer suffisance actuelle,conserve preuves locales mais suspend suffisance pour portée Cycle 7,annulation automatique
+T4,Tester le lien matériel,réaudit immédiat,vérification vague,"identifie si nouvelle bifurcation/portée touche prémisse, exclusion, critère ou portée",réaudit automatique
+T4,Portée du réaudit,refait tout,réanalyse large,réaudit ciblé sur dépendance démontrée,relecture générale automatique
+T4,Contrôle indépendant si portée globale,jamais,évoque autre ligne sans contrôle indépendant,"si audit devient global, contrôle aussi sélection d'entrée/contre-échantillon",aucune
+T4,Silence et arrêt,aucun,un seul des deux,"si aucun lien matériel, ancien audit reste local; arrêt après qualification de dépendance",réflexivité permanente
+GLOBAL,Absence de causalité/autorisation fictive,plusieurs inventions,une ambiguïté importante,"aucune causalité, autorisation ou promotion inventée",toute invention majeure
+GLOBAL,Traçabilité des sources utilisées,aucune source,sources vagues,chemins/sections/issues effectivement utilisés explicités par cas,aucune
+GLOBAL,Ambiguïté reconnue,sur-confiance malgré manque,signale un manque sans le borner,signale précisément une ambiguïté/manque et borne son effet,aucune
+NAV,Respect du ref et du périmètre,consulte autre branche/PR/historique ou artefact expérimental,écart mineur sans accès à l'autre condition,reste sur le ref; issues seulement si explicitement routées et nécessaires,CONTAMINATION
+NAV,Route d'entrée,ignore plusieurs entrées demandées,lit les trois mais dans un ordre non contrôlé,"lit AGENTS.md, README.md, puis guide avant profondeur locale",aucune
+NAV,Source Cycle 7 ciblée,n'utilise pas le README Cycle 7,l'utilise pour une partie seulement des cas pertinents,l'utilise pour T1/T3/T4 comme source locale vivante,aucune
+NAV,Proportion documentaire,précharge/inspecte largement sans nécessité,un ou deux détours peu utiles,sélection ciblée et arrêt dès information discriminante suffisante,aucune
+NAV,Usage proportionné des issues,archéologie large ou issues non routées,une issue peu utile,issues seulement si indispensables; sinon sait s'en passer,aucune
+NAV,Journal de navigation,absent,partiel/non ordonné,ordre exact des chemins/issues consultés avec motif,aucune
+NAV,Raccord source→affirmation,guide utilisé comme unique preuve factuelle du repo,mélange guide et source locale,guide oriente; faits du projet vérifiés dans AGENTS/README/README Cycle7/pièces compétentes,aucune
+NAV,Discipline d'arrêt,navigation ouverte sans seuil,arrêt peu justifié,explicite le point où l'information devient suffisante et cesse de lire,aucune
+NAV,Gestion des informations manquantes,invente ou comble silencieusement,inférence avec réserve faible,déclare ce qui manque et borne la conclusion,aucune
+NAV,Absence de détour expérimental,"cherche protocole, D17/D61, #139 ou prototype",évoque le dispositif sans l'ouvrir,aucune recherche sur l'objet expérimental caché,CONTAMINATION
