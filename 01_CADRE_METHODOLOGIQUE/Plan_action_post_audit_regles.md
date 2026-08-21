@@ -2,7 +2,7 @@
 
 ## Statut
 
-Ce plan dérive de l'état analytique `42 unités / 52 relations`, de l'étude exhaustive de second ordre du matériau empirique, du prototype 2D local et du pilote aveugle Phase I.
+Ce plan dérive de l'état analytique `42 unités / 52 relations`, de l'étude exhaustive de second ordre du matériau empirique, du prototype 2D local, de la Phase I aveugle répliquée et de la Phase II écologique complète.
 
 Il ne constitue ni une autorisation de promotion dans `AGENTS.md`, ni une décision d'installation d'outil, ni une autorisation de merge.
 
@@ -16,51 +16,56 @@ Il ne constitue ni une autorisation de promotion dans `AGENTS.md`, ni une décis
 - prototype 2D local dérivé ;
 - test contrôlé de guidage positif ;
 - contre-test de silence 4/4 PASS ;
-- blind test agent neuf Phase I, pilote `n=1` par condition : 42/48 vs 42/48, zéro erreur critique, D17 environ 28,1 % plus court en entrée.
+- Phase I agent neuf répliquée à `n=2` par condition : D17 84/96, D61 82/96, zéro erreur critique ;
+- Phase II écologique complète : D17 48/48 + 20/20, D61 48/48 + 20/20, zéro erreur critique, zéro contamination ;
+- D17 conserve la qualité décisionnelle/navigation observée avec environ 28,1 % de guide en moins ;
+- aucun gain de nombre de fichiers consultés démontré en Phase II.
 
 ## Actions restantes — ordre recommandé
 
 ### A1 — réplication Phase I
 
-**État : À EXÉCUTER**
+**État : FAIT**
 
-Répéter une fois chaque condition avec :
-- chat éphémère réellement neuf ;
-- même modèle/configuration que possible ;
-- même consigne gelée ;
-- même `Dossier_17` ou `Dossier_61`, renommé `dossier.md` ;
-- aucune modification de la grille ;
-- réponse brute conservée avant scoring.
+Résultat : non-infériorité D17 reproduite ; supériorité générale non établie.
 
-But : passer de `n=1` à `n=2` par condition et tester la stabilité de la non-infériorité documentaire observée.
+### A2 — Phase II écologique
 
-### A2 — décision d'ouverture Phase II écologique
+**État : FAIT**
 
-**État : CONDITIONNEL**
+Résultat : égalité de plafond sur cette paire écologique.
 
-Ouvrir seulement si la réplication ne renverse pas le signal au point de rendre l'effet indécidable ou défavorable.
+```text
+D61_FIDELITE = 48/48
+D61_NAVIGATION = 20/20
+D17_FIDELITE = 48/48
+D17_NAVIGATION = 20/20
+ERREURS_CRITIQUES = 0
+CONTAMINATION = NON
+FICHIERS_CONSULTES = 9_DANS_CHAQUE_CONDITION
+```
 
-La Phase II doit tester non plus `dossier → réponse`, mais `point d'entrée → navigation dans dépôt → sélection des sources → réponse`.
+Le gain soutenu est un gain de **compression documentaire sous qualité conservée**, non une supériorité d'exactitude ni une réduction du nombre de sources consultées.
 
-Les environnements doivent partir du même SHA de `main`, avec une seule condition visible à la fois ; #139 ne doit pas être accessible à l'agent testé.
+### A3 — décision de portée du prototype 2D
 
-### A3 — décision de sédimentation du prototype 2D
+**État : OUVERTE / DECISION HUMAINE REQUISE**
 
-**État : NON OUVERTE**
+Trois options restent compatibles avec les preuves :
 
-Ne peut pas être fondée sur le pilote actuel seul.
+1. **ESSAI_REEL_LOCAL_ABLABLE** — conserver la surface fonctionnelle comme guide local dérivé sur un chantier réel, avec retour aux sources et possibilité de suppression sans perte normative ;
+2. **SECOND_SOUS_SYSTEME_AVANT_SEDIMENTATION** — tester le principe sur un autre sous-système pour vérifier qu'il ne dépend pas du cluster reprise/audit ;
+3. **NE_PAS_SEDIMENTER** — considérer que le gain de compression ne compense pas le coût d'une surface dérivée supplémentaire.
 
-Elle exige au minimum :
-- réplication Phase I ;
-- absence d'erreur critique systématique ;
-- signal stable de non-infériorité ou meilleur ;
-- avantage documentaire/agentique qui survit à la Phase II écologique.
+Le résultat empirique actuel soutient les options 1 ou 2 plus fortement que l'option 3 sur le seul critère de guidage/compression, mais ne les autorise pas automatiquement.
 
 ### A4 — portée normative R-025/R-032/R-033/R-034/R-038/R-041/R-040/R-042
 
 **État : À DÉCIDER HUMAINE**
 
 L'audit fournit des qualifications, pas une autorisation de modification d'`AGENTS.md`.
+
+La décision sur le prototype 2D est distincte de la promotion normative de ces règles.
 
 ### A5 — outillage
 
@@ -76,8 +81,9 @@ La majorité des 42 unités restent dans `AUCUNE` ou `CONSERVER_REGIME_EXISTANT`
 
 ```text
 RESULTAT_TEST != PROMOTION
-NON_INFERIORITE_PILOTE != SUPERIORITE_ROBUSTE
-REDUCTION_VOLUME != GAIN_COGNITIF_PROUVE
+NON_INFERIORITE != SUPERIORITE_ROBUSTE
+REDUCTION_VOLUME != GAIN_COGNITIF_UNIVERSEL
+EGALITE_DE_SCORE != EGALITE_DE_COUT_DOCUMENTAIRE
 CI_VERTE != VERDICT_SCIENTIFIQUE
 PR_AUDIT != AUTORISATION_MERGE
 ```
