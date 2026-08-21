@@ -50,4 +50,4 @@ Après les quatre cas, ajoutez seulement :
 - le point où le dossier vous a le plus obligé à revenir à une source ou à chercher une information complémentaire ;
 - une ambiguïté éventuelle du dossier qui pourrait conduire deux agents raisonnables à agir différemment.
 
-N’essayez pas d’identifier le but de l’exercice. Répondez uniquement aux situations proposées.
+Répondez uniquement aux situations proposées.
